@@ -1,0 +1,6 @@
+{
+  "name": "API",
+  "tagline": "Documenting Dota 2 API's",
+  "body": "# API\r\n\r\n##File Structure\r\n### dota.d.ts\r\nContains all the javascript API functions to do intellisense\r\n### dota_enums.d.ts\r\nContains all the constants / enums that exist in the global panorama scope\r\n###dota_panels.d.ts\r\nContains all the Panel types (Panel, Button, etc) and their associated properties\r\n###`gen/`\r\nThis folder contains all the scripts to help automate this repository",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
