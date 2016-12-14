@@ -487,15 +487,6 @@
                     "nReason"
                 ]
             },
-            "SetHasRepicked": {
-                "return": "void",
-                "args": [
-                    "int"
-                ],
-                "arg_names": [
-                    "iPlayerID"
-                ]
-            },
             "GetNumConsumablesPurchased": {
                 "return": "int",
                 "args": [
@@ -748,6 +739,17 @@
                     "iTeam"
                 ]
             },
+            "SetCanRepick": {
+                "return": "void",
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "arg_names": [
+                    "iPlayerID",
+                    "bCanRepick"
+                ]
+            },
             "GetRawPlayerDamage": {
                 "return": "int",
                 "args": [
@@ -932,6 +934,15 @@
             },
             "ClearStreak": {
                 "return": "void",
+                "args": [
+                    "int"
+                ],
+                "arg_names": [
+                    "iPlayerID"
+                ]
+            },
+            "CanRepick": {
+                "return": "bool",
                 "args": [
                     "int"
                 ],
@@ -1280,8 +1291,8 @@
                     "iPlayerID"
                 ]
             },
-            "HasRepicked": {
-                "return": "bool",
+            "GetBroadcasterChannel": {
+                "return": "uint",
                 "args": [
                     "int"
                 ],
@@ -1347,15 +1358,6 @@
                     "iPlayerID"
                 ]
             },
-            "GetBroadcasterChannel": {
-                "return": "uint",
-                "args": [
-                    "int"
-                ],
-                "arg_names": [
-                    "iPlayerID"
-                ]
-            },
             "GetSteamID": {
                 "description": "Get the 64 bit steam ID for a given player.",
                 "return": "uint64",
@@ -1385,26 +1387,6 @@
                 ]
             },
             "GetPlayerLoadedCompletely": {
-                "return": "bool",
-                "args": [
-                    "int"
-                ],
-                "arg_names": [
-                    "iPlayerID"
-                ]
-            },
-            "SetPlayerReservedState": {
-                "return": "void",
-                "args": [
-                    "int",
-                    "bool"
-                ],
-                "arg_names": [
-                    "iPlayerID",
-                    "bReserved"
-                ]
-            },
-            "GetPlayerReservedState": {
                 "return": "bool",
                 "args": [
                     "int"
@@ -1906,11 +1888,6 @@
                 "return": "cstring",
                 "args": []
             },
-            "IsPlayer": {
-                "description": "Is this entity a player?",
-                "return": "bool",
-                "args": []
-            },
             "HasAttribute": {
                 "description": "See if an entity has a particular attribute.",
                 "return": "bool",
@@ -1945,35 +1922,6 @@
                 "return": "handle",
                 "args": []
             },
-            "GetAbsOrigin": {
-                "return": "vector",
-                "args": []
-            },
-            "ApplyLocalAngularVelocityImpulse": {
-                "description": "Apply an Ang Velocity Impulse",
-                "return": "void",
-                "args": [
-                    "vector"
-                ],
-                "arg_names": [
-                    "angImpulse"
-                ]
-            },
-            "TakeDamage": {
-                "description": "Apply damage to this entity. Use CreateDamageInfo() to create a damageinfo object.",
-                "return": "int",
-                "args": [
-                    "handle"
-                ],
-                "arg_names": [
-                    "hInfo"
-                ]
-            },
-            "GetBounds": {
-                "description": "Get a table containing the 'Mins' & 'Maxs' vector bounds, centered on object.",
-                "return": "variant",
-                "args": []
-            },
             "GetRightVector": {
                 "description": "Get the right vector of the entity.",
                 "return": "vector",
@@ -1995,42 +1943,6 @@
                 "return": "void",
                 "args": []
             },
-            "SetFriction": {
-                "description": "Set PLAYER friction, ignored for objects.",
-                "return": "void",
-                "args": [
-                    "float"
-                ],
-                "arg_names": [
-                    "flFriction"
-                ]
-            },
-            "SetAbsOrigin": {
-                "return": "void",
-                "args": [
-                    "vector"
-                ],
-                "arg_names": [
-                    "origin"
-                ]
-            },
-            "Attribute_SetFloatValue": {
-                "description": "Set float value for an entity attribute.",
-                "return": "void",
-                "args": [
-                    "cstring",
-                    "float"
-                ],
-                "arg_names": [
-                    "pName",
-                    "flValue"
-                ]
-            },
-            "GetBoundingMaxs": {
-                "description": "Get a vector containing max bounds, centered on object.",
-                "return": "vector",
-                "args": []
-            },
             "StopSound": {
                 "description": "Stops a named sound playing from this entity.",
                 "return": "void",
@@ -2046,23 +1958,64 @@
                 "return": "vector",
                 "args": []
             },
-            "RemoveEffects": {
-                "description": "RemoveEffects( int ): Removes the render effect flag.",
+            "GetContext": {
+                "description": "GetContext( name ): looks up a context and returns it if available. May return string, float, or null (if the context isn't found).",
+                "return": "variant",
+                "args": [
+                    "cstring"
+                ],
+                "arg_names": [
+                    "name"
+                ]
+            },
+            "SetContextThink": {
+                "description": "Set a think function on this entity.",
                 "return": "void",
                 "args": [
+                    "cstring",
+                    "handle",
+                    "float"
+                ],
+                "arg_names": [
+                    "pszContextName",
+                    "hThinkFunc",
+                    "flInterval"
+                ]
+            },
+            "PrecacheScriptSound": {
+                "description": "Precache a sound for later playing.",
+                "return": "void",
+                "args": [
+                    "cstring"
+                ],
+                "arg_names": [
+                    "soundname"
+                ]
+            },
+            "Attribute_SetIntValue": {
+                "description": "Set int value for an entity attribute.",
+                "return": "void",
+                "args": [
+                    "cstring",
                     "int"
                 ],
                 "arg_names": [
-                    "nFlags"
+                    "pName",
+                    "nValue"
                 ]
             },
-            "IsNPC": {
-                "description": "Is this entity an CAI_BaseNPC?",
-                "return": "bool",
+            "GetTeam": {
+                "description": "Get the team number of this entity.",
+                "return": "int",
+                "args": []
+            },
+            "GetLocalOrigin": {
+                "description": "Get entity local origin as a Vector",
+                "return": "vector",
                 "args": []
             },
             "SetAngles": {
-                "description": "Set entity pitch, yaw, roll.",
+                "description": "Set entity pitch, yaw, roll by component.",
                 "return": "void",
                 "args": [
                     "float",
@@ -2136,15 +2089,19 @@
                     "vPos"
                 ]
             },
-            "GetBaseVelocity": {
-                "description": "Get Base? velocity.",
-                "return": "vector",
-                "args": []
-            },
-            "GetAngularVelocity": {
-                "description": "Get the local angular velocity - returns a vector of pitch,yaw,roll",
-                "return": "vector",
-                "args": []
+            "SetLocalAngles": {
+                "description": "Set entity local pitch, yaw, roll by component",
+                "return": "void",
+                "args": [
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "arg_names": [
+                    "fPitch",
+                    "fYaw",
+                    "fRoll"
+                ]
             },
             "GetOwnerEntity": {
                 "description": "Get the owner entity, if there is one",
@@ -2208,8 +2165,113 @@
                 "return": "qangle",
                 "args": []
             },
+            "IsNPC": {
+                "description": "Is this entity an CAI_BaseNPC?",
+                "return": "bool",
+                "args": []
+            },
+            "RemoveEffects": {
+                "description": "RemoveEffects( int ): Removes the render effect flag.",
+                "return": "void",
+                "args": [
+                    "int"
+                ],
+                "arg_names": [
+                    "nFlags"
+                ]
+            },
             "GetAnglesAsVector": {
                 "description": "Get entity pitch, yaw, roll as a vector.",
+                "return": "vector",
+                "args": []
+            },
+            "GetLocalAngles": {
+                "description": "Get entity local pitch, yaw, roll as a QAngle",
+                "return": "qangle",
+                "args": []
+            },
+            "SetLocalOrigin": {
+                "description": "Set entity local origin from a Vector",
+                "return": "void",
+                "args": [
+                    "vector"
+                ],
+                "arg_names": [
+                    "origin"
+                ]
+            },
+            "SetFriction": {
+                "description": "Set PLAYER friction, ignored for objects.",
+                "return": "void",
+                "args": [
+                    "float"
+                ],
+                "arg_names": [
+                    "flFriction"
+                ]
+            },
+            "SetAbsOrigin": {
+                "return": "void",
+                "args": [
+                    "vector"
+                ],
+                "arg_names": [
+                    "origin"
+                ]
+            },
+            "Attribute_SetFloatValue": {
+                "description": "Set float value for an entity attribute.",
+                "return": "void",
+                "args": [
+                    "cstring",
+                    "float"
+                ],
+                "arg_names": [
+                    "pName",
+                    "flValue"
+                ]
+            },
+            "GetBoundingMaxs": {
+                "description": "Get a vector containing max bounds, centered on object.",
+                "return": "vector",
+                "args": []
+            },
+            "GetAbsOrigin": {
+                "return": "vector",
+                "args": []
+            },
+            "ApplyLocalAngularVelocityImpulse": {
+                "description": "Apply an Ang Velocity Impulse",
+                "return": "void",
+                "args": [
+                    "vector"
+                ],
+                "arg_names": [
+                    "angImpulse"
+                ]
+            },
+            "TakeDamage": {
+                "description": "Apply damage to this entity. Use CreateDamageInfo() to create a damageinfo object.",
+                "return": "int",
+                "args": [
+                    "handle"
+                ],
+                "arg_names": [
+                    "hInfo"
+                ]
+            },
+            "GetBounds": {
+                "description": "Get a table containing the 'Mins' & 'Maxs' vector bounds, centered on object.",
+                "return": "variant",
+                "args": []
+            },
+            "GetBaseVelocity": {
+                "description": "Get Base? velocity.",
+                "return": "vector",
+                "args": []
+            },
+            "GetAngularVelocity": {
+                "description": "Get the local angular velocity - returns a vector of pitch,yaw,roll",
                 "return": "vector",
                 "args": []
             },
@@ -2273,33 +2335,6 @@
                     "flDefault"
                 ]
             },
-            "PrecacheScriptSound": {
-                "description": "Precache a sound for later playing.",
-                "return": "void",
-                "args": [
-                    "cstring"
-                ],
-                "arg_names": [
-                    "soundname"
-                ]
-            },
-            "GetTeam": {
-                "description": "Get the team number of this entity.",
-                "return": "int",
-                "args": []
-            },
-            "Attribute_SetIntValue": {
-                "description": "Set int value for an entity attribute.",
-                "return": "void",
-                "args": [
-                    "cstring",
-                    "int"
-                ],
-                "arg_names": [
-                    "pName",
-                    "nValue"
-                ]
-            },
             "SetOwner": {
                 "description": "Sets this entity's owner",
                 "return": "void",
@@ -2323,30 +2358,6 @@
                 "description": "Get vector to center of object - absolute coords",
                 "return": "vector",
                 "args": []
-            },
-            "GetContext": {
-                "description": "GetContext( name ): looks up a context and returns it if available. May return string, float, or null (if the context isn't found).",
-                "return": "variant",
-                "args": [
-                    "cstring"
-                ],
-                "arg_names": [
-                    "name"
-                ]
-            },
-            "SetContextThink": {
-                "description": "Set a think function on this entity.",
-                "return": "void",
-                "args": [
-                    "cstring",
-                    "handle",
-                    "float"
-                ],
-                "arg_names": [
-                    "pszContextName",
-                    "hThinkFunc",
-                    "flInterval"
-                ]
             },
             "GetLocalAngularVelocity": {
                 "description": "Maybe local angvel",
@@ -2383,6 +2394,11 @@
             },
             "IsAlive": {
                 "description": "Is this entity alive?",
+                "return": "bool",
+                "args": []
+            },
+            "IsPlayer": {
+                "description": "Is this entity a player?",
                 "return": "bool",
                 "args": []
             },
@@ -3741,9 +3757,8 @@
                 "return": "void",
                 "args": []
             },
-            "HeroEffectPriority": {
-                "description": "Relationship of this hero effect with those from other buffs (higher is more likely to be shown).",
-                "return": "int",
+            "IsPermanent": {
+                "return": "bool",
                 "args": []
             },
             "IsPurgable": {
@@ -3868,6 +3883,11 @@
             },
             "GetEffectAttachType": {
                 "description": "Return the attach type of the particle system from GetEffectName.",
+                "return": "int",
+                "args": []
+            },
+            "HeroEffectPriority": {
+                "description": "Relationship of this hero effect with those from other buffs (higher is more likely to be shown).",
                 "return": "int",
                 "args": []
             },
@@ -6271,6 +6291,16 @@
                     "bDisable"
                 ]
             },
+            "GetHUDVisible": {
+                "description": "Returns the HUD element visibility.",
+                "return": "bool",
+                "args": [
+                    "int"
+                ],
+                "arg_names": [
+                    "iElement"
+                ]
+            },
             "SetRecommendedItemsDisabled": {
                 "description": "Turn the panel for showing recommended items at the shop off/on.",
                 "return": "void",
@@ -6466,6 +6496,16 @@
                 "description": "Enable motion for the prop",
                 "return": "void",
                 "args": []
+            },
+            "SetDynamicVsDynamicContinuous": {
+                "description": "Enable/disable dynamic vs dynamic continuous collision traces",
+                "return": "void",
+                "args": [
+                    "bool"
+                ],
+                "arg_names": [
+                    "bIsDynamicVsDynamicContinuousEn"
+                ]
             },
             "DisableMotion": {
                 "description": "Disable motion for the prop",
@@ -9177,6 +9217,16 @@
                     "nStrength"
                 ]
             },
+            "AddHandModelOverride": {
+                "description": "Add a model override for this hand",
+                "return": "handle",
+                "args": [
+                    "cstring"
+                ],
+                "arg_names": [
+                    "pModelName"
+                ]
+            },
             "SetHandAttachment": {
                 "description": "Set the attachment for this hand",
                 "return": "void",
@@ -9185,6 +9235,26 @@
                 ],
                 "arg_names": [
                     "hAttachment"
+                ]
+            },
+            "RemoveHandAttachmentByHandle": {
+                "description": "Remove hand attachment by handle",
+                "return": "void",
+                "args": [
+                    "handle"
+                ],
+                "arg_names": [
+                    "hAttachment"
+                ]
+            },
+            "RemoveHandModelOverride": {
+                "description": "Remove a model override for this hand",
+                "return": "void",
+                "args": [
+                    "cstring"
+                ],
+                "arg_names": [
+                    "pModelName"
                 ]
             },
             "AddHandAttachment": {
@@ -9200,6 +9270,31 @@
             "GetHandAttachment": {
                 "description": "Get the attachment on this hand",
                 "return": "handle",
+                "args": []
+            },
+            "GetPlayer": {
+                "description": "Get the player for this hand",
+                "return": "handle",
+                "args": []
+            },
+            "FindHandModelOverride": {
+                "description": "Find a specific model override for this hand",
+                "return": "handle",
+                "args": [
+                    "cstring"
+                ],
+                "arg_names": [
+                    "pModelName"
+                ]
+            },
+            "RemoveAllHandModelOverrides": {
+                "description": "Remove all model overrides for this hand",
+                "return": "void",
+                "args": []
+            },
+            "GetHandID": {
+                "description": "Get hand ID",
+                "return": "int",
                 "args": []
             }
         }
@@ -9802,6 +9897,18 @@
             }
         }
     },
+    "CDOTAVoteSystem": {
+        "description": "!DOTA Vote System",
+        "functions": {
+            "StartVote": {
+                "description": "Starts a vote, based upon a table of parameters",
+                "return": "void",
+                "args": [
+                    "handle"
+                ]
+            }
+        }
+    },
     "CCustomGameEventManager": {
         "description": "!Custom game event manager",
         "functions": {
@@ -9844,18 +9951,6 @@
                 "return": "void",
                 "args": [
                     "int"
-                ]
-            }
-        }
-    },
-    "CDOTAVoteSystem": {
-        "description": "!DOTA Vote System",
-        "functions": {
-            "StartVote": {
-                "description": "Starts a vote, based upon a table of parameters",
-                "return": "void",
-                "args": [
-                    "handle"
                 ]
             }
         }
@@ -10840,7 +10935,8 @@
                     "handle",
                     "vector",
                     "vector",
-                    "float"
+                    "float",
+                    "int"
                 ]
             },
             "PrecacheUnitByNameAsync": {
@@ -11260,6 +11356,8 @@
                     "handle",
                     "handle",
                     "handle",
+                    "float",
+                    "float",
                     "float",
                     "float",
                     "cstring"

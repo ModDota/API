@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Lua (Server)
-permalink: /lua_server/
+title: Lua (Bots)
+permalink: /lua_bots/
 ---
 
 * TOC
 {:toc}
 
-{% for server_class in site.data.lua_server %}
+{% for server_class in site.data.lua_bots %}
 ## {{ server_class[0] }}
 {% if server_class[1] contains "extends" %}*extends **{{server_class[1].extends}}***  {% endif %}
  
