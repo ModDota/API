@@ -1,75 +1,403 @@
 {
-    "CDOTA_TeamCommander": {
-        "description": "A Dota Bot Team Commander",
-        "functions": {}
+    "CDOTABaseAbility_BotScript": {
+        "description": "",
+        "functions": {
+            "CanAbilityBeUpgraded": {
+                "args": [],
+                "description": "Can this Ability be upgraded?",
+                "return": "bool"
+            },
+            "GetAbilityDamage": {
+                "args": [],
+                "description": "Get the basic damage value of this Ability.",
+                "return": "int"
+            },
+            "GetAutoCastState": {
+                "args": [],
+                "description": "Get the autocast state of this Ability.",
+                "return": "bool"
+            },
+            "GetBehavior": {
+                "args": [],
+                "description": "Get the behavior type of this Ability.",
+                "return": "int"
+            },
+            "GetCastPoint": {
+                "args": [],
+                "description": "Gets the cast point of this Ability.",
+                "return": "float"
+            },
+            "GetCastRange": {
+                "args": [],
+                "description": "Gets the cast range of this Ability.",
+                "return": "int"
+            },
+            "GetCaster": {
+                "args": [],
+                "description": "Get the unit who owns this Ability.",
+                "return": "handle"
+            },
+            "GetChannelTime": {
+                "args": [],
+                "description": "How long does this Ability channel?",
+                "return": "float"
+            },
+            "GetChannelledManaCostPerSecond": {
+                "args": [],
+                "description": "Get the mana cost per second of this Ability while channeling it.",
+                "return": "int"
+            },
+            "GetCooldownTimeRemaining": {
+                "args": [],
+                "description": "Get the cooldown time remaning for this Ability.",
+                "return": "float"
+            },
+            "GetDamageType": {
+                "args": [],
+                "description": "Get the damage type of this Ability.",
+                "return": "int"
+            },
+            "GetHeroLevelRequiredToUpgrade": {
+                "args": [],
+                "description": "Get the Hero level required to upgrade this Ability.",
+                "return": "int"
+            },
+            "GetLevel": {
+                "args": [],
+                "description": "Get the current level of the Ability.",
+                "return": "int"
+            },
+            "GetManaCost": {
+                "args": [],
+                "description": "Get the mana cost of this Ability.",
+                "return": "int"
+            },
+            "GetMaxLevel": {
+                "args": [],
+                "description": "Get the max level of this Ability.",
+                "return": "int"
+            },
+            "GetName": {
+                "args": [],
+                "description": "Get the name of this Ability.",
+                "return": "cstring"
+            },
+            "GetSpecialValueFloat": {
+                "arg_names": [
+                    "pszKey"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get an int internal data parameter of this Abilty.",
+                "return": "float"
+            },
+            "GetSpecialValueInt": {
+                "arg_names": [
+                    "pszKey"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get an int internal data parameter of this Abilty.",
+                "return": "int"
+            },
+            "GetTargetFlags": {
+                "args": [],
+                "description": "Get the flags for this Ability.",
+                "return": "int"
+            },
+            "GetTargetTeam": {
+                "args": [],
+                "description": "Get the target team of this Ability.",
+                "return": "int"
+            },
+            "GetTargetType": {
+                "args": [],
+                "description": "Get the target type of this Ability.",
+                "return": "int"
+            },
+            "GetToggleState": {
+                "args": [],
+                "description": "Get the toggle state of this Ability.",
+                "return": "bool"
+            },
+            "IsActivated": {
+                "args": [],
+                "description": "Is this Ability currently activated?",
+                "return": "bool"
+            },
+            "IsAttributeBonus": {
+                "args": [],
+                "description": "Is this Ability the attribute bonus?",
+                "return": "bool"
+            },
+            "IsChanneling": {
+                "args": [],
+                "description": "Is this Ability being channelled?",
+                "return": "bool"
+            },
+            "IsCooldownReady": {
+                "args": [],
+                "description": "Is this Ability off cooldown?",
+                "return": "bool"
+            },
+            "IsFullyCastable": {
+                "args": [],
+                "description": "Does the caster have the mana to use this Ability, and is it off cooldown?",
+                "return": "bool"
+            },
+            "IsHidden": {
+                "args": [],
+                "description": "Is this Ability currently hidden?",
+                "return": "bool"
+            },
+            "IsInAbilityPhase": {
+                "args": [],
+                "description": "Is this Ability being cast?",
+                "return": "bool"
+            },
+            "IsItem": {
+                "args": [],
+                "description": "Is this an Item?",
+                "return": "bool"
+            },
+            "IsOwnersManaEnough": {
+                "args": [],
+                "description": "Does the caster have the mana to use this Ability?",
+                "return": "bool"
+            },
+            "IsPassive": {
+                "args": [],
+                "description": "Is this a passive Ability?",
+                "return": "bool"
+            },
+            "IsStealable": {
+                "args": [],
+                "description": "Can this Ability be stolen?",
+                "return": "bool"
+            },
+            "IsStolen": {
+                "args": [],
+                "description": "Is this the stolen version of an Ability?",
+                "return": "bool"
+            },
+            "IsToggle": {
+                "args": [],
+                "description": "Is this a toggled Ability?",
+                "return": "bool"
+            },
+            "IsTrained": {
+                "args": [],
+                "description": "Is this Ability Trained at all?",
+                "return": "bool"
+            },
+            "ProcsMagicStick": {
+                "args": [],
+                "description": "Does this Ability proc Magic Stick?",
+                "return": "bool"
+            },
+            "ToggleAutoCast": {
+                "args": [],
+                "description": "Toggle the autocast state of this Ability.",
+                "return": "void"
+            },
+            "UpgradeAbility": {
+                "args": [],
+                "description": "Upgrade this Ability by 1 level.",
+                "return": "void"
+            }
+        }
     },
     "CDOTA_Bot_Script": {
         "description": "A unit referenced from Dota bot script",
         "functions": {
-            "IsStunned": {
-                "description": "Is the unit stunned?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_MoveToUnit": {
-                "description": "Tell a bot to move to a unit and start following them.",
-                "return": "void",
-                "args": [
-                    "handle"
-                ],
+            "Action_AttackMove": {
                 "arg_names": [
-                    "hTarget"
-                ]
-            },
-            "IsHero": {
-                "description": "Is this unit a hero?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_MoveToLocation": {
-                "description": "Tell a bot to move to a location.",
-                "return": "void",
+                    "location"
+                ],
                 "args": [
                     "vector"
                 ],
+                "description": "Tell a bot to attack-move a location.",
+                "return": "void"
+            },
+            "Action_AttackUnit": {
+                "arg_names": [
+                    "hTarget",
+                    "bOnce"
+                ],
+                "args": [
+                    "handle",
+                    "bool"
+                ],
+                "description": "Tell a bot to attack a target unit. If bOnce is specified, it will auto-pop the action after one attack.",
+                "return": "void"
+            },
+            "Action_Buyback": {
+                "args": [],
+                "description": "Tell a bot to buy back into the game.",
+                "return": "void"
+            },
+            "Action_ClearActions": {
+                "arg_names": [
+                    "bStop"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Clear current action stack and return to idle.  Optionally stop in place.",
+                "return": "void"
+            },
+            "Action_DropItem": {
+                "arg_names": [
+                    "hItem",
+                    "location"
+                ],
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Tell a bot to drop an item.",
+                "return": "void"
+            },
+            "Action_LevelAbility": {
+                "arg_names": [
+                    "pszAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Tell a bot to level up a specific ability.",
+                "return": "void"
+            },
+            "Action_MoveToLocation": {
                 "arg_names": [
                     "location"
-                ]
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to move to a location.",
+                "return": "void"
             },
-            "GetDifficulty": {
-                "description": "Get the bot's difficulty settings.",
-                "return": "int",
-                "args": []
+            "Action_MoveToUnit": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to move to a unit and start following them.",
+                "return": "void"
             },
-            "IsNightmared": {
-                "description": "Is the unit nightmared?",
-                "return": "bool",
-                "args": []
+            "Action_PickUpItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to pick up a dropped item.",
+                "return": "void"
+            },
+            "Action_PickUpRune": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to pick up a rune.",
+                "return": "void"
+            },
+            "Action_PurchaseItem": {
+                "arg_names": [
+                    "pszItemName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Tell a bot to purchase an item by name.",
+                "return": "void"
+            },
+            "Action_SellItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to sell an item.",
+                "return": "void"
+            },
+            "Action_UseAbility": {
+                "arg_names": [
+                    "hAbility"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to use a non-targeted ability.",
+                "return": "void"
             },
             "Action_UseAbilityOnEntity": {
-                "description": "Tell a bot to use a unit-targeted ability.",
-                "return": "void",
+                "arg_names": [
+                    "hAbility",
+                    "hTarget"
+                ],
                 "args": [
                     "handle",
                     "handle"
                 ],
+                "description": "Tell a bot to use a unit-targeted ability.",
+                "return": "void"
+            },
+            "Action_UseAbilityOnLocation": {
                 "arg_names": [
                     "hAbility",
-                    "hTarget"
-                ]
-            },
-            "FindAoELocation": {
-                "description": "Finds optimal AoE location that overlaps heroes/creeps.",
-                "return": "variant",
+                    "location"
+                ],
                 "args": [
-                    "bool",
-                    "bool",
-                    "vector",
-                    "int",
-                    "int",
-                    "float",
+                    "handle",
+                    "vector"
+                ],
+                "description": "Tell a bot to use a location-targeted ability.",
+                "return": "void"
+            },
+            "Action_UseAbilityOnTree": {
+                "arg_names": [
+                    "hAbility",
+                    "iTree"
+                ],
+                "args": [
+                    "handle",
                     "int"
                 ],
+                "description": "Tell a bot to use a tree-targeted ability.",
+                "return": "void"
+            },
+            "CanBeSeen": {
+                "args": [],
+                "description": "Can we currently see this bot?  Always true for bots on our team.  Many function will not return valid data without this being true.",
+                "return": "bool"
+            },
+            "DistanceFromFountain": {
+                "args": [],
+                "description": "Gets the unit's straight-line distance from the team's fountain (0 is in the fountain).",
+                "return": "int"
+            },
+            "DistanceFromSecretShop": {
+                "args": [],
+                "description": "Gets the unit's straight-line distance from the closest secret shop (0 is in a secret shop).",
+                "return": "int"
+            },
+            "DistanceFromSideShop": {
+                "args": [],
+                "description": "Gets the unit's straight-line distance from the closest side shop (0 is in a side shop).",
+                "return": "int"
+            },
+            "FindAoELocation": {
                 "arg_names": [
                     "bEnemies",
                     "bHeroes",
@@ -78,1096 +406,541 @@
                     "nRadius",
                     "fTimeInFuture",
                     "nMaxHealth"
-                ]
-            },
-            "IsCreep": {
-                "description": "Is this unit a creep?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_ClearActions": {
-                "description": "Clear current action stack and return to idle.  Optionally stop in place.",
-                "return": "void",
-                "args": [
-                    "bool"
                 ],
-                "arg_names": [
-                    "bStop"
-                ]
-            },
-            "GetCourierValue": {
-                "description": "Get the value of items on the courier owned by this bot.",
-                "return": "int",
-                "args": []
-            },
-            "IsSilenced": {
-                "description": "Is the unit silenced?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_AttackMove": {
-                "description": "Tell a bot to attack-move a location.",
-                "return": "void",
-                "args": [
-                    "vector"
-                ],
-                "arg_names": [
-                    "location"
-                ]
-            },
-            "IsMagicImmune": {
-                "description": "Is the unit magic immune?",
-                "return": "bool",
-                "args": []
-            },
-            "GetUnitName": {
-                "description": "Get the unit's name.",
-                "return": "cstring",
-                "args": []
-            },
-            "Action_DropItem": {
-                "description": "Tell a bot to drop an item.",
-                "return": "void",
-                "args": [
-                    "handle",
-                    "vector"
-                ],
-                "arg_names": [
-                    "hItem",
-                    "location"
-                ]
-            },
-            "GetPlayer": {
-                "description": "Get the unit's controlling player number.",
-                "return": "int",
-                "args": []
-            },
-            "IsAlive": {
-                "description": "Is a bot alive?",
-                "return": "bool",
-                "args": []
-            },
-            "GetVelocity": {
-                "description": "Get the velocity the unit has moved over the last two seconds.",
-                "return": "vector",
-                "args": []
-            },
-            "Action_AttackUnit": {
-                "description": "Tell a bot to attack a target unit. If bOnce is specified, it will auto-pop the action after one attack.",
-                "return": "void",
-                "args": [
-                    "handle",
-                    "bool"
-                ],
-                "arg_names": [
-                    "hTarget",
-                    "bOnce"
-                ]
-            },
-            "Action_PurchaseItem": {
-                "description": "Tell a bot to purchase an item by name.",
-                "return": "void",
-                "args": [
-                    "cstring"
-                ],
-                "arg_names": [
-                    "pszItemName"
-                ]
-            },
-            "GetExtrapolatedLocation": {
-                "description": "Extrapolates their location in the future, based on past movement.",
-                "return": "vector",
-                "args": [
-                    "float"
-                ],
-                "arg_names": [
-                    "fDelay"
-                ]
-            },
-            "IsBuilding": {
-                "description": "Is this unit a building?",
-                "return": "bool",
-                "args": []
-            },
-            "IsTower": {
-                "description": "Is this unit a tower?",
-                "return": "bool",
-                "args": []
-            },
-            "UsingItemBreaksInvisibility": {
-                "description": "Will using an item break invisibiilty?",
-                "return": "bool",
-                "args": []
-            },
-            "GetStunDuration": {
-                "description": "Get the duration of available stuns.",
-                "return": "float",
-                "args": [
-                    "bool"
-                ],
-                "arg_names": [
-                    "bCurrentlyAvailable"
-                ]
-            },
-            "GetMaxMana": {
-                "description": "Get a bot's maximum mana.",
-                "return": "int",
-                "args": []
-            },
-            "HasSilence": {
-                "description": "Does the bot have a silence available?",
-                "return": "bool",
-                "args": [
-                    "bool"
-                ],
-                "arg_names": [
-                    "bCurrentlyAvailable"
-                ]
-            },
-            "GetActiveModeDesire": {
-                "description": "Get the desire value of the active mode",
-                "return": "float",
-                "args": []
-            },
-            "Action_SellItem": {
-                "description": "Tell a bot to sell an item.",
-                "return": "void",
-                "args": [
-                    "handle"
-                ],
-                "arg_names": [
-                    "hItem"
-                ]
-            },
-            "IsBlind": {
-                "description": "Is the unit blind?",
-                "return": "bool",
-                "args": []
-            },
-            "IsRooted": {
-                "description": "Is the unit rooted?",
-                "return": "bool",
-                "args": []
-            },
-            "GetLastSeenLocation": {
-                "description": "Get the location at which this unit was last seen.",
-                "return": "vector",
-                "args": []
-            },
-            "GetAbilityByName": {
-                "description": "Get a bot's ability by name",
-                "return": "handle",
-                "args": [
-                    "cstring"
-                ],
-                "arg_names": [
-                    "pszAbilityName"
-                ]
-            },
-            "HasBuyback": {
-                "description": "Can the bot buy back?",
-                "return": "bool",
-                "args": []
-            },
-            "IsFort": {
-                "description": "Is this unit a fort (the main ancient building)?",
-                "return": "bool",
-                "args": []
-            },
-            "IsChanneling": {
-                "description": "Is this bot currently channeling an ability?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_PickUpItem": {
-                "description": "Tell a bot to pick up a dropped item.",
-                "return": "void",
-                "args": [
-                    "handle"
-                ],
-                "arg_names": [
-                    "hItem"
-                ]
-            },
-            "IsIllusion": {
-                "description": "Is this unit an illusion?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_UseAbility": {
-                "description": "Tell a bot to use a non-targeted ability.",
-                "return": "void",
-                "args": [
-                    "handle"
-                ],
-                "arg_names": [
-                    "hAbility"
-                ]
-            },
-            "Action_UseAbilityOnLocation": {
-                "description": "Tell a bot to use a location-targeted ability.",
-                "return": "void",
-                "args": [
-                    "handle",
-                    "vector"
-                ],
-                "arg_names": [
-                    "hAbility",
-                    "location"
-                ]
-            },
-            "GetNearbyTowers": {
-                "description": "Get all nearby towers.",
-                "return": "variant",
-                "args": [
-                    "int",
-                    "bool"
-                ],
-                "arg_names": [
-                    "nRadius",
-                    "bEnemies"
-                ]
-            },
-            "Action_UseAbilityOnTree": {
-                "description": "Tell a bot to use a tree-targeted ability.",
-                "return": "void",
-                "args": [
-                    "handle",
-                    "int"
-                ],
-                "arg_names": [
-                    "hAbility",
-                    "iTree"
-                ]
-            },
-            "IsDisarmed": {
-                "description": "Is the unit disarmed?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_Buyback": {
-                "description": "Tell a bot to buy back into the game.",
-                "return": "void",
-                "args": []
-            },
-            "Action_PickUpRune": {
-                "description": "Tell a bot to pick up a rune.",
-                "return": "void",
-                "args": [
-                    "handle"
-                ],
-                "arg_names": [
-                    "hTarget"
-                ]
-            },
-            "IsSpeciallyDeniable": {
-                "description": "Is the unit specially deniable?",
-                "return": "bool",
-                "args": []
-            },
-            "Action_LevelAbility": {
-                "description": "Tell a bot to level up a specific ability.",
-                "return": "void",
-                "args": [
-                    "cstring"
-                ],
-                "arg_names": [
-                    "pszAbilityName"
-                ]
-            },
-            "CanBeSeen": {
-                "description": "Can we currently see this bot?  Always true for bots on our team.  Many function will not return valid data without this being true.",
-                "return": "bool",
-                "args": []
-            },
-            "GetAssignedLane": {
-                "description": "Get the lane that a unit is assigned to.",
-                "return": "int",
-                "args": []
-            },
-            "GetLocation": {
-                "description": "Geta  bot's 2D location.",
-                "return": "vector",
-                "args": []
-            },
-            "IsEvadeDisabled": {
-                "description": "Is the unit evade disabled?",
-                "return": "bool",
-                "args": []
-            },
-            "GetActiveMode": {
-                "description": "Get the active mode ID",
-                "return": "int",
-                "args": []
-            },
-            "IsDominated": {
-                "description": "Is the unit dominated?",
-                "return": "bool",
-                "args": []
-            },
-            "GetHealth": {
-                "description": "Get a bot's current health.",
-                "return": "int",
-                "args": []
-            },
-            "GetMaxHealth": {
-                "description": "Get a bot's maximum health.",
-                "return": "int",
-                "args": []
-            },
-            "GetMana": {
-                "description": "Get a bot's current mana.",
-                "return": "int",
-                "args": []
-            },
-            "GetRespawnTime": {
-                "description": "Get the time in seconds until a bot respawns.",
-                "return": "float",
-                "args": []
-            },
-            "IsUsingAbility": {
-                "description": "Is this bot currently casting an ability?",
-                "return": "bool",
-                "args": []
-            },
-            "GetStashValue": {
-                "description": "Get the value of the items in the bot's stash.",
-                "return": "int",
-                "args": []
-            },
-            "HasMinistunOnAttack": {
-                "description": "Does the bot have ministuns on attack?",
-                "return": "bool",
-                "args": []
-            },
-            "IsAttackImmune": {
-                "description": "Is the unit attack immune?",
-                "return": "bool",
-                "args": []
-            },
-            "GetGold": {
-                "description": "Get the bot's current gold.",
-                "return": "int",
-                "args": []
-            },
-            "GetFacing": {
-                "description": "Get a bot's facing (0-255).",
-                "return": "int",
-                "args": []
-            },
-            "GetItemInSlot": {
-                "description": "Get a bot's item by slot",
-                "return": "handle",
-                "args": [
-                    "int"
-                ],
-                "arg_names": [
-                    "nSlot"
-                ]
-            },
-            "GetGroundHeight": {
-                "description": "Get a bot's height value.",
-                "return": "int",
-                "args": []
-            },
-            "GetTimeSinceLastSeen": {
-                "description": "Get how long it's been since the unit was seen.",
-                "return": "float",
-                "args": []
-            },
-            "GetAttackTarget": {
-                "description": "Get the unit being attacked.",
-                "return": "handle",
-                "args": []
-            },
-            "IsMuted": {
-                "description": "Is the unit muted?",
-                "return": "bool",
-                "args": []
-            },
-            "IsHexed": {
-                "description": "Is the unit hexed?",
-                "return": "bool",
-                "args": []
-            },
-            "HasBlink": {
-                "description": "Does the bot have a blink available?",
-                "return": "bool",
-                "args": [
-                    "bool"
-                ],
-                "arg_names": [
-                    "bCurrentlyAvailable"
-                ]
-            },
-            "SetTarget": {
-                "description": "Set the current target of this bot. Causes no actions, but is used for coordinating between modes and ability/item usage.",
-                "return": "void",
-                "args": [
-                    "handle"
-                ],
-                "arg_names": [
-                    ""
-                ]
-            },
-            "IsInvulnerable": {
-                "description": "Is the unit invulnerable?",
-                "return": "bool",
-                "args": []
-            },
-            "IsBlockDisabled": {
-                "description": "Is the unit block disabled?",
-                "return": "bool",
-                "args": []
-            },
-            "IsUnableToMiss": {
-                "description": "Is the unit unable to miss?",
-                "return": "bool",
-                "args": []
-            },
-            "GetNearbyCreeps": {
-                "description": "Get nearby creeps that we can see.",
-                "return": "variant",
-                "args": [
-                    "int",
-                    "bool"
-                ],
-                "arg_names": [
-                    "nRadius",
-                    "bEnemies"
-                ]
-            },
-            "GetSlowDuration": {
-                "description": "Get the duration of available slows.",
-                "return": "float",
-                "args": [
-                    "bool"
-                ],
-                "arg_names": [
-                    "bCurrentlyAvailable"
-                ]
-            },
-            "WasRecentlyDamagedByAnyHero": {
-                "description": "Was the unit recently damaged by any enemy?",
-                "return": "bool",
-                "args": [
-                    "float"
-                ],
-                "arg_names": [
-                    "fTime"
-                ]
-            },
-            "HasScepter": {
-                "description": "Does the unit have Aghanim's Scepter?",
-                "return": "bool",
-                "args": []
-            },
-            "WasRecentlyDamagedByHero": {
-                "description": "Was the unit recently damaged by an specific enemy?",
-                "return": "bool",
-                "args": [
-                    "handle",
-                    "float"
-                ],
-                "arg_names": [
-                    "hHero",
-                    "fTime"
-                ]
-            },
-            "GetTarget": {
-                "description": "Get the current target of this bot.",
-                "return": "handle",
-                "args": []
-            },
-            "TimeSinceDamagedByAnyHero": {
-                "description": "How long as it been since the unit was damaged by any enemy?",
-                "return": "float",
-                "args": []
-            },
-            "TimeSinceDamagedByHero": {
-                "description": "How long as it been since the unit was damaged by an specific enemy?",
-                "return": "float",
-                "args": [
-                    "handle"
-                ],
-                "arg_names": [
-                    "hHero"
-                ]
-            },
-            "DistanceFromFountain": {
-                "description": "Gets the unit's straight-line distance from the team's fountain (0 is in the fountain).",
-                "return": "int",
-                "args": []
-            },
-            "DistanceFromSideShop": {
-                "description": "Gets the unit's straight-line distance from the closest side shop (0 is in a side shop).",
-                "return": "int",
-                "args": []
-            },
-            "DistanceFromSecretShop": {
-                "description": "Gets the unit's straight-line distance from the closest secret shop (0 is in a secret shop).",
-                "return": "int",
-                "args": []
-            },
-            "SetNextItemPurchaseValue": {
-                "description": "Sets the value of the next item the unit wants to purchase.",
-                "return": "void",
-                "args": [
-                    "int"
-                ],
-                "arg_names": [
-                    "nGold"
-                ]
-            },
-            "GetNextItemPurchaseValue": {
-                "description": "Gets the purchase value of the next item the unit wants to purchase.",
-                "return": "int",
-                "args": []
-            },
-            "GetEstimatedDamageToTarget": {
-                "description": "Get an estimate of how much damage a bot can do in the specified timeframe.  Takes into account item and ability usage based on current mana/cooldowns for allies, for enemies it assumes all items/abilities are available.  Uses no positional/situation info.  Basically asks 'How scary is X to Y?'.",
-                "return": "int",
                 "args": [
                     "bool",
-                    "handle",
+                    "bool",
+                    "vector",
+                    "int",
+                    "int",
                     "float",
                     "int"
                 ],
+                "description": "Finds optimal AoE location that overlaps heroes/creeps.",
+                "return": "variant"
+            },
+            "GetAbilityByName": {
+                "arg_names": [
+                    "pszAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get a bot's ability by name",
+                "return": "handle"
+            },
+            "GetActiveMode": {
+                "args": [],
+                "description": "Get the active mode ID",
+                "return": "int"
+            },
+            "GetActiveModeDesire": {
+                "args": [],
+                "description": "Get the desire value of the active mode",
+                "return": "float"
+            },
+            "GetActualDamage": {
+                "arg_names": [
+                    "nDamage",
+                    "eDamageType"
+                ],
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Get damage value after reductions.",
+                "return": "int"
+            },
+            "GetAssignedLane": {
+                "args": [],
+                "description": "Get the lane that a unit is assigned to.",
+                "return": "int"
+            },
+            "GetAttackTarget": {
+                "args": [],
+                "description": "Get the unit being attacked.",
+                "return": "handle"
+            },
+            "GetCourierValue": {
+                "args": [],
+                "description": "Get the value of items on the courier owned by this bot.",
+                "return": "int"
+            },
+            "GetDifficulty": {
+                "args": [],
+                "description": "Get the bot's difficulty settings.",
+                "return": "int"
+            },
+            "GetEstimatedDamageToTarget": {
                 "arg_names": [
                     "bCurrentlyAvailable",
                     "hTarget",
                     "fDuration",
                     "nDamageTypes"
-                ]
-            },
-            "HasInvisibility": {
-                "description": "Does the bot have invisibility available?",
-                "return": "bool",
+                ],
                 "args": [
+                    "bool",
+                    "handle",
+                    "float",
+                    "int"
+                ],
+                "description": "Get an estimate of how much damage a bot can do in the specified timeframe.  Takes into account item and ability usage based on current mana/cooldowns for allies, for enemies it assumes all items/abilities are available.  Uses no positional/situation info.  Basically asks 'How scary is X to Y?'.",
+                "return": "int"
+            },
+            "GetExtrapolatedLocation": {
+                "arg_names": [
+                    "fDelay"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Extrapolates their location in the future, based on past movement.",
+                "return": "vector"
+            },
+            "GetFacing": {
+                "args": [],
+                "description": "Get a bot's facing (0-255).",
+                "return": "int"
+            },
+            "GetGold": {
+                "args": [],
+                "description": "Get the bot's current gold.",
+                "return": "int"
+            },
+            "GetGroundHeight": {
+                "args": [],
+                "description": "Get a bot's height value.",
+                "return": "int"
+            },
+            "GetHealth": {
+                "args": [],
+                "description": "Get a bot's current health.",
+                "return": "int"
+            },
+            "GetItemInSlot": {
+                "arg_names": [
+                    "nSlot"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get a bot's item by slot",
+                "return": "handle"
+            },
+            "GetLastSeenLocation": {
+                "args": [],
+                "description": "Get the location at which this unit was last seen.",
+                "return": "vector"
+            },
+            "GetLocation": {
+                "args": [],
+                "description": "Geta  bot's 2D location.",
+                "return": "vector"
+            },
+            "GetMana": {
+                "args": [],
+                "description": "Get a bot's current mana.",
+                "return": "int"
+            },
+            "GetMaxHealth": {
+                "args": [],
+                "description": "Get a bot's maximum health.",
+                "return": "int"
+            },
+            "GetMaxMana": {
+                "args": [],
+                "description": "Get a bot's maximum mana.",
+                "return": "int"
+            },
+            "GetMovementDirectionStability": {
+                "args": [],
+                "description": "Indicates how consistent the unit's movement has been over the last few seconds.  1 is a straight line, 0 is serpentine.",
+                "return": "float"
+            },
+            "GetNearbyCreeps": {
+                "arg_names": [
+                    "nRadius",
+                    "bEnemies"
+                ],
+                "args": [
+                    "int",
                     "bool"
                 ],
-                "arg_names": [
-                    "bCurrentlyAvailable"
-                ]
+                "description": "Get nearby creeps that we can see.",
+                "return": "variant"
             },
             "GetNearbyHeroes": {
-                "description": "Get nearby heroes that we can see in a mode.  Can specify a bot mode when querying allies.  BOT_MODE_NONE does no mode filtering.",
-                "return": "variant",
+                "arg_names": [
+                    "nRadius",
+                    "bEnemies",
+                    "eBotMode"
+                ],
                 "args": [
                     "int",
                     "bool",
                     "int"
                 ],
+                "description": "Get nearby heroes that we can see in a mode.  Can specify a bot mode when querying allies.  BOT_MODE_NONE does no mode filtering.",
+                "return": "variant"
+            },
+            "GetNearbyTowers": {
                 "arg_names": [
                     "nRadius",
-                    "bEnemies",
-                    "eBotMode"
-                ]
-            },
-            "GetMovementDirectionStability": {
-                "description": "Indicates how consistent the unit's movement has been over the last few seconds.  1 is a straight line, 0 is serpentine.",
-                "return": "float",
-                "args": []
-            },
-            "GetActualDamage": {
-                "description": "Get damage value after reductions.",
-                "return": "int",
+                    "bEnemies"
+                ],
                 "args": [
                     "int",
+                    "bool"
+                ],
+                "description": "Get all nearby towers.",
+                "return": "variant"
+            },
+            "GetNextItemPurchaseValue": {
+                "args": [],
+                "description": "Gets the purchase value of the next item the unit wants to purchase.",
+                "return": "int"
+            },
+            "GetPlayer": {
+                "args": [],
+                "description": "Get the unit's controlling player number.",
+                "return": "int"
+            },
+            "GetRespawnTime": {
+                "args": [],
+                "description": "Get the time in seconds until a bot respawns.",
+                "return": "float"
+            },
+            "GetSlowDuration": {
+                "arg_names": [
+                    "bCurrentlyAvailable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Get the duration of available slows.",
+                "return": "float"
+            },
+            "GetStashValue": {
+                "args": [],
+                "description": "Get the value of the items in the bot's stash.",
+                "return": "int"
+            },
+            "GetStunDuration": {
+                "arg_names": [
+                    "bCurrentlyAvailable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Get the duration of available stuns.",
+                "return": "float"
+            },
+            "GetTarget": {
+                "args": [],
+                "description": "Get the current target of this bot.",
+                "return": "handle"
+            },
+            "GetTimeSinceLastSeen": {
+                "args": [],
+                "description": "Get how long it's been since the unit was seen.",
+                "return": "float"
+            },
+            "GetUnitName": {
+                "args": [],
+                "description": "Get the unit's name.",
+                "return": "cstring"
+            },
+            "GetVelocity": {
+                "args": [],
+                "description": "Get the velocity the unit has moved over the last two seconds.",
+                "return": "vector"
+            },
+            "HasBlink": {
+                "arg_names": [
+                    "bCurrentlyAvailable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Does the bot have a blink available?",
+                "return": "bool"
+            },
+            "HasBuyback": {
+                "args": [],
+                "description": "Can the bot buy back?",
+                "return": "bool"
+            },
+            "HasInvisibility": {
+                "arg_names": [
+                    "bCurrentlyAvailable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Does the bot have invisibility available?",
+                "return": "bool"
+            },
+            "HasMinistunOnAttack": {
+                "args": [],
+                "description": "Does the bot have ministuns on attack?",
+                "return": "bool"
+            },
+            "HasScepter": {
+                "args": [],
+                "description": "Does the unit have Aghanim's Scepter?",
+                "return": "bool"
+            },
+            "HasSilence": {
+                "arg_names": [
+                    "bCurrentlyAvailable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Does the bot have a silence available?",
+                "return": "bool"
+            },
+            "IsAlive": {
+                "args": [],
+                "description": "Is a bot alive?",
+                "return": "bool"
+            },
+            "IsAttackImmune": {
+                "args": [],
+                "description": "Is the unit attack immune?",
+                "return": "bool"
+            },
+            "IsBlind": {
+                "args": [],
+                "description": "Is the unit blind?",
+                "return": "bool"
+            },
+            "IsBlockDisabled": {
+                "args": [],
+                "description": "Is the unit block disabled?",
+                "return": "bool"
+            },
+            "IsBuilding": {
+                "args": [],
+                "description": "Is this unit a building?",
+                "return": "bool"
+            },
+            "IsChanneling": {
+                "args": [],
+                "description": "Is this bot currently channeling an ability?",
+                "return": "bool"
+            },
+            "IsCreep": {
+                "args": [],
+                "description": "Is this unit a creep?",
+                "return": "bool"
+            },
+            "IsDisarmed": {
+                "args": [],
+                "description": "Is the unit disarmed?",
+                "return": "bool"
+            },
+            "IsDominated": {
+                "args": [],
+                "description": "Is the unit dominated?",
+                "return": "bool"
+            },
+            "IsEvadeDisabled": {
+                "args": [],
+                "description": "Is the unit evade disabled?",
+                "return": "bool"
+            },
+            "IsFort": {
+                "args": [],
+                "description": "Is this unit a fort (the main ancient building)?",
+                "return": "bool"
+            },
+            "IsHero": {
+                "args": [],
+                "description": "Is this unit a hero?",
+                "return": "bool"
+            },
+            "IsHexed": {
+                "args": [],
+                "description": "Is the unit hexed?",
+                "return": "bool"
+            },
+            "IsIllusion": {
+                "args": [],
+                "description": "Is this unit an illusion?",
+                "return": "bool"
+            },
+            "IsInvulnerable": {
+                "args": [],
+                "description": "Is the unit invulnerable?",
+                "return": "bool"
+            },
+            "IsMagicImmune": {
+                "args": [],
+                "description": "Is the unit magic immune?",
+                "return": "bool"
+            },
+            "IsMuted": {
+                "args": [],
+                "description": "Is the unit muted?",
+                "return": "bool"
+            },
+            "IsNightmared": {
+                "args": [],
+                "description": "Is the unit nightmared?",
+                "return": "bool"
+            },
+            "IsRooted": {
+                "args": [],
+                "description": "Is the unit rooted?",
+                "return": "bool"
+            },
+            "IsSilenced": {
+                "args": [],
+                "description": "Is the unit silenced?",
+                "return": "bool"
+            },
+            "IsSpeciallyDeniable": {
+                "args": [],
+                "description": "Is the unit specially deniable?",
+                "return": "bool"
+            },
+            "IsStunned": {
+                "args": [],
+                "description": "Is the unit stunned?",
+                "return": "bool"
+            },
+            "IsTower": {
+                "args": [],
+                "description": "Is this unit a tower?",
+                "return": "bool"
+            },
+            "IsUnableToMiss": {
+                "args": [],
+                "description": "Is the unit unable to miss?",
+                "return": "bool"
+            },
+            "IsUsingAbility": {
+                "args": [],
+                "description": "Is this bot currently casting an ability?",
+                "return": "bool"
+            },
+            "SetNextItemPurchaseValue": {
+                "arg_names": [
+                    "nGold"
+                ],
+                "args": [
                     "int"
                 ],
+                "description": "Sets the value of the next item the unit wants to purchase.",
+                "return": "void"
+            },
+            "SetTarget": {
                 "arg_names": [
-                    "nDamage",
-                    "eDamageType"
-                ]
+                    ""
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Set the current target of this bot. Causes no actions, but is used for coordinating between modes and ability/item usage.",
+                "return": "void"
+            },
+            "TimeSinceDamagedByAnyHero": {
+                "args": [],
+                "description": "How long as it been since the unit was damaged by any enemy?",
+                "return": "float"
+            },
+            "TimeSinceDamagedByHero": {
+                "arg_names": [
+                    "hHero"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "How long as it been since the unit was damaged by an specific enemy?",
+                "return": "float"
+            },
+            "UsingItemBreaksInvisibility": {
+                "args": [],
+                "description": "Will using an item break invisibiilty?",
+                "return": "bool"
+            },
+            "WasRecentlyDamagedByAnyHero": {
+                "arg_names": [
+                    "fTime"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Was the unit recently damaged by any enemy?",
+                "return": "bool"
+            },
+            "WasRecentlyDamagedByHero": {
+                "arg_names": [
+                    "hHero",
+                    "fTime"
+                ],
+                "args": [
+                    "handle",
+                    "float"
+                ],
+                "description": "Was the unit recently damaged by an specific enemy?",
+                "return": "bool"
             }
         }
     },
-    "CDOTABaseAbility_BotScript": {
-        "description": "",
-        "functions": {
-            "GetTargetFlags": {
-                "description": "Get the flags for this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "IsStolen": {
-                "description": "Is this the stolen version of an Ability?",
-                "return": "bool",
-                "args": []
-            },
-            "IsTrained": {
-                "description": "Is this Ability Trained at all?",
-                "return": "bool",
-                "args": []
-            },
-            "GetLevel": {
-                "description": "Get the current level of the Ability.",
-                "return": "int",
-                "args": []
-            },
-            "GetChannelTime": {
-                "description": "How long does this Ability channel?",
-                "return": "float",
-                "args": []
-            },
-            "ToggleAutoCast": {
-                "description": "Toggle the autocast state of this Ability.",
-                "return": "void",
-                "args": []
-            },
-            "GetCastRange": {
-                "description": "Gets the cast range of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "GetAutoCastState": {
-                "description": "Get the autocast state of this Ability.",
-                "return": "bool",
-                "args": []
-            },
-            "GetName": {
-                "description": "Get the name of this Ability.",
-                "return": "cstring",
-                "args": []
-            },
-            "GetCaster": {
-                "description": "Get the unit who owns this Ability.",
-                "return": "handle",
-                "args": []
-            },
-            "GetCooldownTimeRemaining": {
-                "description": "Get the cooldown time remaning for this Ability.",
-                "return": "float",
-                "args": []
-            },
-            "ProcsMagicStick": {
-                "description": "Does this Ability proc Magic Stick?",
-                "return": "bool",
-                "args": []
-            },
-            "IsHidden": {
-                "description": "Is this Ability currently hidden?",
-                "return": "bool",
-                "args": []
-            },
-            "CanAbilityBeUpgraded": {
-                "description": "Can this Ability be upgraded?",
-                "return": "bool",
-                "args": []
-            },
-            "GetDamageType": {
-                "description": "Get the damage type of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "GetHeroLevelRequiredToUpgrade": {
-                "description": "Get the Hero level required to upgrade this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "GetSpecialValueInt": {
-                "description": "Get an int internal data parameter of this Abilty.",
-                "return": "int",
-                "args": [
-                    "cstring"
-                ],
-                "arg_names": [
-                    "pszKey"
-                ]
-            },
-            "UpgradeAbility": {
-                "description": "Upgrade this Ability by 1 level.",
-                "return": "void",
-                "args": []
-            },
-            "GetMaxLevel": {
-                "description": "Get the max level of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "GetChannelledManaCostPerSecond": {
-                "description": "Get the mana cost per second of this Ability while channeling it.",
-                "return": "int",
-                "args": []
-            },
-            "GetSpecialValueFloat": {
-                "description": "Get an int internal data parameter of this Abilty.",
-                "return": "float",
-                "args": [
-                    "cstring"
-                ],
-                "arg_names": [
-                    "pszKey"
-                ]
-            },
-            "IsCooldownReady": {
-                "description": "Is this Ability off cooldown?",
-                "return": "bool",
-                "args": []
-            },
-            "GetCastPoint": {
-                "description": "Gets the cast point of this Ability.",
-                "return": "float",
-                "args": []
-            },
-            "GetTargetType": {
-                "description": "Get the target type of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "IsItem": {
-                "description": "Is this an Item?",
-                "return": "bool",
-                "args": []
-            },
-            "IsAttributeBonus": {
-                "description": "Is this Ability the attribute bonus?",
-                "return": "bool",
-                "args": []
-            },
-            "GetBehavior": {
-                "description": "Get the behavior type of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "IsFullyCastable": {
-                "description": "Does the caster have the mana to use this Ability, and is it off cooldown?",
-                "return": "bool",
-                "args": []
-            },
-            "GetTargetTeam": {
-                "description": "Get the target team of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "GetAbilityDamage": {
-                "description": "Get the basic damage value of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "GetManaCost": {
-                "description": "Get the mana cost of this Ability.",
-                "return": "int",
-                "args": []
-            },
-            "IsPassive": {
-                "description": "Is this a passive Ability?",
-                "return": "bool",
-                "args": []
-            },
-            "IsToggle": {
-                "description": "Is this a toggled Ability?",
-                "return": "bool",
-                "args": []
-            },
-            "IsActivated": {
-                "description": "Is this Ability currently activated?",
-                "return": "bool",
-                "args": []
-            },
-            "IsChanneling": {
-                "description": "Is this Ability being channelled?",
-                "return": "bool",
-                "args": []
-            },
-            "IsOwnersManaEnough": {
-                "description": "Does the caster have the mana to use this Ability?",
-                "return": "bool",
-                "args": []
-            },
-            "GetToggleState": {
-                "description": "Get the toggle state of this Ability.",
-                "return": "bool",
-                "args": []
-            },
-            "IsInAbilityPhase": {
-                "description": "Is this Ability being cast?",
-                "return": "bool",
-                "args": []
-            },
-            "IsStealable": {
-                "description": "Can this Ability be stolen?",
-                "return": "bool",
-                "args": []
-            }
-        }
+    "CDOTA_TeamCommander": {
+        "description": "A Dota Bot Team Commander",
+        "functions": {}
     },
     "Global": {
         "functions": {
-            "GetWorldBounds": {
-                "description": "Gets the minimum and maximum bounds of the world.",
-                "return": "variant",
-                "args": []
-            },
-            "GetTeamMember": {
-                "description": "Get a member of a team.",
-                "return": "handle",
-                "args": [
-                    "int",
-                    "int"
-                ]
-            },
-            "DotaTime": {
-                "description": "Gets the game time -- matches the in-game clock.  Pauses with game pause.",
-                "return": "float",
-                "args": []
-            },
-            "IsItemPurchasedFromSecretShop": {
-                "description": "Can the named item can be purchased from the secret shop?",
-                "return": "bool",
+            "CMBanHero": {
                 "args": [
                     "cstring"
-                ]
-            },
-            "IsInCMPickPhase": {
-                "description": "Is Captain's Mode in Pick phase?",
-                "return": "bool",
-                "args": []
-            },
-            "IsItemPurchasedFromSideShop": {
-                "description": "Can the named item can be purchased from the side shop?",
-                "return": "bool",
-                "args": [
-                    "cstring"
-                ]
-            },
-            "IsLocationPassable": {
-                "description": "Can the specified location currently be pathed through.",
-                "return": "bool",
-                "args": [
-                    "vector"
-                ]
-            },
-            "IsCMPickedHero": {
-                "description": "Has the named hero been picked in Captain's Mode?",
-                "return": "bool",
-                "args": [
-                    "int",
-                    "cstring"
-                ]
-            },
-            "GetGameMode": {
-                "description": "Gets the game mode type.",
-                "return": "int",
-                "args": []
-            },
-            "GetItemStockCount": {
-                "description": "Get the current stock count for the named item.",
-                "return": "int",
-                "args": [
-                    "cstring"
-                ]
-            },
-            "GetHeroPickState": {
-                "description": "Gets the current phase of hero picking.",
-                "return": "int",
-                "args": []
-            },
-            "DebugDrawCircle": {
-                "description": "Draws a circle for one frame",
-                "return": "void",
-                "args": [
-                    "vector",
-                    "float",
-                    "int",
-                    "int",
-                    "int"
-                ]
-            },
-            "DebugDrawLine": {
-                "description": "Draws a line for one frame",
-                "return": "void",
-                "args": [
-                    "vector",
-                    "vector",
-                    "int",
-                    "int",
-                    "int"
-                ]
-            },
-            "GetUnitToUnitDistance": {
-                "description": "Get the distance between two units.",
-                "return": "float",
-                "args": [
-                    "handle",
-                    "handle"
-                ]
-            },
-            "GetPushLaneDesire": {
-                "description": "Gets the team-wide desire to push a lane.",
-                "return": "float",
-                "args": [
-                    "int"
-                ]
-            },
-            "Clamp": {
-                "description": "Clamps the value between the two supplied values.",
-                "return": "float",
-                "args": [
-                    "float",
-                    "float",
-                    "float"
-                ]
-            },
-            "Min": {
-                "description": "Returns the smaller of the two supplied values.",
-                "return": "float",
-                "args": [
-                    "float",
-                    "float"
-                ]
-            },
-            "GetTeam": {
-                "description": "Get the team on which script is currently being run.",
-                "return": "int",
-                "args": []
-            },
-            "GetFarmLaneDesire": {
-                "description": "Gets the team-wide desire to farm a lane.",
-                "return": "float",
-                "args": [
-                    "int"
-                ]
-            },
-            "GetBot": {
-                "description": "Get the bot on which script is currently being run.",
-                "return": "handle",
-                "args": []
-            },
-            "SelectHero": {
-                "description": "Selects a hero for a player.",
-                "return": "void",
-                "args": [
-                    "int",
-                    "cstring"
-                ]
-            },
-            "RandomVector": {
-                "description": "Get a random 2D vector of the specified length.",
-                "return": "vector",
-                "args": [
-                    "float"
-                ]
-            },
-            "GetRoamTarget": {
-                "description": "Gets the target of the team-wide roam desire.",
-                "return": "handle",
-                "args": []
-            },
-            "IsPlayerInHeroSelectionControl": {
-                "description": "Is this player allowed to currently allowed to select a hero?",
-                "return": "bool",
-                "args": [
-                    "int"
-                ]
-            },
-            "GetScriptDirectory": {
-                "description": "Get the directory from which bot scripts are being run.",
-                "return": "cstring",
-                "args": []
-            },
-            "GetRuneTimeSinceSeen": {
-                "description": "Gets the time since we've seen the specified rune.",
-                "return": "float",
-                "args": [
-                    "int"
-                ]
-            },
-            "RandomInt": {
-                "description": "Get a random int within a range",
-                "return": "int",
-                "args": [
-                    "int",
-                    "int"
-                ]
-            },
-            "RandomFloat": {
-                "description": "Get a random float within a range",
-                "return": "float",
-                "args": [
-                    "float",
-                    "float"
-                ]
-            },
-            "RemapVal": {
-                "description": "Linearly remaps X from A,B to C,D",
-                "return": "float",
-                "args": [
-                    "float",
-                    "float",
-                    "float",
-                    "float",
-                    "float"
-                ]
-            },
-            "RollPercentage": {
-                "description": "Rolls a number from 1 to 100 and returns true if the roll is less than or equal to the number specified",
-                "return": "bool",
-                "args": [
-                    "int"
-                ]
-            },
-            "GetCMCaptain": {
-                "description": "Gets player ID of the Captain's Mode captain.",
-                "return": "int",
-                "args": []
-            },
-            "GetRoamDesire": {
-                "description": "Gets the team-wide desire to roam to a target.",
-                "return": "float",
-                "args": []
-            },
-            "GetRuneStatus": {
-                "description": "Gets the status of the specified rune.",
-                "return": "<unknown>",
-                "args": [
-                    "int"
-                ]
+                ],
+                "description": "Ban a hero in Captain's mode by name.",
+                "return": "void"
             },
             "CMPickHero": {
-                "description": "Pick a hero in Captain's mode by name.",
-                "return": "void",
                 "args": [
                     "cstring"
-                ]
+                ],
+                "description": "Pick a hero in Captain's mode by name.",
+                "return": "void"
             },
-            "Max": {
-                "description": "Returns the smaller of the two supplied values.",
-                "return": "float",
+            "Clamp": {
                 "args": [
                     "float",
+                    "float",
                     "float"
-                ]
+                ],
+                "description": "Clamps the value between the two supplied values.",
+                "return": "float"
             },
-            "GetRoshanDesire": {
-                "description": "Gets the team-wide desire to kill Roshan.",
-                "return": "float",
-                "args": []
-            },
-            "GetItemCost": {
-                "description": "Get the cost of an item by name.",
-                "return": "int",
+            "DebugDrawCircle": {
                 "args": [
-                    "cstring"
-                ]
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int"
+                ],
+                "description": "Draws a circle for one frame",
+                "return": "void"
             },
-            "GetUnitToLocationDistance": {
-                "description": "Get the distance between a unit and a location.",
-                "return": "float",
+            "DebugDrawLine": {
                 "args": [
-                    "handle",
-                    "vector"
-                ]
-            },
-            "GetGameStateTimeRemaining": {
-                "description": "Gets how much time is remaining in the current game state.",
-                "return": "float",
-                "args": []
+                    "vector",
+                    "vector",
+                    "int",
+                    "int",
+                    "int"
+                ],
+                "description": "Draws a line for one frame",
+                "return": "void"
             },
             "DebugDrawText": {
-                "description": "Draws text for one frame",
-                "return": "void",
                 "args": [
                     "float",
                     "float",
@@ -1175,114 +948,341 @@
                     "int",
                     "int",
                     "int"
-                ]
+                ],
+                "description": "Draws text for one frame",
+                "return": "void"
+            },
+            "DotaTime": {
+                "args": [],
+                "description": "Gets the game time -- matches the in-game clock.  Pauses with game pause.",
+                "return": "float"
             },
             "GameTime": {
+                "args": [],
                 "description": "Gets the time since the hero picking phase started.  Pauses with game pause.",
-                "return": "float",
-                "args": []
+                "return": "float"
             },
-            "RealTime": {
-                "description": "Gets the real-world time since the app has started.  Does not pause with game pause.",
-                "return": "float",
-                "args": []
+            "GetBot": {
+                "args": [],
+                "description": "Get the bot on which script is currently being run.",
+                "return": "handle"
             },
-            "GetGameState": {
-                "description": "Gets the current state of the game.",
-                "return": "int",
-                "args": []
-            },
-            "GetSelectedHeroName": {
-                "description": "Gets the name of the hero selected by a player.",
-                "return": "cstring",
-                "args": [
-                    "int"
-                ]
-            },
-            "IsInCMBanPhase": {
-                "description": "Is Captain's Mode in Ban phase?",
-                "return": "bool",
-                "args": []
-            },
-            "GetHeightLevel": {
-                "description": "Get the height level (1 through 5) of the specified location.",
-                "return": "int",
-                "args": [
-                    "vector"
-                ]
-            },
-            "CMBanHero": {
-                "description": "Ban a hero in Captain's mode by name.",
-                "return": "void",
-                "args": [
-                    "cstring"
-                ]
+            "GetCMCaptain": {
+                "args": [],
+                "description": "Gets player ID of the Captain's Mode captain.",
+                "return": "int"
             },
             "GetCMPhaseTimeRemaining": {
+                "args": [],
                 "description": "Get the amount of time remaining in the current Captain's Mode phase.",
-                "return": "float",
-                "args": []
-            },
-            "SetCMCaptain": {
-                "description": "Sets a player to be Captain's Mode captain.",
-                "return": "void",
-                "args": [
-                    "int"
-                ]
-            },
-            "IsCMBannedHero": {
-                "description": "Has the named hero been banned in Captain's Mode?",
-                "return": "bool",
-                "args": [
-                    "cstring"
-                ]
-            },
-            "GetRuneType": {
-                "description": "Gets the type of the specified rune, if known.",
-                "return": "int",
-                "args": [
-                    "int"
-                ]
+                "return": "float"
             },
             "GetDefendLaneDesire": {
-                "description": "Gets the team-wide desire to defend a lane.",
-                "return": "float",
                 "args": [
                     "int"
-                ]
+                ],
+                "description": "Gets the team-wide desire to defend a lane.",
+                "return": "float"
+            },
+            "GetFarmLaneDesire": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the team-wide desire to farm a lane.",
+                "return": "float"
+            },
+            "GetGameMode": {
+                "args": [],
+                "description": "Gets the game mode type.",
+                "return": "int"
+            },
+            "GetGameState": {
+                "args": [],
+                "description": "Gets the current state of the game.",
+                "return": "int"
+            },
+            "GetGameStateTimeRemaining": {
+                "args": [],
+                "description": "Gets how much time is remaining in the current game state.",
+                "return": "float"
+            },
+            "GetHeightLevel": {
+                "args": [
+                    "vector"
+                ],
+                "description": "Get the height level (1 through 5) of the specified location.",
+                "return": "int"
+            },
+            "GetHeroPickState": {
+                "args": [],
+                "description": "Gets the current phase of hero picking.",
+                "return": "int"
+            },
+            "GetItemCost": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the cost of an item by name.",
+                "return": "int"
+            },
+            "GetItemStockCount": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the current stock count for the named item.",
+                "return": "int"
             },
             "GetLocationAlongLane": {
-                "description": "Get the location along the specified lane path.",
-                "return": "vector",
                 "args": [
                     "int",
                     "float"
-                ]
+                ],
+                "description": "Get the location along the specified lane path.",
+                "return": "vector"
             },
             "GetNeutralSpawners": {
+                "args": [],
                 "description": "Get the location of all neutral spawners, and what side of the river they're on.",
-                "return": "variant",
-                "args": []
+                "return": "variant"
+            },
+            "GetPushLaneDesire": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the team-wide desire to push a lane.",
+                "return": "float"
+            },
+            "GetRoamDesire": {
+                "args": [],
+                "description": "Gets the team-wide desire to roam to a target.",
+                "return": "float"
+            },
+            "GetRoamTarget": {
+                "args": [],
+                "description": "Gets the target of the team-wide roam desire.",
+                "return": "handle"
+            },
+            "GetRoshanDesire": {
+                "args": [],
+                "description": "Gets the team-wide desire to kill Roshan.",
+                "return": "float"
+            },
+            "GetRuneStatus": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the status of the specified rune.",
+                "return": "<unknown>"
+            },
+            "GetRuneTimeSinceSeen": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the time since we've seen the specified rune.",
+                "return": "float"
+            },
+            "GetRuneType": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the type of the specified rune, if known.",
+                "return": "int"
+            },
+            "GetScriptDirectory": {
+                "args": [],
+                "description": "Get the directory from which bot scripts are being run.",
+                "return": "cstring"
+            },
+            "GetSelectedHeroName": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the name of the hero selected by a player.",
+                "return": "cstring"
+            },
+            "GetTeam": {
+                "args": [],
+                "description": "Get the team on which script is currently being run.",
+                "return": "int"
+            },
+            "GetTeamMember": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Get a member of a team.",
+                "return": "handle"
             },
             "GetUnitPotentialValue": {
-                "description": "Gets the 0-255 potential-value location of a hero at the specified location and radius.",
-                "return": "int",
                 "args": [
                     "handle",
                     "vector",
                     "float"
-                ]
+                ],
+                "description": "Gets the 0-255 potential-value location of a hero at the specified location and radius.",
+                "return": "int"
             },
-            "RemapValClamped": {
-                "description": "Linearly remaps X from A,B to C,D, clamping to C,D",
-                "return": "float",
+            "GetUnitToLocationDistance": {
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Get the distance between a unit and a location.",
+                "return": "float"
+            },
+            "GetUnitToUnitDistance": {
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Get the distance between two units.",
+                "return": "float"
+            },
+            "GetWorldBounds": {
+                "args": [],
+                "description": "Gets the minimum and maximum bounds of the world.",
+                "return": "variant"
+            },
+            "IsCMBannedHero": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Has the named hero been banned in Captain's Mode?",
+                "return": "bool"
+            },
+            "IsCMPickedHero": {
+                "args": [
+                    "int",
+                    "cstring"
+                ],
+                "description": "Has the named hero been picked in Captain's Mode?",
+                "return": "bool"
+            },
+            "IsInCMBanPhase": {
+                "args": [],
+                "description": "Is Captain's Mode in Ban phase?",
+                "return": "bool"
+            },
+            "IsInCMPickPhase": {
+                "args": [],
+                "description": "Is Captain's Mode in Pick phase?",
+                "return": "bool"
+            },
+            "IsItemPurchasedFromSecretShop": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Can the named item can be purchased from the secret shop?",
+                "return": "bool"
+            },
+            "IsItemPurchasedFromSideShop": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Can the named item can be purchased from the side shop?",
+                "return": "bool"
+            },
+            "IsLocationPassable": {
+                "args": [
+                    "vector"
+                ],
+                "description": "Can the specified location currently be pathed through.",
+                "return": "bool"
+            },
+            "IsPlayerInHeroSelectionControl": {
+                "args": [
+                    "int"
+                ],
+                "description": "Is this player allowed to currently allowed to select a hero?",
+                "return": "bool"
+            },
+            "Max": {
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "description": "Returns the smaller of the two supplied values.",
+                "return": "float"
+            },
+            "Min": {
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "description": "Returns the smaller of the two supplied values.",
+                "return": "float"
+            },
+            "RandomFloat": {
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "description": "Get a random float within a range",
+                "return": "float"
+            },
+            "RandomInt": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Get a random int within a range",
+                "return": "int"
+            },
+            "RandomVector": {
+                "args": [
+                    "float"
+                ],
+                "description": "Get a random 2D vector of the specified length.",
+                "return": "vector"
+            },
+            "RealTime": {
+                "args": [],
+                "description": "Gets the real-world time since the app has started.  Does not pause with game pause.",
+                "return": "float"
+            },
+            "RemapVal": {
                 "args": [
                     "float",
                     "float",
                     "float",
                     "float",
                     "float"
-                ]
+                ],
+                "description": "Linearly remaps X from A,B to C,D",
+                "return": "float"
+            },
+            "RemapValClamped": {
+                "args": [
+                    "float",
+                    "float",
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "description": "Linearly remaps X from A,B to C,D, clamping to C,D",
+                "return": "float"
+            },
+            "RollPercentage": {
+                "args": [
+                    "int"
+                ],
+                "description": "Rolls a number from 1 to 100 and returns true if the roll is less than or equal to the number specified",
+                "return": "bool"
+            },
+            "SelectHero": {
+                "args": [
+                    "int",
+                    "cstring"
+                ],
+                "description": "Selects a hero for a player.",
+                "return": "void"
+            },
+            "SetCMCaptain": {
+                "args": [
+                    "int"
+                ],
+                "description": "Sets a player to be Captain's Mode captain.",
+                "return": "void"
             }
         }
     }
