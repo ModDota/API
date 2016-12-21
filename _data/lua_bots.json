@@ -249,6 +249,11 @@
                 "description": "Clear current action stack and return to idle.  Optionally stop in place.",
                 "return": "void"
             },
+            "Action_CourierDeliver": {
+                "args": [],
+                "description": "Tell a bot to use the courier.",
+                "return": "bool"
+            },
             "Action_DropItem": {
                 "arg_names": [
                     "hItem",
@@ -319,7 +324,7 @@
                     "cstring"
                 ],
                 "description": "Tell a bot to purchase an item by name.",
-                "return": "void"
+                "return": "<unknown>"
             },
             "Action_SellItem": {
                 "arg_names": [
@@ -461,9 +466,19 @@
                 "description": "Get the unit being attacked.",
                 "return": "handle"
             },
+            "GetBaseMovementSpeed": {
+                "args": [],
+                "description": "Get a bot's base movement speed.",
+                "return": "int"
+            },
             "GetCourierValue": {
                 "args": [],
                 "description": "Get the value of items on the courier owned by this bot.",
+                "return": "int"
+            },
+            "GetCurrentMovementSpeed": {
+                "args": [],
+                "description": "Get a bot's current movement speed.",
                 "return": "int"
             },
             "GetDifficulty": {
@@ -1156,6 +1171,11 @@
                     "cstring"
                 ],
                 "description": "Has the named hero been picked in Captain's Mode?",
+                "return": "bool"
+            },
+            "IsCourierAvailable": {
+                "args": [],
+                "description": "Asks if a courier is available to use.",
                 "return": "bool"
             },
             "IsInCMBanPhase": {
