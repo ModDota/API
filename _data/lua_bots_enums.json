@@ -1,0 +1,612 @@
+{
+    "_Unscoped": [
+        {
+            "key": "BotTeamCommander3",
+            "value": "<handle>"
+        },
+        {
+            "key": "BOT_MODE_NONE",
+            "value": 0
+        },
+        {
+            "key": "BOT_MODE_LANING",
+            "value": 1
+        },
+        {
+            "key": "BOT_MODE_ATTACK",
+            "value": 2
+        },
+        {
+            "key": "BOT_MODE_ROAM",
+            "value": 3
+        },
+        {
+            "key": "BOT_MODE_RETREAT",
+            "value": 4
+        },
+        {
+            "key": "BOT_MODE_SECRET_SHOP",
+            "value": 5
+        },
+        {
+            "key": "BOT_MODE_SIDE_SHOP",
+            "value": 6
+        },
+        {
+            "key": "BOT_MODE_PUSH_TOWER_TOP",
+            "value": 8
+        },
+        {
+            "key": "BOT_MODE_PUSH_TOWER_MID",
+            "value": 9
+        },
+        {
+            "key": "BOT_MODE_PUSH_TOWER_BOT",
+            "value": 10
+        },
+        {
+            "key": "BOT_MODE_DEFEND_TOWER_TOP",
+            "value": 11
+        },
+        {
+            "key": "BOT_MODE_DEFEND_TOWER_MID",
+            "value": 12
+        },
+        {
+            "key": "BOT_MODE_DEFEND_TOWER_BOT",
+            "value": 13
+        },
+        {
+            "key": "BOT_MODE_ASSEMBLE",
+            "value": 14
+        },
+        {
+            "key": "BOT_MODE_ASSEMBLE_WITH_HUMANS",
+            "value": 15
+        },
+        {
+            "key": "BOT_MODE_TEAM_ROAM",
+            "value": 16
+        },
+        {
+            "key": "BOT_MODE_FARM",
+            "value": 17
+        },
+        {
+            "key": "BOT_MODE_DEFEND_ALLY",
+            "value": 18
+        },
+        {
+            "key": "BOT_MODE_EVASIVE_MANEUVERS",
+            "value": 19
+        },
+        {
+            "key": "BOT_MODE_ROSHAN",
+            "value": 20
+        },
+        {
+            "key": "BOT_MODE_ITEM",
+            "value": 21
+        },
+        {
+            "key": "BOT_MODE_WARD",
+            "value": 22
+        },
+        {
+            "key": "BOT_ACTION_DESIRE_NONE",
+            "value": 0.0
+        },
+        {
+            "key": "BOT_ACTION_DESIRE_VERYLOW",
+            "value": 0.10000000149011612
+        },
+        {
+            "key": "BOT_ACTION_DESIRE_LOW",
+            "value": 0.25
+        },
+        {
+            "key": "BOT_ACTION_DESIRE_MODERATE",
+            "value": 0.5
+        },
+        {
+            "key": "BOT_ACTION_DESIRE_HIGH",
+            "value": 0.75
+        },
+        {
+            "key": "BOT_ACTION_DESIRE_VERYHIGH",
+            "value": 0.89999997615814209
+        },
+        {
+            "key": "BOT_ACTION_DESIRE_ABSOLUTE",
+            "value": 1.0
+        },
+        {
+            "key": "BOT_MODE_DESIRE_NONE",
+            "value": 0.0
+        },
+        {
+            "key": "BOT_MODE_DESIRE_VERYLOW",
+            "value": 0.10000000149011612
+        },
+        {
+            "key": "BOT_MODE_DESIRE_LOW",
+            "value": 0.25
+        },
+        {
+            "key": "BOT_MODE_DESIRE_MODERATE",
+            "value": 0.5
+        },
+        {
+            "key": "BOT_MODE_DESIRE_HIGH",
+            "value": 0.75
+        },
+        {
+            "key": "BOT_MODE_DESIRE_VERYHIGH",
+            "value": 0.89999997615814209
+        },
+        {
+            "key": "BOT_MODE_DESIRE_ABSOLUTE",
+            "value": 1.0
+        },
+        {
+            "key": "DAMAGE_TYPE_PHYSICAL",
+            "value": 1
+        },
+        {
+            "key": "DAMAGE_TYPE_MAGICAL",
+            "value": 2
+        },
+        {
+            "key": "DAMAGE_TYPE_PURE",
+            "value": 4
+        },
+        {
+            "key": "DAMAGE_TYPE_ALL",
+            "value": 7
+        },
+        {
+            "key": "DIFFICULTY_INVALID",
+            "value": 5
+        },
+        {
+            "key": "DIFFICULTY_PASSIVE",
+            "value": 0
+        },
+        {
+            "key": "DIFFICULTY_EASY",
+            "value": 1
+        },
+        {
+            "key": "DIFFICULTY_MEDIUM",
+            "value": 2
+        },
+        {
+            "key": "DIFFICULTY_HARD",
+            "value": 3
+        },
+        {
+            "key": "DIFFICULTY_UNFAIR",
+            "value": 4
+        },
+        {
+            "key": "PURCHASE_ITEM_SUCCESS",
+            "value": -1
+        },
+        {
+            "key": "PURCHASE_ITEM_OUT_OF_STOCK",
+            "value": 82
+        },
+        {
+            "key": "PURCHASE_ITEM_DISALLOWED_ITEM",
+            "value": 78
+        },
+        {
+            "key": "PURCHASE_ITEM_INSUFFICIENT_GOLD",
+            "value": 63
+        },
+        {
+            "key": "PURCHASE_ITEM_NOT_AT_HOME_SHOP",
+            "value": 67
+        },
+        {
+            "key": "PURCHASE_ITEM_NOT_AT_SIDE_SHOP",
+            "value": 66
+        },
+        {
+            "key": "PURCHASE_ITEM_NOT_AT_SECRET_SHOP",
+            "value": 62
+        },
+        {
+            "key": "PURCHASE_ITEM_INVALID_ITEM_NAME",
+            "value": 33
+        },
+        {
+            "key": "GAMEMODE_NONE",
+            "value": 0
+        },
+        {
+            "key": "GAMEMODE_AP",
+            "value": 1
+        },
+        {
+            "key": "GAMEMODE_CM",
+            "value": 2
+        },
+        {
+            "key": "GAMEMODE_RD",
+            "value": 3
+        },
+        {
+            "key": "GAMEMODE_SD",
+            "value": 4
+        },
+        {
+            "key": "GAMEMODE_AR",
+            "value": 5
+        },
+        {
+            "key": "GAMEMODE_REVERSE_CM",
+            "value": 8
+        },
+        {
+            "key": "GAMEMODE_MO",
+            "value": 11
+        },
+        {
+            "key": "GAMEMODE_CD",
+            "value": 16
+        },
+        {
+            "key": "GAMEMODE_ABILITY_DRAFT",
+            "value": 18
+        },
+        {
+            "key": "GAMEMODE_ARDM",
+            "value": 20
+        },
+        {
+            "key": "GAMEMODE_1V1MID",
+            "value": 21
+        },
+        {
+            "key": "GAMEMODE_ALL_DRAFT",
+            "value": 22
+        },
+        {
+            "key": "TEAM_RADIANT",
+            "value": 2
+        },
+        {
+            "key": "TEAM_DIRE",
+            "value": 3
+        },
+        {
+            "key": "TEAM_NEUTRAL",
+            "value": 4
+        },
+        {
+            "key": "TEAM_NONE",
+            "value": 5
+        },
+        {
+            "key": "LANE_NONE",
+            "value": 0
+        },
+        {
+            "key": "LANE_TOP",
+            "value": 1
+        },
+        {
+            "key": "LANE_MID",
+            "value": 2
+        },
+        {
+            "key": "LANE_BOT",
+            "value": 3
+        },
+        {
+            "key": "GAME_STATE_INIT",
+            "value": 0
+        },
+        {
+            "key": "GAME_STATE_WAIT_FOR_PLAYERS_TO_LOAD",
+            "value": 1
+        },
+        {
+            "key": "GAME_STATE_HERO_SELECTION",
+            "value": 2
+        },
+        {
+            "key": "GAME_STATE_STRATEGY_TIME",
+            "value": 3
+        },
+        {
+            "key": "GAME_STATE_PRE_GAME",
+            "value": 4
+        },
+        {
+            "key": "GAME_STATE_GAME_IN_PROGRESS",
+            "value": 5
+        },
+        {
+            "key": "GAME_STATE_POST_GAME",
+            "value": 6
+        },
+        {
+            "key": "GAME_STATE_DISCONNECT",
+            "value": 7
+        },
+        {
+            "key": "GAME_STATE_TEAM_SHOWCASE",
+            "value": 8
+        },
+        {
+            "key": "GAME_STATE_CUSTOM_GAME_SETUP",
+            "value": 9
+        },
+        {
+            "key": "GAME_STATE_WAIT_FOR_MAP_TO_LOAD",
+            "value": 10
+        },
+        {
+            "key": "GAME_STATE_LAST",
+            "value": 11
+        },
+        {
+            "key": "HEROPICK_STATE_NONE",
+            "value": 0
+        },
+        {
+            "key": "HEROPICK_STATE_AP_SELECT",
+            "value": 1
+        },
+        {
+            "key": "HEROPICK_STATE_SD_SELECT",
+            "value": 2
+        },
+        {
+            "key": "HEROPICK_STATE_CM_INTRO",
+            "value": 5
+        },
+        {
+            "key": "HEROPICK_STATE_CM_CAPTAINPICK",
+            "value": 6
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN1",
+            "value": 7
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN2",
+            "value": 8
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN3",
+            "value": 9
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN4",
+            "value": 10
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN5",
+            "value": 11
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN6",
+            "value": 12
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN7",
+            "value": 13
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN8",
+            "value": 14
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN9",
+            "value": 15
+        },
+        {
+            "key": "HEROPICK_STATE_CM_BAN10",
+            "value": 16
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT1",
+            "value": 17
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT2",
+            "value": 18
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT3",
+            "value": 19
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT4",
+            "value": 20
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT5",
+            "value": 21
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT6",
+            "value": 22
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT7",
+            "value": 23
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT8",
+            "value": 24
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT9",
+            "value": 25
+        },
+        {
+            "key": "HEROPICK_STATE_CM_SELECT10",
+            "value": 26
+        },
+        {
+            "key": "HEROPICK_STATE_CM_PICK",
+            "value": 27
+        },
+        {
+            "key": "HEROPICK_STATE_AR_SELECT",
+            "value": 28
+        },
+        {
+            "key": "HEROPICK_STATE_MO_SELECT",
+            "value": 29
+        },
+        {
+            "key": "HEROPICK_STATE_FH_SELECT",
+            "value": 30
+        },
+        {
+            "key": "HEROPICK_STATE_CD_INTRO",
+            "value": 31
+        },
+        {
+            "key": "HEROPICK_STATE_CD_CAPTAINPICK",
+            "value": 32
+        },
+        {
+            "key": "HEROPICK_STATE_CD_BAN1",
+            "value": 33
+        },
+        {
+            "key": "HEROPICK_STATE_CD_BAN2",
+            "value": 34
+        },
+        {
+            "key": "HEROPICK_STATE_CD_BAN3",
+            "value": 35
+        },
+        {
+            "key": "HEROPICK_STATE_CD_BAN4",
+            "value": 36
+        },
+        {
+            "key": "HEROPICK_STATE_CD_BAN5",
+            "value": 37
+        },
+        {
+            "key": "HEROPICK_STATE_CD_BAN6",
+            "value": 38
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT1",
+            "value": 39
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT2",
+            "value": 40
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT3",
+            "value": 41
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT4",
+            "value": 42
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT5",
+            "value": 43
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT6",
+            "value": 44
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT7",
+            "value": 45
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT8",
+            "value": 46
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT9",
+            "value": 47
+        },
+        {
+            "key": "HEROPICK_STATE_CD_SELECT10",
+            "value": 48
+        },
+        {
+            "key": "HEROPICK_STATE_CD_PICK",
+            "value": 49
+        },
+        {
+            "key": "HEROPICK_STATE_BD_SELECT",
+            "value": 50
+        },
+        {
+            "key": "HERO_PICK_STATE_ABILITY_DRAFT_SELECT",
+            "value": 51
+        },
+        {
+            "key": "HERO_PICK_STATE_ARDM_SELECT",
+            "value": 52
+        },
+        {
+            "key": "HEROPICK_STATE_ALL_DRAFT_SELECT",
+            "value": 53
+        },
+        {
+            "key": "HEROPICK_STATE_SELECT_PENALTY",
+            "value": 55
+        },
+        {
+            "key": "RUNE_INVALID",
+            "value": -1
+        },
+        {
+            "key": "RUNE_DOUBLEDAMAGE",
+            "value": 0
+        },
+        {
+            "key": "RUNE_HASTE",
+            "value": 1
+        },
+        {
+            "key": "RUNE_ILLUSION",
+            "value": 2
+        },
+        {
+            "key": "RUNE_INVISIBILITY",
+            "value": 3
+        },
+        {
+            "key": "RUNE_REGENERATION",
+            "value": 4
+        },
+        {
+            "key": "RUNE_BOUNTY",
+            "value": 5
+        },
+        {
+            "key": "RUNE_ARCANE",
+            "value": 6
+        },
+        {
+            "key": "RUNE_STATUS_UNKNOWN",
+            "value": 0
+        },
+        {
+            "key": "RUNE_STATUS_AVAILABLE",
+            "value": 1
+        },
+        {
+            "key": "RUNE_STATUS_MISSING",
+            "value": 2
+        }
+    ]
+}
