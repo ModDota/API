@@ -239,6 +239,18 @@
                 "description": "Tell a bot to buy back into the game.",
                 "return": "void"
             },
+            "Action_Chat": {
+                "arg_names": [
+                    "pszMessage",
+                    "bAllChat"
+                ],
+                "args": [
+                    "cstring",
+                    "bool"
+                ],
+                "description": "Tell a bot to say something.",
+                "return": "void"
+            },
             "Action_ClearActions": {
                 "arg_names": [
                     "bStop"
@@ -476,6 +488,11 @@
                 "description": "Get the value of items on the courier owned by this bot.",
                 "return": "int"
             },
+            "GetCurrentActionType": {
+                "args": [],
+                "description": "Get the type of the current action.",
+                "return": "int"
+            },
             "GetCurrentMovementSpeed": {
                 "args": [],
                 "description": "Get a bot's current movement speed.",
@@ -567,6 +584,16 @@
                 "description": "Get a bot's maximum mana.",
                 "return": "int"
             },
+            "GetModifier": {
+                "arg_names": [
+                    "nModifier"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get a specific modifier name",
+                "return": "cstring"
+            },
             "GetMovementDirectionStability": {
                 "args": [],
                 "description": "Indicates how consistent the unit's movement has been over the last few seconds.  1 is a straight line, 0 is serpentine.",
@@ -608,6 +635,16 @@
                     "bool"
                 ],
                 "description": "Get all nearby towers.",
+                "return": "variant"
+            },
+            "GetNearbyTrees": {
+                "arg_names": [
+                    "nRadius"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get nearby trees.",
                 "return": "variant"
             },
             "GetNextItemPurchaseValue": {
@@ -700,6 +737,16 @@
                 "description": "Does the bot have ministuns on attack?",
                 "return": "bool"
             },
+            "HasModifier": {
+                "arg_names": [
+                    "pszModifierName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Does the bot have the specified modifier?",
+                "return": "bool"
+            },
             "HasScepter": {
                 "args": [],
                 "description": "Does the unit have Aghanim's Scepter?",
@@ -733,6 +780,11 @@
             "IsBlockDisabled": {
                 "args": [],
                 "description": "Is the unit block disabled?",
+                "return": "bool"
+            },
+            "IsBot": {
+                "args": [],
+                "description": "Is this unit owned by a bot?",
                 "return": "bool"
             },
             "IsBuilding": {
@@ -839,6 +891,11 @@
                 "args": [],
                 "description": "Is this bot currently casting an ability?",
                 "return": "bool"
+            },
+            "NumModifiers": {
+                "args": [],
+                "description": "Get the number of modifiers on this bot.",
+                "return": "int"
             },
             "SetNextItemPurchaseValue": {
                 "arg_names": [
@@ -1120,6 +1177,13 @@
                 "description": "Get the team on which script is currently being run.",
                 "return": "int"
             },
+            "GetTeamForPlayer": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the team of the specified player.",
+                "return": "int"
+            },
             "GetTeamMember": {
                 "args": [
                     "int",
@@ -1127,6 +1191,20 @@
                 ],
                 "description": "Get a member of a team.",
                 "return": "handle"
+            },
+            "GetTeamPlayers": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets a list of Player IDs for the specified team.",
+                "return": "variant"
+            },
+            "GetTreeLocation": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the location of the specified tree.",
+                "return": "vector"
             },
             "GetUnitPotentialValue": {
                 "args": [
@@ -1209,11 +1287,25 @@
                 "description": "Can the specified location currently be pathed through.",
                 "return": "bool"
             },
+            "IsPlayerBot": {
+                "args": [
+                    "int"
+                ],
+                "description": "Asks if a specific Player ID is a bot.",
+                "return": "bool"
+            },
             "IsPlayerInHeroSelectionControl": {
                 "args": [
                     "int"
                 ],
                 "description": "Is this player allowed to currently allowed to select a hero?",
+                "return": "bool"
+            },
+            "IsTeamPlayer": {
+                "args": [
+                    "int"
+                ],
+                "description": "Asks if a specific Player ID is a member of Radiant or Dire.",
                 "return": "bool"
             },
             "Max": {

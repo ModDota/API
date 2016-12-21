@@ -607,6 +607,42 @@
         {
             "key": "RUNE_STATUS_MISSING",
             "value": 2
+        },
+        {
+            "key": "BOT_ACTION_TYPE_NONE",
+            "value": 0
+        },
+        {
+            "key": "BOT_ACTION_TYPE_IDLE",
+            "value": 1
+        },
+        {
+            "key": "BOT_ACTION_TYPE_MOVE_TO",
+            "value": 2
+        },
+        {
+            "key": "BOT_ACTION_TYPE_ATTACK",
+            "value": 3
+        },
+        {
+            "key": "BOT_ACTION_TYPE_ATTACKMOVE",
+            "value": 4
+        },
+        {
+            "key": "BOT_ACTION_TYPE_USE_ABILITY",
+            "value": 5
+        },
+        {
+            "key": "BOT_ACTION_TYPE_PICK_UP_RUNE",
+            "value": 6
+        },
+        {
+            "key": "BOT_ACTION_TYPE_PICK_UP_ITEM",
+            "value": 7
+        },
+        {
+            "key": "BOT_ACTION_TYPE_DROP_ITEM",
+            "value": 8
         }
     ]
 }
