@@ -2379,6 +2379,10 @@
         {
             "key": "ACT_DOTA_MK_FUR_ARMY",
             "value": 1722
+        },
+        {
+            "key": "ACT_DOTA_MK_SPRING_CAST",
+            "value": 1723
         }
     ],
     "LuaModifierType": [
@@ -7331,6 +7335,10 @@
         {
             "key": "ACT_DOTA_MK_TREE_END",
             "value": 1721
+        },
+        {
+            "key": "ACT_DOTA_MK_FUR_ARMY",
+            "value": 1722
         },
         {
             "key": "AE_EMPTY",
