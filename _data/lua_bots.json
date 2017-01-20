@@ -7,6 +7,11 @@
                 "description": "Can this Ability be upgraded?",
                 "return": "bool"
             },
+            "CanBeDisassembled": {
+                "args": [],
+                "description": "Can this item be disassembled?",
+                "return": "bool"
+            },
             "GetAbilityDamage": {
                 "args": [],
                 "description": "Get the basic damage value of this Ability.",
@@ -52,6 +57,11 @@
                 "description": "Get the cooldown time remaning for this Ability.",
                 "return": "float"
             },
+            "GetCurrentCharges": {
+                "args": [],
+                "description": "Get the current charges of this item.",
+                "return": "int"
+            },
             "GetDamageType": {
                 "args": [],
                 "description": "Get the damage type of this Ability.",
@@ -60,6 +70,11 @@
             "GetHeroLevelRequiredToUpgrade": {
                 "args": [],
                 "description": "Get the Hero level required to upgrade this Ability.",
+                "return": "int"
+            },
+            "GetInitialCharges": {
+                "args": [],
+                "description": "Get the initial charges of this item.",
                 "return": "int"
             },
             "GetLevel": {
@@ -81,6 +96,16 @@
                 "args": [],
                 "description": "Get the name of this Ability.",
                 "return": "cstring"
+            },
+            "GetPowerTreadsStat": {
+                "args": [],
+                "description": "Get the stat these power treads are set to.",
+                "return": "int"
+            },
+            "GetSecondaryCharges": {
+                "args": [],
+                "description": "Get the secondary charges of this item.",
+                "return": "int"
             },
             "GetSpecialValueFloat": {
                 "arg_names": [
@@ -135,6 +160,11 @@
             "IsChanneling": {
                 "args": [],
                 "description": "Is this Ability being channelled?",
+                "return": "bool"
+            },
+            "IsCombineLocked": {
+                "args": [],
+                "description": "Is this item combine locked?",
                 "return": "bool"
             },
             "IsCooldownReady": {
@@ -201,11 +231,6 @@
                 "args": [],
                 "description": "Toggle the autocast state of this Ability.",
                 "return": "void"
-            },
-            "UpgradeAbility": {
-                "args": [],
-                "description": "Upgrade this Ability by 1 level.",
-                "return": "void"
             }
         }
     },
@@ -261,10 +286,27 @@
                 "description": "Clear current action stack and return to idle.  Optionally stop in place.",
                 "return": "void"
             },
-            "Action_CourierDeliver": {
-                "args": [],
+            "Action_Courier": {
+                "arg_names": [
+                    "hCourier",
+                    "eAction"
+                ],
+                "args": [
+                    "handle",
+                    "int"
+                ],
                 "description": "Tell a bot to use the courier.",
                 "return": "bool"
+            },
+            "Action_DisassembleItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to disassemble an item.",
+                "return": "void"
             },
             "Action_DropItem": {
                 "arg_names": [
@@ -320,12 +362,26 @@
             },
             "Action_PickUpRune": {
                 "arg_names": [
-                    "hTarget"
+                    "nRune"
                 ],
                 "args": [
-                    "handle"
+                    "int"
                 ],
                 "description": "Tell a bot to pick up a rune.",
+                "return": "void"
+            },
+            "Action_Ping": {
+                "arg_names": [
+                    "x",
+                    "y",
+                    "bNormalPing"
+                ],
+                "args": [
+                    "float",
+                    "float",
+                    "bool"
+                ],
+                "description": "Tell a bot to ping a location.",
                 "return": "void"
             },
             "Action_PurchaseItem": {
@@ -346,6 +402,30 @@
                     "handle"
                 ],
                 "description": "Tell a bot to sell an item.",
+                "return": "void"
+            },
+            "Action_SetItemCombineLock": {
+                "arg_names": [
+                    "hItem",
+                    "bLocked"
+                ],
+                "args": [
+                    "handle",
+                    "bool"
+                ],
+                "description": "Set the combine state on an item.",
+                "return": "void"
+            },
+            "Action_SwapItems": {
+                "arg_names": [
+                    "nSlot1",
+                    "nSlot2"
+                ],
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Tell a bot to swap the contents of two item slots.",
                 "return": "void"
             },
             "Action_UseAbility": {
@@ -394,6 +474,16 @@
                 "description": "Tell a bot to use a tree-targeted ability.",
                 "return": "void"
             },
+            "Action_UseShrine": {
+                "arg_names": [
+                    "hShrine"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to use the specified shrine.",
+                "return": "void"
+            },
             "CanBeSeen": {
                 "args": [],
                 "description": "Can we currently see this bot?  Always true for bots on our team.  Many function will not return valid data without this being true.",
@@ -436,6 +526,16 @@
                 "description": "Finds optimal AoE location that overlaps heroes/creeps.",
                 "return": "variant"
             },
+            "FindItemSlot": {
+                "arg_names": [
+                    "pszItemName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the slot a named item is in",
+                "return": "int"
+            },
             "GetAbilityByName": {
                 "arg_names": [
                     "pszAbilityName"
@@ -445,6 +545,11 @@
                 ],
                 "description": "Get a bot's ability by name",
                 "return": "handle"
+            },
+            "GetAbilityPoints": {
+                "args": [],
+                "description": "Get the number of ability points the bot can spend.",
+                "return": "int"
             },
             "GetActiveMode": {
                 "args": [],
@@ -468,19 +573,79 @@
                 "description": "Get damage value after reductions.",
                 "return": "int"
             },
+            "GetArmor": {
+                "args": [],
+                "description": "Gets the armor of the unit.",
+                "return": "float"
+            },
             "GetAssignedLane": {
                 "args": [],
                 "description": "Get the lane that a unit is assigned to.",
                 "return": "int"
+            },
+            "GetAttackDamage": {
+                "args": [],
+                "description": "Gets the total attack damage.",
+                "return": "float"
+            },
+            "GetAttackPoint": {
+                "args": [],
+                "description": "Gets the attack point of the unit.",
+                "return": "float"
+            },
+            "GetAttackRange": {
+                "args": [],
+                "description": "Gets the attack range of the unit.",
+                "return": "int"
+            },
+            "GetAttackSpeed": {
+                "args": [],
+                "description": "Gets the attack speed of the unit.",
+                "return": "float"
             },
             "GetAttackTarget": {
                 "args": [],
                 "description": "Get the unit being attacked.",
                 "return": "handle"
             },
+            "GetAttributeValue": {
+                "arg_names": [
+                    "nAttribute"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the evasion resist of the unit.",
+                "return": "int"
+            },
+            "GetBaseDamage": {
+                "args": [],
+                "description": "Gets the base attack damage of the unit.",
+                "return": "float"
+            },
+            "GetBaseDamageVariance": {
+                "args": [],
+                "description": "Gets the variance of the base attack damage.",
+                "return": "float"
+            },
             "GetBaseMovementSpeed": {
                 "args": [],
                 "description": "Get a bot's base movement speed.",
+                "return": "int"
+            },
+            "GetBoundingRadius": {
+                "args": [],
+                "description": "Get the size of the unit's bounding radius.",
+                "return": "float"
+            },
+            "GetBuybackCooldown": {
+                "args": [],
+                "description": "Can the bot buy back?",
+                "return": "float"
+            },
+            "GetBuybackCost": {
+                "args": [],
+                "description": "Can the bot buy back?",
                 "return": "int"
             },
             "GetCourierValue": {
@@ -492,6 +657,11 @@
                 "args": [],
                 "description": "Get the type of the current action.",
                 "return": "int"
+            },
+            "GetCurrentActiveAbility": {
+                "args": [],
+                "description": "Get the ability this bot is currently casting.",
+                "return": "handle"
             },
             "GetCurrentMovementSpeed": {
                 "args": [],
@@ -518,6 +688,11 @@
                 ],
                 "description": "Get an estimate of how much damage a bot can do in the specified timeframe.  Takes into account item and ability usage based on current mana/cooldowns for allies, for enemies it assumes all items/abilities are available.  Uses no positional/situation info.  Basically asks 'How scary is X to Y?'.",
                 "return": "int"
+            },
+            "GetEvasion": {
+                "args": [],
+                "description": "Gets the evasion resist of the unit.",
+                "return": "float"
             },
             "GetExtrapolatedLocation": {
                 "arg_names": [
@@ -549,6 +724,11 @@
                 "description": "Get a bot's current health.",
                 "return": "int"
             },
+            "GetHealthRegen": {
+                "args": [],
+                "description": "Get a bot's health regen rate.",
+                "return": "float"
+            },
             "GetItemInSlot": {
                 "arg_names": [
                     "nSlot"
@@ -559,20 +739,50 @@
                 "description": "Get a bot's item by slot",
                 "return": "handle"
             },
+            "GetItemSlotType": {
+                "arg_names": [
+                    "nSlot"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get the type of the specified item slot",
+                "return": "int"
+            },
+            "GetLastAttackTime": {
+                "args": [],
+                "description": "Gets the last attack time of the unit.",
+                "return": "float"
+            },
             "GetLastSeenLocation": {
                 "args": [],
                 "description": "Get the location at which this unit was last seen.",
                 "return": "vector"
+            },
+            "GetLevel": {
+                "args": [],
+                "description": "Get the bot's current level.",
+                "return": "int"
             },
             "GetLocation": {
                 "args": [],
                 "description": "Geta  bot's 2D location.",
                 "return": "vector"
             },
+            "GetMagicResist": {
+                "args": [],
+                "description": "Gets the magic resist of the unit.",
+                "return": "float"
+            },
             "GetMana": {
                 "args": [],
                 "description": "Get a bot's current mana.",
                 "return": "int"
+            },
+            "GetManaRegen": {
+                "args": [],
+                "description": "Get a bot's mana regen rate.",
+                "return": "float"
             },
             "GetMaxHealth": {
                 "args": [],
@@ -591,13 +801,40 @@
                 "args": [
                     "int"
                 ],
-                "description": "Get a specific modifier name",
+                "description": "Get a specific modifier name.",
                 "return": "cstring"
+            },
+            "GetModifierStackCount": {
+                "arg_names": [
+                    "nModifier"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get a modifier's stack count.",
+                "return": "int"
+            },
+            "GetMostRecentPing": {
+                "args": [],
+                "description": "Get the most recent ping by this player.",
+                "return": "variant"
             },
             "GetMovementDirectionStability": {
                 "args": [],
                 "description": "Indicates how consistent the unit's movement has been over the last few seconds.  1 is a straight line, 0 is serpentine.",
                 "return": "float"
+            },
+            "GetNearbyBarracks": {
+                "arg_names": [
+                    "nRadius",
+                    "bEnemies"
+                ],
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "Get all nearby barracks.",
+                "return": "variant"
             },
             "GetNearbyCreeps": {
                 "arg_names": [
@@ -623,6 +860,18 @@
                     "int"
                 ],
                 "description": "Get nearby heroes that we can see in a mode.  Can specify a bot mode when querying allies.  BOT_MODE_NONE does no mode filtering.",
+                "return": "variant"
+            },
+            "GetNearbyShrines": {
+                "arg_names": [
+                    "nRadius",
+                    "bEnemies"
+                ],
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "Get all nearby shrines.",
                 "return": "variant"
             },
             "GetNearbyTowers": {
@@ -652,14 +901,34 @@
                 "description": "Gets the purchase value of the next item the unit wants to purchase.",
                 "return": "int"
             },
-            "GetPlayer": {
+            "GetOffensivePower": {
                 "args": [],
-                "description": "Get the unit's controlling player number.",
+                "description": "Get the unit's current offensive power.",
+                "return": "float"
+            },
+            "GetPlayerID": {
+                "args": [],
+                "description": "Get the unit's controlling player id.",
                 "return": "int"
+            },
+            "GetPrimaryAttribute": {
+                "args": [],
+                "description": "Gets the evasion resist of the unit.",
+                "return": "int"
+            },
+            "GetRawOffensivePower": {
+                "args": [],
+                "description": "Get the unit's raw offensive power.",
+                "return": "float"
             },
             "GetRespawnTime": {
                 "args": [],
                 "description": "Get the time in seconds until a bot respawns.",
+                "return": "float"
+            },
+            "GetSecondsPerAttack": {
+                "args": [],
+                "description": "Gets the number of seconds per attack that a unit can do.",
                 "return": "float"
             },
             "GetSlowDuration": {
@@ -670,6 +939,11 @@
                     "bool"
                 ],
                 "description": "Get the duration of available slows.",
+                "return": "float"
+            },
+            "GetSpellAmp": {
+                "args": [],
+                "description": "Gets the spell damage amplification of the unit.",
                 "return": "float"
             },
             "GetStashValue": {
@@ -837,6 +1111,11 @@
                 "description": "Is this unit an illusion?",
                 "return": "bool"
             },
+            "IsInvisible": {
+                "args": [],
+                "description": "Is the unit invisible?",
+                "return": "bool"
+            },
             "IsInvulnerable": {
                 "args": [],
                 "description": "Is the unit invulnerable?",
@@ -922,6 +1201,11 @@
                 "description": "How long as it been since the unit was damaged by any enemy?",
                 "return": "float"
             },
+            "TimeSinceDamagedByCreep": {
+                "args": [],
+                "description": "How long as it been since the unit was damaged by a creep?",
+                "return": "float"
+            },
             "TimeSinceDamagedByHero": {
                 "arg_names": [
                     "hHero"
@@ -930,6 +1214,11 @@
                     "handle"
                 ],
                 "description": "How long as it been since the unit was damaged by an specific enemy?",
+                "return": "float"
+            },
+            "TimeSinceDamagedByTower": {
+                "args": [],
+                "description": "How long as it been since the unit was damaged by a tower?",
                 "return": "float"
             },
             "UsingItemBreaksInvisibility": {
@@ -947,6 +1236,16 @@
                 "description": "Was the unit recently damaged by any enemy?",
                 "return": "bool"
             },
+            "WasRecentlyDamagedByCreep": {
+                "arg_names": [
+                    "fTime"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Was the unit recently damaged by a creep?",
+                "return": "bool"
+            },
             "WasRecentlyDamagedByHero": {
                 "arg_names": [
                     "hHero",
@@ -957,6 +1256,16 @@
                     "float"
                 ],
                 "description": "Was the unit recently damaged by an specific enemy?",
+                "return": "bool"
+            },
+            "WasRecentlyDamagedByTower": {
+                "arg_names": [
+                    "fTime"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Was the unit recently damaged by a tower?",
                 "return": "bool"
             }
         }
@@ -1034,6 +1343,21 @@
                 "description": "Gets the time since the hero picking phase started.  Pauses with game pause.",
                 "return": "float"
             },
+            "GetAncient": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the ancient on the specified team.",
+                "return": "handle"
+            },
+            "GetBarracks": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Gets the specified barracks on the specified team.",
+                "return": "handle"
+            },
             "GetBot": {
                 "args": [],
                 "description": "Get the bot on which script is currently being run.",
@@ -1049,12 +1373,31 @@
                 "description": "Get the amount of time remaining in the current Captain's Mode phase.",
                 "return": "float"
             },
+            "GetCourier": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets a specific courier.",
+                "return": "handle"
+            },
+            "GetCourierState": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Gets a specific courier.",
+                "return": "int"
+            },
             "GetDefendLaneDesire": {
                 "args": [
                     "int"
                 ],
                 "description": "Gets the team-wide desire to defend a lane.",
                 "return": "float"
+            },
+            "GetDroppedItemList": {
+                "args": [],
+                "description": "Returns the array of items that we can see that have been dropped on the ground.",
+                "return": "variant"
             },
             "GetFarmLaneDesire": {
                 "args": [
@@ -1104,18 +1447,41 @@
                 "description": "Get the current stock count for the named item.",
                 "return": "int"
             },
+            "GetLaneFrontAmount": {
+                "args": [
+                    "int",
+                    "int",
+                    "bool"
+                ],
+                "description": "Gets the lane front amount (0.0 - 1.0) of the specified team's creeps along the specified lane.  Optionally can ignore towers for front calculation.",
+                "return": "float"
+            },
+            "GetLaneFrontLocation": {
+                "args": [
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Gets the location of the lane front for the specified team and lane.  Always ignores towers.  Has a third parameter for a distance delta from the front.",
+                "return": "vector"
+            },
             "GetLocationAlongLane": {
                 "args": [
                     "int",
                     "float"
                 ],
-                "description": "Get the location along the specified lane path.",
+                "description": "Calculates the location of the specified amount (0.0 - 1.0) along the specified lane.",
                 "return": "vector"
             },
             "GetNeutralSpawners": {
                 "args": [],
                 "description": "Get the location of all neutral spawners, and what side of the river they're on.",
                 "return": "variant"
+            },
+            "GetNumCouriers": {
+                "args": [],
+                "description": "Gets the number of couriers on the team.",
+                "return": "int"
             },
             "GetPushLaneDesire": {
                 "args": [
@@ -1138,6 +1504,18 @@
                 "args": [],
                 "description": "Gets the team-wide desire to kill Roshan.",
                 "return": "float"
+            },
+            "GetRoshanKillTime": {
+                "args": [],
+                "description": "Returns the last time that Roshan was killed.",
+                "return": "float"
+            },
+            "GetRuneSpawnLocation": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the spawn location of the specified rune.",
+                "return": "vector"
             },
             "GetRuneStatus": {
                 "args": [
@@ -1172,6 +1550,14 @@
                 "description": "Gets the name of the hero selected by a player.",
                 "return": "cstring"
             },
+            "GetShrine": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Gets the specified shrine on the specified team.",
+                "return": "handle"
+            },
             "GetTeam": {
                 "args": [],
                 "description": "Get the team on which script is currently being run.",
@@ -1199,12 +1585,27 @@
                 "description": "Gets a list of Player IDs for the specified team.",
                 "return": "variant"
             },
+            "GetTower": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Gets the specified tower on the specified team.",
+                "return": "handle"
+            },
             "GetTreeLocation": {
                 "args": [
                     "int"
                 ],
                 "description": "Gets the location of the specified tree.",
                 "return": "vector"
+            },
+            "GetUnitList": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets a list of visible units.",
+                "return": "variant"
             },
             "GetUnitPotentialValue": {
                 "args": [

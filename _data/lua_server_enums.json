@@ -333,6 +333,10 @@
         {
             "key": "MODIFIER_ATTRIBUTE_IGNORE_INVULNERABLE",
             "value": 4
+        },
+        {
+            "key": "MODIFIER_ATTRIBUTE_AURA_PRIORITY",
+            "value": 8
         }
     ],
     "DOTAMusicStatus_t": [
