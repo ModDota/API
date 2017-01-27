@@ -152,11 +152,6 @@
                 "description": "Is this Ability currently activated?",
                 "return": "bool"
             },
-            "IsAttributeBonus": {
-                "args": [],
-                "description": "Is this Ability the attribute bonus?",
-                "return": "bool"
-            },
             "IsChanneling": {
                 "args": [],
                 "description": "Is this Ability being channelled?",
@@ -212,6 +207,11 @@
                 "description": "Is this the stolen version of an Ability?",
                 "return": "bool"
             },
+            "IsTalent": {
+                "args": [],
+                "description": "Is this a talent ability?",
+                "return": "bool"
+            },
             "IsToggle": {
                 "args": [],
                 "description": "Is this a toggled Ability?",
@@ -220,6 +220,11 @@
             "IsTrained": {
                 "args": [],
                 "description": "Is this Ability Trained at all?",
+                "return": "bool"
+            },
+            "IsUltimate": {
+                "args": [],
+                "description": "Is this an ultimate ability?",
                 "return": "bool"
             },
             "ProcsMagicStick": {
@@ -638,6 +643,21 @@
                 "description": "Get the size of the unit's bounding radius.",
                 "return": "float"
             },
+            "GetBountyGoldMax": {
+                "args": [],
+                "description": "Gets the maximum amount of gold rewarded by killing this unit.",
+                "return": "int"
+            },
+            "GetBountyGoldMin": {
+                "args": [],
+                "description": "Gets the minimum amount of gold rewarded by killing this unit.",
+                "return": "int"
+            },
+            "GetBountyXP": {
+                "args": [],
+                "description": "Gets the amount of XP rewarded by killing this unit.",
+                "return": "int"
+            },
             "GetBuybackCooldown": {
                 "args": [],
                 "description": "Can the bot buy back?",
@@ -794,7 +814,7 @@
                 "description": "Get a bot's maximum mana.",
                 "return": "int"
             },
-            "GetModifier": {
+            "GetModifierName": {
                 "arg_names": [
                     "nModifier"
                 ],
@@ -981,6 +1001,11 @@
                 "description": "Get the velocity the unit has moved over the last two seconds.",
                 "return": "vector"
             },
+            "GetXPNeededToLevel": {
+                "args": [],
+                "description": "Get the amount of XP needed to level up.",
+                "return": "int"
+            },
             "HasBlink": {
                 "arg_names": [
                     "bCurrentlyAvailable"
@@ -1019,6 +1044,11 @@
                     "cstring"
                 ],
                 "description": "Does the bot have the specified modifier?",
+                "return": "bool"
+            },
+            "HasQueuedAction": {
+                "args": [],
+                "description": "Does the bot have a queued action currently?",
                 "return": "bool"
             },
             "HasScepter": {
@@ -1483,6 +1513,11 @@
                 "description": "Gets the number of couriers on the team.",
                 "return": "int"
             },
+            "GetOpposingTeam": {
+                "args": [],
+                "description": "Gets the team that you're fighting against.",
+                "return": "int"
+            },
             "GetPushLaneDesire": {
                 "args": [
                     "int"
@@ -1550,6 +1585,14 @@
                 "description": "Gets the name of the hero selected by a player.",
                 "return": "cstring"
             },
+            "GetShopLocation": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Get location for the specified shop.",
+                "return": "vector"
+            },
             "GetShrine": {
                 "args": [
                     "int",
@@ -1557,6 +1600,13 @@
                 ],
                 "description": "Gets the specified shrine on the specified team.",
                 "return": "handle"
+            },
+            "GetShrineCooldown": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Gets the healing cooldown of the specified shrine.",
+                "return": "float"
             },
             "GetTeam": {
                 "args": [],
@@ -1701,6 +1751,13 @@
                 ],
                 "description": "Is this player allowed to currently allowed to select a hero?",
                 "return": "bool"
+            },
+            "IsShrineHealing": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Gets whether the Shrine is actively healing or not.",
+                "return": "float"
             },
             "IsTeamPlayer": {
                 "args": [

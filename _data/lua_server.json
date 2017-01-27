@@ -2447,6 +2447,20 @@
                 "description": "Add a point on the minimap for a specific team.",
                 "return": "void"
             },
+            "BeginNightstalkerNight": {
+                "args": [
+                    "float"
+                ],
+                "description": "Begin night stalker night.",
+                "return": "void"
+            },
+            "BeginTemporaryNight": {
+                "args": [
+                    "float"
+                ],
+                "description": "Begin temporary night.",
+                "return": "void"
+            },
             "Defeated": {
                 "args": [],
                 "description": "Kills the ancient, etc.",
@@ -2553,7 +2567,7 @@
             },
             "IsDaytime": {
                 "args": [],
-                "description": "Is it day time.",
+                "description": "Is it day time?",
                 "return": "bool"
             },
             "IsGamePaused": {
@@ -2564,6 +2578,16 @@
             "IsHeroRespawnEnabled": {
                 "args": [],
                 "description": "Returns whether hero respawn is enabled.",
+                "return": "bool"
+            },
+            "IsNightstalkerNight": {
+                "args": [],
+                "description": "Is it night stalker night-time?",
+                "return": "bool"
+            },
+            "IsTemporaryNight": {
+                "args": [],
+                "description": "Is it temporarily night-time?",
                 "return": "bool"
             },
             "LockCustomGameSetupTeamAssignment": {
@@ -2698,6 +2722,13 @@
                 "description": "Sets the victory message duration.",
                 "return": "void"
             },
+            "SetEventMetadataCustomTable": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Event-only ( table hMetadataTable )",
+                "return": "bool"
+            },
             "SetFirstBloodActive": {
                 "args": [
                     "bool"
@@ -2804,11 +2835,25 @@
                 "description": "When true, players can repeatedly pick the same hero.",
                 "return": "void"
             },
+            "SetShowcaseTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time players have between the strategy phase and entering the pre-game phase.",
+                "return": "void"
+            },
             "SetStartingGold": {
                 "args": [
                     "int"
                 ],
                 "description": "Set the starting gold amount.",
+                "return": "void"
+            },
+            "SetStrategyTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time players have between the hero selection and entering the showcase phase.",
                 "return": "void"
             },
             "SetTimeOfDay": {
@@ -4237,6 +4282,10 @@
                 ],
                 "return": "float"
             },
+            "GetRangedProjectileName": {
+                "args": [],
+                "return": "cstring"
+            },
             "GetSecondsPerAttack": {
                 "args": [],
                 "return": "float"
@@ -4598,6 +4647,11 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsShrine": {
+                "args": [],
+                "description": "Is this a shrine?",
+                "return": "bool"
+            },
             "IsSilenced": {
                 "args": [],
                 "return": "bool"
@@ -4613,6 +4667,10 @@
             "IsSummoned": {
                 "args": [],
                 "description": "Is this unit summoned?",
+                "return": "bool"
+            },
+            "IsTempestDouble": {
+                "args": [],
                 "return": "bool"
             },
             "IsTower": {
@@ -4794,10 +4852,14 @@
                     "bProcessProcs",
                     "bSkipCooldown",
                     "bIgnoreInvis",
-                    "bUseProjectile"
+                    "bUseProjectile",
+                    "bFakeAttack",
+                    "bNeverMiss"
                 ],
                 "args": [
                     "handle",
+                    "bool",
+                    "bool",
                     "bool",
                     "bool",
                     "bool",
@@ -5351,6 +5413,15 @@
             "SetStolenScepter": {
                 "arg_names": [
                     "bStolenScepter"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetUnitCanRespawn": {
+                "arg_names": [
+                    "bCanRespawn"
                 ],
                 "args": [
                     "bool"
@@ -6639,6 +6710,10 @@
                 ],
                 "return": "void"
             },
+            "SpendCharge": {
+                "args": [],
+                "return": "void"
+            },
             "StacksWithOtherOwners": {
                 "args": [],
                 "return": "bool"
@@ -7141,6 +7216,11 @@
                 "description": "The name of the secondary modifier that will be applied by this modifier (if it is an aura).",
                 "return": "cstring"
             },
+            "GetPriority": {
+                "args": [],
+                "description": "Return the priority order this modifier will be applied over others.",
+                "return": "int"
+            },
             "GetStatusEffectName": {
                 "args": [],
                 "description": "Return the name of the status effect particle system that is created while this modifier is active.",
@@ -7207,7 +7287,7 @@
             },
             "OnDestroy": {
                 "args": [],
-                "description": "Runs when the modifier is destroyed.",
+                "description": "Runs when the modifier is destroyed (after unit loses modifier).",
                 "return": "void"
             },
             "OnIntervalThink": {
@@ -7223,6 +7303,21 @@
                     "handle"
                 ],
                 "description": "Runs when the modifier is refreshed.",
+                "return": "void"
+            },
+            "OnRemoved": {
+                "args": [],
+                "description": "Runs when the modifier is destroyed (before unit loses modifier).",
+                "return": "void"
+            },
+            "OnStackCountChanged": {
+                "arg_names": [
+                    "iStackCount"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Runs when stack count changes (param is old count).",
                 "return": "void"
             },
             "RemoveOnDeath": {
@@ -9790,6 +9885,42 @@
             }
         }
     },
+    "CPointClientUIWorldPanel": {
+        "description": "In-world UI panel",
+        "extends": "CBaseModelEntity",
+        "functions": {
+            "AcceptUserInput": {
+                "args": [],
+                "description": "Tells the panel to accept user input.",
+                "return": "void"
+            },
+            "AddCSSClasses": {
+                "arg_names": [
+                    "pszClasses"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Adds CSS class(es) to the panel",
+                "return": "void"
+            },
+            "IgnoreUserInput": {
+                "args": [],
+                "description": "Tells the panel to ignore user input.",
+                "return": "void"
+            },
+            "RemoveCSSClasses": {
+                "arg_names": [
+                    "pszClasses"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Remove CSS class(es) from the panel",
+                "return": "void"
+            }
+        }
+    },
     "CPointTemplate": {
         "description": "point_template",
         "extends": "CBaseEntity",
@@ -10327,6 +10458,14 @@
                     "handle"
                 ],
                 "description": "Compute the distance between two entity OBB. A negative return value indicates an input error. A return value of zero indicates that the OBBs are overlapping.",
+                "return": "float"
+            },
+            "CalcDistanceToLineSegment2D": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector"
+                ],
                 "return": "float"
             },
             "CancelEntityIOEvents": {
@@ -10937,7 +11076,7 @@
                 "args": [
                     "handle"
                 ],
-                "description": "Get Angular Velocity for VPHYS or normal object",
+                "description": "Get Angular Velocity for VPHYS or normal object. Returns a vector of the axis of rotation, multiplied by the degrees of rotation per second.",
                 "return": "vector"
             },
             "GetPhysVelocity": {
@@ -11295,6 +11434,14 @@
                 "description": "Find the delta between two QAngles.",
                 "return": "qangle"
             },
+            "RotationDeltaAsAngularVelocity": {
+                "args": [
+                    "qangle",
+                    "qangle"
+                ],
+                "description": "converts delta QAngle to an angular velocity Vector",
+                "return": "vector"
+            },
             "Say": {
                 "args": [
                     "handle",
@@ -11371,6 +11518,14 @@
                     "handle"
                 ],
                 "description": "Sets an opvar value for a single player",
+                "return": "void"
+            },
+            "SetPhysAngularVelocity": {
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Set Angular Velocity for VPHYS or normal object, from a vector of the axis of rotation, multiplied by the degrees of rotation per second.",
                 "return": "void"
             },
             "SetQuestName": {

@@ -365,6 +365,36 @@
             "value": 5
         }
     ],
+    "DOTAProjectileAttachment_t": [
+        {
+            "key": "DOTA_PROJECTILE_ATTACHMENT_NONE",
+            "value": 0
+        },
+        {
+            "key": "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1",
+            "value": 1
+        },
+        {
+            "key": "DOTA_PROJECTILE_ATTACHMENT_ATTACK_2",
+            "value": 2
+        },
+        {
+            "key": "DOTA_PROJECTILE_ATTACHMENT_HITLOCATION",
+            "value": 3
+        },
+        {
+            "key": "DOTA_PROJECTILE_ATTACHMENT_ATTACK_3",
+            "value": 4
+        },
+        {
+            "key": "DOTA_PROJECTILE_ATTACHMENT_ATTACK_4",
+            "value": 5
+        },
+        {
+            "key": "DOTA_PROJECTILE_ATTACHMENT_LAST",
+            "value": 6
+        }
+    ],
     "DOTAScriptInventorySlot_t": [
         {
             "key": "DOTA_ITEM_SLOT_1",
@@ -1389,6 +1419,16 @@
             "value": 55
         }
     ],
+    "DamageCategory_t": [
+        {
+            "key": "DOTA_DAMAGE_CATEGORY_SPELL",
+            "value": 0
+        },
+        {
+            "key": "DOTA_DAMAGE_CATEGORY_ATTACK",
+            "value": 1
+        }
+    ],
     "EDOTA_ModifyGold_Reason": [
         {
             "key": "DOTA_ModifyGold_Unspecified",
@@ -2387,6 +2427,10 @@
         {
             "key": "ACT_DOTA_MK_SPRING_CAST",
             "value": 1723
+        },
+        {
+            "key": "ACT_DOTA_NECRO_GHOST_SHROUD",
+            "value": 1724
         }
     ],
     "LuaModifierType": [
@@ -7345,6 +7389,10 @@
             "value": 1722
         },
         {
+            "key": "ACT_DOTA_MK_SPRING_CAST",
+            "value": 1723
+        },
+        {
             "key": "AE_EMPTY",
             "value": 0
         },
@@ -8725,6 +8773,36 @@
             "value": "<handle>"
         }
     ],
+    "attackfail": [
+        {
+            "key": "DOTA_ATTACK_RECORD_FAIL_NO",
+            "value": 0
+        },
+        {
+            "key": "DOTA_ATTACK_RECORD_FAIL_TERRAIN_MISS",
+            "value": 1
+        },
+        {
+            "key": "DOTA_ATTACK_RECORD_FAIL_SOURCE_MISS",
+            "value": 2
+        },
+        {
+            "key": "DOTA_ATTACK_RECORD_FAIL_TARGET_EVADED",
+            "value": 3
+        },
+        {
+            "key": "DOTA_ATTACK_RECORD_FAIL_TARGET_INVULNERABLE",
+            "value": 4
+        },
+        {
+            "key": "DOTA_ATTACK_RECORD_FAIL_TARGET_OUT_OF_RANGE",
+            "value": 5
+        },
+        {
+            "key": "DOTA_ATTACK_RECORD_CANNOT_FAIL",
+            "value": 6
+        }
+    ],
     "modifierfunction": [
         {
             "description": "GetModifierPreAttack_BonusDamage",
@@ -9594,6 +9672,42 @@
         {
             "key": "MODIFIER_FUNCTION_INVALID",
             "value": 255
+        }
+    ],
+    "modifierpriority": [
+        {
+            "key": "MODIFIER_PRIORITY_LOW",
+            "value": 0
+        },
+        {
+            "key": "MODIFIER_PRIORITY_NORMAL",
+            "value": 1
+        },
+        {
+            "key": "MODIFIER_PRIORITY_HIGH",
+            "value": 2
+        },
+        {
+            "key": "MODIFIER_PRIORITY_ULTRA",
+            "value": 3
+        },
+        {
+            "key": "MODIFIER_PRIORITY_SUPER_ULTRA",
+            "value": 4
+        }
+    ],
+    "modifierremove": [
+        {
+            "key": "DOTA_BUFF_REMOVE_ALL",
+            "value": 0
+        },
+        {
+            "key": "DOTA_BUFF_REMOVE_ENEMY",
+            "value": 1
+        },
+        {
+            "key": "DOTA_BUFF_REMOVE_ALLY",
+            "value": 2
         }
     ],
     "modifierstate": [

@@ -33,6 +33,10 @@
             "value": 6
         },
         {
+            "key": "BOT_MODE_RUNE",
+            "value": 7
+        },
+        {
             "key": "BOT_MODE_PUSH_TOWER_TOP",
             "value": 8
         },
@@ -853,19 +857,175 @@
             "value": 1
         },
         {
-            "key": "COURIER_ACTION_STASH_ITEMS",
+            "key": "COURIER_ACTION_RETURN_STASH_ITEMS",
             "value": 2
         },
         {
-            "key": "COURIER_ACTION_TRANSFER_ITEMS",
+            "key": "COURIER_ACTION_TAKE_STASH_ITEMS",
             "value": 3
         },
         {
-            "key": "COURIER_ACTION_BURST",
+            "key": "COURIER_ACTION_TRANSFER_ITEMS",
             "value": 4
         },
         {
+            "key": "COURIER_ACTION_BURST",
+            "value": 5
+        },
+        {
             "key": "COURIER_ACTION_TAKE_AND_TRANSFER_ITEMS",
+            "value": 6
+        },
+        {
+            "key": "ABILITY_TARGET_TEAM_NONE",
+            "value": 0
+        },
+        {
+            "key": "ABILITY_TARGET_TEAM_FRIENDLY",
+            "value": 1
+        },
+        {
+            "key": "ABILITY_TARGET_TEAM_ENEMY",
+            "value": 2
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_NONE",
+            "value": 0
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_HERO",
+            "value": 1
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_CREEP",
+            "value": 2
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_BUILDING",
+            "value": 4
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_COURIER",
+            "value": 16
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_OTHER",
+            "value": 32
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_TREE",
+            "value": 64
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_BASIC",
+            "value": 18
+        },
+        {
+            "key": "ABILITY_TARGET_TYPE_ALL",
+            "value": 55
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NONE",
+            "value": 0
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_RANGED_ONLY",
+            "value": 2
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_MELEE_ONLY",
+            "value": 4
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_DEAD",
+            "value": 8
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES",
+            "value": 16
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES",
+            "value": 32
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_INVULNERABLE",
+            "value": 64
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_FOW_VISIBLE",
+            "value": 128
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NO_INVIS",
+            "value": 256
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_ANCIENTS",
+            "value": 512
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_PLAYER_CONTROLLED",
+            "value": 1024
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_DOMINATED",
+            "value": 2048
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_SUMMONED",
+            "value": 4096
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_ILLUSIONS",
+            "value": 8192
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_ATTACK_IMMUNE",
+            "value": 16384
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_MANA_ONLY",
+            "value": 32768
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_CHECK_DISABLE_HELP",
+            "value": 65536
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_CREEP_HERO",
+            "value": 131072
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_OUT_OF_WORLD",
+            "value": 262144
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_NOT_NIGHTMARED",
+            "value": 524288
+        },
+        {
+            "key": "ABILITY_TARGET_FLAG_PREFER_ENEMIES",
+            "value": 1048576
+        },
+        {
+            "key": "SHOP_HOME",
+            "value": 0
+        },
+        {
+            "key": "SHOP_SIDE",
+            "value": 1
+        },
+        {
+            "key": "SHOP_SECRET",
+            "value": 2
+        },
+        {
+            "key": "SHOP_SIDE2",
+            "value": 4
+        },
+        {
+            "key": "SHOP_SECRET2",
             "value": 5
         }
     ]
