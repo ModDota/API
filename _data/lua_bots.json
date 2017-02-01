@@ -52,6 +52,11 @@
                 "description": "Get the mana cost per second of this Ability while channeling it.",
                 "return": "int"
             },
+            "GetCooldown": {
+                "args": [],
+                "description": "Get the cooldown of this Abilty.",
+                "return": "float"
+            },
             "GetCooldownTimeRemaining": {
                 "args": [],
                 "description": "Get the cooldown time remaning for this Ability.",
@@ -563,6 +568,16 @@
                     "cstring"
                 ],
                 "description": "Get a bot's ability by name",
+                "return": "handle"
+            },
+            "GetAbilityInSlot": {
+                "arg_names": [
+                    "iAbility"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get a bot's ability by slot",
                 "return": "handle"
             },
             "GetAbilityPoints": {
@@ -1232,7 +1247,7 @@
                 "description": "Get the number of modifiers on this bot.",
                 "return": "int"
             },
-            "SetActionQueuieng": {
+            "SetActionQueueing": {
                 "arg_names": [
                     "bQueueing"
                 ],
