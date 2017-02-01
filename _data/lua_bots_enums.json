@@ -877,6 +877,18 @@
             "value": 6
         },
         {
+            "key": "COURIER_ACTION_ENEMY_SECRET_SHOP",
+            "value": 7
+        },
+        {
+            "key": "COURIER_ACTION_SIDE_SHOP",
+            "value": 8
+        },
+        {
+            "key": "COURIER_ACTION_SIDE_SHOP2",
+            "value": 9
+        },
+        {
             "key": "ABILITY_TARGET_TEAM_NONE",
             "value": 0
         },

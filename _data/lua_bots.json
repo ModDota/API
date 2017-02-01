@@ -67,6 +67,20 @@
                 "description": "Get the damage type of this Ability.",
                 "return": "int"
             },
+            "GetEstimatedDamageToTarget": {
+                "arg_names": [
+                    "hTarget",
+                    "fDuration",
+                    "nDamageTypes"
+                ],
+                "args": [
+                    "handle",
+                    "float",
+                    "int"
+                ],
+                "description": "How much damage would this ability do to the specified target over the specified duration?",
+                "return": "int"
+            },
             "GetHeroLevelRequiredToUpgrade": {
                 "args": [],
                 "description": "Get the Hero level required to upgrade this Ability.",
@@ -774,11 +788,6 @@
                 "description": "Gets the last attack time of the unit.",
                 "return": "float"
             },
-            "GetLastSeenLocation": {
-                "args": [],
-                "description": "Get the location at which this unit was last seen.",
-                "return": "vector"
-            },
             "GetLevel": {
                 "args": [],
                 "description": "Get the bot's current level.",
@@ -865,7 +874,7 @@
                     "int",
                     "bool"
                 ],
-                "description": "Get nearby creeps that we can see.",
+                "description": "Get nearby creeps (lane or neutral) that we can see.",
                 "return": "variant"
             },
             "GetNearbyHeroes": {
@@ -880,6 +889,28 @@
                     "int"
                 ],
                 "description": "Get nearby heroes that we can see in a mode.  Can specify a bot mode when querying allies.  BOT_MODE_NONE does no mode filtering.",
+                "return": "variant"
+            },
+            "GetNearbyLaneCreeps": {
+                "arg_names": [
+                    "nRadius",
+                    "bEnemies"
+                ],
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "Get nearby lane creeps that we can see.",
+                "return": "variant"
+            },
+            "GetNearbyNeutralCreeps": {
+                "arg_names": [
+                    "nRadius"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get nearby neutral creeps that we can see.",
                 "return": "variant"
             },
             "GetNearbyShrines": {
@@ -985,11 +1016,6 @@
                 "args": [],
                 "description": "Get the current target of this bot.",
                 "return": "handle"
-            },
-            "GetTimeSinceLastSeen": {
-                "args": [],
-                "description": "Get how long it's been since the unit was seen.",
-                "return": "float"
             },
             "GetUnitName": {
                 "args": [],
@@ -1205,6 +1231,16 @@
                 "args": [],
                 "description": "Get the number of modifiers on this bot.",
                 "return": "int"
+            },
+            "SetActionQueuieng": {
+                "arg_names": [
+                    "bQueueing"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Set whether Action_* functions are queued or not.",
+                "return": "void"
             },
             "SetNextItemPurchaseValue": {
                 "arg_names": [
@@ -1458,6 +1494,20 @@
                 "description": "Get the height level (1 through 5) of the specified location.",
                 "return": "int"
             },
+            "GetHeroLastSeenInfo": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the {location, time} of the last seen PlayerID unit.",
+                "return": "variant"
+            },
+            "GetHeroLevel": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the level of the hero controlled by the specified PlayerID.",
+                "return": "int"
+            },
             "GetHeroPickState": {
                 "args": [],
                 "description": "Gets the current phase of hero picking.",
@@ -1622,7 +1672,6 @@
             },
             "GetTeamMember": {
                 "args": [
-                    "int",
                     "int"
                 ],
                 "description": "Get a member of a team.",
@@ -1634,6 +1683,11 @@
                 ],
                 "description": "Gets a list of Player IDs for the specified team.",
                 "return": "variant"
+            },
+            "GetTimeOfDay": {
+                "args": [],
+                "description": "Gets the curren time of day (0.0 is midnight, 0.5 is noon).",
+                "return": "float"
             },
             "GetTower": {
                 "args": [
@@ -1705,6 +1759,13 @@
             "IsCourierAvailable": {
                 "args": [],
                 "description": "Asks if a courier is available to use.",
+                "return": "bool"
+            },
+            "IsHeroAlive": {
+                "args": [
+                    "int"
+                ],
+                "description": "Asks if the specified PlayerID is alive.",
                 "return": "bool"
             },
             "IsInCMBanPhase": {

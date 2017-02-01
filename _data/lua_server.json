@@ -6671,6 +6671,15 @@
                 "description": "Set the number of charges on this item",
                 "return": "void"
             },
+            "SetDroppable": {
+                "arg_names": [
+                    "bDroppable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
             "SetItemState": {
                 "arg_names": [
                     "iState"
@@ -6699,6 +6708,15 @@
                     "handle"
                 ],
                 "description": "Set the purchaser of record for this item.",
+                "return": "void"
+            },
+            "SetSellable": {
+                "arg_names": [
+                    "bSellable"
+                ],
+                "args": [
+                    "bool"
+                ],
                 "return": "void"
             },
             "SetStacksWithOtherOwners": {
