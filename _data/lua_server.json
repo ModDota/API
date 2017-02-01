@@ -6167,8 +6167,8 @@
             "RespawnHero": {
                 "arg_names": [
                     "bBuyBack",
-                    "bIsActuallyBeingSpawnedForTheFi",
-                    "tTime"
+                    "bIsActuallyBeingSpawnedForTheFirstTime",
+                    "bRespawnPenalty"
                 ],
                 "args": [
                     "bool",
@@ -9893,7 +9893,7 @@
             },
             "SetDynamicVsDynamicContinuous": {
                 "arg_names": [
-                    "bIsDynamicVsDynamicContinuousEn"
+                    "bIsDynamicVsDynamicContinuousEnabled"
                 ],
                 "args": [
                     "bool"
