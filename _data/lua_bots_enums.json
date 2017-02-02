@@ -169,6 +169,46 @@
             "value": 7
         },
         {
+            "key": "UNIT_LIST_ALL",
+            "value": 0
+        },
+        {
+            "key": "UNIT_LIST_ALLIES",
+            "value": 1
+        },
+        {
+            "key": "UNIT_LIST_ALLIED_HEROES",
+            "value": 2
+        },
+        {
+            "key": "UNIT_LIST_ALLIED_CREEPS",
+            "value": 3
+        },
+        {
+            "key": "UNIT_LIST_ALLIED_WARDS",
+            "value": 4
+        },
+        {
+            "key": "UNIT_LIST_ENEMIES",
+            "value": 5
+        },
+        {
+            "key": "UNIT_LIST_ENEMY_HEROES",
+            "value": 6
+        },
+        {
+            "key": "UNIT_LIST_ENEMY_CREEPS",
+            "value": 7
+        },
+        {
+            "key": "UNIT_LIST_ENEMY_WARDS",
+            "value": 8
+        },
+        {
+            "key": "UNIT_LIST_NEUTRAL_CREEPS",
+            "value": 9
+        },
+        {
             "key": "DIFFICULTY_INVALID",
             "value": 5
         },
@@ -689,6 +729,70 @@
             "value": 8
         },
         {
+            "key": "COURIER_ACTION_RETURN",
+            "value": 0
+        },
+        {
+            "key": "COURIER_ACTION_SECRET_SHOP",
+            "value": 1
+        },
+        {
+            "key": "COURIER_ACTION_RETURN_STASH_ITEMS",
+            "value": 2
+        },
+        {
+            "key": "COURIER_ACTION_TAKE_STASH_ITEMS",
+            "value": 3
+        },
+        {
+            "key": "COURIER_ACTION_TRANSFER_ITEMS",
+            "value": 4
+        },
+        {
+            "key": "COURIER_ACTION_BURST",
+            "value": 5
+        },
+        {
+            "key": "COURIER_ACTION_TAKE_AND_TRANSFER_ITEMS",
+            "value": 6
+        },
+        {
+            "key": "COURIER_ACTION_ENEMY_SECRET_SHOP",
+            "value": 7
+        },
+        {
+            "key": "COURIER_ACTION_SIDE_SHOP",
+            "value": 8
+        },
+        {
+            "key": "COURIER_ACTION_SIDE_SHOP2",
+            "value": 9
+        },
+        {
+            "key": "COURIER_STATE_IDLE",
+            "value": 0
+        },
+        {
+            "key": "COURIER_STATE_AT_BASE",
+            "value": 1
+        },
+        {
+            "key": "COURIER_STATE_MOVING",
+            "value": 2
+        },
+        {
+            "key": "COURIER_STATE_DELIVERING_ITEMS",
+            "value": 3
+        },
+        {
+            "key": "COURIER_STATE_RETURNING_TO_BASE",
+            "value": 4
+        },
+        {
+            "key": "COURIER_STATE_DEAD",
+            "value": 5
+        },
+        {
             "key": "TOWER_TOP_1",
             "value": 0
         },
@@ -785,108 +889,24 @@
             "value": 6
         },
         {
-            "key": "UNIT_LIST_ALL",
+            "key": "SHOP_HOME",
             "value": 0
         },
         {
-            "key": "UNIT_LIST_ALLIES",
+            "key": "SHOP_SIDE",
             "value": 1
         },
         {
-            "key": "UNIT_LIST_ALLIED_HEROES",
+            "key": "SHOP_SECRET",
             "value": 2
         },
         {
-            "key": "UNIT_LIST_ALLIED_CREEPS",
-            "value": 3
-        },
-        {
-            "key": "UNIT_LIST_ALLIED_WARDS",
+            "key": "SHOP_SIDE2",
             "value": 4
         },
         {
-            "key": "UNIT_LIST_ENEMIES",
+            "key": "SHOP_SECRET2",
             "value": 5
-        },
-        {
-            "key": "UNIT_LIST_ENEMY_HEROES",
-            "value": 6
-        },
-        {
-            "key": "UNIT_LIST_ENEMY_CREEPS",
-            "value": 7
-        },
-        {
-            "key": "UNIT_LIST_ENEMY_WARDS",
-            "value": 8
-        },
-        {
-            "key": "UNIT_LIST_NEUTRAL_CREEPS",
-            "value": 9
-        },
-        {
-            "key": "COURIER_STATE_IDLE",
-            "value": 0
-        },
-        {
-            "key": "COURIER_STATE_AT_BASE",
-            "value": 1
-        },
-        {
-            "key": "COURIER_STATE_MOVING",
-            "value": 2
-        },
-        {
-            "key": "COURIER_STATE_DELIVERING_ITEMS",
-            "value": 3
-        },
-        {
-            "key": "COURIER_STATE_RETURNING_TO_BASE",
-            "value": 4
-        },
-        {
-            "key": "COURIER_STATE_DEAD",
-            "value": 5
-        },
-        {
-            "key": "COURIER_ACTION_RETURN",
-            "value": 0
-        },
-        {
-            "key": "COURIER_ACTION_SECRET_SHOP",
-            "value": 1
-        },
-        {
-            "key": "COURIER_ACTION_RETURN_STASH_ITEMS",
-            "value": 2
-        },
-        {
-            "key": "COURIER_ACTION_TAKE_STASH_ITEMS",
-            "value": 3
-        },
-        {
-            "key": "COURIER_ACTION_TRANSFER_ITEMS",
-            "value": 4
-        },
-        {
-            "key": "COURIER_ACTION_BURST",
-            "value": 5
-        },
-        {
-            "key": "COURIER_ACTION_TAKE_AND_TRANSFER_ITEMS",
-            "value": 6
-        },
-        {
-            "key": "COURIER_ACTION_ENEMY_SECRET_SHOP",
-            "value": 7
-        },
-        {
-            "key": "COURIER_ACTION_SIDE_SHOP",
-            "value": 8
-        },
-        {
-            "key": "COURIER_ACTION_SIDE_SHOP2",
-            "value": 9
         },
         {
             "key": "ABILITY_TARGET_TEAM_NONE",
@@ -1019,26 +1039,6 @@
         {
             "key": "ABILITY_TARGET_FLAG_PREFER_ENEMIES",
             "value": 1048576
-        },
-        {
-            "key": "SHOP_HOME",
-            "value": 0
-        },
-        {
-            "key": "SHOP_SIDE",
-            "value": 1
-        },
-        {
-            "key": "SHOP_SECRET",
-            "value": 2
-        },
-        {
-            "key": "SHOP_SIDE2",
-            "value": 4
-        },
-        {
-            "key": "SHOP_SECRET2",
-            "value": 5
         }
     ]
 }

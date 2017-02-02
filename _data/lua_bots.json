@@ -1509,6 +1509,27 @@
                 "description": "Get the height level (1 through 5) of the specified location.",
                 "return": "int"
             },
+            "GetHeroAssists": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the assists of the hero controlled by the specified PlayerID.",
+                "return": "int"
+            },
+            "GetHeroDeaths": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the deaths of the hero controlled by the specified PlayerID.",
+                "return": "int"
+            },
+            "GetHeroKills": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the kills of the hero controlled by the specified PlayerID.",
+                "return": "int"
+            },
             "GetHeroLastSeenInfo": {
                 "args": [
                     "int"
