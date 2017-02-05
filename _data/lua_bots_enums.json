@@ -169,6 +169,22 @@
             "value": 7
         },
         {
+            "key": "ATTRIBUTE_INVALID",
+            "value": -1
+        },
+        {
+            "key": "ATTRIBUTE_STRENGTH",
+            "value": 0
+        },
+        {
+            "key": "ATTRIBUTE_AGILITY",
+            "value": 1
+        },
+        {
+            "key": "ATTRIBUTE_INTELLECT",
+            "value": 2
+        },
+        {
             "key": "UNIT_LIST_ALL",
             "value": 0
         },

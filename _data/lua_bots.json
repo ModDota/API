@@ -510,7 +510,7 @@
             },
             "CanBeSeen": {
                 "args": [],
-                "description": "Can we currently see this bot?  Always true for bots on our team.  Many function will not return valid data without this being true.",
+                "description": "Can we currently see this bot?  Always true for bots on our team.  Many functions will not return valid data without this being true.",
                 "return": "bool"
             },
             "DistanceFromFountain": {
@@ -595,7 +595,7 @@
                 "description": "Get the desire value of the active mode",
                 "return": "float"
             },
-            "GetActualDamage": {
+            "GetActualIncomingDamage": {
                 "arg_names": [
                     "nDamage",
                     "eDamageType"
@@ -604,7 +604,7 @@
                     "int",
                     "int"
                 ],
-                "description": "Get damage value after reductions.",
+                "description": "Gets the incoming damage value after reductions.",
                 "return": "int"
             },
             "GetArmor": {
