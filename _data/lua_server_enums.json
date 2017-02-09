@@ -131,6 +131,10 @@
         {
             "key": "DOTA_DAMAGE_FLAG_DONT_DISPLAY_DAMAGE_IF_SOURCE_HIDDEN",
             "value": 2048
+        },
+        {
+            "key": "DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL",
+            "value": 4096
         }
     ],
     "DOTAHUDVisibility_t": [
