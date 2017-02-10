@@ -1055,6 +1055,142 @@
         {
             "key": "ABILITY_TARGET_FLAG_PREFER_ENEMIES",
             "value": 1048576
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_NONE",
+            "value": 0
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_HIDDEN",
+            "value": 1
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_PASSIVE",
+            "value": 2
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_NO_TARGET",
+            "value": 4
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_UNIT_TARGET",
+            "value": 8
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_POINT",
+            "value": 16
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_AOE",
+            "value": 32
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_NOT_LEARNABLE",
+            "value": 64
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_CHANNELLED",
+            "value": 128
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_ITEM",
+            "value": 256
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_TOGGLE",
+            "value": 512
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_DIRECTIONAL",
+            "value": 1024
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_IMMEDIATE",
+            "value": 2048
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_AUTOCAST",
+            "value": 4096
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET",
+            "value": 8192
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_OPTIONAL_POINT",
+            "value": 16384
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_OPTIONAL_NO_TARGET",
+            "value": 32768
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_AURA",
+            "value": 65536
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_ATTACK",
+            "value": 131072
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT",
+            "value": 262144
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_ROOT_DISABLES",
+            "value": 524288
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_UNRESTRICTED",
+            "value": 1048576
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE",
+            "value": 2097152
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_IGNORE_CHANNEL",
+            "value": 4194304
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT",
+            "value": 8388608
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_DONT_ALERT_TARGET",
+            "value": 16777216
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_DONT_RESUME_ATTACK",
+            "value": 33554432
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_NORMAL_WHEN_STOLEN",
+            "value": 67108864
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_IGNORE_BACKSWING",
+            "value": 134217728
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_RUNE_TARGET",
+            "value": 268435456
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL",
+            "value": 536870912
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_VECTOR_TARGETING",
+            "value": 1073741824
+        },
+        {
+            "key": "ABILITY_BEHAVIOR_LAST_RESORT_POINT",
+            "value": -2147483648
+        },
+        {
+            "key": "GLYPH_COOLDOWN",
+            "value": 300.0
         }
     ]
 }

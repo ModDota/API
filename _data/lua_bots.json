@@ -261,6 +261,398 @@
     "CDOTA_Bot_Script": {
         "description": "A unit referenced from Dota bot script",
         "functions": {
+            "ActionImmediate_Buyback": {
+                "args": [],
+                "description": "Tell a bot to buy back into the game.",
+                "return": "void"
+            },
+            "ActionImmediate_Chat": {
+                "arg_names": [
+                    "pszMessage",
+                    "bAllChat"
+                ],
+                "args": [
+                    "cstring",
+                    "bool"
+                ],
+                "description": "Tell a bot to say something.",
+                "return": "void"
+            },
+            "ActionImmediate_Courier": {
+                "arg_names": [
+                    "hCourier",
+                    "eAction"
+                ],
+                "args": [
+                    "handle",
+                    "int"
+                ],
+                "description": "Tell a bot to use the courier.",
+                "return": "bool"
+            },
+            "ActionImmediate_DisassembleItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to disassemble an item.",
+                "return": "void"
+            },
+            "ActionImmediate_Glyph": {
+                "args": [],
+                "description": "Tell a bot to use glyph.",
+                "return": "void"
+            },
+            "ActionImmediate_LevelAbility": {
+                "arg_names": [
+                    "pszAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Tell a bot to level up a specific ability.",
+                "return": "void"
+            },
+            "ActionImmediate_Ping": {
+                "arg_names": [
+                    "x",
+                    "y",
+                    "bNormalPing"
+                ],
+                "args": [
+                    "float",
+                    "float",
+                    "bool"
+                ],
+                "description": "Tell a bot to ping a location.",
+                "return": "void"
+            },
+            "ActionImmediate_PurchaseItem": {
+                "arg_names": [
+                    "pszItemName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Tell a bot to purchase an item by name.",
+                "return": "<unknown>"
+            },
+            "ActionImmediate_SellItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to sell an item.",
+                "return": "void"
+            },
+            "ActionImmediate_SetItemCombineLock": {
+                "arg_names": [
+                    "hItem",
+                    "bLocked"
+                ],
+                "args": [
+                    "handle",
+                    "bool"
+                ],
+                "description": "Set the combine state on an item.",
+                "return": "void"
+            },
+            "ActionImmediate_SwapItems": {
+                "arg_names": [
+                    "nSlot1",
+                    "nSlot2"
+                ],
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Tell a bot to swap the contents of two item slots.",
+                "return": "void"
+            },
+            "ActionPush_AttackMove": {
+                "arg_names": [
+                    "location"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to attack-move a location.",
+                "return": "void"
+            },
+            "ActionPush_AttackUnit": {
+                "arg_names": [
+                    "hTarget",
+                    "bOnce"
+                ],
+                "args": [
+                    "handle",
+                    "bool"
+                ],
+                "description": "Tell a bot to attack a target unit. If bOnce is specified, it will auto-pop the action after one attack.",
+                "return": "void"
+            },
+            "ActionPush_Delay": {
+                "arg_names": [
+                    "fDelay"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Tell a bot to delay for the specified number of seconds.",
+                "return": "void"
+            },
+            "ActionPush_DropItem": {
+                "arg_names": [
+                    "hItem",
+                    "location"
+                ],
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Tell a bot to drop an item.",
+                "return": "void"
+            },
+            "ActionPush_MoveToLocation": {
+                "arg_names": [
+                    "location"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to move to a location.",
+                "return": "void"
+            },
+            "ActionPush_MoveToUnit": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to move to a unit and start following them.",
+                "return": "void"
+            },
+            "ActionPush_PickUpItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to pick up a dropped item.",
+                "return": "void"
+            },
+            "ActionPush_PickUpRune": {
+                "arg_names": [
+                    "nRune"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Tell a bot to pick up a rune.",
+                "return": "void"
+            },
+            "ActionPush_UseAbility": {
+                "arg_names": [
+                    "hAbility"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to use a non-targeted ability.",
+                "return": "void"
+            },
+            "ActionPush_UseAbilityOnEntity": {
+                "arg_names": [
+                    "hAbility",
+                    "hTarget"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Tell a bot to use a unit-targeted ability.",
+                "return": "void"
+            },
+            "ActionPush_UseAbilityOnLocation": {
+                "arg_names": [
+                    "hAbility",
+                    "location"
+                ],
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Tell a bot to use a location-targeted ability.",
+                "return": "void"
+            },
+            "ActionPush_UseAbilityOnTree": {
+                "arg_names": [
+                    "hAbility",
+                    "iTree"
+                ],
+                "args": [
+                    "handle",
+                    "int"
+                ],
+                "description": "Tell a bot to use a tree-targeted ability.",
+                "return": "void"
+            },
+            "ActionPush_UseShrine": {
+                "arg_names": [
+                    "hShrine"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to use the specified shrine.",
+                "return": "void"
+            },
+            "ActionQueue_AttackMove": {
+                "arg_names": [
+                    "location"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to attack-move a location.",
+                "return": "void"
+            },
+            "ActionQueue_AttackUnit": {
+                "arg_names": [
+                    "hTarget",
+                    "bOnce"
+                ],
+                "args": [
+                    "handle",
+                    "bool"
+                ],
+                "description": "Tell a bot to attack a target unit. If bOnce is specified, it will auto-pop the action after one attack.",
+                "return": "void"
+            },
+            "ActionQueue_Delay": {
+                "arg_names": [
+                    "fDelay"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Tell a bot to delay for the specified number of seconds.",
+                "return": "void"
+            },
+            "ActionQueue_DropItem": {
+                "arg_names": [
+                    "hItem",
+                    "location"
+                ],
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Tell a bot to drop an item.",
+                "return": "void"
+            },
+            "ActionQueue_MoveToLocation": {
+                "arg_names": [
+                    "location"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to move to a location.",
+                "return": "void"
+            },
+            "ActionQueue_MoveToUnit": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to move to a unit and start following them.",
+                "return": "void"
+            },
+            "ActionQueue_PickUpItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to pick up a dropped item.",
+                "return": "void"
+            },
+            "ActionQueue_PickUpRune": {
+                "arg_names": [
+                    "nRune"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Tell a bot to pick up a rune.",
+                "return": "void"
+            },
+            "ActionQueue_UseAbility": {
+                "arg_names": [
+                    "hAbility"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to use a non-targeted ability.",
+                "return": "void"
+            },
+            "ActionQueue_UseAbilityOnEntity": {
+                "arg_names": [
+                    "hAbility",
+                    "hTarget"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Tell a bot to use a unit-targeted ability.",
+                "return": "void"
+            },
+            "ActionQueue_UseAbilityOnLocation": {
+                "arg_names": [
+                    "hAbility",
+                    "location"
+                ],
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Tell a bot to use a location-targeted ability.",
+                "return": "void"
+            },
+            "ActionQueue_UseAbilityOnTree": {
+                "arg_names": [
+                    "hAbility",
+                    "iTree"
+                ],
+                "args": [
+                    "handle",
+                    "int"
+                ],
+                "description": "Tell a bot to use a tree-targeted ability.",
+                "return": "void"
+            },
+            "ActionQueue_UseShrine": {
+                "arg_names": [
+                    "hShrine"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to use the specified shrine.",
+                "return": "void"
+            },
             "Action_AttackMove": {
                 "arg_names": [
                     "location"
@@ -283,23 +675,6 @@
                 "description": "Tell a bot to attack a target unit. If bOnce is specified, it will auto-pop the action after one attack.",
                 "return": "void"
             },
-            "Action_Buyback": {
-                "args": [],
-                "description": "Tell a bot to buy back into the game.",
-                "return": "void"
-            },
-            "Action_Chat": {
-                "arg_names": [
-                    "pszMessage",
-                    "bAllChat"
-                ],
-                "args": [
-                    "cstring",
-                    "bool"
-                ],
-                "description": "Tell a bot to say something.",
-                "return": "void"
-            },
             "Action_ClearActions": {
                 "arg_names": [
                     "bStop"
@@ -310,26 +685,14 @@
                 "description": "Clear current action stack and return to idle.  Optionally stop in place.",
                 "return": "void"
             },
-            "Action_Courier": {
+            "Action_Delay": {
                 "arg_names": [
-                    "hCourier",
-                    "eAction"
+                    "fDelay"
                 ],
                 "args": [
-                    "handle",
-                    "int"
+                    "float"
                 ],
-                "description": "Tell a bot to use the courier.",
-                "return": "bool"
-            },
-            "Action_DisassembleItem": {
-                "arg_names": [
-                    "hItem"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Tell a bot to disassemble an item.",
+                "description": "Tell a bot to delay for the specified number of seconds.",
                 "return": "void"
             },
             "Action_DropItem": {
@@ -342,16 +705,6 @@
                     "vector"
                 ],
                 "description": "Tell a bot to drop an item.",
-                "return": "void"
-            },
-            "Action_LevelAbility": {
-                "arg_names": [
-                    "pszAbilityName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Tell a bot to level up a specific ability.",
                 "return": "void"
             },
             "Action_MoveToLocation": {
@@ -392,64 +745,6 @@
                     "int"
                 ],
                 "description": "Tell a bot to pick up a rune.",
-                "return": "void"
-            },
-            "Action_Ping": {
-                "arg_names": [
-                    "x",
-                    "y",
-                    "bNormalPing"
-                ],
-                "args": [
-                    "float",
-                    "float",
-                    "bool"
-                ],
-                "description": "Tell a bot to ping a location.",
-                "return": "void"
-            },
-            "Action_PurchaseItem": {
-                "arg_names": [
-                    "pszItemName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Tell a bot to purchase an item by name.",
-                "return": "<unknown>"
-            },
-            "Action_SellItem": {
-                "arg_names": [
-                    "hItem"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Tell a bot to sell an item.",
-                "return": "void"
-            },
-            "Action_SetItemCombineLock": {
-                "arg_names": [
-                    "hItem",
-                    "bLocked"
-                ],
-                "args": [
-                    "handle",
-                    "bool"
-                ],
-                "description": "Set the combine state on an item.",
-                "return": "void"
-            },
-            "Action_SwapItems": {
-                "arg_names": [
-                    "nSlot1",
-                    "nSlot2"
-                ],
-                "args": [
-                    "int",
-                    "int"
-                ],
-                "description": "Tell a bot to swap the contents of two item slots.",
                 "return": "void"
             },
             "Action_UseAbility": {
@@ -689,12 +984,12 @@
             },
             "GetBuybackCooldown": {
                 "args": [],
-                "description": "Can the bot buy back?",
+                "description": "Get the current cooldown on buying back.",
                 "return": "float"
             },
             "GetBuybackCost": {
                 "args": [],
-                "description": "Can the bot buy back?",
+                "description": "Get the current cost of buying back.",
                 "return": "int"
             },
             "GetCourierValue": {
@@ -715,6 +1010,11 @@
             "GetCurrentMovementSpeed": {
                 "args": [],
                 "description": "Get a bot's current movement speed.",
+                "return": "int"
+            },
+            "GetDenies": {
+                "args": [],
+                "description": "Get the deny count of this bot.",
                 "return": "int"
             },
             "GetDifficulty": {
@@ -803,6 +1103,11 @@
                 "description": "Gets the last attack time of the unit.",
                 "return": "float"
             },
+            "GetLastHits": {
+                "args": [],
+                "description": "Get the last hit count of this bot.",
+                "return": "int"
+            },
             "GetLevel": {
                 "args": [],
                 "description": "Get the bot's current level.",
@@ -847,6 +1152,16 @@
                 ],
                 "description": "Get a specific modifier name.",
                 "return": "cstring"
+            },
+            "GetModifierRemainingDuration": {
+                "arg_names": [
+                    "nModifier"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get a modifier's remaining duration.",
+                "return": "float"
             },
             "GetModifierStackCount": {
                 "arg_names": [
@@ -962,6 +1277,11 @@
                 "description": "Get nearby trees.",
                 "return": "variant"
             },
+            "GetNetWorth": {
+                "args": [],
+                "description": "Get the bot's current net worth.",
+                "return": "int"
+            },
             "GetNextItemPurchaseValue": {
                 "args": [],
                 "description": "Gets the purchase value of the next item the unit wants to purchase.",
@@ -985,6 +1305,11 @@
             "GetRawOffensivePower": {
                 "args": [],
                 "description": "Get the unit's raw offensive power.",
+                "return": "float"
+            },
+            "GetRemainingLifespan": {
+                "args": [],
+                "description": "Can remaining lifespan of a unit.",
                 "return": "float"
             },
             "GetRespawnTime": {
@@ -1085,11 +1410,6 @@
                     "cstring"
                 ],
                 "description": "Does the bot have the specified modifier?",
-                "return": "bool"
-            },
-            "HasQueuedAction": {
-                "args": [],
-                "description": "Does the bot have a queued action currently?",
                 "return": "bool"
             },
             "HasScepter": {
@@ -1246,16 +1566,6 @@
                 "args": [],
                 "description": "Get the number of modifiers on this bot.",
                 "return": "int"
-            },
-            "SetActionQueueing": {
-                "arg_names": [
-                    "bQueueing"
-                ],
-                "args": [
-                    "bool"
-                ],
-                "description": "Set whether Action_* functions are queued or not.",
-                "return": "void"
             },
             "SetNextItemPurchaseValue": {
                 "arg_names": [
@@ -1500,6 +1810,11 @@
             "GetGameStateTimeRemaining": {
                 "args": [],
                 "description": "Gets how much time is remaining in the current game state.",
+                "return": "float"
+            },
+            "GetGlyphCooldown": {
+                "args": [],
+                "description": "Returns the cooldown on glyph (0 if available).",
                 "return": "float"
             },
             "GetHeightLevel": {
@@ -1832,7 +2147,14 @@
                 "args": [
                     "vector"
                 ],
-                "description": "Can the specified location currently be pathed through.",
+                "description": "Can the specified location currently be pathed through?",
+                "return": "bool"
+            },
+            "IsLocationVisible": {
+                "args": [
+                    "vector"
+                ],
+                "description": "Can the specified location currently be seen?",
                 "return": "bool"
             },
             "IsPlayerBot": {
