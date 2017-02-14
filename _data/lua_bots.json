@@ -1078,6 +1078,11 @@
                 "description": "Get a bot's health regen rate.",
                 "return": "float"
             },
+            "GetIncomingTrackingProjectiles": {
+                "args": [],
+                "description": "Get a modifier's remaining duration.",
+                "return": "variant"
+            },
             "GetItemInSlot": {
                 "arg_names": [
                     "nSlot"
@@ -1302,6 +1307,16 @@
                 "description": "Gets the evasion resist of the unit.",
                 "return": "int"
             },
+            "GetQueuedActionType": {
+                "arg_names": [
+                    "nQueuedAction"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get the specified action in the queue.",
+                "return": "int"
+            },
             "GetRawOffensivePower": {
                 "args": [],
                 "description": "Get the unit's raw offensive power.",
@@ -1356,6 +1371,11 @@
                 "args": [],
                 "description": "Get the current target of this bot.",
                 "return": "handle"
+            },
+            "GetTeam": {
+                "args": [],
+                "description": "Get the unit's team.",
+                "return": "int"
             },
             "GetUnitName": {
                 "args": [],
@@ -1567,6 +1587,11 @@
                 "description": "Get the number of modifiers on this bot.",
                 "return": "int"
             },
+            "NumQueuedActions": {
+                "args": [],
+                "description": "Get the number actions currently queued.",
+                "return": "int"
+            },
             "SetNextItemPurchaseValue": {
                 "arg_names": [
                     "nGold"
@@ -1734,12 +1759,25 @@
                 "description": "Gets the time since the hero picking phase started.  Pauses with game pause.",
                 "return": "float"
             },
+            "GetAmountAlongLane": {
+                "args": [
+                    "int",
+                    "vector"
+                ],
+                "description": "Calculates the amount along the lane (and distance from the lane) for the specified location.",
+                "return": "float"
+            },
             "GetAncient": {
                 "args": [
                     "int"
                 ],
                 "description": "Gets the ancient on the specified team.",
                 "return": "handle"
+            },
+            "GetAvoidanceZones": {
+                "args": [],
+                "description": "Gets an array\t of all visible avoidance zones in a {ability, location, radius} table.",
+                "return": "variant"
             },
             "GetBarracks": {
                 "args": [
@@ -1895,6 +1933,11 @@
                 ],
                 "description": "Gets the location of the lane front for the specified team and lane.  Always ignores towers.  Has a third parameter for a distance delta from the front.",
                 "return": "vector"
+            },
+            "GetLinearProjectiles": {
+                "args": [],
+                "description": "Gets an array of all visible linear projectiles in a {ability, location, velocity, radius} table.",
+                "return": "variant"
             },
             "GetLocationAlongLane": {
                 "args": [

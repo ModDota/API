@@ -11384,6 +11384,14 @@
                 "description": "Get a random 2D vector of the given length.",
                 "return": "vector"
             },
+            "RegisterCustomAnimationScriptForModel": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Register a custom animation script to run when a model loads",
+                "return": "void"
+            },
             "RegisterSpawnGroupFilterProxy": {
                 "args": [
                     "cstring"
