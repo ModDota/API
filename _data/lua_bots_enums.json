@@ -745,6 +745,14 @@
             "value": 8
         },
         {
+            "key": "BOT_ACTION_TYPE_SHRINE",
+            "value": 9
+        },
+        {
+            "key": "BOT_ACTION_TYPE_DELAY",
+            "value": 10
+        },
+        {
             "key": "COURIER_ACTION_RETURN",
             "value": 0
         },

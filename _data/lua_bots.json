@@ -880,6 +880,11 @@
                 "description": "Get the number of ability points the bot can spend.",
                 "return": "int"
             },
+            "GetAcquisitionRange": {
+                "args": [],
+                "description": "Get the range at which this unit will start to attack a target.",
+                "return": "int"
+            },
             "GetActiveMode": {
                 "args": [],
                 "description": "Get the active mode ID",
@@ -1012,6 +1017,16 @@
                 "description": "Get a bot's current movement speed.",
                 "return": "int"
             },
+            "GetCurrentVisionRange": {
+                "args": [],
+                "description": "Get the unit's current vision range.",
+                "return": "int"
+            },
+            "GetDayTimeVisionRange": {
+                "args": [],
+                "description": "Get the unit's vision range during the day.",
+                "return": "int"
+            },
             "GetDenies": {
                 "args": [],
                 "description": "Get the deny count of this bot.",
@@ -1080,7 +1095,7 @@
             },
             "GetIncomingTrackingProjectiles": {
                 "args": [],
-                "description": "Get a modifier's remaining duration.",
+                "description": "Gets the location and ability of projectiles incoming at this unit.",
                 "return": "variant"
             },
             "GetItemInSlot": {
@@ -1292,6 +1307,11 @@
                 "description": "Gets the purchase value of the next item the unit wants to purchase.",
                 "return": "int"
             },
+            "GetNightTimeVisionRange": {
+                "args": [],
+                "description": "Get the unit's vision range during the night.",
+                "return": "int"
+            },
             "GetOffensivePower": {
                 "args": [],
                 "description": "Get the unit's current offensive power.",
@@ -1450,6 +1470,11 @@
             "IsAlive": {
                 "args": [],
                 "description": "Is a bot alive?",
+                "return": "bool"
+            },
+            "IsAncientCreep": {
+                "args": [],
+                "description": "Is this unit an ancient creep?",
                 "return": "bool"
             },
             "IsAttackImmune": {
@@ -1765,7 +1790,7 @@
                     "vector"
                 ],
                 "description": "Calculates the amount along the lane (and distance from the lane) for the specified location.",
-                "return": "float"
+                "return": "variant"
             },
             "GetAncient": {
                 "args": [
