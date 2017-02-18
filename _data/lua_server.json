@@ -588,6 +588,16 @@
                 "description": "Set a think function on this entity.",
                 "return": "void"
             },
+            "SetEntityName": {
+                "arg_names": [
+                    "pName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Set the name of an entity.",
+                "return": "void"
+            },
             "SetForwardVector": {
                 "arg_names": [
                     "v"

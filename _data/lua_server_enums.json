@@ -2435,6 +2435,10 @@
         {
             "key": "ACT_DOTA_NECRO_GHOST_SHROUD",
             "value": 1724
+        },
+        {
+            "key": "ACT_DOTA_OVERRIDE_ARCANA",
+            "value": 1725
         }
     ],
     "LuaModifierType": [
@@ -7395,6 +7399,10 @@
         {
             "key": "ACT_DOTA_MK_SPRING_CAST",
             "value": 1723
+        },
+        {
+            "key": "ACT_DOTA_NECRO_GHOST_SHROUD",
+            "value": 1724
         },
         {
             "key": "AE_EMPTY",

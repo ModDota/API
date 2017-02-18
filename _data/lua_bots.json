@@ -12,6 +12,11 @@
                 "description": "Can this item be disassembled?",
                 "return": "bool"
             },
+            "GetAOERadius": {
+                "args": [],
+                "description": "Gets the AoE radius of this Ability.",
+                "return": "int"
+            },
             "GetAbilityDamage": {
                 "args": [],
                 "description": "Get the basic damage value of this Ability.",
@@ -71,6 +76,11 @@
                 "args": [],
                 "description": "Get the damage type of this Ability.",
                 "return": "int"
+            },
+            "GetDuration": {
+                "args": [],
+                "description": "How long does this Ability persist once cast?",
+                "return": "float"
             },
             "GetEstimatedDamageToTarget": {
                 "arg_names": [
