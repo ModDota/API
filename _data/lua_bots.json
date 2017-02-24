@@ -1512,6 +1512,11 @@
                 "description": "Is this unit a building?",
                 "return": "bool"
             },
+            "IsCastingAbility": {
+                "args": [],
+                "description": "Is this bot currently casting an ability?",
+                "return": "bool"
+            },
             "IsChanneling": {
                 "args": [],
                 "description": "Is this bot currently channeling an ability?",
@@ -1614,7 +1619,7 @@
             },
             "IsUsingAbility": {
                 "args": [],
-                "description": "Is this bot currently casting an ability?",
+                "description": "Is this bot currently using an ability?",
                 "return": "bool"
             },
             "NumModifiers": {
@@ -1667,6 +1672,16 @@
                 "description": "How long as it been since the unit was damaged by an specific enemy?",
                 "return": "float"
             },
+            "TimeSinceDamagedByPlayer": {
+                "arg_names": [
+                    "nPlayerID"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "How long as it been since the unit was damaged by an specific player?",
+                "return": "float"
+            },
             "TimeSinceDamagedByTower": {
                 "args": [],
                 "description": "How long as it been since the unit was damaged by a tower?",
@@ -1707,6 +1722,18 @@
                     "float"
                 ],
                 "description": "Was the unit recently damaged by an specific enemy?",
+                "return": "bool"
+            },
+            "WasRecentlyDamagedByPlayer": {
+                "arg_names": [
+                    "nPlayerID",
+                    "fTime"
+                ],
+                "args": [
+                    "int",
+                    "float"
+                ],
+                "description": "Was the unit recently damaged by an specific player?",
                 "return": "bool"
             },
             "WasRecentlyDamagedByTower": {
@@ -1968,6 +1995,13 @@
                 ],
                 "description": "Gets the location of the lane front for the specified team and lane.  Always ignores towers.  Has a third parameter for a distance delta from the front.",
                 "return": "vector"
+            },
+            "GetLinearProjectileByHandle": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets a specific linear projectile's info using its handle.",
+                "return": "variant"
             },
             "GetLinearProjectiles": {
                 "args": [],
