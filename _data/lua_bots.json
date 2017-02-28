@@ -927,6 +927,16 @@
                 "description": "Get the lane that a unit is assigned to.",
                 "return": "int"
             },
+            "GetAttackCombatProficiency": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Gets the damage multiplier for attacks on the specified unit.",
+                "return": "float"
+            },
             "GetAttackDamage": {
                 "args": [],
                 "description": "Gets the total attack damage.",
@@ -1036,6 +1046,16 @@
                 "args": [],
                 "description": "Get the unit's vision range during the day.",
                 "return": "int"
+            },
+            "GetDefendCombatProficiency": {
+                "arg_names": [
+                    "hAttacker"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Gets the damage multiplier for attacks from the specified unit.",
+                "return": "float"
             },
             "GetDenies": {
                 "args": [],
