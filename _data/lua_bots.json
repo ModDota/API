@@ -1802,6 +1802,13 @@
                 "description": "Clamps the value between the two supplied values.",
                 "return": "float"
             },
+            "CreateHTTPRequest": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Create a localhost HTTP request.",
+                "return": "handle"
+            },
             "DebugDrawCircle": {
                 "args": [
                     "vector",
@@ -1850,6 +1857,11 @@
                 "args": [],
                 "description": "Gets the time since the hero picking phase started.  Pauses with game pause.",
                 "return": "float"
+            },
+            "GetAllTrees": {
+                "args": [],
+                "description": "Returns a table with all tree locations",
+                "return": "variant"
             },
             "GetAmountAlongLane": {
                 "args": [
@@ -2333,7 +2345,7 @@
                     "handle"
                 ],
                 "description": "Gets whether the Shrine is actively healing or not.",
-                "return": "float"
+                "return": "bool"
             },
             "IsTeamPlayer": {
                 "args": [
