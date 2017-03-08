@@ -2241,12 +2241,28 @@
                 "description": "Get the distance between a unit and a location.",
                 "return": "float"
             },
+            "GetUnitToLocationDistanceSqr": {
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Get the squared distance between a unit and a location.",
+                "return": "float"
+            },
             "GetUnitToUnitDistance": {
                 "args": [
                     "handle",
                     "handle"
                 ],
                 "description": "Get the distance between two units.",
+                "return": "float"
+            },
+            "GetUnitToUnitDistanceSqr": {
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Get the squared distance between two units.",
                 "return": "float"
             },
             "GetWorldBounds": {
@@ -2369,6 +2385,15 @@
                 ],
                 "description": "Returns the smaller of the two supplied values.",
                 "return": "float"
+            },
+            "PointToLineDistance": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector"
+                ],
+                "description": "Get the squared distance between a unit and a location.",
+                "return": "variant"
             },
             "RandomFloat": {
                 "args": [
