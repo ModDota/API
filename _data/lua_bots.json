@@ -890,6 +890,11 @@
                 "description": "Get the number of ability points the bot can spend.",
                 "return": "int"
             },
+            "GetAbilityTarget": {
+                "args": [],
+                "description": "Get the unit being targeted by an ability.",
+                "return": "handle"
+            },
             "GetAcquisitionRange": {
                 "args": [],
                 "description": "Get the range at which this unit will start to attack a target.",

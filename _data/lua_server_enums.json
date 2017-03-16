@@ -6505,6 +6505,14 @@
             "value": 964
         },
         {
+            "key": "ACT_ZOMBIE_LUNGE",
+            "value": 965
+        },
+        {
+            "key": "ACT_NEUTRAL_BIND_POSE",
+            "value": 966
+        },
+        {
             "key": "ACT_DOTA_IDLE",
             "value": 1500
         },
@@ -8085,6 +8093,10 @@
             "value": 170
         },
         {
+            "key": "AE_NPC_BECOME_TEMPORARY_RAGDOLL",
+            "value": 171
+        },
+        {
             "key": "DMG_GENERIC",
             "value": 0
         },
@@ -9569,117 +9581,122 @@
             "value": 150
         },
         {
+            "description": "OnModifierAdded",
+            "key": "MODIFIER_EVENT_ON_MODIFIER_ADDED",
+            "value": 151
+        },
+        {
             "description": "OnTooltip",
             "key": "MODIFIER_PROPERTY_TOOLTIP",
-            "value": 151
+            "value": 152
         },
         {
             "description": "GetModifierModelChange",
             "key": "MODIFIER_PROPERTY_MODEL_CHANGE",
-            "value": 152
+            "value": 153
         },
         {
             "description": "GetModifierModelScale",
             "key": "MODIFIER_PROPERTY_MODEL_SCALE",
-            "value": 153
+            "value": 154
         },
         {
             "description": "GetModifierScepter",
             "key": "MODIFIER_PROPERTY_IS_SCEPTER",
-            "value": 154
+            "value": 155
         },
         {
             "description": "GetActivityTranslationModifiers",
             "key": "MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS",
-            "value": 155
+            "value": 156
         },
         {
             "description": "GetAttackSound",
             "key": "MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND",
-            "value": 156
+            "value": 157
         },
         {
             "description": "GetUnitLifetimeFraction",
             "key": "MODIFIER_PROPERTY_LIFETIME_FRACTION",
-            "value": 157
+            "value": 158
         },
         {
             "description": "GetModifierProvidesFOWVision",
             "key": "MODIFIER_PROPERTY_PROVIDES_FOW_POSITION",
-            "value": 158
+            "value": 159
         },
         {
             "description": "GetModifierSpellsRequireHP",
             "key": "MODIFIER_PROPERTY_SPELLS_REQUIRE_HP",
-            "value": 159
+            "value": 160
         },
         {
             "description": "GetForceDrawOnMinimap",
             "key": "MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP",
-            "value": 160
+            "value": 161
         },
         {
             "description": "GetModifierDisableTurning",
             "key": "MODIFIER_PROPERTY_DISABLE_TURNING",
-            "value": 161
+            "value": 162
         },
         {
             "description": "GetModifierIgnoreCastAngle",
             "key": "MODIFIER_PROPERTY_IGNORE_CAST_ANGLE",
-            "value": 162
+            "value": 163
         },
         {
             "description": "GetModifierChangeAbilityValue",
             "key": "MODIFIER_PROPERTY_CHANGE_ABILITY_VALUE",
-            "value": 163
+            "value": 164
         },
         {
             "description": "GetModifierAbilityLayout",
             "key": "MODIFIER_PROPERTY_ABILITY_LAYOUT",
-            "value": 164
+            "value": 165
         },
         {
             "description": "OnDominated",
             "key": "MODIFIER_EVENT_ON_DOMINATED",
-            "value": 165
+            "value": 166
         },
         {
             "description": "GetModifierTempestDouble",
             "key": "MODIFIER_PROPERTY_TEMPEST_DOUBLE",
-            "value": 166
+            "value": 167
         },
         {
             "description": "PreserveParticlesOnModelChanged",
             "key": "MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE",
-            "value": 167
+            "value": 168
         },
         {
             "description": "OnAttackFinished",
             "key": "MODIFIER_EVENT_ON_ATTACK_FINISHED",
-            "value": 168
+            "value": 169
         },
         {
             "description": "GetModifierIgnoreCooldown",
             "key": "MODIFIER_PROPERTY_IGNORE_COOLDOWN",
-            "value": 169
+            "value": 170
         },
         {
             "description": "GetModifierCanAttackTrees",
             "key": "MODIFIER_PROPERTY_CAN_ATTACK_TREES",
-            "value": 170
+            "value": 171
         },
         {
             "description": "GetVisualZDelta",
             "key": "MODIFIER_PROPERTY_VISUAL_Z_DELTA",
-            "value": 171
-        },
-        {
-            "key": "MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
             "value": 172
         },
         {
-            "key": "MODIFIER_FUNCTION_LAST",
+            "key": "MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
             "value": 173
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 174
         },
         {
             "key": "MODIFIER_FUNCTION_INVALID",

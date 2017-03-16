@@ -3,6 +3,11 @@
         "description": "Animating models",
         "extends": "CBaseModelEntity",
         "functions": {
+            "ActiveSequenceDuration": {
+                "args": [],
+                "description": "Returns the duration in seconds of the active sequence.",
+                "return": "float"
+            },
             "GetAttachmentAngles": {
                 "arg_names": [
                     "iAttachment"
@@ -28,10 +33,25 @@
                 "description": "Get scale of entity's model.",
                 "return": "float"
             },
+            "GetSequence": {
+                "args": [],
+                "description": "Returns the name of the active sequence.",
+                "return": "cstring"
+            },
             "IsSequenceFinished": {
                 "args": [],
                 "description": "Ask whether the main sequence is done playing.",
                 "return": "bool"
+            },
+            "ResetSequence": {
+                "arg_names": [
+                    "pSequenceName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Sets the active sequence by name, resetting the current cycle.",
+                "return": "void"
             },
             "ScriptLookupAttachment": {
                 "arg_names": [
@@ -42,6 +62,16 @@
                 ],
                 "description": "Get the named attachement id.",
                 "return": "int"
+            },
+            "SequenceDuration": {
+                "arg_names": [
+                    "pSequenceName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Returns the duration in seconds of the given sequence name.",
+                "return": "float"
             },
             "SetBodygroup": {
                 "arg_names": [
@@ -88,6 +118,16 @@
                 ],
                 "description": "Set the specified pose parameter to the specified value.",
                 "return": "float"
+            },
+            "SetSequence": {
+                "arg_names": [
+                    "pSequenceName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Sets the active sequence by name, keeping the current cycle.",
+                "return": "void"
             }
         }
     },
@@ -363,6 +403,11 @@
                 "args": [],
                 "description": "Get Entity relative velocity.",
                 "return": "vector"
+            },
+            "GetMass": {
+                "args": [],
+                "description": "Get the mass of an entity. (returns 0 if it doesn't have a physics object)",
+                "return": "float"
             },
             "GetMaxHealth": {
                 "args": [],
@@ -662,6 +707,16 @@
                 "description": "Set entity local origin from a Vector",
                 "return": "void"
             },
+            "SetMass": {
+                "arg_names": [
+                    "flMass"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set the mass of an entity. (does nothing if it doesn't have a physics object)",
+                "return": "void"
+            },
             "SetMaxHealth": {
                 "arg_names": [
                     "amt"
@@ -745,6 +800,11 @@
                 "args": [],
                 "description": "Fires off this entity's OnTrigger responses.",
                 "return": "void"
+            },
+            "ValidatePrivateScriptScope": {
+                "args": [],
+                "description": "Validates the private script scope and creates it if one doesn't exist.",
+                "return": "void"
             }
         }
     },
@@ -789,6 +849,11 @@
                 "args": [],
                 "description": "GetRenderAlpha(): Get the alpha modulation of this entity.",
                 "return": "int"
+            },
+            "GetRenderColor": {
+                "args": [],
+                "description": "GetRenderColor(): Get the render color of the entity.",
+                "return": "vector"
             },
             "SetLightGroup": {
                 "arg_names": [
@@ -860,6 +925,11 @@
         "description": "The player entity.",
         "extends": "CBaseCombatCharacter",
         "functions": {
+            "AreChaperoneBoundsVisible": {
+                "args": [],
+                "description": "Returns whether this player's chaperone bounds are visible.",
+                "return": "bool"
+            },
             "GetHMDAnchor": {
                 "args": [],
                 "description": "Returns the HMD anchor entity for this player if it exists.",
@@ -870,10 +940,25 @@
                 "description": "Returns the HMD Avatar entity for this player if it exists.",
                 "return": "handle"
             },
+            "GetPlayArea": {
+                "arg_names": [
+                    "nPoint"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Returns the Vector position of the point you ask for. Pass 0-3 to get the four points.",
+                "return": "vector"
+            },
             "GetUserID": {
                 "args": [],
                 "description": "Returns the player's user id.",
                 "return": "int"
+            },
+            "GetVRControllerType": {
+                "args": [],
+                "description": "Returns the type of controller being used while in VR.",
+                "return": "<unknown>"
             },
             "IsNoclipping": {
                 "args": [],
@@ -893,6 +978,11 @@
                     "int"
                 ],
                 "description": "Returns true if the controller button is pressed.",
+                "return": "bool"
+            },
+            "IsVRDashboardShowing": {
+                "args": [],
+                "description": "Returns true if the SteamVR dashboard is showing for this player.",
                 "return": "bool"
             },
             "Quit": {
@@ -3828,6 +3918,16 @@
                 "description": "Drops the selected item out of this unit's stash.",
                 "return": "void"
             },
+            "FaceTowards": {
+                "arg_names": [
+                    "vTarget"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "This unit will be set to face the target point.",
+                "return": "void"
+            },
             "FadeGesture": {
                 "arg_names": [
                     "nActivity"
@@ -5490,6 +5590,10 @@
                 "description": "Stop the current order.",
                 "return": "void"
             },
+            "StopFacing": {
+                "args": [],
+                "return": "void"
+            },
             "SwapAbilities": {
                 "arg_names": [
                     "pAbilityName1",
@@ -6541,6 +6645,10 @@
         "description": "A usable item.",
         "extends": "CDOTABaseAbility",
         "functions": {
+            "CanBeUsedOutOfInventory": {
+                "args": [],
+                "return": "bool"
+            },
             "GetContainer": {
                 "args": [],
                 "description": "Get the container for this item.",
@@ -6667,9 +6775,26 @@
                 ],
                 "return": "void"
             },
+            "OnEquip": {
+                "args": [],
+                "return": "void"
+            },
+            "OnUnequip": {
+                "args": [],
+                "return": "void"
+            },
             "RequiresCharges": {
                 "args": [],
                 "return": "bool"
+            },
+            "SetCanBeUsedOutOfInventory": {
+                "arg_names": [
+                    "bValue"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
             },
             "SetCurrentCharges": {
                 "arg_names": [
@@ -10631,6 +10756,13 @@
                     "bool"
                 ],
                 "description": "Create a modifier not associated with an NPC. ( hCaster, hAbility, modifierName, paramTable, vOrigin, nTeamNumber, bPhantomBlocker )",
+                "return": "handle"
+            },
+            "CreateSceneEntity": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Create a scene entity to play the specified scene.",
                 "return": "handle"
             },
             "CreateTempTree": {
