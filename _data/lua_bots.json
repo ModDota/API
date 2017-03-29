@@ -1105,7 +1105,7 @@
             },
             "GetFacing": {
                 "args": [],
-                "description": "Get a bot's facing (0-255).",
+                "description": "Get a bot's facing (0-359).",
                 "return": "int"
             },
             "GetGold": {
@@ -1196,6 +1196,26 @@
             "GetMaxMana": {
                 "args": [],
                 "description": "Get a bot's maximum mana.",
+                "return": "int"
+            },
+            "GetModifierAuxiliaryUnits": {
+                "arg_names": [
+                    "nModifier"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get a table of a modifier's auxiliary units.",
+                "return": "variant"
+            },
+            "GetModifierByName": {
+                "arg_names": [
+                    "pszModifierName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the modifier index of a specified modifier.",
                 "return": "int"
             },
             "GetModifierList": {
@@ -1570,6 +1590,18 @@
             "IsEvadeDisabled": {
                 "args": [],
                 "description": "Is the unit evade disabled?",
+                "return": "bool"
+            },
+            "IsFacingLocation": {
+                "arg_names": [
+                    "vLocation",
+                    "nDegrees"
+                ],
+                "args": [
+                    "vector",
+                    "int"
+                ],
+                "description": "Is the unit facing this location, within the specified degree tolerance?",
                 "return": "bool"
             },
             "IsFort": {
@@ -2359,6 +2391,14 @@
                     "int"
                 ],
                 "description": "Is this player allowed to currently allowed to select a hero?",
+                "return": "bool"
+            },
+            "IsRadiusVisible": {
+                "args": [
+                    "vector",
+                    "float"
+                ],
+                "description": "Can the specified circle currently be seen?",
                 "return": "bool"
             },
             "IsShrineHealing": {

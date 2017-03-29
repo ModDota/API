@@ -10704,7 +10704,7 @@
                 "description": "Pass table - Inputs: entity, effect",
                 "return": "bool"
             },
-            "CreateHTTPRequest": {
+            "CreateHTTPRequestScriptVM": {
                 "args": [
                     "cstring",
                     "cstring"
