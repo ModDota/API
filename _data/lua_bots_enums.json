@@ -945,6 +945,10 @@
             "value": 2
         },
         {
+            "key": "ABILITY_TARGET_TEAM_BOTH",
+            "value": 3
+        },
+        {
             "key": "ABILITY_TARGET_TYPE_NONE",
             "value": 0
         },

@@ -1177,7 +1177,7 @@
             },
             "CastAbility": {
                 "args": [],
-                "return": "void"
+                "return": "bool"
             },
             "ContinueCasting": {
                 "args": [],
