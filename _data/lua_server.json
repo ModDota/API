@@ -97,6 +97,30 @@
                 "description": "Sets a bodygroup by name.",
                 "return": "void"
             },
+            "SetGraphParameterBool": {
+                "arg_names": [
+                    "szName",
+                    "bValue"
+                ],
+                "args": [
+                    "cstring",
+                    "bool"
+                ],
+                "description": "Set the specific param on or off",
+                "return": "void"
+            },
+            "SetGraphParameterFloat": {
+                "arg_names": [
+                    "szName",
+                    "flValue"
+                ],
+                "args": [
+                    "cstring",
+                    "float"
+                ],
+                "description": "Pass the float value to the specified param",
+                "return": "void"
+            },
             "SetModelScale": {
                 "arg_names": [
                     "flScale"
@@ -542,6 +566,20 @@
                     "int"
                 ],
                 "description": "RemoveEffects( int ): Removes the render effect flag.",
+                "return": "void"
+            },
+            "SetAbsAngles": {
+                "arg_names": [
+                    "fPitch",
+                    "fYaw",
+                    "fRoll"
+                ],
+                "args": [
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "description": "Set entity pitch, yaw, roll by component.",
                 "return": "void"
             },
             "SetAbsOrigin": {
@@ -1814,6 +1852,11 @@
                 "description": "Clear the script filter that controls when a unit picks up an item.",
                 "return": "void"
             },
+            "ClearHealingFilter": {
+                "args": [],
+                "description": "Clear the script filter that controls how a unit heals.",
+                "return": "void"
+            },
             "ClearItemAddedToInventoryFilter": {
                 "args": [],
                 "description": "Clear the script filter that controls the item added to inventory filter.",
@@ -1842,6 +1885,16 @@
             "ClearTrackingProjectileFilter": {
                 "args": [],
                 "description": "Clear the script filter that controls when tracking projectiles are launched.",
+                "return": "void"
+            },
+            "DisableHudFlip": {
+                "arg_names": [
+                    "bDisable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Use to disable hud flip for this mod",
                 "return": "void"
             },
             "GetAlwaysShowPlayerInventory": {
@@ -2229,6 +2282,18 @@
                 "description": "Set the HUD element visibility.",
                 "return": "void"
             },
+            "SetHealingFilter": {
+                "arg_names": [
+                    "hFunction",
+                    "hContext"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Set a filter function to control the behavior when a unit heals. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
             "SetItemAddedToInventoryFilter": {
                 "arg_names": [
                     "hFunction",
@@ -2520,6 +2585,14 @@
     "CDOTAGamerules": {
         "description": "!DOTA GameRules",
         "functions": {
+            "AddEventMetadataLeaderboardEntry": {
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "Event-only ( string szNameSuffix, int nScore )",
+                "return": "bool"
+            },
             "AddMinimapDebugPoint": {
                 "args": [
                     "int",
@@ -2701,7 +2774,7 @@
                 "args": [
                     "int"
                 ],
-                "description": "Makes ths specified team lose",
+                "description": "Makes the specified team lose",
                 "return": "void"
             },
             "NumDroppedItems": {
@@ -2840,7 +2913,7 @@
                 "args": [
                     "int"
                 ],
-                "description": "Makes ths specified team win",
+                "description": "Makes the specified team win",
                 "return": "void"
             },
             "SetGoldPerTick": {
@@ -5520,6 +5593,16 @@
                 ],
                 "return": "void"
             },
+            "SetRevealRadius": {
+                "arg_names": [
+                    "revealRadius"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "sets the client side map reveal radius for this unit",
+                "return": "void"
+            },
             "SetStolenScepter": {
                 "arg_names": [
                     "bStolenScepter"
@@ -5697,7 +5780,7 @@
                 "args": [
                     "handle"
                 ],
-                "description": "Add the specified item drop to this creature",
+                "description": "Add the specified item drop to this creature.",
                 "return": "void"
             },
             "CreatureLevelUp": {
@@ -5714,6 +5797,11 @@
                 "args": [],
                 "description": "Is this unit a champion?",
                 "return": "bool"
+            },
+            "RemoveAllItemDrops": {
+                "args": [],
+                "description": "Remove all item drops from this creature.",
+                "return": "void"
             },
             "SetArmorGain": {
                 "arg_names": [
@@ -6851,6 +6939,15 @@
                 ],
                 "args": [
                     "bool"
+                ],
+                "return": "void"
+            },
+            "SetShareability": {
+                "arg_names": [
+                    "iShareability"
+                ],
+                "args": [
+                    "int"
                 ],
                 "return": "void"
             },
@@ -10198,6 +10295,11 @@
                 "description": "Get the player for this hand",
                 "return": "handle"
             },
+            "GetVelocity": {
+                "args": [],
+                "description": "Get the filtered controller velocity.",
+                "return": "vector"
+            },
             "RemoveAllHandModelOverrides": {
                 "args": [],
                 "description": "Remove all model overrides for this hand",
@@ -11368,6 +11470,14 @@
             "IsInToolsMode": {
                 "args": [],
                 "description": "Returns true if this is lua running within tools mode.",
+                "return": "bool"
+            },
+            "IsLocationVisible": {
+                "args": [
+                    "int",
+                    "vector"
+                ],
+                "description": "Ask fog of war if a location is visible to a certain team (nTeamNumber, vLocation).",
                 "return": "bool"
             },
             "IsMarkedForDeletion": {

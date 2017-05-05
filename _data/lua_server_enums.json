@@ -191,8 +191,12 @@
             "value": 12
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_COUNT",
+            "key": "DOTA_HUD_VISIBILITY_PREGAME_STRATEGYUI",
             "value": 13
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_COUNT",
+            "value": 14
         }
     ],
     "DOTAInventoryFlags_t": [
@@ -635,7 +639,7 @@
             "value": 41
         },
         {
-            "key": "DOTA_LOADOUT_TYPE_TEAM_SHOWCASE",
+            "key": "DOTA_LOADOUT_TYPE_RELIC",
             "value": 42
         },
         {
@@ -8369,6 +8373,18 @@
             "value": 1073741824
         },
         {
+            "key": "ACTIVATE_TYPE_INITIAL_CREATION",
+            "value": 0
+        },
+        {
+            "key": "ACTIVATE_TYPE_DATAUPDATE_CREATION",
+            "value": 1
+        },
+        {
+            "key": "ACTIVATE_TYPE_ONRESTORE",
+            "value": 2
+        },
+        {
             "key": "SERVER_DLL",
             "value": 1
         },
@@ -8609,6 +8625,14 @@
             "value": 33
         },
         {
+            "key": "DOTA_UNIT_ORDER_VECTOR_TARGET_CANCELED",
+            "value": 34
+        },
+        {
+            "key": "DOTA_UNIT_ORDER_CAST_RIVER_PAINT",
+            "value": 35
+        },
+        {
             "key": "DOTA_SHOWGENERICPOPUP_TINT_SCREEN",
             "value": 1
         },
@@ -8691,6 +8715,10 @@
         {
             "key": "OVERHEAD_ALERT_OUTGOING_DAMAGE",
             "value": 18
+        },
+        {
+            "key": "OVERHEAD_ALERT_DISABLE_RESIST",
+            "value": 19
         },
         {
             "key": "EF_NODRAW",
