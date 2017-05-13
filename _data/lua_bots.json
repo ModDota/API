@@ -2043,6 +2043,11 @@
                 "description": "Gets the current phase of hero picking.",
                 "return": "int"
             },
+            "GetIncomingTeleports": {
+                "args": [],
+                "description": "Gets a table of all the teleports that are visibly happening.",
+                "return": "variant"
+            },
             "GetItemCost": {
                 "args": [
                     "cstring"

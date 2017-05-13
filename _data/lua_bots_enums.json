@@ -205,24 +205,32 @@
             "value": 4
         },
         {
-            "key": "UNIT_LIST_ENEMIES",
+            "key": "UNIT_LIST_ALLIED_OTHER",
             "value": 5
         },
         {
-            "key": "UNIT_LIST_ENEMY_HEROES",
+            "key": "UNIT_LIST_ENEMIES",
             "value": 6
         },
         {
-            "key": "UNIT_LIST_ENEMY_CREEPS",
+            "key": "UNIT_LIST_ENEMY_HEROES",
             "value": 7
         },
         {
-            "key": "UNIT_LIST_ENEMY_WARDS",
+            "key": "UNIT_LIST_ENEMY_CREEPS",
             "value": 8
         },
         {
-            "key": "UNIT_LIST_NEUTRAL_CREEPS",
+            "key": "UNIT_LIST_ENEMY_WARDS",
             "value": 9
+        },
+        {
+            "key": "UNIT_LIST_ENEMY_OTHER",
+            "value": 10
+        },
+        {
+            "key": "UNIT_LIST_NEUTRAL_CREEPS",
+            "value": 11
         },
         {
             "key": "DIFFICULTY_INVALID",
