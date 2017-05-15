@@ -905,20 +905,12 @@
             "value": 2
         },
         {
-            "key": "SHRINE_BASE_4",
+            "key": "SHRINE_JUNGLE_1",
             "value": 3
         },
         {
-            "key": "SHRINE_BASE_5",
-            "value": 4
-        },
-        {
-            "key": "SHRINE_JUNGLE_1",
-            "value": 5
-        },
-        {
             "key": "SHRINE_JUNGLE_2",
-            "value": 6
+            "value": 4
         },
         {
             "key": "SHOP_HOME",

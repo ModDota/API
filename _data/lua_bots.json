@@ -2312,6 +2312,22 @@
                 "description": "Gets the minimum and maximum bounds of the world.",
                 "return": "variant"
             },
+            "InstallCastCallback": {
+                "args": [
+                    "int",
+                    "handle"
+                ],
+                "description": "Install a callback for whenever the specified player's units cast an ability or use an item.",
+                "return": "void"
+            },
+            "InstallDamageCallback": {
+                "args": [
+                    "int",
+                    "handle"
+                ],
+                "description": "Install a callback for whenever the specified player's units take damage.",
+                "return": "void"
+            },
             "IsCMBannedHero": {
                 "args": [
                     "cstring"
