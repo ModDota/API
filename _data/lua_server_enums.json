@@ -139,6 +139,10 @@
     ],
     "DOTAHUDVisibility_t": [
         {
+            "key": "DOTA_HUD_VISIBILITY_INVALID",
+            "value": -1
+        },
+        {
             "key": "DOTA_HUD_VISIBILITY_TOP_TIMEOFDAY",
             "value": 0
         },
@@ -1435,6 +1439,124 @@
         {
             "key": "DOTA_DAMAGE_CATEGORY_ATTACK",
             "value": 1
+        }
+    ],
+    "DotaDefaultUIElement_t": [
+        {
+            "key": "DOTA_DEFAULT_UI_INVALID",
+            "value": -1
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_TIMEOFDAY",
+            "value": 0
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_HEROES",
+            "value": 1
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_FLYOUT_SCOREBOARD",
+            "value": 2
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_ACTION_PANEL",
+            "value": 3
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_ACTION_MINIMAP",
+            "value": 4
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_INVENTORY_PANEL",
+            "value": 5
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_INVENTORY_SHOP",
+            "value": 6
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_INVENTORY_ITEMS",
+            "value": 7
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_INVENTORY_QUICKBUY",
+            "value": 8
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_INVENTORY_COURIER",
+            "value": 9
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_INVENTORY_PROTECT",
+            "value": 10
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_INVENTORY_GOLD",
+            "value": 11
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_SHOP_SUGGESTEDITEMS",
+            "value": 12
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_TEAMS",
+            "value": 13
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_GAME_NAME",
+            "value": 14
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_CLOCK",
+            "value": 15
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_MENU_BUTTONS",
+            "value": 16
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND",
+            "value": 17
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_RADIANT_TEAM",
+            "value": 18
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_DIRE_TEAM",
+            "value": 19
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_SCORE",
+            "value": 20
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_ENDGAME",
+            "value": 21
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_ENDGAME_CHAT",
+            "value": 22
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_QUICK_STATS",
+            "value": 23
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_PREGAME_STRATEGYUI",
+            "value": 24
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_KILLCAM",
+            "value": 25
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_TOP_BAR",
+            "value": 26
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_ELEMENT_COUNT",
+            "value": 27
         }
     ],
     "EDOTA_ModifyGold_Reason": [
@@ -8385,6 +8507,54 @@
             "value": 2
         },
         {
+            "key": "PATTACH_ABSORIGIN",
+            "value": 0
+        },
+        {
+            "key": "PATTACH_ABSORIGIN_FOLLOW",
+            "value": 1
+        },
+        {
+            "key": "PATTACH_CUSTOMORIGIN",
+            "value": 2
+        },
+        {
+            "key": "PATTACH_CUSTOMORIGIN_FOLLOW",
+            "value": 3
+        },
+        {
+            "key": "PATTACH_POINT",
+            "value": 4
+        },
+        {
+            "key": "PATTACH_POINT_FOLLOW",
+            "value": 5
+        },
+        {
+            "key": "PATTACH_EYES_FOLLOW",
+            "value": 6
+        },
+        {
+            "key": "PATTACH_OVERHEAD_FOLLOW",
+            "value": 7
+        },
+        {
+            "key": "PATTACH_WORLDORIGIN",
+            "value": 8
+        },
+        {
+            "key": "PATTACH_ROOTBONE_FOLLOW",
+            "value": 9
+        },
+        {
+            "key": "PATTACH_RENDERORIGIN_FOLLOW",
+            "value": 10
+        },
+        {
+            "key": "MAX_PATTACH_TYPES",
+            "value": 14
+        },
+        {
             "key": "SERVER_DLL",
             "value": 1
         },
@@ -8805,11 +8975,11 @@
             "value": "<handle>"
         },
         {
-            "key": "CustomNetTables",
+            "key": "CustomGameEventManager",
             "value": "<handle>"
         },
         {
-            "key": "CustomGameEventManager",
+            "key": "CustomNetTables",
             "value": "<handle>"
         },
         {
@@ -9097,634 +9267,639 @@
             "value": 47
         },
         {
+            "description": "GetModifierIgnorePhysicalArmor",
+            "key": "MODIFIER_PROPERTY_IGNORE_PHYSICAL_ARMOR",
+            "value": 48
+        },
+        {
             "description": "GetModifierMagicalResistanceDirectModification",
             "key": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DIRECT_MODIFICATION",
-            "value": 48
+            "value": 49
         },
         {
             "description": "GetModifierMagicalResistanceBonus",
             "key": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS",
-            "value": 49
+            "value": 50
         },
         {
             "description": "GetModifierMagicalResistanceDecrepifyUnique",
             "key": "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE",
-            "value": 50
+            "value": 51
         },
         {
             "description": "GetModifierBaseRegen",
             "key": "MODIFIER_PROPERTY_BASE_MANA_REGEN",
-            "value": 51
+            "value": 52
         },
         {
             "description": "GetModifierConstantManaRegen",
             "key": "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT",
-            "value": 52
+            "value": 53
         },
         {
             "description": "GetModifierConstantManaRegenUnique",
             "key": "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT_UNIQUE",
-            "value": 53
+            "value": 54
         },
         {
             "description": "GetModifierPercentageManaRegen",
             "key": "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE",
-            "value": 54
+            "value": 55
         },
         {
             "description": "GetModifierTotalPercentageManaRegen",
             "key": "MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE",
-            "value": 55
+            "value": 56
         },
         {
             "description": "GetModifierConstantHealthRegen",
             "key": "MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT",
-            "value": 56
+            "value": 57
         },
         {
             "description": "GetModifierHealthRegenPercentage",
             "key": "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE",
-            "value": 57
+            "value": 58
         },
         {
             "description": "GetModifierHealthBonus",
             "key": "MODIFIER_PROPERTY_HEALTH_BONUS",
-            "value": 58
+            "value": 59
         },
         {
             "description": "GetModifierManaBonus",
             "key": "MODIFIER_PROPERTY_MANA_BONUS",
-            "value": 59
+            "value": 60
         },
         {
             "description": "GetModifierExtraStrengthBonus",
             "key": "MODIFIER_PROPERTY_EXTRA_STRENGTH_BONUS",
-            "value": 60
+            "value": 61
         },
         {
             "description": "GetModifierExtraHealthBonus",
             "key": "MODIFIER_PROPERTY_EXTRA_HEALTH_BONUS",
-            "value": 61
+            "value": 62
         },
         {
             "description": "GetModifierExtraManaBonus",
             "key": "MODIFIER_PROPERTY_EXTRA_MANA_BONUS",
-            "value": 62
+            "value": 63
         },
         {
             "description": "GetModifierExtraHealthPercentage",
             "key": "MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE",
-            "value": 63
+            "value": 64
         },
         {
             "description": "GetModifierBonusStats_Strength",
             "key": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS",
-            "value": 64
+            "value": 65
         },
         {
             "description": "GetModifierBonusStats_Agility",
             "key": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS",
-            "value": 65
+            "value": 66
         },
         {
             "description": "GetModifierBonusStats_Intellect",
             "key": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS",
-            "value": 66
+            "value": 67
         },
         {
             "description": "GetModifierCastRangeBonus",
             "key": "MODIFIER_PROPERTY_CAST_RANGE_BONUS",
-            "value": 67
+            "value": 68
         },
         {
             "description": "GetModifierCastRangeBonusStacking",
             "key": "MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING",
-            "value": 68
+            "value": 69
         },
         {
             "description": "GetModifierAttackRangeBonus",
             "key": "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS",
-            "value": 69
+            "value": 70
         },
         {
             "description": "GetModifierAttackRangeBonusUnique",
             "key": "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE",
-            "value": 70
+            "value": 71
         },
         {
             "description": "GetModifierMaxAttackRange",
             "key": "MODIFIER_PROPERTY_MAX_ATTACK_RANGE",
-            "value": 71
+            "value": 72
         },
         {
             "description": "GetModifierProjectileSpeedBonus",
             "key": "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS",
-            "value": 72
+            "value": 73
         },
         {
             "description": "ReincarnateTime",
             "key": "MODIFIER_PROPERTY_REINCARNATION",
-            "value": 73
+            "value": 74
         },
         {
             "description": "GetModifierConstantRespawnTime",
             "key": "MODIFIER_PROPERTY_RESPAWNTIME",
-            "value": 74
+            "value": 75
         },
         {
             "description": "GetModifierPercentageRespawnTime",
             "key": "MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE",
-            "value": 75
+            "value": 76
         },
         {
             "description": "GetModifierStackingRespawnTime",
             "key": "MODIFIER_PROPERTY_RESPAWNTIME_STACKING",
-            "value": 76
+            "value": 77
         },
         {
             "description": "GetModifierPercentageCooldown",
             "key": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE",
-            "value": 77
+            "value": 78
         },
         {
             "description": "GetModifierPercentageCooldownStacking",
             "key": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING",
-            "value": 78
+            "value": 79
         },
         {
             "description": "GetModifierPercentageCasttime",
             "key": "MODIFIER_PROPERTY_CASTTIME_PERCENTAGE",
-            "value": 79
+            "value": 80
         },
         {
             "description": "GetModifierPercentageManacost",
             "key": "MODIFIER_PROPERTY_MANACOST_PERCENTAGE",
-            "value": 80
+            "value": 81
         },
         {
             "description": "GetModifierConstantDeathGoldCost",
             "key": "MODIFIER_PROPERTY_DEATHGOLDCOST",
-            "value": 81
+            "value": 82
         },
         {
             "description": "GetModifierPercentageExpRateBoost",
             "key": "MODIFIER_PROPERTY_EXP_RATE_BOOST",
-            "value": 82
+            "value": 83
         },
         {
             "description": "GetModifierPreAttack_CriticalStrike",
             "key": "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE",
-            "value": 83
+            "value": 84
         },
         {
             "description": "GetModifierPreAttack_Target_CriticalStrike",
             "key": "MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE",
-            "value": 84
+            "value": 85
         },
         {
             "description": "GetModifierMagical_ConstantBlock",
             "key": "MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK",
-            "value": 85
+            "value": 86
         },
         {
             "description": "GetModifierPhysical_ConstantBlock",
             "key": "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK",
-            "value": 86
+            "value": 87
         },
         {
             "description": "GetModifierPhysical_ConstantBlockSpecial",
             "key": "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_SPECIAL",
-            "value": 87
+            "value": 88
         },
         {
             "description": "GetModifierPhysical_ConstantBlockUnavoidablePreArmor",
             "key": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR",
-            "value": 88
+            "value": 89
         },
         {
             "description": "GetModifierTotal_ConstantBlock",
             "key": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
-            "value": 89
+            "value": 90
         },
         {
             "description": "GetOverrideAnimation",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ANIMATION",
-            "value": 90
+            "value": 91
         },
         {
             "description": "GetOverrideAnimationWeight",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ANIMATION_WEIGHT",
-            "value": 91
+            "value": 92
         },
         {
             "description": "GetOverrideAnimationRate",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE",
-            "value": 92
+            "value": 93
         },
         {
             "description": "GetAbsorbSpell",
             "key": "MODIFIER_PROPERTY_ABSORB_SPELL",
-            "value": 93
+            "value": 94
         },
         {
             "description": "GetReflectSpell",
             "key": "MODIFIER_PROPERTY_REFLECT_SPELL",
-            "value": 94
+            "value": 95
         },
         {
             "description": "GetDisableAutoAttack",
             "key": "MODIFIER_PROPERTY_DISABLE_AUTOATTACK",
-            "value": 95
+            "value": 96
         },
         {
             "description": "GetBonusDayVision",
             "key": "MODIFIER_PROPERTY_BONUS_DAY_VISION",
-            "value": 96
+            "value": 97
         },
         {
             "description": "GetBonusNightVision",
             "key": "MODIFIER_PROPERTY_BONUS_NIGHT_VISION",
-            "value": 97
+            "value": 98
         },
         {
             "description": "GetBonusNightVisionUnique",
             "key": "MODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE",
-            "value": 98
+            "value": 99
         },
         {
             "description": "GetBonusVisionPercentage",
             "key": "MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE",
-            "value": 99
+            "value": 100
         },
         {
             "description": "GetFixedDayVision",
             "key": "MODIFIER_PROPERTY_FIXED_DAY_VISION",
-            "value": 100
+            "value": 101
         },
         {
             "description": "GetFixedNightVision",
             "key": "MODIFIER_PROPERTY_FIXED_NIGHT_VISION",
-            "value": 101
+            "value": 102
         },
         {
             "description": "GetMinHealth",
             "key": "MODIFIER_PROPERTY_MIN_HEALTH",
-            "value": 102
+            "value": 103
         },
         {
             "description": "GetAbsoluteNoDamagePhysical",
             "key": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL",
-            "value": 103
+            "value": 104
         },
         {
             "description": "GetAbsoluteNoDamageMagical",
             "key": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL",
-            "value": 104
+            "value": 105
         },
         {
             "description": "GetAbsoluteNoDamagePure",
             "key": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE",
-            "value": 105
+            "value": 106
         },
         {
             "description": "GetIsIllusion",
             "key": "MODIFIER_PROPERTY_IS_ILLUSION",
-            "value": 106
+            "value": 107
         },
         {
             "description": "GetModifierIllusionLabel",
             "key": "MODIFIER_PROPERTY_ILLUSION_LABEL",
-            "value": 107
+            "value": 108
         },
         {
             "description": "GetModifierSuperIllusion",
             "key": "MODIFIER_PROPERTY_SUPER_ILLUSION",
-            "value": 108
+            "value": 109
         },
         {
             "description": "GetModifierSuperIllusionWithUltimate",
             "key": "MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ULTIMATE",
-            "value": 109
+            "value": 110
         },
         {
             "description": "GetModifierTurnRate_Percentage",
             "key": "MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE",
-            "value": 110
+            "value": 111
         },
         {
             "description": "GetDisableHealing",
             "key": "MODIFIER_PROPERTY_DISABLE_HEALING",
-            "value": 111
+            "value": 112
         },
         {
             "description": "GetAlwaysAllowAttack",
             "key": "MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK",
-            "value": 112
+            "value": 113
         },
         {
             "description": "GetOverrideAttackMagical",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL",
-            "value": 113
+            "value": 114
         },
         {
             "description": "GetModifierUnitStatsNeedsRefresh",
             "key": "MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH",
-            "value": 114
+            "value": 115
         },
         {
             "description": "GetModifierBountyCreepMultiplier",
             "key": "MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER",
-            "value": 115
+            "value": 116
         },
         {
             "description": "GetModifierBountyOtherMultiplier",
             "key": "MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER",
-            "value": 116
+            "value": 117
         },
         {
             "description": "OnSpellTargetReady",
             "key": "MODIFIER_EVENT_ON_SPELL_TARGET_READY",
-            "value": 117
+            "value": 118
         },
         {
             "description": "OnAttackRecord",
             "key": "MODIFIER_EVENT_ON_ATTACK_RECORD",
-            "value": 118
+            "value": 119
         },
         {
             "description": "OnAttackStart",
             "key": "MODIFIER_EVENT_ON_ATTACK_START",
-            "value": 119
+            "value": 120
         },
         {
             "description": "OnAttack",
             "key": "MODIFIER_EVENT_ON_ATTACK",
-            "value": 120
+            "value": 121
         },
         {
             "description": "OnAttackLanded",
             "key": "MODIFIER_EVENT_ON_ATTACK_LANDED",
-            "value": 121
+            "value": 122
         },
         {
             "description": "OnAttackFail",
             "key": "MODIFIER_EVENT_ON_ATTACK_FAIL",
-            "value": 122
+            "value": 123
         },
         {
             "description": "OnAttackAllied",
             "key": "MODIFIER_EVENT_ON_ATTACK_ALLIED",
-            "value": 123
+            "value": 124
         },
         {
             "description": "OnProjectileDodge",
             "key": "MODIFIER_EVENT_ON_PROJECTILE_DODGE",
-            "value": 124
+            "value": 125
         },
         {
             "description": "OnOrder",
             "key": "MODIFIER_EVENT_ON_ORDER",
-            "value": 125
+            "value": 126
         },
         {
             "description": "OnUnitMoved",
             "key": "MODIFIER_EVENT_ON_UNIT_MOVED",
-            "value": 126
+            "value": 127
         },
         {
             "description": "OnAbilityStart",
             "key": "MODIFIER_EVENT_ON_ABILITY_START",
-            "value": 127
+            "value": 128
         },
         {
             "description": "OnAbilityExecuted",
             "key": "MODIFIER_EVENT_ON_ABILITY_EXECUTED",
-            "value": 128
+            "value": 129
         },
         {
             "description": "OnAbilityFullyCast",
             "key": "MODIFIER_EVENT_ON_ABILITY_FULLY_CAST",
-            "value": 129
+            "value": 130
         },
         {
             "description": "OnBreakInvisibility",
             "key": "MODIFIER_EVENT_ON_BREAK_INVISIBILITY",
-            "value": 130
+            "value": 131
         },
         {
             "description": "OnAbilityEndChannel",
             "key": "MODIFIER_EVENT_ON_ABILITY_END_CHANNEL",
-            "value": 131
-        },
-        {
-            "key": "MODIFIER_EVENT_ON_PROCESS_UPGRADE",
             "value": 132
         },
         {
-            "key": "MODIFIER_EVENT_ON_REFRESH",
+            "key": "MODIFIER_EVENT_ON_PROCESS_UPGRADE",
             "value": 133
+        },
+        {
+            "key": "MODIFIER_EVENT_ON_REFRESH",
+            "value": 134
         },
         {
             "description": "OnTakeDamage",
             "key": "MODIFIER_EVENT_ON_TAKEDAMAGE",
-            "value": 134
+            "value": 135
         },
         {
             "description": "OnStateChanged",
             "key": "MODIFIER_EVENT_ON_STATE_CHANGED",
-            "value": 135
+            "value": 136
         },
         {
             "key": "MODIFIER_EVENT_ON_ORB_EFFECT",
-            "value": 136
+            "value": 137
         },
         {
             "description": "OnAttacked",
             "key": "MODIFIER_EVENT_ON_ATTACKED",
-            "value": 137
+            "value": 138
         },
         {
             "description": "OnDeath",
             "key": "MODIFIER_EVENT_ON_DEATH",
-            "value": 138
+            "value": 139
         },
         {
             "description": "OnRespawn",
             "key": "MODIFIER_EVENT_ON_RESPAWN",
-            "value": 139
+            "value": 140
         },
         {
             "description": "OnSpentMana",
             "key": "MODIFIER_EVENT_ON_SPENT_MANA",
-            "value": 140
+            "value": 141
         },
         {
             "description": "OnTeleporting",
             "key": "MODIFIER_EVENT_ON_TELEPORTING",
-            "value": 141
+            "value": 142
         },
         {
             "description": "OnTeleported",
             "key": "MODIFIER_EVENT_ON_TELEPORTED",
-            "value": 142
+            "value": 143
         },
         {
             "description": "OnSetLocation",
             "key": "MODIFIER_EVENT_ON_SET_LOCATION",
-            "value": 143
+            "value": 144
         },
         {
             "description": "OnHealthGained",
             "key": "MODIFIER_EVENT_ON_HEALTH_GAINED",
-            "value": 144
+            "value": 145
         },
         {
             "description": "OnManaGained",
             "key": "MODIFIER_EVENT_ON_MANA_GAINED",
-            "value": 145
+            "value": 146
         },
         {
             "description": "OnTakeDamageKillCredit",
             "key": "MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT",
-            "value": 146
+            "value": 147
         },
         {
             "description": "OnHeroKilled",
             "key": "MODIFIER_EVENT_ON_HERO_KILLED",
-            "value": 147
+            "value": 148
         },
         {
             "description": "OnHealReceived",
             "key": "MODIFIER_EVENT_ON_HEAL_RECEIVED",
-            "value": 148
+            "value": 149
         },
         {
             "description": "OnBuildingKilled",
             "key": "MODIFIER_EVENT_ON_BUILDING_KILLED",
-            "value": 149
+            "value": 150
         },
         {
             "description": "OnModelChanged",
             "key": "MODIFIER_EVENT_ON_MODEL_CHANGED",
-            "value": 150
+            "value": 151
         },
         {
             "description": "OnModifierAdded",
             "key": "MODIFIER_EVENT_ON_MODIFIER_ADDED",
-            "value": 151
+            "value": 152
         },
         {
             "description": "OnTooltip",
             "key": "MODIFIER_PROPERTY_TOOLTIP",
-            "value": 152
+            "value": 153
         },
         {
             "description": "GetModifierModelChange",
             "key": "MODIFIER_PROPERTY_MODEL_CHANGE",
-            "value": 153
+            "value": 154
         },
         {
             "description": "GetModifierModelScale",
             "key": "MODIFIER_PROPERTY_MODEL_SCALE",
-            "value": 154
+            "value": 155
         },
         {
             "description": "GetModifierScepter",
             "key": "MODIFIER_PROPERTY_IS_SCEPTER",
-            "value": 155
+            "value": 156
         },
         {
             "description": "GetActivityTranslationModifiers",
             "key": "MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS",
-            "value": 156
+            "value": 157
         },
         {
             "description": "GetAttackSound",
             "key": "MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND",
-            "value": 157
+            "value": 158
         },
         {
             "description": "GetUnitLifetimeFraction",
             "key": "MODIFIER_PROPERTY_LIFETIME_FRACTION",
-            "value": 158
+            "value": 159
         },
         {
             "description": "GetModifierProvidesFOWVision",
             "key": "MODIFIER_PROPERTY_PROVIDES_FOW_POSITION",
-            "value": 159
+            "value": 160
         },
         {
             "description": "GetModifierSpellsRequireHP",
             "key": "MODIFIER_PROPERTY_SPELLS_REQUIRE_HP",
-            "value": 160
+            "value": 161
         },
         {
             "description": "GetForceDrawOnMinimap",
             "key": "MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP",
-            "value": 161
+            "value": 162
         },
         {
             "description": "GetModifierDisableTurning",
             "key": "MODIFIER_PROPERTY_DISABLE_TURNING",
-            "value": 162
+            "value": 163
         },
         {
             "description": "GetModifierIgnoreCastAngle",
             "key": "MODIFIER_PROPERTY_IGNORE_CAST_ANGLE",
-            "value": 163
+            "value": 164
         },
         {
             "description": "GetModifierChangeAbilityValue",
             "key": "MODIFIER_PROPERTY_CHANGE_ABILITY_VALUE",
-            "value": 164
+            "value": 165
         },
         {
             "description": "GetModifierAbilityLayout",
             "key": "MODIFIER_PROPERTY_ABILITY_LAYOUT",
-            "value": 165
+            "value": 166
         },
         {
             "description": "OnDominated",
             "key": "MODIFIER_EVENT_ON_DOMINATED",
-            "value": 166
+            "value": 167
         },
         {
             "description": "GetModifierTempestDouble",
             "key": "MODIFIER_PROPERTY_TEMPEST_DOUBLE",
-            "value": 167
+            "value": 168
         },
         {
             "description": "PreserveParticlesOnModelChanged",
             "key": "MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE",
-            "value": 168
+            "value": 169
         },
         {
             "description": "OnAttackFinished",
             "key": "MODIFIER_EVENT_ON_ATTACK_FINISHED",
-            "value": 169
+            "value": 170
         },
         {
             "description": "GetModifierIgnoreCooldown",
             "key": "MODIFIER_PROPERTY_IGNORE_COOLDOWN",
-            "value": 170
+            "value": 171
         },
         {
             "description": "GetModifierCanAttackTrees",
             "key": "MODIFIER_PROPERTY_CAN_ATTACK_TREES",
-            "value": 171
+            "value": 172
         },
         {
             "description": "GetVisualZDelta",
             "key": "MODIFIER_PROPERTY_VISUAL_Z_DELTA",
-            "value": 172
-        },
-        {
-            "key": "MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
             "value": 173
         },
         {
-            "key": "MODIFIER_FUNCTION_LAST",
+            "key": "MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
             "value": 174
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 175
         },
         {
             "key": "MODIFIER_FUNCTION_INVALID",

@@ -28,6 +28,16 @@
                 "description": "Get the attachement id's origin vector.",
                 "return": "vector"
             },
+            "GetGraphParameter": {
+                "arg_names": [
+                    "pszParam"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the value of the given animGraph parameter",
+                "return": "variant"
+            },
             "GetModelScale": {
                 "args": [],
                 "description": "Get scale of entity's model.",
@@ -97,6 +107,28 @@
                 "description": "Sets a bodygroup by name.",
                 "return": "void"
             },
+            "SetGraphLookDirection": {
+                "arg_names": [
+                    "vValue"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Pass the vector value to the specified param in the graph",
+                "return": "void"
+            },
+            "SetGraphParameter": {
+                "arg_names": [
+                    "pszParam",
+                    "svArg"
+                ],
+                "args": [
+                    "cstring",
+                    "variant"
+                ],
+                "description": "Set the specific param value, type is inferred from the type in script",
+                "return": "void"
+            },
             "SetGraphParameterBool": {
                 "arg_names": [
                     "szName",
@@ -109,6 +141,18 @@
                 "description": "Set the specific param on or off",
                 "return": "void"
             },
+            "SetGraphParameterEnum": {
+                "arg_names": [
+                    "szName",
+                    "nValue"
+                ],
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "Pass the enum (int) value to the specified param",
+                "return": "void"
+            },
             "SetGraphParameterFloat": {
                 "arg_names": [
                     "szName",
@@ -119,6 +163,30 @@
                     "float"
                 ],
                 "description": "Pass the float value to the specified param",
+                "return": "void"
+            },
+            "SetGraphParameterInt": {
+                "arg_names": [
+                    "szName",
+                    "nValue"
+                ],
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "Pass the int value to the specified param",
+                "return": "void"
+            },
+            "SetGraphParameterVector": {
+                "arg_names": [
+                    "szName",
+                    "vValue"
+                ],
+                "args": [
+                    "cstring",
+                    "vector"
+                ],
+                "description": "Pass the vector value to the specified param in the graph",
                 "return": "void"
             },
             "SetModelScale": {
@@ -151,6 +219,11 @@
                     "cstring"
                 ],
                 "description": "Sets the active sequence by name, keeping the current cycle.",
+                "return": "void"
+            },
+            "StopAnimation": {
+                "args": [],
+                "description": "Stop the current animation by setting playback rate to 0.0.",
                 "return": "void"
             }
         }
@@ -883,6 +956,16 @@
         "description": "Base entity with model",
         "extends": "CBaseEntity",
         "functions": {
+            "GetMaterialGroupHash": {
+                "args": [],
+                "description": "GetMaterialGroupHash(): Get the material group hash of this entity.",
+                "return": "uint"
+            },
+            "GetMaterialGroupMask": {
+                "args": [],
+                "description": "GetMaterialGroupMask(): Get the mesh group mask of this entity.",
+                "return": "uint64"
+            },
             "GetRenderAlpha": {
                 "args": [],
                 "description": "GetRenderAlpha(): Get the alpha modulation of this entity.",
@@ -901,6 +984,36 @@
                     "cstring"
                 ],
                 "description": "SetLightGroup( string ): Sets the light group of the entity.",
+                "return": "void"
+            },
+            "SetMaterialGroup": {
+                "arg_names": [
+                    "pMaterialGroup"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "SetMaterialGroup( string ): Set the material group of this entity.",
+                "return": "void"
+            },
+            "SetMaterialGroupHash": {
+                "arg_names": [
+                    "nHash"
+                ],
+                "args": [
+                    "uint"
+                ],
+                "description": "SetMaterialGroupHash( uint32 ): Set the material group hash of this entity.",
+                "return": "void"
+            },
+            "SetMaterialGroupMask": {
+                "arg_names": [
+                    "nMeshGroupMask"
+                ],
+                "args": [
+                    "uint64"
+                ],
+                "description": "SetMaterialGroupMask( uint64 ): Set the mesh group mask of this entity.",
                 "return": "void"
             },
             "SetModel": {
@@ -944,6 +1057,16 @@
                     "int"
                 ],
                 "description": "SetRenderMode( int ): Sets the render mode of the entity.",
+                "return": "void"
+            },
+            "SetSingleMeshGroup": {
+                "arg_names": [
+                    "pMeshGroupName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "SetSingleMeshGroup( string ): Set a single mesh group for this entity.",
                 "return": "void"
             },
             "SetSize": {
@@ -2260,6 +2383,16 @@
                 "description": "Set the percentage rate that the fountain will regen mana. (-1 for default)",
                 "return": "void"
             },
+            "SetFriendlyBuildingMoveToEnabled": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Allows clicks on friendly buildings to be handled normally.",
+                "return": "void"
+            },
             "SetGoldSoundDisabled": {
                 "arg_names": [
                     "bDisabled"
@@ -2588,9 +2721,13 @@
             "AddEventMetadataLeaderboardEntry": {
                 "args": [
                     "cstring",
-                    "int"
+                    "uint",
+                    "uint",
+                    "uint",
+                    "uint",
+                    "uint"
                 ],
-                "description": "Event-only ( string szNameSuffix, int nScore )",
+                "description": "Event-only ( string szNameSuffix, int nStars, int nMaxStars, int nExtraData1, int nExtraData2 )",
                 "return": "bool"
             },
             "AddMinimapDebugPoint": {
@@ -3424,6 +3561,11 @@
                 "args": [],
                 "description": "Return casting animation of this ability.",
                 "return": "int"
+            },
+            "GetCastPoint": {
+                "args": [],
+                "description": "Return cast point of this ability.",
+                "return": "float"
             },
             "GetCastRange": {
                 "arg_names": [
@@ -6560,6 +6702,27 @@
             }
         }
     },
+    "CDOTA_BaseNPC_Trap_Ward": {
+        "description": "A Dota NPC Trap Ward",
+        "extends": "CDOTA_BaseNPC_Creature",
+        "functions": {
+            "GetTrapTarget": {
+                "args": [],
+                "description": "Get the trap target for this entity.",
+                "return": "vector"
+            },
+            "SetAnimation": {
+                "arg_names": [
+                    "pAnimation"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Set the animation sequence for this entity.",
+                "return": "void"
+            }
+        }
+    },
     "CDOTA_Buff": {
         "description": "A modifier.",
         "functions": {
@@ -7573,6 +7736,11 @@
             "RemoveOnDeath": {
                 "args": [],
                 "description": "True/false if this modifier is removed when the parent dies.",
+                "return": "bool"
+            },
+            "ShouldUseOverheadOffset": {
+                "args": [],
+                "description": "Apply the overhead offset to the attached effect.",
                 "return": "bool"
             },
             "StatusEffectPriority": {
@@ -10109,6 +10277,11 @@
             }
         }
     },
+    "CParticleSystem": {
+        "description": "Particle System",
+        "extends": "CBaseModelEntity",
+        "functions": {}
+    },
     "CPhysicsProp": {
         "description": "Physics props",
         "extends": "CBaseAnimating",
@@ -10278,6 +10451,16 @@
                     "int"
                 ],
                 "description": "Fire a haptic pulse on this hand. [0,2] for strength.",
+                "return": "void"
+            },
+            "FireHapticPulsePrecise": {
+                "arg_names": [
+                    "nPulseDuration"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Fire a haptic pulse on this hand. Specify the duration in micro seconds.",
                 "return": "void"
             },
             "GetHandAttachment": {
@@ -10933,6 +11116,14 @@
                 "description": "Creates a DOTA unit by its dota_npc_units.txt name from a table of entity key values and a position to spawn at.",
                 "return": "handle"
             },
+            "CrossVectors": {
+                "args": [
+                    "vector",
+                    "vector"
+                ],
+                "description": "(vector,vector) cross product between two vectors",
+                "return": "vector"
+            },
             "DebugBreak": {
                 "args": [],
                 "description": "Breaks in the debugger",
@@ -11128,6 +11319,13 @@
                 ],
                 "description": "#UniqueString:Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.",
                 "return": "cstring"
+            },
+            "DotProduct": {
+                "args": [
+                    "vector",
+                    "vector"
+                ],
+                "return": "float"
             },
             "EmitAnnouncerSound": {
                 "args": [
@@ -11506,6 +11704,15 @@
                 ],
                 "description": "Checks to see if the given hScript is a valid entity",
                 "return": "bool"
+            },
+            "LerpVectors": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float"
+                ],
+                "description": "(vector,vector,float) lerp between two vectors by a float factor returning new vector",
+                "return": "vector"
             },
             "LimitPathingSearchDepth": {
                 "args": [
