@@ -32,7 +32,17 @@ interface CDOTA_PanoramaScript_GameEvents {
      * Send a custom game event
      */
     SendCustomGameEventToServer(pEventName: string, jsObject: any[]): void;
-
+    
+    /**
+     * Send a custom game event to the server, which will send it to all clients
+     */
+    SetCustomGameEventToAllClients(pEventName: string, jsObject: any[]): void;
+    
+    /**
+     * Send a custom game event to the server, which will send it to all clients
+     */
+    SetCustomGameEventToClient(pEventName: string, playerIndex: number, jsObject: any[]): void;
+    
     /**
      * Send a client-side event using gameeventmanager (only useful for a few specific events)
      */
@@ -2123,6 +2133,114 @@ interface CScriptBindingPR_Game {
     IsInAbilityLearnMode(): boolean;
 }
 
+interface CPanoramaScript_SteamUGC {
+    /**
+     * Subscribe to a piece of UGC
+     */
+    SubscribeItem(pPublishedFileID: string, funcVal:any) : void;
+    
+    /**
+     * Unsubscribe to a piece of UGC
+     */
+    UnsubscribeItem(pPublishedFileID: string, funcVal:any) : void;
+    
+    /**
+     * Get a key from a custom net table
+     */
+    GetSubscriptionInfo(pPublishedFileID: string) : any;
+    
+    /**
+     * Vote on a piece of UGC
+     */
+    SetUserItemVote(pPublishedFileID: string, bVoteUp: boolean, funcVal: any) : any;
+    
+    /**
+     * Get the user's vote on a peice of UGC
+     */
+    GetUserItemVote(pPublishedFileID: string, funcVal: any) : any;
+    
+    /**
+     * Add an item to the user's favorites list
+     */
+    AddToFavorites(pPublishedFileID: string, funcVal: any) : any;
+    
+    /**
+     * Remove an item from the user's favorites list
+     */
+    RemoveFromFavorites(pPublishedFileID: string, funcVal: any) : any;
+    
+    /**
+     * Create a request to query Steam for all UGC
+     */
+    CreateQueryAllUGCRequest(eQueryType: number, eMatchingeMatchingUGCTypeFileType: number, unPage: number) : any;
+    
+    /**
+     * Creqte a request to query Steam for specific UGC
+     */
+    CreateQueryUGCDetailsRequest(pPublishedFileIDs: string[]) : any;
+    
+    /**
+     * Adds a required tag to the query
+     */
+    AddRequiredTagToQuery(handle: number, pchTag: string): any;
+    
+    /**
+     * Adds an excluded tag to the query
+     */
+    AddExcludedTagToQuery(handle: number, pchTag: string): any;
+    
+    /**
+     * Adds a required tag to the query
+     */
+    ConfigureQuery(handle: number, jsObject: any): any;
+    
+    /**
+     * Sends the prepared query
+     */
+    SendUGCQuery(handle: number, funcVal: any): any;
+    
+    /**
+     * Register a callback to be called when the item is downloaded
+     */
+    RegisterDownloadItemResultCallback(pPublishedFileID: string, funcVal: any): any;
+}
+
+interface CPanoramaScript_SteamFriends {
+    /**
+     * Requests the user's persona name
+     */
+    RequestPersoneName(pchSteamID: tring, funcVal: any) : any;
+    
+    /**
+     * Sets the avatar image on the image panel
+     */
+    SetLargeAvatarImage(...any) : any;
+}
+
+interface CPanoramaScript_SteamUtils {
+    /**
+     * Returns the connected universe
+     */
+    GetConnectedUniverse() : any;
+    
+    /**
+     * Returns the appid of the current app
+     */
+    GetAppID() : any;
+}
+
+interface CPanoramaScript_VRUtils {
+    /**
+     * Get application properties for a VR app with the specifiied appID
+     */
+    GetVRAppPropertyData(nAppID: number) : any;
+    
+    /**
+     * Launches a Steam Application using OpenVR.
+     */
+    LaunchSteamApp(nAppID: number) : any;
+}
+
 interface DollarStatic {
     (selector: string) : Panel;
     CreatePanel(type: string, root: Panel, name: string): Panel;
@@ -2144,5 +2262,9 @@ declare var Entities: CScriptBindingPR_Entities;
 declare var Abilities: CScriptBindingPR_Abilities;
 declare var Items: CScriptBindingPR_Items;
 declare var Game: CScriptBindingPR_Game;
+declare var SteamUGC: CPanoramaScript_SteamUGC;
+declare var SteamFriends: CPanoramaScript_SteamFriends;
+declare var SteamUtils: CPanoramaScript_SteamUtils;
+declare var VRUtils: CPanoramaScript_VRUtils;
 declare var $: DollarStatic;
 declare var panorama: DollarStatic;
