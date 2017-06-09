@@ -195,12 +195,64 @@
             "value": 12
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_PREGAME_STRATEGYUI",
+            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_TEAMS",
             "value": 13
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_COUNT",
+            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_GAME_NAME",
             "value": 14
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_CLOCK",
+            "value": 15
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_TOP_MENU_BUTTONS",
+            "value": 16
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_BACKGROUND",
+            "value": 17
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_RADIANT_TEAM",
+            "value": 18
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_DIRE_TEAM",
+            "value": 19
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_SCORE",
+            "value": 20
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_ENDGAME",
+            "value": 21
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_ENDGAME_CHAT",
+            "value": 22
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_QUICK_STATS",
+            "value": 23
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_PREGAME_STRATEGYUI",
+            "value": 24
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_KILLCAM",
+            "value": 25
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR",
+            "value": 26
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_COUNT",
+            "value": 27
         }
     ],
     "DOTAInventoryFlags_t": [
@@ -1278,6 +1330,40 @@
         },
         {
             "key": "DOTA_RUNE_COUNT",
+            "value": 7
+        }
+    ],
+    "DOTA_SHOP_TYPE": [
+        {
+            "key": "DOTA_SHOP_HOME",
+            "value": 0
+        },
+        {
+            "key": "DOTA_SHOP_SIDE",
+            "value": 1
+        },
+        {
+            "key": "DOTA_SHOP_SECRET",
+            "value": 2
+        },
+        {
+            "key": "DOTA_SHOP_GROUND",
+            "value": 3
+        },
+        {
+            "key": "DOTA_SHOP_SIDE2",
+            "value": 4
+        },
+        {
+            "key": "DOTA_SHOP_SECRET2",
+            "value": 5
+        },
+        {
+            "key": "DOTA_SHOP_CUSTOM",
+            "value": 6
+        },
+        {
+            "key": "DOTA_SHOP_NONE",
             "value": 7
         }
     ],
@@ -9142,7 +9228,7 @@
             "value": 22
         },
         {
-            "description": "GetModifierAttackSpeedBaseOverride",
+            "description": "GetModifierFixedAttackRate",
             "key": "MODIFIER_PROPERTY_FIXED_ATTACK_RATE",
             "value": 23
         },

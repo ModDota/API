@@ -15,7 +15,7 @@
                 "args": [
                     "int"
                 ],
-                "description": "Get the attachement id's angles as a p,y,r vector.",
+                "description": "Get the attachment id's angles as a p,y,r vector.",
                 "return": "vector"
             },
             "GetAttachmentOrigin": {
@@ -25,7 +25,7 @@
                 "args": [
                     "int"
                 ],
-                "description": "Get the attachement id's origin vector.",
+                "description": "Get the attachment id's origin vector.",
                 "return": "vector"
             },
             "GetGraphParameter": {
@@ -70,7 +70,7 @@
                 "args": [
                     "cstring"
                 ],
-                "description": "Get the named attachement id.",
+                "description": "Get the named attachment id.",
                 "return": "int"
             },
             "SequenceDuration": {
@@ -210,6 +210,36 @@
                 ],
                 "description": "Set the specified pose parameter to the specified value.",
                 "return": "float"
+            },
+            "SetProceduralIKTarget": {
+                "arg_names": [
+                    "pChainName",
+                    "pTargetName",
+                    "vTargetPosition",
+                    "qTargetRotation"
+                ],
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "vector",
+                    "qangle"
+                ],
+                "description": "Sets the named procedural IK target.",
+                "return": "bool"
+            },
+            "SetProceduralIKTargetWeight": {
+                "arg_names": [
+                    "pChainName",
+                    "pTargetName",
+                    "flWeight"
+                ],
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "float"
+                ],
+                "description": "Sets the named procedural IK targets weight: 0 = full animation, 1 = full IK.",
+                "return": "bool"
             },
             "SetSequence": {
                 "arg_names": [
@@ -417,6 +447,10 @@
                 "args": [],
                 "return": "vector"
             },
+            "GetAbsScale": {
+                "args": [],
+                "return": "float"
+            },
             "GetAngles": {
                 "args": [],
                 "return": "qangle"
@@ -495,6 +529,10 @@
                 "args": [],
                 "description": "Get entity local origin as a Vector",
                 "return": "vector"
+            },
+            "GetLocalScale": {
+                "args": [],
+                "return": "float"
             },
             "GetLocalVelocity": {
                 "args": [],
@@ -664,6 +702,15 @@
                 ],
                 "return": "void"
             },
+            "SetAbsScale": {
+                "arg_names": [
+                    "flScale"
+                ],
+                "args": [
+                    "float"
+                ],
+                "return": "void"
+            },
             "SetAngles": {
                 "arg_names": [
                     "fPitch",
@@ -816,6 +863,15 @@
                     "vector"
                 ],
                 "description": "Set entity local origin from a Vector",
+                "return": "void"
+            },
+            "SetLocalScale": {
+                "arg_names": [
+                    "flScale"
+                ],
+                "args": [
+                    "float"
+                ],
                 "return": "void"
             },
             "SetMass": {
@@ -1687,6 +1743,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsRefreshable": {
+                "args": [],
+                "return": "bool"
+            },
             "IsSharedWithTeammates": {
                 "args": [],
                 "return": "bool"
@@ -1803,6 +1863,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "RefreshCharges": {
+                "args": [],
+                "return": "void"
+            },
             "RefundManaCost": {
                 "args": [],
                 "return": "void"
@@ -1832,6 +1896,15 @@
             "SetChanneling": {
                 "arg_names": [
                     "bChanneling"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetFrozenCooldown": {
+                "arg_names": [
+                    "bFrozenCooldown"
                 ],
                 "args": [
                     "bool"
@@ -2249,6 +2322,16 @@
                 "description": "Set a different camera distance; dota default is 1134.",
                 "return": "void"
             },
+            "SetCameraSmoothCountOverride": {
+                "arg_names": [
+                    "nSmoothCount"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Set a different camera smooth count; dota default is 8.",
+                "return": "void"
+            },
             "SetCustomBuybackCooldownEnabled": {
                 "arg_names": [
                     "bEnabled"
@@ -2289,6 +2372,16 @@
                 "description": "Allows definition of the max level heroes can achieve (default is 25).",
                 "return": "void"
             },
+            "SetCustomTerrainWeatherEffect": {
+                "arg_names": [
+                    "pszEffectName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Set the effect used as a custom weather effect, when units are on non-default terrain, in this mode.",
+                "return": "void"
+            },
             "SetCustomXPRequiredToReachNextLevel": {
                 "arg_names": [
                     "hTable"
@@ -2319,6 +2412,16 @@
                     "bool"
                 ],
                 "description": "Enable or disable the day/night cycle.",
+                "return": "void"
+            },
+            "SetDeathOverlayDisabled": {
+                "arg_names": [
+                    "bDisabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Specify whether the full screen death overlay effect plays when the selected hero dies.",
                 "return": "void"
             },
             "SetExecuteOrderFilter": {
@@ -2425,6 +2528,16 @@
                     "handle"
                 ],
                 "description": "Set a filter function to control the behavior when a unit heals. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetHudCombatEventsDisabled": {
+                "arg_names": [
+                    "bDisabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Specify whether the default combat events will show in the HUD.",
                 "return": "void"
             },
             "SetItemAddedToInventoryFilter": {
@@ -2567,6 +2680,16 @@
                     "handle"
                 ],
                 "description": "Set a filter function to control what rune spawns. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetSelectionGoldPenaltyEnabled": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Enable/disable gold penalty for late picking.",
                 "return": "void"
             },
             "SetStashPurchasingDisabled": {
@@ -2725,6 +2848,9 @@
                     "uint",
                     "uint",
                     "uint",
+                    "uint",
+                    "uint",
+                    "uint",
                     "uint"
                 ],
                 "description": "Event-only ( string szNameSuffix, int nStars, int nMaxStars, int nExtraData1, int nExtraData2 )",
@@ -2824,6 +2950,11 @@
                 ],
                 "description": "Gets the Xth dropped item",
                 "return": "handle"
+            },
+            "GetGameFrameTime": {
+                "args": [],
+                "description": "Returns the number of seconds elapsed since the last frame was renderered. This time doesn't count up when the game is paused",
+                "return": "float"
             },
             "GetGameModeEntity": {
                 "args": [],
@@ -2975,6 +3106,27 @@
                 "description": "(Preview/Unreleased) Sets a callback to handle saving custom game account records (callback is passed a Player ID and should return a flat simple table)",
                 "return": "void"
             },
+            "SetCustomGameAllowBattleMusic": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets a flag to enable/disable the default music handling code for custom games",
+                "return": "void"
+            },
+            "SetCustomGameAllowHeroPickMusic": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets a flag to enable/disable the default music handling code for custom games",
+                "return": "void"
+            },
+            "SetCustomGameAllowMusicAtGameStart": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets a flag to enable/disable the default music handling code for custom games",
+                "return": "void"
+            },
             "SetCustomGameDifficulty": {
                 "args": [
                     "int"
@@ -3033,6 +3185,13 @@
                 "return": "void"
             },
             "SetEventMetadataCustomTable": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Event-only ( table hMetadataTable )",
+                "return": "bool"
+            },
+            "SetEventSignoutCustomTable": {
                 "args": [
                     "handle"
                 ],
@@ -3780,6 +3939,20 @@
                 "description": "(HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination (target is invalid).",
                 "return": "bool"
             },
+            "OnProjectileHitHandle": {
+                "arg_names": [
+                    "hTarget",
+                    "vLocation",
+                    "iProjectileHandle"
+                ],
+                "args": [
+                    "handle",
+                    "vector",
+                    "int"
+                ],
+                "description": "(HSCRIPT hTarget, Vector vLocation, int nHandle) Projectile has collided with a given target or reached its destination (target is invalid).",
+                "return": "bool"
+            },
             "OnProjectileHit_ExtraData": {
                 "arg_names": [
                     "hTarget",
@@ -3802,6 +3975,16 @@
                     "vector"
                 ],
                 "description": "(Vector vLocation) Projectile is actively moving.",
+                "return": "void"
+            },
+            "OnProjectileThinkHandle": {
+                "arg_names": [
+                    "iProjectileHandle"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "(int nProjectileHandle) Projectile is actively moving.",
                 "return": "void"
             },
             "OnProjectileThink_ExtraData": {
@@ -4177,6 +4360,16 @@
                 ],
                 "description": "Returns a table of all of the modifiers on the NPC with the passed name (modifierName)",
                 "return": "variant"
+            },
+            "FindItemInInventory": {
+                "arg_names": [
+                    "pszItemName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get handle to first item in inventory, else nil.",
+                "return": "handle"
             },
             "FindModifierByName": {
                 "arg_names": [
@@ -6444,6 +6637,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsStashEnabled": {
+                "args": [],
+                "return": "bool"
+            },
             "KilledHero": {
                 "arg_names": [
                     "hHero",
@@ -6657,6 +6854,15 @@
                 "description": "Prevent this hero from respawning.",
                 "return": "void"
             },
+            "SetStashEnabled": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
             "SetTimeUntilRespawn": {
                 "arg_names": [
                     "time"
@@ -6813,10 +7019,23 @@
                 "args": [],
                 "return": "int"
             },
+            "HasFunction": {
+                "arg_names": [
+                    "iFunction"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "bool"
+            },
             "IncrementStackCount": {
                 "args": [],
                 "description": "Increase this modifier's stack count by 1.",
                 "return": "void"
+            },
+            "IsStunDebuff": {
+                "args": [],
+                "return": "bool"
             },
             "SetDuration": {
                 "arg_names": [
@@ -7041,6 +7260,15 @@
             "SetCanBeUsedOutOfInventory": {
                 "arg_names": [
                     "bValue"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetCastOnPickup": {
+                "arg_names": [
+                    "bCastOnPickUp"
                 ],
                 "args": [
                     "bool"
@@ -7336,6 +7564,11 @@
             "IsHiddenWhenStolen": {
                 "args": [],
                 "description": "Returns true if this ability is hidden when stolen by Spell Steal.",
+                "return": "bool"
+            },
+            "IsMuted": {
+                "args": [],
+                "description": "Returns whether this item is muted or not.",
                 "return": "bool"
             },
             "IsRefreshable": {
@@ -9918,6 +10151,11 @@
                 "description": "Begin an iteration over the list of entities",
                 "return": "handle"
             },
+            "GetLocalPlayer": {
+                "args": [],
+                "description": "Get the local player.",
+                "return": "handle"
+            },
             "Next": {
                 "args": [
                     "handle"
@@ -11572,6 +11810,13 @@
                 "description": "Get the cost of an item by name.",
                 "return": "int"
             },
+            "GetItemDefOwnedCount": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "return": "int"
+            },
             "GetListenServerHost": {
                 "args": [],
                 "description": "Get the local player on a listen server.",
@@ -11751,6 +11996,11 @@
                     "cstring"
                 ],
                 "description": "Creates a table from the specified keyvalues string",
+                "return": "variant"
+            },
+            "LocalTime": {
+                "args": [],
+                "description": "Get the current local time",
                 "return": "variant"
             },
             "MakeStringToken": {
@@ -12618,6 +12868,20 @@
                 "description": "Destroys the linear projectile matching the argument ID",
                 "return": "void"
             },
+            "GetLinearProjectileLocation": {
+                "args": [
+                    "int"
+                ],
+                "description": "Returns current location of projectile",
+                "return": "vector"
+            },
+            "GetLinearProjectileRadius": {
+                "args": [
+                    "int"
+                ],
+                "description": "Returns current radius of projectile",
+                "return": "float"
+            },
             "GetLinearProjectileVelocity": {
                 "args": [
                     "int"
@@ -12630,6 +12894,15 @@
                     "handle"
                 ],
                 "description": "Makes the specified unit dodge projectiles",
+                "return": "void"
+            },
+            "UpdateLinearProjectileDirection": {
+                "args": [
+                    "int",
+                    "vector",
+                    "float"
+                ],
+                "description": "Update velocity",
                 "return": "void"
             }
         }

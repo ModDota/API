@@ -952,6 +952,11 @@
                 "description": "Gets the attack point of the unit.",
                 "return": "float"
             },
+            "GetAttackProjectileSpeed": {
+                "args": [],
+                "description": "Get the speed of the attack projectile for ranged units.",
+                "return": "int"
+            },
             "GetAttackRange": {
                 "args": [],
                 "description": "Gets the attack range of the unit.",
@@ -985,6 +990,16 @@
             "GetBaseDamageVariance": {
                 "args": [],
                 "description": "Gets the variance of the base attack damage.",
+                "return": "float"
+            },
+            "GetBaseHealthRegen": {
+                "args": [],
+                "description": "Get a bot's base health regen rate.",
+                "return": "float"
+            },
+            "GetBaseManaRegen": {
+                "args": [],
+                "description": "Get a bot's base mana regen rate.",
                 "return": "float"
             },
             "GetBaseMovementSpeed": {
@@ -1128,6 +1143,11 @@
                 "description": "Get a bot's health regen rate.",
                 "return": "float"
             },
+            "GetHealthRegenPerStr": {
+                "args": [],
+                "description": "Get amount of health regen given per unit of strength.",
+                "return": "float"
+            },
             "GetIncomingTrackingProjectiles": {
                 "args": [],
                 "description": "Gets the location and ability of projectiles incoming at this unit.",
@@ -1186,6 +1206,11 @@
             "GetManaRegen": {
                 "args": [],
                 "description": "Get a bot's mana regen rate.",
+                "return": "float"
+            },
+            "GetManaRegenPerInt": {
+                "args": [],
+                "description": "Get amount of mana regen given per unit of intellect.",
                 "return": "float"
             },
             "GetMaxHealth": {
@@ -1404,7 +1429,7 @@
             },
             "GetRemainingLifespan": {
                 "args": [],
-                "description": "Can remaining lifespan of a unit.",
+                "description": "Get remaining lifespan of a unit.",
                 "return": "float"
             },
             "GetRespawnTime": {
@@ -1446,6 +1471,18 @@
                 ],
                 "description": "Get the duration of available stuns.",
                 "return": "float"
+            },
+            "GetTalent": {
+                "arg_names": [
+                    "nLevel",
+                    "nSide"
+                ],
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Get one of the talents at the specified level",
+                "return": "handle"
             },
             "GetTarget": {
                 "args": [],
@@ -1637,6 +1674,11 @@
             "IsMagicImmune": {
                 "args": [],
                 "description": "Is the unit magic immune?",
+                "return": "bool"
+            },
+            "IsMinion": {
+                "args": [],
+                "description": "Is this a bot's minion?",
                 "return": "bool"
             },
             "IsMuted": {
@@ -2046,6 +2088,13 @@
             "GetIncomingTeleports": {
                 "args": [],
                 "description": "Gets a table of all the teleports that are visibly happening.",
+                "return": "variant"
+            },
+            "GetItemComponents": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Returns a table of items required to make the specified item.",
                 "return": "variant"
             },
             "GetItemCost": {
