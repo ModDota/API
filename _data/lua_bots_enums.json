@@ -1201,6 +1201,154 @@
             "value": -2147483648
         },
         {
+            "key": "ACTIVITY_IDLE",
+            "value": 1500
+        },
+        {
+            "key": "ACTIVITY_IDLE_RARE",
+            "value": 1501
+        },
+        {
+            "key": "ACTIVITY_RUN",
+            "value": 1502
+        },
+        {
+            "key": "ACTIVITY_ATTACK",
+            "value": 1503
+        },
+        {
+            "key": "ACTIVITY_ATTACK2",
+            "value": 1504
+        },
+        {
+            "key": "ACTIVITY_ATTACK_EVENT",
+            "value": 1505
+        },
+        {
+            "key": "ACTIVITY_DIE",
+            "value": 1506
+        },
+        {
+            "key": "ACTIVITY_FLINCH",
+            "value": 1507
+        },
+        {
+            "key": "ACTIVITY_FLAIL",
+            "value": 1508
+        },
+        {
+            "key": "ACTIVITY_DISABLED",
+            "value": 1509
+        },
+        {
+            "key": "ACTIVITY_CAST_ABILITY_1",
+            "value": 1510
+        },
+        {
+            "key": "ACTIVITY_CAST_ABILITY_2",
+            "value": 1511
+        },
+        {
+            "key": "ACTIVITY_CAST_ABILITY_3",
+            "value": 1512
+        },
+        {
+            "key": "ACTIVITY_CAST_ABILITY_4",
+            "value": 1513
+        },
+        {
+            "key": "ACTIVITY_CAST_ABILITY_5",
+            "value": 1514
+        },
+        {
+            "key": "ACTIVITY_CAST_ABILITY_6",
+            "value": 1515
+        },
+        {
+            "key": "ACTIVITY_OVERRIDE_ABILITY_1",
+            "value": 1516
+        },
+        {
+            "key": "ACTIVITY_OVERRIDE_ABILITY_2",
+            "value": 1517
+        },
+        {
+            "key": "ACTIVITY_OVERRIDE_ABILITY_3",
+            "value": 1518
+        },
+        {
+            "key": "ACTIVITY_OVERRIDE_ABILITY_4",
+            "value": 1519
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_ABILITY_1",
+            "value": 1520
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_ABILITY_2",
+            "value": 1521
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_ABILITY_3",
+            "value": 1522
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_ABILITY_4",
+            "value": 1523
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_ABILITY_5",
+            "value": 1524
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_ABILITY_6",
+            "value": 1525
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_END_ABILITY_1",
+            "value": 1526
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_END_ABILITY_2",
+            "value": 1527
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_END_ABILITY_3",
+            "value": 1528
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_END_ABILITY_4",
+            "value": 1529
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_END_ABILITY_5",
+            "value": 1530
+        },
+        {
+            "key": "ACTIVITY_CHANNEL_END_ABILITY_6",
+            "value": 1531
+        },
+        {
+            "key": "ACTIVITY_CONSTANT_LAYER",
+            "value": 1532
+        },
+        {
+            "key": "ACTIVITY_CAPTURE",
+            "value": 1533
+        },
+        {
+            "key": "ACTIVITY_SPAWN",
+            "value": 1534
+        },
+        {
+            "key": "ACTIVITY_KILLTAUNT",
+            "value": 1535
+        },
+        {
+            "key": "ACTIVITY_TAUNT",
+            "value": 1536
+        },
+        {
             "key": "GLYPH_COOLDOWN",
             "value": 300.0
         }

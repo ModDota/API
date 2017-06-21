@@ -7177,6 +7177,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsInBackpack": {
+                "args": [],
+                "return": "bool"
+            },
             "IsItem": {
                 "args": [],
                 "return": "bool"

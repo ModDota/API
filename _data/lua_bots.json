@@ -922,6 +922,16 @@
                 "description": "Gets the incoming damage value after reductions.",
                 "return": "int"
             },
+            "GetAnimActivity": {
+                "args": [],
+                "description": "Get the action the unit is currently performing.",
+                "return": "int"
+            },
+            "GetAnimCycle": {
+                "args": [],
+                "description": "Get the amount the unit is through its current animation.",
+                "return": "float"
+            },
             "GetArmor": {
                 "args": [],
                 "description": "Gets the armor of the unit.",
