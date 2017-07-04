@@ -49,6 +49,11 @@ interface CDOTA_PanoramaScript_GameEvents {
     SendEventClientSide(pEventName: string, jsObject: any[]): void;
 }
 
+// Define string dictionary for CustomUIConfig to return
+interface StringDictionary {
+    [key: string] : any;
+}
+
 interface CDOTA_PanoramaScript_GameUI {
     /**
      * Control whether the default UI is enabled
@@ -58,7 +63,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Get the current UI configuration
      */
-    CustomUIConfig(): Object;
+    CustomUIConfig(): StringDictionary;
 
     /**
      * Create a minimap ping at the given location
@@ -173,7 +178,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Set the camera target as position for the local player over specified lerp.
      */
-    SetCameraTargetPosition(vec3: Function, flLerp: number): void;
+    SetCameraTargetPosition(vec3: [number, number, number], flLerp: number): void;
 }
 
 interface TableValue {
@@ -2246,10 +2251,12 @@ interface DollarStatic {
     CreatePanel(type: string, root: Panel, name: string): Panel;
     Msg(...args: any[]): void;
     GetContextPanel(): Panel;
-    Schedule(time: number, callback: Function);
-    DispatchEvent(event: string, reference?: Panel, ...args: any[]);
-    Localize(token: string, parent?: Panel);
-    RegisterEventHandler(event: string, parent: Panel, handler: Function);
+    Schedule(time: number, callback: Function): number;
+    CancelScheduled(scheduledEvent: number): void;
+    DispatchEvent(event: string, panelID?: string, ...args: any[]): void;
+    DispatchEventAsync(delay: number, event:string, panelID?: string, ...args: any[]): void;
+    Localize(token: string, parent?: Panel): string;
+    RegisterEventHandler(event: string, parent: Panel, handler: Function): number;
 }
 
 declare var GameEvents: CDOTA_PanoramaScript_GameEvents;
