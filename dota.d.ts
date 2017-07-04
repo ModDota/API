@@ -16,6 +16,7 @@ type buffID = number;
 type entityID = number;
 type itemID = number;
 type particleID = number;
+type scheduleID = number;
 
 interface CDOTA_PanoramaScript_GameEvents {
     /**
@@ -31,22 +32,22 @@ interface CDOTA_PanoramaScript_GameEvents {
     /**
      * Send a custom game event
      */
-    SendCustomGameEventToServer(pEventName: string, jsObject: any[]): void;
+    SendCustomGameEventToServer(pEventName: string, eventData: Object): void;
     
     /**
      * Send a custom game event to the server, which will send it to all clients
      */
-    SetCustomGameEventToAllClients(pEventName: string, jsObject: any[]): void;
+    SendCustomGameEventToAllClients(pEventName: string, eventData: Object): void;
     
     /**
      * Send a custom game event to the server, which will send it to all clients
      */
-    SetCustomGameEventToClient(pEventName: string, playerIndex: number, jsObject: any[]): void;
+    SendCustomGameEventToClient(pEventName: string, playerIndex: number, eventData: Object): void;
     
     /**
      * Send a client-side event using gameeventmanager (only useful for a few specific events)
      */
-    SendEventClientSide(pEventName: string, jsObject: any[]): void;
+    SendEventClientSide(pEventName: string, eventData: Object): void;
 }
 
 // Define string dictionary for CustomUIConfig to return
@@ -68,7 +69,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Create a minimap ping at the given location
      */
-    PingMinimapAtLocation(vec3: Function): void;
+    PingMinimapAtLocation(vec3: [number, number, number]): void;
 
     /**
      * Install a mouse input filter
@@ -78,7 +79,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      *
      */
-    EnableAliMode(bEnable: boolean, nPort: number, offsetVal: Function, flScale: number): void;
+    EnableAliMode(bEnable: boolean, nPort: number, offsetVal: number, flScale: number): void;
 
     /**
      * Get the current mouse position.
@@ -185,6 +186,7 @@ interface TableValue {
     key: string;
     value: any;
 }
+
 interface CDOTA_PanoramaScript_CustomNetTables {
     /**
      * Get a key from a custom net table
@@ -2214,12 +2216,12 @@ interface CPanoramaScript_SteamFriends {
     /**
      * Requests the user's persona name
      */
-    RequestPersoneName(pchSteamID: tring, funcVal: any) : any;
+    RequestPersoneName(pchSteamID: string, funcVal: any) : any;
     
     /**
      * Sets the avatar image on the image panel
      */
-    SetLargeAvatarImage(...any) : any;
+    SetLargeAvatarImage(...unknown: any[]) : any;
 }
 
 interface CPanoramaScript_SteamUtils {
@@ -2251,8 +2253,8 @@ interface DollarStatic {
     CreatePanel(type: string, root: Panel, name: string): Panel;
     Msg(...args: any[]): void;
     GetContextPanel(): Panel;
-    Schedule(time: number, callback: Function): number;
-    CancelScheduled(scheduledEvent: number): void;
+    Schedule(time: number, callback: Function): scheduleID;
+    CancelScheduled(scheduledEvent: scheduleID): void;
     DispatchEvent(event: string, panelID?: string, ...args: any[]): void;
     DispatchEventAsync(delay: number, event:string, panelID?: string, ...args: any[]): void;
     Localize(token: string, parent?: Panel): string;
