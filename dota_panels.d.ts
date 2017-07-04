@@ -51,7 +51,7 @@ interface Panel {
     AddClass(name: string): void;
     RemoveClass(name: string): void;
     BHasClass(name: string): boolean;
-    SetHasClass(name: string, active: boolean);
+    SetHasClass(name: string, active: boolean): void;
     ToggleClass(name: string): void;
     SwitchClass(name: string, replacement: string): void;
 
@@ -79,11 +79,11 @@ interface Panel {
     MoveChildBefore(child: Panel, afterChild: Panel): void;
     MoveChildAfter(child: Panel, afterChild: Panel): void;
 
-    GetPositionWithinWindow(): Object;
+    GetPositionWithinWindow(): {x: number, y: number};
     ApplyStyles(): void; // ???????
     ClearPropertyFromCode(): void;
 
-    DeleteAsync(time: number);
+    DeleteAsync(time: number): void;
 
     BIsTransparent(): boolean;
     BAcceptsInput(): boolean;
@@ -101,12 +101,12 @@ interface Panel {
     IsSelected(): boolean;
     BHasDescendantKeyFocus(): boolean;
 
-    BLoadLayout(path: string);
-    BLoadLayoutFromString(layout: string);
-    BLoadLayoutFromStringAsync(layout: string, callback: Function); // ??
-    BLoadLayoutAsync(path: string, callback: Function); // ?
-    BLoadLayoutSnippet(snippetname: string);
-    BCreateChildren(): boolean; // ????
+    BLoadLayout(path: string, bool1: boolean, bool2: boolean): boolean;
+    BLoadLayoutFromString(layout: string): boolean;
+    BLoadLayoutFromStringAsync(layout: string, callback: Function): boolean;
+    BLoadLayoutAsync(path: string, callback: Function): boolean;
+    BLoadLayoutSnippet(snippetname: string): boolean;
+    BCreateChildren(html: string): boolean;
 
     SetTopOfInputContext(): void; // ????
     SetDialogVariable(name: string, value: any): void;
@@ -140,6 +140,7 @@ interface Panel {
 
 interface LabelPanel extends Panel {
     text: string;
+    html: boolean;
 }
 
 interface ImagePanel extends Panel {
