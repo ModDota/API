@@ -2259,7 +2259,9 @@ interface DollarStatic {
     DispatchEventAsync(delay: number, event:string, panelID?: string, ...args: any[]): void;
     Localize(token: string, parent?: Panel): string;
     RegisterEventHandler(event: string, parent: Panel, handler: Function): number;
-    Each<T>(list: T[], callback: (item: T, index?: number) => void): void;
+    Each<T>(list: T[], callback: (item: T, index: number) => void): void;
+    Each<T>(map: {[key: string]: T}, callback: (value: T, key: string) => void): void;
+    Each<T>(map: {[key: number]: T}, callback: (value: T, key: number) => void): void;
 }
 
 declare var GameEvents: CDOTA_PanoramaScript_GameEvents;
