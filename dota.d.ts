@@ -22,7 +22,7 @@ interface CDOTA_PanoramaScript_GameEvents {
     /**
      * Subscribe to a game event
      */
-    Subscribe(pEventName: string, funcVal: Function): number;
+    Subscribe(pEventName: string, funcVal: (data: object) => void): number;
 
     /**
      * Unsubscribe from a game event
@@ -32,22 +32,22 @@ interface CDOTA_PanoramaScript_GameEvents {
     /**
      * Send a custom game event
      */
-    SendCustomGameEventToServer(pEventName: string, eventData: Object): void;
+    SendCustomGameEventToServer(pEventName: string, eventData: object): void;
     
     /**
      * Send a custom game event to the server, which will send it to all clients
      */
-    SendCustomGameEventToAllClients(pEventName: string, eventData: Object): void;
+    SendCustomGameEventToAllClients(pEventName: string, eventData: object): void;
     
     /**
      * Send a custom game event to the server, which will send it to all clients
      */
-    SendCustomGameEventToClient(pEventName: string, playerIndex: number, eventData: Object): void;
+    SendCustomGameEventToClient(pEventName: string, playerIndex: number, eventData: object): void;
     
     /**
      * Send a client-side event using gameeventmanager (only useful for a few specific events)
      */
-    SendEventClientSide(pEventName: string, eventData: Object): void;
+    SendEventClientSide(pEventName: string, eventData: object): void;
 }
 
 // Define string dictionary for CustomUIConfig to return
@@ -74,7 +74,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Install a mouse input filter
      */
-    SetMouseCallback(callbackFn: Function): void;
+    SetMouseCallback(callbackFn: (data: object) => void): void;
 
     /**
      *
@@ -1982,7 +1982,7 @@ interface CScriptBindingPR_Game {
     /**
      *
      */
-    AddCommand(pszCommandName: string, callback: Function, pszDescription: string, nFlags: number): void;
+    AddCommand(pszCommandName: string, callback: (data: object) => void, pszDescription: string, nFlags: number): void;
 
     /**
      *
@@ -2067,12 +2067,12 @@ interface CScriptBindingPR_Game {
     /**
      * Get detailed information for the given team
      */
-    GetTeamDetails(nTeam: number): Object;
+    GetTeamDetails(nTeam: number): object;
 
     /**
      * Get details for the local player
      */
-    GetLocalPlayerInfo(): Object;
+    GetLocalPlayerInfo(): object;
 
     /**
      * Get info about the player items.
@@ -2082,7 +2082,7 @@ interface CScriptBindingPR_Game {
     /**
      * Get info about the given player
      */
-    GetPlayerInfo(nPlayerID: number): Object;
+    GetPlayerInfo(nPlayerID: number): object;
 
     /**
      * Get player IDs for the given team
@@ -2112,7 +2112,7 @@ interface CScriptBindingPR_Game {
     /**
      * Return information about the current map.
      */
-    GetMapInfo(): Object;
+    GetMapInfo(): object;
 
     /**
      * Orders from the local player - takes a single arguments object that supports: dotaunitorder_t OrderType, ent_index TargetIndex, vector Position, ent_index AbilityIndex, OrderIssuer_t OrderIssuer, ent_index UnitIndex, OrderQueueBehavior_t QueueBehavior, bool ShowEffects.
@@ -2253,12 +2253,12 @@ interface DollarStatic {
     CreatePanel(type: string, root: Panel, name: string): Panel;
     Msg(...args: any[]): void;
     GetContextPanel(): Panel;
-    Schedule(time: number, callback: Function): scheduleID;
+    Schedule(time: number, callback: () => void): scheduleID;
     CancelScheduled(scheduledEvent: scheduleID): void;
     DispatchEvent(event: string, panelID?: string, ...args: any[]): void;
     DispatchEventAsync(delay: number, event:string, panelID?: string, ...args: any[]): void;
     Localize(token: string, parent?: Panel): string;
-    RegisterEventHandler(event: string, parent: Panel, handler: Function): number;
+    RegisterEventHandler(event: string, parent: Panel, handler: () => void): number;
     Each<T>(list: T[], callback: (item: T, index: number) => void): void;
     Each<T>(map: {[key: string]: T}, callback: (value: T, key: string) => void): void;
     Each<T>(map: {[key: number]: T}, callback: (value: T, key: number) => void): void;
