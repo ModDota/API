@@ -14,7 +14,7 @@
 interface Panel {
     paneltype: string;
     rememberchildfocus: boolean;
-    style: CSSStyleDeclaration;
+    style: VCSSStyleDeclaration;
 
     scrolloffset_x: number;
     scrolloffset_y: number;
@@ -103,8 +103,8 @@ interface Panel {
 
     BLoadLayout(path: string, bool1: boolean, bool2: boolean): boolean;
     BLoadLayoutFromString(layout: string): boolean;
-    BLoadLayoutFromStringAsync(layout: string, callback: Function): boolean;
-    BLoadLayoutAsync(path: string, callback: Function): boolean;
+    BLoadLayoutFromStringAsync(layout: string, callback: () => void): boolean;
+    BLoadLayoutAsync(path: string, callback: () => void): boolean;
     BLoadLayoutSnippet(snippetname: string): boolean;
     BCreateChildren(html: string): boolean;
 
@@ -129,13 +129,21 @@ interface Panel {
 
     SetInputNamespace(naespace: string): void; // ??
 
-    RegisterForReadyEvents(callback: Function): void; // ????
+    RegisterForReadyEvents(callback: (event: object) => void): void; // ????
 
     BReadyForDisplay(): boolean;
     SetReadyForDisplay(value: boolean): void; // ???
-    SetPanelEvent(event: string, handler: Function): void;
+    SetPanelEvent(event: string, handler: () => void): void;
 
     RunScriptInPanelContext(script: string): void;
+}
+
+interface VCSSStyleDeclaration extends CSSStyleDeclaration {
+    x: string;
+    y: string;
+    contrast: string;
+    hueRotation: string;
+    brightness: string;
 }
 
 interface LabelPanel extends Panel {
@@ -166,6 +174,13 @@ interface ContextMenuScriptPanel extends Panel {
     GetContentsPanel(): Panel;
 }
 
+interface ScenePanel extends Panel {
+    FireEntityInput(entityID: string, inputName: string, value: string): void;
+    PlayEntitySoundEvent(arg1: any, arg2: any): number;
+    SetUnit(unitName: string, environment: string): void;
+    GetPanoramaSurfacePanel(): Panel;
+}
+
 //Only put single string literals in here, it'll be merged with the main one
 interface DollarStatic {
     CreatePanel(type: "Label", root: Panel, name: string): LabelPanel;
@@ -174,4 +189,5 @@ interface DollarStatic {
     CreatePanel(type: "DOTAItemImage", root: Panel, name: string): ItemImage;
     CreatePanel(type: "Image", root: Panel, name: string): ImagePanel;
     CreatePanel(type: "ContextMenuScript", root: Panel, name: String): ContextMenuScriptPanel;
+    CreatePanel(type: "DOTAScenePanel", root: Panel, name: String): ScenePanel;
 }
