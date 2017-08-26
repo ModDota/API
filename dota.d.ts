@@ -84,7 +84,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Get the current mouse position.
      */
-    GetCursorPosition(): void;
+    GetCursorPosition(): [number, number];
 
     /**
      * Return the entity index of the entity under the given screen position.
