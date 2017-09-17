@@ -76,7 +76,7 @@ interface Panel {
 
     RemoveAndDeleteChildren(): void;
 
-    MoveChildBefore(child: Panel, afterChild: Panel): void;
+    MoveChildBefore(child: Panel, beforeChild: Panel): void;
     MoveChildAfter(child: Panel, afterChild: Panel): void;
 
     GetPositionWithinWindow(): {x: number, y: number};
