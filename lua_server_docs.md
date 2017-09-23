@@ -22,7 +22,7 @@ end
 ParticleManager = {}
 
 --- @type CScriptHeroList
-CScriptHeroList = {}
+HeroList = {}
 
 --- @type CDOTAGamerules
 GameRules = {}
