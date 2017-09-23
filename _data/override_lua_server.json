@@ -1,15 +1,47 @@
 {
+    "CDOTA_Ability_DataDriven": {
+        "functions": {
+            "ApplyDataDrivenModifier": {
+                "arg_names": [
+                    "caster",
+                    "target",
+                    "modifier_name",
+                    "modifier_table"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "CDOTA_BaseNPC",
+                    "string",
+                    "table"
+                ],
+                "description": "Applies a data driven modifier to the target",
+                "return": "CDOTA_Buff"
+            }
+        }
+    },
+    "CDOTA_BaseNPC": {
+        "functions": {
+            "AddNewModifier": {
+                "arg_names": [
+                    "caster",
+                    "source_ability",
+                    "modifier_name",
+                    "modifier_table"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "CDOTABaseAbility",
+                    "string",
+                    "table"
+                ],
+                "description": "Add a modifier to this unit.",
+                "return": "CDOTA_Buff"
+            }
+        }
+    },
     "Global": {
         "functions": {
             "CreateUnitByName": {
-                "arg_names": [
-                    "unit_name",
-                    "location",
-                    "find_clear_space",
-                    "npc_owner",
-                    "unit_owner",
-                    "team_number"
-                ],
                 "args": [
                     "string",
                     "vector",
@@ -18,7 +50,16 @@
                     "CBaseEntity",
                     "int"
                 ],
-                "return": "CDOTA_BaseNPC"
+                "description": "Creates a DOTA unit by its dota_npc_units.txt name",
+                "return": "CDOTA_BaseNPC",
+                "arg_names": [
+                    "unit_name",
+                    "location",
+                    "find_clear_space",
+                    "npc_owner",
+                    "unit_owner",
+                    "team_number"
+                ]
             }
         }
     }
