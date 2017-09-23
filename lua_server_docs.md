@@ -17,4 +17,31 @@ function {% if server_class[0] != "Global" %}{{server_class[0]}}:{% endif %}{{fu
 end
 {% endfor %}
 {% endfor %}
+
+--- @type CScriptParticleManager
+ParticleManager = {}
+
+--- @type CScriptHeroList
+CScriptHeroList = {}
+
+--- @type CDOTAGamerules
+GameRules = {}
+
+--- @type CDOTA_PlayerResource
+PlayerResource = {}
+
+--- @type CEntities
+Entities = {}
+
+--- @type Convars
+ConVars = {}
+
+--- @type CCustomGameEventManager
+CustomGameEventManager = {}
+
+--- @type CCustomNetTableManager
+CustomNetTables = {}
+
+--- @type CDOTATutorial
+Tutorial = {}
 ```
