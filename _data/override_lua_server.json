@@ -1,0 +1,25 @@
+{
+    "Global": {
+        "functions": {
+            "CreateUnitByName": {
+                "arg_names": [
+                    "unit_name",
+                    "location",
+                    "find_clear_space",
+                    "npc_owner",
+                    "unit_owner",
+                    "team_number"
+                ],
+                "args": [
+                    "string",
+                    "vector",
+                    "bool",
+                    "CBaseEntity",
+                    "CBaseEntity",
+                    "int"
+                ],
+                "return": "CDOTA_BaseNPC"
+            }
+        }
+    }
+}

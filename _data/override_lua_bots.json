@@ -1,0 +1,11 @@
+{
+    "Global": {
+        "functions": {
+            "GetHeroLevel": {
+                "arg_names": [
+                    "nPlayerID"
+                ]
+            }
+        }
+    }
+}
