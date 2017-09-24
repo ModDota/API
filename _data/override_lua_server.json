@@ -1,4 +1,240 @@
 {
+    "CBaseEntity": {
+        "functions": {
+            "FirstMoveChild": {
+                "args": [],
+                "return": "CBaseEntity"
+            },
+            "FollowEntity": {
+                "arg_names": [
+                    "hEnt",
+                    "bBoneMerge"
+                ],
+                "args": [
+                    "CBaseEntity",
+                    "bool"
+                ],
+                "description": "hEntity to follow, bool bBoneMerge",
+                "return": "void"
+            },
+            "GetMoveParent": {
+                "args": [],
+                "description": "If in hierarchy, retrieves the entity's parent.",
+                "return": "CBaseEntity"
+            },
+            "GetOwner": {
+                "args": [],
+                "description": "Gets this entity's owner",
+                "return": "CBaseEntity"
+            },
+            "GetOwnerEntity": {
+                "args": [],
+                "description": "Get the owner entity, if there is one",
+                "return": "CBaseEntity"
+            },
+            "GetRootMoveParent": {
+                "args": [],
+                "description": "If in hierarchy, walks up the hierarchy to find the root parent.",
+                "return": "CBaseEntity"
+            },
+            "GetTeam": {
+                "args": [],
+                "description": "Get the team number of this entity.",
+                "return": "DOTATeam_t"
+            },
+            "GetTeamNumber": {
+                "args": [],
+                "description": "Get the team number of this entity.",
+                "return": "DOTATeam_t"
+            },
+            "NextMovePeer": {
+                "args": [],
+                "return": "CBaseEntity"
+            },
+            "SetOwner": {
+                "arg_names": [
+                    "pOwner"
+                ],
+                "args": [
+                    "CBaseEntity"
+                ],
+                "description": "Sets this entity's owner",
+                "return": "void"
+            },
+            "SetTeam": {
+                "arg_names": [
+                    "iTeamNum"
+                ],
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "return": "void"
+            }
+        }
+    },
+    "CBaseTrigger": {
+        "functions": {
+            "IsTouching": {
+                "arg_names": [
+                    "hEnt"
+                ],
+                "args": [
+                    "CBaseEntity"
+                ],
+                "description": "Checks whether the passed entity is touching the trigger.",
+                "return": "bool"
+            }
+        }
+    },
+    "CCustomGameEventManager": {
+        "functions": {
+            "RegisterListener": {
+                "args": [
+                    "cstring",
+                    "function"
+                ],
+                "description": "( string EventName, func CallbackFunction ) - Register a callback to be called when a particular custom event arrives. Returns a listener ID that can be used to unregister later.",
+                "return": "CCustomGameEventListener",
+                "arg_names": {
+                    "0": "eventName",
+                    "1": "handler"
+                }
+            },
+            "Send_ServerToAllClients": {
+                "args": [
+                    "cstring",
+                    "table"
+                ],
+                "description": "( string EventName, table EventData )",
+                "return": "void",
+                "arg_names": {
+                    "0": "eventName",
+                    "1": "eventData"
+                }
+            },
+            "Send_ServerToPlayer": {
+                "args": [
+                    "CDOTAPlayer",
+                    "cstring",
+                    "table"
+                ],
+                "description": "( Entity Player, string EventName, table EventData )",
+                "return": "void",
+                "arg_names": {
+                    "0": "player",
+                    "1": "eventName",
+                    "2": "eventData"
+                }
+            },
+            "Send_ServerToTeam": {
+                "args": [
+                    "DOTATeam_t",
+                    "cstring",
+                    "table"
+                ],
+                "description": "( int TeamNumber, string EventName, table EventData )",
+                "return": "void",
+                "arg_names": {
+                    "0": "team",
+                    "1": "eventName",
+                    "2": "eventData"
+                }
+            },
+            "UnregisterListener": {
+                "args": [
+                    "CCustomGameEventListener"
+                ],
+                "description": "( int ListnerID ) - Unregister a specific listener",
+                "return": "void",
+                "arg_names": {
+                    "0": "listener"
+                }
+            }
+        }
+    },
+    "CDOTABaseAbility": {
+        "functions": {
+            "CanAbilityBeUpgraded": {
+                "args": [],
+                "return": "boolean"
+            },
+            "GetAbilityDamageType": {
+                "args": [],
+                "return": "DAMAGE_TYPES"
+            },
+            "GetAbilityKeyValues": {
+                "args": [],
+                "description": "Gets the key values definition for this ability.",
+                "return": "table"
+            },
+            "GetAbilityTargetFlags": {
+                "args": [],
+                "return": "DOTA_UNIT_TARGET_FLAGS"
+            },
+            "GetAbilityTargetTeam": {
+                "args": [],
+                "return": "DOTA_UNIT_TARGET_TEAM"
+            },
+            "GetAbilityTargetType": {
+                "args": [],
+                "return": "DOTA_UNIT_TARGET_TYPE"
+            },
+            "GetCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Gets the cast range of the ability.",
+                "return": "int"
+            },
+            "GetCaster": {
+                "args": [],
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetCloneSource": {
+                "args": [],
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetCursorTarget": {
+                "args": [],
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetLevelSpecialValueFor": {
+                "arg_names": [
+                    "valueName",
+                    "nLevel"
+                ],
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "return": "number"
+            },
+            "GetSpecialValueFor": {
+                "arg_names": [
+                    "valueName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Gets a value from this ability's special value block for its current level.",
+                "return": "number"
+            },
+            "IsCosmetic": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "CBaseEntity"
+                ],
+                "return": "bool"
+            }
+        }
+    },
     "CDOTA_Ability_DataDriven": {
         "functions": {
             "ApplyDataDrivenModifier": {
