@@ -2256,6 +2256,7 @@ interface DollarStatic {
     Schedule(time: number, callback: () => void): scheduleID;
     CancelScheduled(scheduledEvent: scheduleID): void;
     DispatchEvent(event: string, panelID?: string, ...args: any[]): void;
+    DispatchEvent(event: string, panel: Panel, ...args: any[]): void;
     DispatchEventAsync(delay: number, event:string, panelID?: string, ...args: any[]): void;
     Localize(token: string, parent?: Panel): string;
     RegisterEventHandler(event: string, parent: Panel, handler: () => void): number;
