@@ -235,6 +235,673 @@
             }
         }
     },
+    "CDOTABaseGameMode": {
+        "functions": {
+            "SetAbilityTuningValueFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control the tuning values that abilities use. (Modify the table and Return true to use new values, return false to use the old values)",
+                "return": "void"
+            },
+            "SetBountyRunePickupFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control the behavior when a bounty rune is picked up. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetCustomHeroMaxLevel": {
+                "arg_names": [
+                    "iMaxLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Allows definition of the max level heroes can achieve (default is 25).",
+                "return": "void"
+            },
+            "SetCustomXPRequiredToReachNextLevel": {
+                "arg_names": [
+                    "hTable"
+                ],
+                "args": [
+                    "table"
+                ],
+                "description": "Allows definition of a table of hero XP values.",
+                "return": "void"
+            },
+            "SetDamageFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control the behavior when a unit takes damage. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetExecuteOrderFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(order: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control the behavior when a unit picks up an item. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetHUDVisible": {
+                "arg_names": [
+                    "iHUDElement",
+                    "bVisible"
+                ],
+                "args": [
+                    "DOTAHUDVisibility_t",
+                    "bool"
+                ],
+                "description": "Set the HUD element visibility.",
+                "return": "void"
+            },
+            "SetHealingFilter": {
+                "arg_names": [
+                    "hFunction",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control the behavior when a unit heals. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetItemAddedToInventoryFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control what happens to items that are added to an inventory, return false to cancel the event",
+                "return": "void"
+            },
+            "SetModifierGainedFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control modifiers that are gained, return false to destroy modifier.",
+                "return": "void"
+            },
+            "SetModifyExperienceFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control the behavior when a hero's experience is modified. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetModifyGoldFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control the behavior when a hero's gold is modified. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetOverrideSelectionEntity": {
+                "arg_names": [
+                    "hOverrideEntity"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Set an override for the default selection entity, instead of each player's hero.",
+                "return": "void"
+            },
+            "SetRuneEnabled": {
+                "arg_names": [
+                    "nRune",
+                    "bEnabled"
+                ],
+                "args": [
+                    "DOTA_RUNES",
+                    "bool"
+                ],
+                "description": "Set if a given type of rune is enabled.",
+                "return": "void"
+            },
+            "SetRuneSpawnFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control what rune spawns. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetTopBarTeamValue": {
+                "arg_names": [
+                    "iTeam",
+                    "nValue"
+                ],
+                "args": [
+                    "DOTATeam_t",
+                    "int"
+                ],
+                "description": "Set the team values on the top game bar.",
+                "return": "void"
+            },
+            "SetTrackingProjectileFilter": {
+                "arg_names": [
+                    "filterFunc",
+                    "hContext"
+                ],
+                "args": [
+                    "fun(event: table): boolean",
+                    "table"
+                ],
+                "description": "Set a filter function to control when tracking projectiles are launched. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTAGamerules": {
+        "functions": {
+            "BeginNightstalkerNight": {
+                "args": [
+                    "float"
+                ],
+                "description": "Begin night stalker night.",
+                "return": "void",
+                "arg_names": {
+                    "0": "duration"
+                }
+            },
+            "BeginTemporaryNight": {
+                "args": [
+                    "float"
+                ],
+                "description": "Begin temporary night.",
+                "return": "void",
+                "arg_names": {
+                    "0": "duration"
+                }
+            },
+            "EnableCustomGameSetupAutoLaunch": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Enabled (true) or disable (false) auto launch for custom game setup.",
+                "return": "void",
+                "arg_names": {
+                    "0": "enabled"
+                }
+            },
+            "GetCustomGameTeamMaxPlayers": {
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "description": "Get whether a team is selectable during game setup",
+                "return": "int",
+                "arg_names": {
+                    "0": "team"
+                }
+            },
+            "GetDOTATime": {
+                "args": [
+                    "bool",
+                    "bool"
+                ],
+                "description": "(b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time.",
+                "return": "float",
+                "arg_names": {
+                    "0": "includePreGame",
+                    "1": "includeNegativeTime"
+                }
+            },
+            "GetDroppedItem": {
+                "args": [
+                    "int"
+                ],
+                "description": "Gets the Xth dropped item",
+                "return": "CDOTA_Item",
+                "arg_names": {
+                    "0": "index"
+                }
+            },
+            "GetGameModeEntity": {
+                "args": [],
+                "description": "Get the game mode entity",
+                "return": "CDOTABaseGameMode"
+            },
+            "GetMatchID": {
+                "args": [],
+                "description": "Get the MatchID for this game.",
+                "return": "number"
+            },
+            "LockCustomGameSetupTeamAssignment": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Lock (true) or unlock (false) team assignemnt. If team assignment is locked players cannot change teams.",
+                "return": "void",
+                "arg_names": {
+                    "0": "locked"
+                }
+            },
+            "MakeTeamLose": {
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "description": "Makes the specified team lose",
+                "return": "void",
+                "arg_names": {
+                    "0": "team"
+                }
+            },
+            "PlayerHasCustomGameHostPrivileges": {
+                "args": [
+                    "CDOTAPlayer"
+                ],
+                "description": "Whether a player has custom game host privileges (shuffle teams, etc.)",
+                "return": "bool",
+                "arg_names": {
+                    "0": "player"
+                }
+            },
+            "SetCreepMinimapIconScale": {
+                "args": [
+                    "float"
+                ],
+                "description": "(flMinimapCreepIconScale) - Scale the creep icons on the minimap.",
+                "return": "void",
+                "arg_names": {
+                    "0": "scale"
+                }
+            },
+            "SetCustomGameAllowBattleMusic": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets a flag to enable/disable the default music handling code for custom games",
+                "return": "void",
+                "arg_names": {
+                    "0": "allow"
+                }
+            },
+            "SetCustomGameAllowHeroPickMusic": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets a flag to enable/disable the default music handling code for custom games",
+                "return": "void",
+                "arg_names": {
+                    "0": "allow"
+                }
+            },
+            "SetCustomGameAllowMusicAtGameStart": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets a flag to enable/disable the default music handling code for custom games",
+                "return": "void",
+                "arg_names": {
+                    "0": "allow"
+                }
+            },
+            "SetCustomGameDifficulty": {
+                "args": [
+                    "int"
+                ],
+                "description": "Set the difficulty level of the custom game mode",
+                "return": "void",
+                "arg_names": {
+                    "0": "difficulty"
+                }
+            },
+            "SetCustomGameEndDelay": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the game end delay.",
+                "return": "void",
+                "arg_names": {
+                    "0": "delay"
+                }
+            },
+            "SetCustomGameSetupAutoLaunchDelay": {
+                "args": [
+                    "float"
+                ],
+                "description": "Set the amount of time to wait for auto launch.",
+                "return": "void",
+                "arg_names": {
+                    "0": "delay"
+                }
+            },
+            "SetCustomGameSetupRemainingTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Set the amount of remaining time, in seconds, for custom game setup. 0 = finish immediately, -1 = wait forever",
+                "return": "void",
+                "arg_names": {
+                    "0": "remainingTime"
+                }
+            },
+            "SetCustomGameSetupTimeout": {
+                "args": [
+                    "float"
+                ],
+                "description": "Setup (pre-gameplay) phase timeout. 0 = instant, -1 = forever (until FinishCustomGameSetup is called)",
+                "return": "void",
+                "arg_names": {
+                    "0": "timeout"
+                }
+            },
+            "SetCustomGameTeamMaxPlayers": {
+                "args": [
+                    "DOTATeam_t",
+                    "int"
+                ],
+                "description": "Set whether a team is selectable during game setup",
+                "return": "void",
+                "arg_names": {
+                    "0": "team",
+                    "1": "maxPlayers"
+                }
+            },
+            "SetCustomVictoryMessage": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Sets the victory message.",
+                "return": "void",
+                "arg_names": {
+                    "0": "message"
+                }
+            },
+            "SetCustomVictoryMessageDuration": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the victory message duration.",
+                "return": "void",
+                "arg_names": {
+                    "0": "duration"
+                }
+            },
+            "SetFirstBloodActive": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets whether First Blood has been triggered.",
+                "return": "void",
+                "arg_names": {
+                    "0": "active"
+                }
+            },
+            "SetGameWinner": {
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "description": "Makes the specified team win",
+                "return": "void",
+                "arg_names": {
+                    "0": "team"
+                }
+            },
+            "SetGoldPerTick": {
+                "args": [
+                    "int"
+                ],
+                "description": "Set the auto gold increase per timed interval.",
+                "return": "void",
+                "arg_names": {
+                    "0": "amount"
+                }
+            },
+            "SetGoldTickTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Set the time interval between auto gold increases.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetHeroMinimapIconScale": {
+                "args": [
+                    "float"
+                ],
+                "description": "(flMinimapHeroIconScale) - Scale the hero minimap icons on the minimap.",
+                "return": "void",
+                "arg_names": {
+                    "0": "scale"
+                }
+            },
+            "SetHeroRespawnEnabled": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Control if the normal DOTA hero respawn rules apply.",
+                "return": "void",
+                "arg_names": {
+                    "0": "enabled"
+                }
+            },
+            "SetHeroSelectionTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time players have to pick their hero.",
+                "return": "void",
+                "arg_names": {
+                    "0": "selectionTime"
+                }
+            },
+            "SetHideKillMessageHeaders": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets whether the multikill, streak, and first-blood banners appear at the top of the screen.",
+                "return": "void",
+                "arg_names": {
+                    "0": "hideHeaders"
+                }
+            },
+            "SetOverlayHealthBarUnit": {
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "int"
+                ],
+                "description": "Show this unit's health on the overlay health bar",
+                "return": "void",
+                "arg_names": {
+                    "0": "unit",
+                    "1": "style"
+                }
+            },
+            "SetPostGameTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time players have between the game ending and the server disconnecting them.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetPreGameTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time players have between picking their hero and game start.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetRuneMinimapIconScale": {
+                "args": [
+                    "float"
+                ],
+                "description": "(flMinimapRuneIconScale) - Scale the rune icons on the minimap.",
+                "return": "void",
+                "arg_names": {
+                    "0": "flMinimapRuneIconScale"
+                }
+            },
+            "SetRuneSpawnTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time between rune spawns.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetSafeToLeave": {
+                "args": [
+                    "bool"
+                ],
+                "description": "(bSafeToLeave) - Mark this game as safe to leave.",
+                "return": "void",
+                "arg_names": {
+                    "0": "bSafeToLeave"
+                }
+            },
+            "SetSameHeroSelectionEnabled": {
+                "args": [
+                    "bool"
+                ],
+                "description": "When true, players can repeatedly pick the same hero.",
+                "return": "void",
+                "arg_names": {
+                    "0": "enabled"
+                }
+            },
+            "SetShowcaseTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time players have between the strategy phase and entering the pre-game phase.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetStartingGold": {
+                "args": [
+                    "int"
+                ],
+                "description": "Set the starting gold amount.",
+                "return": "void",
+                "arg_names": {
+                    "0": "amount"
+                }
+            },
+            "SetStrategyTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the amount of time players have between the hero selection and entering the showcase phase.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetTimeOfDay": {
+                "args": [
+                    "float"
+                ],
+                "description": "Set the time of day.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetTreeRegrowTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the tree regrow time in seconds.",
+                "return": "void",
+                "arg_names": {
+                    "0": "time"
+                }
+            },
+            "SetUseBaseGoldBountyOnHeroes": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Heroes will use the basic NPC functionality for determining their bounty, rather than DOTA specific formulas.",
+                "return": "void",
+                "arg_names": {
+                    "0": "useBaseGoldBounties"
+                }
+            },
+            "SetUseCustomHeroXPValues": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Allows heroes in the map to give a specific amount of XP (this value must be set).",
+                "return": "void",
+                "arg_names": {
+                    "0": "useCustomXPValues"
+                }
+            },
+            "SetUseUniversalShopMode": {
+                "args": [
+                    "bool"
+                ],
+                "description": "When true, all items are available at as long as any shop is in range.",
+                "return": "void",
+                "arg_names": {
+                    "0": "useUniversalShopMode"
+                }
+            },
+            "State_Get": {
+                "args": [],
+                "description": "Get the current Gamerules state",
+                "return": "DOTA_GameState"
+            }
+        }
+    },
     "CDOTA_Ability_DataDriven": {
         "functions": {
             "ApplyDataDrivenModifier": {
