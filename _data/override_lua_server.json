@@ -1566,6 +1566,11 @@
                 "description": "Returns the player that owns this unit.",
                 "return": "CDOTAPlayer"
             },
+            "GetPlayerOwnerID": {
+                "args": [],
+                "description": "Get the owner player ID for this unit.",
+                "return": "PlayerID"
+            },
             "GetRangeToUnit": {
                 "arg_names": [
                     "hNPC"
@@ -1586,6 +1591,15 @@
                 ],
                 "description": "Heal this unit.",
                 "return": "void"
+            },
+            "IsAttackingEntity": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "return": "bool"
             },
             "IsOpposingTeam": {
                 "arg_names": [
@@ -1792,6 +1806,16 @@
                 "description": "Set the ability by index.",
                 "return": "void"
             },
+            "SetAggroTarget": {
+                "arg_names": [
+                    "hAggroTarget"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Set this unit's aggro target to a specified unit.",
+                "return": "void"
+            },
             "SetAttackCapability": {
                 "arg_names": [
                     "iAttackCapabilities"
@@ -1836,6 +1860,20 @@
                     "CBaseEntity"
                 ],
                 "description": "Sets the initial waypoint goal for this NPC.",
+                "return": "void"
+            },
+            "SetModifierStackCount": {
+                "arg_names": [
+                    "pszScriptName",
+                    "hCaster",
+                    "nStackCount"
+                ],
+                "args": [
+                    "cstring",
+                    "CDOTA_BaseNPC",
+                    "int"
+                ],
+                "description": "Sets the stack count of a given modifier.",
                 "return": "void"
             },
             "SetMoveCapability": {
@@ -1908,6 +1946,108 @@
                     "CDOTABaseAbility"
                 ],
                 "description": "Trigger the Lotus Orb-like effect.(hAbility)",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_BaseNPC_Creature": {
+        "functions": {
+            "AddItemDrop": {
+                "arg_names": [
+                    "hDropData"
+                ],
+                "args": [
+                    "table"
+                ],
+                "description": "Add the specified item drop to this creature.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_BaseNPC_Hero": {
+        "functions": {
+            "AddExperience": {
+                "arg_names": [
+                    "flXP",
+                    "nReason",
+                    "bApplyBotDifficultyScaling",
+                    "bIncrementTotal"
+                ],
+                "args": [
+                    "float",
+                    "EDOTA_ModifyXP_Reason",
+                    "bool",
+                    "bool"
+                ],
+                "description": "Params: Float XP, Bool applyBotDifficultyScaling",
+                "return": "bool"
+            },
+            "GetAdditionalOwnedUnits": {
+                "args": [],
+                "return": "CDOTA_BaseNPC[]"
+            },
+            "GetPlayerID": {
+                "args": [],
+                "description": "Returns player ID of the player owning this hero",
+                "return": "PlayerID"
+            },
+            "GetPrimaryAttribute": {
+                "args": [],
+                "description": "0 = strength, 1 = agility, 2 = intelligence.",
+                "return": "Attributes"
+            },
+            "GetTogglableWearable": {
+                "arg_names": [
+                    "nSlotType"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get wearable entity in slot (slot)",
+                "return": "CBaseEntity"
+            },
+            "KilledHero": {
+                "arg_names": [
+                    "hHero",
+                    "hInflictor"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC_Hero",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Args: Hero, Inflictor",
+                "return": "void"
+            },
+            "SetPrimaryAttribute": {
+                "arg_names": [
+                    "nPrimaryAttribute"
+                ],
+                "args": [
+                    "Attributes"
+                ],
+                "description": "Set this hero's primary attribute value.",
+                "return": "void"
+            },
+            "SpendGold": {
+                "arg_names": [
+                    "iCost",
+                    "iReason"
+                ],
+                "args": [
+                    "int",
+                    "EDOTA_ModifyGold_Reason"
+                ],
+                "description": "Args: int nGold, int nReason",
+                "return": "void"
+            },
+            "UpgradeAbility": {
+                "arg_names": [
+                    "hAbility"
+                ],
+                "args": [
+                    "CDOTABaseAbility"
+                ],
+                "description": "This upgrades the passed ability if it exists and the hero has enough ability points.",
                 "return": "void"
             }
         }
