@@ -21,6 +21,36 @@
     },
     "CDOTA_BaseNPC": {
         "functions": {
+            "AddAbility": {
+                "arg_names": [
+                    "ability_name"
+                ],
+                "args": [
+                    "string"
+                ],
+                "description": "Add an ability to this unit by name.",
+                "return": "CDOTABaseAbility"
+            },
+            "AddItem": {
+                "arg_names": [
+                    "item_to_add"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Add an item to this unit's inventory.",
+                "return": "CDOTA_Item"
+            },
+            "AddItemByName": {
+                "arg_names": [
+                    "item_name"
+                ],
+                "args": [
+                    "string"
+                ],
+                "description": "Add an item to this unit's inventory.",
+                "return": "CDOTA_Item"
+            },
             "AddNewModifier": {
                 "arg_names": [
                     "caster",
@@ -36,6 +66,58 @@
                 ],
                 "description": "Add a modifier to this unit.",
                 "return": "CDOTA_Buff"
+            },
+            "FindAbilityByName": {
+                "arg_names": [
+                    "ability_name"
+                ],
+                "args": [
+                    "string"
+                ],
+                "description": "Retrieve an ability by name from the unit.",
+                "return": "CDOTABaseAbility"
+            },
+            "FindItemInInventory": {
+                "arg_names": [
+                    "item_name"
+                ],
+                "args": [
+                    "string"
+                ],
+                "description": "Get handle to first item in inventory, else nil.",
+                "return": "CDOTA_Item"
+            },
+            "FindModifierByName": {
+                "arg_names": [
+                    "modifier_name"
+                ],
+                "args": [
+                    "string"
+                ],
+                "description": "Return a handle to the modifier of the given name if found, else nil (string Name )",
+                "return": "CDOTA_Buff"
+            },
+            "FindModifierByNameAndCaster": {
+                "arg_names": [
+                    "modifier_name",
+                    "caster"
+                ],
+                "args": [
+                    "string",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Return a handle to the modifier of the given name from the passed caster if found, else nil ( string Name, hCaster )",
+                "return": "CDOTA_Buff"
+            },
+            "GetAbilityByIndex": {
+                "arg_names": [
+                    "ability_index"
+                ],
+                "args": [
+                    "number"
+                ],
+                "description": "Retrieve an ability by index from the unit.",
+                "return": "CDOTABaseAbility"
             }
         }
     },
