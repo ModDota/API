@@ -95,10 +95,10 @@
                 ],
                 "description": "( string EventName, func CallbackFunction ) - Register a callback to be called when a particular custom event arrives. Returns a listener ID that can be used to unregister later.",
                 "return": "CCustomGameEventListener",
-                "arg_names": {
-                    "0": "eventName",
-                    "1": "handler"
-                }
+                "arg_names": [
+                    "eventName",
+                    "handler"
+                ]
             },
             "Send_ServerToAllClients": {
                 "args": [
@@ -107,10 +107,10 @@
                 ],
                 "description": "( string EventName, table EventData )",
                 "return": "void",
-                "arg_names": {
-                    "0": "eventName",
-                    "1": "eventData"
-                }
+                "arg_names": [
+                    "eventName",
+                    "eventData"
+                ]
             },
             "Send_ServerToPlayer": {
                 "args": [
@@ -120,11 +120,11 @@
                 ],
                 "description": "( Entity Player, string EventName, table EventData )",
                 "return": "void",
-                "arg_names": {
-                    "0": "player",
-                    "1": "eventName",
-                    "2": "eventData"
-                }
+                "arg_names": [
+                    "player",
+                    "eventName",
+                    "eventData"
+                ]
             },
             "Send_ServerToTeam": {
                 "args": [
@@ -134,11 +134,11 @@
                 ],
                 "description": "( int TeamNumber, string EventName, table EventData )",
                 "return": "void",
-                "arg_names": {
-                    "0": "team",
-                    "1": "eventName",
-                    "2": "eventData"
-                }
+                "arg_names": [
+                    "team",
+                    "eventName",
+                    "eventData"
+                ]
             },
             "UnregisterListener": {
                 "args": [
@@ -146,9 +146,9 @@
                 ],
                 "description": "( int ListnerID ) - Unregister a specific listener",
                 "return": "void",
-                "arg_names": {
-                    "0": "listener"
-                }
+                "arg_names": [
+                    "listener"
+                ]
             }
         }
     },
@@ -445,9 +445,9 @@
                 ],
                 "description": "Begin night stalker night.",
                 "return": "void",
-                "arg_names": {
-                    "0": "duration"
-                }
+                "arg_names": [
+                    "duration"
+                ]
             },
             "BeginTemporaryNight": {
                 "args": [
@@ -455,9 +455,9 @@
                 ],
                 "description": "Begin temporary night.",
                 "return": "void",
-                "arg_names": {
-                    "0": "duration"
-                }
+                "arg_names": [
+                    "duration"
+                ]
             },
             "EnableCustomGameSetupAutoLaunch": {
                 "args": [
@@ -465,9 +465,9 @@
                 ],
                 "description": "Enabled (true) or disable (false) auto launch for custom game setup.",
                 "return": "void",
-                "arg_names": {
-                    "0": "enabled"
-                }
+                "arg_names": [
+                    "enabled"
+                ]
             },
             "GetCustomGameTeamMaxPlayers": {
                 "args": [
@@ -475,9 +475,9 @@
                 ],
                 "description": "Get whether a team is selectable during game setup",
                 "return": "int",
-                "arg_names": {
-                    "0": "team"
-                }
+                "arg_names": [
+                    "team"
+                ]
             },
             "GetDOTATime": {
                 "args": [
@@ -486,10 +486,10 @@
                 ],
                 "description": "(b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time.",
                 "return": "float",
-                "arg_names": {
-                    "0": "includePreGame",
-                    "1": "includeNegativeTime"
-                }
+                "arg_names": [
+                    "includePreGame",
+                    "includeNegativeTime"
+                ]
             },
             "GetDroppedItem": {
                 "args": [
@@ -497,9 +497,9 @@
                 ],
                 "description": "Gets the Xth dropped item",
                 "return": "CDOTA_Item",
-                "arg_names": {
-                    "0": "index"
-                }
+                "arg_names": [
+                    "index"
+                ]
             },
             "GetGameModeEntity": {
                 "args": [],
@@ -517,9 +517,9 @@
                 ],
                 "description": "Lock (true) or unlock (false) team assignemnt. If team assignment is locked players cannot change teams.",
                 "return": "void",
-                "arg_names": {
-                    "0": "locked"
-                }
+                "arg_names": [
+                    "locked"
+                ]
             },
             "MakeTeamLose": {
                 "args": [
@@ -527,9 +527,9 @@
                 ],
                 "description": "Makes the specified team lose",
                 "return": "void",
-                "arg_names": {
-                    "0": "team"
-                }
+                "arg_names": [
+                    "team"
+                ]
             },
             "PlayerHasCustomGameHostPrivileges": {
                 "args": [
@@ -537,9 +537,9 @@
                 ],
                 "description": "Whether a player has custom game host privileges (shuffle teams, etc.)",
                 "return": "bool",
-                "arg_names": {
-                    "0": "player"
-                }
+                "arg_names": [
+                    "player"
+                ]
             },
             "SetCreepMinimapIconScale": {
                 "args": [
@@ -547,9 +547,9 @@
                 ],
                 "description": "(flMinimapCreepIconScale) - Scale the creep icons on the minimap.",
                 "return": "void",
-                "arg_names": {
-                    "0": "scale"
-                }
+                "arg_names": [
+                    "scale"
+                ]
             },
             "SetCustomGameAllowBattleMusic": {
                 "args": [
@@ -557,9 +557,9 @@
                 ],
                 "description": "Sets a flag to enable/disable the default music handling code for custom games",
                 "return": "void",
-                "arg_names": {
-                    "0": "allow"
-                }
+                "arg_names": [
+                    "allow"
+                ]
             },
             "SetCustomGameAllowHeroPickMusic": {
                 "args": [
@@ -567,9 +567,9 @@
                 ],
                 "description": "Sets a flag to enable/disable the default music handling code for custom games",
                 "return": "void",
-                "arg_names": {
-                    "0": "allow"
-                }
+                "arg_names": [
+                    "allow"
+                ]
             },
             "SetCustomGameAllowMusicAtGameStart": {
                 "args": [
@@ -577,9 +577,9 @@
                 ],
                 "description": "Sets a flag to enable/disable the default music handling code for custom games",
                 "return": "void",
-                "arg_names": {
-                    "0": "allow"
-                }
+                "arg_names": [
+                    "allow"
+                ]
             },
             "SetCustomGameDifficulty": {
                 "args": [
@@ -587,9 +587,9 @@
                 ],
                 "description": "Set the difficulty level of the custom game mode",
                 "return": "void",
-                "arg_names": {
-                    "0": "difficulty"
-                }
+                "arg_names": [
+                    "difficulty"
+                ]
             },
             "SetCustomGameEndDelay": {
                 "args": [
@@ -597,9 +597,9 @@
                 ],
                 "description": "Sets the game end delay.",
                 "return": "void",
-                "arg_names": {
-                    "0": "delay"
-                }
+                "arg_names": [
+                    "delay"
+                ]
             },
             "SetCustomGameSetupAutoLaunchDelay": {
                 "args": [
@@ -607,9 +607,9 @@
                 ],
                 "description": "Set the amount of time to wait for auto launch.",
                 "return": "void",
-                "arg_names": {
-                    "0": "delay"
-                }
+                "arg_names": [
+                    "delay"
+                ]
             },
             "SetCustomGameSetupRemainingTime": {
                 "args": [
@@ -617,9 +617,9 @@
                 ],
                 "description": "Set the amount of remaining time, in seconds, for custom game setup. 0 = finish immediately, -1 = wait forever",
                 "return": "void",
-                "arg_names": {
-                    "0": "remainingTime"
-                }
+                "arg_names": [
+                    "remainingTime"
+                ]
             },
             "SetCustomGameSetupTimeout": {
                 "args": [
@@ -627,9 +627,9 @@
                 ],
                 "description": "Setup (pre-gameplay) phase timeout. 0 = instant, -1 = forever (until FinishCustomGameSetup is called)",
                 "return": "void",
-                "arg_names": {
-                    "0": "timeout"
-                }
+                "arg_names": [
+                    "timeout"
+                ]
             },
             "SetCustomGameTeamMaxPlayers": {
                 "args": [
@@ -638,10 +638,10 @@
                 ],
                 "description": "Set whether a team is selectable during game setup",
                 "return": "void",
-                "arg_names": {
-                    "0": "team",
-                    "1": "maxPlayers"
-                }
+                "arg_names": [
+                    "team",
+                    "maxPlayers"
+                ]
             },
             "SetCustomVictoryMessage": {
                 "args": [
@@ -649,9 +649,9 @@
                 ],
                 "description": "Sets the victory message.",
                 "return": "void",
-                "arg_names": {
-                    "0": "message"
-                }
+                "arg_names": [
+                    "message"
+                ]
             },
             "SetCustomVictoryMessageDuration": {
                 "args": [
@@ -659,9 +659,9 @@
                 ],
                 "description": "Sets the victory message duration.",
                 "return": "void",
-                "arg_names": {
-                    "0": "duration"
-                }
+                "arg_names": [
+                    "duration"
+                ]
             },
             "SetFirstBloodActive": {
                 "args": [
@@ -669,9 +669,9 @@
                 ],
                 "description": "Sets whether First Blood has been triggered.",
                 "return": "void",
-                "arg_names": {
-                    "0": "active"
-                }
+                "arg_names": [
+                    "active"
+                ]
             },
             "SetGameWinner": {
                 "args": [
@@ -679,9 +679,9 @@
                 ],
                 "description": "Makes the specified team win",
                 "return": "void",
-                "arg_names": {
-                    "0": "team"
-                }
+                "arg_names": [
+                    "team"
+                ]
             },
             "SetGoldPerTick": {
                 "args": [
@@ -689,9 +689,9 @@
                 ],
                 "description": "Set the auto gold increase per timed interval.",
                 "return": "void",
-                "arg_names": {
-                    "0": "amount"
-                }
+                "arg_names": [
+                    "amount"
+                ]
             },
             "SetGoldTickTime": {
                 "args": [
@@ -699,9 +699,9 @@
                 ],
                 "description": "Set the time interval between auto gold increases.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetHeroMinimapIconScale": {
                 "args": [
@@ -709,9 +709,9 @@
                 ],
                 "description": "(flMinimapHeroIconScale) - Scale the hero minimap icons on the minimap.",
                 "return": "void",
-                "arg_names": {
-                    "0": "scale"
-                }
+                "arg_names": [
+                    "scale"
+                ]
             },
             "SetHeroRespawnEnabled": {
                 "args": [
@@ -719,9 +719,9 @@
                 ],
                 "description": "Control if the normal DOTA hero respawn rules apply.",
                 "return": "void",
-                "arg_names": {
-                    "0": "enabled"
-                }
+                "arg_names": [
+                    "enabled"
+                ]
             },
             "SetHeroSelectionTime": {
                 "args": [
@@ -729,9 +729,9 @@
                 ],
                 "description": "Sets the amount of time players have to pick their hero.",
                 "return": "void",
-                "arg_names": {
-                    "0": "selectionTime"
-                }
+                "arg_names": [
+                    "selectionTime"
+                ]
             },
             "SetHideKillMessageHeaders": {
                 "args": [
@@ -739,9 +739,9 @@
                 ],
                 "description": "Sets whether the multikill, streak, and first-blood banners appear at the top of the screen.",
                 "return": "void",
-                "arg_names": {
-                    "0": "hideHeaders"
-                }
+                "arg_names": [
+                    "hideHeaders"
+                ]
             },
             "SetOverlayHealthBarUnit": {
                 "args": [
@@ -750,10 +750,10 @@
                 ],
                 "description": "Show this unit's health on the overlay health bar",
                 "return": "void",
-                "arg_names": {
-                    "0": "unit",
-                    "1": "style"
-                }
+                "arg_names": [
+                    "unit",
+                    "style"
+                ]
             },
             "SetPostGameTime": {
                 "args": [
@@ -761,9 +761,9 @@
                 ],
                 "description": "Sets the amount of time players have between the game ending and the server disconnecting them.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetPreGameTime": {
                 "args": [
@@ -771,9 +771,9 @@
                 ],
                 "description": "Sets the amount of time players have between picking their hero and game start.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetRuneMinimapIconScale": {
                 "args": [
@@ -781,9 +781,9 @@
                 ],
                 "description": "(flMinimapRuneIconScale) - Scale the rune icons on the minimap.",
                 "return": "void",
-                "arg_names": {
-                    "0": "flMinimapRuneIconScale"
-                }
+                "arg_names": [
+                    "flMinimapRuneIconScale"
+                ]
             },
             "SetRuneSpawnTime": {
                 "args": [
@@ -791,9 +791,9 @@
                 ],
                 "description": "Sets the amount of time between rune spawns.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetSafeToLeave": {
                 "args": [
@@ -801,9 +801,9 @@
                 ],
                 "description": "(bSafeToLeave) - Mark this game as safe to leave.",
                 "return": "void",
-                "arg_names": {
-                    "0": "bSafeToLeave"
-                }
+                "arg_names": [
+                    "bSafeToLeave"
+                ]
             },
             "SetSameHeroSelectionEnabled": {
                 "args": [
@@ -811,9 +811,9 @@
                 ],
                 "description": "When true, players can repeatedly pick the same hero.",
                 "return": "void",
-                "arg_names": {
-                    "0": "enabled"
-                }
+                "arg_names": [
+                    "enabled"
+                ]
             },
             "SetShowcaseTime": {
                 "args": [
@@ -821,9 +821,9 @@
                 ],
                 "description": "Sets the amount of time players have between the strategy phase and entering the pre-game phase.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetStartingGold": {
                 "args": [
@@ -831,9 +831,9 @@
                 ],
                 "description": "Set the starting gold amount.",
                 "return": "void",
-                "arg_names": {
-                    "0": "amount"
-                }
+                "arg_names": [
+                    "amount"
+                ]
             },
             "SetStrategyTime": {
                 "args": [
@@ -841,9 +841,9 @@
                 ],
                 "description": "Sets the amount of time players have between the hero selection and entering the showcase phase.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetTimeOfDay": {
                 "args": [
@@ -851,9 +851,9 @@
                 ],
                 "description": "Set the time of day.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetTreeRegrowTime": {
                 "args": [
@@ -861,9 +861,9 @@
                 ],
                 "description": "Sets the tree regrow time in seconds.",
                 "return": "void",
-                "arg_names": {
-                    "0": "time"
-                }
+                "arg_names": [
+                    "time"
+                ]
             },
             "SetUseBaseGoldBountyOnHeroes": {
                 "args": [
@@ -871,9 +871,9 @@
                 ],
                 "description": "Heroes will use the basic NPC functionality for determining their bounty, rather than DOTA specific formulas.",
                 "return": "void",
-                "arg_names": {
-                    "0": "useBaseGoldBounties"
-                }
+                "arg_names": [
+                    "useBaseGoldBounties"
+                ]
             },
             "SetUseCustomHeroXPValues": {
                 "args": [
@@ -881,9 +881,9 @@
                 ],
                 "description": "Allows heroes in the map to give a specific amount of XP (this value must be set).",
                 "return": "void",
-                "arg_names": {
-                    "0": "useCustomXPValues"
-                }
+                "arg_names": [
+                    "useCustomXPValues"
+                ]
             },
             "SetUseUniversalShopMode": {
                 "args": [
@@ -891,9 +891,9 @@
                 ],
                 "description": "When true, all items are available at as long as any shop is in range.",
                 "return": "void",
-                "arg_names": {
-                    "0": "useUniversalShopMode"
-                }
+                "arg_names": [
+                    "useUniversalShopMode"
+                ]
             },
             "State_Get": {
                 "args": [],
@@ -932,12 +932,12 @@
                 ],
                 "description": "Add a computer controlled bot.",
                 "return": "bool",
-                "arg_names": {
-                    "0": "heroName",
-                    "1": "unknown1",
-                    "2": "unknown2",
-                    "3": "unknown3"
-                }
+                "arg_names": [
+                    "heroName",
+                    "unknown1",
+                    "unknown2",
+                    "unknown3"
+                ]
             },
             "AddShopWhitelistItem": {
                 "args": [
@@ -945,9 +945,9 @@
                 ],
                 "description": "Add an item to the shop whitelist.",
                 "return": "void",
-                "arg_names": {
-                    "0": "itemName"
-                }
+                "arg_names": [
+                    "itemName"
+                ]
             },
             "IsItemInWhiteList": {
                 "args": [
@@ -955,9 +955,9 @@
                 ],
                 "description": "Is this item currently in the white list.",
                 "return": "bool",
-                "arg_names": {
-                    "0": "itemName"
-                }
+                "arg_names": [
+                    "itemName"
+                ]
             },
             "RemoveShopWhitelistItem": {
                 "args": [
@@ -965,9 +965,9 @@
                 ],
                 "description": "Remove an item from the shop whitelist.",
                 "return": "void",
-                "arg_names": {
-                    "0": "itemName"
-                }
+                "arg_names": [
+                    "itemName"
+                ]
             },
             "SelectHero": {
                 "args": [
@@ -975,9 +975,9 @@
                 ],
                 "description": "Select a hero for the local player",
                 "return": "void",
-                "arg_names": {
-                    "0": "heroName"
-                }
+                "arg_names": [
+                    "heroName"
+                ]
             },
             "SetOrModifyPlayerGold": {
                 "args": [
@@ -986,10 +986,10 @@
                 ],
                 "description": "Set gold amount for the tutorial player. (int) GoldAmount, (bool) true=Set, false=Modify",
                 "return": "void",
-                "arg_names": {
-                    "0": "goldAmount",
-                    "1": "setNotModify"
-                }
+                "arg_names": [
+                    "goldAmount",
+                    "setNotModify"
+                ]
             },
             "SetQuickBuy": {
                 "args": [
@@ -997,9 +997,9 @@
                 ],
                 "description": "Set players quick buy item.",
                 "return": "void",
-                "arg_names": {
-                    "0": "itemName"
-                }
+                "arg_names": [
+                    "itemName"
+                ]
             },
             "SetShopOpen": {
                 "args": [
@@ -1007,9 +1007,9 @@
                 ],
                 "description": "Set the shop open or closed.",
                 "return": "void",
-                "arg_names": {
-                    "0": "open"
-                }
+                "arg_names": [
+                    "open"
+                ]
             },
             "SetTimeFrozen": {
                 "args": [
@@ -1017,9 +1017,9 @@
                 ],
                 "description": "Set if we should freeze time or not.",
                 "return": "void",
-                "arg_names": {
-                    "0": "timeFrozen"
-                }
+                "arg_names": [
+                    "timeFrozen"
+                ]
             },
             "SetWhiteListEnabled": {
                 "args": [
@@ -1027,9 +1027,9 @@
                 ],
                 "description": "Set if we should whitelist shop items.",
                 "return": "void",
-                "arg_names": {
-                    "0": "whitelistEnabled"
-                }
+                "arg_names": [
+                    "whitelistEnabled"
+                ]
             },
             "UpgradePlayerAbility": {
                 "args": [
@@ -1037,9 +1037,9 @@
                 ],
                 "description": "Upgrade a specific ability for the local hero",
                 "return": "void",
-                "arg_names": {
-                    "0": "abilityName"
-                }
+                "arg_names": [
+                    "abilityName"
+                ]
             }
         }
     },
@@ -3657,9 +3657,9 @@
                 ],
                 "description": "Creates an entity by classname",
                 "return": "CBaseEntity",
-                "arg_names": {
-                    "0": "className"
-                }
+                "arg_names": [
+                    "className"
+                ]
             },
             "FindAllByClassname": {
                 "args": [
@@ -3667,9 +3667,9 @@
                 ],
                 "description": "Finds all entities by class name. Returns an array containing all the found entities.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "className"
-                }
+                "arg_names": [
+                    "className"
+                ]
             },
             "FindAllByClassnameWithin": {
                 "args": [
@@ -3679,11 +3679,11 @@
                 ],
                 "description": "Find entities by class name within a radius.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "className",
-                    "1": "location",
-                    "2": "radius"
-                }
+                "arg_names": [
+                    "className",
+                    "location",
+                    "radius"
+                ]
             },
             "FindAllByModel": {
                 "args": [
@@ -3691,9 +3691,9 @@
                 ],
                 "description": "Find entities by model name.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "modelName"
-                }
+                "arg_names": [
+                    "modelName"
+                ]
             },
             "FindAllByName": {
                 "args": [
@@ -3701,9 +3701,9 @@
                 ],
                 "description": "Find all entities by name. Returns an array containing all the found entities in it.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "name"
-                }
+                "arg_names": [
+                    "name"
+                ]
             },
             "FindAllByNameWithin": {
                 "args": [
@@ -3713,11 +3713,11 @@
                 ],
                 "description": "Find entities by name within a radius.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "name",
-                    "1": "location",
-                    "2": "radius"
-                }
+                "arg_names": [
+                    "name",
+                    "location",
+                    "radius"
+                ]
             },
             "FindAllByTarget": {
                 "args": [
@@ -3725,9 +3725,9 @@
                 ],
                 "description": "Find entities by targetname.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "target"
-                }
+                "arg_names": [
+                    "target"
+                ]
             },
             "FindAllInSphere": {
                 "args": [
@@ -3736,10 +3736,10 @@
                 ],
                 "description": "Find entities within a radius.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "location",
-                    "1": "radius"
-                }
+                "arg_names": [
+                    "location",
+                    "radius"
+                ]
             },
             "FindByClassname": {
                 "args": [
@@ -3748,10 +3748,10 @@
                 ],
                 "description": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "className"
-                }
+                "arg_names": [
+                    "previous",
+                    "className"
+                ]
             },
             "FindByClassnameNearest": {
                 "args": [
@@ -3761,11 +3761,11 @@
                 ],
                 "description": "Find entities by class name nearest to a point.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "className",
-                    "1": "location",
-                    "2": "radius"
-                }
+                "arg_names": [
+                    "className",
+                    "location",
+                    "radius"
+                ]
             },
             "FindByClassnameWithin": {
                 "args": [
@@ -3776,12 +3776,12 @@
                 ],
                 "description": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "className",
-                    "2": "location",
-                    "3": "radius"
-                }
+                "arg_names": [
+                    "previous",
+                    "className",
+                    "location",
+                    "radius"
+                ]
             },
             "FindByModel": {
                 "args": [
@@ -3790,10 +3790,10 @@
                 ],
                 "description": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "modelName"
-                }
+                "arg_names": [
+                    "previous",
+                    "modelName"
+                ]
             },
             "FindByModelWithin": {
                 "args": [
@@ -3804,12 +3804,12 @@
                 ],
                 "description": "Find entities by model name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "modelName",
-                    "2": "location",
-                    "3": "radius"
-                }
+                "arg_names": [
+                    "previous",
+                    "modelName",
+                    "location",
+                    "radius"
+                ]
             },
             "FindByName": {
                 "args": [
@@ -3818,10 +3818,10 @@
                 ],
                 "description": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "name"
-                }
+                "arg_names": [
+                    "previous",
+                    "name"
+                ]
             },
             "FindByNameNearest": {
                 "args": [
@@ -3831,11 +3831,11 @@
                 ],
                 "description": "Find entities by name nearest to a point.",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "name",
-                    "1": "location",
-                    "2": "radius"
-                }
+                "arg_names": [
+                    "name",
+                    "location",
+                    "radius"
+                ]
             },
             "FindByNameWithin": {
                 "args": [
@@ -3846,12 +3846,12 @@
                 ],
                 "description": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "name",
-                    "2": "location",
-                    "3": "radius"
-                }
+                "arg_names": [
+                    "previous",
+                    "name",
+                    "location",
+                    "radius"
+                ]
             },
             "FindByTarget": {
                 "args": [
@@ -3860,10 +3860,10 @@
                 ],
                 "description": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "target"
-                }
+                "arg_names": [
+                    "previous",
+                    "target"
+                ]
             },
             "FindInSphere": {
                 "args": [
@@ -3873,11 +3873,11 @@
                 ],
                 "description": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous",
-                    "1": "location",
-                    "2": "radius"
-                }
+                "arg_names": [
+                    "previous",
+                    "location",
+                    "radius"
+                ]
             },
             "First": {
                 "args": [],
@@ -3895,9 +3895,9 @@
                 ],
                 "description": "Continue an iteration over the list of entities, providing reference to a previously found entity",
                 "return": "CBaseEntity[]",
-                "arg_names": {
-                    "0": "previous"
-                }
+                "arg_names": [
+                    "previous"
+                ]
             }
         }
     },
@@ -3914,9 +3914,9 @@
                 ],
                 "description": "Get the Nth hero in the Hero List",
                 "return": "CDOTA_BaseNPC_Hero",
-                "arg_names": {
-                    "0": "nth"
-                }
+                "arg_names": [
+                    "nth"
+                ]
             }
         }
     },
@@ -3930,11 +3930,11 @@
                 ],
                 "description": "Creates a new particle effect",
                 "return": "ParticleID",
-                "arg_names": {
-                    "0": "particleName",
-                    "1": "particleAttach",
-                    "2": "owner"
-                }
+                "arg_names": [
+                    "particleName",
+                    "particleAttach",
+                    "owner"
+                ]
             },
             "CreateParticleForPlayer": {
                 "args": [
@@ -3945,12 +3945,12 @@
                 ],
                 "description": "Creates a new particle effect that only plays for the specified player",
                 "return": "ParticleID",
-                "arg_names": {
-                    "0": "particleName",
-                    "1": "particleAttach",
-                    "2": "owner",
-                    "3": "player"
-                }
+                "arg_names": [
+                    "particleName",
+                    "particleAttach",
+                    "owner",
+                    "player"
+                ]
             },
             "CreateParticleForTeam": {
                 "args": [
@@ -3961,12 +3961,12 @@
                 ],
                 "description": "Creates a new particle effect that only plays for the specified team",
                 "return": "ParticleID",
-                "arg_names": {
-                    "0": "particleName",
-                    "1": "particleAttach",
-                    "2": "owner",
-                    "3": "team"
-                }
+                "arg_names": [
+                    "particleName",
+                    "particleAttach",
+                    "owner",
+                    "team"
+                ]
             },
             "DestroyParticle": {
                 "args": [
@@ -3975,10 +3975,10 @@
                 ],
                 "description": "(int index, bool bDestroyImmediately) - Destroy a particle, if bDestroyImmediately destroy it without playing end caps.",
                 "return": "void",
-                "arg_names": {
-                    "0": "particle",
-                    "1": "immediate"
-                }
+                "arg_names": [
+                    "particle",
+                    "immediate"
+                ]
             },
             "ReleaseParticleIndex": {
                 "args": [
@@ -3986,18 +3986,18 @@
                 ],
                 "description": "Frees the specified particle index",
                 "return": "void",
-                "arg_names": {
-                    "0": "particle"
-                }
+                "arg_names": [
+                    "particle"
+                ]
             },
             "SetParticleAlwaysSimulate": {
                 "args": [
                     "ParticleID"
                 ],
                 "return": "void",
-                "arg_names": {
-                    "0": "particle"
-                }
+                "arg_names": [
+                    "particle"
+                ]
             },
             "SetParticleControl": {
                 "args": [
@@ -4007,11 +4007,11 @@
                 ],
                 "description": "Set the control point data for a control on a particle effect",
                 "return": "void",
-                "arg_names": {
-                    "0": "particle",
-                    "1": "controlPoint",
-                    "2": "value"
-                }
+                "arg_names": [
+                    "particle",
+                    "controlPoint",
+                    "value"
+                ]
             },
             "SetParticleControlEnt": {
                 "args": [
@@ -4024,15 +4024,15 @@
                     "bool"
                 ],
                 "return": "void",
-                "arg_names": {
-                    "0": "particle",
-                    "1": "controlPoint",
-                    "2": "unit",
-                    "3": "particleAttach",
-                    "4": "attachment",
-                    "5": "offset",
-                    "6": "lockOrientation"
-                }
+                "arg_names": [
+                    "particle",
+                    "controlPoint",
+                    "unit",
+                    "particleAttach",
+                    "attachment",
+                    "offset",
+                    "lockOrientation"
+                ]
             },
             "SetParticleControlForward": {
                 "args": [
@@ -4042,11 +4042,11 @@
                 ],
                 "description": "(int nFXIndex, int nPoint, vForward)",
                 "return": "void",
-                "arg_names": {
-                    "0": "particle",
-                    "1": "controlPoint",
-                    "2": "forward"
-                }
+                "arg_names": [
+                    "particle",
+                    "controlPoint",
+                    "forward"
+                ]
             },
             "SetParticleControlOrientation": {
                 "args": [
@@ -4058,13 +4058,13 @@
                 ],
                 "description": "(int nFXIndex, int nPoint, vForward, vRight, vUp)",
                 "return": "void",
-                "arg_names": {
-                    "0": "particle",
-                    "1": "controlPoint",
-                    "2": "forward",
-                    "3": "right",
-                    "4": "up"
-                }
+                "arg_names": [
+                    "particle",
+                    "controlPoint",
+                    "forward",
+                    "right",
+                    "up"
+                ]
             }
         }
     },
@@ -4076,9 +4076,9 @@
                 ],
                 "description": "GetBool(name) : returns the convar as a boolean flag.",
                 "return": "boolean",
-                "arg_names": {
-                    "0": "convar"
-                }
+                "arg_names": [
+                    "convar"
+                ]
             },
             "GetCommandClient": {
                 "args": [],
@@ -4096,9 +4096,9 @@
                 ],
                 "description": "GetFloat(name) : returns the convar as a float. May return null if no such convar.",
                 "return": "number",
-                "arg_names": {
-                    "0": "convar"
-                }
+                "arg_names": [
+                    "convar"
+                ]
             },
             "GetInt": {
                 "args": [
@@ -4106,9 +4106,9 @@
                 ],
                 "description": "GetInt(name) : returns the convar as an int. May return null if no such convar.",
                 "return": "number",
-                "arg_names": {
-                    "0": "convar"
-                }
+                "arg_names": [
+                    "convar"
+                ]
             },
             "GetStr": {
                 "args": [
@@ -4116,9 +4116,9 @@
                 ],
                 "description": "GetStr(name) : returns the convar as a string. May return null if no such convar.",
                 "return": "string",
-                "arg_names": {
-                    "0": "convar"
-                }
+                "arg_names": [
+                    "convar"
+                ]
             },
             "RegisterCommand": {
                 "args": [
@@ -4129,12 +4129,12 @@
                 ],
                 "description": "RegisterCommand(name, fn, helpString, flags) : register a console command.",
                 "return": "void",
-                "arg_names": {
-                    "0": "commandName",
-                    "1": "callback",
-                    "2": "description",
-                    "3": "flags"
-                }
+                "arg_names": [
+                    "commandName",
+                    "callback",
+                    "description",
+                    "flags"
+                ]
             },
             "RegisterConvar": {
                 "args": [
@@ -4145,12 +4145,12 @@
                 ],
                 "description": "RegisterConvar(name, defaultValue, helpString, flags): register a new console variable.",
                 "return": "void",
-                "arg_names": {
-                    "0": "convarName",
-                    "1": "defaultValue",
-                    "2": "description",
-                    "3": "flags"
-                }
+                "arg_names": [
+                    "convarName",
+                    "defaultValue",
+                    "description",
+                    "flags"
+                ]
             },
             "SetBool": {
                 "args": [
@@ -4159,10 +4159,10 @@
                 ],
                 "description": "SetBool(name, val) : sets the value of the convar to the bool.",
                 "return": "void",
-                "arg_names": {
-                    "0": "convar",
-                    "1": "value"
-                }
+                "arg_names": [
+                    "convar",
+                    "value"
+                ]
             },
             "SetFloat": {
                 "args": [
@@ -4171,10 +4171,10 @@
                 ],
                 "description": "SetFloat(name, val) : sets the value of the convar to the float.",
                 "return": "void",
-                "arg_names": {
-                    "0": "convar",
-                    "1": "value"
-                }
+                "arg_names": [
+                    "convar",
+                    "value"
+                ]
             },
             "SetInt": {
                 "args": [
@@ -4183,10 +4183,10 @@
                 ],
                 "description": "SetInt(name, val) : sets the value of the convar to the int.",
                 "return": "void",
-                "arg_names": {
-                    "0": "convar",
-                    "1": "value"
-                }
+                "arg_names": [
+                    "convar",
+                    "value"
+                ]
             },
             "SetStr": {
                 "args": [
@@ -4195,10 +4195,10 @@
                 ],
                 "description": "SetStr(name, val) : sets the value of the convar to the string.",
                 "return": "void",
-                "arg_names": {
-                    "0": "convar",
-                    "1": "value"
-                }
+                "arg_names": [
+                    "convar",
+                    "value"
+                ]
             }
         }
     },
@@ -4214,13 +4214,13 @@
                 ],
                 "description": "Add temporary vision for a given team ( nTeamID, vLocation, flRadius, flDuration, bObstructedVision)",
                 "return": "void",
-                "arg_names": {
-                    "0": "team",
-                    "1": "location",
-                    "2": "radius",
-                    "3": "duration",
-                    "4": "obstructedVision"
-                }
+                "arg_names": [
+                    "team",
+                    "location",
+                    "radius",
+                    "duration",
+                    "obstructedVision"
+                ]
             },
             "ClearTeamCustomHealthbarColor": {
                 "args": [
@@ -4228,9 +4228,9 @@
                 ],
                 "description": "( teamNumber )",
                 "return": "void",
-                "arg_names": {
-                    "0": "team"
-                }
+                "arg_names": [
+                    "team"
+                ]
             },
             "CreateDamageInfo": {
                 "args": [
@@ -4243,10 +4243,10 @@
                 ],
                 "description": "(hInflictor, hAttacker, flDamage) - Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.",
                 "return": "handle",
-                "arg_names": {
-                    "0": "",
-                    "1": ""
-                }
+                "arg_names": [
+                    "",
+                    ""
+                ]
             },
             "CreateHTTPRequest": {
                 "args": [
@@ -4271,10 +4271,10 @@
                 ],
                 "description": "Creates a DOTA hero by its dota_npc_units.txt name and sets it as the given player's controlled hero",
                 "return": "CDOTA_BaseNPC_Hero",
-                "arg_names": {
-                    "0": "heroName",
-                    "1": "player"
-                }
+                "arg_names": [
+                    "heroName",
+                    "player"
+                ]
             },
             "CreateItem": {
                 "args": [
@@ -4284,11 +4284,11 @@
                 ],
                 "description": "Create a DOTA item",
                 "return": "CDOTA_Item",
-                "arg_names": {
-                    "0": "itemName",
-                    "1": "owner",
-                    "2": "purchaser"
-                }
+                "arg_names": [
+                    "itemName",
+                    "owner",
+                    "purchaser"
+                ]
             },
             "CreateItemOnPositionForLaunch": {
                 "args": [
@@ -4297,10 +4297,10 @@
                 ],
                 "description": "Create a physical item at a given location, can start in air (but doesn't clear a space)",
                 "return": "handle",
-                "arg_names": {
-                    "0": "location",
-                    "1": "item"
-                }
+                "arg_names": [
+                    "location",
+                    "item"
+                ]
             },
             "CreateItemOnPositionSync": {
                 "args": [
@@ -4309,10 +4309,10 @@
                 ],
                 "description": "Create a physical item at a given location",
                 "return": "handle",
-                "arg_names": {
-                    "0": "location",
-                    "1": "item"
-                }
+                "arg_names": [
+                    "location",
+                    "item"
+                ]
             },
             "CreateUnitByName": {
                 "args": [
@@ -4346,15 +4346,15 @@
                 ],
                 "description": "Creates a DOTA unit by its dota_npc_units.txt name",
                 "return": "int",
-                "arg_names": {
-                    "0": "unitName",
-                    "1": "location",
-                    "2": "findClearSpace",
-                    "3": "npcOwner",
-                    "4": "playerOwner",
-                    "5": "team",
-                    "6": "callback"
-                }
+                "arg_names": [
+                    "unitName",
+                    "location",
+                    "findClearSpace",
+                    "npcOwner",
+                    "playerOwner",
+                    "team",
+                    "callback"
+                ]
             },
             "DoCleaveAttack": {
                 "args": [
@@ -4369,16 +4369,16 @@
                 ],
                 "description": "(hAttacker, hTarget, hAbility, fDamage, fRadius, effectName)",
                 "return": "int",
-                "arg_names": {
-                    "0": "attacker",
-                    "1": "target",
-                    "2": "ability",
-                    "3": "damage",
-                    "4": "startRadius",
-                    "5": "endRadius",
-                    "6": "distance",
-                    "7": "effectName"
-                }
+                "arg_names": [
+                    "attacker",
+                    "target",
+                    "ability",
+                    "damage",
+                    "startRadius",
+                    "endRadius",
+                    "distance",
+                    "effectName"
+                ]
             },
             "DoUniqueString": {
                 "args": [
@@ -4386,9 +4386,9 @@
                 ],
                 "description": "#UniqueString:Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.",
                 "return": "cstring",
-                "arg_names": {
-                    "0": "seed"
-                }
+                "arg_names": [
+                    "seed"
+                ]
             },
             "EntIndexToHScript": {
                 "args": [
@@ -4396,9 +4396,9 @@
                 ],
                 "description": "Turn an entity index integer to an HScript representing that entity's script instance.",
                 "return": "CDOTA_BaseNPC",
-                "arg_names": {
-                    "0": "entIndex"
-                }
+                "arg_names": [
+                    "entIndex"
+                ]
             },
             "FindClearSpaceForUnit": {
                 "args": [
@@ -4408,11 +4408,11 @@
                 ],
                 "description": "Place a unit somewhere not already occupied.",
                 "return": "bool",
-                "arg_names": {
-                    "0": "unit",
-                    "1": "location",
-                    "2": "unknown"
-                }
+                "arg_names": [
+                    "unit",
+                    "location",
+                    "unknown"
+                ]
             },
             "FindUnitsInLine": {
                 "args": [
@@ -4427,16 +4427,16 @@
                 ],
                 "description": "Find units that intersect the given line with the given flags.",
                 "return": "CDOTA_BaseNPC[]",
-                "arg_names": {
-                    "0": "team",
-                    "1": "startPos",
-                    "2": "endPos",
-                    "3": "cacheUnit",
-                    "4": "width",
-                    "5": "teamFilter",
-                    "6": "typeFilter",
-                    "7": "flagFilter"
-                }
+                "arg_names": [
+                    "team",
+                    "startPos",
+                    "endPos",
+                    "cacheUnit",
+                    "width",
+                    "teamFilter",
+                    "typeFilter",
+                    "flagFilter"
+                ]
             },
             "FindUnitsInRadius": {
                 "args": [
@@ -4452,17 +4452,17 @@
                 ],
                 "description": "Finds the units in a given radius with the given flags.",
                 "return": "CDOTA_BaseNPC[]",
-                "arg_names": {
-                    "0": "team",
-                    "1": "location",
-                    "2": "cacheUnit",
-                    "3": "radius",
-                    "4": "teamFilter",
-                    "5": "typeFilter",
-                    "6": "flagFilter",
-                    "7": "order",
-                    "8": "canGrowCache"
-                }
+                "arg_names": [
+                    "team",
+                    "location",
+                    "cacheUnit",
+                    "radius",
+                    "teamFilter",
+                    "typeFilter",
+                    "flagFilter",
+                    "order",
+                    "canGrowCache"
+                ]
             },
             "FireGameEvent": {
                 "args": [
@@ -4471,10 +4471,10 @@
                 ],
                 "description": "Fire a game event.",
                 "return": "void",
-                "arg_names": {
-                    "0": "eventName",
-                    "1": "eventData"
-                }
+                "arg_names": [
+                    "eventName",
+                    "eventData"
+                ]
             },
             "FireGameEventLocal": {
                 "args": [
@@ -4483,10 +4483,10 @@
                 ],
                 "description": "Fire a game event without broadcasting to the client.",
                 "return": "void",
-                "arg_names": {
-                    "0": "eventName",
-                    "1": "eventData"
-                }
+                "arg_names": [
+                    "eventName",
+                    "eventData"
+                ]
             },
             "GetEntityIndexForTreeId": {
                 "args": [
@@ -4501,10 +4501,10 @@
                     "CDOTA_BaseNPC"
                 ],
                 "return": "float",
-                "arg_names": {
-                    "0": "location",
-                    "1": "unitHull"
-                }
+                "arg_names": [
+                    "location",
+                    "unitHull"
+                ]
             },
             "GetGroundPosition": {
                 "args": [
@@ -4513,10 +4513,10 @@
                 ],
                 "description": "Returns the supplied position moved to the ground. Second parameter is an NPC for measuring movement collision hull offset.",
                 "return": "vector",
-                "arg_names": {
-                    "0": "location",
-                    "1": "unitHull"
-                }
+                "arg_names": [
+                    "location",
+                    "unitHull"
+                ]
             },
             "GetTeamHeroKills": {
                 "args": [
@@ -4524,9 +4524,9 @@
                 ],
                 "description": "( int teamID )",
                 "return": "int",
-                "arg_names": {
-                    "0": "team"
-                }
+                "arg_names": [
+                    "team"
+                ]
             },
             "GetTeamName": {
                 "args": [
@@ -4534,9 +4534,9 @@
                 ],
                 "description": "( int teamID )",
                 "return": "cstring",
-                "arg_names": {
-                    "0": "team"
-                }
+                "arg_names": [
+                    "team"
+                ]
             },
             "IsLocationVisible": {
                 "args": [
@@ -4545,10 +4545,10 @@
                 ],
                 "description": "Ask fog of war if a location is visible to a certain team (nTeamNumber, vLocation).",
                 "return": "bool",
-                "arg_names": {
-                    "0": "team",
-                    "1": "location"
-                }
+                "arg_names": [
+                    "team",
+                    "location"
+                ]
             },
             "IsValidEntity": {
                 "args": [
@@ -4556,9 +4556,9 @@
                 ],
                 "description": "Checks to see if the given hScript is a valid entity",
                 "return": "bool",
-                "arg_names": {
-                    "0": "entity"
-                }
+                "arg_names": [
+                    "entity"
+                ]
             },
             "LinkLuaModifier": {
                 "args": [
@@ -4568,11 +4568,11 @@
                 ],
                 "description": "Link a lua-defined modifier with the associated class ( className, fileName, LuaModifierType).",
                 "return": "void",
-                "arg_names": {
-                    "0": "modifierName",
-                    "1": "filePath",
-                    "2": "motionController"
-                }
+                "arg_names": [
+                    "modifierName",
+                    "filePath",
+                    "motionController"
+                ]
             },
             "ListenToGameEvent": {
                 "args": [
@@ -4582,11 +4582,11 @@
                 ],
                 "description": "Register as a listener for a game event from script.",
                 "return": "EventListenerID",
-                "arg_names": {
-                    "0": "eventName",
-                    "1": "callback",
-                    "2": "context"
-                }
+                "arg_names": [
+                    "eventName",
+                    "callback",
+                    "context"
+                ]
             },
             "LoadKeyValues": {
                 "args": [
@@ -4594,9 +4594,9 @@
                 ],
                 "description": "Creates a table from the specified keyvalues text file",
                 "return": "table",
-                "arg_names": {
-                    "0": "filePath"
-                }
+                "arg_names": [
+                    "filePath"
+                ]
             },
             "LoadKeyValuesFromString": {
                 "args": [
@@ -4604,9 +4604,9 @@
                 ],
                 "description": "Creates a table from the specified keyvalues string",
                 "return": "table",
-                "arg_names": {
-                    "0": "kvString"
-                }
+                "arg_names": [
+                    "kvString"
+                ]
             },
             "MinimapEvent": {
                 "args": [
@@ -4619,14 +4619,14 @@
                 ],
                 "description": "Start a minimap event. (nTeamID, hEntity, nXCoord, nYCoord, nEventType, nEventDuration).",
                 "return": "void",
-                "arg_names": {
-                    "0": "team",
-                    "1": "entity",
-                    "2": "xCoord",
-                    "3": "yCoord",
-                    "4": "eventType",
-                    "5": "duration"
-                }
+                "arg_names": [
+                    "team",
+                    "entity",
+                    "xCoord",
+                    "yCoord",
+                    "eventType",
+                    "duration"
+                ]
             },
             "PauseGame": {
                 "args": [
@@ -4634,9 +4634,9 @@
                 ],
                 "description": "Pause or unpause the game.",
                 "return": "void",
-                "arg_names": {
-                    "0": "paused"
-                }
+                "arg_names": [
+                    "paused"
+                ]
             },
             "PrecacheItemByNameAsync": {
                 "args": [
@@ -4645,10 +4645,10 @@
                 ],
                 "description": "Asynchronously precaches a DOTA item by its dota_npc_items.txt name, provides a callback when it's finished.",
                 "return": "void",
-                "arg_names": {
-                    "0": "itemName",
-                    "1": "callback"
-                }
+                "arg_names": [
+                    "itemName",
+                    "callback"
+                ]
             },
             "PrecacheUnitByNameAsync": {
                 "args": [
@@ -4658,11 +4658,11 @@
                 ],
                 "description": "Asynchronously precaches a DOTA unit by its dota_npc_units.txt name, provides a callback when it's finished.",
                 "return": "void",
-                "arg_names": {
-                    "0": "unitName",
-                    "1": "callback",
-                    "2": "playerID"
-                }
+                "arg_names": [
+                    "unitName",
+                    "callback",
+                    "playerID"
+                ]
             },
             "RandomFloat": {
                 "args": [
@@ -4671,10 +4671,10 @@
                 ],
                 "description": "Get a random float within a range",
                 "return": "float",
-                "arg_names": {
-                    "0": "min",
-                    "1": "max"
-                }
+                "arg_names": [
+                    "min",
+                    "max"
+                ]
             },
             "RandomInt": {
                 "args": [
@@ -4683,10 +4683,10 @@
                 ],
                 "description": "Get a random int within a range",
                 "return": "int",
-                "arg_names": {
-                    "0": "min",
-                    "1": "max"
-                }
+                "arg_names": [
+                    "min",
+                    "max"
+                ]
             },
             "RandomVector": {
                 "args": [
@@ -4694,9 +4694,9 @@
                 ],
                 "description": "Get a random 2D vector of the given length.",
                 "return": "vector",
-                "arg_names": {
-                    "0": "length"
-                }
+                "arg_names": [
+                    "length"
+                ]
             },
             "RollPercentage": {
                 "args": [
@@ -4704,9 +4704,9 @@
                 ],
                 "description": "Rolls a number from 1 to 100 and returns true if the roll is less than or equal to the number specified",
                 "return": "bool",
-                "arg_names": {
-                    "0": "successPercentage"
-                }
+                "arg_names": [
+                    "successPercentage"
+                ]
             },
             "Say": {
                 "args": [
@@ -4716,11 +4716,11 @@
                 ],
                 "description": "Have Entity say string, and teamOnly or not",
                 "return": "void",
-                "arg_names": {
-                    "0": "entity",
-                    "1": "message",
-                    "2": "teamOnly"
-                }
+                "arg_names": [
+                    "entity",
+                    "message",
+                    "teamOnly"
+                ]
             },
             "ScreenShake": {
                 "args": [
@@ -4734,15 +4734,15 @@
                 ],
                 "description": "Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake",
                 "return": "void",
-                "arg_names": {
-                    "0": "center",
-                    "1": "amplitude",
-                    "2": "frequency",
-                    "3": "duration",
-                    "4": "radius",
-                    "5": "eCommand",
-                    "6": "airShake"
-                }
+                "arg_names": [
+                    "center",
+                    "amplitude",
+                    "frequency",
+                    "duration",
+                    "radius",
+                    "eCommand",
+                    "airShake"
+                ]
             },
             "SendOverheadEventMessage": {
                 "args": [
@@ -4754,13 +4754,13 @@
                 ],
                 "description": "( DOTAPlayer sendToPlayer, int iMessageType, Entity targetEntity, int iValue, DOTAPlayer sourcePlayer ) - sendToPlayer and sourcePlayer can be nil - iMessageType is one of OVERHEAD_ALERT_*",
                 "return": "void",
-                "arg_names": {
-                    "0": "player",
-                    "1": "messageType",
-                    "2": "unit",
-                    "3": "value",
-                    "4": "sourcePlayer"
-                }
+                "arg_names": [
+                    "player",
+                    "messageType",
+                    "unit",
+                    "value",
+                    "sourcePlayer"
+                ]
             },
             "SetTeamCustomHealthbarColor": {
                 "args": [
@@ -4771,12 +4771,12 @@
                 ],
                 "description": "( teamNumber, r, g, b )",
                 "return": "void",
-                "arg_names": {
-                    "0": "team",
-                    "1": "r",
-                    "2": "g",
-                    "3": "b"
-                }
+                "arg_names": [
+                    "team",
+                    "r",
+                    "g",
+                    "b"
+                ]
             }
         }
     },
@@ -4788,9 +4788,9 @@
                 ],
                 "description": "Creates a linear projectile and returns the projectile ID",
                 "return": "ProjectileID",
-                "arg_names": {
-                    "0": "projectileData"
-                }
+                "arg_names": [
+                    "projectileData"
+                ]
             },
             "CreateTrackingProjectile": {
                 "args": [
@@ -4798,9 +4798,9 @@
                 ],
                 "description": "Creates a tracking projectile",
                 "return": "ProjectileID",
-                "arg_names": {
-                    "0": "projectileData"
-                }
+                "arg_names": [
+                    "projectileData"
+                ]
             },
             "DestroyLinearProjectile": {
                 "args": [
@@ -4808,9 +4808,9 @@
                 ],
                 "description": "Destroys the linear projectile matching the argument ID",
                 "return": "void",
-                "arg_names": {
-                    "0": "projectile"
-                }
+                "arg_names": [
+                    "projectile"
+                ]
             },
             "GetLinearProjectileLocation": {
                 "args": [
@@ -4818,9 +4818,9 @@
                 ],
                 "description": "Returns current location of projectile",
                 "return": "vector",
-                "arg_names": {
-                    "0": "projectile"
-                }
+                "arg_names": [
+                    "projectile"
+                ]
             },
             "GetLinearProjectileRadius": {
                 "args": [
@@ -4828,9 +4828,9 @@
                 ],
                 "description": "Returns current radius of projectile",
                 "return": "float",
-                "arg_names": {
-                    "0": "projectile"
-                }
+                "arg_names": [
+                    "projectile"
+                ]
             },
             "GetLinearProjectileVelocity": {
                 "args": [
@@ -4838,9 +4838,9 @@
                 ],
                 "description": "Returns a vector representing the current velocity of the projectile.",
                 "return": "vector",
-                "arg_names": {
-                    "0": "projectile"
-                }
+                "arg_names": [
+                    "projectile"
+                ]
             },
             "ProjectileDodge": {
                 "args": [
@@ -4848,9 +4848,9 @@
                 ],
                 "description": "Makes the specified unit dodge projectiles",
                 "return": "void",
-                "arg_names": {
-                    "0": "unit"
-                }
+                "arg_names": [
+                    "unit"
+                ]
             },
             "UpdateLinearProjectileDirection": {
                 "args": [
@@ -4860,11 +4860,11 @@
                 ],
                 "description": "Update velocity",
                 "return": "void",
-                "arg_names": {
-                    "0": "projectile",
-                    "1": "direction",
-                    "2": "speed"
-                }
+                "arg_names": [
+                    "projectile",
+                    "direction",
+                    "speed"
+                ]
             }
         }
     }
