@@ -11,6 +11,9 @@ permalink: /lua_server_enums/docs
         {%- if enum_field contains "description" %}
 --- {{enum_field["description"] | escape}}
         {%- endif %}
+        {%- unless enum_class[0] == "_Unscoped" %}
+--- @type {{enum_class[0] | escape}}
+        {%- endunless %}
 {{enum_field["key"] | escape}} = {{enum_field["value"] | append: '' | escape}}
         {%- endif %}
     {%- endfor %}
