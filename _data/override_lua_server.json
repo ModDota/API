@@ -902,6 +902,147 @@
             }
         }
     },
+    "CDOTAPlayer": {
+        "functions": {
+            "GetAssignedHero": {
+                "args": [],
+                "description": "Get the player's hero.",
+                "return": "CDOTA_BaseNPC_Hero"
+            },
+            "SetKillCamUnit": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Set the kill cam unit for this hero.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTATutorial": {
+        "functions": {
+            "AddBot": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "cstring",
+                    "bool"
+                ],
+                "description": "Add a computer controlled bot.",
+                "return": "bool",
+                "arg_names": {
+                    "0": "heroName",
+                    "1": "unknown1",
+                    "2": "unknown2",
+                    "3": "unknown3"
+                }
+            },
+            "AddShopWhitelistItem": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Add an item to the shop whitelist.",
+                "return": "void",
+                "arg_names": {
+                    "0": "itemName"
+                }
+            },
+            "IsItemInWhiteList": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Is this item currently in the white list.",
+                "return": "bool",
+                "arg_names": {
+                    "0": "itemName"
+                }
+            },
+            "RemoveShopWhitelistItem": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Remove an item from the shop whitelist.",
+                "return": "void",
+                "arg_names": {
+                    "0": "itemName"
+                }
+            },
+            "SelectHero": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Select a hero for the local player",
+                "return": "void",
+                "arg_names": {
+                    "0": "heroName"
+                }
+            },
+            "SetOrModifyPlayerGold": {
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "Set gold amount for the tutorial player. (int) GoldAmount, (bool) true=Set, false=Modify",
+                "return": "void",
+                "arg_names": {
+                    "0": "goldAmount",
+                    "1": "setNotModify"
+                }
+            },
+            "SetQuickBuy": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Set players quick buy item.",
+                "return": "void",
+                "arg_names": {
+                    "0": "itemName"
+                }
+            },
+            "SetShopOpen": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Set the shop open or closed.",
+                "return": "void",
+                "arg_names": {
+                    "0": "open"
+                }
+            },
+            "SetTimeFrozen": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Set if we should freeze time or not.",
+                "return": "void",
+                "arg_names": {
+                    "0": "timeFrozen"
+                }
+            },
+            "SetWhiteListEnabled": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Set if we should whitelist shop items.",
+                "return": "void",
+                "arg_names": {
+                    "0": "whitelistEnabled"
+                }
+            },
+            "UpgradePlayerAbility": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Upgrade a specific ability for the local hero",
+                "return": "void",
+                "arg_names": {
+                    "0": "abilityName"
+                }
+            }
+        }
+    },
     "CDOTA_Ability_DataDriven": {
         "functions": {
             "ApplyDataDrivenModifier": {
@@ -919,6 +1060,168 @@
                 ],
                 "description": "Applies a data driven modifier to the target",
                 "return": "CDOTA_Buff"
+            }
+        }
+    },
+    "CDOTA_Ability_Lua": {
+        "functions": {
+            "CastFilterResult": {
+                "args": [],
+                "description": "Determine whether an issued command with no target is valid.",
+                "return": "UnitFilterResult"
+            },
+            "CastFilterResultLocation": {
+                "arg_names": [
+                    "vLocation"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "(Vector vLocation) Determine whether an issued command on a location is valid.",
+                "return": "UnitFilterResult"
+            },
+            "CastFilterResultTarget": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "(HSCRIPT hTarget) Determine whether an issued command on a target is valid.",
+                "return": "UnitFilterResult"
+            },
+            "GetBehavior": {
+                "args": [],
+                "description": "Return cast behavior type of this ability.",
+                "return": "DOTA_ABILITY_BEHAVIOR"
+            },
+            "GetCastAnimation": {
+                "args": [],
+                "description": "Return casting animation of this ability.",
+                "return": "GameActivity_t"
+            },
+            "GetCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Return cast range of this ability.",
+                "return": "int"
+            },
+            "GetChannelAnimation": {
+                "args": [],
+                "description": "Return channel animation of this ability.",
+                "return": "GameActivity_t"
+            },
+            "GetCustomCastErrorTarget": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
+                "return": "cstring"
+            },
+            "OnHeroDiedNearby": {
+                "arg_names": [
+                    "unit",
+                    "attacker",
+                    "event"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "CDOTA_BaseNPC",
+                    "table"
+                ],
+                "description": "A hero has died in the vicinity (ie Urn), takes table of params.",
+                "return": "void"
+            },
+            "OnItemEquipped": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "( HSCRIPT hItem ) Caster equipped item.",
+                "return": "void"
+            },
+            "OnProjectileHit": {
+                "arg_names": [
+                    "hTarget",
+                    "vLocation"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "vector"
+                ],
+                "description": "(HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination (target is invalid).",
+                "return": "bool"
+            },
+            "OnProjectileHitHandle": {
+                "arg_names": [
+                    "hTarget",
+                    "vLocation",
+                    "iProjectileHandle"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "vector",
+                    "CProjectileID"
+                ],
+                "description": "(HSCRIPT hTarget, Vector vLocation, int nHandle) Projectile has collided with a given target or reached its destination (target is invalid).",
+                "return": "bool"
+            },
+            "OnProjectileHit_ExtraData": {
+                "arg_names": [
+                    "hTarget",
+                    "vLocation",
+                    "data"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "vector",
+                    "table"
+                ],
+                "description": "(HSCRIPT hTarget, Vector vLocation, table kv) Projectile has collided with a given target or reached its destination (target is invalid).",
+                "return": "bool"
+            },
+            "OnProjectileThinkHandle": {
+                "arg_names": [
+                    "iProjectileHandle"
+                ],
+                "args": [
+                    "CProjectileID"
+                ],
+                "description": "(int nProjectileHandle) Projectile is actively moving.",
+                "return": "void"
+            },
+            "OnProjectileThink_ExtraData": {
+                "arg_names": [
+                    "vLocation",
+                    "data"
+                ],
+                "args": [
+                    "vector",
+                    "table"
+                ],
+                "description": "(Vector vLocation, table kv ) Projectile is actively moving.",
+                "return": "void"
+            },
+            "OnStolen": {
+                "arg_names": [
+                    "hSourceAbility"
+                ],
+                "args": [
+                    "CDOTABaseAbility"
+                ],
+                "description": "( HSCRIPT hAbility ) Special behavior when stolen by Spell Steal.",
+                "return": "void"
             }
         }
     },
