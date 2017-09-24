@@ -4068,8 +4068,252 @@
             }
         }
     },
+    "Convars": {
+        "functions": {
+            "GetBool": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetBool(name) : returns the convar as a boolean flag.",
+                "return": "boolean",
+                "arg_names": {
+                    "0": "convar"
+                }
+            },
+            "GetCommandClient": {
+                "args": [],
+                "description": "GetCommandClient() : returns the player who issued this console command.",
+                "return": "CDOTAPlayer"
+            },
+            "GetDOTACommandClient": {
+                "args": [],
+                "description": "GetDOTACommandClient() : returns the DOTA player who issued this console command.",
+                "return": "CDOTAPlayer"
+            },
+            "GetFloat": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetFloat(name) : returns the convar as a float. May return null if no such convar.",
+                "return": "number",
+                "arg_names": {
+                    "0": "convar"
+                }
+            },
+            "GetInt": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetInt(name) : returns the convar as an int. May return null if no such convar.",
+                "return": "number",
+                "arg_names": {
+                    "0": "convar"
+                }
+            },
+            "GetStr": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetStr(name) : returns the convar as a string. May return null if no such convar.",
+                "return": "string",
+                "arg_names": {
+                    "0": "convar"
+                }
+            },
+            "RegisterCommand": {
+                "args": [
+                    "cstring",
+                    "function",
+                    "cstring",
+                    "int"
+                ],
+                "description": "RegisterCommand(name, fn, helpString, flags) : register a console command.",
+                "return": "void",
+                "arg_names": {
+                    "0": "commandName",
+                    "1": "callback",
+                    "2": "description",
+                    "3": "flags"
+                }
+            },
+            "RegisterConvar": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "cstring",
+                    "int"
+                ],
+                "description": "RegisterConvar(name, defaultValue, helpString, flags): register a new console variable.",
+                "return": "void",
+                "arg_names": {
+                    "0": "convarName",
+                    "1": "defaultValue",
+                    "2": "description",
+                    "3": "flags"
+                }
+            },
+            "SetBool": {
+                "args": [
+                    "cstring",
+                    "bool"
+                ],
+                "description": "SetBool(name, val) : sets the value of the convar to the bool.",
+                "return": "void",
+                "arg_names": {
+                    "0": "convar",
+                    "1": "value"
+                }
+            },
+            "SetFloat": {
+                "args": [
+                    "cstring",
+                    "float"
+                ],
+                "description": "SetFloat(name, val) : sets the value of the convar to the float.",
+                "return": "void",
+                "arg_names": {
+                    "0": "convar",
+                    "1": "value"
+                }
+            },
+            "SetInt": {
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "SetInt(name, val) : sets the value of the convar to the int.",
+                "return": "void",
+                "arg_names": {
+                    "0": "convar",
+                    "1": "value"
+                }
+            },
+            "SetStr": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "SetStr(name, val) : sets the value of the convar to the string.",
+                "return": "void",
+                "arg_names": {
+                    "0": "convar",
+                    "1": "value"
+                }
+            }
+        }
+    },
     "Global": {
         "functions": {
+            "AddFOWViewer": {
+                "args": [
+                    "DOTATeam_t",
+                    "vector",
+                    "float",
+                    "float",
+                    "bool"
+                ],
+                "description": "Add temporary vision for a given team ( nTeamID, vLocation, flRadius, flDuration, bObstructedVision)",
+                "return": "void",
+                "arg_names": {
+                    "0": "team",
+                    "1": "location",
+                    "2": "radius",
+                    "3": "duration",
+                    "4": "obstructedVision"
+                }
+            },
+            "ClearTeamCustomHealthbarColor": {
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "description": "( teamNumber )",
+                "return": "void",
+                "arg_names": {
+                    "0": "team"
+                }
+            },
+            "CreateDamageInfo": {
+                "args": [
+                    "handle",
+                    "handle",
+                    "vector",
+                    "vector",
+                    "float",
+                    "int"
+                ],
+                "description": "(hInflictor, hAttacker, flDamage) - Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.",
+                "return": "handle",
+                "arg_names": {
+                    "0": "",
+                    "1": ""
+                }
+            },
+            "CreateHTTPRequest": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Create an HTTP request.",
+                "return": "CScriptHTTPRequest"
+            },
+            "CreateHTTPRequestScriptVM": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Create an HTTP request.",
+                "return": "CScriptHTTPRequest"
+            },
+            "CreateHeroForPlayer": {
+                "args": [
+                    "cstring",
+                    "CDOTAPlayer"
+                ],
+                "description": "Creates a DOTA hero by its dota_npc_units.txt name and sets it as the given player's controlled hero",
+                "return": "CDOTA_BaseNPC_Hero",
+                "arg_names": {
+                    "0": "heroName",
+                    "1": "player"
+                }
+            },
+            "CreateItem": {
+                "args": [
+                    "cstring",
+                    "CDOTAPlayer",
+                    "CDOTAPlayer"
+                ],
+                "description": "Create a DOTA item",
+                "return": "CDOTA_Item",
+                "arg_names": {
+                    "0": "itemName",
+                    "1": "owner",
+                    "2": "purchaser"
+                }
+            },
+            "CreateItemOnPositionForLaunch": {
+                "args": [
+                    "vector",
+                    "CDOTA_Item"
+                ],
+                "description": "Create a physical item at a given location, can start in air (but doesn't clear a space)",
+                "return": "handle",
+                "arg_names": {
+                    "0": "location",
+                    "1": "item"
+                }
+            },
+            "CreateItemOnPositionSync": {
+                "args": [
+                    "vector",
+                    "CDOTA_Item"
+                ],
+                "description": "Create a physical item at a given location",
+                "return": "handle",
+                "arg_names": {
+                    "0": "location",
+                    "1": "item"
+                }
+            },
             "CreateUnitByName": {
                 "args": [
                     "string",
@@ -4089,6 +4333,538 @@
                     "unit_owner",
                     "team_number"
                 ]
+            },
+            "CreateUnitByNameAsync": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "bool",
+                    "CDOTA_BaseNPC",
+                    "CDOTAPlayer",
+                    "DOTATeam_t",
+                    "fun(unit: CDOTA_BaseNPC): nil"
+                ],
+                "description": "Creates a DOTA unit by its dota_npc_units.txt name",
+                "return": "int",
+                "arg_names": {
+                    "0": "unitName",
+                    "1": "location",
+                    "2": "findClearSpace",
+                    "3": "npcOwner",
+                    "4": "playerOwner",
+                    "5": "team",
+                    "6": "callback"
+                }
+            },
+            "DoCleaveAttack": {
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "CDOTA_BaseNPC",
+                    "CDOTABaseAbility",
+                    "float",
+                    "float",
+                    "float",
+                    "float",
+                    "cstring"
+                ],
+                "description": "(hAttacker, hTarget, hAbility, fDamage, fRadius, effectName)",
+                "return": "int",
+                "arg_names": {
+                    "0": "attacker",
+                    "1": "target",
+                    "2": "ability",
+                    "3": "damage",
+                    "4": "startRadius",
+                    "5": "endRadius",
+                    "6": "distance",
+                    "7": "effectName"
+                }
+            },
+            "DoUniqueString": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "#UniqueString:Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.",
+                "return": "cstring",
+                "arg_names": {
+                    "0": "seed"
+                }
+            },
+            "EntIndexToHScript": {
+                "args": [
+                    "int"
+                ],
+                "description": "Turn an entity index integer to an HScript representing that entity's script instance.",
+                "return": "CDOTA_BaseNPC",
+                "arg_names": {
+                    "0": "entIndex"
+                }
+            },
+            "FindClearSpaceForUnit": {
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "vector",
+                    "bool"
+                ],
+                "description": "Place a unit somewhere not already occupied.",
+                "return": "bool",
+                "arg_names": {
+                    "0": "unit",
+                    "1": "location",
+                    "2": "unknown"
+                }
+            },
+            "FindUnitsInLine": {
+                "args": [
+                    "DOTATeam_t",
+                    "vector",
+                    "vector",
+                    "CBaseEntity",
+                    "float",
+                    "DOTA_UNIT_TARGET_TEAM",
+                    "DOTA_UNIT_TARGET_TYPE",
+                    "DOTA_UNIT_TARGET_FLAGS"
+                ],
+                "description": "Find units that intersect the given line with the given flags.",
+                "return": "CDOTA_BaseNPC[]",
+                "arg_names": {
+                    "0": "team",
+                    "1": "startPos",
+                    "2": "endPos",
+                    "3": "cacheUnit",
+                    "4": "width",
+                    "5": "teamFilter",
+                    "6": "typeFilter",
+                    "7": "flagFilter"
+                }
+            },
+            "FindUnitsInRadius": {
+                "args": [
+                    "DOTATeam_t",
+                    "vector",
+                    "CBaseEntity",
+                    "float",
+                    "DOTA_UNIT_TARGET_TEAM",
+                    "DOTA_UNIT_TARGET_TYPE",
+                    "DOTA_UNIT_TARGET_FLAGS",
+                    "int",
+                    "bool"
+                ],
+                "description": "Finds the units in a given radius with the given flags.",
+                "return": "CDOTA_BaseNPC[]",
+                "arg_names": {
+                    "0": "team",
+                    "1": "location",
+                    "2": "cacheUnit",
+                    "3": "radius",
+                    "4": "teamFilter",
+                    "5": "typeFilter",
+                    "6": "flagFilter",
+                    "7": "order",
+                    "8": "canGrowCache"
+                }
+            },
+            "FireGameEvent": {
+                "args": [
+                    "cstring",
+                    "table"
+                ],
+                "description": "Fire a game event.",
+                "return": "void",
+                "arg_names": {
+                    "0": "eventName",
+                    "1": "eventData"
+                }
+            },
+            "FireGameEventLocal": {
+                "args": [
+                    "cstring",
+                    "table"
+                ],
+                "description": "Fire a game event without broadcasting to the client.",
+                "return": "void",
+                "arg_names": {
+                    "0": "eventName",
+                    "1": "eventData"
+                }
+            },
+            "GetEntityIndexForTreeId": {
+                "args": [
+                    "uint"
+                ],
+                "description": "Get the enity index for a tree id specified as the entindex_target of a DOTA_UNIT_ORDER_CAST_TARGET_TREE.",
+                "return": "number"
+            },
+            "GetGroundHeight": {
+                "args": [
+                    "vector",
+                    "CDOTA_BaseNPC"
+                ],
+                "return": "float",
+                "arg_names": {
+                    "0": "location",
+                    "1": "unitHull"
+                }
+            },
+            "GetGroundPosition": {
+                "args": [
+                    "vector",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Returns the supplied position moved to the ground. Second parameter is an NPC for measuring movement collision hull offset.",
+                "return": "vector",
+                "arg_names": {
+                    "0": "location",
+                    "1": "unitHull"
+                }
+            },
+            "GetTeamHeroKills": {
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "description": "( int teamID )",
+                "return": "int",
+                "arg_names": {
+                    "0": "team"
+                }
+            },
+            "GetTeamName": {
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "description": "( int teamID )",
+                "return": "cstring",
+                "arg_names": {
+                    "0": "team"
+                }
+            },
+            "IsLocationVisible": {
+                "args": [
+                    "DOTATeam_t",
+                    "vector"
+                ],
+                "description": "Ask fog of war if a location is visible to a certain team (nTeamNumber, vLocation).",
+                "return": "bool",
+                "arg_names": {
+                    "0": "team",
+                    "1": "location"
+                }
+            },
+            "IsValidEntity": {
+                "args": [
+                    "table"
+                ],
+                "description": "Checks to see if the given hScript is a valid entity",
+                "return": "bool",
+                "arg_names": {
+                    "0": "entity"
+                }
+            },
+            "LinkLuaModifier": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "LuaModifierType"
+                ],
+                "description": "Link a lua-defined modifier with the associated class ( className, fileName, LuaModifierType).",
+                "return": "void",
+                "arg_names": {
+                    "0": "modifierName",
+                    "1": "filePath",
+                    "2": "motionController"
+                }
+            },
+            "ListenToGameEvent": {
+                "args": [
+                    "cstring",
+                    "function",
+                    "table"
+                ],
+                "description": "Register as a listener for a game event from script.",
+                "return": "EventListenerID",
+                "arg_names": {
+                    "0": "eventName",
+                    "1": "callback",
+                    "2": "context"
+                }
+            },
+            "LoadKeyValues": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Creates a table from the specified keyvalues text file",
+                "return": "table",
+                "arg_names": {
+                    "0": "filePath"
+                }
+            },
+            "LoadKeyValuesFromString": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Creates a table from the specified keyvalues string",
+                "return": "table",
+                "arg_names": {
+                    "0": "kvString"
+                }
+            },
+            "MinimapEvent": {
+                "args": [
+                    "DOTATeam_t",
+                    "CBaseEntity",
+                    "int",
+                    "int",
+                    "DOTAMinimapEvent_t",
+                    "float"
+                ],
+                "description": "Start a minimap event. (nTeamID, hEntity, nXCoord, nYCoord, nEventType, nEventDuration).",
+                "return": "void",
+                "arg_names": {
+                    "0": "team",
+                    "1": "entity",
+                    "2": "xCoord",
+                    "3": "yCoord",
+                    "4": "eventType",
+                    "5": "duration"
+                }
+            },
+            "PauseGame": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Pause or unpause the game.",
+                "return": "void",
+                "arg_names": {
+                    "0": "paused"
+                }
+            },
+            "PrecacheItemByNameAsync": {
+                "args": [
+                    "cstring",
+                    "function"
+                ],
+                "description": "Asynchronously precaches a DOTA item by its dota_npc_items.txt name, provides a callback when it's finished.",
+                "return": "void",
+                "arg_names": {
+                    "0": "itemName",
+                    "1": "callback"
+                }
+            },
+            "PrecacheUnitByNameAsync": {
+                "args": [
+                    "cstring",
+                    "function",
+                    "int"
+                ],
+                "description": "Asynchronously precaches a DOTA unit by its dota_npc_units.txt name, provides a callback when it's finished.",
+                "return": "void",
+                "arg_names": {
+                    "0": "unitName",
+                    "1": "callback",
+                    "2": "playerID"
+                }
+            },
+            "RandomFloat": {
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "description": "Get a random float within a range",
+                "return": "float",
+                "arg_names": {
+                    "0": "min",
+                    "1": "max"
+                }
+            },
+            "RandomInt": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Get a random int within a range",
+                "return": "int",
+                "arg_names": {
+                    "0": "min",
+                    "1": "max"
+                }
+            },
+            "RandomVector": {
+                "args": [
+                    "float"
+                ],
+                "description": "Get a random 2D vector of the given length.",
+                "return": "vector",
+                "arg_names": {
+                    "0": "length"
+                }
+            },
+            "RollPercentage": {
+                "args": [
+                    "int"
+                ],
+                "description": "Rolls a number from 1 to 100 and returns true if the roll is less than or equal to the number specified",
+                "return": "bool",
+                "arg_names": {
+                    "0": "successPercentage"
+                }
+            },
+            "Say": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring",
+                    "bool"
+                ],
+                "description": "Have Entity say string, and teamOnly or not",
+                "return": "void",
+                "arg_names": {
+                    "0": "entity",
+                    "1": "message",
+                    "2": "teamOnly"
+                }
+            },
+            "ScreenShake": {
+                "args": [
+                    "vector",
+                    "float",
+                    "float",
+                    "float",
+                    "float",
+                    "int",
+                    "bool"
+                ],
+                "description": "Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake",
+                "return": "void",
+                "arg_names": {
+                    "0": "center",
+                    "1": "amplitude",
+                    "2": "frequency",
+                    "3": "duration",
+                    "4": "radius",
+                    "5": "eCommand",
+                    "6": "airShake"
+                }
+            },
+            "SendOverheadEventMessage": {
+                "args": [
+                    "CDOTAPlayer",
+                    "int",
+                    "CDOTA_BaseNPC",
+                    "int",
+                    "CDOTAPlayer"
+                ],
+                "description": "( DOTAPlayer sendToPlayer, int iMessageType, Entity targetEntity, int iValue, DOTAPlayer sourcePlayer ) - sendToPlayer and sourcePlayer can be nil - iMessageType is one of OVERHEAD_ALERT_*",
+                "return": "void",
+                "arg_names": {
+                    "0": "player",
+                    "1": "messageType",
+                    "2": "unit",
+                    "3": "value",
+                    "4": "sourcePlayer"
+                }
+            },
+            "SetTeamCustomHealthbarColor": {
+                "args": [
+                    "DOTATeam_t",
+                    "int",
+                    "int",
+                    "int"
+                ],
+                "description": "( teamNumber, r, g, b )",
+                "return": "void",
+                "arg_names": {
+                    "0": "team",
+                    "1": "r",
+                    "2": "g",
+                    "3": "b"
+                }
+            }
+        }
+    },
+    "ProjectileManager": {
+        "functions": {
+            "CreateLinearProjectile": {
+                "args": [
+                    "table"
+                ],
+                "description": "Creates a linear projectile and returns the projectile ID",
+                "return": "ProjectileID",
+                "arg_names": {
+                    "0": "projectileData"
+                }
+            },
+            "CreateTrackingProjectile": {
+                "args": [
+                    "table"
+                ],
+                "description": "Creates a tracking projectile",
+                "return": "ProjectileID",
+                "arg_names": {
+                    "0": "projectileData"
+                }
+            },
+            "DestroyLinearProjectile": {
+                "args": [
+                    "ProjectileID"
+                ],
+                "description": "Destroys the linear projectile matching the argument ID",
+                "return": "void",
+                "arg_names": {
+                    "0": "projectile"
+                }
+            },
+            "GetLinearProjectileLocation": {
+                "args": [
+                    "ProjectileID"
+                ],
+                "description": "Returns current location of projectile",
+                "return": "vector",
+                "arg_names": {
+                    "0": "projectile"
+                }
+            },
+            "GetLinearProjectileRadius": {
+                "args": [
+                    "ProjectileID"
+                ],
+                "description": "Returns current radius of projectile",
+                "return": "float",
+                "arg_names": {
+                    "0": "projectile"
+                }
+            },
+            "GetLinearProjectileVelocity": {
+                "args": [
+                    "ProjectileID"
+                ],
+                "description": "Returns a vector representing the current velocity of the projectile.",
+                "return": "vector",
+                "arg_names": {
+                    "0": "projectile"
+                }
+            },
+            "ProjectileDodge": {
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Makes the specified unit dodge projectiles",
+                "return": "void",
+                "arg_names": {
+                    "0": "unit"
+                }
+            },
+            "UpdateLinearProjectileDirection": {
+                "args": [
+                    "ProjectileID",
+                    "vector",
+                    "float"
+                ],
+                "description": "Update velocity",
+                "return": "void",
+                "arg_names": {
+                    "0": "projectile",
+                    "1": "direction",
+                    "2": "speed"
+                }
             }
         }
     }
