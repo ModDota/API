@@ -1,0 +1,372 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css"/>
+
+        <style>
+            .active-menu-item {
+                background: #eff1fa;
+                color: #5764c6;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div ng-app="app" class="container">
+            <div ng-controller="EditorController" class="columns" style="padding: 50px;">
+                <div class="col-3" style="padding-right: 60px;">
+                    <h2>Total <span class="text-primary">{{ getTotalCount() }}</span></h2>
+
+                    <div class="form-group">
+                        <label class="form-label">Search</label>
+                        <input class="form-input" class="col-6" ng-model="searchQuery" ng-change="updateSearch()"/>
+
+                        <label class="form-checkbox">
+                            <input type="checkbox" ng-model="hideInitiallyChanged">
+                            <i class="form-icon"></i> Hide initially changed
+                        </label>
+
+                        <label class="form-checkbox">
+                            <input type="checkbox" ng-model="showRemainingHandleReturns">
+                            <i class="form-icon"></i> Show remaining with return type handle
+                        </label>
+
+                        <label class="form-label">Result</label>
+                        <button class="btn" onclick="toClipboard()">Copy</button>
+                        <textarea class="form-input" style="height: 100%" ng-model="differencesText" id="output"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-9">
+                    <div ng-repeat="(scope, elements) in definitions" ng-hide="searchMap && !searchMap[scope]">
+                        <h2>class <span class="text-primary">{{ scope }}</span></h2>
+
+                        <form ng-repeat="(function, functionElements) in elements.functions" class="form-horizontal" ng-show="functionFilter(scope, function)">
+                            <h6>
+                                function <span class="text-primary">{{ function }}</span>
+                                <span ng-if="differences[scope].functions[function]" class="text-success" title="Modified">*</span>
+                                ->
+                                <return-type-autocomplete></return-type-autocomplete>
+                            </h6>
+
+                            <span class="text-gray">{{ functionElements.description }}</span>
+                            
+                            <div class="container">
+                                <div class="columns">
+                                    <div ng-repeat="arg in functionElements.args track by $index" class="col-3">
+                                        <div class="form-group">
+                                            <class-autocomplete></class-autocomplete>
+                                            <input ng-change="fixArgNames(functionElements); updateDifferences()" ng-model="functionElements.arg_names[$index]" class="form-input"/>
+                                            <div ng-if="$index < functionElements.args.length - 1" style="font-size:24px;padding-left:3px;padding-right:9px;">,</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                <div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            const applyOverrides = function(definitions, overrides) {
+                _.each(definitions, (value, scope) => {
+                    definitions[scope] = value;
+
+                    _.each(value.functions, (functionElements, functionName) => {
+                        const override = ((overrides[scope] || {}).functions || {})[functionName];
+
+                        if (override) {
+                            if (override.arg_names) {
+                                functionElements.arg_names = override.arg_names;
+                            }
+
+                            if (override.args) {
+                                functionElements.args = override.args;
+                            }
+
+                            if (override.return) {
+                                functionElements.return = override.return;
+                            }
+
+                            if (override.description) {
+                                functionElements.description = override.description;
+                            }
+                        }
+                    });
+                });
+            };
+
+            const toClipboard = function() {
+                var copyTextarea = document.getElementById('output');
+                copyTextarea.select();
+
+                try {
+                    var successful = document.execCommand('copy');
+                    var msg = successful ? 'successful' : 'unsuccessful';
+                    console.log('Copying text command was ' + msg);
+                } catch (err) {
+                    console.log('Oops, unable to copy');
+                }
+            };
+
+            const app = angular.module("app", []);
+
+            const fuzzySearch = function(searchIn, searchFor, keys) {
+                const options = {
+                  shouldSort: true,
+                  threshold: 0.4,
+                  location: 0,
+                  distance: 100,
+                  maxPatternLength: 32,
+                  minMatchCharLength: 1,
+                  keys: keys
+                };
+
+                const fuse = new Fuse(searchIn, options);
+                return fuse.search(searchFor);
+            }
+
+            app.controller("EditorController", function($scope, $http) {
+                $http.get("https://api.github.com/repos/moddota/API/contents/_data/lua_server.json").then(defsData => {
+                    $scope.originalDefinitions = JSON.parse(atob(defsData.data.content));
+
+                    return $http.get("https://api.github.com/repos/moddota/API/contents/_data/override_lua_server.json").then(ovrsData => {
+                        const overrides = JSON.parse(atob(ovrsData.data.content));
+                        const definitions = angular.copy($scope.originalDefinitions);
+
+                        _.each(overrides, (elements, scopeName) => {
+                            _.each(elements.functions, (funcElements, functionName) => $scope.fixArgNames(funcElements));
+                        });
+
+                        applyOverrides(definitions, overrides);
+
+                        const availableClasses = Object.keys(definitions);
+                        $scope.availableTypes = availableClasses.concat(["number", "boolean", "table", "string", "vector"]);
+                        $scope.definitions = definitions;
+
+                        $scope.updateDifferences();
+                        $scope.initiallyChanged = angular.copy($scope.differences);
+                    });
+                });
+
+                $scope.searchQuery = "";
+                $scope.differencesText = "";
+                $scope.differences = {};
+                $scope.hideInitiallyChanged = true;
+                $scope.showRemainingHandleReturns = false;
+                $scope.initiallyChanged = {};
+
+                $scope.updateSearch = function() {
+                    const allFunctions = [];
+
+                    _.each($scope.definitions, (elements, scopeName) => {
+                        _.each(elements.functions, (funcElements, functionName) => allFunctions.push({
+                            scope: scopeName,
+                            name: functionName
+                        }));
+                    });
+
+                    const searchResult = fuzzySearch(allFunctions, $scope.searchQuery, ["scope", "name"]);
+
+                    if (searchResult.length == 0) {
+                        delete $scope.searchMap;
+                    } else {
+                        $scope.searchMap = {};
+                    }
+
+                    searchResult.forEach(func => {
+                        $scope.searchMap[func.scope] = $scope.searchMap[func.scope] || {};
+                        $scope.searchMap[func.scope][func.name] = true;
+                    });
+                }
+
+                $scope.updateDifferences = function() {
+                    const differences = {};
+
+                    _.each($scope.originalDefinitions, (value, scope) => {
+                        _.each(value.functions, (functionElements, functionName) => {
+                            const areDifferent = !angular.equals($scope.definitions[scope].functions[functionName], functionElements);
+
+                            if (areDifferent) {
+                                differences[scope] = differences[scope] || {};
+                                differences[scope].functions = differences[scope].functions || {};
+                                differences[scope].functions[functionName] = $scope.definitions[scope].functions[functionName];
+                            }
+                        });
+                    });
+
+                    $scope.differences = differences;
+                    $scope.differencesText = JSON.stringify(differences, null, 4);
+                };
+
+                $scope.functionFilter = function(scope, func) {
+                    const inSearch = !$scope.searchMap || ($scope.searchMap[scope] && $scope.searchMap[scope][func]);
+                    const inInitiallyChanged = !$scope.hideInitiallyChanged || !($scope.initiallyChanged[scope] && $scope.initiallyChanged[scope].functions[func]);
+                    const inRemainingHandleReturnList = !$scope.showRemainingHandleReturns || $scope.originalDefinitions[scope].functions[func].return === "handle";
+
+                    return inSearch && inRemainingHandleReturnList && inInitiallyChanged
+                };
+
+                $scope.getTotalCount = function() {
+                    let counter = 0;
+
+                    _.each($scope.definitions, (value, scope) => {
+                        _.each(value.functions, (functionElements, functionName) => {
+                            if ($scope.functionFilter(scope, functionName)) {
+                                counter++;
+                            }
+                        });
+                    });
+
+                    return counter;
+                };
+
+                // That's how ng-model generates it by default
+                $scope.fixArgNames = function(functionElements) {
+                    const argNames = functionElements.arg_names;
+                    if (argNames && !Array.isArray(argNames)) {
+                        functionElements.arg_names = Object.keys(argNames).sort().map(i => argNames[i]);
+                    }
+                };
+            });
+
+            const inheritAutocompleteProperties = function(element, scope) {
+                const input = element.find("input");
+                scope.showMenu = false;
+
+                input.on("keydown", (event) => {
+                    switch(event.which) {
+                        case 9: // tab
+                        case 13: // enter
+                        if (scope.showMenu) {
+                            scope.selectItem(scope.selectedMenuItem);
+                            event.preventDefault();
+                            scope.$apply();
+                        }
+                        
+                        return false;
+
+                        case 38: // up
+                        scope.showMenu = true;
+                        scope.advanceMenuItemSelection(-1);
+                        event.preventDefault();
+                        scope.$apply();
+                        break;
+
+                        case 40: // down
+                        scope.showMenu = true;
+                        scope.advanceMenuItemSelection(1);
+                        event.preventDefault();
+                        scope.$apply();
+                        break;
+
+                        default:
+                        scope.showMenu = true;
+                        break;
+                    }
+                    
+                });
+
+                input.on("focusout", () => scope.showMenu = false);
+                input.on("blur", () => scope.showMenu = false);
+
+                scope.updateMenuItems = (searchFor) => {
+                    scope.elements = fuzzySearch(scope.availableTypes, searchFor).map(i => scope.availableTypes[i]).slice(0, 10);
+                    scope.advanceMenuItemSelection(0);
+
+                    scope.updateDifferences();
+                };
+
+                scope.advanceMenuItemSelection = function(direction) {
+                    scope.selectedMenuItem = Math.min(scope.elements.length - 1, Math.max(0, scope.selectedMenuItem + direction));
+                };
+
+                scope.elements = [];
+                scope.updateMenuItems("");
+                scope.selectedMenuItem = 0;
+            };
+
+            app.directive("returnTypeAutocomplete", function() {
+                return {
+                    link: function(scope, element, attrs, model) {
+                        inheritAutocompleteProperties(element, scope);
+
+                        scope.selectItem = function(index) {
+                            scope.functionElements.return = scope.elements[index];
+                            scope.showMenu = false;
+
+                            scope.updateDifferences();
+                        };
+
+                        scope.onChange = function() {
+                            scope.updateMenuItems(scope.functionElements.return);
+                        }
+                    },
+                    restrict: 'E',
+                    template: `
+                        <div class="form-autocomplete" style="display:inline-block;">
+                            <input class="form-input input-sm" ng-change="onChange()" type="text" ng-model="functionElements.return" style="width:initial;border:0;">
+
+                              <ul class="menu" ng-show="showMenu" style="width:initial;">
+                                <li class="menu-item" ng-repeat="element in elements">
+                                  <a ng-class="{ 'active-menu-item': $index == selectedMenuItem }" ng-click="selectItem($index)">
+                                    <div class="tile tile-centered">
+                                      <div class="tile-content">
+                                        {{ element }}
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                        `
+
+                }
+            });
+
+            app.directive("classAutocomplete", function() {
+                return {
+                    link: function(scope, element, attrs, model) {
+                        inheritAutocompleteProperties(element, scope);
+
+                        scope.selectItem = function(index) {
+                            scope.functionElements.args[scope.$index] = scope.elements[index];
+                            scope.showMenu = false;
+
+                            scope.updateDifferences();
+                        };
+
+                        scope.onChange = function() {
+                            scope.updateMenuItems(scope.functionElements.args[scope.$index]);
+                        }
+                    },
+                    restrict: 'E',
+                    template: `
+                        <div class="form-autocomplete">
+                              <div class="form-autocomplete-input form-input">
+                                <input class="form-input" ng-change="onChange()" type="text" ng-model="functionElements.args[$index]">
+                              </div>
+
+                              <ul class="menu" ng-show="showMenu" style="width:initial;">
+                                <li class="menu-item" ng-repeat="element in elements">
+                                  <a ng-class="{ 'active-menu-item': $index == selectedMenuItem }" ng-click="selectItem($index)">
+                                    <div class="tile tile-centered">
+                                      <div class="tile-content">
+                                        {{ element }}
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                        </div>
+                        `
+
+                }
+            });
+        </script>
+    </body>
+</html>
