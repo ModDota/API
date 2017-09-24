@@ -24,51 +24,104 @@ permalink: /lua_server/docs
                 {%- break %}
             {%- endfor %}            
         {%- endif %}
+        {%- assign return_type = nil %}
+        {%- if function_override contains "return" %}
+            {%- assign return_type = function_override.return %}
+        {%- else %}
+            {%- capture return_type %}{{function[1].return | default: "void"}}{%- endcapture %}
+        {%- endif %}
+        
+        {%- if return_type == "int" %}
+            {%- assign return_type = "number" %}
+        {%- endif %}
+        {%- if return_type == "float" %}
+            {%- assign return_type = "number" %}
+        {%- endif %}
+        {%- if return_type == "bool" %}
+            {%- assign return_type = "boolean" %}
+        {%- endif %}
+        {%- if return_type == "cstring" %}
+            {%- assign return_type = "string" %}
+        {%- endif %}
+        {%- if return_type == "variant" %}
+            {%- assign return_type = "any" %}
+        {%- endif %}
+        {%- if return_type == "<unknown>" %}
+            {%- assign return_type = "any" %}
+        {%- endif %}
 --- {% if function[1] contains "description" %}{{function[1].description}}{% endif %}{%- if function[1] contains "args" %}
             {%- for arg in function[1].args %}
                 {%- assign arg_index = forloop.index0 %}
                 {%- assign var_type = arg %}
+                {%- if function_override contains "args" %}
+                    {%- assign var_type = function_override.args[arg_index] %}
+                {%- endif %}
+                
+                {%- if var_type == "int" %}
+                    {%- assign var_type = "number" %}
+                {%- endif %}
+                {%- if var_type == "float" %}
+                    {%- assign var_type = "number" %}
+                {%- endif %}
+                {%- if var_type == "bool" %}
+                    {%- assign var_type = "boolean" %}
+                {%- endif %}
+                {%- if var_type == "cstring" %}
+                    {%- assign var_type = "string" %}
+                {%- endif %}
+                {%- if var_type == "variant" %}
+                    {%- assign var_type = "any" %}
+                {%- endif %}
+                {%- if var_type == "<unknown>" %}
+                    {%- assign var_type = "any" %}
+                {%- endif %}
+
                 {%- if function[1] contains "arg_names" %}
                     {%- assign var_name = function[1].arg_names[forloop.index0] %}
                 {%- else %}
                     {%- capture var_name %}{{var_type}}_{{forloop.index}}{%- endcapture %}
                 {%- endif %}
-                {%- if function_override %}
-                    {%- if function_override contains "args" %}
-                        {%- assign var_type = function_override.args[arg_index] %}
-                    {%- endif %}
-                    {%- if function_override contains "arg_names" %}   
-                        {%- assign var_name = function_override.arg_names[arg_index] %}
-                    {%- else if (function[1] contains "arg_names") == false %}  
-                        {%- capture var_name %}{{var_type}}_{{arg_index | increment}}{%- endcapture %}
-                    {%- endif %}
+                {%- if function_override contains "arg_names" %}   
+                    {%- assign var_name = function_override.arg_names[arg_index] %}
                 {%- endif %}
 --- @param {{var_name}} {{var_type}}
             {%- endfor %}
         {%- endif %}
-        {%- if function_override contains "return" %}
---- @return {{function_override.return}}
-        {%- else %}
---- @return {{function[1].return | default: "void"}}
-        {%- endif %}
+--- @return {{return_type}}
 function {% if server_class[0] != "Global" %}{{server_class[0]}}:{% endif %}{{function[0]}}({%- if function[1] contains "args" %}
             {%- for arg in function[1].args %}
                 {%- assign arg_index = forloop.index0 %}
                 {%- assign var_type = arg %}
+                {%- if function_override contains "args" %}
+                    {%- assign var_type = function_override.args[arg_index] %}
+                {%- endif %}
+
+                {%- if var_type == "int" %}
+                    {%- assign var_type = "number" %}
+                {%- endif %}
+                {%- if var_type == "float" %}
+                    {%- assign var_type = "number" %}
+                {%- endif %}
+                {%- if var_type == "bool" %}
+                    {%- assign var_type = "boolean" %}
+                {%- endif %}
+                {%- if var_type == "cstring" %}
+                    {%- assign var_type = "string" %}
+                {%- endif %}
+                {%- if var_type == "variant" %}
+                    {%- assign var_type = "any" %}
+                {%- endif %}
+                {%- if var_type == "<unknown>" %}
+                    {%- assign var_type = "any" %}
+                {%- endif %}
+
                 {%- if function[1] contains "arg_names" %}
                     {%- assign var_name = function[1].arg_names[forloop.index0] %}
                 {%- else %}
                     {%- capture var_name %}{{var_type}}_{{forloop.index}}{%- endcapture %}
                 {%- endif %}
-                {%- if function_override %}
-                    {%- if function_override contains "args" %}
-                        {%- assign var_type = function_override.args[arg_index] %}
-                    {%- endif %}
-                    {%- if function_override contains "arg_names" %}   
-                        {%- assign var_name = function_override.arg_names[arg_index] %}
-                    {%- else if (function[1] contains "arg_names") == false %}  
-                        {%- capture var_name %}{{var_type}}_{{arg_index | increment}}{%- endcapture %}
-                    {%- endif %}
+                {%- if function_override contains "arg_names" %}   
+                    {%- assign var_name = function_override.arg_names[arg_index] %}
                 {%- endif %}
                 {{-var_name-}}
                 {%- if forloop.last != true %}, {% endif %}
