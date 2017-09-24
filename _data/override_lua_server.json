@@ -2229,6 +2229,1426 @@
             }
         }
     },
+    "CDOTA_MapTree": {
+        "functions": {
+            "CutDown": {
+                "arg_names": [
+                    "nTreeNumberKnownTo"
+                ],
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "description": "Cuts down this tree. Parameters: int nTeamNumberKnownTo (-1 = invalid team)",
+                "return": "void"
+            },
+            "CutDownRegrowAfter": {
+                "arg_names": [
+                    "flRegrowAfter",
+                    "nTeamNumberKnownTo"
+                ],
+                "args": [
+                    "float",
+                    "DOTATeam_t"
+                ],
+                "description": "Cuts down this tree. Parameters: float flRegrowAfter (-1 = never regrow), int nTeamNumberKnownTo (-1 = invalid team)",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Modifier_Lua": {
+        "functions": {
+            "GetAttributes": {
+                "args": [],
+                "description": "Return the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t",
+                "return": "DOTAModifierAttribute_t"
+            },
+            "GetAuraEntityReject": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Return true/false if this entity should receive the aura under specific conditions",
+                "return": "bool"
+            },
+            "GetAuraSearchFlags": {
+                "args": [],
+                "description": "Return the unit flags this aura respects when placing buffs.",
+                "return": "DOTA_UNIT_TARGET_FLAGS"
+            },
+            "GetAuraSearchTeam": {
+                "args": [],
+                "description": "Return the teams this aura applies its buff to.",
+                "return": "DOTA_UNIT_TARGET_TEAM"
+            },
+            "GetAuraSearchType": {
+                "args": [],
+                "description": "Return the unit classifications this aura applies its buff to.",
+                "return": "DOTA_UNIT_TARGET_TYPE"
+            },
+            "GetEffectAttachType": {
+                "args": [],
+                "description": "Return the attach type of the particle system from GetEffectName.",
+                "return": "ParticleAttachment_t"
+            },
+            "GetPriority": {
+                "args": [],
+                "description": "Return the priority order this modifier will be applied over others.",
+                "return": "modifierpriority"
+            },
+            "HeroEffectPriority": {
+                "args": [],
+                "description": "Relationship of this hero effect with those from other buffs (higher is more likely to be shown).",
+                "return": "modifierpriority"
+            },
+            "OnCreated": {
+                "arg_names": [
+                    "params"
+                ],
+                "args": [
+                    "table"
+                ],
+                "description": "Runs when the modifier is created.",
+                "return": "void"
+            },
+            "OnRefresh": {
+                "arg_names": [
+                    "params"
+                ],
+                "args": [
+                    "table"
+                ],
+                "description": "Runs when the modifier is refreshed.",
+                "return": "void"
+            },
+            "StatusEffectPriority": {
+                "args": [],
+                "description": "Relationship of this status effect with those from other buffs (higher is more likely to be shown).",
+                "return": "modifierpriority"
+            }
+        }
+    },
+    "CDOTA_Modifier_Lua_Horizontal_Motion": {
+        "functions": {
+            "GetPriority": {
+                "args": [],
+                "description": "Get the priority",
+                "return": "modifierpriority"
+            },
+            "SetPriority": {
+                "arg_names": [
+                    "nMotionPriority"
+                ],
+                "args": [
+                    "modifierpriority"
+                ],
+                "description": "Set the priority",
+                "return": "void"
+            },
+            "UpdateHorizontalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Modifier_Lua_Motion_Both": {
+        "functions": {
+            "GetPriority": {
+                "args": [],
+                "description": "Get the priority",
+                "return": "modifierpriority"
+            },
+            "SetPriority": {
+                "arg_names": [
+                    "nMotionPriority"
+                ],
+                "args": [
+                    "modifierpriority"
+                ],
+                "description": "Set the priority",
+                "return": "void"
+            },
+            "UpdateHorizontalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            },
+            "UpdateVerticalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Modifier_Lua_Vertical_Motion": {
+        "functions": {
+            "GetMotionPriority": {
+                "args": [],
+                "description": "Get the priority",
+                "return": "modifierpriority"
+            },
+            "SetMotionPriority": {
+                "arg_names": [
+                    "nMotionPriority"
+                ],
+                "args": [
+                    "modifierpriority"
+                ],
+                "description": "Set the priority",
+                "return": "void"
+            },
+            "UpdateVerticalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_PlayerResource": {
+        "functions": {
+            "AddAegisPickup": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "AddClaimedFarm": {
+                "arg_names": [
+                    "iPlayerID",
+                    "flFarmValue",
+                    "bEarnedValue"
+                ],
+                "args": [
+                    "PlayerID",
+                    "float",
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "AddGoldSpentOnSupport": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iCost"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int"
+                ],
+                "return": "void"
+            },
+            "AddRunePickup": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "AreUnitsSharedWithPlayerID": {
+                "arg_names": [
+                    "nUnitOwnerPlayerID",
+                    "nOtherPlayerID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "CanRepick": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "ClearKillsMatrix": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "ClearLastHitMultikill": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "ClearLastHitStreak": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "ClearRawPlayerDamageMatrix": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "ClearStreak": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "GetAegisPickups": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetAssists": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetBroadcasterChannel": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "uint"
+            },
+            "GetBroadcasterChannelSlot": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "uint"
+            },
+            "GetClaimedDenies": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetClaimedFarm": {
+                "arg_names": [
+                    "iPlayerID",
+                    "bOnlyEarned"
+                ],
+                "args": [
+                    "PlayerID",
+                    "bool"
+                ],
+                "return": "float"
+            },
+            "GetClaimedMisses": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetConnectionState": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "DOTAConnectionState_t"
+            },
+            "GetCreepDamageTaken": {
+                "arg_names": [
+                    "iPlayerID",
+                    "bTotal"
+                ],
+                "args": [
+                    "PlayerID",
+                    "bool"
+                ],
+                "return": "int"
+            },
+            "GetCustomBuybackCooldown": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "GetCustomBuybackCost": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetCustomTeamAssignment": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "description": "Get the current custom team assignment for this player.",
+                "return": "int"
+            },
+            "GetDamageDoneToHero": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iVictimID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int"
+                ],
+                "return": "int"
+            },
+            "GetDeaths": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetDenies": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetEventPointsForPlayerID": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "uint"
+            },
+            "GetEventPremiumPoints": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "uint"
+            },
+            "GetEventRanks": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "<unknown>"
+            },
+            "GetGold": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetGoldLostToDeath": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetGoldPerMin": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "GetGoldSpentOnBuybacks": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetGoldSpentOnConsumables": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetGoldSpentOnItems": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetGoldSpentOnSupport": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetHealing": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "GetHeroDamageTaken": {
+                "arg_names": [
+                    "iPlayerID",
+                    "bTotal"
+                ],
+                "args": [
+                    "PlayerID",
+                    "bool"
+                ],
+                "return": "int"
+            },
+            "GetKills": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetKillsDoneToHero": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iVictimID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetLastHitMultikill": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetLastHitStreak": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetLastHits": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetLevel": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetMisses": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetNearbyCreepDeaths": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetNthCourierForTeam": {
+                "arg_names": [
+                    "nCourierIndex",
+                    "nTeamNumber"
+                ],
+                "args": [
+                    "int",
+                    "DOTATeam_t"
+                ],
+                "return": "handle"
+            },
+            "GetNthPlayerIDOnTeam": {
+                "arg_names": [
+                    "iTeamNumber",
+                    "iNthPlayer"
+                ],
+                "args": [
+                    "DOTATeam_t",
+                    "int"
+                ],
+                "return": "int"
+            },
+            "GetNumConsumablesPurchased": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetNumCouriersForTeam": {
+                "arg_names": [
+                    "nTeamNumber"
+                ],
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "return": "int"
+            },
+            "GetNumItemsPurchased": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetPlayer": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "CDOTAPlayer"
+            },
+            "GetPlayerCountForTeam": {
+                "arg_names": [
+                    "iTeam"
+                ],
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "return": "int"
+            },
+            "GetPlayerLoadedCompletely": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "GetPlayerName": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "cstring"
+            },
+            "GetRawPlayerDamage": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetReliableGold": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetRespawnSeconds": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetRoshanKills": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetRunePickups": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetSelectedHeroEntity": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "CDOTA_BaseNPC_Hero"
+            },
+            "GetSelectedHeroID": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetSelectedHeroName": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "cstring"
+            },
+            "GetSteamAccountID": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "uint"
+            },
+            "GetSteamID": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "description": "Get the 64 bit steam ID for a given player.",
+                "return": "uint64"
+            },
+            "GetStreak": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetStuns": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "GetTeam": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "DOTATeam_t"
+            },
+            "GetTeamKills": {
+                "arg_names": [
+                    "iTeam"
+                ],
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "return": "int"
+            },
+            "GetTimeOfLastConsumablePurchase": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "GetTimeOfLastDeath": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "GetTimeOfLastItemPurchase": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "GetTotalEarnedGold": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetTotalEarnedXP": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetTotalGoldSpent": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetTowerDamageTaken": {
+                "arg_names": [
+                    "iPlayerID",
+                    "bTotal"
+                ],
+                "args": [
+                    "PlayerID",
+                    "bool"
+                ],
+                "return": "int"
+            },
+            "GetTowerKills": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetUnitShareMaskForPlayer": {
+                "arg_names": [
+                    "nPlayerID",
+                    "nOtherPlayerID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetUnreliableGold": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "int"
+            },
+            "GetXPPerMin": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "float"
+            },
+            "HasCustomGameTicketForPlayerID": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "description": "Does this player have a custom game ticket for this game?",
+                "return": "bool"
+            },
+            "HasRandomed": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "HasSelectedHero": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IncrementAssists": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iVictimID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementClaimedDenies": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementClaimedMisses": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementDeaths": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iKillerID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementDenies": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementKills": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iVictimID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementLastHitMultikill": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementLastHitStreak": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementLastHits": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementMisses": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementNearbyCreepDeaths": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementStreak": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "IncrementTotalEarnedXP": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iXP",
+                    "nReason"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int",
+                    "EDOTA_ModifyXP_Reason"
+                ],
+                "return": "void"
+            },
+            "IsBroadcaster": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IsDisableHelpSetForPlayerID": {
+                "arg_names": [
+                    "nPlayerID",
+                    "nOtherPlayerID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IsFakeClient": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IsHeroSharedWithPlayerID": {
+                "arg_names": [
+                    "nUnitOwnerPlayerID",
+                    "nOtherPlayerID"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IsValidPlayer": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IsValidPlayerID": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IsValidTeamPlayer": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "IsValidTeamPlayerID": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "bool"
+            },
+            "ModifyGold": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iGoldChange",
+                    "bReliable",
+                    "nReason"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int",
+                    "bool",
+                    "EDOTA_ModifyGold_Reason"
+                ],
+                "return": "int"
+            },
+            "ReplaceHeroWith": {
+                "arg_names": [
+                    "iPlayerID",
+                    "pszHeroClass",
+                    "nGold",
+                    "nXP"
+                ],
+                "args": [
+                    "PlayerID",
+                    "cstring",
+                    "int",
+                    "int"
+                ],
+                "description": "(playerID, heroClassName, gold, XP) - replaces the player's hero with a new one of the specified class, gold and XP",
+                "return": "handle"
+            },
+            "ResetBuybackCostTime": {
+                "arg_names": [
+                    "nPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "ResetTotalEarnedGold": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "SetBuybackCooldownTime": {
+                "arg_names": [
+                    "nPlayerID",
+                    "flBuybackCooldown"
+                ],
+                "args": [
+                    "PlayerID",
+                    "float"
+                ],
+                "return": "void"
+            },
+            "SetBuybackGoldLimitTime": {
+                "arg_names": [
+                    "nPlayerID",
+                    "flBuybackCooldown"
+                ],
+                "args": [
+                    "PlayerID",
+                    "float"
+                ],
+                "return": "void"
+            },
+            "SetCameraTarget": {
+                "arg_names": [
+                    "nPlayerID",
+                    "hTarget"
+                ],
+                "args": [
+                    "PlayerID",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "(playerID, entity) - force the given player's camera to follow the given entity",
+                "return": "void"
+            },
+            "SetCanRepick": {
+                "arg_names": [
+                    "iPlayerID",
+                    "bCanRepick"
+                ],
+                "args": [
+                    "PlayerID",
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetCustomBuybackCooldown": {
+                "arg_names": [
+                    "iPlayerID",
+                    "flCooldownTime"
+                ],
+                "args": [
+                    "PlayerID",
+                    "float"
+                ],
+                "description": "Set the buyback cooldown for this player.",
+                "return": "void"
+            },
+            "SetCustomBuybackCost": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iGoldCost"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int"
+                ],
+                "description": "Set the buyback cost for this player.",
+                "return": "void"
+            },
+            "SetCustomPlayerColor": {
+                "arg_names": [
+                    "iPlayerID",
+                    "r",
+                    "g",
+                    "b"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int",
+                    "int",
+                    "int"
+                ],
+                "description": "Set custom color for player (minimap, scoreboard, etc)",
+                "return": "void"
+            },
+            "SetCustomTeamAssignment": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iTeamAssignment"
+                ],
+                "args": [
+                    "PlayerID",
+                    "DOTATeam_t"
+                ],
+                "description": "Set custom team assignment for this player.",
+                "return": "void"
+            },
+            "SetGold": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iGold",
+                    "bReliable"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int",
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetHasRandomed": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "PlayerID"
+                ],
+                "return": "void"
+            },
+            "SetLastBuybackTime": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iLastBuybackTime"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int"
+                ],
+                "return": "void"
+            },
+            "SetOverrideSelectionEntity": {
+                "arg_names": [
+                    "nPlayerID",
+                    "hEntity"
+                ],
+                "args": [
+                    "PlayerID",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Set the forced selection entity for a player.",
+                "return": "void"
+            },
+            "SetUnitShareMaskForPlayer": {
+                "arg_names": [
+                    "nPlayerID",
+                    "nOtherPlayerID",
+                    "nFlag",
+                    "bState"
+                ],
+                "args": [
+                    "PlayerID",
+                    "PlayerID",
+                    "int",
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SpendGold": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iCost",
+                    "iReason"
+                ],
+                "args": [
+                    "PlayerID",
+                    "int",
+                    "EDOTA_ModifyGold_Reason"
+                ],
+                "return": "void"
+            },
+            "UpdateTeamSlot": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iTeamNumber",
+                    "desiredSlot"
+                ],
+                "args": [
+                    "PlayerID",
+                    "DOTATeam_t",
+                    "int"
+                ],
+                "return": "void"
+            }
+        }
+    },
     "Global": {
         "functions": {
             "CreateUnitByName": {
