@@ -939,7 +939,7 @@
                     "item_to_add"
                 ],
                 "args": [
-                    "CDOTA_BaseNPC"
+                    "CDOTA_Item"
                 ],
                 "description": "Add an item to this unit's inventory.",
                 "return": "CDOTA_Item"
