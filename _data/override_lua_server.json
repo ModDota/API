@@ -1273,6 +1273,145 @@
                 "description": "Add a modifier to this unit.",
                 "return": "CDOTA_Buff"
             },
+            "AlertNearbyUnits": {
+                "arg_names": [
+                    "hAttacker",
+                    "hAbility"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "CDOTABaseAbility"
+                ],
+                "return": "void"
+            },
+            "CanEntityBeSeenByMyTeam": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Check FoW to see if an entity is visible.",
+                "return": "bool"
+            },
+            "CastAbilityImmediately": {
+                "arg_names": [
+                    "hAbility",
+                    "iPlayerIndex"
+                ],
+                "args": [
+                    "CDOTABaseAbility",
+                    "int"
+                ],
+                "description": "Cast an ability immediately.",
+                "return": "void"
+            },
+            "CastAbilityNoTarget": {
+                "arg_names": [
+                    "hAbility",
+                    "iPlayerIndex"
+                ],
+                "args": [
+                    "CDOTABaseAbility",
+                    "int"
+                ],
+                "description": "Cast an ability with no target.",
+                "return": "void"
+            },
+            "CastAbilityOnPosition": {
+                "arg_names": [
+                    "vPosition",
+                    "hAbility",
+                    "iPlayerIndex"
+                ],
+                "args": [
+                    "vector",
+                    "CDOTABaseAbility",
+                    "int"
+                ],
+                "description": "Cast an ability on a position.",
+                "return": "void"
+            },
+            "CastAbilityOnTarget": {
+                "arg_names": [
+                    "hTarget",
+                    "hAbility",
+                    "iPlayerIndex"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "CDOTABaseAbility",
+                    "int"
+                ],
+                "description": "Cast an ability on a target entity.",
+                "return": "void"
+            },
+            "CastAbilityToggle": {
+                "arg_names": [
+                    "hAbility",
+                    "iPlayerIndex"
+                ],
+                "args": [
+                    "CDOTABaseAbility",
+                    "int"
+                ],
+                "description": "Toggle an ability.",
+                "return": "void"
+            },
+            "DisassembleItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "Disassemble the passed item in this unit's inventory.",
+                "return": "void"
+            },
+            "DropItemAtPosition": {
+                "arg_names": [
+                    "vDest",
+                    "hItem"
+                ],
+                "args": [
+                    "vector",
+                    "CDOTA_Item"
+                ],
+                "description": "Drop an item at a given point.",
+                "return": "void"
+            },
+            "DropItemAtPositionImmediate": {
+                "arg_names": [
+                    "hItem",
+                    "vPosition"
+                ],
+                "args": [
+                    "CDOTA_Item",
+                    "vector"
+                ],
+                "description": "Immediately drop a carried item at a given position.",
+                "return": "void"
+            },
+            "EjectItemFromStash": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "Drops the selected item out of this unit's stash.",
+                "return": "void"
+            },
+            "FadeGesture": {
+                "arg_names": [
+                    "nActivity"
+                ],
+                "args": [
+                    "GameActivity_t"
+                ],
+                "description": "Fade and remove the given gesture activity.",
+                "return": "void"
+            },
             "FindAbilityByName": {
                 "arg_names": [
                     "ability_name"
@@ -1282,6 +1421,21 @@
                 ],
                 "description": "Retrieve an ability by name from the unit.",
                 "return": "CDOTABaseAbility"
+            },
+            "FindAllModifiers": {
+                "args": [],
+                "description": "Returns a table of all of the modifiers on the NPC.",
+                "return": "CDOTA_Buff[]"
+            },
+            "FindAllModifiersByName": {
+                "arg_names": [
+                    "name"
+                ],
+                "args": [
+                    "string"
+                ],
+                "description": "Returns a table of all of the modifiers on the NPC with the passed name (modifierName)",
+                "return": "CDOTA_Buff[]"
             },
             "FindItemInInventory": {
                 "arg_names": [
@@ -1315,6 +1469,16 @@
                 "description": "Return a handle to the modifier of the given name from the passed caster if found, else nil ( string Name, hCaster )",
                 "return": "CDOTA_Buff"
             },
+            "ForcePlayActivityOnce": {
+                "arg_names": [
+                    "nActivity"
+                ],
+                "args": [
+                    "GameActivity_t"
+                ],
+                "description": "Play an activity once, and then go back to idle.",
+                "return": "void"
+            },
             "GetAbilityByIndex": {
                 "arg_names": [
                     "ability_index"
@@ -1324,6 +1488,427 @@
                 ],
                 "description": "Retrieve an ability by index from the unit.",
                 "return": "CDOTABaseAbility"
+            },
+            "GetAggroTarget": {
+                "args": [],
+                "description": "Returns this unit's aggro target.",
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetAttackCapability": {
+                "args": [],
+                "return": "DOTAUnitAttackCapability_t"
+            },
+            "GetAttackTarget": {
+                "args": [],
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetAverageTrueAttackDamage": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Returns the average value of the minimum and maximum damage values.",
+                "return": "int"
+            },
+            "GetCloneSource": {
+                "args": [],
+                "description": "Get clone source (Meepo Prime, if this is a Meepo)",
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetCurrentActiveAbility": {
+                "args": [],
+                "description": "Get the ability this unit is currently casting.",
+                "return": "CDOTABaseAbility"
+            },
+            "GetCursorCastTarget": {
+                "args": [],
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetForceAttackTarget": {
+                "args": [],
+                "return": "CDOTA_BaseNPC"
+            },
+            "GetInitialGoalEntity": {
+                "args": [],
+                "description": "Returns the initial waypoint goal for this NPC.",
+                "return": "CBaseEntity"
+            },
+            "GetItemInSlot": {
+                "arg_names": [
+                    "slot"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Returns nth item in inventory slot (index is zero based).",
+                "return": "CDOTA_Item"
+            },
+            "GetModifierStackCount": {
+                "arg_names": [
+                    "modifierName",
+                    "hCaster"
+                ],
+                "args": [
+                    "cstring",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Gets the stack count of a given modifier.",
+                "return": "int"
+            },
+            "GetOpposingTeamNumber": {
+                "args": [],
+                "return": "DOTATeam_t"
+            },
+            "GetPlayerOwner": {
+                "args": [],
+                "description": "Returns the player that owns this unit.",
+                "return": "CDOTAPlayer"
+            },
+            "GetRangeToUnit": {
+                "arg_names": [
+                    "hNPC"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "return": "float"
+            },
+            "Heal": {
+                "arg_names": [
+                    "flAmount",
+                    "hInflictor"
+                ],
+                "args": [
+                    "float",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Heal this unit.",
+                "return": "void"
+            },
+            "IsOpposingTeam": {
+                "arg_names": [
+                    "nTeam"
+                ],
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "return": "bool"
+            },
+            "Kill": {
+                "arg_names": [
+                    "hAbility",
+                    "hAttacker"
+                ],
+                "args": [
+                    "CDOTABaseAbility",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Kills this NPC, with the params Ability and Attacker.",
+                "return": "void"
+            },
+            "MakeVisibleDueToAttack": {
+                "arg_names": [
+                    "iTeam"
+                ],
+                "args": [
+                    "DOTATeam_t"
+                ],
+                "return": "void"
+            },
+            "MakeVisibleToTeam": {
+                "arg_names": [
+                    "iTeam",
+                    "flDuration"
+                ],
+                "args": [
+                    "DOTATeam_t",
+                    "float"
+                ],
+                "return": "void"
+            },
+            "ModifyHealth": {
+                "arg_names": [
+                    "iDesiredHealthValue",
+                    "hAbility",
+                    "bLethal",
+                    "iAdditionalFlags"
+                ],
+                "args": [
+                    "int",
+                    "CDOTABaseAbility",
+                    "bool",
+                    "int"
+                ],
+                "description": "Sets the health to a specific value, with optional flags or inflictors.",
+                "return": "void"
+            },
+            "MoveToNPC": {
+                "arg_names": [
+                    "hNPC"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Move to follow a unit.",
+                "return": "void"
+            },
+            "MoveToNPCToGiveItem": {
+                "arg_names": [
+                    "hNPC",
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "CDOTA_Item"
+                ],
+                "description": "Give an item to another unit.",
+                "return": "void"
+            },
+            "MoveToTargetToAttack": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Move to a target to attack.",
+                "return": "void"
+            },
+            "PerformAttack": {
+                "arg_names": [
+                    "hTarget",
+                    "bUseCastAttackOrb",
+                    "bProcessProcs",
+                    "bSkipCooldown",
+                    "bIgnoreInvis",
+                    "bUseProjectile",
+                    "bFakeAttack",
+                    "bNeverMiss"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC",
+                    "bool",
+                    "bool",
+                    "bool",
+                    "bool",
+                    "bool",
+                    "bool",
+                    "bool"
+                ],
+                "description": "Performs an attack on a target.",
+                "return": "void"
+            },
+            "PickupDroppedItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "Pick up a dropped item.",
+                "return": "void"
+            },
+            "PickupRune": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "Pick up a rune.",
+                "return": "void"
+            },
+            "RemoveGesture": {
+                "arg_names": [
+                    "nActivity"
+                ],
+                "args": [
+                    "GameActivity_t"
+                ],
+                "description": "Remove the given gesture activity.",
+                "return": "void"
+            },
+            "RemoveHorizontalMotionController": {
+                "arg_names": [
+                    "hBuff"
+                ],
+                "args": [
+                    "CDOTA_Buff"
+                ],
+                "return": "void"
+            },
+            "RemoveItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "Removes the passed item from this unit's inventory and deletes it.",
+                "return": "void"
+            },
+            "RemoveModifierByNameAndCaster": {
+                "arg_names": [
+                    "pszScriptName",
+                    "hCaster"
+                ],
+                "args": [
+                    "cstring",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Removes a modifier that was cast by the given caster.",
+                "return": "void"
+            },
+            "RemoveVerticalMotionController": {
+                "arg_names": [
+                    "hBuff"
+                ],
+                "args": [
+                    "CDOTA_Buff"
+                ],
+                "return": "void"
+            },
+            "SellItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "Sells the passed item in this unit's inventory.",
+                "return": "void"
+            },
+            "SetAbilityByIndex": {
+                "arg_names": [
+                    "hAbility",
+                    "iIndex"
+                ],
+                "args": [
+                    "CDOTABaseAbility",
+                    "int"
+                ],
+                "description": "Set the ability by index.",
+                "return": "void"
+            },
+            "SetAttackCapability": {
+                "arg_names": [
+                    "iAttackCapabilities"
+                ],
+                "args": [
+                    "DOTAUnitAttackCapability_t"
+                ],
+                "return": "void"
+            },
+            "SetAttacking": {
+                "arg_names": [
+                    "hAttackTarget"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "return": "void"
+            },
+            "SetCursorCastTarget": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "return": "void"
+            },
+            "SetForceAttackTarget": {
+                "arg_names": [
+                    "hNPC"
+                ],
+                "args": [
+                    "CDOTA_BaseNPC"
+                ],
+                "return": "void"
+            },
+            "SetInitialGoalEntity": {
+                "arg_names": [
+                    "hGoal"
+                ],
+                "args": [
+                    "CBaseEntity"
+                ],
+                "description": "Sets the initial waypoint goal for this NPC.",
+                "return": "void"
+            },
+            "SetMoveCapability": {
+                "arg_names": [
+                    "iMoveCapabilities"
+                ],
+                "args": [
+                    "DOTAUnitMoveCapability_t"
+                ],
+                "return": "void"
+            },
+            "SpendMana": {
+                "arg_names": [
+                    "flManaSpent",
+                    "hAbility"
+                ],
+                "args": [
+                    "float",
+                    "CDOTABaseAbility"
+                ],
+                "description": "Spend mana from this unit, this can be used for spending mana from abilities or item usage.",
+                "return": "void"
+            },
+            "StartGesture": {
+                "arg_names": [
+                    "nActivity"
+                ],
+                "args": [
+                    "GameActivity_t"
+                ],
+                "description": "Add the given gesture activity.",
+                "return": "void"
+            },
+            "StartGestureWithPlaybackRate": {
+                "arg_names": [
+                    "nActivity",
+                    "flRate"
+                ],
+                "args": [
+                    "GameActivity_t",
+                    "float"
+                ],
+                "description": "Add the given gesture activity with a playback rate override.",
+                "return": "void"
+            },
+            "TakeItem": {
+                "arg_names": [
+                    "hItem"
+                ],
+                "args": [
+                    "CDOTA_Item"
+                ],
+                "description": "Removed the passed item from this unit's inventory.",
+                "return": "handle"
+            },
+            "TriggerSpellAbsorb": {
+                "arg_names": [
+                    "hAbility"
+                ],
+                "args": [
+                    "CDOTABaseAbility"
+                ],
+                "return": "bool"
+            },
+            "TriggerSpellReflect": {
+                "arg_names": [
+                    "hAbility"
+                ],
+                "args": [
+                    "CDOTABaseAbility"
+                ],
+                "description": "Trigger the Lotus Orb-like effect.(hAbility)",
+                "return": "void"
             }
         }
     },
