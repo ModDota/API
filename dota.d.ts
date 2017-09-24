@@ -2258,6 +2258,7 @@ interface DollarStatic {
     DispatchEvent(event: string, panelID?: string, ...args: any[]): void;
     DispatchEvent(event: string, panel: Panel, ...args: any[]): void;
     DispatchEventAsync(delay: number, event:string, panelID?: string, ...args: any[]): void;
+    DispatchEventAsync(delay: number, event:string, panel: Panel, ...args: any[]): void;
     Localize(token: string, parent?: Panel): string;
     RegisterEventHandler(event: string, parent: Panel, handler: () => void): number;
     Each<T>(list: T[], callback: (item: T, index: number) => void): void;
