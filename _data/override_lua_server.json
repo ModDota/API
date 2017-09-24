@@ -3649,6 +3649,425 @@
             }
         }
     },
+    "CEntities": {
+        "functions": {
+            "CreateByClassname": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Creates an entity by classname",
+                "return": "CBaseEntity",
+                "arg_names": {
+                    "0": "className"
+                }
+            },
+            "FindAllByClassname": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Finds all entities by class name. Returns an array containing all the found entities.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "className"
+                }
+            },
+            "FindAllByClassnameWithin": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities by class name within a radius.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "className",
+                    "1": "location",
+                    "2": "radius"
+                }
+            },
+            "FindAllByModel": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Find entities by model name.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "modelName"
+                }
+            },
+            "FindAllByName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Find all entities by name. Returns an array containing all the found entities in it.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "name"
+                }
+            },
+            "FindAllByNameWithin": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities by name within a radius.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "name",
+                    "1": "location",
+                    "2": "radius"
+                }
+            },
+            "FindAllByTarget": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Find entities by targetname.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "target"
+                }
+            },
+            "FindAllInSphere": {
+                "args": [
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities within a radius.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "location",
+                    "1": "radius"
+                }
+            },
+            "FindByClassname": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring"
+                ],
+                "description": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "className"
+                }
+            },
+            "FindByClassnameNearest": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities by class name nearest to a point.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "className",
+                    "1": "location",
+                    "2": "radius"
+                }
+            },
+            "FindByClassnameWithin": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "className",
+                    "2": "location",
+                    "3": "radius"
+                }
+            },
+            "FindByModel": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring"
+                ],
+                "description": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "modelName"
+                }
+            },
+            "FindByModelWithin": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities by model name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "modelName",
+                    "2": "location",
+                    "3": "radius"
+                }
+            },
+            "FindByName": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring"
+                ],
+                "description": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "name"
+                }
+            },
+            "FindByNameNearest": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities by name nearest to a point.",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "name",
+                    "1": "location",
+                    "2": "radius"
+                }
+            },
+            "FindByNameWithin": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "name",
+                    "2": "location",
+                    "3": "radius"
+                }
+            },
+            "FindByTarget": {
+                "args": [
+                    "CBaseEntity",
+                    "cstring"
+                ],
+                "description": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "target"
+                }
+            },
+            "FindInSphere": {
+                "args": [
+                    "CBaseEntity",
+                    "vector",
+                    "float"
+                ],
+                "description": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous",
+                    "1": "location",
+                    "2": "radius"
+                }
+            },
+            "First": {
+                "args": [],
+                "description": "Begin an iteration over the list of entities",
+                "return": "CBaseEntity"
+            },
+            "GetLocalPlayer": {
+                "args": [],
+                "description": "Get the local player.",
+                "return": "CDOTAPlayer"
+            },
+            "Next": {
+                "args": [
+                    "CBaseEntity"
+                ],
+                "description": "Continue an iteration over the list of entities, providing reference to a previously found entity",
+                "return": "CBaseEntity[]",
+                "arg_names": {
+                    "0": "previous"
+                }
+            }
+        }
+    },
+    "CScriptHeroList": {
+        "functions": {
+            "GetAllHeroes": {
+                "args": [],
+                "description": "Returns all the heroes in the world",
+                "return": "CDOTA_BaseNPC_Hero[]"
+            },
+            "GetHero": {
+                "args": [
+                    "int"
+                ],
+                "description": "Get the Nth hero in the Hero List",
+                "return": "CDOTA_BaseNPC_Hero",
+                "arg_names": {
+                    "0": "nth"
+                }
+            }
+        }
+    },
+    "CScriptParticleManager": {
+        "functions": {
+            "CreateParticle": {
+                "args": [
+                    "cstring",
+                    "ParticleAttachment_t",
+                    "CDOTA_BaseNPC"
+                ],
+                "description": "Creates a new particle effect",
+                "return": "ParticleID",
+                "arg_names": {
+                    "0": "particleName",
+                    "1": "particleAttach",
+                    "2": "owner"
+                }
+            },
+            "CreateParticleForPlayer": {
+                "args": [
+                    "cstring",
+                    "ParticleAttachment_t",
+                    "CDOTA_BaseNPC",
+                    "CDOTAPlayer"
+                ],
+                "description": "Creates a new particle effect that only plays for the specified player",
+                "return": "ParticleID",
+                "arg_names": {
+                    "0": "particleName",
+                    "1": "particleAttach",
+                    "2": "owner",
+                    "3": "player"
+                }
+            },
+            "CreateParticleForTeam": {
+                "args": [
+                    "cstring",
+                    "ParticleAttachment_t",
+                    "CDOTA_BaseNPC",
+                    "DOTATeam_t"
+                ],
+                "description": "Creates a new particle effect that only plays for the specified team",
+                "return": "ParticleID",
+                "arg_names": {
+                    "0": "particleName",
+                    "1": "particleAttach",
+                    "2": "owner",
+                    "3": "team"
+                }
+            },
+            "DestroyParticle": {
+                "args": [
+                    "ParticleID",
+                    "bool"
+                ],
+                "description": "(int index, bool bDestroyImmediately) - Destroy a particle, if bDestroyImmediately destroy it without playing end caps.",
+                "return": "void",
+                "arg_names": {
+                    "0": "particle",
+                    "1": "immediate"
+                }
+            },
+            "ReleaseParticleIndex": {
+                "args": [
+                    "ParticleID"
+                ],
+                "description": "Frees the specified particle index",
+                "return": "void",
+                "arg_names": {
+                    "0": "particle"
+                }
+            },
+            "SetParticleAlwaysSimulate": {
+                "args": [
+                    "ParticleID"
+                ],
+                "return": "void",
+                "arg_names": {
+                    "0": "particle"
+                }
+            },
+            "SetParticleControl": {
+                "args": [
+                    "ParticleID",
+                    "int",
+                    "vector"
+                ],
+                "description": "Set the control point data for a control on a particle effect",
+                "return": "void",
+                "arg_names": {
+                    "0": "particle",
+                    "1": "controlPoint",
+                    "2": "value"
+                }
+            },
+            "SetParticleControlEnt": {
+                "args": [
+                    "ParticleID",
+                    "int",
+                    "CDOTA_BaseNPC",
+                    "ParticleAttachment_t",
+                    "cstring",
+                    "vector",
+                    "bool"
+                ],
+                "return": "void",
+                "arg_names": {
+                    "0": "particle",
+                    "1": "controlPoint",
+                    "2": "unit",
+                    "3": "particleAttach",
+                    "4": "attachment",
+                    "5": "offset",
+                    "6": "lockOrientation"
+                }
+            },
+            "SetParticleControlForward": {
+                "args": [
+                    "ParticleID",
+                    "int",
+                    "vector"
+                ],
+                "description": "(int nFXIndex, int nPoint, vForward)",
+                "return": "void",
+                "arg_names": {
+                    "0": "particle",
+                    "1": "controlPoint",
+                    "2": "forward"
+                }
+            },
+            "SetParticleControlOrientation": {
+                "args": [
+                    "ParticleID",
+                    "int",
+                    "vector",
+                    "vector",
+                    "vector"
+                ],
+                "description": "(int nFXIndex, int nPoint, vForward, vRight, vUp)",
+                "return": "void",
+                "arg_names": {
+                    "0": "particle",
+                    "1": "controlPoint",
+                    "2": "forward",
+                    "3": "right",
+                    "4": "up"
+                }
+            }
+        }
+    },
     "Global": {
         "functions": {
             "CreateUnitByName": {
