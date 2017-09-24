@@ -4232,22 +4232,6 @@
                     "team"
                 ]
             },
-            "CreateDamageInfo": {
-                "args": [
-                    "handle",
-                    "handle",
-                    "vector",
-                    "vector",
-                    "float",
-                    "int"
-                ],
-                "description": "(hInflictor, hAttacker, flDamage) - Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.",
-                "return": "handle",
-                "arg_names": [
-                    "",
-                    ""
-                ]
-            },
             "CreateHTTPRequest": {
                 "args": [
                     "cstring",
