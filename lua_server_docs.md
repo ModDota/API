@@ -140,7 +140,7 @@ function CDOTA_Modifier_Lua:DeclareFunctions()
 end
 
 {%- for enum_class in site.data.lua_server_enums %}
-    {-% if enum_class[0] == "modifierfunction" %}
+    {%- if enum_class[0] == "modifierfunction" %}
         {% for enum_field in enum_class[1] %}
             {%- if enum_field contains "description" %}
 function CDOTA_Modifier_Lua:{{enum_field["description"] | escape}}()
