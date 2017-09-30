@@ -1265,8 +1265,8 @@
                     "modifier_table"
                 ],
                 "args": [
-                    "CDOTA_BaseNPC",
-                    "CDOTABaseAbility",
+                    "CDOTA_BaseNPC | nil",
+                    "CDOTABaseAbility | nil",
                     "string",
                     "table"
                 ],
@@ -3926,7 +3926,7 @@
                 "args": [
                     "cstring",
                     "ParticleAttachment_t",
-                    "CDOTA_BaseNPC"
+                    "CDOTA_BaseNPC | nil"
                 ],
                 "description": "Creates a new particle effect",
                 "return": "ParticleID",
@@ -3940,7 +3940,7 @@
                 "args": [
                     "cstring",
                     "ParticleAttachment_t",
-                    "CDOTA_BaseNPC",
+                    "CDOTA_BaseNPC | nil",
                     "CDOTAPlayer"
                 ],
                 "description": "Creates a new particle effect that only plays for the specified player",
@@ -3956,7 +3956,7 @@
                 "args": [
                     "cstring",
                     "ParticleAttachment_t",
-                    "CDOTA_BaseNPC",
+                    "CDOTA_BaseNPC | nil",
                     "DOTATeam_t"
                 ],
                 "description": "Creates a new particle effect that only plays for the specified team",
@@ -4372,6 +4372,18 @@
                 "return": "cstring",
                 "arg_names": [
                     "seed"
+                ]
+            },
+            "EmitSoundOn": {
+                "args": [
+                    "cstring",
+                    "CBaseEntity"
+                ],
+                "description": "Play named sound on Entity",
+                "return": "void",
+                "arg_names": [
+                    "soundname",
+                    "ntity"
                 ]
             },
             "EntIndexToHScript": {
