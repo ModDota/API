@@ -4773,6 +4773,18 @@
                     "g",
                     "b"
                 ]
+            },
+            "SpawnEntityFromTableSynchronous": {
+                "args": [
+                    "cstring",
+                    "table"
+                ],
+                "description": "Synchronously spawns a single entity from a table",
+                "return": "handle",
+                "arg_names": [
+                    "baseclass",
+                    "data"
+                ]
             }
         }
     },
