@@ -84,10 +84,10 @@ permalink: /lua_server/docs
                 {%- if function_override contains "arg_names" %}   
                     {%- assign var_name = function_override.arg_names[arg_index] %}
                 {%- endif %}
---- @param {{var_name}} {{var_type}}
+--- @param {{var_name}} {{var_type | replace:'?',' | nil'}}
             {%- endfor %}
         {%- endif %}
---- @return {{return_type}}
+--- @return {{return_type | replace:'?',' | nil'}}
 function {% if server_class[0] != "Global" %}{{server_class[0]}}:{% endif %}{{function[0]}}({%- if function[1] contains "args" %}
             {%- for arg in function[1].args %}
                 {%- assign arg_index = forloop.index0 %}

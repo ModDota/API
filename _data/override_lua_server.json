@@ -1265,8 +1265,8 @@
                     "modifier_table"
                 ],
                 "args": [
-                    "CDOTA_BaseNPC | nil",
-                    "CDOTABaseAbility | nil",
+                    "CDOTA_BaseNPC?",
+                    "CDOTABaseAbility?",
                     "string",
                     "table"
                 ],
@@ -3926,7 +3926,7 @@
                 "args": [
                     "cstring",
                     "ParticleAttachment_t",
-                    "CDOTA_BaseNPC | nil"
+                    "CDOTA_BaseNPC?"
                 ],
                 "description": "Creates a new particle effect",
                 "return": "ParticleID",
@@ -3940,7 +3940,7 @@
                 "args": [
                     "cstring",
                     "ParticleAttachment_t",
-                    "CDOTA_BaseNPC | nil",
+                    "CDOTA_BaseNPC?",
                     "CDOTAPlayer"
                 ],
                 "description": "Creates a new particle effect that only plays for the specified player",
@@ -3956,7 +3956,7 @@
                 "args": [
                     "cstring",
                     "ParticleAttachment_t",
-                    "CDOTA_BaseNPC | nil",
+                    "CDOTA_BaseNPC?",
                     "DOTATeam_t"
                 ],
                 "description": "Creates a new particle effect that only plays for the specified team",
@@ -4303,8 +4303,8 @@
                     "string",
                     "vector",
                     "bool",
-                    "CBaseEntity | nil",
-                    "CDOTAPlayer | nil",
+                    "CBaseEntity?",
+                    "CDOTAPlayer?",
                     "DOTATeam_t"
                 ],
                 "description": "Creates a DOTA unit by its dota_npc_units.txt name",
@@ -4323,8 +4323,8 @@
                     "cstring",
                     "vector",
                     "bool",
-                    "CDOTA_BaseNPC | nil",
-                    "CDOTAPlayer | nil",
+                    "CDOTA_BaseNPC?",
+                    "CDOTAPlayer?",
                     "DOTATeam_t",
                     "fun(unit: CDOTA_BaseNPC): nil"
                 ],
