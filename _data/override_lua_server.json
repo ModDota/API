@@ -4303,9 +4303,9 @@
                     "string",
                     "vector",
                     "bool",
-                    "CBaseEntity",
-                    "CBaseEntity",
-                    "int"
+                    "CBaseEntity | nil",
+                    "CDOTAPlayer | nil",
+                    "DOTATeam_t"
                 ],
                 "description": "Creates a DOTA unit by its dota_npc_units.txt name",
                 "return": "CDOTA_BaseNPC",
@@ -4323,8 +4323,8 @@
                     "cstring",
                     "vector",
                     "bool",
-                    "CDOTA_BaseNPC",
-                    "CDOTAPlayer",
+                    "CDOTA_BaseNPC | nil",
+                    "CDOTAPlayer | nil",
                     "DOTATeam_t",
                     "fun(unit: CDOTA_BaseNPC): nil"
                 ],
