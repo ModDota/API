@@ -3747,7 +3747,7 @@
                     "cstring"
                 ],
                 "description": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "className"
@@ -3760,7 +3760,7 @@
                     "float"
                 ],
                 "description": "Find entities by class name nearest to a point.",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "className",
                     "location",
@@ -3775,7 +3775,7 @@
                     "float"
                 ],
                 "description": "Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "className",
@@ -3789,7 +3789,7 @@
                     "cstring"
                 ],
                 "description": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "modelName"
@@ -3803,7 +3803,7 @@
                     "float"
                 ],
                 "description": "Find entities by model name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "modelName",
@@ -3817,7 +3817,7 @@
                     "cstring"
                 ],
                 "description": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "name"
@@ -3830,7 +3830,7 @@
                     "float"
                 ],
                 "description": "Find entities by name nearest to a point.",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "name",
                     "location",
@@ -3845,7 +3845,7 @@
                     "float"
                 ],
                 "description": "Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "name",
@@ -3859,7 +3859,7 @@
                     "cstring"
                 ],
                 "description": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "target"
@@ -3872,7 +3872,7 @@
                     "float"
                 ],
                 "description": "Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous",
                     "location",
@@ -3894,7 +3894,7 @@
                     "CBaseEntity"
                 ],
                 "description": "Continue an iteration over the list of entities, providing reference to a previously found entity",
-                "return": "CBaseEntity[]",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "previous"
                 ]
