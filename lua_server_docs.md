@@ -6,8 +6,9 @@ permalink: /lua_server/docs
 {%- assign override = site.data.override_lua_server %}
 {% for server_class in site.data.lua_server %}
     {% if server_class[0] != "Global" %}
- --- @class {{ server_class[0] }} {% if server_class[1] contains "extends" %} : {{server_class[1].extends}}{% endif %}
+--- @class {{ server_class[0] }} {% if server_class[1] contains "extends" %} : {{server_class[1].extends}}{% endif %}
 --- {{server_class[1].description}}
+{{ server_class[0] }} = {}
     {% endif %}
     {% for function in server_class[1].functions %}
         {%- assign function_override = nil %}
