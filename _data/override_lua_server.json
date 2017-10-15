@@ -3743,7 +3743,7 @@
             },
             "FindByClassname": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "cstring"
                 ],
                 "description": "Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
@@ -3769,7 +3769,7 @@
             },
             "FindByClassnameWithin": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "cstring",
                     "vector",
                     "float"
@@ -3785,7 +3785,7 @@
             },
             "FindByModel": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "cstring"
                 ],
                 "description": "Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
@@ -3797,7 +3797,7 @@
             },
             "FindByModelWithin": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "cstring",
                     "vector",
                     "float"
@@ -3813,7 +3813,7 @@
             },
             "FindByName": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "cstring"
                 ],
                 "description": "Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
@@ -3839,7 +3839,7 @@
             },
             "FindByNameWithin": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "cstring",
                     "vector",
                     "float"
@@ -3855,7 +3855,7 @@
             },
             "FindByTarget": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "cstring"
                 ],
                 "description": "Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search",
@@ -3867,7 +3867,7 @@
             },
             "FindInSphere": {
                 "args": [
-                    "CBaseEntity",
+                    "CBaseEntity | nil",
                     "vector",
                     "float"
                 ],
