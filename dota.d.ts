@@ -55,6 +55,15 @@ interface StringDictionary {
     [key: string] : any;
 }
 
+declare enum MouseButton {
+    LEFT = 0,
+    RIGHT = 1,
+    MIDDLE = 2
+}
+
+type MouseButtonEvent =
+    "pressed" | "doublepressed";
+
 interface CDOTA_PanoramaScript_GameUI {
     /**
      * Control whether the default UI is enabled
@@ -74,7 +83,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Install a mouse input filter
      */
-    SetMouseCallback(callbackFn: (data: object) => void): void;
+    SetMouseCallback(callbackFn: (event: MouseButtonEvent, button: MouseButton) => void): void;
 
     /**
      *
@@ -99,17 +108,17 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Install a mouse input filter
      */
-    WasMousePressed(nButtonNum: number): boolean;
+    WasMousePressed(nButtonNum: MouseButton): boolean;
 
     /**
      * Install a mouse input filter
      */
-    WasMouseDoublePressed(nButtonNum: number): boolean;
+    WasMouseDoublePressed(nButtonNum: MouseButton): boolean;
 
     /**
      * Install a mouse input filter
      */
-    IsMouseDown(nButtonNum: number): boolean;
+    IsMouseDown(nButtonNum: MouseButton): boolean;
 
     /**
      * Is the shift button pressed?
