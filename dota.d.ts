@@ -55,7 +55,7 @@ interface StringDictionary {
     [key: string] : any;
 }
 
-declare enum MouseButton {
+declare const enum MouseButton {
     LEFT = 0,
     RIGHT = 1,
     MIDDLE = 2
