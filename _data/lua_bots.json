@@ -427,7 +427,7 @@
                 "description": "Tell a bot to drop an item.",
                 "return": "void"
             },
-            "ActionPush_MoveToLocation": {
+            "ActionPush_MoveDirectly": {
                 "arg_names": [
                     "location"
                 ],
@@ -435,6 +435,26 @@
                     "vector"
                 ],
                 "description": "Tell a bot to move to a location.",
+                "return": "void"
+            },
+            "ActionPush_MovePath": {
+                "arg_names": [
+                    "hPathTable"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to move along a specified path.",
+                "return": "void"
+            },
+            "ActionPush_MoveToLocation": {
+                "arg_names": [
+                    "location"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to bot-pathfind to a location.",
                 "return": "void"
             },
             "ActionPush_MoveToUnit": {
@@ -567,7 +587,7 @@
                 "description": "Tell a bot to drop an item.",
                 "return": "void"
             },
-            "ActionQueue_MoveToLocation": {
+            "ActionQueue_MoveDirectly": {
                 "arg_names": [
                     "location"
                 ],
@@ -575,6 +595,26 @@
                     "vector"
                 ],
                 "description": "Tell a bot to move to a location.",
+                "return": "void"
+            },
+            "ActionQueue_MovePath": {
+                "arg_names": [
+                    "hPathTable"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to move along a specified path.",
+                "return": "void"
+            },
+            "ActionQueue_MoveToLocation": {
+                "arg_names": [
+                    "location"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to bot-pathfind to a location.",
                 "return": "void"
             },
             "ActionQueue_MoveToUnit": {
@@ -717,7 +757,7 @@
                 "description": "Tell a bot to drop an item.",
                 "return": "void"
             },
-            "Action_MoveToLocation": {
+            "Action_MoveDirectly": {
                 "arg_names": [
                     "location"
                 ],
@@ -725,6 +765,26 @@
                     "vector"
                 ],
                 "description": "Tell a bot to move to a location.",
+                "return": "void"
+            },
+            "Action_MovePath": {
+                "arg_names": [
+                    "hPathTable"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Tell a bot to move along a specified path.",
+                "return": "void"
+            },
+            "Action_MoveToLocation": {
+                "arg_names": [
+                    "location"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tell a bot to bot-pathfind to a location.",
                 "return": "void"
             },
             "Action_MoveToUnit": {
@@ -1322,6 +1382,18 @@
                 "description": "Get nearby creeps (lane or neutral) that we can see.",
                 "return": "variant"
             },
+            "GetNearbyFillers": {
+                "arg_names": [
+                    "nRadius",
+                    "bEnemies"
+                ],
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "Get all nearby filler buildings.",
+                "return": "variant"
+            },
             "GetNearbyHeroes": {
                 "arg_names": [
                     "nRadius",
@@ -1619,6 +1691,11 @@
                 "description": "Is this bot currently channeling an ability?",
                 "return": "bool"
             },
+            "IsCourier": {
+                "args": [],
+                "description": "Is this a courier?",
+                "return": "bool"
+            },
             "IsCreep": {
                 "args": [],
                 "description": "Is this unit a creep?",
@@ -1868,6 +1945,22 @@
     },
     "Global": {
         "functions": {
+            "AddAvoidanceZone": {
+                "args": [
+                    "vector",
+                    "float"
+                ],
+                "description": "Adds a global avoidance zone for use with GeneratePath.",
+                "return": "int"
+            },
+            "AddConditionalAvoidanceZone": {
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Adds a global avoidance zone for use with GeneratePath, with a conditional function for whether it's active or not.",
+                "return": "int"
+            },
             "CMBanHero": {
                 "args": [
                     "cstring"
@@ -1896,6 +1989,13 @@
                     "cstring"
                 ],
                 "description": "Create a localhost HTTP request.",
+                "return": "handle"
+            },
+            "CreateRemoteHTTPRequest": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Create a remote HTTP request.",
                 "return": "handle"
             },
             "DebugDrawCircle": {
@@ -1947,6 +2047,16 @@
                 "description": "Gets the time since the hero picking phase started.  Pauses with game pause.",
                 "return": "float"
             },
+            "GeneratePath": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Generates a path, avoiding the specified zones.",
+                "return": "int"
+            },
             "GetAllTrees": {
                 "args": [],
                 "description": "Returns a table with all tree locations",
@@ -1983,6 +2093,20 @@
             "GetBot": {
                 "args": [],
                 "description": "Get the bot on which script is currently being run.",
+                "return": "handle"
+            },
+            "GetBotAbilityByHandle": {
+                "args": [
+                    "uint"
+                ],
+                "description": "Get the bot ability specified by the supplied handle.",
+                "return": "handle"
+            },
+            "GetBotByHandle": {
+                "args": [
+                    "uint"
+                ],
+                "description": "Get the bot specified by the supplied handle.",
                 "return": "handle"
             },
             "GetCMCaptain": {
@@ -2379,12 +2503,33 @@
                 "description": "Install a callback for whenever the specified player's units cast an ability or use an item.",
                 "return": "void"
             },
+            "InstallChatCallback": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Install a callback for whenever a player chats.",
+                "return": "void"
+            },
+            "InstallCourierDeathCallback": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Install a callback for whenever a courier is killed.",
+                "return": "void"
+            },
             "InstallDamageCallback": {
                 "args": [
                     "int",
                     "handle"
                 ],
                 "description": "Install a callback for whenever the specified player's units take damage.",
+                "return": "void"
+            },
+            "InstallRoshanDeathCallback": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Install a callback for whenever Roshan is killed.",
                 "return": "void"
             },
             "IsCMBannedHero": {
@@ -2569,6 +2714,13 @@
                 ],
                 "description": "Linearly remaps X from A,B to C,D, clamping to C,D",
                 "return": "float"
+            },
+            "RemoveAvoidanceZone": {
+                "args": [
+                    "int"
+                ],
+                "description": "Adds a global avoidance zone for use with GeneratePath.",
+                "return": "void"
             },
             "RollPercentage": {
                 "args": [
