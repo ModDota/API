@@ -4812,7 +4812,7 @@
                     "table"
                 ],
                 "description": "Synchronously spawns a single entity from a table",
-                "return": "handle",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "baseclass",
                     "data"
