@@ -4807,6 +4807,26 @@
                     "baseclass",
                     "data"
                 ]
+            },
+            "UTIL_Remove": {
+                "args": [
+                    "CBaseEntity"
+                ],
+                "description": "Removes the specified entity",
+                "return": "void",
+                "arg_names": [
+                    "hEntity"
+                ]
+            },
+            "UTIL_RemoveImmediate": {
+                "args": [
+                    "CBaseEntity"
+                ],
+                "description": "Immediately removes the specified entity",
+                "return": "void",
+                "arg_names": [
+                    "hEntity"
+                ]
             }
         }
     },
