@@ -237,6 +237,16 @@
     },
     "CDOTABaseGameMode": {
         "functions": {
+            "GetCustomAttributeDerivedStatValue": {
+                "arg_names": [
+                    "nDerivedStatType"
+                ],
+                "args": [
+                    "AttributeDerivedStats"
+                ],
+                "description": "Get current derived stat value constant.",
+                "return": "float"
+            },
             "SetAbilityTuningValueFilter": {
                 "arg_names": [
                     "filterFunc",
@@ -259,6 +269,18 @@
                     "table"
                 ],
                 "description": "Set a filter function to control the behavior when a bounty rune is picked up. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetCustomAttributeDerivedStatValue": {
+                "arg_names": [
+                    "nStatType",
+                    "flNewValue"
+                ],
+                "args": [
+                    "AttributeDerivedStats",
+                    "float"
+                ],
+                "description": "Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue.",
                 "return": "void"
             },
             "SetCustomHeroMaxLevel": {
@@ -4391,7 +4413,7 @@
                     "int"
                 ],
                 "description": "Turn an entity index integer to an HScript representing that entity's script instance.",
-                "return": "CDOTA_BaseNPC",
+                "return": "CBaseEntity",
                 "arg_names": [
                     "entIndex"
                 ]
