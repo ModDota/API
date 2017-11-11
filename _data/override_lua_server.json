@@ -4418,6 +4418,16 @@
                     "entIndex"
                 ]
             },
+            "ExecuteOrderFromTable": {
+                "args": [
+                    "table"
+                ],
+                "description": "Issue an order from a script table",
+                "return": "void",
+                "arg_names": [
+                    "order"
+                ]
+            },
             "FindClearSpaceForUnit": {
                 "args": [
                     "CDOTA_BaseNPC",
