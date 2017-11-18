@@ -155,7 +155,8 @@ type PanelEvent =
     "onactivate" |
     "oncontextmenu" |
     "onmouseover" |
-    "onmouseout";
+    "onmouseout" |
+    "oncancel";
 
 type ScalingFunction =
     "none" |
