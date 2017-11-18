@@ -133,7 +133,7 @@ interface Panel {
 
     BReadyForDisplay(): boolean;
     SetReadyForDisplay(value: boolean): void; // ???
-    SetPanelEvent(event: string, handler: () => void): void;
+    SetPanelEvent(event: PanelEvent, handler: () => void): void;
 
     RunScriptInPanelContext(script: string): void;
 }
@@ -151,13 +151,29 @@ interface LabelPanel extends Panel {
     html: boolean;
 }
 
+type PanelEvent =
+    "onactivate" |
+    "oncontextmenu" |
+    "onmouseover" |
+    "onmouseout";
+
+type ScalingFunction =
+    "none" |
+    "stretch" | // the default
+    "stretchx" |
+    "stretchy" |
+    "stretch-to-fit-preserve-aspect" |
+    "stretch-to-fit-x-preserve-aspect" |
+    "stretch-to-fit-y-preserve-aspect" |
+    "stretch-to-cover-preserve-aspect";
+
 interface ImagePanel extends Panel {
     /**
      * Sets the image of this Image.
      * Example: image.SetImage("s2r://panorama/images/hud/hudv2_iconglyph.png")
      */
     SetImage(path: string): void;
-    SetScaling(scale: string): void;
+    SetScaling(scale: ScalingFunction): void;
 }
 
 interface AbilityImage extends ImagePanel {
