@@ -29,7 +29,7 @@ permalink: /lua_server/docs
         {%- if function_override contains "return" %}
             {%- assign return_type = function_override.return %}
         {%- else %}
-            {%- capture return_type %}{{function[1].return | default: "void"}}{%- endcapture %}
+            {%- capture return_type %}{{function[1].return | default: "nil"}}{%- endcapture %}
         {%- endif %}
         
         {%- if return_type == "int" %}
@@ -49,6 +49,9 @@ permalink: /lua_server/docs
         {%- endif %}
         {%- if return_type == "<unknown>" %}
             {%- assign return_type = "any" %}
+        {%- endif %}
+        {%- if return_type == "void" %}
+            {%- assign return_type = "nil" %}
         {%- endif %}
 --- {% if function[1] contains "description" %}{{function[1].description}}{% endif %}{%- if function[1] contains "args" %}
             {%- for arg in function[1].args %}
