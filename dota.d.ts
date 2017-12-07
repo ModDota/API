@@ -576,6 +576,11 @@ interface CScriptBindingPR_Entities {
      * Get all the entities.
      */
     GetAllEntities(): entityID[];
+    
+    /**
+     *
+     */
+    GetPlayerOwnerID(): number;
 
     /**
      * 
