@@ -2152,6 +2152,11 @@ interface CScriptBindingPR_Game {
      *
      */
     IsInAbilityLearnMode(): boolean;
+    
+    /**
+     *
+     */
+    CreateCustomKeyBind(keyName: string, funcVal:any) : void;
 }
 
 interface CPanoramaScript_SteamUGC {
