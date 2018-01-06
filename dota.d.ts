@@ -2152,6 +2152,11 @@ interface CScriptBindingPR_Game {
      *
      */
     IsInAbilityLearnMode(): boolean;
+    
+    /**
+     * Registers a keybind that can be listened to with Game.AddCommand
+     */
+    CreateCustomKeyBind(keyName: string, commandName:string) : void;
 }
 
 interface CPanoramaScript_SteamUGC {
