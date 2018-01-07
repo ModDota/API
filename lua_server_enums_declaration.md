@@ -6,7 +6,7 @@ permalink: /lua_server_enums/declatation
 ```lua
 {%- for enum_class in site.data.lua_server_enums %}
     {%- if enum_class[0] != "_Unscoped" %}
-@ValveEnum
+@CompileMembersOnly
 declare enum {{enum_class[0] | escape}} {
     {%- endif %}
     {%- for enum_field in enum_class[1] %}
