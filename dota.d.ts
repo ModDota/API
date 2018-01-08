@@ -2163,7 +2163,7 @@ interface CScriptBindingPR_Game {
     GetMapInfo(): MapInfo;
 
     /**
-     * Orders from the local player - takes a single arguments object that supports: dotaunitorder_t OrderType, ent_index TargetIndex, vector Position, ent_index AbilityIndex, OrderIssuer_t OrderIssuer, ent_index UnitIndex, OrderQueueBehavior_t QueueBehavior, bool ShowEffects.
+     * Orders from the local player.
      */
     PrepareUnitOrders(args: PrepareUnitOrdersArgument): void;
 
