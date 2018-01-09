@@ -1882,6 +1882,39 @@ interface CScriptBindingPR_Items {
     LocalPlayerSellItem(nItem: itemID): boolean;
 }
 
+interface TeamDetails {
+    team_id: DOTATeam_t;
+    team_name: string;
+    team_max_players: number;
+    team_score: number;
+    team_num_players: number;
+}
+
+interface PlayerInfo {
+    player_id: number;
+    player_name: string;
+    player_connection_state: DOTAConnectionState_t;
+    player_steamid: string;
+    player_kills: number;
+    player_deaths: number;
+    player_assists: number;
+    player_selected_hero_id: number;
+    player_selected_hero: string;
+    player_selected_hero_entity_index: number;
+    possible_hero_selection: string;
+    player_level: number;
+    player_respawn_seconds: number;
+    player_gold: number;
+    player_team_id: DOTATeam_t;
+    player_is_local: boolean;
+    player_has_host_privileges: boolean;
+}
+
+interface MapInfo {
+    map_name: string;
+    map_display_name: string;
+}
+
 interface PrepareUnitOrdersArgument {
     OrderType?: dotaunitorder_t;
     TargetIndex?: number;
@@ -1892,6 +1925,7 @@ interface PrepareUnitOrdersArgument {
     QueueBehavior?: OrderQueueBehavior_t;
     ShowEffects?: boolean;
 }
+
 interface CScriptBindingPR_Game {
     /**
      *
@@ -2081,12 +2115,12 @@ interface CScriptBindingPR_Game {
     /**
      * Get detailed information for the given team
      */
-    GetTeamDetails(nTeam: number): object;
+    GetTeamDetails(nTeam: number): TeamDetails;
 
     /**
      * Get details for the local player
      */
-    GetLocalPlayerInfo(): object;
+    GetLocalPlayerInfo(): PlayerInfo;
 
     /**
      * Get info about the player items.
@@ -2096,7 +2130,7 @@ interface CScriptBindingPR_Game {
     /**
      * Get info about the given player
      */
-    GetPlayerInfo(nPlayerID: number): object;
+    GetPlayerInfo(nPlayerID: number): PlayerInfo;
 
     /**
      * Get player IDs for the given team
@@ -2126,10 +2160,10 @@ interface CScriptBindingPR_Game {
     /**
      * Return information about the current map.
      */
-    GetMapInfo(): object;
+    GetMapInfo(): MapInfo;
 
     /**
-     * Orders from the local player - takes a single arguments object that supports: dotaunitorder_t OrderType, ent_index TargetIndex, vector Position, ent_index AbilityIndex, OrderIssuer_t OrderIssuer, ent_index UnitIndex, OrderQueueBehavior_t QueueBehavior, bool ShowEffects.
+     * Orders from the local player.
      */
     PrepareUnitOrders(args: PrepareUnitOrdersArgument): void;
 
