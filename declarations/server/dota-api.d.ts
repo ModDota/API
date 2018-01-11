@@ -24,500 +24,500 @@ declare interface CBaseAnimating extends CBaseModelEntity {
     /**
      * Returns the duration in seconds of the active sequence.
      */
-    ActiveSequenceDuration(): number;
+    ActiveSequenceDuration?(): number;
     /**
      * Get the attachment id's angles as a p,y,r vector.
      */
-    GetAttachmentAngles(iAttachment: number): Vec;
+    GetAttachmentAngles?(iAttachment: number): Vec;
     /**
      * Get the attachment id's origin vector.
      */
-    GetAttachmentOrigin(iAttachment: number): Vec;
+    GetAttachmentOrigin?(iAttachment: number): Vec;
     /**
      * Get the value of the given animGraph parameter
      */
-    GetGraphParameter(pszParam: string): any;
+    GetGraphParameter?(pszParam: string): any;
     /**
      * Get scale of entity's model.
      */
-    GetModelScale(): number;
+    GetModelScale?(): number;
     /**
      * Returns the name of the active sequence.
      */
-    GetSequence(): string;
+    GetSequence?(): string;
     /**
      * Ask whether the main sequence is done playing.
      */
-    IsSequenceFinished(): boolean;
+    IsSequenceFinished?(): boolean;
     /**
      * Sets the active sequence by name, resetting the current cycle.
      */
-    ResetSequence(pSequenceName: string): void;
+    ResetSequence?(pSequenceName: string): void;
     /**
      * Get the named attachment id.
      */
-    ScriptLookupAttachment(pAttachmentName: string): number;
+    ScriptLookupAttachment?(pAttachmentName: string): number;
     /**
      * Returns the duration in seconds of the given sequence name.
      */
-    SequenceDuration(pSequenceName: string): number;
+    SequenceDuration?(pSequenceName: string): number;
     /**
      * Sets a bodygroup.
      */
-    SetBodygroup(iGroup: number, iValue: number): void;
+    SetBodygroup?(iGroup: number, iValue: number): void;
     /**
      * Sets a bodygroup by name.
      */
-    SetBodygroupByName(pName: string, iValue: number): void;
+    SetBodygroupByName?(pName: string, iValue: number): void;
     /**
      * Pass the vector value to the specified param in the graph
      */
-    SetGraphLookDirection(vValue: Vec): void;
+    SetGraphLookDirection?(vValue: Vec): void;
     /**
      * Set the specific param value, type is inferred from the type in script
      */
-    SetGraphParameter(pszParam: string, svArg: any): void;
+    SetGraphParameter?(pszParam: string, svArg: any): void;
     /**
      * Set the specific param on or off
      */
-    SetGraphParameterBool(szName: string, bValue: boolean): void;
+    SetGraphParameterBool?(szName: string, bValue: boolean): void;
     /**
-     * Pass the enum (int) value to the specified param
+     * Pass the enum ?(int) value to the specified param
      */
-    SetGraphParameterEnum(szName: string, nValue: number): void;
+    SetGraphParameterEnum?(szName: string, nValue: number): void;
     /**
      * Pass the float value to the specified param
      */
-    SetGraphParameterFloat(szName: string, flValue: number): void;
+    SetGraphParameterFloat?(szName: string, flValue: number): void;
     /**
      * Pass the int value to the specified param
      */
-    SetGraphParameterInt(szName: string, nValue: number): void;
+    SetGraphParameterInt?(szName: string, nValue: number): void;
     /**
      * Pass the vector value to the specified param in the graph
      */
-    SetGraphParameterVector(szName: string, vValue: Vec): void;
+    SetGraphParameterVector?(szName: string, vValue: Vec): void;
     /**
      * Set scale of entity's model.
      */
-    SetModelScale(flScale: number): void;
+    SetModelScale?(flScale: number): void;
     /**
      * Set the specified pose parameter to the specified value.
      */
-    SetPoseParameter(szName: string, fValue: number): number;
+    SetPoseParameter?(szName: string, fValue: number): number;
     /**
      * Sets the named procedural IK target.
      */
-    SetProceduralIKTarget(pChainName: string, pTargetName: string, vTargetPosition: Vec, qTargetRotation: QAngle): boolean;
+    SetProceduralIKTarget?(pChainName: string, pTargetName: string, vTargetPosition: Vec, qTargetRotation: QAngle): boolean;
     /**
      * Sets the named procedural IK targets weight: 0 = full animation, 1 = full IK.
      */
-    SetProceduralIKTargetWeight(pChainName: string, pTargetName: string, flWeight: number): boolean;
+    SetProceduralIKTargetWeight?(pChainName: string, pTargetName: string, flWeight: number): boolean;
     /**
      * Sets the active sequence by name, keeping the current cycle.
      */
-    SetSequence(pSequenceName: string): void;
+    SetSequence?(pSequenceName: string): void;
     /**
-     * Set skin (int).
+     * Set skin ?(int).
      */
-    SetSkin(iSkin: number): void;
+    SetSkin?(iSkin: number): void;
     /**
      * Stop the current animation by setting playback rate to 0.0.
      */
-    StopAnimation(): void;
+    StopAnimation?(): void;
 }
 /**
  * BaseCombatCharacter
  */
 declare interface CBaseCombatCharacter extends CBaseFlex {
     /**
-     * GetEquippedWeapons() : Returns an array of all the equipped weapons
+     * GetEquippedWeapons?() : Returns an array of all the equipped weapons
      */
-    GetEquippedWeapons(): any;
+    GetEquippedWeapons?(): any;
     /**
      * Get the combat character faction.
      */
-    GetFaction(): number;
+    GetFaction?(): number;
     /**
-     * GetWeaponCount() : Gets the number of weapons currently equipped
+     * GetWeaponCount?() : Gets the number of weapons currently equipped
      */
-    GetWeaponCount(): number;
+    GetWeaponCount?(): number;
     /**
-     * Returns the shoot position eyes (or hand in VR).
+     * Returns the shoot position eyes ?(or hand in VR).
      */
-    ShootPosition(nHand: number): Vec;
+    ShootPosition?(nHand: number): Vec;
 }
 /**
  * Root class of all server-side entities
  */
 declare interface CBaseEntity extends CEntityInstance {
     /**
-     * AddEffects( int ): Adds the render effect flag.
+     * AddEffects?( int ): Adds the render effect flag.
      */
-    AddEffects(nFlags: number): void;
+    AddEffects?(nFlags: number): void;
     /**
      * Apply a Velocity Impulse
      */
-    ApplyAbsVelocityImpulse(vecImpulse: Vec): void;
+    ApplyAbsVelocityImpulse?(vecImpulse: Vec): void;
     /**
      * Apply an Ang Velocity Impulse
      */
-    ApplyLocalAngularVelocityImpulse(angImpulse: Vec): void;
+    ApplyLocalAngularVelocityImpulse?(angImpulse: Vec): void;
     /**
      * Get float value for an entity attribute.
      */
-    Attribute_GetFloatValue(pName: string, flDefault: number): number;
+    Attribute_GetFloatValue?(pName: string, flDefault: number): number;
     /**
      * Get int value for an entity attribute.
      */
-    Attribute_GetIntValue(pName: string, nDefault: number): number;
+    Attribute_GetIntValue?(pName: string, nDefault: number): number;
     /**
      * Set float value for an entity attribute.
      */
-    Attribute_SetFloatValue(pName: string, flValue: number): void;
+    Attribute_SetFloatValue?(pName: string, flValue: number): void;
     /**
      * Set int value for an entity attribute.
      */
-    Attribute_SetIntValue(pName: string, nValue: number): void;
+    Attribute_SetIntValue?(pName: string, nValue: number): void;
     /**
      * Delete an entity attribute.
      */
-    DeleteAttribute(pName: string): void;
+    DeleteAttribute?(pName: string): void;
     /**
      * Plays a sound from this entity.
      */
-    EmitSound(soundname: string): void;
+    EmitSound?(soundname: string): void;
     /**
      * Plays/modifies a sound from this entity. changes sound if nPitch and/or flVol or flSoundTime is > 0.
      */
-    EmitSoundParams(soundname: string, nPitch: number, flVolume: number, flDelay: number): void;
+    EmitSoundParams?(soundname: string, nPitch: number, flVolume: number, flDelay: number): void;
     /**
      * Get the qangles that this entity is looking at.
      */
-    EyeAngles(): QAngle;
+    EyeAngles?(): QAngle;
     /**
      * Get vector to eye position - absolute coords.
      */
-    EyePosition(): Vec;
-    FirstMoveChild(): CBaseEntity;
+    EyePosition?(): Vec;
+    FirstMoveChild?(): CBaseEntity;
     /**
      * hEntity to follow, bool bBoneMerge
      */
-    FollowEntity(hEnt: CBaseEntity, bBoneMerge: boolean): void;
+    FollowEntity?(hEnt: CBaseEntity, bBoneMerge: boolean): void;
     /**
      * Returns a table containing the criteria that would be used for response queries on this entity. This is the same as the table that is passed to response rule script function callbacks.
      */
-    GatherCriteria(hResult: table): void;
-    GetAbsOrigin(): Vec;
-    GetAbsScale(): number;
-    GetAngles(): QAngle;
+    GatherCriteria?(hResult: table): void;
+    GetAbsOrigin?(): Vec;
+    GetAbsScale?(): number;
+    GetAngles?(): QAngle;
     /**
      * Get entity pitch, yaw, roll as a vector.
      */
-    GetAnglesAsVector(): Vec;
+    GetAnglesAsVector?(): Vec;
     /**
      * Get the local angular velocity - returns a vector of pitch,yaw,roll
      */
-    GetAngularVelocity(): Vec;
+    GetAngularVelocity?(): Vec;
     /**
      * Get Base? velocity.
      */
-    GetBaseVelocity(): Vec;
+    GetBaseVelocity?(): Vec;
     /**
      * Get a vector containing max bounds, centered on object.
      */
-    GetBoundingMaxs(): Vec;
+    GetBoundingMaxs?(): Vec;
     /**
      * Get a vector containing min bounds, centered on object.
      */
-    GetBoundingMins(): Vec;
+    GetBoundingMins?(): Vec;
     /**
      * Get a table containing the 'Mins' & 'Maxs' vector bounds, centered on object.
      */
-    GetBounds(): any;
+    GetBounds?(): any;
     /**
      * Get vector to center of object - absolute coords
      */
-    GetCenter(): Vec;
+    GetCenter?(): Vec;
     /**
      * Get the entities parented to this entity.
      */
-    GetChildren(): CBaseEntity[];
+    GetChildren?(): CBaseEntity[];
     /**
-     * GetContext( name ): looks up a context and returns it if available. May return string, float, or null (if the context isn't found).
+     * GetContext?( name ): looks up a context and returns it if available. May return string, float, or null ?(if the context isn't found).
      */
-    GetContext(name: string): any;
+    GetContext?(name: string): any;
     /**
      * Get the forward vector of the entity.
      */
-    GetForwardVector(): Vec;
+    GetForwardVector?(): Vec;
     /**
      * Get the health of this entity.
      */
-    GetHealth(): number;
+    GetHealth?(): number;
     /**
      * Get entity local pitch, yaw, roll as a QAngle
      */
-    GetLocalAngles(): QAngle;
+    GetLocalAngles?(): QAngle;
     /**
      * Maybe local angvel
      */
-    GetLocalAngularVelocity(): QAngle;
+    GetLocalAngularVelocity?(): QAngle;
     /**
      * Get entity local origin as a Vector
      */
-    GetLocalOrigin(): Vec;
-    GetLocalScale(): number;
+    GetLocalOrigin?(): Vec;
+    GetLocalScale?(): number;
     /**
      * Get Entity relative velocity.
      */
-    GetLocalVelocity(): Vec;
+    GetLocalVelocity?(): Vec;
     /**
-     * Get the mass of an entity. (returns 0 if it doesn't have a physics object)
+     * Get the mass of an entity. ?(returns 0 if it doesn't have a physics object)
      */
-    GetMass(): number;
+    GetMass?(): number;
     /**
      * Get the maximum health of this entity.
      */
-    GetMaxHealth(): number;
+    GetMaxHealth?(): number;
     /**
      * Returns the name of the model.
      */
-    GetModelName(): string;
+    GetModelName?(): string;
     /**
      * If in hierarchy, retrieves the entity's parent.
      */
-    GetMoveParent(): CBaseEntity;
-    GetOrigin(): Vec;
+    GetMoveParent?(): CBaseEntity;
+    GetOrigin?(): Vec;
     /**
      * Gets this entity's owner
      */
-    GetOwner(): CBaseEntity;
+    GetOwner?(): CBaseEntity;
     /**
      * Get the owner entity, if there is one
      */
-    GetOwnerEntity(): CBaseEntity;
+    GetOwnerEntity?(): CBaseEntity;
     /**
      * Get the right vector of the entity.
      */
-    GetRightVector(): Vec;
+    GetRightVector?(): Vec;
     /**
      * If in hierarchy, walks up the hierarchy to find the root parent.
      */
-    GetRootMoveParent(): CBaseEntity;
+    GetRootMoveParent?(): CBaseEntity;
     /**
      * Returns float duration of the sound. Takes soundname and optional actormodelname.
      */
-    GetSoundDuration(soundname: string, actormodel: string): number;
+    GetSoundDuration?(soundname: string, actormodel: string): number;
     /**
      * Get the team number of this entity.
      */
-    GetTeam(): DOTATeam_t;
+    GetTeam?(): DOTATeam_t;
     /**
      * Get the team number of this entity.
      */
-    GetTeamNumber(): DOTATeam_t;
+    GetTeamNumber?(): DOTATeam_t;
     /**
      * Get the up vector of the entity.
      */
-    GetUpVector(): Vec;
-    GetVelocity(): Vec;
+    GetUpVector?(): Vec;
+    GetVelocity?(): Vec;
     /**
      * See if an entity has a particular attribute.
      */
-    HasAttribute(pName: string): boolean;
+    HasAttribute?(pName: string): boolean;
     /**
      * Is this entity alive?
      */
-    IsAlive(): boolean;
+    IsAlive?(): boolean;
     /**
      * Is this entity an CAI_BaseNPC?
      */
-    IsNPC(): boolean;
+    IsNPC?(): boolean;
     /**
      * Is this entity a player?
      */
-    IsPlayer(): boolean;
-    Kill(): void;
-    NextMovePeer(): CBaseEntity;
+    IsPlayer?(): boolean;
+    Kill?(): void;
+    NextMovePeer?(): CBaseEntity;
     /**
      * Takes duration, value for a temporary override.
      */
-    OverrideFriction(duration: number, friction: number): void;
+    OverrideFriction?(duration: number, friction: number): void;
     /**
      * Precache a sound for later playing.
      */
-    PrecacheScriptSound(soundname: string): void;
+    PrecacheScriptSound?(soundname: string): void;
     /**
-     * RemoveEffects( int ): Removes the render effect flag.
+     * RemoveEffects?( int ): Removes the render effect flag.
      */
-    RemoveEffects(nFlags: number): void;
-    /**
-     * Set entity pitch, yaw, roll by component.
-     */
-    SetAbsAngles(fPitch: number, fYaw: number, fRoll: number): void;
-    SetAbsOrigin(origin: Vec): void;
-    SetAbsScale(flScale: number): void;
+    RemoveEffects?(nFlags: number): void;
     /**
      * Set entity pitch, yaw, roll by component.
      */
-    SetAngles(fPitch: number, fYaw: number, fRoll: number): void;
+    SetAbsAngles?(fPitch: number, fYaw: number, fRoll: number): void;
+    SetAbsOrigin?(origin: Vec): void;
+    SetAbsScale?(flScale: number): void;
+    /**
+     * Set entity pitch, yaw, roll by component.
+     */
+    SetAngles?(fPitch: number, fYaw: number, fRoll: number): void;
     /**
      * Set the local angular velocity - takes float pitch,yaw,roll velocities
      */
-    SetAngularVelocity(pitchVel: number, yawVel: number, rollVel: number): void;
+    SetAngularVelocity?(pitchVel: number, yawVel: number, rollVel: number): void;
     /**
      * Set the position of the constraint.
      */
-    SetConstraint(vPos: Vec): void;
+    SetConstraint?(vPos: Vec): void;
     /**
-     * SetContext( name , value, duration ): store any key/value pair in this entity's dialog contexts. Value must be a string. Will last for duration (set 0 to mean 'forever').
+     * SetContext?( name , value, duration ): store any key/value pair in this entity's dialog contexts. Value must be a string. Will last for duration ?(set 0 to mean 'forever').
      */
-    SetContext(pName: string, pValue: string, duration: number): void;
+    SetContext?(pName: string, pValue: string, duration: number): void;
     /**
-     * SetContextNum( name , value, duration ): store any key/value pair in this entity's dialog contexts. Value must be a number (int or float). Will last for duration (set 0 to mean 'forever').
+     * SetContextNum?( name , value, duration ): store any key/value pair in this entity's dialog contexts. Value must be a number ?(int or float). Will last for duration ?(set 0 to mean 'forever').
      */
-    SetContextNum(pName: string, fValue: number, duration: number): void;
+    SetContextNum?(pName: string, fValue: number, duration: number): void;
     /**
      * Set a think function on this entity.
      */
-    SetContextThink(pszContextName: string, hThinkFunc: () => void, flInterval: number): void;
+    SetContextThink?(pszContextName: string, hThinkFunc: () => void, flInterval: number): void;
     /**
      * Set the name of an entity.
      */
-    SetEntityName(pName: string): void;
+    SetEntityName?(pName: string): void;
     /**
      * Set the orientation of the entity to have this forward vector.
      */
-    SetForwardVector(v: Vec): void;
+    SetForwardVector?(v: Vec): void;
     /**
      * Set PLAYER friction, ignored for objects.
      */
-    SetFriction(flFriction: number): void;
+    SetFriction?(flFriction: number): void;
     /**
      * Set PLAYER gravity, ignored for objects.
      */
-    SetGravity(flGravity: number): void;
+    SetGravity?(flGravity: number): void;
     /**
      * Set the health of this entity.
      */
-    SetHealth(nHealth: number): void;
+    SetHealth?(nHealth: number): void;
     /**
      * Set entity local pitch, yaw, roll by component
      */
-    SetLocalAngles(fPitch: number, fYaw: number, fRoll: number): void;
+    SetLocalAngles?(fPitch: number, fYaw: number, fRoll: number): void;
     /**
      * Set entity local origin from a Vector
      */
-    SetLocalOrigin(origin: Vec): void;
-    SetLocalScale(flScale: number): void;
+    SetLocalOrigin?(origin: Vec): void;
+    SetLocalScale?(flScale: number): void;
     /**
-     * Set the mass of an entity. (does nothing if it doesn't have a physics object)
+     * Set the mass of an entity. ?(does nothing if it doesn't have a physics object)
      */
-    SetMass(flMass: number): void;
+    SetMass?(flMass: number): void;
     /**
      * Set the maximum health of this entity.
      */
-    SetMaxHealth(amt: number): void;
-    SetOrigin(v: Vec): void;
+    SetMaxHealth?(amt: number): void;
+    SetOrigin?(v: Vec): void;
     /**
      * Sets this entity's owner
      */
-    SetOwner(pOwner: CBaseEntity): void;
+    SetOwner?(pOwner: CBaseEntity): void;
     /**
      * Set the parent for this entity.
      */
-    SetParent(hParent: CBaseEntity, pAttachmentname: string): void;
-    SetTeam(iTeamNum: DOTATeam_t): void;
-    SetVelocity(vecVelocity: Vec): void;
+    SetParent?(hParent: CBaseEntity, pAttachmentname: string): void;
+    SetTeam?(iTeamNum: DOTATeam_t): void;
+    SetVelocity?(vecVelocity: Vec): void;
     /**
      * Stops a named sound playing from this entity.
      */
-    StopSound(soundname: string): void;
+    StopSound?(soundname: string): void;
     /**
-     * Apply damage to this entity. Use CreateDamageInfo() to create a damageinfo object.
+     * Apply damage to this entity. Use CreateDamageInfo?() to create a damageinfo object.
      */
-    TakeDamage(hInfo: table): number;
+    TakeDamage?(hInfo: table): number;
     /**
      * Fires off this entity's OnTrigger responses.
      */
-    Trigger(): void;
+    Trigger?(): void;
     /**
      * Validates the private script scope and creates it if one doesn't exist.
      */
-    ValidatePrivateScriptScope(): void;
+    ValidatePrivateScriptScope?(): void;
 }
 /**
  * Animated characters who have vertex flex capability.
  */
 declare interface CBaseFlex extends CBaseAnimating {
     /**
-     * Returns the instance of the oldest active scene entity (if any).
+     * Returns the instance of the oldest active scene entity ?(if any).
      */
-    GetCurrentScene(): CSceneEntity;
+    GetCurrentScene?(): CSceneEntity;
     /**
      * Returns the instance of the scene entity at the specified index.
      */
-    GetSceneByIndex(index: number): CSceneEntity;
+    GetSceneByIndex?(index: number): CSceneEntity;
     /**
-     * ( vcd file, delay ) - play specified vcd file
+     * ?( vcd file, delay ) - play specified vcd file
      */
-    ScriptPlayScene(pszScene: string, flDelay: number): number;
+    ScriptPlayScene?(pszScene: string, flDelay: number): number;
 }
 /**
  * Base entity with model
  */
 declare interface CBaseModelEntity extends CBaseEntity {
     /**
-     * GetMaterialGroupHash(): Get the material group hash of this entity.
+     * GetMaterialGroupHash?(): Get the material group hash of this entity.
      */
-    GetMaterialGroupHash(): number;
+    GetMaterialGroupHash?(): number;
     /**
-     * GetMaterialGroupMask(): Get the mesh group mask of this entity.
+     * GetMaterialGroupMask?(): Get the mesh group mask of this entity.
      */
-    GetMaterialGroupMask(): number;
+    GetMaterialGroupMask?(): number;
     /**
-     * GetRenderAlpha(): Get the alpha modulation of this entity.
+     * GetRenderAlpha?(): Get the alpha modulation of this entity.
      */
-    GetRenderAlpha(): number;
+    GetRenderAlpha?(): number;
     /**
-     * GetRenderColor(): Get the render color of the entity.
+     * GetRenderColor?(): Get the render color of the entity.
      */
-    GetRenderColor(): Vec;
+    GetRenderColor?(): Vec;
     /**
-     * SetLightGroup( string ): Sets the light group of the entity.
+     * SetLightGroup?( string ): Sets the light group of the entity.
      */
-    SetLightGroup(pLightGroup: string): void;
+    SetLightGroup?(pLightGroup: string): void;
     /**
-     * SetMaterialGroup( string ): Set the material group of this entity.
+     * SetMaterialGroup?( string ): Set the material group of this entity.
      */
-    SetMaterialGroup(pMaterialGroup: string): void;
+    SetMaterialGroup?(pMaterialGroup: string): void;
     /**
-     * SetMaterialGroupHash( uint32 ): Set the material group hash of this entity.
+     * SetMaterialGroupHash?( uint32 ): Set the material group hash of this entity.
      */
-    SetMaterialGroupHash(nHash: number): void;
+    SetMaterialGroupHash?(nHash: number): void;
     /**
-     * SetMaterialGroupMask( uint64 ): Set the mesh group mask of this entity.
+     * SetMaterialGroupMask?( uint64 ): Set the mesh group mask of this entity.
      */
-    SetMaterialGroupMask(nMeshGroupMask: number): void;
-    SetModel(pModelName: string): void;
+    SetMaterialGroupMask?(nMeshGroupMask: number): void;
+    SetModel?(pModelName: string): void;
     /**
-     * SetRenderAlpha( int ): Set the alpha modulation of this entity.
+     * SetRenderAlpha?( int ): Set the alpha modulation of this entity.
      */
-    SetRenderAlpha(nAlpha: number): void;
+    SetRenderAlpha?(nAlpha: number): void;
     /**
-     * SetRenderColor( r, g, b ): Sets the render color of the entity.
+     * SetRenderColor?( r, g, b ): Sets the render color of the entity.
      */
-    SetRenderColor(r: number, g: number, b: number): void;
+    SetRenderColor?(r: number, g: number, b: number): void;
     /**
-     * SetRenderMode( int ): Sets the render mode of the entity.
+     * SetRenderMode?( int ): Sets the render mode of the entity.
      */
-    SetRenderMode(nMode: number): void;
+    SetRenderMode?(nMode: number): void;
     /**
-     * SetSingleMeshGroup( string ): Set a single mesh group for this entity.
+     * SetSingleMeshGroup?( string ): Set a single mesh group for this entity.
      */
-    SetSingleMeshGroup(pMeshGroupName: string): void;
-    SetSize(mins: Vec, maxs: Vec): void;
+    SetSingleMeshGroup?(pMeshGroupName: string): void;
+    SetSize?(mins: Vec, maxs: Vec): void;
 }
 /**
  * The player entity.
@@ -526,47 +526,47 @@ declare interface CBasePlayer extends CBaseCombatCharacter {
     /**
      * Returns whether this player's chaperone bounds are visible.
      */
-    AreChaperoneBoundsVisible(): boolean;
+    AreChaperoneBoundsVisible?(): boolean;
     /**
      * Returns the HMD anchor entity for this player if it exists.
      */
-    GetHMDAnchor(): any;
+    GetHMDAnchor?(): any;
     /**
      * Returns the HMD Avatar entity for this player if it exists.
      */
-    GetHMDAvatar(): any;
+    GetHMDAvatar?(): any;
     /**
      * Returns the Vector position of the point you ask for. Pass 0-3 to get the four points.
      */
-    GetPlayArea(nPoint: number): Vec;
+    GetPlayArea?(nPoint: number): Vec;
     /**
      * Returns the player's user id.
      */
-    GetUserID(): number;
+    GetUserID?(): number;
     /**
      * Returns the type of controller being used while in VR.
      */
-    GetVRControllerType(): any;
+    GetVRControllerType?(): any;
     /**
      * Returns true if the player is in noclip mode.
      */
-    IsNoclipping(): boolean;
+    IsNoclipping?(): boolean;
     /**
      * Returns true if the use key is pressed.
      */
-    IsUsePressed(): boolean;
+    IsUsePressed?(): boolean;
     /**
      * Returns true if the controller button is pressed.
      */
-    IsVRControllerButtonPressed(nButton: number): boolean;
+    IsVRControllerButtonPressed?(nButton: number): boolean;
     /**
      * Returns true if the SteamVR dashboard is showing for this player.
      */
-    IsVRDashboardShowing(): boolean;
+    IsVRDashboardShowing?(): boolean;
     /**
      * Quit the game from script.
      */
-    Quit(): void;
+    Quit?(): void;
 }
 /**
  * Base Trigger for all the triggers
@@ -575,15 +575,15 @@ declare interface CBaseTrigger extends CBaseEntity {
     /**
      * Disable's the trigger
      */
-    Disable(): void;
+    Disable?(): void;
     /**
      * Enable the trigger
      */
-    Enable(): void;
+    Enable?(): void;
     /**
      * Checks whether the passed entity is touching the trigger.
      */
-    IsTouching(hEnt: CBaseEntity): boolean;
+    IsTouching?(hEnt: CBaseEntity): boolean;
 }
 /**
  * Body Component Scriptdesc
@@ -592,64 +592,64 @@ declare interface CBodyComponent {
     /**
      * Apply an impulse at a worldspace position to the physics
      */
-    AddImpulseAtPosition(arg1: Vec, arg2: Vec): void;
+    AddImpulseAtPosition?(arg1: Vec, arg2: Vec): void;
     /**
      * Add linear and angular velocity to the physics object
      */
-    AddVelocity(arg1: Vec, arg2: Vec): void;
+    AddVelocity?(arg1: Vec, arg2: Vec): void;
     /**
      * Detach from its parent
      */
-    DetachFromParent(): void;
+    DetachFromParent?(): void;
     /**
      * Returns the active sequence
      */
-    GetSequence(): any;
+    GetSequence?(): any;
     /**
      * Is attached to parent
      */
-    IsAttachedToParent(): boolean;
+    IsAttachedToParent?(): boolean;
     /**
      * Returns a sequence id given a name
      */
-    LookupSequence(arg1: string): any;
+    LookupSequence?(arg1: string): any;
     /**
      * Returns the duration in seconds of the specified sequence
      */
-    SequenceDuration(arg1: string): number;
-    SetAngularVelocity(arg1: Vec): void;
+    SequenceDuration?(arg1: string): number;
+    SetAngularVelocity?(arg1: Vec): void;
     /**
      * Pass string for the animation to play on this model
      */
-    SetAnimation(arg1: string): void;
-    SetBodyGroup(arg1: string): void;
-    SetMaterialGroup(arg1: string): void;
-    SetVelocity(arg1: Vec): void;
+    SetAnimation?(arg1: string): void;
+    SetBodyGroup?(arg1: string): void;
+    SetMaterialGroup?(arg1: string): void;
+    SetVelocity?(arg1: Vec): void;
 }
 /**
  * !Custom game event manager
  */
 declare interface CCustomGameEventManager {
     /**
-     * ( string EventName, func CallbackFunction ) - Register a callback to be called when a particular custom event arrives. Returns a listener ID that can be used to unregister later.
+     * ?( string EventName, func CallbackFunction ) - Register a callback to be called when a particular custom event arrives. Returns a listener ID that can be used to unregister later.
      */
-    RegisterListener(eventName: string, handler: (userID: number, event: table) => void): CCustomGameEventListener;
+    RegisterListener?(eventName: string, handler: (userID: number, event: table) => void): CCustomGameEventListener;
     /**
-     * ( string EventName, table EventData )
+     * ?( string EventName, table EventData )
      */
-    Send_ServerToAllClients(eventName: string, eventData: table): void;
+    Send_ServerToAllClients?(eventName: string, eventData: table): void;
     /**
-     * ( Entity Player, string EventName, table EventData )
+     * ?( Entity Player, string EventName, table EventData )
      */
-    Send_ServerToPlayer(player: CDOTAPlayer, eventName: string, eventData: table): void;
+    Send_ServerToPlayer?(player: CDOTAPlayer, eventName: string, eventData: table): void;
     /**
-     * ( int TeamNumber, string EventName, table EventData )
+     * ?( int TeamNumber, string EventName, table EventData )
      */
-    Send_ServerToTeam(team: DOTATeam_t, eventName: string, eventData: table): void;
+    Send_ServerToTeam?(team: DOTATeam_t, eventName: string, eventData: table): void;
     /**
-     * ( int ListnerID ) - Unregister a specific listener
+     * ?( int ListnerID ) - Unregister a specific listener
      */
-    UnregisterListener(listener: CCustomGameEventListener): void;
+    UnregisterListener?(listener: CCustomGameEventListener): void;
 }
 declare const CustomGameEventManager: CCustomGameEventManager;
 
@@ -658,13 +658,13 @@ declare const CustomGameEventManager: CCustomGameEventManager;
  */
 declare interface CCustomNetTableManager {
     /**
-     * ( string TableName, string KeyName )
+     * ?( string TableName, string KeyName )
      */
-    GetTableValue(arg1: string, arg2: string): table;
+    GetTableValue?(arg1: string, arg2: string): table;
     /**
-     * ( string TableName, string KeyName, script_table Value )
+     * ?( string TableName, string KeyName, script_table Value )
      */
-    SetTableValue(arg1: string, arg2: string, arg3: table): boolean;
+    SetTableValue?(arg1: string, arg2: string, arg3: table): boolean;
 }
 declare const CustomNetTables: CCustomNetTableManager;
 
@@ -672,115 +672,115 @@ declare const CustomNetTables: CCustomNetTableManager;
  * An ability
  */
 declare interface CDOTABaseAbility extends CBaseEntity {
-    CanAbilityBeUpgraded(): boolean;
-    CastAbility(): boolean;
-    ContinueCasting(): boolean;
-    CreateVisibilityNode(vLocation: Vec, fRadius: number, fDuration: number): void;
-    DecrementModifierRefCount(): void;
-    EndChannel(bInterrupted: boolean): void;
+    CanAbilityBeUpgraded?(): boolean;
+    CastAbility?(): boolean;
+    ContinueCasting?(): boolean;
+    CreateVisibilityNode?(vLocation: Vec, fRadius: number, fDuration: number): void;
+    DecrementModifierRefCount?(): void;
+    EndChannel?(bInterrupted: boolean): void;
     /**
      * Clear the cooldown remaining on this ability.
      */
-    EndCooldown(): void;
-    GetAbilityDamage(): number;
-    GetAbilityDamageType(): DAMAGE_TYPES;
-    GetAbilityIndex(): number;
+    EndCooldown?(): void;
+    GetAbilityDamage?(): number;
+    GetAbilityDamageType?(): DAMAGE_TYPES;
+    GetAbilityIndex?(): number;
     /**
      * Gets the key values definition for this ability.
      */
-    GetAbilityKeyValues(): table;
+    GetAbilityKeyValues?(): table;
     /**
      * Returns the name of this ability.
      */
-    GetAbilityName(): string;
-    GetAbilityTargetFlags(): DOTA_UNIT_TARGET_FLAGS;
-    GetAbilityTargetTeam(): DOTA_UNIT_TARGET_TEAM;
-    GetAbilityTargetType(): DOTA_UNIT_TARGET_TYPE;
-    GetAbilityType(): number;
-    GetAnimationIgnoresModelScale(): boolean;
+    GetAbilityName?(): string;
+    GetAbilityTargetFlags?(): DOTA_UNIT_TARGET_FLAGS;
+    GetAbilityTargetTeam?(): DOTA_UNIT_TARGET_TEAM;
+    GetAbilityTargetType?(): DOTA_UNIT_TARGET_TYPE;
+    GetAbilityType?(): number;
+    GetAnimationIgnoresModelScale?(): boolean;
     GetAssociatedPrimaryAbilities?(): string;
     GetAssociatedSecondaryAbilities?(): string;
-    GetAutoCastState(): boolean;
-    GetBackswingTime(): number;
+    GetAutoCastState?(): boolean;
+    GetBackswingTime?(): number;
     GetBehavior?(): number;
     GetCastPoint?(): number;
     /**
      * Gets the cast range of the ability.
      */
     GetCastRange?(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
-    GetCaster(): CDOTA_BaseNPC;
+    GetCaster?(): CDOTA_BaseNPC;
     GetChannelStartTime?(): number;
     GetChannelTime?(): number;
     GetChannelledManaCostPerSecond?(iLevel: number): number;
-    GetCloneSource(): CDOTA_BaseNPC;
+    GetCloneSource?(): CDOTA_BaseNPC;
     GetConceptRecipientType?(): number;
     /**
      * Get the cooldown duration for this ability at a given level, not the amount of cooldown actually left.
      */
     GetCooldown?(iLevel: number): number;
-    GetCooldownTime(): number;
-    GetCooldownTimeRemaining(): number;
-    GetCursorPosition(): Vec;
-    GetCursorTarget(): CDOTA_BaseNPC;
-    GetCursorTargetingNothing(): boolean;
+    GetCooldownTime?(): number;
+    GetCooldownTimeRemaining?(): number;
+    GetCursorPosition?(): Vec;
+    GetCursorTarget?(): CDOTA_BaseNPC;
+    GetCursorTargetingNothing?(): boolean;
     GetDuration?(): number;
     GetGoldCost?(iLevel: number): number;
-    GetGoldCostForUpgrade(iLevel: number): number;
-    GetHeroLevelRequiredToUpgrade(): number;
+    GetGoldCostForUpgrade?(iLevel: number): number;
+    GetHeroLevelRequiredToUpgrade?(): number;
     GetIntrinsicModifierName?(): string;
     /**
      * Get the current level of the ability.
      */
-    GetLevel(): number;
-    GetLevelSpecialValueFor(valueName: string, nLevel: number): number;
+    GetLevel?(): number;
+    GetLevelSpecialValueFor?(valueName: string, nLevel: number): number;
     GetManaCost?(iLevel: number): number;
-    GetMaxLevel(): number;
-    GetModifierValue(): number;
-    GetModifierValueBonus(): number;
+    GetMaxLevel?(): number;
+    GetModifierValue?(): number;
+    GetModifierValueBonus?(): number;
     GetPlaybackRateOverride?(): number;
-    GetSharedCooldownName(): string;
+    GetSharedCooldownName?(): string;
     /**
      * Gets a value from this ability's special value block for its current level.
      */
-    GetSpecialValueFor(valueName: string): number;
-    GetStolenActivityModifier(): string;
-    GetToggleState(): boolean;
-    HeroXPChange(flXP: number): boolean;
-    IncrementModifierRefCount(): void;
-    IsActivated(): boolean;
-    IsAttributeBonus(): boolean;
+    GetSpecialValueFor?(valueName: string): number;
+    GetStolenActivityModifier?(): string;
+    GetToggleState?(): boolean;
+    HeroXPChange?(flXP: number): boolean;
+    IncrementModifierRefCount?(): void;
+    IsActivated?(): boolean;
+    IsAttributeBonus?(): boolean;
     /**
      * Returns whether the ability is currently channeling.
      */
     IsChanneling?(): boolean;
-    IsCooldownReady(): boolean;
-    IsCosmetic(hEntity: CBaseEntity): boolean;
+    IsCooldownReady?(): boolean;
+    IsCosmetic?(hEntity: CBaseEntity): boolean;
     /**
      * Returns whether the ability can be cast.
      */
-    IsFullyCastable(): boolean;
+    IsFullyCastable?(): boolean;
     IsHidden?(): boolean;
     IsHiddenWhenStolen?(): boolean;
     /**
      * Returns whether the ability is currently casting.
      */
-    IsInAbilityPhase(): boolean;
-    IsItem(): boolean;
-    IsOwnersGoldEnough(nIssuerPlayerID: number): boolean;
-    IsOwnersGoldEnoughForUpgrade(): boolean;
-    IsOwnersManaEnough(): boolean;
+    IsInAbilityPhase?(): boolean;
+    IsItem?(): boolean;
+    IsOwnersGoldEnough?(nIssuerPlayerID: number): boolean;
+    IsOwnersGoldEnoughForUpgrade?(): boolean;
+    IsOwnersManaEnough?(): boolean;
     IsPassive?(): boolean;
     IsRefreshable?(): boolean;
-    IsSharedWithTeammates(): boolean;
+    IsSharedWithTeammates?(): boolean;
     IsStealable?(): boolean;
-    IsStolen(): boolean;
+    IsStolen?(): boolean;
     IsToggle?(): boolean;
-    IsTrained(): boolean;
+    IsTrained?(): boolean;
     /**
      * Mark the ability button for this ability as needing a refresh.
      */
-    MarkAbilityButtonDirty(): void;
-    NumModifiersUsingAbility(): number;
+    MarkAbilityButtonDirty?(): void;
+    NumModifiersUsingAbility?(): number;
     OnAbilityPhaseInterrupted?(): void;
     OnAbilityPhaseStart?(): boolean;
     OnAbilityPinged?(nPlayerID: number): void;
@@ -793,36 +793,36 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     OnSpellStart?(): void;
     OnToggle?(): void;
     OnUpgrade?(): void;
-    PayGoldCost(): void;
-    PayGoldCostForUpgrade(): void;
-    PayManaCost(): void;
-    PlaysDefaultAnimWhenStolen(): boolean;
+    PayGoldCost?(): void;
+    PayGoldCostForUpgrade?(): void;
+    PayManaCost?(): void;
+    PlaysDefaultAnimWhenStolen?(): boolean;
     ProcsMagicStick?(): boolean;
-    RefCountsModifiers(): boolean;
-    RefreshCharges(): void;
-    RefundManaCost(): void;
-    ResetToggleOnRespawn(): boolean;
-    SetAbilityIndex(iIndex: number): void;
-    SetActivated(bActivated: boolean): void;
-    SetChanneling(bChanneling: boolean): void;
-    SetFrozenCooldown(bFrozenCooldown: boolean): void;
-    SetHidden(bHidden: boolean): void;
-    SetInAbilityPhase(bInAbilityPhase: boolean): void;
+    RefCountsModifiers?(): boolean;
+    RefreshCharges?(): void;
+    RefundManaCost?(): void;
+    ResetToggleOnRespawn?(): boolean;
+    SetAbilityIndex?(iIndex: number): void;
+    SetActivated?(bActivated: boolean): void;
+    SetChanneling?(bChanneling: boolean): void;
+    SetFrozenCooldown?(bFrozenCooldown: boolean): void;
+    SetHidden?(bHidden: boolean): void;
+    SetInAbilityPhase?(bInAbilityPhase: boolean): void;
     /**
      * Sets the level of this ability.
      */
-    SetLevel(iLevel: number): void;
-    SetOverrideCastPoint(flCastPoint: number): void;
-    SetRefCountsModifiers(bRefCounts: boolean): void;
-    SetStolen(bStolen: boolean): void;
-    ShouldUseResources(): boolean;
-    SpeakAbilityConcept(iConcept: number): void;
+    SetLevel?(iLevel: number): void;
+    SetOverrideCastPoint?(flCastPoint: number): void;
+    SetRefCountsModifiers?(bRefCounts: boolean): void;
+    SetStolen?(bStolen: boolean): void;
+    ShouldUseResources?(): boolean;
+    SpeakAbilityConcept?(iConcept: number): void;
     SpeakTrigger?(): any;
-    StartCooldown(flCooldown: number): void;
-    ToggleAbility(): void;
-    ToggleAutoCast(): void;
-    UpgradeAbility(bSupressSpeech: boolean): void;
-    UseResources(bMana: boolean, bGold: boolean, bCooldown: boolean): void;
+    StartCooldown?(flCooldown: number): void;
+    ToggleAbility?(): void;
+    ToggleAutoCast?(): void;
+    UpgradeAbility?(bSupressSpeech: boolean): void;
+    UseResources?(bMana: boolean, bGold: boolean, bCooldown: boolean): void
 }
 /**
  * Base game mode class
@@ -831,379 +831,379 @@ declare interface CDOTABaseGameMode extends CBaseEntity {
     /**
      * Get if weather effects are disabled on the client.
      */
-    AreWeatherEffectsDisabled(): boolean;
+    AreWeatherEffectsDisabled?(): boolean;
     /**
      * Clear the script filter that controls bounty rune pickup behavior.
      */
-    ClearBountyRunePickupFilter(): void;
+    ClearBountyRunePickupFilter?(): void;
     /**
      * Clear the script filter that controls how a unit takes damage.
      */
-    ClearDamageFilter(): void;
+    ClearDamageFilter?(): void;
     /**
      * Clear the script filter that controls when a unit picks up an item.
      */
-    ClearExecuteOrderFilter(): void;
+    ClearExecuteOrderFilter?(): void;
     /**
      * Clear the script filter that controls how a unit heals.
      */
-    ClearHealingFilter(): void;
+    ClearHealingFilter?(): void;
     /**
      * Clear the script filter that controls the item added to inventory filter.
      */
-    ClearItemAddedToInventoryFilter(): void;
+    ClearItemAddedToInventoryFilter?(): void;
     /**
      * Clear the script filter that controls the modifier filter.
      */
-    ClearModifierGainedFilter(): void;
+    ClearModifierGainedFilter?(): void;
     /**
      * Clear the script filter that controls how hero experience is modified.
      */
-    ClearModifyExperienceFilter(): void;
+    ClearModifyExperienceFilter?(): void;
     /**
      * Clear the script filter that controls how hero gold is modified.
      */
-    ClearModifyGoldFilter(): void;
+    ClearModifyGoldFilter?(): void;
     /**
      * Clear the script filter that controls what rune spawns.
      */
-    ClearRuneSpawnFilter(): void;
+    ClearRuneSpawnFilter?(): void;
     /**
      * Clear the script filter that controls when tracking projectiles are launched.
      */
-    ClearTrackingProjectileFilter(): void;
+    ClearTrackingProjectileFilter?(): void;
     /**
      * Use to disable hud flip for this mod
      */
-    DisableHudFlip(bDisable: boolean): void;
+    DisableHudFlip?(bDisable: boolean): void;
     /**
      * Show the player hero's inventory in the HUD, regardless of what unit is selected.
      */
-    GetAlwaysShowPlayerInventory(): boolean;
+    GetAlwaysShowPlayerInventory?(): boolean;
     /**
      * Get whether player names are always shown, regardless of client setting.
      */
-    GetAlwaysShowPlayerNames(): boolean;
+    GetAlwaysShowPlayerNames?(): boolean;
     /**
      * Are in-game announcers disabled?
      */
-    GetAnnouncerDisabled(): boolean;
+    GetAnnouncerDisabled?(): boolean;
     /**
      * Set a different camera distance; dota default is 1134.
      */
-    GetCameraDistanceOverride(): number;
+    GetCameraDistanceOverride?(): number;
     /**
      * Get current derived stat value constant.
      */
-    GetCustomAttributeDerivedStatValue(nDerivedStatType: AttributeDerivedStats): number;
+    GetCustomAttributeDerivedStatValue?(nDerivedStatType: AttributeDerivedStats): number;
     /**
      * Turns on capability to define custom buyback cooldowns.
      */
-    GetCustomBuybackCooldownEnabled(): boolean;
+    GetCustomBuybackCooldownEnabled?(): boolean;
     /**
      * Turns on capability to define custom buyback costs.
      */
-    GetCustomBuybackCostEnabled(): boolean;
+    GetCustomBuybackCostEnabled?(): boolean;
     /**
-     * Allows definition of the max level heroes can achieve (default is 25).
+     * Allows definition of the max level heroes can achieve ?(default is 25).
      */
-    GetCustomHeroMaxLevel(): number;
+    GetCustomHeroMaxLevel?(): number;
     /**
      * Gets the fixed respawn time.
      */
-    GetFixedRespawnTime(): number;
+    GetFixedRespawnTime?(): number;
     /**
      * Turn the fog of war on or off.
      */
-    GetFogOfWarDisabled(): boolean;
+    GetFogOfWarDisabled?(): boolean;
     /**
      * Turn the sound when gold is acquired off/on.
      */
-    GetGoldSoundDisabled(): boolean;
+    GetGoldSoundDisabled?(): boolean;
     /**
      * Returns the HUD element visibility.
      */
-    GetHUDVisible(iElement: number): boolean;
+    GetHUDVisible?(iElement: number): boolean;
     /**
      * Get the maximum attack speed for units.
      */
-    GetMaximumAttackSpeed(): number;
+    GetMaximumAttackSpeed?(): number;
     /**
      * Get the minimum attack speed for units.
      */
-    GetMinimumAttackSpeed(): number;
+    GetMinimumAttackSpeed?(): number;
     /**
      * Turn the panel for showing recommended items at the shop off/on.
      */
-    GetRecommendedItemsDisabled(): boolean;
+    GetRecommendedItemsDisabled?(): boolean;
     /**
      * Returns the scale applied to non-fixed respawn times.
      */
-    GetRespawnTimeScale(): number;
+    GetRespawnTimeScale?(): number;
     /**
      * Turn purchasing items to the stash off/on. If purchasing to the stash is off the player must be at a shop to purchase items.
      */
-    GetStashPurchasingDisabled(): boolean;
+    GetStashPurchasingDisabled?(): boolean;
     /**
      * Hide the sticky item in the quickbuy.
      */
-    GetStickyItemDisabled(): boolean;
+    GetStickyItemDisabled?(): boolean;
     /**
      * Override the values of the team values on the top game bar.
      */
-    GetTopBarTeamValuesOverride(): boolean;
+    GetTopBarTeamValuesOverride?(): boolean;
     /**
      * Turning on/off the team values on the top game bar.
      */
-    GetTopBarTeamValuesVisible(): boolean;
+    GetTopBarTeamValuesVisible?(): boolean;
     /**
      * Gets whether tower backdoor protection is enabled or not.
      */
-    GetTowerBackdoorProtectionEnabled(): boolean;
+    GetTowerBackdoorProtectionEnabled?(): boolean;
     /**
      * Are custom-defined XP values for hero level ups in use?
      */
-    GetUseCustomHeroLevels(): boolean;
+    GetUseCustomHeroLevels?(): boolean;
     /**
      * Enables or disables buyback completely.
      */
-    IsBuybackEnabled(): boolean;
+    IsBuybackEnabled?(): boolean;
     /**
      * Is the day/night cycle disabled?
      */
-    IsDaynightCycleDisabled(): boolean;
+    IsDaynightCycleDisabled?(): boolean;
     /**
-     * Set a filter function to control the tuning values that abilities use. (Modify the table and Return true to use new values, return false to use the old values)
+     * Set a filter function to control the tuning values that abilities use. ?(Modify the table and Return true to use new values, return false to use the old values)
      */
-    SetAbilityTuningValueFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetAbilityTuningValueFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
      * Show the player hero's inventory in the HUD, regardless of what unit is selected.
      */
-    SetAlwaysShowPlayerInventory(bAlwaysShow: boolean): void;
+    SetAlwaysShowPlayerInventory?(bAlwaysShow: boolean): void;
     /**
      * Set whether player names are always shown, regardless of client setting.
      */
-    SetAlwaysShowPlayerNames(bEnabled: boolean): void;
+    SetAlwaysShowPlayerNames?(bEnabled: boolean): void;
     /**
      * Mutes the in-game announcer.
      */
-    SetAnnouncerDisabled(bDisabled: boolean): void;
+    SetAnnouncerDisabled?(bDisabled: boolean): void;
     /**
      * Enables/Disables bots in custom games. Note: this will only work with default heroes in the dota map.
      */
-    SetBotThinkingEnabled(bEnabled: boolean): void;
+    SetBotThinkingEnabled?(bEnabled: boolean): void;
     /**
      * Set if the bots should try their best to push with a human player.
      */
-    SetBotsAlwaysPushWithHuman(bAlwaysPush: boolean): void;
+    SetBotsAlwaysPushWithHuman?(bAlwaysPush: boolean): void;
     /**
      * Set if bots should enable their late game behavior.
      */
-    SetBotsInLateGame(bLateGame: boolean): void;
+    SetBotsInLateGame?(bLateGame: boolean): void;
     /**
-     * Set the max tier of tower that bots want to push. (-1 to disable)
+     * Set the max tier of tower that bots want to push. ?(-1 to disable)
      */
-    SetBotsMaxPushTier(nMaxTier: number): void;
+    SetBotsMaxPushTier?(nMaxTier: number): void;
     /**
-     * Set a filter function to control the behavior when a bounty rune is picked up. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control the behavior when a bounty rune is picked up. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetBountyRunePickupFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetBountyRunePickupFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
      * Enables or disables buyback completely.
      */
-    SetBuybackEnabled(bEnabled: boolean): void;
+    SetBuybackEnabled?(bEnabled: boolean): void;
     /**
      * Set a different camera distance; dota default is 1134.
      */
-    SetCameraDistanceOverride(flCameraDistanceOverride: number): void;
+    SetCameraDistanceOverride?(flCameraDistanceOverride: number): void;
     /**
      * Set a different camera smooth count; dota default is 8.
      */
-    SetCameraSmoothCountOverride(nSmoothCount: number): void;
+    SetCameraSmoothCountOverride?(nSmoothCount: number): void;
     /**
-     * Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue.
+     * Modify derived stat value constants. ?( AttributeDerivedStat eStatType, float flNewValue.
      */
-    SetCustomAttributeDerivedStatValue(nStatType: AttributeDerivedStats, flNewValue: number): void;
+    SetCustomAttributeDerivedStatValue?(nStatType: AttributeDerivedStats, flNewValue: number): void;
     /**
      * Turns on capability to define custom buyback cooldowns.
      */
-    SetCustomBuybackCooldownEnabled(bEnabled: boolean): void;
+    SetCustomBuybackCooldownEnabled?(bEnabled: boolean): void;
     /**
      * Turns on capability to define custom buyback costs.
      */
-    SetCustomBuybackCostEnabled(bEnabled: boolean): void;
+    SetCustomBuybackCostEnabled?(bEnabled: boolean): void;
     /**
      * Force all players to use the specified hero and disable the normal hero selection process. Must be used before hero selection.
      */
-    SetCustomGameForceHero(pHeroName: string): void;
+    SetCustomGameForceHero?(pHeroName: string): void;
     /**
-     * Allows definition of the max level heroes can achieve (default is 25).
+     * Allows definition of the max level heroes can achieve ?(default is 25).
      */
-    SetCustomHeroMaxLevel(iMaxLevel: number): void;
+    SetCustomHeroMaxLevel?(iMaxLevel: number): void;
     /**
      * Set the effect used as a custom weather effect, when units are on non-default terrain, in this mode.
      */
-    SetCustomTerrainWeatherEffect(pszEffectName: string): void;
+    SetCustomTerrainWeatherEffect?(pszEffectName: string): void;
     /**
      * Allows definition of a table of hero XP values.
      */
-    SetCustomXPRequiredToReachNextLevel(hTable: table): void;
+    SetCustomXPRequiredToReachNextLevel?(hTable: table): void;
     /**
-     * Set a filter function to control the behavior when a unit takes damage. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control the behavior when a unit takes damage. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetDamageFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetDamageFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
      * Enable or disable the day/night cycle.
      */
-    SetDaynightCycleDisabled(bDisable: boolean): void;
+    SetDaynightCycleDisabled?(bDisable: boolean): void;
     /**
      * Specify whether the full screen death overlay effect plays when the selected hero dies.
      */
-    SetDeathOverlayDisabled(bDisabled: boolean): void;
+    SetDeathOverlayDisabled?(bDisabled: boolean): void;
     /**
-     * Set a filter function to control the behavior when a unit picks up an item. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control the behavior when a unit picks up an item. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetExecuteOrderFilter(filterFunc: (order: table) => boolean, hContext: object): void;
+    SetExecuteOrderFilter?(filterFunc: (order: table) => boolean, hContext: object): void;
     /**
      * Set a fixed delay for all players to respawn after.
      */
-    SetFixedRespawnTime(flFixedRespawnTime: number): void;
+    SetFixedRespawnTime?(flFixedRespawnTime: number): void;
     /**
      * Turn the fog of war on or off.
      */
-    SetFogOfWarDisabled(bDisabled: boolean): void;
+    SetFogOfWarDisabled?(bDisabled: boolean): void;
     /**
-     * Set the constant rate that the fountain will regen mana. (-1 for default)
+     * Set the constant rate that the fountain will regen mana. ?(-1 for default)
      */
-    SetFountainConstantManaRegen(flConstantManaRegen: number): void;
+    SetFountainConstantManaRegen?(flConstantManaRegen: number): void;
     /**
-     * Set the percentage rate that the fountain will regen health. (-1 for default)
+     * Set the percentage rate that the fountain will regen health. ?(-1 for default)
      */
-    SetFountainPercentageHealthRegen(flPercentageHealthRegen: number): void;
+    SetFountainPercentageHealthRegen?(flPercentageHealthRegen: number): void;
     /**
-     * Set the percentage rate that the fountain will regen mana. (-1 for default)
+     * Set the percentage rate that the fountain will regen mana. ?(-1 for default)
      */
-    SetFountainPercentageManaRegen(flPercentageManaRegen: number): void;
+    SetFountainPercentageManaRegen?(flPercentageManaRegen: number): void;
     /**
      * Allows clicks on friendly buildings to be handled normally.
      */
-    SetFriendlyBuildingMoveToEnabled(bEnabled: boolean): void;
+    SetFriendlyBuildingMoveToEnabled?(bEnabled: boolean): void;
     /**
      * Turn the sound when gold is acquired off/on.
      */
-    SetGoldSoundDisabled(bDisabled: boolean): void;
+    SetGoldSoundDisabled?(bDisabled: boolean): void;
     /**
      * Set the HUD element visibility.
      */
-    SetHUDVisible(iHUDElement: DOTAHUDVisibility_t, bVisible: boolean): void;
+    SetHUDVisible?(iHUDElement: DOTAHUDVisibility_t, bVisible: boolean): void;
     /**
-     * Set a filter function to control the behavior when a unit heals. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control the behavior when a unit heals. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetHealingFilter(hFunction: (event: table) => boolean, hContext: object): void;
+    SetHealingFilter?(hFunction: (event: table) => boolean, hContext: object): void;
     /**
      * Specify whether the default combat events will show in the HUD.
      */
-    SetHudCombatEventsDisabled(bDisabled: boolean): void;
+    SetHudCombatEventsDisabled?(bDisabled: boolean): void;
     /**
      * Set a filter function to control what happens to items that are added to an inventory, return false to cancel the event
      */
-    SetItemAddedToInventoryFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetItemAddedToInventoryFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
      * Mutes the in-game killing spree announcer.
      */
-    SetKillingSpreeAnnouncerDisabled(bDisabled: boolean): void;
+    SetKillingSpreeAnnouncerDisabled?(bDisabled: boolean): void;
     /**
      * Use to disable gold loss on death.
      */
-    SetLoseGoldOnDeath(bEnabled: boolean): void;
+    SetLoseGoldOnDeath?(bEnabled: boolean): void;
     /**
      * Set the maximum attack speed for units.
      */
-    SetMaximumAttackSpeed(nMaxSpeed: number): void;
+    SetMaximumAttackSpeed?(nMaxSpeed: number): void;
     /**
      * Set the minimum attack speed for units.
      */
-    SetMinimumAttackSpeed(nMinSpeed: number): void;
+    SetMinimumAttackSpeed?(nMinSpeed: number): void;
     /**
      * Set a filter function to control modifiers that are gained, return false to destroy modifier.
      */
-    SetModifierGainedFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetModifierGainedFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
-     * Set a filter function to control the behavior when a hero's experience is modified. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control the behavior when a hero's experience is modified. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetModifyExperienceFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetModifyExperienceFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
-     * Set a filter function to control the behavior when a hero's gold is modified. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control the behavior when a hero's gold is modified. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetModifyGoldFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetModifyGoldFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
      * Set an override for the default selection entity, instead of each player's hero.
      */
-    SetOverrideSelectionEntity(hOverrideEntity: CDOTA_BaseNPC): void;
+    SetOverrideSelectionEntity?(hOverrideEntity: CDOTA_BaseNPC): void;
     /**
      * Turn the panel for showing recommended items at the shop off/on.
      */
-    SetRecommendedItemsDisabled(bDisabled: boolean): void;
+    SetRecommendedItemsDisabled?(bDisabled: boolean): void;
     /**
      * Make it so illusions are immediately removed upon death, rather than sticking around for a few seconds.
      */
-    SetRemoveIllusionsOnDeath(bRemove: boolean): void;
+    SetRemoveIllusionsOnDeath?(bRemove: boolean): void;
     /**
      * Sets the scale applied to non-fixed respawn times. 1 = default DOTA respawn calculations.
      */
-    SetRespawnTimeScale(flValue: number): void;
+    SetRespawnTimeScale?(flValue: number): void;
     /**
      * Set if a given type of rune is enabled.
      */
-    SetRuneEnabled(nRune: DOTA_RUNES, bEnabled: boolean): void;
+    SetRuneEnabled?(nRune: DOTA_RUNES, bEnabled: boolean): void;
     /**
-     * Set a filter function to control what rune spawns. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control what rune spawns. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetRuneSpawnFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetRuneSpawnFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
      * Enable/disable gold penalty for late picking.
      */
-    SetSelectionGoldPenaltyEnabled(bEnabled: boolean): void;
+    SetSelectionGoldPenaltyEnabled?(bEnabled: boolean): void;
     /**
      * Turn purchasing items to the stash off/on. If purchasing to the stash is off the player must be at a shop to purchase items.
      */
-    SetStashPurchasingDisabled(bDisabled: boolean): void;
+    SetStashPurchasingDisabled?(bDisabled: boolean): void;
     /**
      * Hide the sticky item in the quickbuy.
      */
-    SetStickyItemDisabled(bDisabled: boolean): void;
+    SetStickyItemDisabled?(bDisabled: boolean): void;
     /**
      * Set the team values on the top game bar.
      */
-    SetTopBarTeamValue(iTeam: DOTATeam_t, nValue: number): void;
+    SetTopBarTeamValue?(iTeam: DOTATeam_t, nValue: number): void;
     /**
      * Override the values of the team values on the top game bar.
      */
-    SetTopBarTeamValuesOverride(bOverride: boolean): void;
+    SetTopBarTeamValuesOverride?(bOverride: boolean): void;
     /**
      * Turning on/off the team values on the top game bar.
      */
-    SetTopBarTeamValuesVisible(bVisible: boolean): void;
+    SetTopBarTeamValuesVisible?(bVisible: boolean): void;
     /**
      * Enables/Disables tower backdoor protection.
      */
-    SetTowerBackdoorProtectionEnabled(bEnabled: boolean): void;
+    SetTowerBackdoorProtectionEnabled?(bEnabled: boolean): void;
     /**
-     * Set a filter function to control when tracking projectiles are launched. (Modify the table and Return true to use new values, return false to cancel the event)
+     * Set a filter function to control when tracking projectiles are launched. ?(Modify the table and Return true to use new values, return false to cancel the event)
      */
-    SetTrackingProjectileFilter(filterFunc: (event: table) => boolean, hContext: object): void;
+    SetTrackingProjectileFilter?(filterFunc: (event: table) => boolean, hContext: object): void;
     /**
      * Enable or disable unseen fog of war. When enabled parts of the map the player has never seen will be completely hidden by fog of war.
      */
-    SetUnseenFogOfWarEnabled(bEnabled: boolean): void;
+    SetUnseenFogOfWarEnabled?(bEnabled: boolean): void;
     /**
      * Turn on custom-defined XP values for hero level ups.  The table should be defined before switching this on.
      */
-    SetUseCustomHeroLevels(bEnabled: boolean): void;
+    SetUseCustomHeroLevels?(bEnabled: boolean): void;
     /**
      * Set if weather effects are disabled.
      */
-    SetWeatherEffectsDisabled(bDisable: boolean): void;
+    SetWeatherEffectsDisabled?(bDisable: boolean): void;
 }
 /**
  * !The Dota game manager
@@ -1212,336 +1212,336 @@ declare interface CDOTAGameManager {
     /**
      * Get the hero unit
      */
-    GetHeroDataByName_Script(arg1: string): any;
+    GetHeroDataByName_Script?(arg1: string): any;
     /**
      * Get the hero ID given the hero name.
      */
-    GetHeroIDByName(arg1: string): number;
+    GetHeroIDByName?(arg1: string): number;
     /**
      * Get the hero name given a hero ID.
      */
-    GetHeroNameByID(arg1: number): string;
+    GetHeroNameByID?(arg1: number): string;
     /**
      * Get the hero name given a unit name.
      */
-    GetHeroNameForUnitName(arg1: string): string;
+    GetHeroNameForUnitName?(arg1: string): string;
     /**
      * Get the hero unit name given the hero ID.
      */
-    GetHeroUnitNameByID(arg1: number): string;
+    GetHeroUnitNameByID?(arg1: number): string;
 }
 /**
  * !DOTA GameRules
  */
 declare interface CDOTAGamerules {
     /**
-     * Event-only ( string szNameSuffix, int nStars, int nMaxStars, int nExtraData1, int nExtraData2 )
+     * Event-only ?( string szNameSuffix, int nStars, int nMaxStars, int nExtraData1, int nExtraData2 )
      */
-    AddEventMetadataLeaderboardEntry(arg1: string, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: number): boolean;
+    AddEventMetadataLeaderboardEntry?(arg1: string, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: number): boolean;
     /**
      * Add a point on the minimap.
      */
-    AddMinimapDebugPoint(arg1: number, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
+    AddMinimapDebugPoint?(arg1: number, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
     /**
      * Add a point on the minimap for a specific team.
      */
-    AddMinimapDebugPointForTeam(arg1: number, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number): void;
+    AddMinimapDebugPointForTeam?(arg1: number, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number): void;
     /**
      * Begin night stalker night.
      */
-    BeginNightstalkerNight(duration: number): void;
+    BeginNightstalkerNight?(duration: number): void;
     /**
      * Begin temporary night.
      */
-    BeginTemporaryNight(duration: number): void;
+    BeginTemporaryNight?(duration: number): void;
     /**
      * Kills the ancient, etc.
      */
-    Defeated(): void;
+    Defeated?(): void;
     /**
      * true when we have waited some time after end of the game and not received signout
      */
-    DidMatchSignoutTimeOut(): boolean;
+    DidMatchSignoutTimeOut?(): boolean;
     /**
-     * Enabled (true) or disable (false) auto launch for custom game setup.
+     * Enabled ?(true) or disable ?(false) auto launch for custom game setup.
      */
-    EnableCustomGameSetupAutoLaunch(enabled: boolean): void;
+    EnableCustomGameSetupAutoLaunch?(enabled: boolean): void;
     /**
      * Indicate that the custom game setup phase is complete, and advance to the game.
      */
-    FinishCustomGameSetup(): void;
+    FinishCustomGameSetup?(): void;
     /**
      * Returns the difficulty level of the custom game mode
      */
-    GetCustomGameDifficulty(): number;
+    GetCustomGameDifficulty?(): number;
     /**
      * Get whether a team is selectable during game setup
      */
-    GetCustomGameTeamMaxPlayers(team: DOTATeam_t): number;
+    GetCustomGameTeamMaxPlayers?(team: DOTATeam_t): number;
     /**
-     * (b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time.
+     * ?(b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time.
      */
-    GetDOTATime(includePreGame: boolean, includeNegativeTime: boolean): number;
+    GetDOTATime?(includePreGame: boolean, includeNegativeTime: boolean): number;
     /**
      * Returns difficulty level of the custom game mode
      */
-    GetDifficulty(): number;
+    GetDifficulty?(): number;
     /**
      * Gets the Xth dropped item
      */
-    GetDroppedItem(index: number): CDOTA_Item;
+    GetDroppedItem?(index: number): CDOTA_Item;
     /**
      * Returns the number of seconds elapsed since the last frame was renderered. This time doesn't count up when the game is paused
      */
-    GetGameFrameTime(): number;
+    GetGameFrameTime?(): number;
     /**
      * Get the game mode entity
      */
-    GetGameModeEntity(): CDOTABaseGameMode;
+    GetGameModeEntity?(): CDOTABaseGameMode;
     /**
-     * Get a string value from the game session config (map options)
+     * Get a string value from the game session config ?(map options)
      */
-    GetGameSessionConfigValue(arg1: string, arg2: string): string;
+    GetGameSessionConfigValue?(arg1: string, arg2: string): string;
     /**
      * Returns the number of seconds elapsed since map start. This time doesn't count up when the game is paused
      */
-    GetGameTime(): number;
+    GetGameTime?(): number;
     /**
      * Get the MatchID for this game.
      */
-    GetMatchID(): number;
+    GetMatchID?(): number;
     /**
      * Have we received the post match signout message that includes reward information
      */
-    GetMatchSignoutComplete(): boolean;
+    GetMatchSignoutComplete?(): boolean;
     /**
      * For New Bloom, get total damage taken by the Nian / Year Beast
      */
-    GetNianTotalDamageTaken(): number;
+    GetNianTotalDamageTaken?(): number;
     /**
-     * (Preview/Unreleased) Gets the player's custom game account record, as it looked at the start of this session
+     * ?(Preview/Unreleased) Gets the player's custom game account record, as it looked at the start of this session
      */
-    GetPlayerCustomGameAccountRecord(arg1: number): table;
+    GetPlayerCustomGameAccountRecord?(arg1: number): table;
     /**
      * Get the time of day
      */
-    GetTimeOfDay(): number;
+    GetTimeOfDay?(): number;
     /**
      * Are cheats enabled on the server
      */
-    IsCheatMode(): boolean;
+    IsCheatMode?(): boolean;
     /**
      * Is it day time?
      */
-    IsDaytime(): boolean;
+    IsDaytime?(): boolean;
     /**
      * Returns whether the game is paused.
      */
-    IsGamePaused(): boolean;
+    IsGamePaused?(): boolean;
     /**
      * Returns whether hero respawn is enabled.
      */
-    IsHeroRespawnEnabled(): boolean;
+    IsHeroRespawnEnabled?(): boolean;
     /**
      * Is it night stalker night-time?
      */
-    IsNightstalkerNight(): boolean;
+    IsNightstalkerNight?(): boolean;
     /**
      * Is it temporarily night-time?
      */
-    IsTemporaryNight(): boolean;
+    IsTemporaryNight?(): boolean;
     /**
-     * Lock (true) or unlock (false) team assignemnt. If team assignment is locked players cannot change teams.
+     * Lock ?(true) or unlock ?(false) team assignemnt. If team assignment is locked players cannot change teams.
      */
-    LockCustomGameSetupTeamAssignment(locked: boolean): void;
+    LockCustomGameSetupTeamAssignment?(locked: boolean): void;
     /**
      * Makes the specified team lose
      */
-    MakeTeamLose(team: DOTATeam_t): void;
+    MakeTeamLose?(team: DOTATeam_t): void;
     /**
      * Returns the number of items currently dropped on the ground
      */
-    NumDroppedItems(): number;
+    NumDroppedItems?(): number;
     /**
-     * Whether a player has custom game host privileges (shuffle teams, etc.)
+     * Whether a player has custom game host privileges ?(shuffle teams, etc.)
      */
-    PlayerHasCustomGameHostPrivileges(player: CDOTAPlayer): boolean;
+    PlayerHasCustomGameHostPrivileges?(player: CDOTAPlayer): boolean;
     /**
      * Updates custom hero, unit and ability KeyValues in memory with the latest values from disk
      */
-    Playtesting_UpdateAddOnKeyValues(): void;
+    Playtesting_UpdateAddOnKeyValues?(): void;
     /**
      * Restart after killing the ancient, etc.
      */
-    ResetDefeated(): void;
+    ResetDefeated?(): void;
     /**
      * Restart the game at hero selection
      */
-    ResetToHeroSelection(): void;
+    ResetToHeroSelection?(): void;
     /**
      * Sends a message on behalf of a player.
      */
-    SendCustomMessage(arg1: string, arg2: number, arg3: number): void;
+    SendCustomMessage?(arg1: string, arg2: number, arg3: number): void;
     /**
      * Sends a message on behalf of a player to the specified team.
      */
-    SendCustomMessageToTeam(arg1: string, arg2: number, arg3: number, arg4: number): void;
+    SendCustomMessageToTeam?(arg1: string, arg2: number, arg3: number, arg4: number): void;
     /**
-     * (flMinimapCreepIconScale) - Scale the creep icons on the minimap.
+     * ?(flMinimapCreepIconScale) - Scale the creep icons on the minimap.
      */
-    SetCreepMinimapIconScale(scale: number): void;
+    SetCreepMinimapIconScale?(scale: number): void;
     /**
-     * (Preview/Unreleased) Sets a callback to handle saving custom game account records (callback is passed a Player ID and should return a flat simple table)
+     * ?(Preview/Unreleased) Sets a callback to handle saving custom game account records ?(callback is passed a Player ID and should return a flat simple table)
      */
-    SetCustomGameAccountRecordSaveFunction(arg1: any, arg2: any): void;
-    /**
-     * Sets a flag to enable/disable the default music handling code for custom games
-     */
-    SetCustomGameAllowBattleMusic(allow: boolean): void;
+    SetCustomGameAccountRecordSaveFunction?(arg1: any, arg2: any): void;
     /**
      * Sets a flag to enable/disable the default music handling code for custom games
      */
-    SetCustomGameAllowHeroPickMusic(allow: boolean): void;
+    SetCustomGameAllowBattleMusic?(allow: boolean): void;
     /**
      * Sets a flag to enable/disable the default music handling code for custom games
      */
-    SetCustomGameAllowMusicAtGameStart(allow: boolean): void;
+    SetCustomGameAllowHeroPickMusic?(allow: boolean): void;
+    /**
+     * Sets a flag to enable/disable the default music handling code for custom games
+     */
+    SetCustomGameAllowMusicAtGameStart?(allow: boolean): void;
     /**
      * Set the difficulty level of the custom game mode
      */
-    SetCustomGameDifficulty(difficulty: number): void;
+    SetCustomGameDifficulty?(difficulty: number): void;
     /**
      * Sets the game end delay.
      */
-    SetCustomGameEndDelay(delay: number): void;
+    SetCustomGameEndDelay?(delay: number): void;
     /**
      * Set the amount of time to wait for auto launch.
      */
-    SetCustomGameSetupAutoLaunchDelay(delay: number): void;
+    SetCustomGameSetupAutoLaunchDelay?(delay: number): void;
     /**
      * Set the amount of remaining time, in seconds, for custom game setup. 0 = finish immediately, -1 = wait forever
      */
-    SetCustomGameSetupRemainingTime(remainingTime: number): void;
+    SetCustomGameSetupRemainingTime?(remainingTime: number): void;
     /**
-     * Setup (pre-gameplay) phase timeout. 0 = instant, -1 = forever (until FinishCustomGameSetup is called)
+     * Setup ?(pre-gameplay) phase timeout. 0 = instant, -1 = forever ?(until FinishCustomGameSetup is called)
      */
-    SetCustomGameSetupTimeout(timeout: number): void;
+    SetCustomGameSetupTimeout?(timeout: number): void;
     /**
      * Set whether a team is selectable during game setup
      */
-    SetCustomGameTeamMaxPlayers(team: DOTATeam_t, maxPlayers: number): void;
+    SetCustomGameTeamMaxPlayers?(team: DOTATeam_t, maxPlayers: number): void;
     /**
      * Sets the victory message.
      */
-    SetCustomVictoryMessage(message: string): void;
+    SetCustomVictoryMessage?(message: string): void;
     /**
      * Sets the victory message duration.
      */
-    SetCustomVictoryMessageDuration(duration: number): void;
+    SetCustomVictoryMessageDuration?(duration: number): void;
     /**
-     * Event-only ( table hMetadataTable )
+     * Event-only ?( table hMetadataTable )
      */
-    SetEventMetadataCustomTable(arg1: table): boolean;
+    SetEventMetadataCustomTable?(arg1: table): boolean;
     /**
-     * Event-only ( table hMetadataTable )
+     * Event-only ?( table hMetadataTable )
      */
-    SetEventSignoutCustomTable(arg1: table): boolean;
+    SetEventSignoutCustomTable?(arg1: table): boolean;
     /**
      * Sets whether First Blood has been triggered.
      */
-    SetFirstBloodActive(active: boolean): void;
+    SetFirstBloodActive?(active: boolean): void;
     /**
      * Makes the specified team win
      */
-    SetGameWinner(team: DOTATeam_t): void;
+    SetGameWinner?(team: DOTATeam_t): void;
     /**
      * Set the auto gold increase per timed interval.
      */
-    SetGoldPerTick(amount: number): void;
+    SetGoldPerTick?(amount: number): void;
     /**
      * Set the time interval between auto gold increases.
      */
-    SetGoldTickTime(time: number): void;
+    SetGoldTickTime?(time: number): void;
     /**
-     * (flMinimapHeroIconScale) - Scale the hero minimap icons on the minimap.
+     * ?(flMinimapHeroIconScale) - Scale the hero minimap icons on the minimap.
      */
-    SetHeroMinimapIconScale(scale: number): void;
+    SetHeroMinimapIconScale?(scale: number): void;
     /**
      * Control if the normal DOTA hero respawn rules apply.
      */
-    SetHeroRespawnEnabled(enabled: boolean): void;
+    SetHeroRespawnEnabled?(enabled: boolean): void;
     /**
      * Sets the amount of time players have to pick their hero.
      */
-    SetHeroSelectionTime(selectionTime: number): void;
+    SetHeroSelectionTime?(selectionTime: number): void;
     /**
      * Sets whether the multikill, streak, and first-blood banners appear at the top of the screen.
      */
-    SetHideKillMessageHeaders(hideHeaders: boolean): void;
+    SetHideKillMessageHeaders?(hideHeaders: boolean): void;
     /**
      * Show this unit's health on the overlay health bar
      */
-    SetOverlayHealthBarUnit(unit: CDOTA_BaseNPC, style: number): void;
+    SetOverlayHealthBarUnit?(unit: CDOTA_BaseNPC, style: number): void;
     /**
      * Sets the amount of time players have between the game ending and the server disconnecting them.
      */
-    SetPostGameTime(time: number): void;
+    SetPostGameTime?(time: number): void;
     /**
      * Sets the amount of time players have between picking their hero and game start.
      */
-    SetPreGameTime(time: number): void;
+    SetPreGameTime?(time: number): void;
     /**
-     * (flMinimapRuneIconScale) - Scale the rune icons on the minimap.
+     * ?(flMinimapRuneIconScale) - Scale the rune icons on the minimap.
      */
-    SetRuneMinimapIconScale(flMinimapRuneIconScale: number): void;
+    SetRuneMinimapIconScale?(flMinimapRuneIconScale: number): void;
     /**
      * Sets the amount of time between rune spawns.
      */
-    SetRuneSpawnTime(time: number): void;
+    SetRuneSpawnTime?(time: number): void;
     /**
-     * (bSafeToLeave) - Mark this game as safe to leave.
+     * ?(bSafeToLeave) - Mark this game as safe to leave.
      */
-    SetSafeToLeave(bSafeToLeave: boolean): void;
+    SetSafeToLeave?(bSafeToLeave: boolean): void;
     /**
      * When true, players can repeatedly pick the same hero.
      */
-    SetSameHeroSelectionEnabled(enabled: boolean): void;
+    SetSameHeroSelectionEnabled?(enabled: boolean): void;
     /**
      * Sets the amount of time players have between the strategy phase and entering the pre-game phase.
      */
-    SetShowcaseTime(time: number): void;
+    SetShowcaseTime?(time: number): void;
     /**
      * Set the starting gold amount.
      */
-    SetStartingGold(amount: number): void;
+    SetStartingGold?(amount: number): void;
     /**
      * Sets the amount of time players have between the hero selection and entering the showcase phase.
      */
-    SetStrategyTime(time: number): void;
+    SetStrategyTime?(time: number): void;
     /**
      * Set the time of day.
      */
-    SetTimeOfDay(time: number): void;
+    SetTimeOfDay?(time: number): void;
     /**
      * Sets the tree regrow time in seconds.
      */
-    SetTreeRegrowTime(time: number): void;
+    SetTreeRegrowTime?(time: number): void;
     /**
      * Heroes will use the basic NPC functionality for determining their bounty, rather than DOTA specific formulas.
      */
-    SetUseBaseGoldBountyOnHeroes(useBaseGoldBounties: boolean): void;
+    SetUseBaseGoldBountyOnHeroes?(useBaseGoldBounties: boolean): void;
     /**
-     * Allows heroes in the map to give a specific amount of XP (this value must be set).
+     * Allows heroes in the map to give a specific amount of XP ?(this value must be set).
      */
-    SetUseCustomHeroXPValues(useCustomXPValues: boolean): void;
+    SetUseCustomHeroXPValues?(useCustomXPValues: boolean): void;
     /**
      * When true, all items are available at as long as any shop is in range.
      */
-    SetUseUniversalShopMode(useUniversalShopMode: boolean): void;
+    SetUseUniversalShopMode?(useUniversalShopMode: boolean): void;
     /**
      * Get the current Gamerules state
      */
-    State_Get(): DOTA_GameState;
+    State_Get?(): DOTA_GameState;
 }
 declare const GameRules: CDOTAGamerules;
 
@@ -1552,23 +1552,23 @@ declare interface CDOTAPlayer extends CBaseAnimating {
     /**
      * Get the player's hero.
      */
-    GetAssignedHero(): CDOTA_BaseNPC_Hero;
+    GetAssignedHero?(): CDOTA_BaseNPC_Hero;
     /**
      * Get the player's official PlayerID; notably is -1 when the player isn't yet on a team.
      */
-    GetPlayerID(): number;
+    GetPlayerID?(): number;
     /**
      * Randoms this player's hero.
      */
-    MakeRandomHeroSelection(): void;
+    MakeRandomHeroSelection?(): void;
     /**
      * Set the kill cam unit for this hero.
      */
-    SetKillCamUnit(hEntity: CDOTA_BaseNPC): void;
+    SetKillCamUnit?(hEntity: CDOTA_BaseNPC): void;
     /**
-     * (nMusicStatus, flIntensity) - Set the music status for this player, note this will only really apply if dota_music_battle_enable is off.
+     * ?(nMusicStatus, flIntensity) - Set the music status for this player, note this will only really apply if dota_music_battle_enable is off.
      */
-    SetMusicStatus(nMusicStatus: number, flIntensity: number): void;
+    SetMusicStatus?(nMusicStatus: number, flIntensity: number): void;
 }
 
 /**
@@ -1578,103 +1578,103 @@ declare interface CDOTATutorial {
     /**
      * Add a computer controlled bot.
      */
-    AddBot(heroName: string, unknown1: string, unknown2: string, unknown3: boolean): boolean;
+    AddBot?(heroName: string, unknown1: string, unknown2: string, unknown3: boolean): boolean;
     /**
      * Add a quest to the quest log
      */
-    AddQuest(arg1: string, arg2: number, arg3: string, arg4: string): void;
+    AddQuest?(arg1: string, arg2: number, arg3: string, arg4: string): void;
     /**
      * Add an item to the shop whitelist.
      */
-    AddShopWhitelistItem(itemName: string): void;
+    AddShopWhitelistItem?(itemName: string): void;
     /**
      * Complete a quest,
      */
-    CompleteQuest(arg1: string): void;
+    CompleteQuest?(arg1: string): void;
     /**
      * Add a task to move to a specific location
      */
-    CreateLocationTask(arg1: Vec): void;
+    CreateLocationTask?(arg1: Vec): void;
     /**
      * Alert the player when a creep becomes agro to their hero.
      */
-    EnableCreepAggroViz(arg1: boolean): void;
+    EnableCreepAggroViz?(arg1: boolean): void;
     /**
      * Enable the tip to alert players how to find their hero.
      */
-    EnablePlayerOffscreenTip(arg1: boolean): void;
+    EnablePlayerOffscreenTip?(arg1: boolean): void;
     /**
      * Alert the player when a tower becomes agro to their hero.
      */
-    EnableTowerAggroViz(arg1: boolean): void;
+    EnableTowerAggroViz?(arg1: boolean): void;
     /**
      * End the tutorial.
      */
-    FinishTutorial(): void;
+    FinishTutorial?(): void;
     /**
      * Force the start of the game.
      */
-    ForceGameStart(): void;
+    ForceGameStart?(): void;
     /**
      * Is our time frozen?
      */
-    GetTimeFrozen(): boolean;
+    GetTimeFrozen?(): boolean;
     /**
      * Is this item currently in the white list.
      */
-    IsItemInWhiteList(itemName: string): boolean;
+    IsItemInWhiteList?(itemName: string): boolean;
     /**
      * Remove an item from the shop whitelist.
      */
-    RemoveShopWhitelistItem(itemName: string): void;
+    RemoveShopWhitelistItem?(itemName: string): void;
     /**
      * Select a hero for the local player
      */
-    SelectHero(heroName: string): void;
+    SelectHero?(heroName: string): void;
     /**
      * Select the team for the local player
      */
-    SelectPlayerTeam(arg1: string): void;
+    SelectPlayerTeam?(arg1: string): void;
     /**
      * Set the current item guide.
      */
-    SetItemGuide(arg1: string): void;
+    SetItemGuide?(arg1: string): void;
     /**
-     * Set gold amount for the tutorial player. (int) GoldAmount, (bool) true=Set, false=Modify
+     * Set gold amount for the tutorial player. ?(int) GoldAmount, ?(bool) true=Set, false=Modify
      */
-    SetOrModifyPlayerGold(goldAmount: number, setNotModify: boolean): void;
+    SetOrModifyPlayerGold?(goldAmount: number, setNotModify: boolean): void;
     /**
      * Set players quick buy item.
      */
-    SetQuickBuy(itemName: string): void;
+    SetQuickBuy?(itemName: string): void;
     /**
      * Set the shop open or closed.
      */
-    SetShopOpen(open: boolean): void;
+    SetShopOpen?(open: boolean): void;
     /**
      * Set if we should freeze time or not.
      */
-    SetTimeFrozen(timeFrozen: boolean): void;
+    SetTimeFrozen?(timeFrozen: boolean): void;
     /**
      * Set a tutorial convar
      */
-    SetTutorialConvar(arg1: string, arg2: string): void;
+    SetTutorialConvar?(arg1: string, arg2: string): void;
     /**
      * Set the UI to use a reduced version to focus attention to specific elements.
      */
-    SetTutorialUI(arg1: number): void;
+    SetTutorialUI?(arg1: number): void;
     /**
      * Set if we should whitelist shop items.
      */
-    SetWhiteListEnabled(whitelistEnabled: boolean): void;
+    SetWhiteListEnabled?(whitelistEnabled: boolean): void;
     /**
      * Initialize Tutorial Mode
      */
-    StartTutorialMode(): void;
+    StartTutorialMode?(): void;
     /**
      * Upgrade a specific ability for the local hero
      */
-    UpgradePlayerAbility(abilityName: string): void;
+    UpgradePlayerAbility?(abilityName: string): void;
 }
 declare const Tutorial: CDOTATutorial;
 
@@ -1685,7 +1685,7 @@ declare interface CDOTA_Ability_Animation_Attack extends CDOTABaseAbility {
     /**
      * Override playbackrate
      */
-    SetPlaybackRate(flRate: number): void;
+    SetPlaybackRate?(flRate: number): void;
 }
 /**
  * A Dota NPC Unit.
@@ -1694,7 +1694,7 @@ declare interface CDOTA_Ability_Animation_TailSpin extends CDOTABaseAbility {
     /**
      * Override playbackrate
      */
-    SetPlaybackRate(flRate: number): void;
+    SetPlaybackRate?(flRate: number): void;
 }
 /**
  * A data driven ability.
@@ -1703,11 +1703,11 @@ declare interface CDOTA_Ability_DataDriven extends CDOTABaseAbility {
     /**
      * Applies a data driven modifier to the target
      */
-    ApplyDataDrivenModifier(caster: CDOTA_BaseNPC, target: CDOTA_BaseNPC, modifier_name: string, modifier_table: table): CDOTA_Buff;
+    ApplyDataDrivenModifier?(caster: CDOTA_BaseNPC, target: CDOTA_BaseNPC, modifier_name: string, modifier_table: table): CDOTA_Buff;
     /**
      * Applies a data driven thinker at the location
      */
-    ApplyDataDrivenThinker(hCaster: CDOTA_BaseNPC, vLocation: Vec, pszModifierName: string, hModifierTable: table): table;
+    ApplyDataDrivenThinker?(hCaster: CDOTA_BaseNPC, vLocation: Vec, pszModifierName: string, hModifierTable: table): table;
 }
 /**
  * A lua-based ability.
@@ -1918,789 +1918,789 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Add an ability to this unit by name.
      */
-    AddAbility(ability_name: string): CDOTABaseAbility;
+    AddAbility?(ability_name: string): CDOTABaseAbility;
     /**
      * Add an item to this unit's inventory.
      */
-    AddItem(item_to_add: CDOTA_Item): CDOTA_Item;
+    AddItem?(item_to_add: CDOTA_Item): CDOTA_Item;
     /**
      * Add an item to this unit's inventory.
      */
-    AddItemByName(item_name: string): CDOTA_Item;
+    AddItemByName?(item_name: string): CDOTA_Item;
     /**
      * Add a modifier to this unit.
      */
-    AddNewModifier(caster: CDOTA_BaseNPC | null | undefined, source_ability: CDOTABaseAbility | null | undefined, modifier_name: string, modifier_table: table): CDOTA_Buff;
+    AddNewModifier?(caster: CDOTA_BaseNPC | null | undefined, source_ability: CDOTABaseAbility | null | undefined, modifier_name: string, modifier_table: table): CDOTA_Buff;
     /**
      * Adds the no draw flag.
      */
-    AddNoDraw(): void;
+    AddNoDraw?(): void;
     /**
-     * Add a speech bubble(1-4 live at a time) to this NPC.
+     * Add a speech bubble?(1-4 live at a time) to this NPC.
      */
-    AddSpeechBubble(iBubble: number, pszSpeech: string, flDuration: number, unOffsetX: number, unOffsetY: number): void;
-    AlertNearbyUnits(hAttacker: CDOTA_BaseNPC, hAbility: CDOTABaseAbility): void;
-    AngerNearbyUnits(): void;
-    AttackNoEarlierThan(flTime: number): void;
-    AttackReady(): boolean;
-    BoundingRadius2D(): number;
+    AddSpeechBubble?(iBubble: number, pszSpeech: string, flDuration: number, unOffsetX: number, unOffsetY: number): void;
+    AlertNearbyUnits?(hAttacker: CDOTA_BaseNPC, hAbility: CDOTABaseAbility): void;
+    AngerNearbyUnits?(): void;
+    AttackNoEarlierThan?(flTime: number): void;
+    AttackReady?(): boolean;
+    BoundingRadius2D?(): number;
     /**
      * Check FoW to see if an entity is visible.
      */
-    CanEntityBeSeenByMyTeam(hEntity: CDOTA_BaseNPC): boolean;
+    CanEntityBeSeenByMyTeam?(hEntity: CDOTA_BaseNPC): boolean;
     /**
      * Query if this unit can sell items.
      */
-    CanSellItems(): boolean;
+    CanSellItems?(): boolean;
     /**
      * Cast an ability immediately.
      */
-    CastAbilityImmediately(hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
+    CastAbilityImmediately?(hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
     /**
      * Cast an ability with no target.
      */
-    CastAbilityNoTarget(hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
+    CastAbilityNoTarget?(hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
     /**
      * Cast an ability on a position.
      */
-    CastAbilityOnPosition(vPosition: Vec, hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
+    CastAbilityOnPosition?(vPosition: Vec, hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
     /**
      * Cast an ability on a target entity.
      */
-    CastAbilityOnTarget(hTarget: CDOTA_BaseNPC, hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
+    CastAbilityOnTarget?(hTarget: CDOTA_BaseNPC, hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
     /**
      * Toggle an ability.
      */
-    CastAbilityToggle(hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
-    DestroyAllSpeechBubbles(): void;
+    CastAbilityToggle?(hAbility: CDOTABaseAbility, iPlayerIndex: number): void;
+    DestroyAllSpeechBubbles?(): void;
     /**
      * Disassemble the passed item in this unit's inventory.
      */
-    DisassembleItem(hItem: CDOTA_Item): void;
+    DisassembleItem?(hItem: CDOTA_Item): void;
     /**
      * Drop an item at a given point.
      */
-    DropItemAtPosition(vDest: Vec, hItem: CDOTA_Item): void;
+    DropItemAtPosition?(vDest: Vec, hItem: CDOTA_Item): void;
     /**
      * Immediately drop a carried item at a given position.
      */
-    DropItemAtPositionImmediate(hItem: CDOTA_Item, vPosition: Vec): void;
+    DropItemAtPositionImmediate?(hItem: CDOTA_Item, vPosition: Vec): void;
     /**
      * Drops the selected item out of this unit's stash.
      */
-    EjectItemFromStash(hItem: CDOTA_Item): void;
+    EjectItemFromStash?(hItem: CDOTA_Item): void;
     /**
      * This unit will be set to face the target point.
      */
-    FaceTowards(vTarget: Vec): void;
+    FaceTowards?(vTarget: Vec): void;
     /**
      * Fade and remove the given gesture activity.
      */
-    FadeGesture(nActivity: GameActivity_t): void;
+    FadeGesture?(nActivity: GameActivity_t): void;
     /**
      * Retrieve an ability by name from the unit.
      */
-    FindAbilityByName(ability_name: string): CDOTABaseAbility;
+    FindAbilityByName?(ability_name: string): CDOTABaseAbility;
     /**
      * Returns a table of all of the modifiers on the NPC.
      */
-    FindAllModifiers(): CDOTA_Buff[];
+    FindAllModifiers?(): CDOTA_Buff[];
     /**
-     * Returns a table of all of the modifiers on the NPC with the passed name (modifierName)
+     * Returns a table of all of the modifiers on the NPC with the passed name ?(modifierName)
      */
-    FindAllModifiersByName(name: string): CDOTA_Buff[];
+    FindAllModifiersByName?(name: string): CDOTA_Buff[];
     /**
      * Get handle to first item in inventory, else nil.
      */
-    FindItemInInventory(item_name: string): CDOTA_Item;
+    FindItemInInventory?(item_name: string): CDOTA_Item;
     /**
-     * Return a handle to the modifier of the given name if found, else nil (string Name )
+     * Return a handle to the modifier of the given name if found, else nil ?(string Name )
      */
-    FindModifierByName(modifier_name: string): CDOTA_Buff;
+    FindModifierByName?(modifier_name: string): CDOTA_Buff;
     /**
-     * Return a handle to the modifier of the given name from the passed caster if found, else nil ( string Name, hCaster )
+     * Return a handle to the modifier of the given name from the passed caster if found, else nil ?( string Name, hCaster )
      */
-    FindModifierByNameAndCaster(modifier_name: string, caster: CDOTA_BaseNPC): CDOTA_Buff;
+    FindModifierByNameAndCaster?(modifier_name: string, caster: CDOTA_BaseNPC): CDOTA_Buff;
     /**
      * Kill this unit immediately.
      */
-    ForceKill(bReincarnate: boolean): void;
+    ForceKill?(bReincarnate: boolean): void;
     /**
      * Play an activity once, and then go back to idle.
      */
-    ForcePlayActivityOnce(nActivity: GameActivity_t): void;
+    ForcePlayActivityOnce?(nActivity: GameActivity_t): void;
     /**
      * Retrieve an ability by index from the unit.
      */
-    GetAbilityByIndex(ability_index: number): CDOTABaseAbility;
-    GetAbilityCount(): number;
+    GetAbilityByIndex?(ability_index: number): CDOTABaseAbility;
+    GetAbilityCount?(): number;
     /**
      * Gets the range at which this unit will auto-acquire.
      */
-    GetAcquisitionRange(): number;
+    GetAcquisitionRange?(): number;
     /**
      * Combat involving this creature will have this weight added to the music calcuations.
      */
-    GetAdditionalBattleMusicWeight(): number;
+    GetAdditionalBattleMusicWeight?(): number;
     /**
      * Returns this unit's aggro target.
      */
-    GetAggroTarget(): CDOTA_BaseNPC;
-    GetAttackAnimationPoint(): number;
-    GetAttackCapability(): DOTAUnitAttackCapability_t;
+    GetAggroTarget?(): CDOTA_BaseNPC;
+    GetAttackAnimationPoint?(): number;
+    GetAttackCapability?(): DOTAUnitAttackCapability_t;
     /**
      * Returns a random integer between the minimum and maximum base damage of the unit.
      */
-    GetAttackDamage(): number;
+    GetAttackDamage?(): number;
     /**
      * Gets this unit's attack range after all modifiers.
      */
-    GetAttackRange(): number;
+    GetAttackRange?(): number;
     /**
      * Gets the attack range buffer.
      */
-    GetAttackRangeBuffer(): number;
-    GetAttackSpeed(): number;
-    GetAttackTarget(): CDOTA_BaseNPC;
-    GetAttacksPerSecond(): number;
+    GetAttackRangeBuffer?(): number;
+    GetAttackSpeed?(): number;
+    GetAttackTarget?(): CDOTA_BaseNPC;
+    GetAttacksPerSecond?(): number;
     /**
      * Returns the average value of the minimum and maximum damage values.
      */
-    GetAverageTrueAttackDamage(hTarget: CDOTA_BaseNPC): number;
-    GetBaseAttackTime(): number;
+    GetAverageTrueAttackDamage?(hTarget: CDOTA_BaseNPC): number;
+    GetBaseAttackTime?(): number;
     /**
      * Get the maximum attack damage of this unit.
      */
-    GetBaseDamageMax(): number;
+    GetBaseDamageMax?(): number;
     /**
      * Get the minimum attack damage of this unit.
      */
-    GetBaseDamageMin(): number;
+    GetBaseDamageMin?(): number;
     /**
      * Returns the vision range before modifiers.
      */
-    GetBaseDayTimeVisionRange(): number;
-    GetBaseHealthRegen(): number;
+    GetBaseDayTimeVisionRange?(): number;
+    GetBaseHealthRegen?(): number;
     /**
      * Returns base magical armor value.
      */
-    GetBaseMagicalResistanceValue(): number;
+    GetBaseMagicalResistanceValue?(): number;
     /**
      * Gets the base max health value.
      */
-    GetBaseMaxHealth(): number;
-    GetBaseMoveSpeed(): number;
+    GetBaseMaxHealth?(): number;
+    GetBaseMoveSpeed?(): number;
     /**
      * Returns the vision range after modifiers.
      */
-    GetBaseNightTimeVisionRange(): number;
+    GetBaseNightTimeVisionRange?(): number;
     /**
      * This Mana regen is derived from constant bonuses like Basilius.
      */
-    GetBonusManaRegen(): number;
+    GetBonusManaRegen?(): number;
     GetCastPoint?(bAttack: boolean): number;
     /**
-     * Get clone source (Meepo Prime, if this is a Meepo)
+     * Get clone source ?(Meepo Prime, if this is a Meepo)
      */
-    GetCloneSource(): CDOTA_BaseNPC;
+    GetCloneSource?(): CDOTA_BaseNPC;
     /**
      * Returns the size of the collision padding around the hull.
      */
-    GetCollisionPadding(): number;
-    GetCreationTime(): number;
+    GetCollisionPadding?(): number;
+    GetCreationTime?(): number;
     /**
      * Get the ability this unit is currently casting.
      */
-    GetCurrentActiveAbility(): CDOTABaseAbility;
+    GetCurrentActiveAbility?(): CDOTABaseAbility;
     /**
      * Gets the current vision range.
      */
-    GetCurrentVisionRange(): number;
-    GetCursorCastTarget(): CDOTA_BaseNPC;
-    GetCursorPosition(): Vec;
-    GetCursorTargetingNothing(): boolean;
+    GetCurrentVisionRange?(): number;
+    GetCursorCastTarget?(): CDOTA_BaseNPC;
+    GetCursorPosition?(): Vec;
+    GetCursorTargetingNothing?(): boolean;
     /**
      * Returns the vision range after modifiers.
      */
-    GetDayTimeVisionRange(): number;
+    GetDayTimeVisionRange?(): number;
     /**
      * Get the XP bounty on this unit.
      */
-    GetDeathXP(): number;
-    GetForceAttackTarget(): CDOTA_BaseNPC;
+    GetDeathXP?(): number;
+    GetForceAttackTarget?(): CDOTA_BaseNPC;
     /**
      * Get the gold bounty on this unit.
      */
-    GetGoldBounty(): number;
-    GetHasteFactor(): number;
+    GetGoldBounty?(): number;
+    GetHasteFactor?(): number;
     /**
      * Returns integer amount of health missing from max.
      */
-    GetHealthDeficit(): number;
+    GetHealthDeficit?(): number;
     /**
      * Get the current health percent of the unit.
      */
-    GetHealthPercent(): number;
-    GetHealthRegen(): number;
+    GetHealthPercent?(): number;
+    GetHealthRegen?(): number;
     /**
      * Get the collision hull radius of this NPC.
      */
-    GetHullRadius(): number;
+    GetHullRadius?(): number;
     /**
      * Returns speed after all modifiers.
      */
-    GetIdealSpeed(): number;
+    GetIdealSpeed?(): number;
     /**
      * Returns speed after all modifiers, but excluding those that reduce speed.
      */
-    GetIdealSpeedNoSlows(): number;
-    GetIncreasedAttackSpeed(): number;
+    GetIdealSpeedNoSlows?(): number;
+    GetIncreasedAttackSpeed?(): number;
     /**
      * Returns the initial waypoint goal for this NPC.
      */
-    GetInitialGoalEntity(): CBaseEntity;
+    GetInitialGoalEntity?(): CBaseEntity;
     /**
-     * Returns nth item in inventory slot (index is zero based).
+     * Returns nth item in inventory slot ?(index is zero based).
      */
-    GetItemInSlot(slot: number): CDOTA_Item;
-    GetLastAttackTime(): number;
+    GetItemInSlot?(slot: number): CDOTA_Item;
+    GetLastAttackTime?(): number;
     /**
      * Get the last game time that this unit switched to/from idle state.
      */
-    GetLastIdleChangeTime(): number;
+    GetLastIdleChangeTime?(): number;
     /**
      * Returns the level of this unit.
      */
-    GetLevel(): number;
+    GetLevel?(): number;
     /**
      * Returns current magical armor value.
      */
-    GetMagicalArmorValue(): number;
+    GetMagicalArmorValue?(): number;
     /**
      * Returns the player ID of the controlling player.
      */
-    GetMainControllingPlayer(): number;
+    GetMainControllingPlayer?(): number;
     /**
      * Get the mana on this unit.
      */
-    GetMana(): number;
+    GetMana?(): number;
     /**
      * Get the percent of mana remaining.
      */
-    GetManaPercent(): number;
-    GetManaRegen(): number;
+    GetManaPercent?(): number;
+    GetManaRegen?(): number;
     /**
      * Returns mana regen rate per intelligence.
      */
-    GetManaRegenMultiplier(): number;
+    GetManaRegenMultiplier?(): number;
     /**
      * Get the maximum mana of this unit.
      */
-    GetMaxMana(): number;
+    GetMaxMana?(): number;
     /**
      * Get the maximum gold bounty for this unit.
      */
-    GetMaximumGoldBounty(): number;
+    GetMaximumGoldBounty?(): number;
     /**
      * Get the minimum gold bounty for this unit.
      */
-    GetMinimumGoldBounty(): number;
-    GetModelRadius(): number;
+    GetMinimumGoldBounty?(): number;
+    GetModelRadius?(): number;
     /**
      * How many modifiers does this unit have?
      */
-    GetModifierCount(): number;
+    GetModifierCount?(): number;
     /**
      * Get a modifier name by index.
      */
-    GetModifierNameByIndex(nIndex: number): string;
+    GetModifierNameByIndex?(nIndex: number): string;
     /**
      * Gets the stack count of a given modifier.
      */
-    GetModifierStackCount(modifierName: string, hCaster: CDOTA_BaseNPC): number;
-    GetMoveSpeedModifier(flBaseSpeed: number): number;
+    GetModifierStackCount?(modifierName: string, hCaster: CDOTA_BaseNPC): number;
+    GetMoveSpeedModifier?(flBaseSpeed: number): number;
     /**
      * Set whether this NPC is required to reach each goal entity, rather than being allowed to unkink their path.
      */
-    GetMustReachEachGoalEntity(): boolean;
+    GetMustReachEachGoalEntity?(): boolean;
     /**
      * If set to true, we will never attempt to move this unit to clear space, even when it unphases.
      */
-    GetNeverMoveToClearSpace(): boolean;
+    GetNeverMoveToClearSpace?(): boolean;
     /**
      * Returns the vision range after modifiers.
      */
-    GetNightTimeVisionRange(): number;
-    GetOpposingTeamNumber(): DOTATeam_t;
+    GetNightTimeVisionRange?(): number;
+    GetOpposingTeamNumber?(): DOTATeam_t;
     /**
-     * Get the collision hull radius (including padding) of this NPC.
+     * Get the collision hull radius ?(including padding) of this NPC.
      */
-    GetPaddedCollisionRadius(): number;
+    GetPaddedCollisionRadius?(): number;
     /**
      * Returns base physical armor value.
      */
-    GetPhysicalArmorBaseValue(): number;
+    GetPhysicalArmorBaseValue?(): number;
     /**
      * Returns current physical armor value.
      */
-    GetPhysicalArmorValue(): number;
+    GetPhysicalArmorValue?(): number;
     /**
      * Returns the player that owns this unit.
      */
-    GetPlayerOwner(): CDOTAPlayer;
+    GetPlayerOwner?(): CDOTAPlayer;
     /**
      * Get the owner player ID for this unit.
      */
-    GetPlayerOwnerID(): PlayerID;
-    GetProjectileSpeed(): number;
-    GetRangeToUnit(hNPC: CDOTA_BaseNPC): number;
-    GetRangedProjectileName(): string;
-    GetSecondsPerAttack(): number;
+    GetPlayerOwnerID?(): PlayerID;
+    GetProjectileSpeed?(): number;
+    GetRangeToUnit?(hNPC: CDOTA_BaseNPC): number;
+    GetRangedProjectileName?(): string;
+    GetSecondsPerAttack?(): number;
     /**
      * Get how much gold has been spent on ability upgrades.
      */
-    GetTotalPurchasedUpgradeGoldCost(): number;
-    GetUnitLabel(): string;
+    GetTotalPurchasedUpgradeGoldCost?(): number;
+    GetUnitLabel?(): string;
     /**
      * Get the name of this unit.
      */
-    GetUnitName(): string;
+    GetUnitName?(): string;
     /**
      * Give mana to this unit, this can be used for mana gained by abilities or item usage.
      */
-    GiveMana(flMana: number): void;
+    GiveMana?(flMana: number): void;
     /**
      * See whether this unit has an ability by name.
      */
-    HasAbility(pszAbilityName: string): boolean;
-    HasAnyActiveAbilities(): boolean;
-    HasAttackCapability(): boolean;
-    HasFlyMovementCapability(): boolean;
-    HasFlyingVision(): boolean;
-    HasGroundMovementCapability(): boolean;
+    HasAbility?(pszAbilityName: string): boolean;
+    HasAnyActiveAbilities?(): boolean;
+    HasAttackCapability?(): boolean;
+    HasFlyMovementCapability?(): boolean;
+    HasFlyingVision?(): boolean;
+    HasGroundMovementCapability?(): boolean;
     /**
      * Does this unit have an inventory.
      */
-    HasInventory(): boolean;
+    HasInventory?(): boolean;
     /**
      * See whether this unit has an item by name.
      */
-    HasItemInInventory(pItemName: string): boolean;
+    HasItemInInventory?(pItemName: string): boolean;
     /**
      * Sees if this unit has a given modifier.
      */
-    HasModifier(pszScriptName: string): boolean;
-    HasMovementCapability(): boolean;
-    HasScepter(): boolean;
+    HasModifier?(pszScriptName: string): boolean;
+    HasMovementCapability?(): boolean;
+    HasScepter?(): boolean;
     /**
      * Heal this unit.
      */
-    Heal(flAmount: number, hInflictor: CDOTA_BaseNPC): void;
+    Heal?(flAmount: number, hInflictor: CDOTA_BaseNPC): void;
     /**
      * Hold position.
      */
-    Hold(): void;
-    Interrupt(): void;
-    InterruptChannel(): void;
-    InterruptMotionControllers(bFindClearSpace: boolean): void;
+    Hold?(): void;
+    Interrupt?(): void;
+    InterruptChannel?(): void;
+    InterruptMotionControllers?(bFindClearSpace: boolean): void;
     /**
      * Is this unit alive?
      */
-    IsAlive(): boolean;
+    IsAlive?(): boolean;
     /**
      * Is this unit an Ancient?
      */
-    IsAncient(): boolean;
-    IsAttackImmune(): boolean;
-    IsAttacking(): boolean;
-    IsAttackingEntity(hEntity: CDOTA_BaseNPC): boolean;
+    IsAncient?(): boolean;
+    IsAttackImmune?(): boolean;
+    IsAttacking?(): boolean;
+    IsAttackingEntity?(hEntity: CDOTA_BaseNPC): boolean;
     /**
      * Is this unit a Barracks?
      */
-    IsBarracks(): boolean;
-    IsBlind(): boolean;
-    IsBlockDisabled(): boolean;
+    IsBarracks?(): boolean;
+    IsBlind?(): boolean;
+    IsBlockDisabled?(): boolean;
     /**
      * Is this unit a boss?
      */
-    IsBoss(): boolean;
+    IsBoss?(): boolean;
     /**
      * Is this unit a building?
      */
-    IsBuilding(): boolean;
+    IsBuilding?(): boolean;
     /**
      * Is this unit currently channeling a spell?
      */
-    IsChanneling(): boolean;
+    IsChanneling?(): boolean;
     /**
-     * Is this unit a clone? (Meepo)
+     * Is this unit a clone? ?(Meepo)
      */
-    IsClone(): boolean;
-    IsCommandRestricted(): boolean;
+    IsClone?(): boolean;
+    IsCommandRestricted?(): boolean;
     /**
      * Is this unit a considered a hero for targeting purposes?
      */
-    IsConsideredHero(): boolean;
+    IsConsideredHero?(): boolean;
     /**
      * Is this unit controlled by any non-bot player?
      */
-    IsControllableByAnyPlayer(): boolean;
+    IsControllableByAnyPlayer?(): boolean;
     /**
      * Is this unit a courier?
      */
-    IsCourier(): boolean;
+    IsCourier?(): boolean;
     /**
      * Is this a Creature type NPC?
      */
-    IsCreature(): boolean;
+    IsCreature?(): boolean;
     /**
      * Is this unit a creep?
      */
-    IsCreep(): boolean;
-    IsDeniable(): boolean;
-    IsDisarmed(): boolean;
-    IsDominated(): boolean;
-    IsEvadeDisabled(): boolean;
+    IsCreep?(): boolean;
+    IsDeniable?(): boolean;
+    IsDisarmed?(): boolean;
+    IsDominated?(): boolean;
+    IsEvadeDisabled?(): boolean;
     /**
      * Is this unit an Ancient?
      */
-    IsFort(): boolean;
-    IsFrozen(): boolean;
+    IsFort?(): boolean;
+    IsFrozen?(): boolean;
     /**
      * Is this a hero or hero illusion?
      */
-    IsHero(): boolean;
-    IsHexed(): boolean;
+    IsHero?(): boolean;
+    IsHexed?(): boolean;
     /**
      * Is this creature currently idle?
      */
-    IsIdle(): boolean;
-    IsIllusion(): boolean;
-    IsInvisible(): boolean;
-    IsInvulnerable(): boolean;
-    IsLowAttackPriority(): boolean;
-    IsMagicImmune(): boolean;
-    IsMovementImpaired(): boolean;
+    IsIdle?(): boolean;
+    IsIllusion?(): boolean;
+    IsInvisible?(): boolean;
+    IsInvulnerable?(): boolean;
+    IsLowAttackPriority?(): boolean;
+    IsMagicImmune?(): boolean;
+    IsMovementImpaired?(): boolean;
     /**
      * Is this unit moving?
      */
-    IsMoving(): boolean;
-    IsMuted(): boolean;
+    IsMoving?(): boolean;
+    IsMuted?(): boolean;
     /**
      * Is this a neutral?
      */
-    IsNeutralUnitType(): boolean;
-    IsNightmared(): boolean;
-    IsOpposingTeam(nTeam: DOTATeam_t): boolean;
+    IsNeutralUnitType?(): boolean;
+    IsNightmared?(): boolean;
+    IsOpposingTeam?(nTeam: DOTATeam_t): boolean;
     /**
      * Is this unit a ward-type unit?
      */
-    IsOther(): boolean;
-    IsOutOfGame(): boolean;
+    IsOther?(): boolean;
+    IsOutOfGame?(): boolean;
     /**
      * Is this unit owned by any non-bot player?
      */
-    IsOwnedByAnyPlayer(): boolean;
+    IsOwnedByAnyPlayer?(): boolean;
     /**
      * Is this a phantom unit?
      */
-    IsPhantom(): boolean;
-    IsPhantomBlocker(): boolean;
-    IsPhased(): boolean;
-    IsPositionInRange(vPosition: Vec, flRange: number): boolean;
+    IsPhantom?(): boolean;
+    IsPhantomBlocker?(): boolean;
+    IsPhased?(): boolean;
+    IsPositionInRange?(vPosition: Vec, flRange: number): boolean;
     /**
      * Is this unit a ranged attacker?
      */
-    IsRangedAttacker(): boolean;
+    IsRangedAttacker?(): boolean;
     /**
      * Is this a real hero?
      */
-    IsRealHero(): boolean;
-    IsRooted(): boolean;
+    IsRealHero?(): boolean;
+    IsRooted?(): boolean;
     /**
      * Is this a shrine?
      */
-    IsShrine(): boolean;
-    IsSilenced(): boolean;
-    IsSpeciallyDeniable(): boolean;
-    IsStunned(): boolean;
+    IsShrine?(): boolean;
+    IsSilenced?(): boolean;
+    IsSpeciallyDeniable?(): boolean;
+    IsStunned?(): boolean;
     /**
      * Is this unit summoned?
      */
-    IsSummoned(): boolean;
-    IsTempestDouble(): boolean;
+    IsSummoned?(): boolean;
+    IsTempestDouble?(): boolean;
     /**
      * Is this a tower?
      */
-    IsTower(): boolean;
-    IsUnableToMiss(): boolean;
-    IsUnselectable(): boolean;
-    IsUntargetable(): boolean;
+    IsTower?(): boolean;
+    IsUnableToMiss?(): boolean;
+    IsUnselectable?(): boolean;
+    IsUntargetable?(): boolean;
     /**
      * Kills this NPC, with the params Ability and Attacker.
      */
-    Kill(hAbility?: CDOTABaseAbility, hAttacker?: CDOTA_BaseNPC): void;
-    MakeIllusion(): void;
-    MakePhantomBlocker(): void;
-    MakeVisibleDueToAttack(iTeam: DOTATeam_t): void;
-    MakeVisibleToTeam(iTeam: DOTATeam_t, flDuration: number): void;
-    ManageModelChanges(): void;
+    Kill?(hAbility?: CDOTABaseAbility, hAttacker?: CDOTA_BaseNPC): void;
+    MakeIllusion?(): void;
+    MakePhantomBlocker?(): void;
+    MakeVisibleDueToAttack?(iTeam: DOTATeam_t): void;
+    MakeVisibleToTeam?(iTeam: DOTATeam_t, flDuration: number): void;
+    ManageModelChanges?(): void;
     /**
      * Sets the health to a specific value, with optional flags or inflictors.
      */
-    ModifyHealth(iDesiredHealthValue: number, hAbility: CDOTABaseAbility, bLethal: boolean, iAdditionalFlags: number): void;
+    ModifyHealth?(iDesiredHealthValue: number, hAbility: CDOTABaseAbility, bLethal: boolean, iAdditionalFlags: number): void;
     /**
      * Move to follow a unit.
      */
-    MoveToNPC(hNPC: CDOTA_BaseNPC): void;
+    MoveToNPC?(hNPC: CDOTA_BaseNPC): void;
     /**
      * Give an item to another unit.
      */
-    MoveToNPCToGiveItem(hNPC: CDOTA_BaseNPC, hItem: CDOTA_Item): void;
+    MoveToNPCToGiveItem?(hNPC: CDOTA_BaseNPC, hItem: CDOTA_Item): void;
     /**
      * Issue a Move-To command.
      */
-    MoveToPosition(vDest: Vec): void;
+    MoveToPosition?(vDest: Vec): void;
     /**
      * Issue an Attack-Move-To command.
      */
-    MoveToPositionAggressive(vDest: Vec): void;
+    MoveToPositionAggressive?(vDest: Vec): void;
     /**
      * Move to a target to attack.
      */
-    MoveToTargetToAttack(hTarget: CDOTA_BaseNPC): void;
-    NoHealthBar(): boolean;
-    NoTeamMoveTo(): boolean;
-    NoTeamSelect(): boolean;
-    NoUnitCollision(): boolean;
-    NotOnMinimap(): boolean;
-    NotOnMinimapForEnemies(): boolean;
-    NotifyWearablesOfModelChange(bOriginalModel: boolean): void;
-    PassivesDisabled(): boolean;
+    MoveToTargetToAttack?(hTarget: CDOTA_BaseNPC): void;
+    NoHealthBar?(): boolean;
+    NoTeamMoveTo?(): boolean;
+    NoTeamSelect?(): boolean;
+    NoUnitCollision?(): boolean;
+    NotOnMinimap?(): boolean;
+    NotOnMinimapForEnemies?(): boolean;
+    NotifyWearablesOfModelChange?(bOriginalModel: boolean): void;
+    PassivesDisabled?(): boolean;
     /**
      * Issue a Patrol-To command.
      */
-    PatrolToPosition(vDest: Vec): void;
+    PatrolToPosition?(vDest: Vec): void;
     /**
      * Performs an attack on a target.
      */
-    PerformAttack(hTarget: CDOTA_BaseNPC, bUseCastAttackOrb: boolean, bProcessProcs: boolean, bSkipCooldown: boolean, bIgnoreInvis: boolean, bUseProjectile: boolean, bFakeAttack: boolean, bNeverMiss: boolean): void;
+    PerformAttack?(hTarget: CDOTA_BaseNPC, bUseCastAttackOrb: boolean, bProcessProcs: boolean, bSkipCooldown: boolean, bIgnoreInvis: boolean, bUseProjectile: boolean, bFakeAttack: boolean, bNeverMiss: boolean): void;
     /**
      * Pick up a dropped item.
      */
-    PickupDroppedItem(hItem: CDOTA_Item): void;
+    PickupDroppedItem?(hItem: CDOTA_Item): void;
     /**
      * Pick up a rune.
      */
-    PickupRune(hItem: CDOTA_Item): void;
+    PickupRune?(hItem: CDOTA_Item): void;
     /**
      * Play a VCD on the NPC.
      */
-    PlayVCD(pVCD: string): void;
-    ProvidesVision(): boolean;
+    PlayVCD?(pVCD: string): void;
+    ProvidesVision?(): boolean;
     /**
-     * (bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions
+     * ?(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions
      */
-    Purge(bRemovePositiveBuffs: boolean, bRemoveDebuffs: boolean, bFrameOnly: boolean, bRemoveStuns: boolean, bRemoveExceptions: boolean): void;
+    Purge?(bRemovePositiveBuffs: boolean, bRemoveDebuffs: boolean, bFrameOnly: boolean, bRemoveStuns: boolean, bRemoveExceptions: boolean): void;
     /**
      * Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.
      */
-    ReduceMana(flAmount: number): void;
+    ReduceMana?(flAmount: number): void;
     /**
      * Remove an ability from this unit by name.
      */
-    RemoveAbility(pszAbilityName: string): void;
+    RemoveAbility?(pszAbilityName: string): void;
     /**
      * Remove the given gesture activity.
      */
-    RemoveGesture(nActivity: GameActivity_t): void;
-    RemoveHorizontalMotionController(hBuff: CDOTA_Buff): void;
+    RemoveGesture?(nActivity: GameActivity_t): void;
+    RemoveHorizontalMotionController?(hBuff: CDOTA_Buff): void;
     /**
      * Removes the passed item from this unit's inventory and deletes it.
      */
-    RemoveItem(hItem: CDOTA_Item): void;
+    RemoveItem?(hItem: CDOTA_Item): void;
     /**
      * Removes a modifier.
      */
-    RemoveModifierByName(pszScriptName: string): void;
+    RemoveModifierByName?(pszScriptName: string): void;
     /**
      * Removes a modifier that was cast by the given caster.
      */
-    RemoveModifierByNameAndCaster(pszScriptName: string, hCaster: CDOTA_BaseNPC): void;
+    RemoveModifierByNameAndCaster?(pszScriptName: string, hCaster: CDOTA_BaseNPC): void;
     /**
      * Remove the no draw flag.
      */
-    RemoveNoDraw(): void;
-    RemoveVerticalMotionController(hBuff: CDOTA_Buff): void;
+    RemoveNoDraw?(): void;
+    RemoveVerticalMotionController?(hBuff: CDOTA_Buff): void;
     /**
      * Respawns the target unit if it can be respawned.
      */
-    RespawnUnit(): void;
+    RespawnUnit?(): void;
     /**
      * Sells the passed item in this unit's inventory.
      */
-    SellItem(hItem: CDOTA_Item): void;
+    SellItem?(hItem: CDOTA_Item): void;
     /**
      * Set the ability by index.
      */
-    SetAbilityByIndex(hAbility: CDOTABaseAbility, iIndex: number): void;
-    SetAcquisitionRange(nRange: number): void;
+    SetAbilityByIndex?(hAbility: CDOTABaseAbility, iIndex: number): void;
+    SetAcquisitionRange?(nRange: number): void;
     /**
      * Combat involving this creature will have this weight added to the music calcuations.
      */
-    SetAdditionalBattleMusicWeight(flWeight: number): void;
+    SetAdditionalBattleMusicWeight?(flWeight: number): void;
     /**
      * Set this unit's aggro target to a specified unit.
      */
-    SetAggroTarget(hAggroTarget: CDOTA_BaseNPC): void;
-    SetAttackCapability(iAttackCapabilities: DOTAUnitAttackCapability_t): void;
-    SetAttacking(hAttackTarget: CDOTA_BaseNPC): void;
-    SetBaseAttackTime(flBaseAttackTime: number): void;
+    SetAggroTarget?(hAggroTarget: CDOTA_BaseNPC): void;
+    SetAttackCapability?(iAttackCapabilities: DOTAUnitAttackCapability_t): void;
+    SetAttacking?(hAttackTarget: CDOTA_BaseNPC): void;
+    SetBaseAttackTime?(flBaseAttackTime: number): void;
     /**
      * Sets the maximum base damage.
      */
-    SetBaseDamageMax(nMax: number): void;
+    SetBaseDamageMax?(nMax: number): void;
     /**
      * Sets the minimum base damage.
      */
-    SetBaseDamageMin(nMin: number): void;
-    SetBaseHealthRegen(flHealthRegen: number): void;
+    SetBaseDamageMin?(nMin: number): void;
+    SetBaseHealthRegen?(flHealthRegen: number): void;
     /**
      * Sets base magical armor value.
      */
-    SetBaseMagicalResistanceValue(flMagicalResistanceValue: number): void;
-    SetBaseManaRegen(flManaRegen: number): void;
+    SetBaseMagicalResistanceValue?(flMagicalResistanceValue: number): void;
+    SetBaseManaRegen?(flManaRegen: number): void;
     /**
      * Set a new base max health value.
      */
-    SetBaseMaxHealth(flBaseMaxHealth: number): void;
-    SetBaseMoveSpeed(iMoveSpeed: number): void;
+    SetBaseMaxHealth?(flBaseMaxHealth: number): void;
+    SetBaseMoveSpeed?(iMoveSpeed: number): void;
     /**
-     * Set whether or not this unit is allowed to sell items (bCanSellItems)
+     * Set whether or not this unit is allowed to sell items ?(bCanSellItems)
      */
-    SetCanSellItems(bCanSell: boolean): void;
+    SetCanSellItems?(bCanSell: boolean): void;
     /**
      * Set this unit controllable by the player with the passed ID.
      */
-    SetControllableByPlayer(iIndex: number, bSkipAdjustingPosition: boolean): void;
-    SetCursorCastTarget(hEntity: CDOTA_BaseNPC): void;
-    SetCursorPosition(vLocation: Vec): void;
-    SetCursorTargetingNothing(bTargetingNothing: boolean): void;
-    SetCustomHealthLabel(pLabel: string, r: number, g: number, b: number): void;
+    SetControllableByPlayer?(iIndex: number, bSkipAdjustingPosition: boolean): void;
+    SetCursorCastTarget?(hEntity: CDOTA_BaseNPC): void;
+    SetCursorPosition?(vLocation: Vec): void;
+    SetCursorTargetingNothing?(bTargetingNothing: boolean): void;
+    SetCustomHealthLabel?(pLabel: string, r: number, g: number, b: number): void;
     /**
      * Set the base vision range.
      */
-    SetDayTimeVisionRange(iRange: number): void;
+    SetDayTimeVisionRange?(iRange: number): void;
     /**
      * Set the XP bounty on this unit.
      */
-    SetDeathXP(iXPBounty: number): void;
-    SetForceAttackTarget(hNPC: CDOTA_BaseNPC): void;
-    SetForceAttackTargetAlly(hNPC: CDOTA_BaseNPC): void;
+    SetDeathXP?(iXPBounty: number): void;
+    SetForceAttackTarget?(hNPC: CDOTA_BaseNPC): void;
+    SetForceAttackTargetAlly?(hNPC: CDOTA_BaseNPC): void;
     /**
      * Set if this unit has an inventory.
      */
-    SetHasInventory(bHasInventory: boolean): void;
+    SetHasInventory?(bHasInventory: boolean): void;
     /**
      * Set the collision hull radius of this NPC.
      */
-    SetHullRadius(flHullRadius: number): void;
-    SetIdleAcquire(bIdleAcquire: boolean): void;
+    SetHullRadius?(flHullRadius: number): void;
+    SetIdleAcquire?(bIdleAcquire: boolean): void;
     /**
      * Sets the initial waypoint goal for this NPC.
      */
-    SetInitialGoalEntity(hGoal: CBaseEntity): void;
+    SetInitialGoalEntity?(hGoal: CBaseEntity): void;
     /**
      * Set the mana on this unit.
      */
-    SetMana(flMana: number): void;
+    SetMana?(flMana: number): void;
     /**
      * Set the maximum gold bounty for this unit.
      */
-    SetMaximumGoldBounty(iGoldBountyMax: number): void;
+    SetMaximumGoldBounty?(iGoldBountyMax: number): void;
     /**
      * Set the minimum gold bounty for this unit.
      */
-    SetMinimumGoldBounty(iGoldBountyMin: number): void;
+    SetMinimumGoldBounty?(iGoldBountyMin: number): void;
     /**
      * Sets the stack count of a given modifier.
      */
-    SetModifierStackCount(pszScriptName: string, hCaster: CDOTA_BaseNPC, nStackCount: number): void;
-    SetMoveCapability(iMoveCapabilities: DOTAUnitMoveCapability_t): void;
+    SetModifierStackCount?(pszScriptName: string, hCaster: CDOTA_BaseNPC, nStackCount: number): void;
+    SetMoveCapability?(iMoveCapabilities: DOTAUnitMoveCapability_t): void;
     /**
      * Set whether this NPC is required to reach each goal entity, rather than being allowed to unkink their path.
      */
-    SetMustReachEachGoalEntity(must: boolean): void;
+    SetMustReachEachGoalEntity?(must: boolean): void;
     /**
      * If set to true, we will never attempt to move this unit to clear space, even when it unphases.
      */
-    SetNeverMoveToClearSpace(neverMoveToClearSpace: boolean): void;
+    SetNeverMoveToClearSpace?(neverMoveToClearSpace: boolean): void;
     /**
      * Returns the vision range after modifiers.
      */
-    SetNightTimeVisionRange(iRange: number): void;
+    SetNightTimeVisionRange?(iRange: number): void;
     /**
      * Set the unit's origin.
      */
-    SetOrigin(vLocation: Vec): void;
+    SetOrigin?(vLocation: Vec): void;
     /**
      * Sets the original model of this entity, which it will tend to fall back to anytime its state changes.
      */
-    SetOriginalModel(pszModelName: string): void;
+    SetOriginalModel?(pszModelName: string): void;
     /**
      * Sets base physical armor value.
      */
-    SetPhysicalArmorBaseValue(flPhysicalArmorValue: number): void;
-    SetRangedProjectileName(pProjectileName: string): void;
+    SetPhysicalArmorBaseValue?(flPhysicalArmorValue: number): void;
+    SetRangedProjectileName?(pProjectileName: string): void;
     /**
      * sets the client side map reveal radius for this unit
      */
-    SetRevealRadius(revealRadius: number): void;
-    SetStolenScepter(bStolenScepter: boolean): void;
-    SetUnitCanRespawn(bCanRespawn: boolean): void;
-    SetUnitName(pName: string): void;
-    ShouldIdleAcquire(): boolean;
+    SetRevealRadius?(revealRadius: number): void;
+    SetStolenScepter?(bStolenScepter: boolean): void;
+    SetUnitCanRespawn?(bCanRespawn: boolean): void;
+    SetUnitName?(pName: string): void;
+    ShouldIdleAcquire?(): boolean;
     /**
      * Spend mana from this unit, this can be used for spending mana from abilities or item usage.
      */
-    SpendMana(flManaSpent: number, hAbility: CDOTABaseAbility): void;
+    SpendMana?(flManaSpent: number, hAbility: CDOTABaseAbility): void;
     /**
      * Add the given gesture activity.
      */
-    StartGesture(nActivity: GameActivity_t): void;
+    StartGesture?(nActivity: GameActivity_t): void;
     /**
      * Add the given gesture activity with a playback rate override.
      */
-    StartGestureWithPlaybackRate(nActivity: GameActivity_t, flRate: number): void;
+    StartGestureWithPlaybackRate?(nActivity: GameActivity_t, flRate: number): void;
     /**
      * Stop the current order.
      */
-    Stop(): void;
-    StopFacing(): void;
+    Stop?(): void;
+    StopFacing?(): void;
     /**
      * Swaps the slots of the two passed abilities and sets them enabled/disabled.
      */
-    SwapAbilities(pAbilityName1: string, pAbilityName2: string, bEnable1: boolean, bEnable2: boolean): void;
+    SwapAbilities?(pAbilityName1: string, pAbilityName2: string, bEnable1: boolean, bEnable2: boolean): void;
     /**
-     * Swap the contents of two item slots (slot1, slot2)
+     * Swap the contents of two item slots ?(slot1, slot2)
      */
-    SwapItems(nSlot1: number, nSlot2: number): void;
+    SwapItems?(nSlot1: number, nSlot2: number): void;
     /**
      * Removed the passed item from this unit's inventory.
      */
-    TakeItem(hItem: CDOTA_Item): CDOTA_Item;
-    TimeUntilNextAttack(): number;
-    TriggerModifierDodge(): boolean;
-    TriggerSpellAbsorb(hAbility: CDOTABaseAbility): boolean;
+    TakeItem?(hItem: CDOTA_Item): CDOTA_Item;
+    TimeUntilNextAttack?(): number;
+    TriggerModifierDodge?(): boolean;
+    TriggerSpellAbsorb?(hAbility: CDOTABaseAbility): boolean;
     /**
-     * Trigger the Lotus Orb-like effect.(hAbility)
+     * Trigger the Lotus Orb-like effect.?(hAbility)
      */
-    TriggerSpellReflect(hAbility: CDOTABaseAbility): void;
+    TriggerSpellReflect?(hAbility: CDOTABaseAbility): void;
     /**
      * Makes the first ability unhidden, and puts it where second ability currently is. Will do nothing if the first ability is already unhidden and in a valid slot.
      */
-    UnHideAbilityToSlot(pszAbilityName: string, pszReplacedAbilityName: string): void;
-    UnitCanRespawn(): boolean;
+    UnHideAbilityToSlot?(pszAbilityName: string, pszReplacedAbilityName: string): void;
+    UnitCanRespawn?(): boolean;
 }
 /**
  * A building.
@@ -2709,11 +2709,11 @@ declare interface CDOTA_BaseNPC_Building extends CDOTA_BaseNPC {
     /**
      * Get the invulnerability count for a building.
      */
-    GetInvulnCount(): number;
+    GetInvulnCount?(): number;
     /**
      * Set the invulnerability counter of this building.
      */
-    SetInvulnCount(nInvulnCount: number): void;
+    SetInvulnCount?(nInvulnCount: number): void;
 }
 /**
  * A Dota NPC Unit
@@ -2722,71 +2722,71 @@ declare interface CDOTA_BaseNPC_Creature extends CDOTA_BaseNPC {
     /**
      * Add the specified item drop to this creature.
      */
-    AddItemDrop(hDropData: table): void;
+    AddItemDrop?(hDropData: table): void;
     /**
      * Level the creature up by the specified number of levels
      */
-    CreatureLevelUp(iLevels: number): void;
+    CreatureLevelUp?(iLevels: number): void;
     /**
      * Is this unit a champion?
      */
-    IsChampion(): boolean;
+    IsChampion?(): boolean;
     /**
      * Remove all item drops from this creature.
      */
-    RemoveAllItemDrops(): void;
+    RemoveAllItemDrops?(): void;
     /**
      * Set the armor gained per level on this creature.
      */
-    SetArmorGain(flArmorGain: number): void;
+    SetArmorGain?(flArmorGain: number): void;
     /**
      * Set the attack time gained per level on this creature.
      */
-    SetAttackTimeGain(flAttackTimeGain: number): void;
+    SetAttackTimeGain?(flAttackTimeGain: number): void;
     /**
      * Set the bounty gold gained per level on this creature.
      */
-    SetBountyGain(nBountyGain: number): void;
+    SetBountyGain?(nBountyGain: number): void;
     /**
      * Flag this unit as a champion creature.
      */
-    SetChampion(bIsChampion: boolean): void;
+    SetChampion?(bIsChampion: boolean): void;
     /**
      * Set the damage gained per level on this creature.
      */
-    SetDamageGain(nDamageGain: number): void;
+    SetDamageGain?(nDamageGain: number): void;
     /**
      * Set the disable resistance gained per level on this creature.
      */
-    SetDisableResistanceGain(flDisableResistanceGain: number): void;
+    SetDisableResistanceGain?(flDisableResistanceGain: number): void;
     /**
      * Set the hit points gained per level on this creature.
      */
-    SetHPGain(nHPGain: number): void;
+    SetHPGain?(nHPGain: number): void;
     /**
      * Set the hit points regen gained per level on this creature.
      */
-    SetHPRegenGain(flHPRegenGain: number): void;
+    SetHPRegenGain?(flHPRegenGain: number): void;
     /**
      * Set the magic resistance gained per level on this creature.
      */
-    SetMagicResistanceGain(flMagicResistanceGain: number): void;
+    SetMagicResistanceGain?(flMagicResistanceGain: number): void;
     /**
      * Set the mana points gained per level on this creature.
      */
-    SetManaGain(nManaGain: number): void;
+    SetManaGain?(nManaGain: number): void;
     /**
      * Set the mana points regen gained per level on this creature.
      */
-    SetManaRegenGain(flManaRegenGain: number): void;
+    SetManaRegenGain?(flManaRegenGain: number): void;
     /**
      * Set the move speed gained per level on this creature.
      */
-    SetMoveSpeedGain(nMoveSpeedGain: number): void;
+    SetMoveSpeedGain?(nMoveSpeedGain: number): void;
     /**
      * Set the xp reward gained per level on this creature.
      */
-    SetXPGain(nXPGain: number): void;
+    SetXPGain?(nXPGain: number): void;
 }
 /**
  * A Dota Hero NPC
@@ -2795,265 +2795,265 @@ declare interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
     /**
      * Params: Float XP, Bool applyBotDifficultyScaling
      */
-    AddExperience(flXP: number, nReason: EDOTA_ModifyXP_Reason, bApplyBotDifficultyScaling: boolean, bIncrementTotal: boolean): boolean;
+    AddExperience?(flXP: number, nReason: EDOTA_ModifyXP_Reason, bApplyBotDifficultyScaling: boolean, bIncrementTotal: boolean): boolean;
     /**
      * Spend the gold and buyback with this hero.
      */
-    Buyback(): void;
+    Buyback?(): void;
     /**
      * Recalculate all stats after the hero gains stats.
      */
-    CalculateStatBonus(): void;
+    CalculateStatBonus?(): void;
     /**
      * Returns boolean value result of buyback gold limit time less than game time.
      */
-    CanEarnGold(): boolean;
+    CanEarnGold?(): boolean;
     /**
      * Value is stored in PlayerResource.
      */
-    ClearLastHitMultikill(): void;
+    ClearLastHitMultikill?(): void;
     /**
      * Value is stored in PlayerResource.
      */
-    ClearLastHitStreak(): void;
+    ClearLastHitStreak?(): void;
     /**
      * Value is stored in PlayerResource.
      */
-    ClearStreak(): void;
+    ClearStreak?(): void;
     /**
      * Gets the current unspent ability points.
      */
-    GetAbilityPoints(): number;
-    GetAdditionalOwnedUnits(): CDOTA_BaseNPC[];
-    GetAgility(): number;
-    GetAgilityGain(): number;
+    GetAbilityPoints?(): number;
+    GetAdditionalOwnedUnits?(): CDOTA_BaseNPC[];
+    GetAgility?(): number;
+    GetAgilityGain?(): number;
     /**
      * Value is stored in PlayerResource.
      */
-    GetAssists(): number;
-    GetAttacker(nIndex: number): number;
-    GetBaseAgility(): number;
+    GetAssists?(): number;
+    GetAttacker?(nIndex: number): number;
+    GetBaseAgility?(): number;
     /**
      * Hero damage is also affected by attributes.
      */
-    GetBaseDamageMax(): number;
+    GetBaseDamageMax?(): number;
     /**
      * Hero damage is also affected by attributes.
      */
-    GetBaseDamageMin(): number;
-    GetBaseIntellect(): number;
+    GetBaseDamageMin?(): number;
+    GetBaseIntellect?(): number;
     /**
      * Returns the base mana regen.
      */
-    GetBaseManaRegen(): number;
-    GetBaseStrength(): number;
-    GetBonusDamageFromPrimaryStat(): number;
+    GetBaseManaRegen?(): number;
+    GetBaseStrength?(): number;
+    GetBonusDamageFromPrimaryStat?(): number;
     /**
      * Return float value for the amount of time left on cooldown for this hero's buyback.
      */
-    GetBuybackCooldownTime(): number;
+    GetBuybackCooldownTime?(): number;
     /**
      * Return integer value for the gold cost of a buyback.
      */
-    GetBuybackCost(): number;
+    GetBuybackCost?(): number;
     /**
      * Returns the amount of time gold gain is limited after buying back.
      */
-    GetBuybackGoldLimitTime(): number;
+    GetBuybackGoldLimitTime?(): number;
     /**
      * Returns the amount of XP
      */
-    GetCurrentXP(): number;
-    GetDeathGoldCost(): number;
+    GetCurrentXP?(): number;
+    GetDeathGoldCost?(): number;
     /**
      * Value is stored in PlayerResource.
      */
-    GetDeaths(): number;
+    GetDeaths?(): number;
     /**
      * Value is stored in PlayerResource.
      */
-    GetDenies(): number;
+    GetDenies?(): number;
     /**
      * Returns gold amount for the player owning this hero
      */
-    GetGold(): number;
-    GetGoldBounty(): number;
+    GetGold?(): number;
+    GetGoldBounty?(): number;
     /**
      * Hero attack speed is also affected by agility.
      */
-    GetIncreasedAttackSpeed(): number;
-    GetIntellect(): number;
-    GetIntellectGain(): number;
+    GetIncreasedAttackSpeed?(): number;
+    GetIntellect?(): number;
+    GetIntellectGain?(): number;
     /**
      * Value is stored in PlayerResource.
      */
-    GetKills(): number;
+    GetKills?(): number;
     /**
      * Value is stored in PlayerResource.
      */
-    GetLastHits(): number;
+    GetLastHits?(): number;
     /**
      * Returns the intelligenced based mana regen multiplier.
      */
-    GetManaRegenMultiplier(): number;
-    GetMostRecentDamageTime(): number;
-    GetMultipleKillCount(): number;
-    GetNumAttackers(): number;
-    GetNumItemsInInventory(): number;
-    GetNumItemsInStash(): number;
+    GetManaRegenMultiplier?(): number;
+    GetMostRecentDamageTime?(): number;
+    GetMultipleKillCount?(): number;
+    GetNumAttackers?(): number;
+    GetNumItemsInInventory?(): number;
+    GetNumItemsInStash?(): number;
     /**
      * Hero armor is affected by attributes.
      */
-    GetPhysicalArmorBaseValue(): number;
+    GetPhysicalArmorBaseValue?(): number;
     /**
      * Returns player ID of the player owning this hero
      */
-    GetPlayerID(): PlayerID;
+    GetPlayerID?(): PlayerID;
     /**
      * 0 = strength, 1 = agility, 2 = intelligence.
      */
-    GetPrimaryAttribute(): Attributes;
-    GetPrimaryStatValue(): number;
-    GetRespawnTime(): number;
+    GetPrimaryAttribute?(): Attributes;
+    GetPrimaryStatValue?(): number;
+    GetRespawnTime?(): number;
     /**
      * Is this hero prevented from respawning?
      */
-    GetRespawnsDisabled(): boolean;
+    GetRespawnsDisabled?(): boolean;
     /**
      * Value is stored in PlayerResource.
      */
-    GetStreak(): number;
-    GetStrength(): number;
-    GetStrengthGain(): number;
-    GetTimeUntilRespawn(): number;
+    GetStreak?(): number;
+    GetStrength?(): number;
+    GetStrengthGain?(): number;
+    GetTimeUntilRespawn?(): number;
     /**
-     * Get wearable entity in slot (slot)
+     * Get wearable entity in slot ?(slot)
      */
-    GetTogglableWearable(nSlotType: number): CBaseEntity;
-    HasAnyAvailableInventorySpace(): boolean;
-    HasFlyingVision(): boolean;
-    HasOwnerAbandoned(): boolean;
+    GetTogglableWearable?(nSlotType: number): CBaseEntity;
+    HasAnyAvailableInventorySpace?(): boolean;
+    HasFlyingVision?(): boolean;
+    HasOwnerAbandoned?(): boolean;
     /**
      * Args: const char* pItemName, bool bIncludeStashCombines, bool bAllowSelling
      */
-    HasRoomForItem(pItemName: string, bIncludeStashCombines: boolean, bAllowSelling: boolean): number;
+    HasRoomForItem?(pItemName: string, bIncludeStashCombines: boolean, bAllowSelling: boolean): number;
     /**
      * Levels up the hero, true or false to play effects.
      */
-    HeroLevelUp(bPlayEffects: boolean): void;
+    HeroLevelUp?(bPlayEffects: boolean): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementAssists(iKillerID: number): void;
+    IncrementAssists?(iKillerID: number): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementDeaths(iKillerID: number): void;
+    IncrementDeaths?(iKillerID: number): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementDenies(): void;
+    IncrementDenies?(): void;
     /**
      * Passed ID is for the victim, killer ID is ID of the current hero.  Value is stored in PlayerResource.
      */
-    IncrementKills(iVictimID: number): void;
+    IncrementKills?(iVictimID: number): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementLastHitMultikill(): void;
+    IncrementLastHitMultikill?(): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementLastHitStreak(): void;
+    IncrementLastHitStreak?(): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementLastHits(): void;
+    IncrementLastHits?(): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementNearbyCreepDeaths(): void;
+    IncrementNearbyCreepDeaths?(): void;
     /**
      * Value is stored in PlayerResource.
      */
-    IncrementStreak(): void;
-    IsBuybackDisabledByReapersScythe(): boolean;
-    IsReincarnating(): boolean;
-    IsStashEnabled(): boolean;
+    IncrementStreak?(): void;
+    IsBuybackDisabledByReapersScythe?(): boolean;
+    IsReincarnating?(): boolean;
+    IsStashEnabled?(): boolean;
     /**
      * Args: Hero, Inflictor
      */
-    KilledHero(hHero: CDOTA_BaseNPC_Hero, hInflictor: CDOTA_BaseNPC): void;
+    KilledHero?(hHero: CDOTA_BaseNPC_Hero, hInflictor: CDOTA_BaseNPC): void;
     /**
      * Adds passed value to base attribute value, then calls CalculateStatBonus.
      */
-    ModifyAgility(flNewAgility: number): void;
+    ModifyAgility?(flNewAgility: number): void;
     /**
      * Gives this hero some gold.  Args: int nGoldChange, bool bReliable, int reason
      */
-    ModifyGold(iGoldChange: number, bReliable: boolean, iReason: number): number;
+    ModifyGold?(iGoldChange: number, bReliable: boolean, iReason: number): number;
     /**
      * Adds passed value to base attribute value, then calls CalculateStatBonus.
      */
-    ModifyIntellect(flNewIntellect: number): void;
+    ModifyIntellect?(flNewIntellect: number): void;
     /**
      * Adds passed value to base attribute value, then calls CalculateStatBonus.
      */
-    ModifyStrength(flNewStrength: number): void;
-    PerformTaunt(): void;
-    RecordLastHit(): void;
+    ModifyStrength?(flNewStrength: number): void;
+    PerformTaunt?(): void;
+    RecordLastHit?(): void;
     /**
      * Respawn this hero.
      */
-    RespawnHero(bBuyBack: boolean, bRespawnPenalty: boolean): void;
+    RespawnHero?(bBuyBack: boolean, bRespawnPenalty: boolean): void;
     /**
      * Sets the current unspent ability points.
      */
-    SetAbilityPoints(iPoints: number): void;
-    SetBaseAgility(flAgility: number): void;
-    SetBaseIntellect(flIntellect: number): void;
-    SetBaseStrength(flStrength: number): void;
-    SetBotDifficulty(nDifficulty: number): void;
-    SetBuyBackDisabledByReapersScythe(bBuybackDisabled: boolean): void;
+    SetAbilityPoints?(iPoints: number): void;
+    SetBaseAgility?(flAgility: number): void;
+    SetBaseIntellect?(flIntellect: number): void;
+    SetBaseStrength?(flStrength: number): void;
+    SetBotDifficulty?(nDifficulty: number): void;
+    SetBuyBackDisabledByReapersScythe?(bBuybackDisabled: boolean): void;
     /**
      * Sets the buyback cooldown time.
      */
-    SetBuybackCooldownTime(flTime: number): void;
+    SetBuybackCooldownTime?(flTime: number): void;
     /**
      * Set the amount of time gold gain is limited after buying back.
      */
-    SetBuybackGoldLimitTime(flTime: number): void;
+    SetBuybackGoldLimitTime?(flTime: number): void;
     /**
      * Sets a custom experience value for this hero.  Note, GameRules boolean must be set for this to work!
      */
-    SetCustomDeathXP(iValue: number): void;
+    SetCustomDeathXP?(iValue: number): void;
     /**
      * Sets the gold amount for the player owning this hero
      */
-    SetGold(iGold: number, bReliable: boolean): void;
-    SetPlayerID(iPlayerID: number): void;
+    SetGold?(iGold: number, bReliable: boolean): void;
+    SetPlayerID?(iPlayerID: number): void;
     /**
      * Set this hero's primary attribute value.
      */
-    SetPrimaryAttribute(nPrimaryAttribute: Attributes): void;
-    SetRespawnPosition(vOrigin: Vec): void;
+    SetPrimaryAttribute?(nPrimaryAttribute: Attributes): void;
+    SetRespawnPosition?(vOrigin: Vec): void;
     /**
      * Prevent this hero from respawning.
      */
-    SetRespawnsDisabled(bDisableRespawns: boolean): void;
-    SetStashEnabled(bEnabled: boolean): void;
-    SetTimeUntilRespawn(time: number): void;
-    ShouldDoFlyHeightVisual(): boolean;
+    SetRespawnsDisabled?(bDisableRespawns: boolean): void;
+    SetStashEnabled?(bEnabled: boolean): void;
+    SetTimeUntilRespawn?(time: number): void;
+    ShouldDoFlyHeightVisual?(): boolean;
     /**
      * Args: int nGold, int nReason
      */
-    SpendGold(iCost: number, iReason: EDOTA_ModifyGold_Reason): void;
-    UnitCanRespawn(): boolean;
+    SpendGold?(iCost: number, iReason: EDOTA_ModifyGold_Reason): void;
+    UnitCanRespawn?(): boolean;
     /**
      * This upgrades the passed ability if it exists and the hero has enough ability points.
      */
-    UpgradeAbility(hAbility: CDOTABaseAbility): void;
-    WillReincarnate(): boolean;
+    UpgradeAbility?(hAbility: CDOTABaseAbility): void;
+    WillReincarnate?(): boolean;
 }
 /**
  * A Dota NPC Trap Ward
@@ -3062,173 +3062,173 @@ declare interface CDOTA_BaseNPC_Trap_Ward extends CDOTA_BaseNPC_Creature {
     /**
      * Get the trap target for this entity.
      */
-    GetTrapTarget(): Vec;
+    GetTrapTarget?(): Vec;
     /**
      * Set the animation sequence for this entity.
      */
-    SetAnimation(pAnimation: string): void;
+    SetAnimation?(pAnimation: string): void;
 }
 
 /**
  * A modifier.
  */
-declare interface CDOTA_Buff {
+declare class CDOTA_Buff {
     /**
-     * (index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect
+     * ?(index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect
      */
-    AddParticle(i: number, bDestroyImmediately: boolean, bStatusEffect: boolean, iPriority: number, bHeroEffect: boolean, bOverheadEffect: boolean): void;
+    AddParticle?(i: number, bDestroyImmediately: boolean, bStatusEffect: boolean, iPriority: number, bHeroEffect: boolean, bOverheadEffect: boolean): void;
     /**
      * Decrease this modifier's stack count by 1.
      */
-    DecrementStackCount(): void;
+    DecrementStackCount?(): void;
     /**
      * Run all associated destroy functions, then remove the modifier.
      */
-    Destroy(): void;
+    Destroy?(): void;
     /**
      * Run all associated refresh functions on this modifier as if it was re-applied.
      */
-    ForceRefresh(): void;
+    ForceRefresh?(): void;
     /**
      * Get the ability that generated the modifier.
      */
-    GetAbility(): CDOTABaseAbility;
+    GetAbility?(): CDOTABaseAbility;
     /**
-     * Returns aura stickiness (default 0.5)
+     * Returns aura stickiness ?(default 0.5)
      */
-    GetAuraDuration(): number;
+    GetAuraDuration?(): number;
     /**
      * Get the owner of the ability responsible for the modifier.
      */
-    GetCaster(): CDOTA_BaseNPC;
-    GetClass(): string;
-    GetCreationTime(): number;
-    GetDieTime(): number;
-    GetDuration(): number;
-    GetElapsedTime(): number;
-    GetName(): string;
+    GetCaster?(): CDOTA_BaseNPC;
+    GetClass?(): string;
+    GetCreationTime?(): number;
+    GetDieTime?(): number;
+    GetDuration?(): number;
+    GetElapsedTime?(): number;
+    GetName?(): string;
     /**
      * Get the unit the modifier is parented to.
      */
-    GetParent(): CDOTA_BaseNPC;
-    GetRemainingTime(): number;
-    GetStackCount(): number;
-    HasFunction(iFunction: number): boolean;
+    GetParent?(): CDOTA_BaseNPC;
+    GetRemainingTime?(): number;
+    GetStackCount?(): number;
+    HasFunction?(iFunction: number): boolean;
     /**
      * Increase this modifier's stack count by 1.
      */
-    IncrementStackCount(): void;
-    IsStunDebuff(): boolean;
+    IncrementStackCount?(): void;
+    IsStunDebuff?(): boolean;
     /**
-     * (flTime, bInformClients)
+     * ?(flTime, bInformClients)
      */
-    SetDuration(flDuration: number, bInformClient: boolean): void;
-    SetStackCount(iCount: number): void;
+    SetDuration?(flDuration: number, bInformClient: boolean): void;
+    SetStackCount?(iCount: number): void;
     /**
-     * Start this modifier's think function (OnIntervalThink) with the given interval (float).  To stop, call with -1.
+     * Start this modifier's think function ?(OnIntervalThink) with the given interval ?(float).  To stop, call with -1.
      */
-    StartIntervalThink(flInterval: number): void;
+    StartIntervalThink?(flInterval: number): void;
 }
 /**
  * !Custom HUD manager
  */
 declare interface CDOTA_CustomUIManager {
     /**
-     * Create a new custom UI HUD element for the specified player(s). ( int PlayerID /*-1 means everyone* /, string ElementID /* should be unique * /, string LayoutFileName, table DialogVariables /* can be nil * / )
+     * Create a new custom UI HUD element for the specified player?(s). ?( int PlayerID /*-1 means everyone* /, string ElementID /* should be unique * /, string LayoutFileName, table DialogVariables /* can be nil * / )
      */
-    DynamicHud_Create(arg1: number, arg2: string, arg3: string, arg4: table): void;
+    DynamicHud_Create?(arg1: number, arg2: string, arg3: string, arg4: table): void;
     /**
-     * Destroy a custom hud element ( int PlayerID /*-1 means everyone* /, string ElementID )
+     * Destroy a custom hud element ?( int PlayerID /*-1 means everyone* /, string ElementID )
      */
-    DynamicHud_Destroy(arg1: number, arg2: string): void;
+    DynamicHud_Destroy?(arg1: number, arg2: string): void;
     /**
-     * Add or modify dialog variables for an existing custom hud element ( int PlayerID /*-1 means everyone* /, string ElementID, table DialogVariables )
+     * Add or modify dialog variables for an existing custom hud element ?( int PlayerID /*-1 means everyone* /, string ElementID, table DialogVariables )
      */
-    DynamicHud_SetDialogVariables(arg1: number, arg2: string, arg3: table): void;
+    DynamicHud_SetDialogVariables?(arg1: number, arg2: string, arg3: table): void;
     /**
-     * Toggle the visibility of an existing custom hud element ( int PlayerID /*-1 means everyone* /, string ElementID, bool Visible )
+     * Toggle the visibility of an existing custom hud element ?( int PlayerID /*-1 means everyone* /, string ElementID, bool Visible )
      */
-    DynamicHud_SetVisible(arg1: number, arg2: string, arg3: boolean): void;
+    DynamicHud_SetVisible?(arg1: number, arg2: string, arg3: boolean): void;
 }
 /**
  * A usable item.
  */
 declare interface CDOTA_Item extends CDOTABaseAbility {
-    CanBeUsedOutOfInventory(): boolean;
+    CanBeUsedOutOfInventory?(): boolean;
     /**
      * Get the container for this item.
      */
-    GetContainer(): CDOTA_Item_Physical;
-    GetCost(): number;
+    GetContainer?(): CDOTA_Item_Physical;
+    GetCost?(): number;
     /**
      * Get the number of charges this item currently has.
      */
-    GetCurrentCharges(): number;
+    GetCurrentCharges?(): number;
     /**
      * Get the initial number of charges this item has.
      */
-    GetInitialCharges(): number;
+    GetInitialCharges?(): number;
     /**
      * Gets whether item is unequipped or ready.
      */
-    GetItemState(): number;
+    GetItemState?(): number;
     /**
      * Get the purchase time of this item
      */
-    GetPurchaseTime(): number;
+    GetPurchaseTime?(): number;
     /**
      * Get the purchaser for this item.
      */
-    GetPurchaser(): CDOTA_BaseNPC;
-    GetShareability(): EShareAbility;
-    IsAlertableItem(): boolean;
-    IsCastOnPickup(): boolean;
-    IsCombinable(): boolean;
-    IsDisassemblable(): boolean;
-    IsDroppable(): boolean;
-    IsInBackpack(): boolean;
-    IsItem(): boolean;
-    IsKillable(): boolean;
+    GetPurchaser?(): CDOTA_BaseNPC;
+    GetShareability?(): EShareAbility;
+    IsAlertableItem?(): boolean;
+    IsCastOnPickup?(): boolean;
+    IsCombinable?(): boolean;
+    IsDisassemblable?(): boolean;
+    IsDroppable?(): boolean;
+    IsInBackpack?(): boolean;
+    IsItem?(): boolean;
+    IsKillable?(): boolean;
     IsMuted?(): boolean;
-    IsPermanent(): boolean;
-    IsPurchasable(): boolean;
-    IsRecipe(): boolean;
-    IsRecipeGenerated(): boolean;
-    IsSellable(): boolean;
-    IsStackable(): boolean;
-    LaunchLoot(bAutoUse: boolean, flHeight: number, flDuration: number, vEndPoint: Vec): void;
-    LaunchLootInitialHeight(bAutoUse: boolean, flInitialHeight: number, flLaunchHeight: number, flDuration: number, vEndPoint: Vec): void;
-    OnEquip(): void;
-    OnUnequip(): void;
-    RequiresCharges(): boolean;
-    SetCanBeUsedOutOfInventory(bValue: boolean): void;
-    SetCastOnPickup(bCastOnPickUp: boolean): void;
+    IsPermanent?(): boolean;
+    IsPurchasable?(): boolean;
+    IsRecipe?(): boolean;
+    IsRecipeGenerated?(): boolean;
+    IsSellable?(): boolean;
+    IsStackable?(): boolean;
+    LaunchLoot?(bAutoUse: boolean, flHeight: number, flDuration: number, vEndPoint: Vec): void;
+    LaunchLootInitialHeight?(bAutoUse: boolean, flInitialHeight: number, flLaunchHeight: number, flDuration: number, vEndPoint: Vec): void;
+    OnEquip?(): void;
+    OnUnequip?(): void;
+    RequiresCharges?(): boolean;
+    SetCanBeUsedOutOfInventory?(bValue: boolean): void;
+    SetCastOnPickup?(bCastOnPickUp: boolean): void;
     /**
      * Set the number of charges on this item
      */
-    SetCurrentCharges(iCharges: number): void;
-    SetDroppable(bDroppable: boolean): void;
+    SetCurrentCharges?(iCharges: number): void;
+    SetDroppable?(bDroppable: boolean): void;
     /**
      * Sets whether item is unequipped or ready.
      */
-    SetItemState(iState: number): void;
+    SetItemState?(iState: number): void;
     /**
      * Set the purchase time of this item
      */
-    SetPurchaseTime(flTime: number): void;
+    SetPurchaseTime?(flTime: number): void;
     /**
      * Set the purchaser of record for this item.
      */
-    SetPurchaser(hPurchaser: CDOTA_BaseNPC): void;
-    SetSellable(bSellable: boolean): void;
-    SetShareability(iShareability: EShareAbility): void;
-    SetStacksWithOtherOwners(bStacksWithOtherOwners: boolean): void;
-    SpendCharge(): void;
-    StacksWithOtherOwners(): boolean;
+    SetPurchaser?(hPurchaser: CDOTA_BaseNPC): void;
+    SetSellable?(bSellable: boolean): void;
+    SetShareability?(iShareability: EShareAbility): void;
+    SetStacksWithOtherOwners?(bStacksWithOtherOwners: boolean): void;
+    SpendCharge?(): void;
+    StacksWithOtherOwners?(): boolean;
     /**
      * Think this item
      */
-    Think(): void;
+    Think?(): void;
 }
 /**
  * Spawns a physical item
@@ -3237,7 +3237,7 @@ declare interface CDOTA_ItemSpawner extends CBaseEntity {
     /**
      * Returns the item name
      */
-    GetItemName(): string;
+    GetItemName?(): string;
 }
 /**
  * A data driven usable item.
@@ -3246,11 +3246,11 @@ declare interface CDOTA_Item_DataDriven extends CDOTA_Item {
     /**
      * Applies a data driven modifier to the target
      */
-    ApplyDataDrivenModifier(hCaster: CDOTA_BaseNPC, hTarget: CDOTA_BaseNPC, pszModifierName: string, hModifierTable: table): void;
+    ApplyDataDrivenModifier?(hCaster: CDOTA_BaseNPC, hTarget: CDOTA_BaseNPC, pszModifierName: string, hModifierTable: table): void;
     /**
      * Applies a data driven thinker at the location
      */
-    ApplyDataDrivenThinker(hCaster: CDOTA_BaseNPC, vLocation: Vec, pszModifierName: string, hModifierTable: table): CBaseEntity;
+    ApplyDataDrivenThinker?(hCaster: CDOTA_BaseNPC, vLocation: Vec, pszModifierName: string, hModifierTable: table): CBaseEntity;
 }
 /**
  * A lua-based item.
@@ -3261,11 +3261,11 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
      */
     CastFilterResult?(): UnitFilterResult;
     /**
-     * (Vector vLocation) Determine whether an issued command on a location is valid.
+     * ?(Vector vLocation) Determine whether an issued command on a location is valid.
      */
     CastFilterResultLocation?(vLocation: Vec): UnitFilterResult;
     /**
-     * (HSCRIPT hTarget) Determine whether an issued command on a target is valid.
+     * ?(HSCRIPT hTarget) Determine whether an issued command on a target is valid.
      */
     CastFilterResultTarget?(hTarget: CDOTA_BaseNPC): UnitFilterResult;
     /**
@@ -3289,7 +3289,7 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
      */
     GetChannelTime?(): number;
     /**
-     * Return mana cost at the given level per second while channeling (-1 is current).
+     * Return mana cost at the given level per second while channeling ?(-1 is current).
      */
     GetChannelledManaCostPerSecond?(iLevel: number): number;
     /**
@@ -3305,15 +3305,15 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
      */
     GetCustomCastError?(): string;
     /**
-     * (Vector vLocation) Return the error string of a failed command on a location.
+     * ?(Vector vLocation) Return the error string of a failed command on a location.
      */
     GetCustomCastErrorLocation?(vLocation: Vec): string;
     /**
-     * (HSCRIPT hTarget) Return the error string of a failed command on a target.
+     * ?(HSCRIPT hTarget) Return the error string of a failed command on a target.
      */
     GetCustomCastErrorTarget?(hTarget: CDOTA_BaseNPC): string;
     /**
-     * Return gold cost at the given level (-1 is current).
+     * Return gold cost at the given level ?(-1 is current).
      */
     GetGoldCost?(iLevel: number): number;
     /**
@@ -3321,7 +3321,7 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
      */
     GetIntrinsicModifierName?(): string;
     /**
-     * Return mana cost at the given level (-1 is current).
+     * Return mana cost at the given level ?(-1 is current).
      */
     GetManaCost?(iLevel: number): number;
     /**
@@ -3353,23 +3353,23 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
      */
     OnAbilityPhaseInterrupted?(): void;
     /**
-     * Cast time begins (return true for successful cast).
+     * Cast time begins ?(return true for successful cast).
      */
     OnAbilityPhaseStart?(): boolean;
     /**
-     * (bool bInterrupted) Channel finished.
+     * ?(bool bInterrupted) Channel finished.
      */
     OnChannelFinish?(bInterrupted: boolean): void;
     /**
-     * (float flInterval) Channeling is taking place.
+     * ?(float flInterval) Channeling is taking place.
      */
     OnChannelThink?(flInterval: number): void;
     /**
-     * Caster (hero only) gained a level, skilled an ability, or received a new stat bonus.
+     * Caster ?(hero only) gained a level, skilled an ability, or received a new stat bonus.
      */
     OnHeroCalculateStatBonus?(): void;
     /**
-     * A hero has died in the vicinity (ie Urn), takes table of params.
+     * A hero has died in the vicinity ?(ie Urn), takes table of params.
      */
     OnHeroDiedNearby?(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
     /**
@@ -3381,7 +3381,7 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
      */
     OnInventoryContentsChanged?(): void;
     /**
-     * ( HSCRIPT hItem ) Caster equipped item.
+     * ?( HSCRIPT hItem ) Caster equipped item.
      */
     OnItemEquipped?(hItem: CDOTA_Item): void;
     /**
@@ -3393,19 +3393,19 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
      */
     OnOwnerSpawned?(): void;
     /**
-     * (HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination (target is invalid).
+     * ?(HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination ?(target is invalid).
      */
     OnProjectileHit?(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
     /**
-     * (Vector vLocation) Projectile is actively moving.
+     * ?(Vector vLocation) Projectile is actively moving.
      */
     OnProjectileThink?(vLocation: Vec): void;
     /**
      * Cast time finished, spell effects begin.
      */
-    OnSpellStart(): void;
+    OnSpellStart?(): void;
     /**
-     * ( HSCRIPT hAbility ) Special behavior when stolen by Spell Steal.
+     * ?( HSCRIPT hAbility ) Special behavior when stolen by Spell Steal.
      */
     OnStolen?(hSourceAbility: CDOTABaseAbility): void;
     /**
@@ -3436,174 +3436,174 @@ declare interface CDOTA_Item_Physical extends CBaseAnimating {
     /**
      * Returned the contained item.
      */
-    GetContainedItem(): CDOTA_Item;
+    GetContainedItem?(): CDOTA_Item;
     /**
      * Returns the game time when this item was created in the world
      */
-    GetCreationTime(): number;
+    GetCreationTime?(): number;
     /**
      * Set the contained item.
      */
-    SetContainedItem(hItem: CDOTA_Item): void;
+    SetContainedItem?(hItem: CDOTA_Item): void;
 }
 /**
  * A tree in the Dota map
  */
 declare interface CDOTA_MapTree extends CBaseEntity {
     /**
-     * Cuts down this tree. Parameters: int nTeamNumberKnownTo (-1 = invalid team)
+     * Cuts down this tree. Parameters: int nTeamNumberKnownTo ?(-1 = invalid team)
      */
-    CutDown(nTreeNumberKnownTo: DOTATeam_t): void;
+    CutDown?(nTreeNumberKnownTo: DOTATeam_t): void;
     /**
-     * Cuts down this tree. Parameters: float flRegrowAfter (-1 = never regrow), int nTeamNumberKnownTo (-1 = invalid team)
+     * Cuts down this tree. Parameters: float flRegrowAfter ?(-1 = never regrow), int nTeamNumberKnownTo ?(-1 = invalid team)
      */
-    CutDownRegrowAfter(flRegrowAfter: number, nTeamNumberKnownTo: DOTATeam_t): void;
+    CutDownRegrowAfter?(flRegrowAfter: number, nTeamNumberKnownTo: DOTATeam_t): void;
     /**
      * Grows back the tree if it was cut down.
      */
-    GrowBack(): void;
+    GrowBack?(): void;
     /**
      * Returns true if the tree is standing, false if it has been cut down
      */
-    IsStanding(): boolean;
+    IsStanding?(): boolean;
 }
 /**
  * A lua-based modifier.
  */
-declare interface CDOTA_Modifier_Lua extends CDOTA_Buff {
+declare class CDOTA_Modifier_Lua extends CDOTA_Buff {
     /**
      * True/false if this modifier is active on illusions.
      */
-    AllowIllusionDuplicate(): boolean;
+    AllowIllusionDuplicate?(): boolean;
     /**
      * True/false if this buff is removed when the duration expires.
      */
-    DestroyOnExpire(): boolean;
+    DestroyOnExpire?(): boolean;
     /**
-     * Return the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t
+     * Return the types of attributes applied to this modifier ?(enum value from DOTAModifierAttribute_t
      */
-    GetAttributes(): DOTAModifierAttribute_t;
+    GetAttributes?(): DOTAModifierAttribute_t;
     /**
      * Returns aura stickiness
      */
-    GetAuraDuration(): number;
+    GetAuraDuration?(): number;
     /**
      * Return true/false if this entity should receive the aura under specific conditions
      */
-    GetAuraEntityReject(hEntity: CDOTA_BaseNPC): boolean;
+    GetAuraEntityReject?(hEntity: CDOTA_BaseNPC): boolean;
     /**
      * Return the range around the parent this aura tries to apply its buff.
      */
-    GetAuraRadius(): number;
+    GetAuraRadius?(): number;
     /**
      * Return the unit flags this aura respects when placing buffs.
      */
-    GetAuraSearchFlags(): DOTA_UNIT_TARGET_FLAGS;
+    GetAuraSearchFlags?(): DOTA_UNIT_TARGET_FLAGS;
     /**
      * Return the teams this aura applies its buff to.
      */
-    GetAuraSearchTeam(): DOTA_UNIT_TARGET_TEAM;
+    GetAuraSearchTeam?(): DOTA_UNIT_TARGET_TEAM;
     /**
      * Return the unit classifications this aura applies its buff to.
      */
-    GetAuraSearchType(): DOTA_UNIT_TARGET_TYPE;
+    GetAuraSearchType?(): DOTA_UNIT_TARGET_TYPE;
     /**
      * Return the attach type of the particle system from GetEffectName.
      */
-    GetEffectAttachType(): ParticleAttachment_t;
+    GetEffectAttachType?(): ParticleAttachment_t;
     /**
      * Return the name of the particle system that is created while this modifier is active.
      */
-    GetEffectName(): string;
+    GetEffectName?(): string;
     /**
      * Return the name of the hero effect particle system that is created while this modifier is active.
      */
-    GetHeroEffectName(): string;
+    GetHeroEffectName?(): string;
     /**
-     * The name of the secondary modifier that will be applied by this modifier (if it is an aura).
+     * The name of the secondary modifier that will be applied by this modifier ?(if it is an aura).
      */
-    GetModifierAura(): string;
+    GetModifierAura?(): string;
     /**
      * Return the priority order this modifier will be applied over others.
      */
-    GetPriority(): modifierpriority;
+    GetPriority?(): modifierpriority;
     /**
      * Return the name of the status effect particle system that is created while this modifier is active.
      */
-    GetStatusEffectName(): string;
+    GetStatusEffectName?(): string;
     /**
      * Return the name of the buff icon to be shown for this modifier.
      */
-    GetTexture(): string;
+    GetTexture?(): string;
     /**
-     * Relationship of this hero effect with those from other buffs (higher is more likely to be shown).
+     * Relationship of this hero effect with those from other buffs ?(higher is more likely to be shown).
      */
-    HeroEffectPriority(): modifierpriority;
+    HeroEffectPriority?(): modifierpriority;
     /**
      * True/false if this modifier is an aura.
      */
-    IsAura(): boolean;
+    IsAura?(): boolean;
     /**
      * True/false if this aura provides buffs when the parent is dead.
      */
-    IsAuraActiveOnDeath(): boolean;
+    IsAuraActiveOnDeath?(): boolean;
     /**
      * True/false if this modifier should be displayed as a debuff.
      */
-    IsDebuff(): boolean;
+    IsDebuff?(): boolean;
     /**
      * True/false if this modifier should be displayed on the buff bar.
      */
-    IsHidden(): boolean;
-    IsPermanent(): boolean;
+    IsHidden?(): boolean;
+    IsPermanent?(): boolean;
     /**
      * True/false if this modifier can be purged.
      */
-    IsPurgable(): boolean;
+    IsPurgable?(): boolean;
     /**
      * True/false if this modifier can be purged by strong dispels.
      */
-    IsPurgeException(): boolean;
+    IsPurgeException?(): boolean;
     /**
      * True/false if this modifier is considered a stun for purge reasons.
      */
-    IsStunDebuff(): boolean;
+    IsStunDebuff?(): boolean;
     /**
      * Runs when the modifier is created.
      */
-    OnCreated(params: table): void;
+    OnCreated?(params: table): void;
     /**
-     * Runs when the modifier is destroyed (after unit loses modifier).
+     * Runs when the modifier is destroyed ?(after unit loses modifier).
      */
-    OnDestroy(): void;
+    OnDestroy?(): void;
     /**
      * Runs when the think interval occurs.
      */
-    OnIntervalThink(): void;
+    OnIntervalThink?(): void;
     /**
      * Runs when the modifier is refreshed.
      */
-    OnRefresh(params: table): void;
+    OnRefresh?(params: table): void;
     /**
-     * Runs when the modifier is destroyed (before unit loses modifier).
+     * Runs when the modifier is destroyed ?(before unit loses modifier).
      */
-    OnRemoved(): void;
+    OnRemoved?(): void;
     /**
-     * Runs when stack count changes (param is old count).
+     * Runs when stack count changes ?(param is old count).
      */
-    OnStackCountChanged(iStackCount: number): void;
+    OnStackCountChanged?(iStackCount: number): void;
     /**
      * True/false if this modifier is removed when the parent dies.
      */
-    RemoveOnDeath(): boolean;
+    RemoveOnDeath?(): boolean;
     /**
      * Apply the overhead offset to the attached effect.
      */
-    ShouldUseOverheadOffset(): boolean;
+    ShouldUseOverheadOffset?(): boolean;
     /**
-     * Relationship of this status effect with those from other buffs (higher is more likely to be shown).
+     * Relationship of this status effect with those from other buffs ?(higher is more likely to be shown).
      */
-    StatusEffectPriority(): modifierpriority;
+    StatusEffectPriority?(): modifierpriority;
 }
 /**
  * A lua-based horizontal motion controller.
@@ -3612,23 +3612,23 @@ declare interface CDOTA_Modifier_Lua_Horizontal_Motion extends CDOTA_Modifier_Lu
     /**
      * Starts the horizontal motion controller effects for this buff.  Returns true if successful.
      */
-    ApplyHorizontalMotionController(): boolean;
+    ApplyHorizontalMotionController?(): boolean;
     /**
      * Get the priority
      */
-    GetPriority(): modifierpriority;
+    GetPriority?(): modifierpriority;
     /**
      * Called when the motion gets interrupted.
      */
-    OnHorizontalMotionInterrupted(): void;
+    OnHorizontalMotionInterrupted?(): void;
     /**
      * Set the priority
      */
-    SetPriority(nMotionPriority: modifierpriority): void;
+    SetPriority?(nMotionPriority: modifierpriority): void;
     /**
      * Perform any motion from the given interval on the NPC.
      */
-    UpdateHorizontalMotion(me: CDOTA_BaseNPC, dt: number): void;
+    UpdateHorizontalMotion?(me: CDOTA_BaseNPC, dt: number): void;
 }
 /**
  * A lua-based motion controller controlling both vertical and horizontal.
@@ -3637,35 +3637,35 @@ declare interface CDOTA_Modifier_Lua_Motion_Both extends CDOTA_Modifier_Lua {
     /**
      * Starts the horizontal motion controller effects for this buff.  Returns true if successful.
      */
-    ApplyHorizontalMotionController(): boolean;
+    ApplyHorizontalMotionController?(): boolean;
     /**
      * Starts the vertical motion controller effects for this buff.  Returns true if successful.
      */
-    ApplyVerticalMotionController(): boolean;
+    ApplyVerticalMotionController?(): boolean;
     /**
      * Get the priority
      */
-    GetPriority(): modifierpriority;
+    GetPriority?(): modifierpriority;
     /**
      * Called when the motion gets interrupted.
      */
-    OnHorizontalMotionInterrupted(): void;
+    OnHorizontalMotionInterrupted?(): void;
     /**
      * Called when the motion gets interrupted.
      */
-    OnVerticalMotionInterrupted(): void;
+    OnVerticalMotionInterrupted?(): void;
     /**
      * Set the priority
      */
-    SetPriority(nMotionPriority: modifierpriority): void;
+    SetPriority?(nMotionPriority: modifierpriority): void;
     /**
      * Perform any motion from the given interval on the NPC.
      */
-    UpdateHorizontalMotion(me: CDOTA_BaseNPC, dt: number): void;
+    UpdateHorizontalMotion?(me: CDOTA_BaseNPC, dt: number): void;
     /**
      * Perform any motion from the given interval on the NPC.
      */
-    UpdateVerticalMotion(me: CDOTA_BaseNPC, dt: number): void;
+    UpdateVerticalMotion?(me: CDOTA_BaseNPC, dt: number): void;
 }
 /**
  * A lua-based vertical motion controller.
@@ -3674,193 +3674,193 @@ declare interface CDOTA_Modifier_Lua_Vertical_Motion extends CDOTA_Modifier_Lua 
     /**
      * Starts the vertical motion controller effects for this buff.  Returns true if successful.
      */
-    ApplyVerticalMotionController(): boolean;
+    ApplyVerticalMotionController?(): boolean;
     /**
      * Get the priority
      */
-    GetMotionPriority(): modifierpriority;
+    GetMotionPriority?(): modifierpriority;
     /**
      * Called when the motion gets interrupted.
      */
-    OnVerticalMotionInterrupted(): void;
+    OnVerticalMotionInterrupted?(): void;
     /**
      * Set the priority
      */
-    SetMotionPriority(nMotionPriority: modifierpriority): void;
+    SetMotionPriority?(nMotionPriority: modifierpriority): void;
     /**
      * Perform any motion from the given interval on the NPC.
      */
-    UpdateVerticalMotion(me: CDOTA_BaseNPC, dt: number): void;
+    UpdateVerticalMotion?(me: CDOTA_BaseNPC, dt: number): void;
 }
 
 /**
  * Interface to player data
  */
 declare interface CDOTA_PlayerResource {
-    AddAegisPickup(iPlayerID: PlayerID): void;
-    AddClaimedFarm(iPlayerID: PlayerID, flFarmValue: number, bEarnedValue: boolean): void;
-    AddGoldSpentOnSupport(iPlayerID: PlayerID, iCost: number): void;
-    AddRunePickup(iPlayerID: PlayerID): void;
-    AreUnitsSharedWithPlayerID(nUnitOwnerPlayerID: PlayerID, nOtherPlayerID: PlayerID): boolean;
-    CanRepick(iPlayerID: PlayerID): boolean;
-    ClearKillsMatrix(iPlayerID: PlayerID): void;
-    ClearLastHitMultikill(iPlayerID: PlayerID): void;
-    ClearLastHitStreak(iPlayerID: PlayerID): void;
-    ClearRawPlayerDamageMatrix(iPlayerID: PlayerID): void;
-    ClearStreak(iPlayerID: PlayerID): void;
-    GetAegisPickups(iPlayerID: PlayerID): number;
-    GetAssists(iPlayerID: PlayerID): number;
-    GetBroadcasterChannel(iPlayerID: PlayerID): number;
-    GetBroadcasterChannelSlot(iPlayerID: PlayerID): number;
-    GetClaimedDenies(iPlayerID: PlayerID): number;
-    GetClaimedFarm(iPlayerID: PlayerID, bOnlyEarned: boolean): number;
-    GetClaimedMisses(iPlayerID: PlayerID): number;
-    GetConnectionState(iPlayerID: PlayerID): DOTAConnectionState_t;
-    GetCreepDamageTaken(iPlayerID: PlayerID, bTotal: boolean): number;
-    GetCustomBuybackCooldown(iPlayerID: PlayerID): number;
-    GetCustomBuybackCost(iPlayerID: PlayerID): number;
+    AddAegisPickup?(iPlayerID: PlayerID): void;
+    AddClaimedFarm?(iPlayerID: PlayerID, flFarmValue: number, bEarnedValue: boolean): void;
+    AddGoldSpentOnSupport?(iPlayerID: PlayerID, iCost: number): void;
+    AddRunePickup?(iPlayerID: PlayerID): void;
+    AreUnitsSharedWithPlayerID?(nUnitOwnerPlayerID: PlayerID, nOtherPlayerID: PlayerID): boolean;
+    CanRepick?(iPlayerID: PlayerID): boolean;
+    ClearKillsMatrix?(iPlayerID: PlayerID): void;
+    ClearLastHitMultikill?(iPlayerID: PlayerID): void;
+    ClearLastHitStreak?(iPlayerID: PlayerID): void;
+    ClearRawPlayerDamageMatrix?(iPlayerID: PlayerID): void;
+    ClearStreak?(iPlayerID: PlayerID): void;
+    GetAegisPickups?(iPlayerID: PlayerID): number;
+    GetAssists?(iPlayerID: PlayerID): number;
+    GetBroadcasterChannel?(iPlayerID: PlayerID): number;
+    GetBroadcasterChannelSlot?(iPlayerID: PlayerID): number;
+    GetClaimedDenies?(iPlayerID: PlayerID): number;
+    GetClaimedFarm?(iPlayerID: PlayerID, bOnlyEarned: boolean): number;
+    GetClaimedMisses?(iPlayerID: PlayerID): number;
+    GetConnectionState?(iPlayerID: PlayerID): DOTAConnectionState_t;
+    GetCreepDamageTaken?(iPlayerID: PlayerID, bTotal: boolean): number;
+    GetCustomBuybackCooldown?(iPlayerID: PlayerID): number;
+    GetCustomBuybackCost?(iPlayerID: PlayerID): number;
     /**
      * Get the current custom team assignment for this player.
      */
-    GetCustomTeamAssignment(iPlayerID: PlayerID): number;
-    GetDamageDoneToHero(iPlayerID: PlayerID, iVictimID: number): number;
-    GetDeaths(iPlayerID: PlayerID): number;
-    GetDenies(iPlayerID: PlayerID): number;
-    GetEventPointsForPlayerID(iPlayerID: PlayerID): number;
-    GetEventPremiumPoints(iPlayerID: PlayerID): number;
-    GetEventRanks(iPlayerID: PlayerID): any;
-    GetGold(iPlayerID: PlayerID): number;
-    GetGoldLostToDeath(iPlayerID: PlayerID): number;
-    GetGoldPerMin(iPlayerID: PlayerID): number;
-    GetGoldSpentOnBuybacks(iPlayerID: PlayerID): number;
-    GetGoldSpentOnConsumables(iPlayerID: PlayerID): number;
-    GetGoldSpentOnItems(iPlayerID: PlayerID): number;
-    GetGoldSpentOnSupport(iPlayerID: PlayerID): number;
-    GetHealing(iPlayerID: PlayerID): number;
-    GetHeroDamageTaken(iPlayerID: PlayerID, bTotal: boolean): number;
-    GetKills(iPlayerID: PlayerID): number;
-    GetKillsDoneToHero(iPlayerID: PlayerID, iVictimID: PlayerID): number;
-    GetLastHitMultikill(iPlayerID: PlayerID): number;
-    GetLastHitStreak(iPlayerID: PlayerID): number;
-    GetLastHits(iPlayerID: PlayerID): number;
-    GetLevel(iPlayerID: PlayerID): number;
-    GetMisses(iPlayerID: PlayerID): number;
-    GetNearbyCreepDeaths(iPlayerID: PlayerID): number;
-    GetNthCourierForTeam(nCourierIndex: number, nTeamNumber: DOTATeam_t): CDOTA_Unit_Courier;
-    GetNthPlayerIDOnTeam(iTeamNumber: DOTATeam_t, iNthPlayer: number): number;
-    GetNumConsumablesPurchased(iPlayerID: PlayerID): number;
-    GetNumCouriersForTeam(nTeamNumber: DOTATeam_t): number;
-    GetNumItemsPurchased(iPlayerID: PlayerID): number;
-    GetPlayer(iPlayerID: PlayerID): CDOTAPlayer;
+    GetCustomTeamAssignment?(iPlayerID: PlayerID): number;
+    GetDamageDoneToHero?(iPlayerID: PlayerID, iVictimID: number): number;
+    GetDeaths?(iPlayerID: PlayerID): number;
+    GetDenies?(iPlayerID: PlayerID): number;
+    GetEventPointsForPlayerID?(iPlayerID: PlayerID): number;
+    GetEventPremiumPoints?(iPlayerID: PlayerID): number;
+    GetEventRanks?(iPlayerID: PlayerID): any;
+    GetGold?(iPlayerID: PlayerID): number;
+    GetGoldLostToDeath?(iPlayerID: PlayerID): number;
+    GetGoldPerMin?(iPlayerID: PlayerID): number;
+    GetGoldSpentOnBuybacks?(iPlayerID: PlayerID): number;
+    GetGoldSpentOnConsumables?(iPlayerID: PlayerID): number;
+    GetGoldSpentOnItems?(iPlayerID: PlayerID): number;
+    GetGoldSpentOnSupport?(iPlayerID: PlayerID): number;
+    GetHealing?(iPlayerID: PlayerID): number;
+    GetHeroDamageTaken?(iPlayerID: PlayerID, bTotal: boolean): number;
+    GetKills?(iPlayerID: PlayerID): number;
+    GetKillsDoneToHero?(iPlayerID: PlayerID, iVictimID: PlayerID): number;
+    GetLastHitMultikill?(iPlayerID: PlayerID): number;
+    GetLastHitStreak?(iPlayerID: PlayerID): number;
+    GetLastHits?(iPlayerID: PlayerID): number;
+    GetLevel?(iPlayerID: PlayerID): number;
+    GetMisses?(iPlayerID: PlayerID): number;
+    GetNearbyCreepDeaths?(iPlayerID: PlayerID): number;
+    GetNthCourierForTeam?(nCourierIndex: number, nTeamNumber: DOTATeam_t): CDOTA_Unit_Courier;
+    GetNthPlayerIDOnTeam?(iTeamNumber: DOTATeam_t, iNthPlayer: number): number;
+    GetNumConsumablesPurchased?(iPlayerID: PlayerID): number;
+    GetNumCouriersForTeam?(nTeamNumber: DOTATeam_t): number;
+    GetNumItemsPurchased?(iPlayerID: PlayerID): number;
+    GetPlayer?(iPlayerID: PlayerID): CDOTAPlayer;
     /**
      * Includes spectators and players not assigned to a team
      */
-    GetPlayerCount(): number;
-    GetPlayerCountForTeam(iTeam: DOTATeam_t): number;
-    GetPlayerLoadedCompletely(iPlayerID: PlayerID): boolean;
-    GetPlayerName(iPlayerID: PlayerID): string;
-    GetRawPlayerDamage(iPlayerID: PlayerID): number;
-    GetReliableGold(iPlayerID: PlayerID): number;
-    GetRespawnSeconds(iPlayerID: PlayerID): number;
-    GetRoshanKills(iPlayerID: PlayerID): number;
-    GetRunePickups(iPlayerID: PlayerID): number;
-    GetSelectedHeroEntity(iPlayerID: PlayerID): CDOTA_BaseNPC_Hero;
-    GetSelectedHeroID(iPlayerID: PlayerID): number;
-    GetSelectedHeroName(iPlayerID: PlayerID): string;
-    GetSteamAccountID(iPlayerID: PlayerID): number;
+    GetPlayerCount?(): number;
+    GetPlayerCountForTeam?(iTeam: DOTATeam_t): number;
+    GetPlayerLoadedCompletely?(iPlayerID: PlayerID): boolean;
+    GetPlayerName?(iPlayerID: PlayerID): string;
+    GetRawPlayerDamage?(iPlayerID: PlayerID): number;
+    GetReliableGold?(iPlayerID: PlayerID): number;
+    GetRespawnSeconds?(iPlayerID: PlayerID): number;
+    GetRoshanKills?(iPlayerID: PlayerID): number;
+    GetRunePickups?(iPlayerID: PlayerID): number;
+    GetSelectedHeroEntity?(iPlayerID: PlayerID): CDOTA_BaseNPC_Hero;
+    GetSelectedHeroID?(iPlayerID: PlayerID): number;
+    GetSelectedHeroName?(iPlayerID: PlayerID): string;
+    GetSteamAccountID?(iPlayerID: PlayerID): number;
     /**
      * Get the 64 bit steam ID for a given player.
      */
-    GetSteamID(iPlayerID: PlayerID): number;
-    GetStreak(iPlayerID: PlayerID): number;
-    GetStuns(iPlayerID: PlayerID): number;
-    GetTeam(iPlayerID: PlayerID): DOTATeam_t;
-    GetTeamKills(iTeam: DOTATeam_t): number;
+    GetSteamID?(iPlayerID: PlayerID): number;
+    GetStreak?(iPlayerID: PlayerID): number;
+    GetStuns?(iPlayerID: PlayerID): number;
+    GetTeam?(iPlayerID: PlayerID): DOTATeam_t;
+    GetTeamKills?(iTeam: DOTATeam_t): number;
     /**
-     * Players on a valid team (radiant, dire, or custom*) who haven't abandoned the game
+     * Players on a valid team ?(radiant, dire, or custom*) who haven't abandoned the game
      */
-    GetTeamPlayerCount(): number;
-    GetTimeOfLastConsumablePurchase(iPlayerID: PlayerID): number;
-    GetTimeOfLastDeath(iPlayerID: PlayerID): number;
-    GetTimeOfLastItemPurchase(iPlayerID: PlayerID): number;
-    GetTotalEarnedGold(iPlayerID: PlayerID): number;
-    GetTotalEarnedXP(iPlayerID: PlayerID): number;
-    GetTotalGoldSpent(iPlayerID: PlayerID): number;
-    GetTowerDamageTaken(iPlayerID: PlayerID, bTotal: boolean): number;
-    GetTowerKills(iPlayerID: PlayerID): number;
-    GetUnitShareMaskForPlayer(nPlayerID: PlayerID, nOtherPlayerID: PlayerID): number;
-    GetUnreliableGold(iPlayerID: PlayerID): number;
-    GetXPPerMin(iPlayerID: PlayerID): number;
+    GetTeamPlayerCount?(): number;
+    GetTimeOfLastConsumablePurchase?(iPlayerID: PlayerID): number;
+    GetTimeOfLastDeath?(iPlayerID: PlayerID): number;
+    GetTimeOfLastItemPurchase?(iPlayerID: PlayerID): number;
+    GetTotalEarnedGold?(iPlayerID: PlayerID): number;
+    GetTotalEarnedXP?(iPlayerID: PlayerID): number;
+    GetTotalGoldSpent?(iPlayerID: PlayerID): number;
+    GetTowerDamageTaken?(iPlayerID: PlayerID, bTotal: boolean): number;
+    GetTowerKills?(iPlayerID: PlayerID): number;
+    GetUnitShareMaskForPlayer?(nPlayerID: PlayerID, nOtherPlayerID: PlayerID): number;
+    GetUnreliableGold?(iPlayerID: PlayerID): number;
+    GetXPPerMin?(iPlayerID: PlayerID): number;
     /**
      * Does this player have a custom game ticket for this game?
      */
-    HasCustomGameTicketForPlayerID(iPlayerID: PlayerID): boolean;
-    HasRandomed(iPlayerID: PlayerID): boolean;
-    HasSelectedHero(iPlayerID: PlayerID): boolean;
-    HaveAllPlayersJoined(): boolean;
-    IncrementAssists(iPlayerID: PlayerID, iVictimID: PlayerID): void;
-    IncrementClaimedDenies(iPlayerID: PlayerID): void;
-    IncrementClaimedMisses(iPlayerID: PlayerID): void;
-    IncrementDeaths(iPlayerID: PlayerID, iKillerID: PlayerID): void;
-    IncrementDenies(iPlayerID: PlayerID): void;
-    IncrementKills(iPlayerID: PlayerID, iVictimID: PlayerID): void;
-    IncrementLastHitMultikill(iPlayerID: PlayerID): void;
-    IncrementLastHitStreak(iPlayerID: PlayerID): void;
-    IncrementLastHits(iPlayerID: PlayerID): void;
-    IncrementMisses(iPlayerID: PlayerID): void;
-    IncrementNearbyCreepDeaths(iPlayerID: PlayerID): void;
-    IncrementStreak(iPlayerID: PlayerID): void;
-    IncrementTotalEarnedXP(iPlayerID: PlayerID, iXP: number, nReason: EDOTA_ModifyXP_Reason): void;
-    IsBroadcaster(iPlayerID: PlayerID): boolean;
-    IsDisableHelpSetForPlayerID(nPlayerID: PlayerID, nOtherPlayerID: PlayerID): boolean;
-    IsFakeClient(iPlayerID: PlayerID): boolean;
-    IsHeroSelected(pHeroname: string): boolean;
-    IsHeroSharedWithPlayerID(nUnitOwnerPlayerID: PlayerID, nOtherPlayerID: PlayerID): boolean;
-    IsValidPlayer(iPlayerID: PlayerID): boolean;
-    IsValidPlayerID(iPlayerID: PlayerID): boolean;
-    IsValidTeamPlayer(iPlayerID: PlayerID): boolean;
-    IsValidTeamPlayerID(iPlayerID: PlayerID): boolean;
-    ModifyGold(iPlayerID: PlayerID, iGoldChange: number, bReliable: boolean, nReason: EDOTA_ModifyGold_Reason): number;
+    HasCustomGameTicketForPlayerID?(iPlayerID: PlayerID): boolean;
+    HasRandomed?(iPlayerID: PlayerID): boolean;
+    HasSelectedHero?(iPlayerID: PlayerID): boolean;
+    HaveAllPlayersJoined?(): boolean;
+    IncrementAssists?(iPlayerID: PlayerID, iVictimID: PlayerID): void;
+    IncrementClaimedDenies?(iPlayerID: PlayerID): void;
+    IncrementClaimedMisses?(iPlayerID: PlayerID): void;
+    IncrementDeaths?(iPlayerID: PlayerID, iKillerID: PlayerID): void;
+    IncrementDenies?(iPlayerID: PlayerID): void;
+    IncrementKills?(iPlayerID: PlayerID, iVictimID: PlayerID): void;
+    IncrementLastHitMultikill?(iPlayerID: PlayerID): void;
+    IncrementLastHitStreak?(iPlayerID: PlayerID): void;
+    IncrementLastHits?(iPlayerID: PlayerID): void;
+    IncrementMisses?(iPlayerID: PlayerID): void;
+    IncrementNearbyCreepDeaths?(iPlayerID: PlayerID): void;
+    IncrementStreak?(iPlayerID: PlayerID): void;
+    IncrementTotalEarnedXP?(iPlayerID: PlayerID, iXP: number, nReason: EDOTA_ModifyXP_Reason): void;
+    IsBroadcaster?(iPlayerID: PlayerID): boolean;
+    IsDisableHelpSetForPlayerID?(nPlayerID: PlayerID, nOtherPlayerID: PlayerID): boolean;
+    IsFakeClient?(iPlayerID: PlayerID): boolean;
+    IsHeroSelected?(pHeroname: string): boolean;
+    IsHeroSharedWithPlayerID?(nUnitOwnerPlayerID: PlayerID, nOtherPlayerID: PlayerID): boolean;
+    IsValidPlayer?(iPlayerID: PlayerID): boolean;
+    IsValidPlayerID?(iPlayerID: PlayerID): boolean;
+    IsValidTeamPlayer?(iPlayerID: PlayerID): boolean;
+    IsValidTeamPlayerID?(iPlayerID: PlayerID): boolean;
+    ModifyGold?(iPlayerID: PlayerID, iGoldChange: number, bReliable: boolean, nReason: EDOTA_ModifyGold_Reason): number;
     /**
-     * (playerID, heroClassName, gold, XP) - replaces the player's hero with a new one of the specified class, gold and XP
+     * ?(playerID, heroClassName, gold, XP) - replaces the player's hero with a new one of the specified class, gold and XP
      */
-    ReplaceHeroWith(iPlayerID: PlayerID, pszHeroClass: string, nGold: number, nXP: number): CDOTA_BaseNPC_Hero;
-    ResetBuybackCostTime(nPlayerID: PlayerID): void;
-    ResetTotalEarnedGold(iPlayerID: PlayerID): void;
-    SetBuybackCooldownTime(nPlayerID: PlayerID, flBuybackCooldown: number): void;
-    SetBuybackGoldLimitTime(nPlayerID: PlayerID, flBuybackCooldown: number): void;
+    ReplaceHeroWith?(iPlayerID: PlayerID, pszHeroClass: string, nGold: number, nXP: number): CDOTA_BaseNPC_Hero;
+    ResetBuybackCostTime?(nPlayerID: PlayerID): void;
+    ResetTotalEarnedGold?(iPlayerID: PlayerID): void;
+    SetBuybackCooldownTime?(nPlayerID: PlayerID, flBuybackCooldown: number): void;
+    SetBuybackGoldLimitTime?(nPlayerID: PlayerID, flBuybackCooldown: number): void;
     /**
-     * (playerID, entity) - force the given player's camera to follow the given entity
+     * ?(playerID, entity) - force the given player's camera to follow the given entity
      */
-    SetCameraTarget(nPlayerID: PlayerID, hTarget: CDOTA_BaseNPC): void;
-    SetCanRepick(iPlayerID: PlayerID, bCanRepick: boolean): void;
+    SetCameraTarget?(nPlayerID: PlayerID, hTarget: CDOTA_BaseNPC): void;
+    SetCanRepick?(iPlayerID: PlayerID, bCanRepick: boolean): void;
     /**
      * Set the buyback cooldown for this player.
      */
-    SetCustomBuybackCooldown(iPlayerID: PlayerID, flCooldownTime: number): void;
+    SetCustomBuybackCooldown?(iPlayerID: PlayerID, flCooldownTime: number): void;
     /**
      * Set the buyback cost for this player.
      */
-    SetCustomBuybackCost(iPlayerID: PlayerID, iGoldCost: number): void;
+    SetCustomBuybackCost?(iPlayerID: PlayerID, iGoldCost: number): void;
     /**
-     * Set custom color for player (minimap, scoreboard, etc)
+     * Set custom color for player ?(minimap, scoreboard, etc)
      */
-    SetCustomPlayerColor(iPlayerID: PlayerID, r: number, g: number, b: number): void;
+    SetCustomPlayerColor?(iPlayerID: PlayerID, r: number, g: number, b: number): void;
     /**
      * Set custom team assignment for this player.
      */
-    SetCustomTeamAssignment(iPlayerID: PlayerID, iTeamAssignment: DOTATeam_t): void;
-    SetGold(iPlayerID: PlayerID, iGold: number, bReliable: boolean): void;
-    SetHasRandomed(iPlayerID: PlayerID): void;
-    SetLastBuybackTime(iPlayerID: PlayerID, iLastBuybackTime: number): void;
+    SetCustomTeamAssignment?(iPlayerID: PlayerID, iTeamAssignment: DOTATeam_t): void;
+    SetGold?(iPlayerID: PlayerID, iGold: number, bReliable: boolean): void;
+    SetHasRandomed?(iPlayerID: PlayerID): void;
+    SetLastBuybackTime?(iPlayerID: PlayerID, iLastBuybackTime: number): void;
     /**
      * Set the forced selection entity for a player.
      */
-    SetOverrideSelectionEntity(nPlayerID: PlayerID, hEntity: CDOTA_BaseNPC): void;
-    SetUnitShareMaskForPlayer(nPlayerID: PlayerID, nOtherPlayerID: PlayerID, nFlag: number, bState: boolean): void;
-    SpendGold(iPlayerID: PlayerID, iCost: number, iReason: EDOTA_ModifyGold_Reason): void;
-    UpdateTeamSlot(iPlayerID: PlayerID, iTeamNumber: DOTATeam_t, desiredSlot: number): void;
-    WhoSelectedHero(pHeroFilename: string): number;
+    SetOverrideSelectionEntity?(nPlayerID: PlayerID, hEntity: CDOTA_BaseNPC): void;
+    SetUnitShareMaskForPlayer?(nPlayerID: PlayerID, nOtherPlayerID: PlayerID, nFlag: number, bState: boolean): void;
+    SpendGold?(iPlayerID: PlayerID, iCost: number, iReason: EDOTA_ModifyGold_Reason): void;
+    UpdateTeamSlot?(iPlayerID: PlayerID, iTeamNumber: DOTATeam_t, desiredSlot: number): void;
+    WhoSelectedHero?(pHeroFilename: string): number;
 }
 declare const PlayerResource: CDOTA_PlayerResource;
 
@@ -3871,11 +3871,11 @@ declare interface CDOTA_SimpleObstruction extends CBaseEntity {
     /**
      * Returns whether the obstruction is currently active
      */
-    IsEnabled(): boolean;
+    IsEnabled?(): boolean;
     /**
      * Enable or disable the obstruction
      */
-    SetEnabled(bEnabled: boolean, bForce: boolean): void;
+    SetEnabled?(bEnabled: boolean, bForce: boolean): void;
 }
 /**
  * A courier.
@@ -3884,7 +3884,7 @@ declare interface CDOTA_Unit_Courier extends CDOTA_BaseNPC {
     /**
      * Upgrade to a flying courier
      */
-    UpgradeToFlyingCourier(): boolean;
+    UpgradeToFlyingCourier?(): boolean;
 }
 /**
  * A Dota NPC Unit
@@ -3893,19 +3893,19 @@ declare interface CDOTA_Unit_Nian extends CDOTA_BaseNPC_Creature {
     /**
      * Is the Nian horn?
      */
-    GetHorn(): CDOTA_BaseNPC;
+    GetHorn?(): CDOTA_BaseNPC;
     /**
      * Is the Nian's tail broken?
      */
-    GetTail(): CDOTA_BaseNPC;
+    GetTail?(): CDOTA_BaseNPC;
     /**
      * Is the Nian's horn broken?
      */
-    IsHornAlive(): boolean;
+    IsHornAlive?(): boolean;
     /**
      * Is the Nian's tail broken?
      */
-    IsTailAlive(): boolean;
+    IsTailAlive?(): boolean;
 }
 
 /**
@@ -3915,139 +3915,139 @@ declare interface CDebugOverlayScriptHelper {
     /**
      * Draws an axis. Specify origin + orientation in world space.
      */
-    Axis(arg1: Vec, arg2: Quaternion, arg3: number, arg4: boolean, arg5: number): void;
+    Axis?(arg1: Vec, arg2: Quaternion, arg3: number, arg4: boolean, arg5: number): void;
     /**
      * Draws a world-space axis-aligned box. Specify bounds in world space.
      */
-    Box(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
+    Box?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
     /**
      * Draws an oriented box at the origin. Specify bounds in local space.
      */
-    BoxAngles(arg1: Vec, arg2: Vec, arg3: Vec, arg4: Quaternion, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
+    BoxAngles?(arg1: Vec, arg2: Vec, arg3: Vec, arg4: Quaternion, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
     /**
      * Draws a capsule. Specify base in world space.
      */
-    Capsule(arg1: Vec, arg2: Quaternion, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
+    Capsule?(arg1: Vec, arg2: Quaternion, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
     /**
      * Draws a circle. Specify center in world space.
      */
-    Circle(arg1: Vec, arg2: Quaternion, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
+    Circle?(arg1: Vec, arg2: Quaternion, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
     /**
      * Draws a circle oriented to the screen. Specify center in world space.
      */
-    CircleScreenOriented(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
+    CircleScreenOriented?(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
     /**
      * Draws a wireframe cone. Specify endpoint and direction in world space.
      */
-    Cone(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
+    Cone?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
     /**
      * Draws a screen-aligned cross. Specify origin in world space.
      */
-    Cross(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
+    Cross?(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
     /**
      * Draws a world-aligned cross. Specify origin in world space.
      */
-    Cross3D(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
+    Cross3D?(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
     /**
      * Draws an oriented cross. Specify origin in world space.
      */
-    Cross3DOriented(arg1: Vec, arg2: Quaternion, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
+    Cross3DOriented?(arg1: Vec, arg2: Quaternion, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
     /**
      * Draws a dashed line. Specify endpoints in world space.
      */
-    DrawTickMarkedLine(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
+    DrawTickMarkedLine?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
     /**
      * Draws the attachments of the entity
      */
-    EntityAttachments(arg1: CBaseEntity, arg2: number, arg3: number): void;
+    EntityAttachments?(arg1: CBaseEntity, arg2: number, arg3: number): void;
     /**
      * Draws the axis of the entity origin
      */
-    EntityAxis(arg1: CBaseEntity, arg2: number, arg3: boolean, arg4: number): void;
+    EntityAxis?(arg1: CBaseEntity, arg2: number, arg3: boolean, arg4: number): void;
     /**
      * Draws bounds of an entity
      */
-    EntityBounds(arg1: CBaseEntity, arg2: number, arg3: number, arg4: number, arg5: number, arg6: boolean, arg7: number): void;
+    EntityBounds?(arg1: CBaseEntity, arg2: number, arg3: number, arg4: number, arg5: number, arg6: boolean, arg7: number): void;
     /**
      * Draws the skeleton of the entity
      */
-    EntitySkeleton(arg1: CBaseEntity, arg2: number): void;
+    EntitySkeleton?(arg1: CBaseEntity, arg2: number): void;
     /**
      * Draws text on an entity
      */
-    EntityText(arg1: CBaseEntity, arg2: number, arg3: string, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number): void;
+    EntityText?(arg1: CBaseEntity, arg2: number, arg3: string, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number): void;
     /**
      * Draws a screen-space filled 2D rectangle. Coordinates are in pixels.
      */
-    FilledRect2D(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
+    FilledRect2D?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
     /**
      * Draws a horizontal arrow. Specify endpoints in world space.
      */
-    HorzArrow(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
+    HorzArrow?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
     /**
      * Draws a line between two points
      */
-    Line(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
+    Line?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
     /**
      * Draws a line between two points in screenspace
      */
-    Line2D(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
+    Line2D?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number): void;
     /**
      * Pops the identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch.
      */
-    PopDebugOverlayScope(): void;
+    PopDebugOverlayScope?(): void;
     /**
      * Pushes an identifier used to group overlays. Deletes all existing overlays using this overlay id.
      */
-    PushAndClearDebugOverlayScope(arg1: string): void;
+    PushAndClearDebugOverlayScope?(arg1: string): void;
     /**
      * Pushes an identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch.
      */
-    PushDebugOverlayScope(arg1: string): void;
+    PushDebugOverlayScope?(arg1: string): void;
     /**
      * Removes all overlays marked with a specific identifier, regardless of their lifetime.
      */
-    RemoveAllInScope(arg1: string): void;
+    RemoveAllInScope?(arg1: string): void;
     /**
      * Draws a solid cone. Specify endpoint and direction in world space.
      */
-    SolidCone(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
+    SolidCone?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
     /**
      * Draws a wireframe sphere. Specify center in world space.
      */
-    Sphere(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
+    Sphere?(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: boolean, arg8: number): void;
     /**
      * Draws a swept box. Specify endpoints in world space and the bounds in local space.
      */
-    SweptBox(arg1: Vec, arg2: Vec, arg3: Vec, arg4: Vec, arg5: Quaternion, arg6: number, arg7: number, arg8: number, arg9: number, arg10: number): void;
+    SweptBox?(arg1: Vec, arg2: Vec, arg3: Vec, arg4: Vec, arg5: Quaternion, arg6: number, arg7: number, arg8: number, arg9: number, arg10: number): void;
     /**
      * Draws 2D text. Specify origin in world space.
      */
-    Text(arg1: Vec, arg2: number, arg3: string, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: number): void;
+    Text?(arg1: Vec, arg2: number, arg3: string, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: number): void;
     /**
      * Draws a screen-space texture. Coordinates are in pixels.
      */
-    Texture(arg1: string, arg2: Vec, arg3: Vec, arg4: number, arg5: number, arg6: number, arg7: number, arg8: Vec, arg9: Vec, arg10: number): void;
+    Texture?(arg1: string, arg2: Vec, arg3: Vec, arg4: number, arg5: number, arg6: number, arg7: number, arg8: Vec, arg9: Vec, arg10: number): void;
     /**
      * Draws a filled triangle. Specify vertices in world space.
      */
-    Triangle(arg1: Vec, arg2: Vec, arg3: Vec, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
+    Triangle?(arg1: Vec, arg2: Vec, arg3: Vec, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
     /**
      * Toggles the overlay render type, for unit tests
      */
-    UnitTestCycleOverlayRenderType(): void;
+    UnitTestCycleOverlayRenderType?(): void;
     /**
      * Draws 3D text. Specify origin + orientation in world space.
      */
-    VectorText3D(arg1: Vec, arg2: Quaternion, arg3: string, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
+    VectorText3D?(arg1: Vec, arg2: Quaternion, arg3: string, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
     /**
      * Draws a vertical arrow. Specify endpoints in world space.
      */
-    VertArrow(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
+    VertArrow?(arg1: Vec, arg2: Vec, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: boolean, arg9: number): void;
     /**
      * Draws a arrow associated with a specific yaw. Specify endpoints in world space.
      */
-    YawArrow(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
+    YawArrow?(arg1: Vec, arg2: number, arg3: number, arg4: number, arg5: number, arg6: number, arg7: number, arg8: number, arg9: boolean, arg10: number): void;
 }
 /**
  * A quest
@@ -4056,31 +4056,31 @@ declare interface CDotaQuest extends CBaseEntity {
     /**
      * Add a subquest to this quest
      */
-    AddSubquest(hSubquest: table): void;
+    AddSubquest?(hSubquest: table): void;
     /**
      * Mark this quest complete
      */
-    CompleteQuest(): void;
+    CompleteQuest?(): void;
     /**
      * Finds a subquest from this quest by index
      */
-    GetSubquest(nIndex: number): CDotaSubquestBase;
+    GetSubquest?(nIndex: number): CDotaSubquestBase;
     /**
      * Finds a subquest from this quest by name
      */
-    GetSubquestByName(pszName: string): CDotaSubquestBase;
+    GetSubquestByName?(pszName: string): CDotaSubquestBase;
     /**
      * Remove a subquest from this quest
      */
-    RemoveSubquest(hSubquest: CDotaSubquestBase): void;
+    RemoveSubquest?(hSubquest: CDotaSubquestBase): void;
     /**
      * Set the text replace string for this quest
      */
-    SetTextReplaceString(pszString: string): void;
+    SetTextReplaceString?(pszString: string): void;
     /**
      * Set a quest value
      */
-    SetTextReplaceValue(valueSlot: number, value: number): void;
+    SetTextReplaceValue?(valueSlot: number, value: number): void;
 }
 /**
  * A subquest
@@ -4089,15 +4089,15 @@ declare interface CDotaSubquestBase extends CBaseEntity {
     /**
      * Mark this subquest complete
      */
-    CompleteSubquest(): void;
+    CompleteSubquest?(): void;
     /**
      * Set the text replace string for this subquest
      */
-    SetTextReplaceString(pszString: string): void;
+    SetTextReplaceString?(pszString: string): void;
     /**
      * Set a subquest value
      */
-    SetTextReplaceValue(valueSlot: number, value: number): void;
+    SetTextReplaceValue?(valueSlot: number, value: number): void;
 }
 /**
  * !The global list of entities
@@ -4106,87 +4106,87 @@ declare interface CEntities {
     /**
      * Creates an entity by classname
      */
-    CreateByClassname(className: string): CBaseEntity;
+    CreateByClassname?(className: string): CBaseEntity;
     /**
      * Finds all entities by class name. Returns an array containing all the found entities.
      */
-    FindAllByClassname(className: string): CBaseEntity[];
+    FindAllByClassname?(className: string): CBaseEntity[];
     /**
      * Find entities by class name within a radius.
      */
-    FindAllByClassnameWithin(className: string, location: Vec, radius: number): CBaseEntity[];
+    FindAllByClassnameWithin?(className: string, location: Vec, radius: number): CBaseEntity[];
     /**
      * Find entities by model name.
      */
-    FindAllByModel(modelName: string): CBaseEntity[];
+    FindAllByModel?(modelName: string): CBaseEntity[];
     /**
      * Find all entities by name. Returns an array containing all the found entities in it.
      */
-    FindAllByName(name: string): CBaseEntity[];
+    FindAllByName?(name: string): CBaseEntity[];
     /**
      * Find entities by name within a radius.
      */
-    FindAllByNameWithin(name: string, location: Vec, radius: number): CBaseEntity[];
+    FindAllByNameWithin?(name: string, location: Vec, radius: number): CBaseEntity[];
     /**
      * Find entities by targetname.
      */
-    FindAllByTarget(target: string): CBaseEntity[];
+    FindAllByTarget?(target: string): CBaseEntity[];
     /**
      * Find entities within a radius.
      */
-    FindAllInSphere(location: Vec, radius: number): CBaseEntity[];
+    FindAllInSphere?(location: Vec, radius: number): CBaseEntity[];
     /**
      * Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByClassname(previous: CBaseEntity | void, className: string): CBaseEntity;
+    FindByClassname?(previous: CBaseEntity | void, className: string): CBaseEntity;
     /**
      * Find entities by class name nearest to a point.
      */
-    FindByClassnameNearest(className: string, location: Vec, radius: number): CBaseEntity;
+    FindByClassnameNearest?(className: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByClassnameWithin(previous: CBaseEntity | void, className: string, location: Vec, radius: number): CBaseEntity;
+    FindByClassnameWithin?(previous: CBaseEntity | void, className: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByModel(previous: CBaseEntity | void, modelName: string): CBaseEntity;
+    FindByModel?(previous: CBaseEntity | void, modelName: string): CBaseEntity;
     /**
      * Find entities by model name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByModelWithin(previous: CBaseEntity | void, modelName: string, location: Vec, radius: number): CBaseEntity;
+    FindByModelWithin?(previous: CBaseEntity | void, modelName: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByName(previous: CBaseEntity | void, name: string): CBaseEntity;
+    FindByName?(previous: CBaseEntity | void, name: string): CBaseEntity;
     /**
      * Find entities by name nearest to a point.
      */
-    FindByNameNearest(name: string, location: Vec, radius: number): CBaseEntity;
+    FindByNameNearest?(name: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByNameWithin(previous: CBaseEntity | void, name: string, location: Vec, radius: number): CBaseEntity;
+    FindByNameWithin?(previous: CBaseEntity | void, name: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByTarget(previous: CBaseEntity | void, target: string): CBaseEntity;
+    FindByTarget?(previous: CBaseEntity | void, target: string): CBaseEntity;
     /**
      * Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindInSphere(previous: CBaseEntity | void, location: Vec, radius: number): CBaseEntity;
+    FindInSphere?(previous: CBaseEntity | void, location: Vec, radius: number): CBaseEntity;
     /**
      * Begin an iteration over the list of entities
      */
-    First(): CBaseEntity;
+    First?(): CBaseEntity;
     /**
      * Get the local player.
      */
-    GetLocalPlayer(): CDOTAPlayer;
+    GetLocalPlayer?(): CDOTAPlayer;
     /**
      * Continue an iteration over the list of entities, providing reference to a previously found entity
      */
-    Next(previous: CBaseEntity): CBaseEntity;
+    Next?(previous: CBaseEntity): CBaseEntity;
 }
 declare const Entitites: CEntities;
 
@@ -4197,64 +4197,64 @@ declare interface CEntityInstance {
     /**
      * Adds an I/O connection that will call the named function on this entity when the specified output fires.
      */
-    ConnectOutput(arg1: string, arg2: string): void;
-    Destroy(): void;
+    ConnectOutput?(arg1: string, arg2: string): void;
+    Destroy?(): void;
     /**
      * Removes a connected script function from an I/O event on this entity.
      */
-    DisconnectOutput(arg1: string, arg2: string): void;
+    DisconnectOutput?(arg1: string, arg2: string): void;
     /**
      * Removes a connected script function from an I/O event on the passed entity.
      */
-    DisconnectRedirectedOutput(arg1: string, arg2: string, arg3: table): void;
+    DisconnectRedirectedOutput?(arg1: string, arg2: string, arg3: table): void;
     /**
      * Fire an entity output
      */
-    FireOutput(arg1: string, arg2: table, arg3: table, arg4: any, arg5: number): void;
-    GetClassname(): string;
+    FireOutput?(arg1: string, arg2: table, arg3: table, arg4: any, arg5: number): void;
+    GetClassname?(): string;
     /**
-     * Get the entity name w/help if not defined (i.e. classname/etc)
+     * Get the entity name w/help if not defined ?(i.e. classname/etc)
      */
-    GetDebugName(): string;
+    GetDebugName?(): string;
     /**
      * Get the entity as an EHANDLE
      */
-    GetEntityHandle(): CBaseEntity;
-    GetEntityIndex(): EntityID;
+    GetEntityHandle?(): CBaseEntity;
+    GetEntityIndex?(): EntityID;
     /**
      * Get Integer Attribute
      */
-    GetIntAttr(arg1: string): number;
-    GetName(): string;
+    GetIntAttr?(arg1: string): number;
+    GetName?(): string;
     /**
      * Retrieve, creating if necessary, the private per-instance script-side data associated with an entity
      */
-    GetOrCreatePrivateScriptScope(): object;
+    GetOrCreatePrivateScriptScope?(): object;
     /**
      * Retrieve, creating if necessary, the public script-side data associated with an entity
      */
-    GetOrCreatePublicScriptScope(): object;
+    GetOrCreatePublicScriptScope?(): object;
     /**
      * Retrieve the private per-instance script-side data associated with an entity
      */
-    GetPrivateScriptScope(): object;
+    GetPrivateScriptScope?(): object;
     /**
      * Retrieve the public script-side data associated with an entity
      */
-    GetPublicScriptScope(): object;
+    GetPublicScriptScope?(): object;
     /**
      * Adds an I/O connection that will call the named function on the passed entity when the specified output fires.
      */
-    RedirectOutput(arg1: string, arg2: string, arg3: table): void;
+    RedirectOutput?(arg1: string, arg2: string, arg3: table): void;
     /**
      * Delete this entity
      */
-    RemoveSelf(): void;
+    RemoveSelf?(): void;
     /**
      * Set Integer Attribute
      */
-    SetIntAttr(arg1: string, arg2: number): void;
-    entindex(): EntityID;
+    SetIntAttr?(arg1: string, arg2: number): void;
+    entindex?(): EntityID;
 }
 
 /**
@@ -4264,19 +4264,19 @@ declare interface CEnvEntityMaker extends CBaseEntity {
     /**
      * Create an entity at the location of the maker
      */
-    SpawnEntity(): void;
+    SpawnEntity?(): void;
     /**
      * Create an entity at the location of a specified entity instance
      */
-    SpawnEntityAtEntityOrigin(hEntity: CBaseEntity): void;
+    SpawnEntityAtEntityOrigin?(hEntity: CBaseEntity): void;
     /**
-     * Create an entity at a specified location and orientaton, orientation is Euler angle in degrees (pitch, yaw, roll)
+     * Create an entity at a specified location and orientaton, orientation is Euler angle in degrees ?(pitch, yaw, roll)
      */
-    SpawnEntityAtLocation(vecAlternateOrigin: Vec, vecAlternateAngles: Vec): void;
+    SpawnEntityAtLocation?(vecAlternateOrigin: Vec, vecAlternateAngles: Vec): void;
     /**
      * Create an entity at the location of a named entity
      */
-    SpawnEntityAtNamedEntityOrigin(pszName: string): void;
+    SpawnEntityAtNamedEntityOrigin?(pszName: string): void;
 }
 
 /**
@@ -4284,45 +4284,45 @@ declare interface CEnvEntityMaker extends CBaseEntity {
  */
 declare interface CSceneEntity extends CBaseEntity {
     /**
-     * Adds a team (by index) to the broadcast list
+     * Adds a team ?(by index) to the broadcast list
      */
-    AddBroadcastTeamTarget(arg1: number): void;
+    AddBroadcastTeamTarget?(arg1: number): void;
     /**
      * Cancel scene playback
      */
-    Cancel(): void;
+    Cancel?(): void;
     /**
      * Returns length of this scene in seconds.
      */
-    EstimateLength(): number;
+    EstimateLength?(): number;
     /**
      * Get the camera
      */
-    FindCamera(): any;
+    FindCamera?(): any;
     /**
      * given an entity reference, such as !target, get actual entity from scene object
      */
-    FindNamedEntity(arg1: string): CBaseEntity;
+    FindNamedEntity?(arg1: string): CBaseEntity;
     /**
      * If this scene is currently paused.
      */
-    IsPaused(): boolean;
+    IsPaused?(): boolean;
     /**
      * If this scene is currently playing.
      */
-    IsPlayingBack(): boolean;
+    IsPlayingBack?(): boolean;
     /**
      * given a dummy scene name and a vcd string, load the scene
      */
-    LoadSceneFromString(arg1: string, arg2: string): boolean;
+    LoadSceneFromString?(arg1: string, arg2: string): boolean;
     /**
-     * Removes a team (by index) from the broadcast list
+     * Removes a team ?(by index) from the broadcast list
      */
-    RemoveBroadcastTeamTarget(arg1: number): void;
+    RemoveBroadcastTeamTarget?(arg1: number): void;
     /**
      * Start scene playback, takes activatorEntity as param
      */
-    Start(arg1: CBaseEntity): void;
+    Start?(arg1: CBaseEntity): void;
 }
 /**
  * !The global list of heroes
@@ -4331,15 +4331,15 @@ declare interface CScriptHeroList {
     /**
      * Returns all the heroes in the world
      */
-    GetAllHeroes(): CDOTA_BaseNPC_Hero[];
+    GetAllHeroes?(): CDOTA_BaseNPC_Hero[];
     /**
      * Get the Nth hero in the Hero List
      */
-    GetHero(nth: number): CDOTA_BaseNPC_Hero;
+    GetHero?(nth: number): CDOTA_BaseNPC_Hero;
     /**
      * Returns the number of heroes in the world
      */
-    GetHeroCount(): number;
+    GetHeroCount?(): number;
 }
 declare const HeroList: CScriptHeroList;
 
@@ -4350,46 +4350,46 @@ declare interface CScriptParticleManager {
     /**
      * Creates a new particle effect
      */
-    CreateParticle(particleName: string, particleAttach: ParticleAttachment_t, owner: CDOTA_BaseNPC | null | undefined): ParticleID;
+    CreateParticle?(particleName: string, particleAttach: ParticleAttachment_t, owner: CDOTA_BaseNPC | null | undefined): ParticleID;
     /**
      * Creates a new particle effect that only plays for the specified player
      */
-    CreateParticleForPlayer(particleName: string, particleAttach: ParticleAttachment_t, owner: CDOTA_BaseNPC | null | undefined, player: CDOTAPlayer): ParticleID;
+    CreateParticleForPlayer?(particleName: string, particleAttach: ParticleAttachment_t, owner: CDOTA_BaseNPC | null | undefined, player: CDOTAPlayer): ParticleID;
     /**
      * Creates a new particle effect that only plays for the specified team
      */
-    CreateParticleForTeam(particleName: string, particleAttach: ParticleAttachment_t, owner: CDOTA_BaseNPC | null | undefined, team: DOTATeam_t): ParticleID;
+    CreateParticleForTeam?(particleName: string, particleAttach: ParticleAttachment_t, owner: CDOTA_BaseNPC | null | undefined, team: DOTATeam_t): ParticleID;
     /**
-     * (int index, bool bDestroyImmediately) - Destroy a particle, if bDestroyImmediately destroy it without playing end caps.
+     * ?(int index, bool bDestroyImmediately) - Destroy a particle, if bDestroyImmediately destroy it without playing end caps.
      */
-    DestroyParticle(particle: ParticleID, immediate: boolean): void;
-    GetParticleReplacement(arg1: string, arg2: table): string;
+    DestroyParticle?(particle: ParticleID, immediate: boolean): void;
+    GetParticleReplacement?(arg1: string, arg2: table): string;
     /**
      * Frees the specified particle index
      */
-    ReleaseParticleIndex(particle: ParticleID): void;
-    SetParticleAlwaysSimulate(particle: ParticleID): void;
+    ReleaseParticleIndex?(particle: ParticleID): void;
+    SetParticleAlwaysSimulate?(particle: ParticleID): void;
     /**
      * Set the control point data for a control on a particle effect
      */
-    SetParticleControl(particle: ParticleID, controlPoint: number, value: Vec): void;
-    SetParticleControlEnt(particle: ParticleID, controlPoint: number, unit: CDOTA_BaseNPC, particleAttach: ParticleAttachment_t, attachment: string, offset: Vec, lockOrientation: boolean): void;
+    SetParticleControl?(particle: ParticleID, controlPoint: number, value: Vec): void;
+    SetParticleControlEnt?(particle: ParticleID, controlPoint: number, unit: CDOTA_BaseNPC, particleAttach: ParticleAttachment_t, attachment: string, offset: Vec, lockOrientation: boolean): void;
     /**
-     * (int iIndex, int iPoint, Vector vecPosition)
+     * ?(int iIndex, int iPoint, Vector vecPosition)
      */
-    SetParticleControlFallback(arg1: number, arg2: number, arg3: Vec): void;
+    SetParticleControlFallback?(arg1: number, arg2: number, arg3: Vec): void;
     /**
-     * (int nFXIndex, int nPoint, vForward)
+     * ?(int nFXIndex, int nPoint, vForward)
      */
-    SetParticleControlForward(particle: ParticleID, controlPoint: number, forward: Vec): void;
+    SetParticleControlForward?(particle: ParticleID, controlPoint: number, forward: Vec): void;
     /**
-     * (int nFXIndex, int nPoint, vForward, vRight, vUp)
+     * ?(int nFXIndex, int nPoint, vForward, vRight, vUp)
      */
-    SetParticleControlOrientation(particle: ParticleID, controlPoint: number, forward: Vec, right: Vec, up: Vec): void;
+    SetParticleControlOrientation?(particle: ParticleID, controlPoint: number, forward: Vec, right: Vec, up: Vec): void;
     /**
      * int nfxindex, int nPoint, int nPoint2, float flRadius
      */
-    SetParticleFoWProperties(arg1: number, arg2: number, arg3: number, arg4: number): void;
+    SetParticleFoWProperties?(arg1: number, arg2: number, arg3: number, arg4: number): void;
 }
 declare const ParticleManager: CScriptParticleManager;
 
@@ -4400,64 +4400,64 @@ declare interface CScriptPrecacheContext {
     /**
      * Precaches a specific resource
      */
-    AddResource(arg1: string): void;
+    AddResource?(arg1: string): void;
     /**
      * Reads a spawn key
      */
-    GetValue(arg1: string): any;
+    GetValue?(arg1: string): any;
 }
 /**
  * !Access to convar functions
  */
 declare interface Convars {
     /**
-     * GetBool(name) : returns the convar as a boolean flag.
+     * GetBool?(name) : returns the convar as a boolean flag.
      */
-    GetBool(convar: string): boolean;
+    GetBool?(convar: string): boolean;
     /**
-     * GetCommandClient() : returns the player who issued this console command.
+     * GetCommandClient?() : returns the player who issued this console command.
      */
-    GetCommandClient(): CDOTAPlayer;
+    GetCommandClient?(): CDOTAPlayer;
     /**
-     * GetDOTACommandClient() : returns the DOTA player who issued this console command.
+     * GetDOTACommandClient?() : returns the DOTA player who issued this console command.
      */
-    GetDOTACommandClient(): CDOTAPlayer;
+    GetDOTACommandClient?(): CDOTAPlayer;
     /**
-     * GetFloat(name) : returns the convar as a float. May return null if no such convar.
+     * GetFloat?(name) : returns the convar as a float. May return null if no such convar.
      */
-    GetFloat(convar: string): number;
+    GetFloat?(convar: string): number;
     /**
-     * GetInt(name) : returns the convar as an int. May return null if no such convar.
+     * GetInt?(name) : returns the convar as an int. May return null if no such convar.
      */
-    GetInt(convar: string): number;
+    GetInt?(convar: string): number;
     /**
-     * GetStr(name) : returns the convar as a string. May return null if no such convar.
+     * GetStr?(name) : returns the convar as a string. May return null if no such convar.
      */
-    GetStr(convar: string): string;
+    GetStr?(convar: string): string;
     /**
-     * RegisterCommand(name, fn, helpString, flags) : register a console command.
+     * RegisterCommand?(name, fn, helpString, flags) : register a console command.
      */
-    RegisterCommand(commandName: string, callback: (commandName: string, ...args: string[]) => void, description: string, flags: number): void;
+    RegisterCommand?(commandName: string, callback: (commandName: string, ...args: string[]) => void, description: string, flags: number): void;
     /**
-     * RegisterConvar(name, defaultValue, helpString, flags): register a new console variable.
+     * RegisterConvar?(name, defaultValue, helpString, flags): register a new console variable.
      */
-    RegisterConvar(convarName: string, defaultValue: string, description: string, flags: number): void;
+    RegisterConvar?(convarName: string, defaultValue: string, description: string, flags: number): void;
     /**
-     * SetBool(name, val) : sets the value of the convar to the bool.
+     * SetBool?(name, val) : sets the value of the convar to the bool.
      */
-    SetBool(convar: string, value: boolean): void;
+    SetBool?(convar: string, value: boolean): void;
     /**
-     * SetFloat(name, val) : sets the value of the convar to the float.
+     * SetFloat?(name, val) : sets the value of the convar to the float.
      */
-    SetFloat(convar: string, value: number): void;
+    SetFloat?(convar: string, value: number): void;
     /**
-     * SetInt(name, val) : sets the value of the convar to the int.
+     * SetInt?(name, val) : sets the value of the convar to the int.
      */
-    SetInt(convar: string, value: number): void;
+    SetInt?(convar: string, value: number): void;
     /**
-     * SetStr(name, val) : sets the value of the convar to the string.
+     * SetStr?(name, val) : sets the value of the convar to the string.
      */
-    SetStr(convar: string, value: string): void;
+    SetStr?(convar: string, value: string): void;
 }
 declare const Convars: Convars;
 
@@ -5241,53 +5241,53 @@ declare function rr_QueryBestResponse(arg1: table, arg2: table, arg3: table): bo
  */
 declare interface GridNav {
     /**
-     * Determine if it is possible to reach the specified end point from the specified start point. bool (vStart, vEnd)
+     * Determine if it is possible to reach the specified end point from the specified start point. bool ?(vStart, vEnd)
      */
-    CanFindPath(arg1: Vec, arg2: Vec): boolean;
+    CanFindPath?(arg1: Vec, arg2: Vec): boolean;
     /**
-     * Destroy all trees in the area(vPosition, flRadius, bFullCollision
+     * Destroy all trees in the area?(vPosition, flRadius, bFullCollision
      */
-    DestroyTreesAroundPoint(arg1: Vec, arg2: number, arg3: boolean): void;
+    DestroyTreesAroundPoint?(arg1: Vec, arg2: number, arg3: boolean): void;
     /**
-     * Find a path between the two points an return the length of the path. If there is not a path between the points the returned value will be -1. float (vStart, vEnd )
+     * Find a path between the two points an return the length of the path. If there is not a path between the points the returned value will be -1. float ?(vStart, vEnd )
      */
-    FindPathLength(arg1: Vec, arg2: Vec): number;
+    FindPathLength?(arg1: Vec, arg2: Vec): number;
     /**
-     * Returns a table full of tree HSCRIPTS (vPosition, flRadius, bFullCollision).
+     * Returns a table full of tree HSCRIPTS ?(vPosition, flRadius, bFullCollision).
      */
-    GetAllTreesAroundPoint(arg1: Vec, arg2: number, arg3: boolean): any;
+    GetAllTreesAroundPoint?(arg1: Vec, arg2: number, arg3: boolean): any;
     /**
      * Get the X position of the center of a given X index
      */
-    GridPosToWorldCenterX(arg1: number): number;
+    GridPosToWorldCenterX?(arg1: number): number;
     /**
      * Get the Y position of the center of a given Y index
      */
-    GridPosToWorldCenterY(arg1: number): number;
+    GridPosToWorldCenterY?(arg1: number): number;
     /**
      * Checks whether the given position is blocked
      */
-    IsBlocked(arg1: Vec): boolean;
+    IsBlocked?(arg1: Vec): boolean;
     /**
-     * (position, radius, checkFullTreeRadius?) Checks whether there are any trees overlapping the given point
+     * ?(position, radius, checkFullTreeRadius?) Checks whether there are any trees overlapping the given point
      */
-    IsNearbyTree(arg1: Vec, arg2: number, arg3: boolean): boolean;
+    IsNearbyTree?(arg1: Vec, arg2: number, arg3: boolean): boolean;
     /**
      * Checks whether the given position is traversable
      */
-    IsTraversable(arg1: Vec): boolean;
+    IsTraversable?(arg1: Vec): boolean;
     /**
      * Causes all trees in the map to regrow
      */
-    RegrowAllTrees(): void;
+    RegrowAllTrees?(): void;
     /**
      * Get the X index of a given world X position
      */
-    WorldToGridPosX(arg1: number): number;
+    WorldToGridPosX?(arg1: number): number;
     /**
      * Get the Y index of a given world Y position
      */
-    WorldToGridPosY(arg1: number): number;
+    WorldToGridPosY?(arg1: number): number;
 }
 declare const GridNav: GridNav;
 
@@ -5338,39 +5338,39 @@ declare interface ProjectileManager {
     /**
      * Update speed
      */
-    ChangeTrackingProjectileSpeed(arg1: table, arg2: number): void;
+    ChangeTrackingProjectileSpeed?(arg1: table, arg2: number): void;
     /**
      * Creates a linear projectile and returns the projectile ID
      */
-    CreateLinearProjectile(projectileData: LinearProjectileTable): ProjectileID;
+    CreateLinearProjectile?(projectileData: LinearProjectileTable): ProjectileID;
     /**
      * Creates a tracking projectile
      */
-    CreateTrackingProjectile(projectileData: TrackingProjectileTable): ProjectileID;
+    CreateTrackingProjectile?(projectileData: TrackingProjectileTable): ProjectileID;
     /**
      * Destroys the linear projectile matching the argument ID
      */
-    DestroyLinearProjectile(projectile: ProjectileID): void;
+    DestroyLinearProjectile?(projectile: ProjectileID): void;
     /**
      * Returns current location of projectile
      */
-    GetLinearProjectileLocation(projectile: ProjectileID): Vec;
+    GetLinearProjectileLocation?(projectile: ProjectileID): Vec;
     /**
      * Returns current radius of projectile
      */
-    GetLinearProjectileRadius(projectile: ProjectileID): number;
+    GetLinearProjectileRadius?(projectile: ProjectileID): number;
     /**
      * Returns a vector representing the current velocity of the projectile.
      */
-    GetLinearProjectileVelocity(projectile: ProjectileID): Vec;
+    GetLinearProjectileVelocity?(projectile: ProjectileID): Vec;
     /**
      * Makes the specified unit dodge projectiles
      */
-    ProjectileDodge(unit: CDOTA_BaseNPC): void;
+    ProjectileDodge?(unit: CDOTA_BaseNPC): void;
     /**
      * Update velocity
      */
-    UpdateLinearProjectileDirection(projectile: ProjectileID, direction: Vec, speed: number): void;
+    UpdateLinearProjectileDirection?(projectile: ProjectileID, direction: Vec, speed: number): void;
 }
 declare const ProjectileManager: ProjectileManager;
 
@@ -5382,36 +5382,36 @@ declare function Vector(x?: number, y?: number, z?: number): Vec;
 // Hack to allow v1 + v2
 type Vec = number;
 interface Number {
-    Dot(b: Vec): number;
-    Cross(b: Vec): Vec;
-    Length(): number;
-    Length2D(): number;
-    Normalized(): Vec;
+    Dot?(b: Vec): number;
+    Cross?(b: Vec): Vec;
+    Length?(): number;
+    Length2D?(): number;
+    Normalized?(): Vec;
 }
 
 declare interface CScriptHTTPRequest {
     /**
      * Send a HTTP request.
      */
-    Send(callback: (result: CScriptHTTPResponse) => void): boolean;
+    Send?(callback: (result: CScriptHTTPResponse) => void): boolean;
     /**
      * Set the total timeout on the request.
      */
-    SetHTTPRequestAbsoluteTimeoutMS(timeout: number): boolean;
+    SetHTTPRequestAbsoluteTimeoutMS?(timeout: number): boolean;
     /**
      * Set a POST or GET parameter on the request.
      */
-    SetHTTPRequestGetOrPostParameter(arg1: string, arg2: string): boolean;
+    SetHTTPRequestGetOrPostParameter?(arg1: string, arg2: string): boolean;
     /**
      * Set a header value on the request.
      */
-    SetHTTPRequestHeaderValue(arg1: string, arg2: string): boolean;
+    SetHTTPRequestHeaderValue?(arg1: string, arg2: string): boolean;
     /**
      * Set the network timeout on the request - this timer is reset when any data is received.
      */
-    SetHTTPRequestNetworkActivityTimeout(timeout: number): boolean;
+    SetHTTPRequestNetworkActivityTimeout?(timeout: number): boolean;
     /**
      * Set the literal body of a post - invalid after setting a post parameter.
      */
-    SetHTTPRequestRawPostBody(arg1: string, arg2: string): boolean;
+    SetHTTPRequestRawPostBody?(arg1: string, arg2: string): boolean;
 }
