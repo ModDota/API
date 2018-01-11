@@ -698,46 +698,46 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     GetAbilityTargetType(): DOTA_UNIT_TARGET_TYPE;
     GetAbilityType(): number;
     GetAnimationIgnoresModelScale(): boolean;
-    GetAssociatedPrimaryAbilities(): string;
-    GetAssociatedSecondaryAbilities(): string;
+    GetAssociatedPrimaryAbilities?(): string;
+    GetAssociatedSecondaryAbilities?(): string;
     GetAutoCastState(): boolean;
     GetBackswingTime(): number;
-    GetBehavior(): number;
-    GetCastPoint(): number;
+    GetBehavior?(): number;
+    GetCastPoint?(): number;
     /**
      * Gets the cast range of the ability.
      */
-    GetCastRange(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
+    GetCastRange?(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
     GetCaster(): CDOTA_BaseNPC;
-    GetChannelStartTime(): number;
-    GetChannelTime(): number;
-    GetChannelledManaCostPerSecond(iLevel: number): number;
+    GetChannelStartTime?(): number;
+    GetChannelTime?(): number;
+    GetChannelledManaCostPerSecond?(iLevel: number): number;
     GetCloneSource(): CDOTA_BaseNPC;
-    GetConceptRecipientType(): number;
+    GetConceptRecipientType?(): number;
     /**
      * Get the cooldown duration for this ability at a given level, not the amount of cooldown actually left.
      */
-    GetCooldown(iLevel: number): number;
+    GetCooldown?(iLevel: number): number;
     GetCooldownTime(): number;
     GetCooldownTimeRemaining(): number;
     GetCursorPosition(): Vec;
     GetCursorTarget(): CDOTA_BaseNPC;
     GetCursorTargetingNothing(): boolean;
-    GetDuration(): number;
-    GetGoldCost(iLevel: number): number;
+    GetDuration?(): number;
+    GetGoldCost?(iLevel: number): number;
     GetGoldCostForUpgrade(iLevel: number): number;
     GetHeroLevelRequiredToUpgrade(): number;
-    GetIntrinsicModifierName(): string;
+    GetIntrinsicModifierName?(): string;
     /**
      * Get the current level of the ability.
      */
     GetLevel(): number;
     GetLevelSpecialValueFor(valueName: string, nLevel: number): number;
-    GetManaCost(iLevel: number): number;
+    GetManaCost?(iLevel: number): number;
     GetMaxLevel(): number;
     GetModifierValue(): number;
     GetModifierValueBonus(): number;
-    GetPlaybackRateOverride(): number;
+    GetPlaybackRateOverride?(): number;
     GetSharedCooldownName(): string;
     /**
      * Gets a value from this ability's special value block for its current level.
@@ -752,15 +752,15 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     /**
      * Returns whether the ability is currently channeling.
      */
-    IsChanneling(): boolean;
+    IsChanneling?(): boolean;
     IsCooldownReady(): boolean;
     IsCosmetic(hEntity: CBaseEntity): boolean;
     /**
      * Returns whether the ability can be cast.
      */
     IsFullyCastable(): boolean;
-    IsHidden(): boolean;
-    IsHiddenWhenStolen(): boolean;
+    IsHidden?(): boolean;
+    IsHiddenWhenStolen?(): boolean;
     /**
      * Returns whether the ability is currently casting.
      */
@@ -769,35 +769,35 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     IsOwnersGoldEnough(nIssuerPlayerID: number): boolean;
     IsOwnersGoldEnoughForUpgrade(): boolean;
     IsOwnersManaEnough(): boolean;
-    IsPassive(): boolean;
-    IsRefreshable(): boolean;
+    IsPassive?(): boolean;
+    IsRefreshable?(): boolean;
     IsSharedWithTeammates(): boolean;
-    IsStealable(): boolean;
+    IsStealable?(): boolean;
     IsStolen(): boolean;
-    IsToggle(): boolean;
+    IsToggle?(): boolean;
     IsTrained(): boolean;
     /**
      * Mark the ability button for this ability as needing a refresh.
      */
     MarkAbilityButtonDirty(): void;
     NumModifiersUsingAbility(): number;
-    OnAbilityPhaseInterrupted(): void;
-    OnAbilityPhaseStart(): boolean;
-    OnAbilityPinged(nPlayerID: number): void;
-    OnChannelFinish(bInterrupted: boolean): void;
-    OnChannelThink(flInterval: number): void;
-    OnHeroCalculateStatBonus(): void;
-    OnHeroLevelUp(): void;
-    OnOwnerDied(): void;
-    OnOwnerSpawned(): void;
-    OnSpellStart(): void;
-    OnToggle(): void;
-    OnUpgrade(): void;
+    OnAbilityPhaseInterrupted?(): void;
+    OnAbilityPhaseStart?(): boolean;
+    OnAbilityPinged?(nPlayerID: number): void;
+    OnChannelFinish?(bInterrupted: boolean): void;
+    OnChannelThink?(flInterval: number): void;
+    OnHeroCalculateStatBonus?(): void;
+    OnHeroLevelUp?(): void;
+    OnOwnerDied?(): void;
+    OnOwnerSpawned?(): void;
+    OnSpellStart?(): void;
+    OnToggle?(): void;
+    OnUpgrade?(): void;
     PayGoldCost(): void;
     PayGoldCostForUpgrade(): void;
     PayManaCost(): void;
     PlaysDefaultAnimWhenStolen(): boolean;
-    ProcsMagicStick(): boolean;
+    ProcsMagicStick?(): boolean;
     RefCountsModifiers(): boolean;
     RefreshCharges(): void;
     RefundManaCost(): void;
@@ -817,7 +817,7 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     SetStolen(bStolen: boolean): void;
     ShouldUseResources(): boolean;
     SpeakAbilityConcept(iConcept: number): void;
-    SpeakTrigger(): any;
+    SpeakTrigger?(): any;
     StartCooldown(flCooldown: number): void;
     ToggleAbility(): void;
     ToggleAutoCast(): void;
@@ -1716,199 +1716,199 @@ declare interface CDOTA_Ability_Lua extends CDOTABaseAbility {
     /**
      * Determine whether an issued command with no target is valid.
      */
-    CastFilterResult(): UnitFilterResult;
+    CastFilterResult?(): UnitFilterResult;
     /**
      * (Vector vLocation) Determine whether an issued command on a location is valid.
      */
-    CastFilterResultLocation(vLocation: Vec): UnitFilterResult;
+    CastFilterResultLocation?(vLocation: Vec): UnitFilterResult;
     /**
      * (HSCRIPT hTarget) Determine whether an issued command on a target is valid.
      */
-    CastFilterResultTarget(hTarget: CDOTA_BaseNPC): UnitFilterResult;
+    CastFilterResultTarget?(hTarget: CDOTA_BaseNPC): UnitFilterResult;
     /**
      * Returns abilities that are stolen simultaneously, or otherwise related in functionality.
      */
-    GetAssociatedPrimaryAbilities(): string;
+    GetAssociatedPrimaryAbilities?(): string;
     /**
      * Returns other abilities that are stolen simultaneously, or otherwise related in functionality.  Generally hidden abilities.
      */
-    GetAssociatedSecondaryAbilities(): string;
+    GetAssociatedSecondaryAbilities?(): string;
     /**
      * Return cast behavior type of this ability.
      */
-    GetBehavior(): DOTA_ABILITY_BEHAVIOR;
+    GetBehavior?(): DOTA_ABILITY_BEHAVIOR;
     /**
      * Return casting animation of this ability.
      */
-    GetCastAnimation(): GameActivity_t;
+    GetCastAnimation?(): GameActivity_t;
     /**
      * Return cast point of this ability.
      */
-    GetCastPoint(): number;
+    GetCastPoint?(): number;
     /**
      * Return cast range of this ability.
      */
-    GetCastRange(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
+    GetCastRange?(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
     /**
      * Return channel animation of this ability.
      */
-    GetChannelAnimation(): GameActivity_t;
+    GetChannelAnimation?(): GameActivity_t;
     /**
      * Return the channel time of this ability.
      */
-    GetChannelTime(): number;
+    GetChannelTime?(): number;
     /**
      * Return mana cost at the given level per second while channeling (-1 is current).
      */
-    GetChannelledManaCostPerSecond(iLevel: number): number;
+    GetChannelledManaCostPerSecond?(iLevel: number): number;
     /**
      * Return who hears speech when this spell is cast.
      */
-    GetConceptRecipientType(): number;
+    GetConceptRecipientType?(): number;
     /**
      * Return cooldown of this ability.
      */
-    GetCooldown(iLevel: number): number;
+    GetCooldown?(iLevel: number): number;
     /**
      * Return the error string of a failed command with no target.
      */
-    GetCustomCastError(): string;
+    GetCustomCastError?(): string;
     /**
      * (Vector vLocation) Return the error string of a failed command on a location.
      */
-    GetCustomCastErrorLocation(vLocation: Vec): string;
+    GetCustomCastErrorLocation?(vLocation: Vec): string;
     /**
      * (HSCRIPT hTarget) Return the error string of a failed command on a target.
      */
-    GetCustomCastErrorTarget(hTarget: CDOTA_BaseNPC): string;
+    GetCustomCastErrorTarget?(hTarget: CDOTA_BaseNPC): string;
     /**
      * Return gold cost at the given level (-1 is current).
      */
-    GetGoldCost(iLevel: number): number;
+    GetGoldCost?(iLevel: number): number;
     /**
      * Returns the name of the modifier applied passively by this ability.
      */
-    GetIntrinsicModifierName(): string;
+    GetIntrinsicModifierName?(): string;
     /**
      * Return mana cost at the given level (-1 is current).
      */
-    GetManaCost(iLevel: number): number;
+    GetManaCost?(iLevel: number): number;
     /**
      * Return the animation rate of the cast animation.
      */
-    GetPlaybackRateOverride(): number;
+    GetPlaybackRateOverride?(): number;
     /**
      * Returns true if this ability can be used when not on the action panel.
      */
-    IsHiddenAbilityCastable(): boolean;
+    IsHiddenAbilityCastable?(): boolean;
     /**
      * Returns true if this ability is hidden when stolen by Spell Steal.
      */
-    IsHiddenWhenStolen(): boolean;
+    IsHiddenWhenStolen?(): boolean;
     /**
      * Returns true if this ability is refreshed by Refresher Orb.
      */
-    IsRefreshable(): boolean;
+    IsRefreshable?(): boolean;
     /**
      * Returns true if this ability can be stolen by Spell Steal.
      */
-    IsStealable(): boolean;
+    IsStealable?(): boolean;
     /**
      * Cast time did not complete successfully.
      */
-    OnAbilityPhaseInterrupted(): void;
+    OnAbilityPhaseInterrupted?(): void;
     /**
      * Cast time begins (return true for successful cast).
      */
-    OnAbilityPhaseStart(): boolean;
+    OnAbilityPhaseStart?(): boolean;
     /**
      * (bool bInterrupted) Channel finished.
      */
-    OnChannelFinish(bInterrupted: boolean): void;
+    OnChannelFinish?(bInterrupted: boolean): void;
     /**
      * (float flInterval) Channeling is taking place.
      */
-    OnChannelThink(flInterval: number): void;
+    OnChannelThink?(flInterval: number): void;
     /**
      * Caster (hero only) gained a level, skilled an ability, or received a new stat bonus.
      */
-    OnHeroCalculateStatBonus(): void;
+    OnHeroCalculateStatBonus?(): void;
     /**
      * A hero has died in the vicinity (ie Urn), takes table of params.
      */
-    OnHeroDiedNearby(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
+    OnHeroDiedNearby?(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
     /**
      * Caster gained a level.
      */
-    OnHeroLevelUp(): void;
+    OnHeroLevelUp?(): void;
     /**
      * Caster inventory changed.
      */
-    OnInventoryContentsChanged(): void;
+    OnInventoryContentsChanged?(): void;
     /**
      * ( HSCRIPT hItem ) Caster equipped item.
      */
-    OnItemEquipped(hItem: CDOTA_Item): void;
+    OnItemEquipped?(hItem: CDOTA_Item): void;
     /**
      * Caster died.
      */
-    OnOwnerDied(): void;
+    OnOwnerDied?(): void;
     /**
      * Caster respawned or spawned for the first time.
      */
-    OnOwnerSpawned(): void;
+    OnOwnerSpawned?(): void;
     /**
      * (HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHit(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
+    OnProjectileHit?(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
     /**
      * (HSCRIPT hTarget, Vector vLocation, int nHandle) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHitHandle(hTarget: CDOTA_BaseNPC, vLocation: Vec, iProjectileHandle: ProjectileID): boolean;
+    OnProjectileHitHandle?(hTarget: CDOTA_BaseNPC, vLocation: Vec, iProjectileHandle: ProjectileID): boolean;
     /**
      * (HSCRIPT hTarget, Vector vLocation, table kv) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHit_ExtraData(hTarget: CDOTA_BaseNPC, vLocation: Vec, data: table): boolean;
+    OnProjectileHit_ExtraData?(hTarget: CDOTA_BaseNPC, vLocation: Vec, data: table): boolean;
     /**
      * (Vector vLocation) Projectile is actively moving.
      */
-    OnProjectileThink(vLocation: Vec): void;
+    OnProjectileThink?(vLocation: Vec): void;
     /**
      * (int nProjectileHandle) Projectile is actively moving.
      */
-    OnProjectileThinkHandle(iProjectileHandle: ProjectileID): void;
+    OnProjectileThinkHandle?(iProjectileHandle: ProjectileID): void;
     /**
      * (Vector vLocation, table kv ) Projectile is actively moving.
      */
-    OnProjectileThink_ExtraData(vLocation: Vec, data: table): void;
+    OnProjectileThink_ExtraData?(vLocation: Vec, data: table): void;
     /**
      * Cast time finished, spell effects begin.
      */
-    OnSpellStart(): void;
+    OnSpellStart?(): void;
     /**
      * ( HSCRIPT hAbility ) Special behavior when stolen by Spell Steal.
      */
-    OnStolen(hSourceAbility: CDOTABaseAbility): void;
+    OnStolen?(hSourceAbility: CDOTABaseAbility): void;
     /**
      * Ability is toggled on/off.
      */
-    OnToggle(): void;
+    OnToggle?(): void;
     /**
      * Special behavior when lost by Spell Steal.
      */
-    OnUnStolen(): void;
+    OnUnStolen?(): void;
     /**
      * Ability gained a level.
      */
-    OnUpgrade(): void;
+    OnUpgrade?(): void;
     /**
      * Returns true if this ability will generate magic stick charges for nearby enemies.
      */
-    ProcsMagicStick(): boolean;
+    ProcsMagicStick?(): boolean;
     /**
      * Return the type of speech used.
      */
-    SpeakTrigger(): number;
+    SpeakTrigger?(): number;
 }
 
 /**
@@ -2098,7 +2098,7 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
      * This Mana regen is derived from constant bonuses like Basilius.
      */
     GetBonusManaRegen(): number;
-    GetCastPoint(bAttack: boolean): number;
+    GetCastPoint?(bAttack: boolean): number;
     /**
      * Get clone source (Meepo Prime, if this is a Meepo)
      */
@@ -3189,7 +3189,7 @@ declare interface CDOTA_Item extends CDOTABaseAbility {
     IsInBackpack(): boolean;
     IsItem(): boolean;
     IsKillable(): boolean;
-    IsMuted(): boolean;
+    IsMuted?(): boolean;
     IsPermanent(): boolean;
     IsPurchasable(): boolean;
     IsRecipe(): boolean;
@@ -3259,147 +3259,147 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
     /**
      * Determine whether an issued command with no target is valid.
      */
-    CastFilterResult(): UnitFilterResult;
+    CastFilterResult?(): UnitFilterResult;
     /**
      * (Vector vLocation) Determine whether an issued command on a location is valid.
      */
-    CastFilterResultLocation(vLocation: Vec): UnitFilterResult;
+    CastFilterResultLocation?(vLocation: Vec): UnitFilterResult;
     /**
      * (HSCRIPT hTarget) Determine whether an issued command on a target is valid.
      */
-    CastFilterResultTarget(hTarget: CDOTA_BaseNPC): UnitFilterResult;
+    CastFilterResultTarget?(hTarget: CDOTA_BaseNPC): UnitFilterResult;
     /**
      * Returns abilities that are stolen simultaneously, or otherwise related in functionality.
      */
-    GetAssociatedPrimaryAbilities(): string;
+    GetAssociatedPrimaryAbilities?(): string;
     /**
      * Returns other abilities that are stolen simultaneously, or otherwise related in functionality.  Generally hidden abilities.
      */
-    GetAssociatedSecondaryAbilities(): string;
+    GetAssociatedSecondaryAbilities?(): string;
     /**
      * Return cast behavior type of this ability.
      */
-    GetBehavior(): DOTA_ABILITY_BEHAVIOR;
+    GetBehavior?(): DOTA_ABILITY_BEHAVIOR;
     /**
      * Return cast range of this ability.
      */
-    GetCastRange(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
+    GetCastRange?(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
     /**
      * Return the channel time of this ability.
      */
-    GetChannelTime(): number;
+    GetChannelTime?(): number;
     /**
      * Return mana cost at the given level per second while channeling (-1 is current).
      */
-    GetChannelledManaCostPerSecond(iLevel: number): number;
+    GetChannelledManaCostPerSecond?(iLevel: number): number;
     /**
      * Return who hears speech when this spell is cast.
      */
-    GetConceptRecipientType(): number;
+    GetConceptRecipientType?(): number;
     /**
      * Return cooldown of this ability.
      */
-    GetCooldown(iLevel: number): number;
+    GetCooldown?(iLevel: number): number;
     /**
      * Return the error string of a failed command with no target.
      */
-    GetCustomCastError(): string;
+    GetCustomCastError?(): string;
     /**
      * (Vector vLocation) Return the error string of a failed command on a location.
      */
-    GetCustomCastErrorLocation(vLocation: Vec): string;
+    GetCustomCastErrorLocation?(vLocation: Vec): string;
     /**
      * (HSCRIPT hTarget) Return the error string of a failed command on a target.
      */
-    GetCustomCastErrorTarget(hTarget: CDOTA_BaseNPC): string;
+    GetCustomCastErrorTarget?(hTarget: CDOTA_BaseNPC): string;
     /**
      * Return gold cost at the given level (-1 is current).
      */
-    GetGoldCost(iLevel: number): number;
+    GetGoldCost?(iLevel: number): number;
     /**
      * Returns the name of the modifier applied passively by this ability.
      */
-    GetIntrinsicModifierName(): string;
+    GetIntrinsicModifierName?(): string;
     /**
      * Return mana cost at the given level (-1 is current).
      */
-    GetManaCost(iLevel: number): number;
+    GetManaCost?(iLevel: number): number;
     /**
      * Return the animation rate of the cast animation.
      */
-    GetPlaybackRateOverride(): number;
+    GetPlaybackRateOverride?(): number;
     /**
      * Returns true if this ability can be used when not on the action panel.
      */
-    IsHiddenAbilityCastable(): boolean;
+    IsHiddenAbilityCastable?(): boolean;
     /**
      * Returns true if this ability is hidden when stolen by Spell Steal.
      */
-    IsHiddenWhenStolen(): boolean;
+    IsHiddenWhenStolen?(): boolean;
     /**
      * Returns whether this item is muted or not.
      */
-    IsMuted(): boolean;
+    IsMuted?(): boolean;
     /**
      * Returns true if this ability is refreshed by Refresher Orb.
      */
-    IsRefreshable(): boolean;
+    IsRefreshable?(): boolean;
     /**
      * Returns true if this ability can be stolen by Spell Steal.
      */
-    IsStealable(): boolean;
+    IsStealable?(): boolean;
     /**
      * Cast time did not complete successfully.
      */
-    OnAbilityPhaseInterrupted(): void;
+    OnAbilityPhaseInterrupted?(): void;
     /**
      * Cast time begins (return true for successful cast).
      */
-    OnAbilityPhaseStart(): boolean;
+    OnAbilityPhaseStart?(): boolean;
     /**
      * (bool bInterrupted) Channel finished.
      */
-    OnChannelFinish(bInterrupted: boolean): void;
+    OnChannelFinish?(bInterrupted: boolean): void;
     /**
      * (float flInterval) Channeling is taking place.
      */
-    OnChannelThink(flInterval: number): void;
+    OnChannelThink?(flInterval: number): void;
     /**
      * Caster (hero only) gained a level, skilled an ability, or received a new stat bonus.
      */
-    OnHeroCalculateStatBonus(): void;
+    OnHeroCalculateStatBonus?(): void;
     /**
      * A hero has died in the vicinity (ie Urn), takes table of params.
      */
-    OnHeroDiedNearby(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
+    OnHeroDiedNearby?(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
     /**
      * Caster gained a level.
      */
-    OnHeroLevelUp(): void;
+    OnHeroLevelUp?(): void;
     /**
      * Caster inventory changed.
      */
-    OnInventoryContentsChanged(): void;
+    OnInventoryContentsChanged?(): void;
     /**
      * ( HSCRIPT hItem ) Caster equipped item.
      */
-    OnItemEquipped(hItem: CDOTA_Item): void;
+    OnItemEquipped?(hItem: CDOTA_Item): void;
     /**
      * Caster died.
      */
-    OnOwnerDied(): void;
+    OnOwnerDied?(): void;
     /**
      * Caster respawned or spawned for the first time.
      */
-    OnOwnerSpawned(): void;
+    OnOwnerSpawned?(): void;
     /**
      * (HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHit(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
+    OnProjectileHit?(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
     /**
      * (Vector vLocation) Projectile is actively moving.
      */
-    OnProjectileThink(vLocation: Vec): void;
+    OnProjectileThink?(vLocation: Vec): void;
     /**
      * Cast time finished, spell effects begin.
      */
@@ -3407,27 +3407,27 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
     /**
      * ( HSCRIPT hAbility ) Special behavior when stolen by Spell Steal.
      */
-    OnStolen(hSourceAbility: CDOTABaseAbility): void;
+    OnStolen?(hSourceAbility: CDOTABaseAbility): void;
     /**
      * Ability is toggled on/off.
      */
-    OnToggle(): void;
+    OnToggle?(): void;
     /**
      * Special behavior when lost by Spell Steal.
      */
-    OnUnStolen(): void;
+    OnUnStolen?(): void;
     /**
      * Ability gained a level.
      */
-    OnUpgrade(): void;
+    OnUpgrade?(): void;
     /**
      * Returns true if this ability will generate magic stick charges for nearby enemies.
      */
-    ProcsMagicStick(): boolean;
+    ProcsMagicStick?(): boolean;
     /**
      * Return the type of speech used.
      */
-    SpeakTrigger(): number;
+    SpeakTrigger?(): number;
 }
 /**
  * A physical item dropped in the world
