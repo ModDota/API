@@ -20,7 +20,7 @@ declare interface CScriptHTTPResponse {
 /**
  * Animating models
  */
-declare interface CBaseAnimating extends CBaseModelEntity {
+declare abstract class CBaseAnimating extends CBaseModelEntity {
     /**
      * Returns the duration in seconds of the active sequence.
      */
@@ -129,7 +129,7 @@ declare interface CBaseAnimating extends CBaseModelEntity {
 /**
  * BaseCombatCharacter
  */
-declare interface CBaseCombatCharacter extends CBaseFlex {
+declare abstract class CBaseCombatCharacter extends CBaseFlex {
     /**
      * GetEquippedWeapons() : Returns an array of all the equipped weapons
      */
@@ -150,7 +150,7 @@ declare interface CBaseCombatCharacter extends CBaseFlex {
 /**
  * Root class of all server-side entities
  */
-declare interface CBaseEntity extends CEntityInstance {
+declare abstract class CBaseEntity extends CEntityInstance {
     /**
      * AddEffects( int ): Adds the render effect flag.
      */
@@ -450,7 +450,7 @@ declare interface CBaseEntity extends CEntityInstance {
 /**
  * Animated characters who have vertex flex capability.
  */
-declare interface CBaseFlex extends CBaseAnimating {
+declare abstract class CBaseFlex extends CBaseAnimating {
     /**
      * Returns the instance of the oldest active scene entity (if any).
      */
@@ -467,7 +467,7 @@ declare interface CBaseFlex extends CBaseAnimating {
 /**
  * Base entity with model
  */
-declare interface CBaseModelEntity extends CBaseEntity {
+declare abstract class CBaseModelEntity extends CBaseEntity {
     /**
      * GetMaterialGroupHash(): Get the material group hash of this entity.
      */
@@ -522,7 +522,7 @@ declare interface CBaseModelEntity extends CBaseEntity {
 /**
  * The player entity.
  */
-declare interface CBasePlayer extends CBaseCombatCharacter {
+declare abstract class CBasePlayer extends CBaseCombatCharacter {
     /**
      * Returns whether this player's chaperone bounds are visible.
      */
@@ -571,7 +571,7 @@ declare interface CBasePlayer extends CBaseCombatCharacter {
 /**
  * Base Trigger for all the triggers
  */
-declare interface CBaseTrigger extends CBaseEntity {
+declare abstract class CBaseTrigger extends CBaseEntity {
     /**
      * Disable's the trigger
      */
@@ -588,7 +588,7 @@ declare interface CBaseTrigger extends CBaseEntity {
 /**
  * Body Component Scriptdesc
  */
-declare interface CBodyComponent {
+declare abstract class CBodyComponent {
     /**
      * Apply an impulse at a worldspace position to the physics
      */
@@ -671,7 +671,7 @@ declare const CustomNetTables: CCustomNetTableManager;
 /**
  * An ability
  */
-declare interface CDOTABaseAbility extends CBaseEntity {
+declare abstract class CDOTABaseAbility extends CBaseEntity {
     CanAbilityBeUpgraded(): boolean;
     CastAbility(): boolean;
     ContinueCasting(): boolean;
@@ -698,46 +698,46 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     GetAbilityTargetType(): DOTA_UNIT_TARGET_TYPE;
     GetAbilityType(): number;
     GetAnimationIgnoresModelScale(): boolean;
-    GetAssociatedPrimaryAbilities?(): string;
-    GetAssociatedSecondaryAbilities?(): string;
+    GetAssociatedPrimaryAbilities(): string;
+    GetAssociatedSecondaryAbilities(): string;
     GetAutoCastState(): boolean;
     GetBackswingTime(): number;
-    GetBehavior?(): number;
-    GetCastPoint?(): number;
+    GetBehavior(): number;
+    GetCastPoint(): number;
     /**
      * Gets the cast range of the ability.
      */
-    GetCastRange?(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
+    GetCastRange(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
     GetCaster(): CDOTA_BaseNPC;
-    GetChannelStartTime?(): number;
-    GetChannelTime?(): number;
-    GetChannelledManaCostPerSecond?(iLevel: number): number;
+    GetChannelStartTime(): number;
+    GetChannelTime(): number;
+    GetChannelledManaCostPerSecond(iLevel: number): number;
     GetCloneSource(): CDOTA_BaseNPC;
-    GetConceptRecipientType?(): number;
+    GetConceptRecipientType(): number;
     /**
      * Get the cooldown duration for this ability at a given level, not the amount of cooldown actually left.
      */
-    GetCooldown?(iLevel: number): number;
+    GetCooldown(iLevel: number): number;
     GetCooldownTime(): number;
     GetCooldownTimeRemaining(): number;
     GetCursorPosition(): Vec;
     GetCursorTarget(): CDOTA_BaseNPC;
     GetCursorTargetingNothing(): boolean;
-    GetDuration?(): number;
-    GetGoldCost?(iLevel: number): number;
+    GetDuration(): number;
+    GetGoldCost(iLevel: number): number;
     GetGoldCostForUpgrade(iLevel: number): number;
     GetHeroLevelRequiredToUpgrade(): number;
-    GetIntrinsicModifierName?(): string;
+    GetIntrinsicModifierName(): string;
     /**
      * Get the current level of the ability.
      */
     GetLevel(): number;
     GetLevelSpecialValueFor(valueName: string, nLevel: number): number;
-    GetManaCost?(iLevel: number): number;
+    GetManaCost(iLevel: number): number;
     GetMaxLevel(): number;
     GetModifierValue(): number;
     GetModifierValueBonus(): number;
-    GetPlaybackRateOverride?(): number;
+    GetPlaybackRateOverride(): number;
     GetSharedCooldownName(): string;
     /**
      * Gets a value from this ability's special value block for its current level.
@@ -752,15 +752,15 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     /**
      * Returns whether the ability is currently channeling.
      */
-    IsChanneling?(): boolean;
+    IsChanneling(): boolean;
     IsCooldownReady(): boolean;
     IsCosmetic(hEntity: CBaseEntity): boolean;
     /**
      * Returns whether the ability can be cast.
      */
     IsFullyCastable(): boolean;
-    IsHidden?(): boolean;
-    IsHiddenWhenStolen?(): boolean;
+    IsHidden(): boolean;
+    IsHiddenWhenStolen(): boolean;
     /**
      * Returns whether the ability is currently casting.
      */
@@ -769,35 +769,35 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     IsOwnersGoldEnough(nIssuerPlayerID: number): boolean;
     IsOwnersGoldEnoughForUpgrade(): boolean;
     IsOwnersManaEnough(): boolean;
-    IsPassive?(): boolean;
-    IsRefreshable?(): boolean;
+    IsPassive(): boolean;
+    IsRefreshable(): boolean;
     IsSharedWithTeammates(): boolean;
-    IsStealable?(): boolean;
+    IsStealable(): boolean;
     IsStolen(): boolean;
-    IsToggle?(): boolean;
+    IsToggle(): boolean;
     IsTrained(): boolean;
     /**
      * Mark the ability button for this ability as needing a refresh.
      */
     MarkAbilityButtonDirty(): void;
     NumModifiersUsingAbility(): number;
-    OnAbilityPhaseInterrupted?(): void;
-    OnAbilityPhaseStart?(): boolean;
-    OnAbilityPinged?(nPlayerID: number): void;
-    OnChannelFinish?(bInterrupted: boolean): void;
-    OnChannelThink?(flInterval: number): void;
-    OnHeroCalculateStatBonus?(): void;
-    OnHeroLevelUp?(): void;
-    OnOwnerDied?(): void;
-    OnOwnerSpawned?(): void;
-    OnSpellStart?(): void;
-    OnToggle?(): void;
-    OnUpgrade?(): void;
+    OnAbilityPhaseInterrupted(): void;
+    OnAbilityPhaseStart(): boolean;
+    OnAbilityPinged(nPlayerID: number): void;
+    OnChannelFinish(bInterrupted: boolean): void;
+    OnChannelThink(flInterval: number): void;
+    OnHeroCalculateStatBonus(): void;
+    OnHeroLevelUp(): void;
+    OnOwnerDied(): void;
+    OnOwnerSpawned(): void;
+    OnSpellStart(): void;
+    OnToggle(): void;
+    OnUpgrade(): void;
     PayGoldCost(): void;
     PayGoldCostForUpgrade(): void;
     PayManaCost(): void;
     PlaysDefaultAnimWhenStolen(): boolean;
-    ProcsMagicStick?(): boolean;
+    ProcsMagicStick(): boolean;
     RefCountsModifiers(): boolean;
     RefreshCharges(): void;
     RefundManaCost(): void;
@@ -817,7 +817,7 @@ declare interface CDOTABaseAbility extends CBaseEntity {
     SetStolen(bStolen: boolean): void;
     ShouldUseResources(): boolean;
     SpeakAbilityConcept(iConcept: number): void;
-    SpeakTrigger?(): any;
+    SpeakTrigger(): any;
     StartCooldown(flCooldown: number): void;
     ToggleAbility(): void;
     ToggleAutoCast(): void;
@@ -827,7 +827,7 @@ declare interface CDOTABaseAbility extends CBaseEntity {
 /**
  * Base game mode class
  */
-declare interface CDOTABaseGameMode extends CBaseEntity {
+declare abstract class CDOTABaseGameMode extends CBaseEntity {
     /**
      * Get if weather effects are disabled on the client.
      */
@@ -1548,7 +1548,7 @@ declare const GameRules: CDOTAGamerules;
 /**
  * dota_player
  */
-declare interface CDOTAPlayer extends CBaseAnimating {
+declare abstract class CDOTAPlayer extends CBaseAnimating {
     /**
      * Get the player's hero.
      */
@@ -1681,7 +1681,7 @@ declare const Tutorial: CDOTATutorial;
 /**
  * A Dota NPC Unit
  */
-declare interface CDOTA_Ability_Animation_Attack extends CDOTABaseAbility {
+declare abstract class CDOTA_Ability_Animation_Attack extends CDOTABaseAbility {
     /**
      * Override playbackrate
      */
@@ -1690,7 +1690,7 @@ declare interface CDOTA_Ability_Animation_Attack extends CDOTABaseAbility {
 /**
  * A Dota NPC Unit.
  */
-declare interface CDOTA_Ability_Animation_TailSpin extends CDOTABaseAbility {
+declare abstract class CDOTA_Ability_Animation_TailSpin extends CDOTABaseAbility {
     /**
      * Override playbackrate
      */
@@ -1699,7 +1699,7 @@ declare interface CDOTA_Ability_Animation_TailSpin extends CDOTABaseAbility {
 /**
  * A data driven ability.
  */
-declare interface CDOTA_Ability_DataDriven extends CDOTABaseAbility {
+declare abstract class CDOTA_Ability_DataDriven extends CDOTABaseAbility {
     /**
      * Applies a data driven modifier to the target
      */
@@ -1712,209 +1712,209 @@ declare interface CDOTA_Ability_DataDriven extends CDOTABaseAbility {
 /**
  * A lua-based ability.
  */
-declare interface CDOTA_Ability_Lua extends CDOTABaseAbility {
+declare abstract class CDOTA_Ability_Lua extends CDOTABaseAbility {
     /**
      * Determine whether an issued command with no target is valid.
      */
-    CastFilterResult?(): UnitFilterResult;
+    CastFilterResult(): UnitFilterResult;
     /**
      * (Vector vLocation) Determine whether an issued command on a location is valid.
      */
-    CastFilterResultLocation?(vLocation: Vec): UnitFilterResult;
+    CastFilterResultLocation(vLocation: Vec): UnitFilterResult;
     /**
      * (HSCRIPT hTarget) Determine whether an issued command on a target is valid.
      */
-    CastFilterResultTarget?(hTarget: CDOTA_BaseNPC): UnitFilterResult;
+    CastFilterResultTarget(hTarget: CDOTA_BaseNPC): UnitFilterResult;
     /**
      * Returns abilities that are stolen simultaneously, or otherwise related in functionality.
      */
-    GetAssociatedPrimaryAbilities?(): string;
+    GetAssociatedPrimaryAbilities(): string;
     /**
      * Returns other abilities that are stolen simultaneously, or otherwise related in functionality.  Generally hidden abilities.
      */
-    GetAssociatedSecondaryAbilities?(): string;
+    GetAssociatedSecondaryAbilities(): string;
     /**
      * Return cast behavior type of this ability.
      */
-    GetBehavior?(): DOTA_ABILITY_BEHAVIOR;
+    GetBehavior(): DOTA_ABILITY_BEHAVIOR;
     /**
      * Return casting animation of this ability.
      */
-    GetCastAnimation?(): GameActivity_t;
+    GetCastAnimation(): GameActivity_t;
     /**
      * Return cast point of this ability.
      */
-    GetCastPoint?(): number;
+    GetCastPoint(): number;
     /**
      * Return cast range of this ability.
      */
-    GetCastRange?(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
+    GetCastRange(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
     /**
      * Return channel animation of this ability.
      */
-    GetChannelAnimation?(): GameActivity_t;
+    GetChannelAnimation(): GameActivity_t;
     /**
      * Return the channel time of this ability.
      */
-    GetChannelTime?(): number;
+    GetChannelTime(): number;
     /**
      * Return mana cost at the given level per second while channeling (-1 is current).
      */
-    GetChannelledManaCostPerSecond?(iLevel: number): number;
+    GetChannelledManaCostPerSecond(iLevel: number): number;
     /**
      * Return who hears speech when this spell is cast.
      */
-    GetConceptRecipientType?(): number;
+    GetConceptRecipientType(): number;
     /**
      * Return cooldown of this ability.
      */
-    GetCooldown?(iLevel: number): number;
+    GetCooldown(iLevel: number): number;
     /**
      * Return the error string of a failed command with no target.
      */
-    GetCustomCastError?(): string;
+    GetCustomCastError(): string;
     /**
      * (Vector vLocation) Return the error string of a failed command on a location.
      */
-    GetCustomCastErrorLocation?(vLocation: Vec): string;
+    GetCustomCastErrorLocation(vLocation: Vec): string;
     /**
      * (HSCRIPT hTarget) Return the error string of a failed command on a target.
      */
-    GetCustomCastErrorTarget?(hTarget: CDOTA_BaseNPC): string;
+    GetCustomCastErrorTarget(hTarget: CDOTA_BaseNPC): string;
     /**
      * Return gold cost at the given level (-1 is current).
      */
-    GetGoldCost?(iLevel: number): number;
+    GetGoldCost(iLevel: number): number;
     /**
      * Returns the name of the modifier applied passively by this ability.
      */
-    GetIntrinsicModifierName?(): string;
+    GetIntrinsicModifierName(): string;
     /**
      * Return mana cost at the given level (-1 is current).
      */
-    GetManaCost?(iLevel: number): number;
+    GetManaCost(iLevel: number): number;
     /**
      * Return the animation rate of the cast animation.
      */
-    GetPlaybackRateOverride?(): number;
+    GetPlaybackRateOverride(): number;
     /**
      * Returns true if this ability can be used when not on the action panel.
      */
-    IsHiddenAbilityCastable?(): boolean;
+    IsHiddenAbilityCastable(): boolean;
     /**
      * Returns true if this ability is hidden when stolen by Spell Steal.
      */
-    IsHiddenWhenStolen?(): boolean;
+    IsHiddenWhenStolen(): boolean;
     /**
      * Returns true if this ability is refreshed by Refresher Orb.
      */
-    IsRefreshable?(): boolean;
+    IsRefreshable(): boolean;
     /**
      * Returns true if this ability can be stolen by Spell Steal.
      */
-    IsStealable?(): boolean;
+    IsStealable(): boolean;
     /**
      * Cast time did not complete successfully.
      */
-    OnAbilityPhaseInterrupted?(): void;
+    OnAbilityPhaseInterrupted(): void;
     /**
      * Cast time begins (return true for successful cast).
      */
-    OnAbilityPhaseStart?(): boolean;
+    OnAbilityPhaseStart(): boolean;
     /**
      * (bool bInterrupted) Channel finished.
      */
-    OnChannelFinish?(bInterrupted: boolean): void;
+    OnChannelFinish(bInterrupted: boolean): void;
     /**
      * (float flInterval) Channeling is taking place.
      */
-    OnChannelThink?(flInterval: number): void;
+    OnChannelThink(flInterval: number): void;
     /**
      * Caster (hero only) gained a level, skilled an ability, or received a new stat bonus.
      */
-    OnHeroCalculateStatBonus?(): void;
+    OnHeroCalculateStatBonus(): void;
     /**
      * A hero has died in the vicinity (ie Urn), takes table of params.
      */
-    OnHeroDiedNearby?(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
+    OnHeroDiedNearby(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
     /**
      * Caster gained a level.
      */
-    OnHeroLevelUp?(): void;
+    OnHeroLevelUp(): void;
     /**
      * Caster inventory changed.
      */
-    OnInventoryContentsChanged?(): void;
+    OnInventoryContentsChanged(): void;
     /**
      * ( HSCRIPT hItem ) Caster equipped item.
      */
-    OnItemEquipped?(hItem: CDOTA_Item): void;
+    OnItemEquipped(hItem: CDOTA_Item): void;
     /**
      * Caster died.
      */
-    OnOwnerDied?(): void;
+    OnOwnerDied(): void;
     /**
      * Caster respawned or spawned for the first time.
      */
-    OnOwnerSpawned?(): void;
+    OnOwnerSpawned(): void;
     /**
      * (HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHit?(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
+    OnProjectileHit(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
     /**
      * (HSCRIPT hTarget, Vector vLocation, int nHandle) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHitHandle?(hTarget: CDOTA_BaseNPC, vLocation: Vec, iProjectileHandle: ProjectileID): boolean;
+    OnProjectileHitHandle(hTarget: CDOTA_BaseNPC, vLocation: Vec, iProjectileHandle: ProjectileID): boolean;
     /**
      * (HSCRIPT hTarget, Vector vLocation, table kv) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHit_ExtraData?(hTarget: CDOTA_BaseNPC, vLocation: Vec, data: table): boolean;
+    OnProjectileHit_ExtraData(hTarget: CDOTA_BaseNPC, vLocation: Vec, data: table): boolean;
     /**
      * (Vector vLocation) Projectile is actively moving.
      */
-    OnProjectileThink?(vLocation: Vec): void;
+    OnProjectileThink(vLocation: Vec): void;
     /**
      * (int nProjectileHandle) Projectile is actively moving.
      */
-    OnProjectileThinkHandle?(iProjectileHandle: ProjectileID): void;
+    OnProjectileThinkHandle(iProjectileHandle: ProjectileID): void;
     /**
      * (Vector vLocation, table kv ) Projectile is actively moving.
      */
-    OnProjectileThink_ExtraData?(vLocation: Vec, data: table): void;
+    OnProjectileThink_ExtraData(vLocation: Vec, data: table): void;
     /**
      * Cast time finished, spell effects begin.
      */
-    OnSpellStart?(): void;
+    OnSpellStart(): void;
     /**
      * ( HSCRIPT hAbility ) Special behavior when stolen by Spell Steal.
      */
-    OnStolen?(hSourceAbility: CDOTABaseAbility): void;
+    OnStolen(hSourceAbility: CDOTABaseAbility): void;
     /**
      * Ability is toggled on/off.
      */
-    OnToggle?(): void;
+    OnToggle(): void;
     /**
      * Special behavior when lost by Spell Steal.
      */
-    OnUnStolen?(): void;
+    OnUnStolen(): void;
     /**
      * Ability gained a level.
      */
-    OnUpgrade?(): void;
+    OnUpgrade(): void;
     /**
      * Returns true if this ability will generate magic stick charges for nearby enemies.
      */
-    ProcsMagicStick?(): boolean;
+    ProcsMagicStick(): boolean;
     /**
      * Return the type of speech used.
      */
-    SpeakTrigger?(): number;
+    SpeakTrigger(): number;
 }
 
 /**
  * A Dota NPC Unit
  */
-declare interface CDOTA_BaseNPC extends CBaseFlex {
+declare abstract class CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Add an ability to this unit by name.
      */
@@ -2098,7 +2098,7 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
      * This Mana regen is derived from constant bonuses like Basilius.
      */
     GetBonusManaRegen(): number;
-    GetCastPoint?(bAttack: boolean): number;
+    GetCastPoint(bAttack: boolean): number;
     /**
      * Get clone source (Meepo Prime, if this is a Meepo)
      */
@@ -2705,7 +2705,7 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
 /**
  * A building.
  */
-declare interface CDOTA_BaseNPC_Building extends CDOTA_BaseNPC {
+declare abstract class CDOTA_BaseNPC_Building extends CDOTA_BaseNPC {
     /**
      * Get the invulnerability count for a building.
      */
@@ -2718,7 +2718,7 @@ declare interface CDOTA_BaseNPC_Building extends CDOTA_BaseNPC {
 /**
  * A Dota NPC Unit
  */
-declare interface CDOTA_BaseNPC_Creature extends CDOTA_BaseNPC {
+declare abstract class CDOTA_BaseNPC_Creature extends CDOTA_BaseNPC {
     /**
      * Add the specified item drop to this creature.
      */
@@ -2791,7 +2791,7 @@ declare interface CDOTA_BaseNPC_Creature extends CDOTA_BaseNPC {
 /**
  * A Dota Hero NPC
  */
-declare interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
+declare abstract class CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
     /**
      * Params: Float XP, Bool applyBotDifficultyScaling
      */
@@ -3072,7 +3072,7 @@ declare interface CDOTA_BaseNPC_Trap_Ward extends CDOTA_BaseNPC_Creature {
 /**
  * A modifier.
  */
-declare interface CDOTA_Buff {
+declare abstract class CDOTA_Buff {
     /**
      * (index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect
      */
@@ -3153,7 +3153,7 @@ declare interface CDOTA_CustomUIManager {
 /**
  * A usable item.
  */
-declare interface CDOTA_Item extends CDOTABaseAbility {
+declare abstract class CDOTA_Item extends CDOTABaseAbility {
     CanBeUsedOutOfInventory(): boolean;
     /**
      * Get the container for this item.
@@ -3189,7 +3189,7 @@ declare interface CDOTA_Item extends CDOTABaseAbility {
     IsInBackpack(): boolean;
     IsItem(): boolean;
     IsKillable(): boolean;
-    IsMuted?(): boolean;
+    IsMuted(): boolean;
     IsPermanent(): boolean;
     IsPurchasable(): boolean;
     IsRecipe(): boolean;
@@ -3233,7 +3233,7 @@ declare interface CDOTA_Item extends CDOTABaseAbility {
 /**
  * Spawns a physical item
  */
-declare interface CDOTA_ItemSpawner extends CBaseEntity {
+declare abstract class CDOTA_ItemSpawner extends CBaseEntity {
     /**
      * Returns the item name
      */
@@ -3242,7 +3242,7 @@ declare interface CDOTA_ItemSpawner extends CBaseEntity {
 /**
  * A data driven usable item.
  */
-declare interface CDOTA_Item_DataDriven extends CDOTA_Item {
+declare abstract class CDOTA_Item_DataDriven extends CDOTA_Item {
     /**
      * Applies a data driven modifier to the target
      */
@@ -3255,151 +3255,151 @@ declare interface CDOTA_Item_DataDriven extends CDOTA_Item {
 /**
  * A lua-based item.
  */
-declare interface CDOTA_Item_Lua extends CDOTA_Item {
+declare abstract class CDOTA_Item_Lua extends CDOTA_Item {
     /**
      * Determine whether an issued command with no target is valid.
      */
-    CastFilterResult?(): UnitFilterResult;
+    CastFilterResult(): UnitFilterResult;
     /**
      * (Vector vLocation) Determine whether an issued command on a location is valid.
      */
-    CastFilterResultLocation?(vLocation: Vec): UnitFilterResult;
+    CastFilterResultLocation(vLocation: Vec): UnitFilterResult;
     /**
      * (HSCRIPT hTarget) Determine whether an issued command on a target is valid.
      */
-    CastFilterResultTarget?(hTarget: CDOTA_BaseNPC): UnitFilterResult;
+    CastFilterResultTarget(hTarget: CDOTA_BaseNPC): UnitFilterResult;
     /**
      * Returns abilities that are stolen simultaneously, or otherwise related in functionality.
      */
-    GetAssociatedPrimaryAbilities?(): string;
+    GetAssociatedPrimaryAbilities(): string;
     /**
      * Returns other abilities that are stolen simultaneously, or otherwise related in functionality.  Generally hidden abilities.
      */
-    GetAssociatedSecondaryAbilities?(): string;
+    GetAssociatedSecondaryAbilities(): string;
     /**
      * Return cast behavior type of this ability.
      */
-    GetBehavior?(): DOTA_ABILITY_BEHAVIOR;
+    GetBehavior(): DOTA_ABILITY_BEHAVIOR;
     /**
      * Return cast range of this ability.
      */
-    GetCastRange?(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
+    GetCastRange(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
     /**
      * Return the channel time of this ability.
      */
-    GetChannelTime?(): number;
+    GetChannelTime(): number;
     /**
      * Return mana cost at the given level per second while channeling (-1 is current).
      */
-    GetChannelledManaCostPerSecond?(iLevel: number): number;
+    GetChannelledManaCostPerSecond(iLevel: number): number;
     /**
      * Return who hears speech when this spell is cast.
      */
-    GetConceptRecipientType?(): number;
+    GetConceptRecipientType(): number;
     /**
      * Return cooldown of this ability.
      */
-    GetCooldown?(iLevel: number): number;
+    GetCooldown(iLevel: number): number;
     /**
      * Return the error string of a failed command with no target.
      */
-    GetCustomCastError?(): string;
+    GetCustomCastError(): string;
     /**
      * (Vector vLocation) Return the error string of a failed command on a location.
      */
-    GetCustomCastErrorLocation?(vLocation: Vec): string;
+    GetCustomCastErrorLocation(vLocation: Vec): string;
     /**
      * (HSCRIPT hTarget) Return the error string of a failed command on a target.
      */
-    GetCustomCastErrorTarget?(hTarget: CDOTA_BaseNPC): string;
+    GetCustomCastErrorTarget(hTarget: CDOTA_BaseNPC): string;
     /**
      * Return gold cost at the given level (-1 is current).
      */
-    GetGoldCost?(iLevel: number): number;
+    GetGoldCost(iLevel: number): number;
     /**
      * Returns the name of the modifier applied passively by this ability.
      */
-    GetIntrinsicModifierName?(): string;
+    GetIntrinsicModifierName(): string;
     /**
      * Return mana cost at the given level (-1 is current).
      */
-    GetManaCost?(iLevel: number): number;
+    GetManaCost(iLevel: number): number;
     /**
      * Return the animation rate of the cast animation.
      */
-    GetPlaybackRateOverride?(): number;
+    GetPlaybackRateOverride(): number;
     /**
      * Returns true if this ability can be used when not on the action panel.
      */
-    IsHiddenAbilityCastable?(): boolean;
+    IsHiddenAbilityCastable(): boolean;
     /**
      * Returns true if this ability is hidden when stolen by Spell Steal.
      */
-    IsHiddenWhenStolen?(): boolean;
+    IsHiddenWhenStolen(): boolean;
     /**
      * Returns whether this item is muted or not.
      */
-    IsMuted?(): boolean;
+    IsMuted(): boolean;
     /**
      * Returns true if this ability is refreshed by Refresher Orb.
      */
-    IsRefreshable?(): boolean;
+    IsRefreshable(): boolean;
     /**
      * Returns true if this ability can be stolen by Spell Steal.
      */
-    IsStealable?(): boolean;
+    IsStealable(): boolean;
     /**
      * Cast time did not complete successfully.
      */
-    OnAbilityPhaseInterrupted?(): void;
+    OnAbilityPhaseInterrupted(): void;
     /**
      * Cast time begins (return true for successful cast).
      */
-    OnAbilityPhaseStart?(): boolean;
+    OnAbilityPhaseStart(): boolean;
     /**
      * (bool bInterrupted) Channel finished.
      */
-    OnChannelFinish?(bInterrupted: boolean): void;
+    OnChannelFinish(bInterrupted: boolean): void;
     /**
      * (float flInterval) Channeling is taking place.
      */
-    OnChannelThink?(flInterval: number): void;
+    OnChannelThink(flInterval: number): void;
     /**
      * Caster (hero only) gained a level, skilled an ability, or received a new stat bonus.
      */
-    OnHeroCalculateStatBonus?(): void;
+    OnHeroCalculateStatBonus(): void;
     /**
      * A hero has died in the vicinity (ie Urn), takes table of params.
      */
-    OnHeroDiedNearby?(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
+    OnHeroDiedNearby(unit: CDOTA_BaseNPC, attacker: CDOTA_BaseNPC, event: table): void;
     /**
      * Caster gained a level.
      */
-    OnHeroLevelUp?(): void;
+    OnHeroLevelUp(): void;
     /**
      * Caster inventory changed.
      */
-    OnInventoryContentsChanged?(): void;
+    OnInventoryContentsChanged(): void;
     /**
      * ( HSCRIPT hItem ) Caster equipped item.
      */
-    OnItemEquipped?(hItem: CDOTA_Item): void;
+    OnItemEquipped(hItem: CDOTA_Item): void;
     /**
      * Caster died.
      */
-    OnOwnerDied?(): void;
+    OnOwnerDied(): void;
     /**
      * Caster respawned or spawned for the first time.
      */
-    OnOwnerSpawned?(): void;
+    OnOwnerSpawned(): void;
     /**
      * (HSCRIPT hTarget, Vector vLocation) Projectile has collided with a given target or reached its destination (target is invalid).
      */
-    OnProjectileHit?(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
+    OnProjectileHit(hTarget: CDOTA_BaseNPC, vLocation: Vec): boolean;
     /**
      * (Vector vLocation) Projectile is actively moving.
      */
-    OnProjectileThink?(vLocation: Vec): void;
+    OnProjectileThink(vLocation: Vec): void;
     /**
      * Cast time finished, spell effects begin.
      */
@@ -3407,32 +3407,32 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
     /**
      * ( HSCRIPT hAbility ) Special behavior when stolen by Spell Steal.
      */
-    OnStolen?(hSourceAbility: CDOTABaseAbility): void;
+    OnStolen(hSourceAbility: CDOTABaseAbility): void;
     /**
      * Ability is toggled on/off.
      */
-    OnToggle?(): void;
+    OnToggle(): void;
     /**
      * Special behavior when lost by Spell Steal.
      */
-    OnUnStolen?(): void;
+    OnUnStolen(): void;
     /**
      * Ability gained a level.
      */
-    OnUpgrade?(): void;
+    OnUpgrade(): void;
     /**
      * Returns true if this ability will generate magic stick charges for nearby enemies.
      */
-    ProcsMagicStick?(): boolean;
+    ProcsMagicStick(): boolean;
     /**
      * Return the type of speech used.
      */
-    SpeakTrigger?(): number;
+    SpeakTrigger(): number;
 }
 /**
  * A physical item dropped in the world
  */
-declare interface CDOTA_Item_Physical extends CBaseAnimating {
+declare abstract class CDOTA_Item_Physical extends CBaseAnimating {
     /**
      * Returned the contained item.
      */
@@ -3449,7 +3449,7 @@ declare interface CDOTA_Item_Physical extends CBaseAnimating {
 /**
  * A tree in the Dota map
  */
-declare interface CDOTA_MapTree extends CBaseEntity {
+declare abstract class CDOTA_MapTree extends CBaseEntity {
     /**
      * Cuts down this tree. Parameters: int nTeamNumberKnownTo (-1 = invalid team)
      */
@@ -3470,7 +3470,7 @@ declare interface CDOTA_MapTree extends CBaseEntity {
 /**
  * A lua-based modifier.
  */
-declare interface CDOTA_Modifier_Lua extends CDOTA_Buff {
+declare abstract class CDOTA_Modifier_Lua extends CDOTA_Buff {
     /**
      * True/false if this modifier is active on illusions.
      */
@@ -3608,7 +3608,7 @@ declare interface CDOTA_Modifier_Lua extends CDOTA_Buff {
 /**
  * A lua-based horizontal motion controller.
  */
-declare interface CDOTA_Modifier_Lua_Horizontal_Motion extends CDOTA_Modifier_Lua {
+declare abstract class CDOTA_Modifier_Lua_Horizontal_Motion extends CDOTA_Modifier_Lua {
     /**
      * Starts the horizontal motion controller effects for this buff.  Returns true if successful.
      */
@@ -3633,7 +3633,7 @@ declare interface CDOTA_Modifier_Lua_Horizontal_Motion extends CDOTA_Modifier_Lu
 /**
  * A lua-based motion controller controlling both vertical and horizontal.
  */
-declare interface CDOTA_Modifier_Lua_Motion_Both extends CDOTA_Modifier_Lua {
+declare abstract class CDOTA_Modifier_Lua_Motion_Both extends CDOTA_Modifier_Lua {
     /**
      * Starts the horizontal motion controller effects for this buff.  Returns true if successful.
      */
@@ -3670,7 +3670,7 @@ declare interface CDOTA_Modifier_Lua_Motion_Both extends CDOTA_Modifier_Lua {
 /**
  * A lua-based vertical motion controller.
  */
-declare interface CDOTA_Modifier_Lua_Vertical_Motion extends CDOTA_Modifier_Lua {
+declare abstract class CDOTA_Modifier_Lua_Vertical_Motion extends CDOTA_Modifier_Lua {
     /**
      * Starts the vertical motion controller effects for this buff.  Returns true if successful.
      */
@@ -3867,7 +3867,7 @@ declare const PlayerResource: CDOTA_PlayerResource;
 /**
  * Simple obstruction
  */
-declare interface CDOTA_SimpleObstruction extends CBaseEntity {
+declare abstract class CDOTA_SimpleObstruction extends CBaseEntity {
     /**
      * Returns whether the obstruction is currently active
      */
@@ -3880,7 +3880,7 @@ declare interface CDOTA_SimpleObstruction extends CBaseEntity {
 /**
  * A courier.
  */
-declare interface CDOTA_Unit_Courier extends CDOTA_BaseNPC {
+declare abstract class CDOTA_Unit_Courier extends CDOTA_BaseNPC {
     /**
      * Upgrade to a flying courier
      */
@@ -3889,7 +3889,7 @@ declare interface CDOTA_Unit_Courier extends CDOTA_BaseNPC {
 /**
  * A Dota NPC Unit
  */
-declare interface CDOTA_Unit_Nian extends CDOTA_BaseNPC_Creature {
+declare abstract class CDOTA_Unit_Nian extends CDOTA_BaseNPC_Creature {
     /**
      * Is the Nian horn?
      */
@@ -4052,7 +4052,7 @@ declare interface CDebugOverlayScriptHelper {
 /**
  * A quest
  */
-declare interface CDotaQuest extends CBaseEntity {
+declare abstract class CDotaQuest extends CBaseEntity {
     /**
      * Add a subquest to this quest
      */
@@ -4085,7 +4085,7 @@ declare interface CDotaQuest extends CBaseEntity {
 /**
  * A subquest
  */
-declare interface CDotaSubquestBase extends CBaseEntity {
+declare abstract class CDotaSubquestBase extends CBaseEntity {
     /**
      * Mark this subquest complete
      */
@@ -4193,7 +4193,7 @@ declare const Entitites: CEntities;
 /**
  * CEntityInstance: Root class for all entities
  */
-declare interface CEntityInstance {
+declare abstract class CEntityInstance {
     /**
      * Adds an I/O connection that will call the named function on this entity when the specified output fires.
      */
@@ -4282,7 +4282,7 @@ declare interface CEnvEntityMaker extends CBaseEntity {
 /**
  * Choreographed scene which controls animation and/or dialog on one or more actors.
  */
-declare interface CSceneEntity extends CBaseEntity {
+declare abstract class CSceneEntity extends CBaseEntity {
     /**
      * Adds a team (by index) to the broadcast list
      */
@@ -4396,7 +4396,7 @@ declare const ParticleManager: CScriptParticleManager;
 /**
  * Container to hold context published to precache functions in script
  */
-declare interface CScriptPrecacheContext {
+declare abstract class CScriptPrecacheContext {
     /**
      * Precaches a specific resource
      */
@@ -5389,7 +5389,7 @@ interface Number {
     Normalized(): Vec;
 }
 
-declare interface CScriptHTTPRequest {
+declare abstract class CScriptHTTPRequest {
     /**
      * Send a HTTP request.
      */
