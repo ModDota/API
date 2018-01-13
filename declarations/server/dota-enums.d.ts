@@ -842,6 +842,8 @@ declare enum GameActivity_t {
     ACT_DOTA_SLIDE_LOOP = 1727,
     ACT_DOTA_GENERIC_CHANNEL_1 = 1728
 }
+
+/** !CompileMembersOnly */
 declare enum LuaModifierType {
     LUA_MODIFIER_MOTION_NONE = 0,
     LUA_MODIFIER_MOTION_HORIZONTAL = 1,
@@ -849,6 +851,8 @@ declare enum LuaModifierType {
     LUA_MODIFIER_MOTION_BOTH = 3,
     LUA_MODIFIER_INVALID = 4
 }
+
+/** !CompileMembersOnly */
 declare enum ParticleAttachment_t {
     PATTACH_INVALID = -1,
     PATTACH_ABSORIGIN = 0,
