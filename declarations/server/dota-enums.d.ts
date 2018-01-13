@@ -1,4 +1,13 @@
 /** CompileMembersOnly */
+declare enum FindType_t {
+    FIND_ANY_ORDER = 0,
+    FIND_CLOSEST = 1,
+    FIND_FARTHEST = 2
+}
+
+declare var FIND_UNITS_EVERYWHERE: number;
+
+/** CompileMembersOnly */
 declare enum DOTAConnectionState_t {
   DOTA_CONNECTION_STATE_UNKNOWN = 0,
   DOTA_CONNECTION_STATE_NOT_YET_CONNECTED = 1,
