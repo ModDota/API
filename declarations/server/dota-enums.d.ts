@@ -1,4 +1,4 @@
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum FindType_t {
     FIND_ANY_ORDER = 0,
     FIND_CLOSEST = 1,
@@ -7,7 +7,7 @@ declare enum FindType_t {
 
 declare var FIND_UNITS_EVERYWHERE: number;
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAConnectionState_t {
   DOTA_CONNECTION_STATE_UNKNOWN = 0,
   DOTA_CONNECTION_STATE_NOT_YET_CONNECTED = 1,
@@ -18,7 +18,7 @@ declare enum DOTAConnectionState_t {
   DOTA_CONNECTION_STATE_FAILED = 6,
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum AbilityLearnResult_t {
     ABILITY_CAN_BE_UPGRADED = 0,
     ABILITY_CANNOT_BE_UPGRADED_NOT_UPGRADABLE = 1,
@@ -27,7 +27,7 @@ declare enum AbilityLearnResult_t {
     ABILITY_NOT_LEARNABLE = 4
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum AttributeDerivedStats {
     DOTA_ATTRIBUTE_STRENGTH_DAMAGE = 0,
     DOTA_ATTRIBUTE_STRENGTH_HP = 1,
@@ -44,7 +44,7 @@ declare enum AttributeDerivedStats {
     DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESISTANCE_PERCENT = 12
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum Attributes {
     DOTA_ATTRIBUTE_STRENGTH = 0,
     DOTA_ATTRIBUTE_AGILITY = 1,
@@ -53,7 +53,7 @@ declare enum Attributes {
     DOTA_ATTRIBUTE_INVALID = -1
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DAMAGE_TYPES {
     DAMAGE_TYPE_NONE = 0,
     DAMAGE_TYPE_PHYSICAL = 1,
@@ -63,13 +63,13 @@ declare enum DAMAGE_TYPES {
     DAMAGE_TYPE_ALL = 7
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAAbilitySpeakTrigger_t {
     DOTA_ABILITY_SPEAK_START_ACTION_PHASE = 0,
     DOTA_ABILITY_SPEAK_CAST = 1
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTADamageFlag_t {
     DOTA_DAMAGE_FLAG_NONE = 0,
     DOTA_DAMAGE_FLAG_IGNORES_MAGIC_ARMOR = 1,
@@ -87,7 +87,7 @@ declare enum DOTADamageFlag_t {
     DOTA_DAMAGE_FLAG_NO_SPELL_LIFESTEAL = 4096
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAHUDVisibility_t {
     DOTA_HUD_VISIBILITY_INVALID = -1,
     DOTA_HUD_VISIBILITY_TOP_TIMEOFDAY = 0,
@@ -120,7 +120,7 @@ declare enum DOTAHUDVisibility_t {
     DOTA_HUD_VISIBILITY_COUNT = 27
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAInventoryFlags_t {
     DOTA_INVENTORY_ALLOW_NONE = 0,
     DOTA_INVENTORY_ALLOW_MAIN = 1,
@@ -131,7 +131,7 @@ declare enum DOTAInventoryFlags_t {
     DOTA_INVENTORY_ALL_ACCESS = 3
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTALimits_t {
     /**
      * Max number of players connected to the server including spectators.
@@ -167,7 +167,7 @@ declare enum DOTALimits_t {
     DOTA_DEFAULT_MAX_TEAM_PLAYERS = 10
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAMinimapEvent_t {
     DOTA_MINIMAP_EVENT_ANCIENT_UNDER_ATTACK = 2,
     DOTA_MINIMAP_EVENT_BASE_UNDER_ATTACK = 4,
@@ -184,7 +184,7 @@ declare enum DOTAMinimapEvent_t {
     DOTA_MINIMAP_EVENT_RADAR_TARGET = 8192
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAModifierAttribute_t {
     MODIFIER_ATTRIBUTE_NONE = 0,
     MODIFIER_ATTRIBUTE_PERMANENT = 1,
@@ -193,7 +193,7 @@ declare enum DOTAModifierAttribute_t {
     MODIFIER_ATTRIBUTE_AURA_PRIORITY = 8
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAMusicStatus_t {
     DOTA_MUSIC_STATUS_NONE = 0,
     DOTA_MUSIC_STATUS_EXPLORATION = 1,
@@ -203,7 +203,7 @@ declare enum DOTAMusicStatus_t {
     DOTA_MUSIC_STATUS_LAST = 5
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAProjectileAttachment_t {
     DOTA_PROJECTILE_ATTACHMENT_NONE = 0,
     DOTA_PROJECTILE_ATTACHMENT_ATTACK_1 = 1,
@@ -214,7 +214,7 @@ declare enum DOTAProjectileAttachment_t {
     DOTA_PROJECTILE_ATTACHMENT_LAST = 6
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAScriptInventorySlot_t {
     DOTA_ITEM_SLOT_1 = 0,
     DOTA_ITEM_SLOT_2 = 1,
@@ -233,7 +233,7 @@ declare enum DOTAScriptInventorySlot_t {
     DOTA_STASH_SLOT_6 = 14
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTASlotType_t {
     DOTA_LOADOUT_TYPE_INVALID = -1,
     DOTA_LOADOUT_TYPE_WEAPON = 0,
@@ -286,7 +286,7 @@ declare enum DOTASlotType_t {
     DOTA_LOADOUT_TYPE_COUNT = 45
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTASpeechType_t {
     DOTA_SPEECH_USER_INVALID = 0,
     DOTA_SPEECH_USER_SINGLE = 1,
@@ -300,7 +300,7 @@ declare enum DOTASpeechType_t {
     DOTA_SPEECH_RECIPIENT_TYPE_MAX = 9
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTATeam_t {
     DOTA_TEAM_FIRST = 2,
     DOTA_TEAM_GOODGUYS = 2,
@@ -321,21 +321,21 @@ declare enum DOTATeam_t {
     DOTA_TEAM_CUSTOM_COUNT = 8
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAUnitAttackCapability_t {
     DOTA_UNIT_CAP_NO_ATTACK = 0,
     DOTA_UNIT_CAP_MELEE_ATTACK = 1,
     DOTA_UNIT_CAP_RANGED_ATTACK = 2
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTAUnitMoveCapability_t {
     DOTA_UNIT_CAP_MOVE_NONE = 0,
     DOTA_UNIT_CAP_MOVE_GROUND = 1,
     DOTA_UNIT_CAP_MOVE_FLY = 2
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_ABILITY_BEHAVIOR {
     DOTA_ABILITY_BEHAVIOR_NONE = 0,
     DOTA_ABILITY_BEHAVIOR_HIDDEN = 1,
@@ -373,7 +373,7 @@ declare enum DOTA_ABILITY_BEHAVIOR {
     DOTA_ABILITY_BEHAVIOR_CAN_SELF_CAST = 0
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_GameState {
     DOTA_GAMERULES_STATE_INIT = 0,
     DOTA_GAMERULES_STATE_WAIT_FOR_PLAYERS_TO_LOAD = 1,
@@ -388,7 +388,7 @@ declare enum DOTA_GameState {
     DOTA_GAMERULES_STATE_WAIT_FOR_MAP_TO_LOAD = 6
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_HeroPickState {
     DOTA_HEROPICK_STATE_NONE = 0,
     DOTA_HEROPICK_STATE_AP_SELECT = 1,
@@ -452,7 +452,7 @@ declare enum DOTA_HeroPickState {
     DOTA_HEROPICK_STATE_COUNT = 59
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_MOTION_CONTROLLER_PRIORITY {
     DOTA_MOTION_CONTROLLER_PRIORITY_LOWEST = 0,
     DOTA_MOTION_CONTROLLER_PRIORITY_LOW = 1,
@@ -461,7 +461,7 @@ declare enum DOTA_MOTION_CONTROLLER_PRIORITY {
     DOTA_MOTION_CONTROLLER_PRIORITY_HIGHEST = 4
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_RUNES {
     DOTA_RUNE_INVALID = -1,
     DOTA_RUNE_DOUBLEDAMAGE = 0,
@@ -474,7 +474,7 @@ declare enum DOTA_RUNES {
     DOTA_RUNE_COUNT = 7
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_SHOP_TYPE {
     DOTA_SHOP_HOME = 0,
     DOTA_SHOP_SIDE = 1,
@@ -486,7 +486,7 @@ declare enum DOTA_SHOP_TYPE {
     DOTA_SHOP_NONE = 7
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_UNIT_TARGET_FLAGS {
     DOTA_UNIT_TARGET_FLAG_NONE = 0,
     DOTA_UNIT_TARGET_FLAG_RANGED_ONLY = 2,
@@ -512,7 +512,7 @@ declare enum DOTA_UNIT_TARGET_FLAGS {
     DOTA_UNIT_TARGET_FLAG_RESPECT_OBSTRUCTIONS = 2097152
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_UNIT_TARGET_TEAM {
     DOTA_UNIT_TARGET_TEAM_NONE = 0,
     DOTA_UNIT_TARGET_TEAM_FRIENDLY = 1,
@@ -521,7 +521,7 @@ declare enum DOTA_UNIT_TARGET_TEAM {
     DOTA_UNIT_TARGET_TEAM_BOTH = 3
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DOTA_UNIT_TARGET_TYPE {
     DOTA_UNIT_TARGET_NONE = 0,
     DOTA_UNIT_TARGET_HERO = 1,
@@ -535,13 +535,13 @@ declare enum DOTA_UNIT_TARGET_TYPE {
     DOTA_UNIT_TARGET_ALL = 55
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DamageCategory_t {
     DOTA_DAMAGE_CATEGORY_SPELL = 0,
     DOTA_DAMAGE_CATEGORY_ATTACK = 1
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DotaDefaultUIElement_t {
     DOTA_DEFAULT_UI_INVALID = -1,
     DOTA_DEFAULT_UI_TOP_TIMEOFDAY = 0,
@@ -574,7 +574,7 @@ declare enum DotaDefaultUIElement_t {
     DOTA_DEFAULT_UI_ELEMENT_COUNT = 27
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum EDOTA_ModifyGold_Reason {
     DOTA_ModifyGold_Unspecified = 0,
     DOTA_ModifyGold_Death = 1,
@@ -595,7 +595,7 @@ declare enum EDOTA_ModifyGold_Reason {
     DOTA_ModifyGold_SharedGold = 16
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum EDOTA_ModifyXP_Reason {
     DOTA_ModifyXP_Unspecified = 0,
     DOTA_ModifyXP_HeroKill = 1,
@@ -603,14 +603,14 @@ declare enum EDOTA_ModifyXP_Reason {
     DOTA_ModifyXP_RoshanKill = 3
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum EShareAbility {
     ITEM_FULLY_SHAREABLE = 0,
     ITEM_PARTIALLY_SHAREABLE = 1,
     ITEM_NOT_SHAREABLE = 2
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum GameActivity_t {
     ACT_DOTA_IDLE = 1500,
     ACT_DOTA_IDLE_RARE = 1501,
@@ -868,7 +868,7 @@ declare enum ParticleAttachment_t {
     MAX_PATTACH_TYPES = 14
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum UnitFilterResult {
     UF_SUCCESS = 0,
     UF_FAIL_FRIENDLY = 1,
@@ -901,7 +901,7 @@ declare enum UnitFilterResult {
     UF_FAIL_OBSTRUCTED = 28
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum attackfail {
     DOTA_ATTACK_RECORD_FAIL_NO = 0,
     DOTA_ATTACK_RECORD_FAIL_TERRAIN_MISS = 1,
@@ -912,7 +912,7 @@ declare enum attackfail {
     DOTA_ATTACK_RECORD_CANNOT_FAIL = 6
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum modifierfunction {
     /**
      * GetModifierPreAttack_BonusDamage
@@ -1650,7 +1650,7 @@ declare enum modifierfunction {
     MODIFIER_FUNCTION_INVALID = 255
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum modifierpriority {
     MODIFIER_PRIORITY_LOW = 0,
     MODIFIER_PRIORITY_NORMAL = 1,
@@ -1659,14 +1659,14 @@ declare enum modifierpriority {
     MODIFIER_PRIORITY_SUPER_ULTRA = 4
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum modifierremove {
     DOTA_BUFF_REMOVE_ALL = 0,
     DOTA_BUFF_REMOVE_ENEMY = 1,
     DOTA_BUFF_REMOVE_ALLY = 2
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum modifierstate {
     MODIFIER_STATE_ROOTED = 0,
     MODIFIER_STATE_DISARMED = 1,
@@ -1707,7 +1707,7 @@ declare enum modifierstate {
     MODIFIER_STATE_LAST = 36
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum quest_text_replace_values_t {
     QUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE = 0,
     QUEST_TEXT_REPLACE_VALUE_TARGET_VALUE = 1,
@@ -1716,14 +1716,14 @@ declare enum quest_text_replace_values_t {
     QUEST_NUM_TEXT_REPLACE_VALUES = 4
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum subquest_text_replace_values_t {
     SUBQUEST_TEXT_REPLACE_VALUE_CURRENT_VALUE = 0,
     SUBQUEST_TEXT_REPLACE_VALUE_TARGET_VALUE = 1,
     SUBQUEST_NUM_TEXT_REPLACE_VALUES = 2
 }
 
-/** CompileMembersOnly */
+/** !CompileMembersOnly */
 declare enum DotaUnitOrder_t {
     DOTA_UNIT_ORDER_NONE = 0,
     DOTA_UNIT_ORDER_MOVE_TO_POSITION = 1,

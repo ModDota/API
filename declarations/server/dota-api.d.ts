@@ -11,7 +11,7 @@ type table = {[key: string]: any};
 type PlayerID = -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 
     | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23;
 
-declare interface CScriptHTTPResponse {
+declare abstract class CScriptHTTPResponse {
   Body: string;
   Request: CScriptHTTPResponse;
   StatusCode: number;
@@ -20,7 +20,7 @@ declare interface CScriptHTTPResponse {
 /**
  * Animating models
  */
-declare interface CBaseAnimating extends CBaseModelEntity {
+declare abstract class CBaseAnimating extends CBaseModelEntity {
     /**
      * Returns the duration in seconds of the active sequence.
      */
@@ -129,7 +129,7 @@ declare interface CBaseAnimating extends CBaseModelEntity {
 /**
  * BaseCombatCharacter
  */
-declare interface CBaseCombatCharacter extends CBaseFlex {
+declare abstract class CBaseCombatCharacter extends CBaseFlex {
     /**
      * GetEquippedWeapons() : Returns an array of all the equipped weapons
      */
@@ -150,7 +150,7 @@ declare interface CBaseCombatCharacter extends CBaseFlex {
 /**
  * Root class of all server-side entities
  */
-declare interface CBaseEntity extends CEntityInstance {
+declare abstract class CBaseEntity extends CEntityInstance {
     /**
      * AddEffects( int ): Adds the render effect flag.
      */
@@ -450,7 +450,7 @@ declare interface CBaseEntity extends CEntityInstance {
 /**
  * Animated characters who have vertex flex capability.
  */
-declare interface CBaseFlex extends CBaseAnimating {
+declare abstract class CBaseFlex extends CBaseAnimating {
     /**
      * Returns the instance of the oldest active scene entity (if any).
      */
@@ -467,7 +467,7 @@ declare interface CBaseFlex extends CBaseAnimating {
 /**
  * Base entity with model
  */
-declare interface CBaseModelEntity extends CBaseEntity {
+declare abstract class CBaseModelEntity extends CBaseEntity {
     /**
      * GetMaterialGroupHash(): Get the material group hash of this entity.
      */
@@ -522,7 +522,7 @@ declare interface CBaseModelEntity extends CBaseEntity {
 /**
  * The player entity.
  */
-declare interface CBasePlayer extends CBaseCombatCharacter {
+declare abstract class CBasePlayer extends CBaseCombatCharacter {
     /**
      * Returns whether this player's chaperone bounds are visible.
      */
@@ -571,7 +571,7 @@ declare interface CBasePlayer extends CBaseCombatCharacter {
 /**
  * Base Trigger for all the triggers
  */
-declare interface CBaseTrigger extends CBaseEntity {
+declare abstract class CBaseTrigger extends CBaseEntity {
     /**
      * Disable's the trigger
      */
@@ -588,7 +588,7 @@ declare interface CBaseTrigger extends CBaseEntity {
 /**
  * Body Component Scriptdesc
  */
-declare interface CBodyComponent {
+declare abstract class CBodyComponent {
     /**
      * Apply an impulse at a worldspace position to the physics
      */
@@ -671,7 +671,7 @@ declare const CustomNetTables: CCustomNetTableManager;
 /**
  * An ability
  */
-declare interface CDOTABaseAbility extends CBaseEntity {
+declare abstract class CDOTABaseAbility extends CBaseEntity {
     CanAbilityBeUpgraded(): boolean;
     CastAbility(): boolean;
     ContinueCasting(): boolean;
@@ -827,7 +827,7 @@ declare interface CDOTABaseAbility extends CBaseEntity {
 /**
  * Base game mode class
  */
-declare interface CDOTABaseGameMode extends CBaseEntity {
+declare abstract class CDOTABaseGameMode extends CBaseEntity {
     /**
      * Get if weather effects are disabled on the client.
      */
@@ -1548,7 +1548,7 @@ declare const GameRules: CDOTAGamerules;
 /**
  * dota_player
  */
-declare interface CDOTAPlayer extends CBaseAnimating {
+declare abstract class CDOTAPlayer extends CBaseAnimating {
     /**
      * Get the player's hero.
      */
@@ -1681,7 +1681,7 @@ declare const Tutorial: CDOTATutorial;
 /**
  * A Dota NPC Unit
  */
-declare interface CDOTA_Ability_Animation_Attack extends CDOTABaseAbility {
+declare abstract class CDOTA_Ability_Animation_Attack extends CDOTABaseAbility {
     /**
      * Override playbackrate
      */
@@ -1690,7 +1690,7 @@ declare interface CDOTA_Ability_Animation_Attack extends CDOTABaseAbility {
 /**
  * A Dota NPC Unit.
  */
-declare interface CDOTA_Ability_Animation_TailSpin extends CDOTABaseAbility {
+declare abstract class CDOTA_Ability_Animation_TailSpin extends CDOTABaseAbility {
     /**
      * Override playbackrate
      */
@@ -1699,7 +1699,7 @@ declare interface CDOTA_Ability_Animation_TailSpin extends CDOTABaseAbility {
 /**
  * A data driven ability.
  */
-declare interface CDOTA_Ability_DataDriven extends CDOTABaseAbility {
+declare abstract class CDOTA_Ability_DataDriven extends CDOTABaseAbility {
     /**
      * Applies a data driven modifier to the target
      */
@@ -1709,10 +1709,9 @@ declare interface CDOTA_Ability_DataDriven extends CDOTABaseAbility {
      */
     ApplyDataDrivenThinker(hCaster: CDOTA_BaseNPC, vLocation: Vec, pszModifierName: string, hModifierTable: table): table;
 }
-/**
- * A lua-based ability.
- */
-declare interface CDOTA_Ability_Lua extends CDOTABaseAbility {
+
+/** !PureAbstract */
+declare abstract class CDOTA_Ability_Lua extends CDOTABaseAbility {
     /**
      * Determine whether an issued command with no target is valid.
      */
@@ -1914,7 +1913,7 @@ declare interface CDOTA_Ability_Lua extends CDOTABaseAbility {
 /**
  * A Dota NPC Unit
  */
-declare interface CDOTA_BaseNPC extends CBaseFlex {
+declare abstract class CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Add an ability to this unit by name.
      */
@@ -2705,7 +2704,7 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
 /**
  * A building.
  */
-declare interface CDOTA_BaseNPC_Building extends CDOTA_BaseNPC {
+declare abstract class CDOTA_BaseNPC_Building extends CDOTA_BaseNPC {
     /**
      * Get the invulnerability count for a building.
      */
@@ -2718,7 +2717,7 @@ declare interface CDOTA_BaseNPC_Building extends CDOTA_BaseNPC {
 /**
  * A Dota NPC Unit
  */
-declare interface CDOTA_BaseNPC_Creature extends CDOTA_BaseNPC {
+declare abstract class CDOTA_BaseNPC_Creature extends CDOTA_BaseNPC {
     /**
      * Add the specified item drop to this creature.
      */
@@ -3058,7 +3057,7 @@ declare interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
 /**
  * A Dota NPC Trap Ward
  */
-declare interface CDOTA_BaseNPC_Trap_Ward extends CDOTA_BaseNPC_Creature {
+declare abstract class CDOTA_BaseNPC_Trap_Ward extends CDOTA_BaseNPC_Creature {
     /**
      * Get the trap target for this entity.
      */
@@ -3072,7 +3071,7 @@ declare interface CDOTA_BaseNPC_Trap_Ward extends CDOTA_BaseNPC_Creature {
 /**
  * A modifier.
  */
-declare interface CDOTA_Buff {
+declare abstract class CDOTA_Buff {
     /**
      * (index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect
      */
@@ -3153,7 +3152,7 @@ declare interface CDOTA_CustomUIManager {
 /**
  * A usable item.
  */
-declare interface CDOTA_Item extends CDOTABaseAbility {
+declare abstract class CDOTA_Item extends CDOTABaseAbility {
     CanBeUsedOutOfInventory(): boolean;
     /**
      * Get the container for this item.
@@ -3233,7 +3232,7 @@ declare interface CDOTA_Item extends CDOTABaseAbility {
 /**
  * Spawns a physical item
  */
-declare interface CDOTA_ItemSpawner extends CBaseEntity {
+declare abstract class CDOTA_ItemSpawner extends CBaseEntity {
     /**
      * Returns the item name
      */
@@ -3242,7 +3241,7 @@ declare interface CDOTA_ItemSpawner extends CBaseEntity {
 /**
  * A data driven usable item.
  */
-declare interface CDOTA_Item_DataDriven extends CDOTA_Item {
+declare abstract class CDOTA_Item_DataDriven extends CDOTA_Item {
     /**
      * Applies a data driven modifier to the target
      */
@@ -3252,10 +3251,9 @@ declare interface CDOTA_Item_DataDriven extends CDOTA_Item {
      */
     ApplyDataDrivenThinker(hCaster: CDOTA_BaseNPC, vLocation: Vec, pszModifierName: string, hModifierTable: table): CBaseEntity;
 }
-/**
- * A lua-based item.
- */
-declare interface CDOTA_Item_Lua extends CDOTA_Item {
+
+/** !PureAbstract */
+declare abstract class CDOTA_Item_Lua extends CDOTA_Item {
     /**
      * Determine whether an issued command with no target is valid.
      */
@@ -3432,7 +3430,7 @@ declare interface CDOTA_Item_Lua extends CDOTA_Item {
 /**
  * A physical item dropped in the world
  */
-declare interface CDOTA_Item_Physical extends CBaseAnimating {
+declare abstract class CDOTA_Item_Physical extends CBaseAnimating {
     /**
      * Returned the contained item.
      */
@@ -3449,7 +3447,7 @@ declare interface CDOTA_Item_Physical extends CBaseAnimating {
 /**
  * A tree in the Dota map
  */
-declare interface CDOTA_MapTree extends CBaseEntity {
+declare abstract class CDOTA_MapTree extends CBaseEntity {
     /**
      * Cuts down this tree. Parameters: int nTeamNumberKnownTo (-1 = invalid team)
      */
@@ -3467,10 +3465,9 @@ declare interface CDOTA_MapTree extends CBaseEntity {
      */
     IsStanding(): boolean;
 }
-/**
- * A lua-based horizontal motion controller.
- */
-declare interface CDOTA_Modifier_Lua_Horizontal_Motion extends CDOTA_Modifier_Lua {
+
+/** !PureAbstract */
+declare abstract class CDOTA_Modifier_Lua_Horizontal_Motion extends CDOTA_Modifier_Lua {
     /**
      * Starts the horizontal motion controller effects for this buff.  Returns true if successful.
      */
@@ -3492,10 +3489,9 @@ declare interface CDOTA_Modifier_Lua_Horizontal_Motion extends CDOTA_Modifier_Lu
      */
     UpdateHorizontalMotion(me: CDOTA_BaseNPC, dt: number): void;
 }
-/**
- * A lua-based motion controller controlling both vertical and horizontal.
- */
-declare interface CDOTA_Modifier_Lua_Motion_Both extends CDOTA_Modifier_Lua {
+
+/** !PureAbstract */
+declare abstract class CDOTA_Modifier_Lua_Motion_Both extends CDOTA_Modifier_Lua {
     /**
      * Starts the horizontal motion controller effects for this buff.  Returns true if successful.
      */
@@ -3529,10 +3525,9 @@ declare interface CDOTA_Modifier_Lua_Motion_Both extends CDOTA_Modifier_Lua {
      */
     UpdateVerticalMotion(me: CDOTA_BaseNPC, dt: number): void;
 }
-/**
- * A lua-based vertical motion controller.
- */
-declare interface CDOTA_Modifier_Lua_Vertical_Motion extends CDOTA_Modifier_Lua {
+
+/** !PureAbstract */
+declare abstract class CDOTA_Modifier_Lua_Vertical_Motion extends CDOTA_Modifier_Lua {
     /**
      * Starts the vertical motion controller effects for this buff.  Returns true if successful.
      */
@@ -3729,7 +3724,7 @@ declare const PlayerResource: CDOTA_PlayerResource;
 /**
  * Simple obstruction
  */
-declare interface CDOTA_SimpleObstruction extends CBaseEntity {
+declare abstract class CDOTA_SimpleObstruction extends CBaseEntity {
     /**
      * Returns whether the obstruction is currently active
      */
@@ -3742,7 +3737,7 @@ declare interface CDOTA_SimpleObstruction extends CBaseEntity {
 /**
  * A courier.
  */
-declare interface CDOTA_Unit_Courier extends CDOTA_BaseNPC {
+declare abstract class CDOTA_Unit_Courier extends CDOTA_BaseNPC {
     /**
      * Upgrade to a flying courier
      */
@@ -3893,7 +3888,7 @@ declare interface CDebugOverlayScriptHelper {
 /**
  * A quest
  */
-declare interface CDotaQuest extends CBaseEntity {
+declare abstract class CDotaQuest extends CBaseEntity {
     /**
      * Add a subquest to this quest
      */
@@ -3926,7 +3921,7 @@ declare interface CDotaQuest extends CBaseEntity {
 /**
  * A subquest
  */
-declare interface CDotaSubquestBase extends CBaseEntity {
+declare abstract class CDotaSubquestBase extends CBaseEntity {
     /**
      * Mark this subquest complete
      */
@@ -4034,7 +4029,7 @@ declare const Entitites: CEntities;
 /**
  * CEntityInstance: Root class for all entities
  */
-declare interface CEntityInstance {
+declare abstract class CEntityInstance {
     /**
      * Adds an I/O connection that will call the named function on this entity when the specified output fires.
      */
@@ -4123,7 +4118,7 @@ declare interface CEnvEntityMaker extends CBaseEntity {
 /**
  * Choreographed scene which controls animation and/or dialog on one or more actors.
  */
-declare interface CSceneEntity extends CBaseEntity {
+declare abstract class CSceneEntity extends CBaseEntity {
     /**
      * Adds a team (by index) to the broadcast list
      */
@@ -4237,7 +4232,7 @@ declare const ParticleManager: CScriptParticleManager;
 /**
  * Container to hold context published to precache functions in script
  */
-declare interface CScriptPrecacheContext {
+declare abstract class CScriptPrecacheContext {
     /**
      * Precaches a specific resource
      */
@@ -4530,7 +4525,7 @@ declare function EmitSoundOnLocationWithCaster(arg1: Vec, arg2: string, arg3: CD
  */
 declare function EntIndexToHScript(entIndex: number): CBaseEntity;
 
-interface OrderTable {
+declare interface OrderTable {
     UnitIndex: EntityID;
     OrderType: DotaUnitOrder_t;
     TargetIndex?: EntityID;
@@ -5230,7 +5225,7 @@ interface Number {
     Normalized(): Vec;
 }
 
-declare interface CScriptHTTPRequest {
+declare abstract class CScriptHTTPRequest {
     /**
      * Send a HTTP request.
      */
