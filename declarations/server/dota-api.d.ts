@@ -333,11 +333,11 @@ declare interface CBaseEntity extends CEntityInstance {
     /**
      * Is this entity an CAI_BaseNPC?
      */
-    IsNPC(): boolean;
+    IsNPC(): this is CDOTA_BaseNPC;
     /**
      * Is this entity a player?
      */
-    IsPlayer(): boolean;
+    IsPlayer(): this is CBasePlayer;
     Kill(): void;
     NextMovePeer(): CBaseEntity;
     /**
@@ -765,7 +765,7 @@ declare interface CDOTABaseAbility extends CBaseEntity {
      * Returns whether the ability is currently casting.
      */
     IsInAbilityPhase(): boolean;
-    IsItem(): boolean;
+    IsItem(): this is CDOTA_Item;
     IsOwnersGoldEnough(nIssuerPlayerID: number): boolean;
     IsOwnersGoldEnoughForUpgrade(): boolean;
     IsOwnersManaEnough(): boolean;
@@ -2327,7 +2327,7 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Is this unit a building?
      */
-    IsBuilding(): boolean;
+    IsBuilding(): this is CDOTA_BaseNPC_Building;
     /**
      * Is this unit currently channeling a spell?
      */
@@ -2352,7 +2352,7 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Is this a Creature type NPC?
      */
-    IsCreature(): boolean;
+    IsCreature(): this is CDOTA_BaseNPC_Creature;
     /**
      * Is this unit a creep?
      */
@@ -2369,7 +2369,7 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Is this a hero or hero illusion?
      */
-    IsHero(): boolean;
+    IsHero(): this is CDOTA_BaseNPC_Hero;
     IsHexed(): boolean;
     /**
      * Is this creature currently idle?
@@ -2415,12 +2415,12 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Is this a real hero?
      */
-    IsRealHero(): boolean;
+    IsRealHero(): this is CDOTA_BaseNPC_Hero;
     IsRooted(): boolean;
     /**
      * Is this a shrine?
      */
-    IsShrine(): boolean;
+    IsShrine(): this is CDOTA_BaseNPC_Building;
     IsSilenced(): boolean;
     IsSpeciallyDeniable(): boolean;
     IsStunned(): boolean;
@@ -2428,11 +2428,11 @@ declare interface CDOTA_BaseNPC extends CBaseFlex {
      * Is this unit summoned?
      */
     IsSummoned(): boolean;
-    IsTempestDouble(): boolean;
+    IsTempestDouble(): this is CDOTA_BaseNPC_Hero;
     /**
      * Is this a tower?
      */
-    IsTower(): boolean;
+    IsTower(): this is CDOTA_BaseNPC_Building;
     IsUnableToMiss(): boolean;
     IsUnselectable(): boolean;
     IsUntargetable(): boolean;
@@ -3748,27 +3748,6 @@ declare interface CDOTA_Unit_Courier extends CDOTA_BaseNPC {
      */
     UpgradeToFlyingCourier(): boolean;
 }
-/**
- * A Dota NPC Unit
- */
-declare interface CDOTA_Unit_Nian extends CDOTA_BaseNPC_Creature {
-    /**
-     * Is the Nian horn?
-     */
-    GetHorn(): CDOTA_BaseNPC;
-    /**
-     * Is the Nian's tail broken?
-     */
-    GetTail(): CDOTA_BaseNPC;
-    /**
-     * Is the Nian's horn broken?
-     */
-    IsHornAlive(): boolean;
-    /**
-     * Is the Nian's tail broken?
-     */
-    IsTailAlive(): boolean;
-}
 
 /**
  * Wrapper class over g_pDebugOverlay instance
@@ -4578,11 +4557,11 @@ declare function FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vec, unkno
 /**
  * Find units that intersect the given line with the given flags.
  */
-declare function FindUnitsInLine(team: DOTATeam_t, startPos: Vec, endPos: Vec, cacheUnit: CBaseEntity, width: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS): CDOTA_BaseNPC[];
+declare function FindUnitsInLine(team: DOTATeam_t, startPos: Vec, endPos: Vec, cacheUnit: CBaseEntity|null, width: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS): CDOTA_BaseNPC[];
 /**
  * Finds the units in a given radius with the given flags.
  */
-declare function FindUnitsInRadius(team: DOTATeam_t, location: Vec, cacheUnit: CBaseEntity, radius: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS, order: number, canGrowCache: boolean): CDOTA_BaseNPC[];
+declare function FindUnitsInRadius(team: DOTATeam_t, location: Vec, cacheUnit: CBaseEntity|null, radius: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS, order: FindType_t, canGrowCache: boolean): CDOTA_BaseNPC[];
 /**
  * Fire Entity's Action Input w/no data
  */
