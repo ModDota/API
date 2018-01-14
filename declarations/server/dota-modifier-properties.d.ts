@@ -21,7 +21,7 @@ declare interface ModifierAbilityEvent extends ModifierEvent {
     target?: CDOTA_BaseNPC;
 }
 
-/** @PureAbstract */
+/** !PureAbstract */
 declare abstract class CDOTA_Modifier_Lua extends CDOTA_Buff {
     /**
      * Return a list of modifier functions this modifier implements.
