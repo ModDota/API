@@ -80,7 +80,10 @@ interface Panel {
     MoveChildAfter(child: Panel, afterChild: Panel): void;
 
     GetPositionWithinWindow(): {x: number, y: number};
-    ApplyStyles(): void; // ???????
+    /**
+     * Sets whether to update panel with style changes
+     */
+    ApplyStyles(bool: boolean): void;
     ClearPropertyFromCode(): void;
 
     DeleteAsync(time: number): void;
