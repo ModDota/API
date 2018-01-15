@@ -62,7 +62,7 @@ class MyGameMode {
     OnNpcSpawn(event: NpcSpawnedEvent) {
         // Apply our lua modifier to the spawned unit
         // We can cast to npc since this is the 'npc_spawned' event
-        const unit = EntIndexToHScript(event.entindex) as CDOTA_BaseNPC_Hero;
+        const unit = EntIndexToHScript(event.entindex) as CDOTA_BaseNPC;
         unit.AddNewModifier(null, null, "modifier_panic", {duration: 8});
     }
 }
