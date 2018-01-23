@@ -1710,6 +1710,7 @@ declare abstract class CDOTA_Ability_DataDriven extends CDOTABaseAbility {
     ApplyDataDrivenThinker(hCaster: CDOTA_BaseNPC, vLocation: Vec, pszModifierName: string, hModifierTable: table): table;
 }
 
+/** !NoClassOr */
 /** !PureAbstract */
 declare abstract class CDOTA_Ability_Lua extends CDOTABaseAbility {
     /**
