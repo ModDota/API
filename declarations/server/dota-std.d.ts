@@ -12,13 +12,13 @@ declare function error(message: string, level?: number)
 declare function dofile(filename?: string): any
 
 declare function getfenv(f: Function): table
-declare function setfenv(f: Function, tbl : table) : Function
+declare function setfenv(f: Function, tbl: table): Function
 
 declare function load(func: Function, chunkname?: string): Function
 declare function loadfile(filename?: string): Function
 declare function loadstring(str: string, chunkname?: string): Function
 
-declare function pcall(f, ...args: any[]) : any
+declare function pcall(f, ...args: any[]): any
 
-declare function tonumber(e:any, base?: number) : number
-declare function tostring(e : any) : string
+declare function tonumber(e: any, base?: number): number
+declare function tostring(e: any): string
