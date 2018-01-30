@@ -4025,7 +4025,7 @@ declare interface CEntities {
      */
     Next(previous: CBaseEntity): CBaseEntity;
 }
-declare const Entitites: CEntities;
+declare const Entities: CEntities;
 
 /**
  * CEntityInstance: Root class for all entities
