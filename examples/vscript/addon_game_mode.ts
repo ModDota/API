@@ -57,6 +57,9 @@ class MyGameMode {
 
         // Listen for spawns
         ListenToGameEvent("npc_spawned", (event: NpcSpawnedEvent) => this.OnNpcSpawn(event), null);
+
+        // Set ExecuteOrder filter
+        GameRules.GetGameModeEntity().SetExecuteOrderFilter((ctx, order) => this.OnExecuteOrder(order), this);
     }
 
     OnNpcSpawn(event: NpcSpawnedEvent) {
@@ -64,5 +67,11 @@ class MyGameMode {
         // We can cast to npc since this is the 'npc_spawned' event
         const unit = EntIndexToHScript(event.entindex) as CDOTA_BaseNPC;
         unit.AddNewModifier(null, null, "modifier_panic", {duration: 8});
+    }
+
+    OnExecuteOrder(order: table): boolean {
+        const unit = <CDOTA_BaseNPC>order["units"]["0"];
+        print(unit.GetHealth());
+        return true;
     }
 }
