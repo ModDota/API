@@ -69,9 +69,8 @@ class MyGameMode {
         unit.AddNewModifier(null, null, "modifier_panic", {duration: 8});
     }
 
-    OnExecuteOrder(order: table): boolean {
-        const unit = <CDOTA_BaseNPC>order["units"]["0"];
-        print(unit.GetHealth());
+    OnExecuteOrder(order: ExecuteOrderEvent): boolean {
+        print(order.order_type);
         return true;
     }
 }
