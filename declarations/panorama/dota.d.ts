@@ -2317,6 +2317,17 @@ interface DollarStatic {
     Each<T>(list: T[], callback: (item: T, index: number) => void): void;
     Each<T>(map: {[key: string]: T}, callback: (value: T, key: string) => void): void;
     Each<T>(map: {[key: number]: T}, callback: (value: T, key: number) => void): void;
+    AsyncWebRequest(url: string, data: AsyncWebRequest_data): void;
+}
+
+interface AsyncWebRequest_data {
+    type?: string;
+    timeout?: number;
+    headers?: object;
+    data?: object;
+    success?: (data: any) => void;
+    error?: (data: any) => void;
+    complete?: (data: any) => void;
 }
 
 declare var GameEvents: CDOTA_PanoramaScript_GameEvents;
