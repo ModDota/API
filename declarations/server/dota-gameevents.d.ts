@@ -1312,6 +1312,7 @@ declare function ListenToGameEvent<T>(eventName: "dota_player_used_ability", cal
 interface DotaPlayerUsedAbilityEvent {
     PlayerID: number;
     abilityname: string;
+    caster_entindex: number;
 }
 /**
  * Register as a listener for a game event from script.
