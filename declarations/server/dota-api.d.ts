@@ -381,7 +381,7 @@ declare abstract class CBaseEntity extends CEntityInstance {
     /**
      * Set a think function on this entity.
      */
-    SetContextThink(pszContextName: string, hThinkFunc: () => void, flInterval: number): void;
+    SetContextThink(pszContextName: string, hThinkFunc: () => number, flInterval: number): void;
     /**
      * Set the name of an entity.
      */
