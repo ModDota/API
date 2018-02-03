@@ -147,6 +147,7 @@ interface VCSSStyleDeclaration extends CSSStyleDeclaration {
     contrast: string;
     hueRotation: string;
     brightness: string;
+    washColor: string;
 }
 
 interface LabelPanel extends Panel {
