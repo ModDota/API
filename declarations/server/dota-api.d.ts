@@ -1,3 +1,8 @@
+/// <reference path="dota-enums.d.ts" />
+/// <reference path="dota-gameevents.d.ts" />
+/// <reference path="dota-modifier-properties.d.ts" />
+/// <reference path="dota-std.d.ts" />
+
 type QAngle = any;
 type Quaternion = any;
 type EntityID = number;
