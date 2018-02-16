@@ -2304,6 +2304,7 @@ interface CPanoramaScript_VRUtils {
 interface DollarStatic {
     (selector: string) : Panel;
     CreatePanel(type: string, root: Panel, id: string): Panel;
+    CreatePanel(type: string, root: Panel, id: string): PanelBase;
     Msg(...args: any[]): void;
     GetContextPanel(): Panel;
     Schedule(time: number, callback: () => void): scheduleID;

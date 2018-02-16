@@ -11,9 +11,15 @@
     https://github.com/ModDota/API.
 */
 
-interface Panel {
+interface PanelBase {
     paneltype: string;
     rememberchildfocus: boolean;
+
+    SetPanelEvent(event: PanelEvent, handler: () => void): void;
+    RunScriptInPanelContext(script: string): void;
+}
+
+interface Panel extends PanelBase {
     style: VCSSStyleDeclaration;
 
     scrolloffset_x: number;
@@ -114,6 +120,7 @@ interface Panel {
     SetTopOfInputContext(): void; // ????
     SetDialogVariable(name: string, value: any): void;
     SetDialogVariableInt(name: string, value: number): void;
+    SetDialogVariableTime(name: string, value: number): void;
 
     ScrollToTop(): void;
     ScrollToBottom(): void;
@@ -130,15 +137,12 @@ interface Panel {
     SetAttributeString(name: string, value: string): void;
     SetAttributeUInt32(name: string, value: number): void;
 
-    SetInputNamespace(naespace: string): void; // ??
+    SetInputNamespace(namespace: string): void; // ??
 
     RegisterForReadyEvents(callback: (event: object) => void): void; // ????
 
     BReadyForDisplay(): boolean;
     SetReadyForDisplay(value: boolean): void; // ???
-    SetPanelEvent(event: PanelEvent, handler: () => void): void;
-
-    RunScriptInPanelContext(script: string): void;
 }
 
 interface VCSSStyleDeclaration {
