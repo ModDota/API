@@ -1016,11 +1016,11 @@ interface ScenePanel extends Panel {
 
 //Only put single string literals in here, it'll be merged with the main one
 interface DollarStatic {
-    CreatePanel(type: "Label", root: Panel, name: string): LabelPanel;
-    CreatePanel(type: "Image", root: Panel, name: string): ImagePanel;
-    CreatePanel(type: "DOTAAbilityImage", root: Panel, name: string): AbilityImage;
-    CreatePanel(type: "DOTAItemImage", root: Panel, name: string): ItemImage;
-    CreatePanel(type: "DOTAHeroImage", root: Panel, name: string): ImagePanel;
-    CreatePanel(type: "ContextMenuScript", root: Panel, name: String): ContextMenuScriptPanel;
-    CreatePanel(type: "DOTAScenePanel", root: Panel, name: String): ScenePanel;
+    CreatePanel(type: "Label", root: Panel, id: string): LabelPanel;
+    CreatePanel(type: "Image", root: Panel, id: string): ImagePanel;
+    CreatePanel(type: "DOTAAbilityImage", root: Panel, id: string): AbilityImage;
+    CreatePanel(type: "DOTAItemImage", root: Panel, id: string): ItemImage;
+    CreatePanel(type: "DOTAHeroImage", root: Panel, id: string): ImagePanel;
+    CreatePanel(type: "ContextMenuScript", root: Panel, id: string): ContextMenuScriptPanel;
+    CreatePanel(type: "DOTAScenePanel", root: Panel, id: string): ScenePanel;
 }
