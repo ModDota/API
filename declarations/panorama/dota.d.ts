@@ -11,9 +11,6 @@
     https://github.com/ModDota/API.
 */
 
-/// <reference path="dota_enums.d.ts" />
-/// <reference path="dota_panels.d.ts" />
-
 type abilityID = number;
 type buffID = number;
 type entityID = number;
