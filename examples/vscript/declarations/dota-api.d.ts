@@ -8,7 +8,7 @@ type CCustomGameEventListener = number;
 type table = {[key: string]: any};
 
 // see: https://github.com/Microsoft/TypeScript/issues/15480
-type PlayerID = -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 
+type PlayerID = -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
     | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23;
 
 declare abstract class CScriptHTTPResponse {
@@ -3187,7 +3187,7 @@ declare abstract class CDOTA_Item extends CDOTABaseAbility {
     IsDisassemblable(): boolean;
     IsDroppable(): boolean;
     IsInBackpack(): boolean;
-    IsItem(): boolean;
+    IsItem(): this is CDOTA_Item;
     IsKillable(): boolean;
     IsMuted(): boolean;
     IsPermanent(): boolean;
@@ -5032,7 +5032,7 @@ declare function UTIL_ResetMessageTextAll(): void;
 /**
  * Check if a unit passes a set of filters. (hNPC, nTargetTeam, nTargetType, nTargetFlags, nTeam
  */
-declare function UnitFilter(unit: CDOTA_BaseNPC, targetTeam: DOTA_UNIT_TARGET_TEAM, targetType: DOTA_UNIT_TARGET_TYPE, 
+declare function UnitFilter(unit: CDOTA_BaseNPC, targetTeam: DOTA_UNIT_TARGET_TEAM, targetType: DOTA_UNIT_TARGET_TYPE,
     targetFlags: DOTA_UNIT_TARGET_FLAGS, team: DOTATeam_t): boolean;
 /**
  * Unload a spawn group by name
