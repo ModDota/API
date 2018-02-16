@@ -556,7 +556,7 @@ interface VCSSStyleDeclaration {
      * Example:
      * font-style: normal;
      */
-    fontStyle: 'normal' | 'italic' | null;
+    fontStyle: 'noraml' | 'italic' | null;
 
     /**
      * Specifies the font weight to use. Supported values are light, thin, normal, medium, bold, and black.
@@ -1011,6 +1011,7 @@ interface ContextMenuScriptPanel extends Panel {
     GetContentsPanel(): Panel;
 }
 
+type WeekendTourneyTrophyScene = ScenePanel;
 interface ScenePanel extends Panel {
     FireEntityInput(entityID: string, inputName: string, value: string): void;
     PlayEntitySoundEvent(arg1: any, arg2: any): number;
@@ -1018,13 +1019,132 @@ interface ScenePanel extends Panel {
     GetPanoramaSurfacePanel(): Panel;
 }
 
+interface RadioButton extends Panel {
+    GetSelectedButton(): RadioButton;
+}
+
+interface TextButton extends Panel {
+    text: string;
+}
+
+type SettingsCheckbox = ToggleButton;
+interface ToggleButton extends Panel {
+    text: string;
+    SetSelected(value: boolean): void;
+}
+
+type HUDShopTextEntry = TextEntry;
+interface TextEntry extends Panel {
+    text: string;
+
+    RaiseChangeEvents(bool: boolean): void;
+
+    SelectAll(): void;
+    ClearSelection(): void;
+
+    GetMaxCharCount(): number;
+    SetMaxChars(value: number): void;
+
+    GetCursorOffset(): number;
+    SetCursorOffset(value: number): void;
+}
+
+interface DropDown extends Panel {
+    HasOption(id: string): boolean;
+    AddOption(panel: Panel): void;
+    RemoveOption(id: string): void;
+    RemoveAllOptions(): void;
+
+    GetSelected(): Panel;
+    SetSelected(id: string): void;
+
+    AccessDropDownMenu(): Panel;
+    FindDropDownMenuChild(string: string): Panel;
+}
+
+type SlottedSlider = SliderPanel;
+interface SliderPanel extends PanelBase {
+    value: number;
+    min: number;
+    max: number;
+
+    default: number;
+    increment: number;
+    mousedown: boolean;
+
+    SetDirection(value: any): void; // ??
+    SetRequiresSelection(value: boolean): void;
+    SetShowDefaultValue(value: boolean): void;
+    SetValueNoEvents(value: number): void;
+}
+
+interface ProgressBar extends Panel {
+    value: number;
+    min: number;
+    max: number;
+}
+
+// Needs _BG and _FG styles, see lower hud hero exp
+interface CircularProgressBar extends PanelBase {
+    value: number;
+    min: number;
+    max: number;
+}
+
+type UserRichPresence = UserName;
+interface UserName extends Panel {
+    steamid: string;
+    accountid: string;
+}
+
+interface HeroMovie extends Panel {
+    heroname: string;
+    heroid: entityID;
+}
+
+type HTML = HTMLPanel;
+type AccountLinkHTML = HTMLPanel;
+type StoreCustomControls = HTMLPanel;
+interface HTMLPanel extends Panel {
+    SetURL(url: string): void;
+    SetIgnoreCursor(value: boolean): void;
+    RunJavascript(js: string): void;
+}
+
+type HeroSetList = CarouselPanel;
+interface CarouselPanel extends Panel {
+    GetFocusIndex(): number;
+    GetFocusChild(): Panel;
+    SetSelectedChild(selected: Panel): void;
+}
+
 //Only put single string literals in here, it'll be merged with the main one
 interface DollarStatic {
-    CreatePanel(type: "Label", root: Panel, id: string): LabelPanel;
-    CreatePanel(type: "Image", root: Panel, id: string): ImagePanel;
-    CreatePanel(type: "DOTAAbilityImage", root: Panel, id: string): AbilityImage;
-    CreatePanel(type: "DOTAItemImage", root: Panel, id: string): ItemImage;
-    CreatePanel(type: "DOTAHeroImage", root: Panel, id: string): ImagePanel;
-    CreatePanel(type: "ContextMenuScript", root: Panel, id: string): ContextMenuScriptPanel;
-    CreatePanel(type: "DOTAScenePanel", root: Panel, id: string): ScenePanel;
+    CreatePanel(type: "Label",                  root: Panel, id: string): LabelPanel;
+    CreatePanel(type: "Image",                  root: Panel, id: string): ImagePanel;
+    CreatePanel(type: "DOTAAbilityImage",       root: Panel, id: string): AbilityImage;
+    CreatePanel(type: "DOTAItemImage",          root: Panel, id: string): ItemImage;
+    CreatePanel(type: "DOTAHeroImage",          root: Panel, id: string): HeroImage;
+    CreatePanel(type: "ContextMenuScript",      root: Panel, id: string): ContextMenuScriptPanel;
+    CreatePanel(type: "DOTAScenePanel",         root: Panel, id: string): ScenePanel;
+    CreatePanel(type: "RadioButton",            root: Panel, id: string): RadioButton;
+    CreatePanel(type: "TextButton",             root: Panel, id: string): TextButton;
+    CreatePanel(type: "DOTASettingsCheckbox",   root: Panel, id: string): SettingsCheckbox;
+    CreatePanel(type: "ToggleButton",           root: Panel, id: string): ToggleButton;
+    CreatePanel(type: "DOTAHUDShopTextEntry",   root: Panel, id: string): HUDShopTextEntry;
+    CreatePanel(type: "TextEntry",              root: Panel, id: string): TextEntry;
+    CreatePanel(type: "DropDown",               root: Panel, id: string): DropDown;
+    CreatePanel(type: "SlottedSlider",          root: Panel, id: string): SlottedSlider;
+    CreatePanel(type: "Slider",                 root: Panel, id: string): SliderPanel;
+    CreatePanel(type: "ProgressBar",            root: Panel, id: string): ProgressBar;
+    CreatePanel(type: "CircularProgressBar",    root: Panel, id: string): CircularProgressBar;
+    CreatePanel(type: "DOTAUserRichPresence",   root: Panel, id: string): UserRichPresence;
+    CreatePanel(type: "DOTAUserName",           root: Panel, id: string): UserName;
+    CreatePanel(type: "DOTAHeroMovie",          root: Panel, id: string): HeroMovie;
+    CreatePanel(type: "HTML",                   root: Panel, id: string): HTML;
+    CreatePanel(type: "DOTAAccountLinkHTML",    root: Panel, id: string): AccountLinkHTML;
+    CreatePanel(type: "DOTAStoreCustomControls",root: Panel, id: string): StoreCustomControls;
+    CreatePanel(type: "DOTAHTMLPanel",          root: Panel, id: string): HTMLPanel;
+    CreatePanel(type: "DOTAHeroSetList",        root: Panel, id: string): HeroSetList;
+    CreatePanel(type: "Carousel",               root: Panel, id: string): CarouselPanel;
 }
