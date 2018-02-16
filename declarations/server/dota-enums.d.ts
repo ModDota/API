@@ -1766,7 +1766,8 @@ declare enum DotaUnitOrder_t {
     DOTA_UNIT_ORDER_VECTOR_TARGET_CANCELED = 34,
     DOTA_UNIT_ORDER_CAST_RIVER_PAINT = 35
 }
-    /** !CompileMembersOnly */
+    
+/** !CompileMembersOnly */
 declare enum OverheadAlerts_t {
     OVERHEAD_ALERT_GOLD = 0,
     OVERHEAD_ALERT_DENY = 1,
