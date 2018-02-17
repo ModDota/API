@@ -1,4 +1,4 @@
-declare interface ModifierAttackEvent {
+interface ModifierAttackEvent {
     attacker: CDOTA_BaseNPC;
     damage: number;
     damage_type: DAMAGE_TYPES;
@@ -10,13 +10,13 @@ declare interface ModifierAttackEvent {
     target: CDOTA_BaseNPC;
 }
 
-declare interface ModifierEvent {
+interface ModifierEvent {
     new_pos: Vec;
     order_type: DotaUnitOrder_t;
     unit: CDOTA_BaseNPC;
 }
 
-declare interface ModifierAbilityEvent extends ModifierEvent {
+interface ModifierAbilityEvent extends ModifierEvent {
     ability: CDOTABaseAbility;
     target?: CDOTA_BaseNPC;
 }
@@ -168,7 +168,7 @@ declare abstract class CDOTA_Modifier_Lua extends CDOTA_Buff {
      */
     StatusEffectPriority(): modifierpriority;
 
-//========== Modifier properties =================
+// ========== Modifier properties =================
 
     /**
      * Bonus damag (Green numbers)
@@ -190,23 +190,23 @@ declare abstract class CDOTA_Modifier_Lua extends CDOTA_Buff {
      * Add bonus physical damage
      */
     GetModifierProcAttack_BonusDamage_Physical(event: ModifierAttackEvent): number;
-     /**
+    /**
      * Add bonus magical damage
      */
     GetModifierProcAttack_BonusDamage_Magical(event: ModifierAttackEvent): number;
-     /**
+    /**
      * Add bonus pure damage
      */
     GetModifierProcAttack_BonusDamage_Pure(event: ModifierAttackEvent): number;
 
     GetModifierProcAttack_Feedback(event: ModifierAttackEvent): number;
     // Not working
-    //GetModifierOverrideAttackDamage(): number;
+    // GetModifierOverrideAttackDamage(): number;
 
     GetModifierPreAttack(event: ModifierAttackEvent): number;
-    /** 
-    * Makes the hero transparent( Use a value from 0 to 1)
-    */
+    /**
+     * Makes the hero transparent( Use a value from 0 to 1)
+     */
     GetModifierInvisibilityLevel(): number;
     GetModifierPersistentInvisibility(): number;
     GetModifierMoveSpeedBonus_Constant(): number;
@@ -341,20 +341,20 @@ declare abstract class CDOTA_Modifier_Lua extends CDOTA_Buff {
     // Not working
     GetAlwaysAllowAttack(): 0|1;
     /**
-    * 0 deal damage like usual; 1 no damage at all
-    */
+     * 0 deal damage like usual; 1 no damage at all
+     */
     GetOverrideAttackMagical(): 0|1;
     // Not working
     GetModifierUnitStatsNeedsRefresh(): 0|1;
     /**
-    *  Untested on lane creeps; did not work on beastmaster creeps
-    */
+     *  Untested on lane creeps; did not work on beastmaster creeps
+     */
     GetModifierBountyCreepMultiplier(): number;
     // Not working
     GetModifierBountyOtherMultiplier(): number;
     /**
-    *  Untested 
-    */
+     *  Untested
+     */
     GetModifierUnitDisllowUpgrading(): 0|1;
     // Not working
     GetModifierDodgeProjectile(): 0|1;
@@ -390,13 +390,13 @@ declare abstract class CDOTA_Modifier_Lua extends CDOTA_Buff {
     OnHealReceived(event: ModifierEvent): void;
     OnBuildingKilled(event: ModifierAttackEvent): void;
     OnModelChanged(event: ModifierEvent): void;
-    //Not working
+    // Not working
     OnModifierAdded(): void;
     GetModifierModelChange(): string;
     GetModifierModelScale(): number;
     /**
-    *  Always applies scepter when this property is active
-    */
+     *  Always applies scepter when this property is active
+     */
     GetModifierScepter(): void;
     GetActivityTranslationModifiers(): string;
     GetAttackSound(): string;
@@ -419,4 +419,3 @@ declare abstract class CDOTA_Modifier_Lua extends CDOTA_Buff {
     // Not working
     GetModifierCanAttackTrees(): 0|1;
 }
-

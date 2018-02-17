@@ -5,16 +5,19 @@ type ProjectileID = number;
 type ParticleID = number;
 type EventListenerID = number;
 type CCustomGameEventListener = number;
-type table = {[key: string]: any};
+
+interface table {
+    [key: string]: any;
+}
 
 // see: https://github.com/Microsoft/TypeScript/issues/15480
 type PlayerID = -1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
     | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23;
 
 declare abstract class CScriptHTTPResponse {
-  Body: string;
-  Request: CScriptHTTPResponse;
-  StatusCode: number;
+    Body: string;
+    Request: CScriptHTTPResponse;
+    StatusCode: number;
 }
 
 /**
@@ -629,7 +632,7 @@ declare abstract class CBodyComponent {
 /**
  * !Custom game event manager
  */
-declare interface CCustomGameEventManager {
+interface CCustomGameEventManager {
     /**
      * ( string EventName, func CallbackFunction ) - Register a callback to be called when a particular custom event arrives. Returns a listener ID that can be used to unregister later.
      */
@@ -656,7 +659,7 @@ declare const CustomGameEventManager: CCustomGameEventManager;
 /**
  * !Custom network table manager
  */
-declare interface CCustomNetTableManager {
+interface CCustomNetTableManager {
     /**
      * ( string TableName, string KeyName )
      */
@@ -825,27 +828,27 @@ declare abstract class CDOTABaseAbility extends CBaseEntity {
     UseResources(bMana: boolean, bGold: boolean, bCooldown: boolean): void;
 }
 
-declare interface AbilityTuningEvent {
+interface AbilityTuningEvent {
     value: number;
     entindex_ability_const: EntityID;
     value_name_const: string;
     entindex_caster_const: EntityID;
 }
 
-declare interface BountyRunePickupEvent {
+interface BountyRunePickupEvent {
     player_id_const: PlayerID;
     xp_bounty: number;
     gold_bounty: number;
 }
 
-declare interface DamageEvent {
+interface DamageEvent {
     damagetype_const: DAMAGE_TYPES;
     damage: number;
     entindex_attacker_const: EntityID;
     entindex_victim_const: EntityID;
 }
 
-declare interface ExecuteOrderEvent {
+interface ExecuteOrderEvent {
     entindex_ability: EntityID;
     sequence_number_const: number;
     queue: boolean;
@@ -858,43 +861,43 @@ declare interface ExecuteOrderEvent {
     issuer_player_id_const: PlayerID;
 }
 
-declare interface HealingEvent {
+interface HealingEvent {
     heal: number;
     entindex_target_const: EntityID;
 }
 
-declare interface ItemAddedToInventoryEvent {
+interface ItemAddedToInventoryEvent {
     item_entindex_const: EntityID;
     inventory_parent_entindex_const: EntityID;
     suggested_slot: number;
     item_parent_entindex_const: EntityID;
 }
 
-declare interface ModifierGainedEvent {
+interface ModifierGainedEvent {
     entindex_parent_const: EntityID;
     duration: number;
     name_const: string;
 }
 
-declare interface ModifyExperienceEvent {
+interface ModifyExperienceEvent {
     reason_const: EDOTA_ModifyXP_Reason;
     experience: number;
     player_id_const: PlayerID;
 }
 
-declare interface ModifyGoldEvent {
+interface ModifyGoldEvent {
     reason_const: EDOTA_ModifyGold_Reason;
     reliable: boolean;
     player_id_const: PlayerID;
     gold: number;
 }
 
-declare interface RuneSpawnEvent {
+interface RuneSpawnEvent {
     rune_type: DOTA_RUNES;
     spawner_entindex_const: EntityID;
 }
 
-declare interface TrackingProjectileEvent {
+interface TrackingProjectileEvent {
     is_attack: boolean;
     entindex_ability_const: EntityID;
     max_impact_time: number;
@@ -1289,7 +1292,7 @@ declare abstract class CDOTABaseGameMode extends CBaseEntity {
 /**
  * !The Dota game manager
  */
-declare interface CDOTAGameManager {
+interface CDOTAGameManager {
     /**
      * Get the hero unit
      */
@@ -1314,7 +1317,7 @@ declare interface CDOTAGameManager {
 /**
  * !DOTA GameRules
  */
-declare interface CDOTAGamerules {
+interface CDOTAGamerules {
     /**
      * Event-only ( string szNameSuffix, int nStars, int nMaxStars, int nExtraData1, int nExtraData2 )
      */
@@ -1655,7 +1658,7 @@ declare abstract class CDOTAPlayer extends CBaseAnimating {
 /**
  * !DOTA Tutorial
  */
-declare interface CDOTATutorial {
+interface CDOTATutorial {
     /**
      * Add a computer controlled bot.
      */
@@ -2565,7 +2568,8 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Performs an attack on a target.
      */
-    PerformAttack(hTarget: CDOTA_BaseNPC, bUseCastAttackOrb: boolean, bProcessProcs: boolean, bSkipCooldown: boolean, bIgnoreInvis: boolean, bUseProjectile: boolean, bFakeAttack: boolean, bNeverMiss: boolean): void;
+    PerformAttack(hTarget: CDOTA_BaseNPC, bUseCastAttackOrb: boolean, bProcessProcs: boolean, bSkipCooldown: boolean, bIgnoreInvis: boolean, bUseProjectile: boolean, bFakeAttack: boolean,
+                  bNeverMiss: boolean): void;
     /**
      * Pick up a dropped item.
      */
@@ -2872,7 +2876,7 @@ declare abstract class CDOTA_BaseNPC_Creature extends CDOTA_BaseNPC {
 /**
  * A Dota Hero NPC
  */
-declare interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
+interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
     /**
      * Params: Float XP, Bool applyBotDifficultyScaling
      */
@@ -3213,9 +3217,10 @@ declare abstract class CDOTA_Buff {
 /**
  * !Custom HUD manager
  */
-declare interface CDOTA_CustomUIManager {
+interface CDOTA_CustomUIManager {
     /**
-     * Create a new custom UI HUD element for the specified player(s). ( int PlayerID /*-1 means everyone* /, string ElementID /* should be unique * /, string LayoutFileName, table DialogVariables /* can be nil * / )
+     * Create a new custom UI HUD element for the specified player(s).
+     * ( int PlayerID /*-1 means everyone* /, string ElementID /* should be unique * /, string LayoutFileName, table DialogVariables /* can be nil * / )
      */
     DynamicHud_Create(arg1: number, arg2: string, arg3: string, arg4: table): void;
     /**
@@ -3635,7 +3640,7 @@ declare abstract class CDOTA_Modifier_Lua_Vertical_Motion extends CDOTA_Modifier
 /**
  * Interface to player data
  */
-declare interface CDOTA_PlayerResource {
+interface CDOTA_PlayerResource {
     AddAegisPickup(iPlayerID: PlayerID): void;
     AddClaimedFarm(iPlayerID: PlayerID, flFarmValue: number, bEarnedValue: boolean): void;
     AddGoldSpentOnSupport(iPlayerID: PlayerID, iCost: number): void;
@@ -3829,7 +3834,7 @@ declare abstract class CDOTA_Unit_Courier extends CDOTA_BaseNPC {
 /**
  * Wrapper class over g_pDebugOverlay instance
  */
-declare interface CDebugOverlayScriptHelper {
+interface CDebugOverlayScriptHelper {
     /**
      * Draws an axis. Specify origin + orientation in world space.
      */
@@ -4020,7 +4025,7 @@ declare abstract class CDotaSubquestBase extends CBaseEntity {
 /**
  * !The global list of entities
  */
-declare interface CEntities {
+interface CEntities {
     /**
      * Creates an entity by classname
      */
@@ -4056,7 +4061,7 @@ declare interface CEntities {
     /**
      * Find entities by class name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByClassname(previous: CBaseEntity | void, className: string): CBaseEntity;
+    FindByClassname(previous: CBaseEntity | undefined, className: string): CBaseEntity;
     /**
      * Find entities by class name nearest to a point.
      */
@@ -4064,19 +4069,19 @@ declare interface CEntities {
     /**
      * Find entities by class name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByClassnameWithin(previous: CBaseEntity | void, className: string, location: Vec, radius: number): CBaseEntity;
+    FindByClassnameWithin(previous: CBaseEntity | undefined, className: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by model name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByModel(previous: CBaseEntity | void, modelName: string): CBaseEntity;
+    FindByModel(previous: CBaseEntity | undefined, modelName: string): CBaseEntity;
     /**
      * Find entities by model name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByModelWithin(previous: CBaseEntity | void, modelName: string, location: Vec, radius: number): CBaseEntity;
+    FindByModelWithin(previous: CBaseEntity | undefined, modelName: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by name. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByName(previous: CBaseEntity | void, name: string): CBaseEntity;
+    FindByName(previous: CBaseEntity | undefined, name: string): CBaseEntity;
     /**
      * Find entities by name nearest to a point.
      */
@@ -4084,15 +4089,15 @@ declare interface CEntities {
     /**
      * Find entities by name within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByNameWithin(previous: CBaseEntity | void, name: string, location: Vec, radius: number): CBaseEntity;
+    FindByNameWithin(previous: CBaseEntity | undefined, name: string, location: Vec, radius: number): CBaseEntity;
     /**
      * Find entities by targetname. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindByTarget(previous: CBaseEntity | void, target: string): CBaseEntity;
+    FindByTarget(previous: CBaseEntity | undefined, target: string): CBaseEntity;
     /**
      * Find entities within a radius. Pass 'null' to start an iteration, or reference to a previously found entity to continue a search
      */
-    FindInSphere(previous: CBaseEntity | void, location: Vec, radius: number): CBaseEntity;
+    FindInSphere(previous: CBaseEntity | undefined, location: Vec, radius: number): CBaseEntity;
     /**
      * Begin an iteration over the list of entities
      */
@@ -4178,7 +4183,7 @@ declare abstract class CEntityInstance {
 /**
  * env_entity_maker
  */
-declare interface CEnvEntityMaker extends CBaseEntity {
+interface CEnvEntityMaker extends CBaseEntity {
     /**
      * Create an entity at the location of the maker
      */
@@ -4245,7 +4250,7 @@ declare abstract class CSceneEntity extends CBaseEntity {
 /**
  * !The global list of heroes
  */
-declare interface CScriptHeroList {
+interface CScriptHeroList {
     /**
      * Returns all the heroes in the world
      */
@@ -4264,7 +4269,7 @@ declare const HeroList: CScriptHeroList;
 /**
  * !Used to create and manage particle effects
  */
-declare interface CScriptParticleManager {
+interface CScriptParticleManager {
     /**
      * Creates a new particle effect
      */
@@ -4327,7 +4332,7 @@ declare abstract class CScriptPrecacheContext {
 /**
  * !Access to convar functions
  */
-declare interface Convars {
+interface Convars {
     /**
      * GetBool(name) : returns the convar as a boolean flag.
      */
@@ -4392,7 +4397,7 @@ declare function AngleDiff(arg1: number, arg2: number): number;
  */
 declare function AppendToLogFile(arg1: string, arg2: string): void;
 
-declare interface DamageTable {
+interface DamageTable {
     victim: CDOTA_BaseNPC;
     attacker: CDOTA_BaseNPC;
     damage: number;
@@ -4480,11 +4485,13 @@ declare function CreateTriggerRadiusApproximate(arg1: Vec, arg2: number): CBaseT
 /**
  * Creates a DOTA unit by its dota_npc_units.txt name
  */
-declare function CreateUnitByName(unit_name: string, location: Vec, find_clear_space: boolean, npc_owner: CBaseEntity | null | undefined, unit_owner: CDOTAPlayer | null | undefined, team_number: DOTATeam_t): CDOTA_BaseNPC;
+declare function CreateUnitByName(unit_name: string, location: Vec, find_clear_space: boolean, npc_owner: CBaseEntity | null | undefined, unit_owner: CDOTAPlayer | null | undefined,
+                                  team_number: DOTATeam_t): CDOTA_BaseNPC;
 /**
  * Creates a DOTA unit by its dota_npc_units.txt name
  */
-declare function CreateUnitByNameAsync(unitName: string, location: Vec, findClearSpace: boolean, npcOwner: CDOTA_BaseNPC | null | undefined, playerOwner: CDOTAPlayer | null | undefined, team: DOTATeam_t, callback: (unit: CDOTA_BaseNPC) => void): number;
+declare function CreateUnitByNameAsync(unitName: string, location: Vec, findClearSpace: boolean, npcOwner: CDOTA_BaseNPC | null | undefined, playerOwner: CDOTAPlayer | null | undefined,
+                                       team: DOTATeam_t, callback: (unit: CDOTA_BaseNPC) => void): number;
 /**
  * Creates a DOTA unit by its dota_npc_units.txt name from a table of entity key values and a position to spawn at.
  */
@@ -4536,7 +4543,8 @@ declare function DebugDrawText(arg1: Vec, arg2: string, arg3: boolean, arg4: num
 /**
  * Draw pretty debug text (x, y, lineOffset, text, r, g, b, a, duration, font, size, bBold)
  */
-declare function DebugScreenTextPretty(arg1: number, arg2: number, arg3: number, arg4: string, arg5: number, arg6: number, arg7: number, arg8: number, arg9: number, arg10: string, arg11: number, arg12: boolean): void;
+declare function DebugScreenTextPretty(arg1: number, arg2: number, arg3: number, arg4: string, arg5: number, arg6: number, arg7: number, arg8: number, arg9: number, arg10: string, arg11: number,
+                                       arg12: boolean): void;
 /**
  * Free a damageinfo object that was created with CreateDamageInfo().
  */
@@ -4544,7 +4552,8 @@ declare function DestroyDamageInfo(arg1: table): void;
 /**
  * (hAttacker, hTarget, hAbility, fDamage, fRadius, effectName)
  */
-declare function DoCleaveAttack(attacker: CDOTA_BaseNPC, target: CDOTA_BaseNPC, ability: CDOTABaseAbility, damage: number, startRadius: number, endRadius: number, distance: number, effectName: string): number;
+declare function DoCleaveAttack(attacker: CDOTA_BaseNPC, target: CDOTA_BaseNPC, ability: CDOTABaseAbility, damage: number, startRadius: number, endRadius: number, distance: number,
+                                effectName: string): number;
 /**
  * #EntFire:Generate and entity i/o event
  */
@@ -4562,7 +4571,8 @@ declare function DoIncludeScript(arg1: string, arg2: table): boolean;
  */
 declare function DoScriptAssert(arg1: boolean, arg2: string): void;
 /**
- * #UniqueString:Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.
+ * #UniqueString:Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use
+ * in that table.
  */
 declare function DoUniqueString(seed: string): string;
 declare function DotProduct(arg1: Vec, arg2: Vec): number;
@@ -4607,7 +4617,7 @@ declare function EmitSoundOnLocationWithCaster(arg1: Vec, arg2: string, arg3: CD
  */
 declare function EntIndexToHScript(entIndex: number): CBaseEntity;
 
-declare interface OrderTable {
+interface OrderTable {
     UnitIndex: EntityID;
     OrderType: DotaUnitOrder_t;
     TargetIndex?: EntityID;
@@ -4634,11 +4644,13 @@ declare function FindClearSpaceForUnit(unit: CDOTA_BaseNPC, location: Vec, unkno
 /**
  * Find units that intersect the given line with the given flags.
  */
-declare function FindUnitsInLine(team: DOTATeam_t, startPos: Vec, endPos: Vec, cacheUnit: CBaseEntity|null, width: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS): CDOTA_BaseNPC[];
+declare function FindUnitsInLine(team: DOTATeam_t, startPos: Vec, endPos: Vec, cacheUnit: CBaseEntity|null, width: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE,
+                                 flagFilter: DOTA_UNIT_TARGET_FLAGS): CDOTA_BaseNPC[];
 /**
  * Finds the units in a given radius with the given flags.
  */
-declare function FindUnitsInRadius(team: DOTATeam_t, location: Vec, cacheUnit: CBaseEntity|null, radius: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE, flagFilter: DOTA_UNIT_TARGET_FLAGS, order: FindType_t, canGrowCache: boolean): CDOTA_BaseNPC[];
+declare function FindUnitsInRadius(team: DOTATeam_t, location: Vec, cacheUnit: CBaseEntity|null, radius: number, teamFilter: DOTA_UNIT_TARGET_TEAM, typeFilter: DOTA_UNIT_TARGET_TYPE,
+                                   flagFilter: DOTA_UNIT_TARGET_FLAGS, order: FindType_t, canGrowCache: boolean): CDOTA_BaseNPC[];
 /**
  * Fire Entity's Action Input w/no data
  */
@@ -4787,7 +4799,7 @@ declare function LimitPathingSearchDepth(arg1: number): void;
  */
 declare function LinkLuaModifier(modifierName: string, filePath: string, motionController: LuaModifierType): void;
 
-declare interface GameEvent {
+interface GameEvent {
     [key: string]: any;
 }
 /**
@@ -5114,7 +5126,7 @@ declare function UTIL_ResetMessageTextAll(): void;
  * Check if a unit passes a set of filters. (hNPC, nTargetTeam, nTargetType, nTargetFlags, nTeam
  */
 declare function UnitFilter(unit: CDOTA_BaseNPC, targetTeam: DOTA_UNIT_TARGET_TEAM, targetType: DOTA_UNIT_TARGET_TYPE,
-    targetFlags: DOTA_UNIT_TARGET_FLAGS, team: DOTATeam_t): boolean;
+                            targetFlags: DOTA_UNIT_TARGET_FLAGS, team: DOTATeam_t): boolean;
 /**
  * Unload a spawn group by name
  */
@@ -5157,7 +5169,7 @@ declare function rr_QueryBestResponse(arg1: table, arg2: table, arg3: table): bo
 /**
  * !The grid navigation system
  */
-declare interface GridNav {
+interface GridNav {
     /**
      * Determine if it is possible to reach the specified end point from the specified start point. bool (vStart, vEnd)
      */
@@ -5209,8 +5221,7 @@ declare interface GridNav {
 }
 declare const GridNav: GridNav;
 
-
-declare interface LinearProjectileTable {
+interface LinearProjectileTable {
     Ability: CDOTABaseAbility;
     EffectName: string;
     vSpawnOrigin: Vec;
@@ -5231,7 +5242,7 @@ declare interface LinearProjectileTable {
     iVisionTeamNumber?: DOTATeam_t;
 }
 
-declare interface TrackingProjectileTable {
+interface TrackingProjectileTable {
     Target: CDOTA_BaseNPC;
     Source: CDOTA_BaseNPC;
     Ability: CDOTABaseAbility;
@@ -5252,7 +5263,7 @@ declare interface TrackingProjectileTable {
 /**
  * !The projectile manager
  */
-declare interface ProjectileManager {
+interface ProjectileManager {
     /**
      * Update speed
      */

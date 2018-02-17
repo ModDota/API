@@ -52,7 +52,7 @@ interface CDOTA_PanoramaScript_GameEvents {
 
 // Define string dictionary for CustomUIConfig to return
 interface StringDictionary {
-    [key: string] : any;
+    [key: string]: any;
 }
 
 declare const enum MouseButton {
@@ -254,7 +254,8 @@ interface CScriptBindingPR_Particles {
      * Set a particle's control point to an entity's attachment. Most common example is:
      * Particles.SetPerticleControlEnt(particle, controlPoint, entity, ParticleAttachment_t.PATTACH_POINT_FOLLOW, "attach_hitloc", [0,0,0], true);
      */
-    SetParticleControlEnt(particle: particleID, controlPoint: number, entity: entityID, particleAttach: ParticleAttachment_t, attachmentName: string, offset: [number, number, number], unknown: boolean): void;
+    SetParticleControlEnt(particle: particleID, controlPoint: number, entity: entityID, particleAttach: ParticleAttachment_t, attachmentName: string, offset: [number, number, number],
+                          unknown: boolean): void;
 }
 
 interface CScriptBindingPR_Buffs {
@@ -330,7 +331,7 @@ interface CScriptBindingPR_Buffs {
 }
 
 interface CScriptBindingPR_Players {
-        /**
+    /**
      * Get the maximum number of players in the game.
      */
     GetMaxPlayers(): number;
@@ -2190,54 +2191,54 @@ interface CScriptBindingPR_Game {
     /**
      * Registers a keybind that can be listened to with Game.AddCommand
      */
-    CreateCustomKeyBind(keyName: string, commandName:string) : void;
+    CreateCustomKeyBind(keyName: string, commandName: string): void;
 }
 
 interface CPanoramaScript_SteamUGC {
     /**
      * Subscribe to a piece of UGC
      */
-    SubscribeItem(pPublishedFileID: string, funcVal:any) : void;
+    SubscribeItem(pPublishedFileID: string, funcVal: any): void;
 
     /**
      * Unsubscribe to a piece of UGC
      */
-    UnsubscribeItem(pPublishedFileID: string, funcVal:any) : void;
+    UnsubscribeItem(pPublishedFileID: string, funcVal: any): void;
 
     /**
      * Get a key from a custom net table
      */
-    GetSubscriptionInfo(pPublishedFileID: string) : any;
+    GetSubscriptionInfo(pPublishedFileID: string): any;
 
     /**
      * Vote on a piece of UGC
      */
-    SetUserItemVote(pPublishedFileID: string, bVoteUp: boolean, funcVal: any) : any;
+    SetUserItemVote(pPublishedFileID: string, bVoteUp: boolean, funcVal: any): any;
 
     /**
      * Get the user's vote on a peice of UGC
      */
-    GetUserItemVote(pPublishedFileID: string, funcVal: any) : any;
+    GetUserItemVote(pPublishedFileID: string, funcVal: any): any;
 
     /**
      * Add an item to the user's favorites list
      */
-    AddToFavorites(pPublishedFileID: string, funcVal: any) : any;
+    AddToFavorites(pPublishedFileID: string, funcVal: any): any;
 
     /**
      * Remove an item from the user's favorites list
      */
-    RemoveFromFavorites(pPublishedFileID: string, funcVal: any) : any;
+    RemoveFromFavorites(pPublishedFileID: string, funcVal: any): any;
 
     /**
      * Create a request to query Steam for all UGC
      */
-    CreateQueryAllUGCRequest(eQueryType: number, eMatchingeMatchingUGCTypeFileType: number, unPage: number) : any;
+    CreateQueryAllUGCRequest(eQueryType: number, eMatchingeMatchingUGCTypeFileType: number, unPage: number): any;
 
     /**
      * Creqte a request to query Steam for specific UGC
      */
-    CreateQueryUGCDetailsRequest(pPublishedFileIDs: string[]) : any;
+    CreateQueryUGCDetailsRequest(pPublishedFileIDs: string[]): any;
 
     /**
      * Adds a required tag to the query
@@ -2269,40 +2270,40 @@ interface CPanoramaScript_SteamFriends {
     /**
      * Requests the user's persona name
      */
-    RequestPersoneName(pchSteamID: string, funcVal: any) : any;
+    RequestPersoneName(pchSteamID: string, funcVal: any): any;
 
     /**
      * Sets the avatar image on the image panel
      */
-    SetLargeAvatarImage(...unknown: any[]) : any;
+    SetLargeAvatarImage(...unknown: any[]): any;
 }
 
 interface CPanoramaScript_SteamUtils {
     /**
      * Returns the connected universe
      */
-    GetConnectedUniverse() : any;
+    GetConnectedUniverse(): any;
 
     /**
      * Returns the appid of the current app
      */
-    GetAppID() : any;
+    GetAppID(): any;
 }
 
 interface CPanoramaScript_VRUtils {
     /**
      * Get application properties for a VR app with the specifiied appID
      */
-    GetVRAppPropertyData(nAppID: number) : any;
+    GetVRAppPropertyData(nAppID: number): any;
 
     /**
      * Launches a Steam Application using OpenVR.
      */
-    LaunchSteamApp(nAppID: number) : any;
+    LaunchSteamApp(nAppID: number): any;
 }
 
 interface DollarStatic {
-    (selector: string) : Panel;
+    (selector: string): Panel;
     CreatePanel(type: string, root: Panel, id: string): Panel;
     CreatePanel(type: string, root: Panel, id: string): PanelBase;
     Msg(...args: any[]): void;
@@ -2311,8 +2312,8 @@ interface DollarStatic {
     CancelScheduled(scheduledEvent: scheduleID): void;
     DispatchEvent(event: string, panelID?: string, ...args: any[]): void;
     DispatchEvent(event: string, panel: Panel, ...args: any[]): void;
-    DispatchEventAsync(delay: number, event:string, panelID?: string, ...args: any[]): void;
-    DispatchEventAsync(delay: number, event:string, panel: Panel, ...args: any[]): void;
+    DispatchEventAsync(delay: number, event: string, panelID?: string, ...args: any[]): void;
+    DispatchEventAsync(delay: number, event: string, panel: Panel, ...args: any[]): void;
     Localize(token: string, parent?: Panel): string;
     RegisterEventHandler(event: string, parent: Panel, handler: () => void): number;
     Each<T>(list: T[], callback: (item: T, index: number) => void): void;

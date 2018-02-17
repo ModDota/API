@@ -188,8 +188,7 @@ interface RoundEndEvent {
 /**
  * Register as a listener for a game event from script.
  */
-declare function ListenToGameEvent(eventName: "round_start_pre_entity", callback: (event: {
-        }) => void, context: table): EventListenerID;
+declare function ListenToGameEvent(eventName: "round_start_pre_entity", callback: (event: {}) => void, context: table): EventListenerID;
 /**
  * Register as a listener for a game event from script.
  */
