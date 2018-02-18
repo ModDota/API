@@ -1165,8 +1165,8 @@ interface PlayerInfoIndividualUpdatedEvent {
 /**
  * Register as a listener for a game event from script.
  */
-declare function ListenToGameEvent(eventName: "game_rules_state_change", callback: (event: {
-        }) => void, context: table): EventListenerID;
+declare function ListenToGameEvent(eventName: "game_rules_state_change", callback: () => void, context: null): EventListenerID;
+declare function ListenToGameEvent<T>(eventName: "game_rules_state_change", callback: (context: T) => void, context: T): EventListenerID;
 /**
  * Register as a listener for a game event from script.
  */

@@ -4803,12 +4803,6 @@ interface GameEvent {
     [key: string]: any;
 }
 /**
- * Register a listener for a game event from script.
- */
-declare function ListenToGameEvent(eventName: string, callback: (event: GameEvent) => void, context: null): EventListenerID;
-declare function ListenToGameEvent<T extends object>(eventName: string, callback: (self: T, event: GameEvent) => void, context: T): EventListenerID;
-
-/**
  * Creates a table from the specified keyvalues text file
  */
 declare function LoadKeyValues(filePath: string): table;
