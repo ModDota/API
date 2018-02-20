@@ -211,6 +211,9 @@ declare abstract class CBaseEntity extends CEntityInstance {
      * Returns a table containing the criteria that would be used for response queries on this entity. This is the same as the table that is passed to response rule script function callbacks.
      */
     GatherCriteria(hResult: table): void;
+    /**
+     * Returns the absolute origins of this entity.
+     */
     GetAbsOrigin(): Vec;
     GetAbsScale(): number;
     GetAngles(): QAngle;
@@ -341,6 +344,9 @@ declare abstract class CBaseEntity extends CEntityInstance {
      * Is this entity a player?
      */
     IsPlayer(): this is CBasePlayer;
+    /**
+     * Kill the entity. This kill is not credited to anyone.
+     */
     Kill(): void;
     NextMovePeer(): CBaseEntity;
     /**
@@ -359,6 +365,9 @@ declare abstract class CBaseEntity extends CEntityInstance {
      * Set entity pitch, yaw, roll by component.
      */
     SetAbsAngles(fPitch: number, fYaw: number, fRoll: number): void;
+    /**
+     * Set the absolute origin of this entity.
+     */
     SetAbsOrigin(origin: Vec): void;
     SetAbsScale(flScale: number): void;
     /**
@@ -422,6 +431,9 @@ declare abstract class CBaseEntity extends CEntityInstance {
      * Set the maximum health of this entity.
      */
     SetMaxHealth(amt: number): void;
+    /**
+     * Set the origin of this entity.
+     */
     SetOrigin(v: Vec): void;
     /**
      * Sets this entity's owner
@@ -431,6 +443,9 @@ declare abstract class CBaseEntity extends CEntityInstance {
      * Set the parent for this entity.
      */
     SetParent(hParent: CBaseEntity, pAttachmentname: string): void;
+    /**
+     * Set the team of this entity.
+     */
     SetTeam(iTeamNum: DOTATeam_t): void;
     SetVelocity(vecVelocity: Vec): void;
     /**
@@ -503,6 +518,9 @@ declare abstract class CBaseModelEntity extends CBaseEntity {
      * SetMaterialGroupMask( uint64 ): Set the mesh group mask of this entity.
      */
     SetMaterialGroupMask(nMeshGroupMask: number): void;
+    /**
+     * Set the model of this entity.
+     */
     SetModel(pModelName: string): void;
     /**
      * SetRenderAlpha( int ): Set the alpha modulation of this entity.
@@ -675,18 +693,39 @@ declare const CustomNetTables: CCustomNetTableManager;
  * An ability
  */
 declare abstract class CDOTABaseAbility extends CBaseEntity {
+    /**
+     * Returns whether or not this ability can be upgraded further, takes into account ability points and level requirements.
+     */
     CanAbilityBeUpgraded(): boolean;
+    /**
+     * Causes this ability to be cast. Only works if it's possible: target in range, caster looks towards the target etc.
+     */
     CastAbility(): boolean;
     ContinueCasting(): boolean;
+    /**
+     * Creates an area that grants vision to the team of the caster of this ability.
+     */
     CreateVisibilityNode(vLocation: Vec, fRadius: number, fDuration: number): void;
     DecrementModifierRefCount(): void;
+    /**
+     * Stop the channeling of this ability.
+     */
     EndChannel(bInterrupted: boolean): void;
     /**
      * Clear the cooldown remaining on this ability.
      */
     EndCooldown(): void;
+    /**
+     * Get the ability damage as stated in the ability's "AbilityDamage" kv
+     */
     GetAbilityDamage(): number;
+    /**
+     * Get the ability damage type as stated in the ability's "AbilityDamageType" kv.
+     */
     GetAbilityDamageType(): DAMAGE_TYPES;
+    /**
+     * Get the index (starting from 0) of the ability, from top to bottom in the heroes' ability slots in the hero files.
+     */
     GetAbilityIndex(): number;
     /**
      * Gets the key values definition for this ability.
@@ -696,24 +735,63 @@ declare abstract class CDOTABaseAbility extends CBaseEntity {
      * Returns the name of this ability.
      */
     GetAbilityName(): string;
+    /**
+     * Get the ability target flags as stated in the ability's "AbilityTargetFlags" kv.
+     */
     GetAbilityTargetFlags(): DOTA_UNIT_TARGET_FLAGS;
+    /**
+     * Get the ability target teams as stated in the ability's "AbilityTargetTeam" kv.
+     */
     GetAbilityTargetTeam(): DOTA_UNIT_TARGET_TEAM;
+    /**
+     * Get the ability target types as stated in the ability's "AbilityTargetType" kv.
+     */
     GetAbilityTargetType(): DOTA_UNIT_TARGET_TYPE;
     GetAbilityType(): number;
     GetAnimationIgnoresModelScale(): boolean;
+    /**
+     * Get all associated primary abilities that are related to this ability.
+     */
     GetAssociatedPrimaryAbilities(): string;
+    /**
+     * Get all associated secondary abilities that are related to this ability.
+     */
     GetAssociatedSecondaryAbilities(): string;
+    /**
+     * Get whether or not this ability is set to auto cast: True means auto cast is on.
+     */
     GetAutoCastState(): boolean;
+    /**
+     * Get the backswing time of this ability.
+     */
     GetBackswingTime(): number;
+    /**
+     * Get the ability's behavior types. Also allows dynamic setting of the ability behavior types.
+     */
     GetBehavior(): number;
+    /**
+     * Get the ability's cast point. Also allows dynamic setting of the ability' cast point.
+     */
     GetCastPoint(): number;
     /**
-     * Gets the cast range of the ability.
+     * Gets the cast range of the ability. Also allows dynamic setting of the ability's cast range.
      */
     GetCastRange(vLocation: Vec, hTarget: CDOTA_BaseNPC): number;
+    /**
+     * Get the ability's caster.
+     */
     GetCaster(): CDOTA_BaseNPC;
+    /**
+     * Get the dota game time in the start of the channel 
+     */
     GetChannelStartTime(): number;
+    /**
+     * Get how many seconds the channel can go on for.
+     */
     GetChannelTime(): number;
+    /**
+     * Get how much mana is drained every second while channeling. Can pass -1 for current level.
+     */
     GetChannelledManaCostPerSecond(iLevel: number): number;
     GetCloneSource(): CDOTA_BaseNPC;
     GetConceptRecipientType(): number;
@@ -722,109 +800,286 @@ declare abstract class CDOTABaseAbility extends CBaseEntity {
      */
     GetCooldown(iLevel: number): number;
     GetCooldownTime(): number;
+    /**
+     * Get how many seconds are left for the cooldown to ready the ability up again. Returns -1 if ability is ready.
+     */
     GetCooldownTimeRemaining(): number;
+    /**
+     * Get the vector of the current position of the caster's cursor.
+     */
     GetCursorPosition(): Vec;
+    /**
+     * Get the entity that the caster's cursor is highlighting.
+     */
     GetCursorTarget(): CDOTA_BaseNPC;
+    /**
+     * Get whether or not the caster's cursor is highlighting a target.
+     */
     GetCursorTargetingNothing(): boolean;
     GetDuration(): number;
+    /**
+     * Get how much gold is consumed for using this ability. Can pass -1 for current level.
+     */
     GetGoldCost(iLevel: number): number;
+    /**
+     * Get how much gold is needed to upgrade this ability to the next level. Can pass -1 for current level.
+     */
     GetGoldCostForUpgrade(iLevel: number): number;
+    /**
+     * Get the hero level required to upgrade this ability to the next level.
+     */
     GetHeroLevelRequiredToUpgrade(): number;
+    /**
+     * Get the name of the modifier that will be automatically applied upon learning the ability. Modifier is re-applied (refreshed) when leveling the ability up.
+     */
     GetIntrinsicModifierName(): string;
     /**
      * Get the current level of the ability.
      */
     GetLevel(): number;
+    /**
+     * Gets a value from this ability's special value block for a specific level.
+     */
     GetLevelSpecialValueFor(valueName: string, nLevel: number): number;
+    /**
+     * Get the ability's mana cost. Also allows dynamic setting of the ability's mana costs.
+     */
     GetManaCost(iLevel: number): number;
+    /**
+     * Get the maximum level this ability can upgrade to.
+     */
     GetMaxLevel(): number;
     GetModifierValue(): number;
     GetModifierValueBonus(): number;
     GetPlaybackRateOverride(): number;
+    /**
+     * Get the name of other abilities that share the cooldown with this ability.
+     */
     GetSharedCooldownName(): string;
     /**
      * Gets a value from this ability's special value block for its current level.
      */
     GetSpecialValueFor(valueName: string): number;
     GetStolenActivityModifier(): string;
+    /**
+     * Get whether or not this ability is toggled on. True means that the ability is toggled on.
+     */
     GetToggleState(): boolean;
     HeroXPChange(flXP: number): boolean;
     IncrementModifierRefCount(): void;
+    /**
+     * Get whether the ability is activated and can be used.
+     */
     IsActivated(): boolean;
+    /**
+     * Returns whether this ability is an attribute bonus.
+     */
     IsAttributeBonus(): boolean;
     /**
      * Returns whether the ability is currently channeling.
      */
     IsChanneling(): boolean;
+    /**
+     * Returns whether the ability is off cooldown and ready to be used.
+     */
     IsCooldownReady(): boolean;
     IsCosmetic(hEntity: CBaseEntity): boolean;
     /**
      * Returns whether the ability can be cast.
      */
     IsFullyCastable(): boolean;
+    /**
+     * Returns whether the ability is visible on the HUD.
+     */
     IsHidden(): boolean;
+    /**
+     * Returns whether the ability can be visible on the HUD when stolen by Rubick's Spell Steal.
+     */
     IsHiddenWhenStolen(): boolean;
     /**
      * Returns whether the ability is currently casting.
      */
     IsInAbilityPhase(): boolean;
+    /**
+     * Returns whether the ability is an item.
+     */
     IsItem(): this is CDOTA_Item;
+    /**
+     * Returns if the caster has enough gold to cast this ability.
+     */
     IsOwnersGoldEnough(nIssuerPlayerID: number): boolean;
+    /**
+     * Returns if the caster has enough gold to upgrade this ability.
+     */
     IsOwnersGoldEnoughForUpgrade(): boolean;
+    /**
+     * Returns if the caster has enough mana to cast this ability.
+     */
     IsOwnersManaEnough(): boolean;
+    /**
+     * Returns if the ability is a passive ability.
+     */
     IsPassive(): boolean;
+    /**
+     * Returns if the ability can be refreshed by Refresher Orb/Shard.
+     */
     IsRefreshable(): boolean;
     IsSharedWithTeammates(): boolean;
+    /**
+     * Returns if the ability can be stolen.
+     */
     IsStealable(): boolean;
+    /**
+     * Returns if the ability is a stolen ability.
+     */
     IsStolen(): boolean;
+    /**
+     * Returns if the ability is a toggleable ability.
+     */
     IsToggle(): boolean;
+    /**
+     * Returns if the ability was learned (has at least one level).
+     */
     IsTrained(): boolean;
     /**
      * Mark the ability button for this ability as needing a refresh.
      */
     MarkAbilityButtonDirty(): void;
     NumModifiersUsingAbility(): number;
+    /**
+     * Event fired when the ability is interrupted and is not cast.
+     */
     OnAbilityPhaseInterrupted(): void;
+    /**
+     * Event fired when starting to cast the ability.
+     */
     OnAbilityPhaseStart(): boolean;
+    /**
+     * Event fired when the ability is alt clicked. Returns the player that pinged it.
+     */
     OnAbilityPinged(nPlayerID: number): void;
+    /**
+     * Event fired when the ability stops channeling. Returns whether the channel has expired or was interrupted.
+     */
     OnChannelFinish(bInterrupted: boolean): void;
+    /**
+     * Event fired every interval think, usually every frame. Returns the intervals between each think.
+     */
     OnChannelThink(flInterval: number): void;
+    /**
+     * Event fired when the hero re-calculated stats via leveling up or using CalculateStatBonus().
+     */
     OnHeroCalculateStatBonus(): void;
+    /**
+     * Event fired when the hero levels up.
+     */
     OnHeroLevelUp(): void;
+    /**
+     * Event fired when the caster of this ability died.
+     */
     OnOwnerDied(): void;
+    /**
+     * Event fired when the caster of this ability spawns.
+     */
     OnOwnerSpawned(): void;
+    /**
+     * Event fired when the ability finished casting and is now active.
+     */
     OnSpellStart(): void;
+    /**
+     * Event fired when the ability gets toggled on or off.
+     */
     OnToggle(): void;
+    /**
+     * Event fired when the ability is upgraded.
+     */
     OnUpgrade(): void;
+    /**
+     * Reduces the ability's caster's gold equal to the gold cost of this ability.
+     */
     PayGoldCost(): void;
+    /**
+     * Reduces the ability's caster's gold equal to the gold cost for upgrading this ability.
+     */
     PayGoldCostForUpgrade(): void;
+    /**
+     * Reduces the ability's caster's mana equal to the mana cost of this ability.
+     */
     PayManaCost(): void;
     PlaysDefaultAnimWhenStolen(): boolean;
+    /**
+     * Returns whether this ability procs Magic Stick/Wand.
+     */
     ProcsMagicStick(): boolean;
     RefCountsModifiers(): boolean;
     RefreshCharges(): void;
+    /**
+     * Grants the ability's caster's mana equal to the mana cost of this ability.
+     */
     RefundManaCost(): void;
+    /**
+     * Sets whether this ability's toggle state is reset when respawning.
+     */
     ResetToggleOnRespawn(): boolean;
+    /**
+     * Set the index of this ability.
+     */
     SetAbilityIndex(iIndex: number): void;
+    /**
+     * Set whether this ability is activated. Inactive abilities are colored grey and cannot be used.
+     */
     SetActivated(bActivated: boolean): void;
     SetChanneling(bChanneling: boolean): void;
+    /**
+     * Set whether this ability's cooldown is frozen.
+     */
     SetFrozenCooldown(bFrozenCooldown: boolean): void;
+    /**
+     * Set whether this ability is hidden from the HUD
+     */    
     SetHidden(bHidden: boolean): void;
+    /**
+     * Set the ability to be in ability phase.
+     */
     SetInAbilityPhase(bInAbilityPhase: boolean): void;
     /**
      * Sets the level of this ability.
      */
     SetLevel(iLevel: number): void;
+    /**
+     * Set the overriding cast point of this ability.
+     */
     SetOverrideCastPoint(flCastPoint: number): void;
     SetRefCountsModifiers(bRefCounts: boolean): void;
+    /**
+     * Set whether this ability is marked as stolen.
+     */
     SetStolen(bStolen: boolean): void;
+    /**
+     * Set whether this ability's should consume resources when used (mana, gold, cooldown).
+     */
     ShouldUseResources(): boolean;
     SpeakAbilityConcept(iConcept: number): void;
     SpeakTrigger(): any;
+    /**
+     * Set this ability into a cooldown defined by the passed argument.
+     */
     StartCooldown(flCooldown: number): void;
+    /**
+     * Toggle the ability on or off.
+     */
     ToggleAbility(): void;
+    /**
+     * Toggle the auto cast of this ability on or off.
+     */
     ToggleAutoCast(): void;
+    /**
+     * Upgrade this ability to the next level.
+     */
     UpgradeAbility(bSupressSpeech: boolean): void;
+    /**
+     * Spend the resources of this ability (mana, gold, cooldown)
+     */
     UseResources(bMana: boolean, bGold: boolean, bCooldown: boolean): void;
 }
 
@@ -2026,6 +2281,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
     AlertNearbyUnits(hAttacker: CDOTA_BaseNPC, hAbility: CDOTABaseAbility): void;
     AngerNearbyUnits(): void;
     AttackNoEarlierThan(flTime: number): void;
+    /**
+     * Returns if the unit is ready to start attacking.
+     */
     AttackReady(): boolean;
     BoundingRadius2D(): number;
     /**
@@ -2117,6 +2375,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Retrieve an ability by index from the unit.
      */
     GetAbilityByIndex(ability_index: number): CDOTABaseAbility;
+    /**
+     * Get how many abilities this unit has.
+     */
     GetAbilityCount(): number;
     /**
      * Gets the range at which this unit will auto-acquire.
@@ -2130,7 +2391,13 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Returns this unit's aggro target.
      */
     GetAggroTarget(): CDOTA_BaseNPC;
+    /**
+     * Get the attack animation point of this unit.
+     */
     GetAttackAnimationPoint(): number;
+    /**
+     * Get the attack capability of this unit.
+     */
     GetAttackCapability(): DOTAUnitAttackCapability_t;
     /**
      * Returns a random integer between the minimum and maximum base damage of the unit.
@@ -2144,13 +2411,25 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Gets the attack range buffer.
      */
     GetAttackRangeBuffer(): number;
+    /**
+     * Get the attack speed of this unit.
+     */
     GetAttackSpeed(): number;
+    /**
+     * Get the attack target of this unit.
+     */
     GetAttackTarget(): CDOTA_BaseNPC;
+    /**
+     * Get a calculation of how many times this unit attacks per second.
+     */
     GetAttacksPerSecond(): number;
     /**
      * Returns the average value of the minimum and maximum damage values.
      */
     GetAverageTrueAttackDamage(hTarget: CDOTA_BaseNPC): number;
+    /**
+     * Get the unit's base attack time.
+     */
     GetBaseAttackTime(): number;
     /**
      * Get the maximum attack damage of this unit.
@@ -2164,15 +2443,21 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Returns the vision range before modifiers.
      */
     GetBaseDayTimeVisionRange(): number;
+    /**
+     * Get the unit's health regen before modifiers.
+     */
     GetBaseHealthRegen(): number;
     /**
-     * Returns base magical armor value.
+     * Returns base magic resistance value.
      */
     GetBaseMagicalResistanceValue(): number;
     /**
      * Gets the base max health value.
      */
     GetBaseMaxHealth(): number;
+    /**
+     * Get the move speed of this unit before modifiers.
+     */
     GetBaseMoveSpeed(): number;
     /**
      * Returns the vision range after modifiers.
@@ -2191,6 +2476,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Returns the size of the collision padding around the hull.
      */
     GetCollisionPadding(): number;
+    /**
+     * Get the dota game time in which this unit first respawned.
+     */
     GetCreationTime(): number;
     /**
      * Get the ability this unit is currently casting.
@@ -2199,7 +2487,7 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
     /**
      * Gets the current vision range.
      */
-    GetCurrentVisionRange(): number;
+    GetCurrentVisionRange(): number;    
     GetCursorCastTarget(): CDOTA_BaseNPC;
     GetCursorPosition(): Vec;
     GetCursorTargetingNothing(): boolean;
@@ -2211,6 +2499,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Get the XP bounty on this unit.
      */
     GetDeathXP(): number;
+    /**
+     * Get the target that the unit is forced to attack.
+     */
     GetForceAttackTarget(): CDOTA_BaseNPC;
     /**
      * Get the gold bounty on this unit.
@@ -2225,6 +2516,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Get the current health percent of the unit.
      */
     GetHealthPercent(): number;
+    /**
+     * Get the health regen of this unit (including modifiers).
+     */
     GetHealthRegen(): number;
     /**
      * Get the collision hull radius of this NPC.
@@ -2238,6 +2532,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Returns speed after all modifiers, but excluding those that reduce speed.
      */
     GetIdealSpeedNoSlows(): number;
+    /**
+     * Get how much attack speed bonus this unit gets from modifiers.
+     */
     GetIncreasedAttackSpeed(): number;
     /**
      * Returns the initial waypoint goal for this NPC.
@@ -2247,6 +2544,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Returns nth item in inventory slot (index is zero based).
      */
     GetItemInSlot(slot: number): CDOTA_Item;
+    /**
+     * Get the dota game time where this unit last attacked in.
+     */
     GetLastAttackTime(): number;
     /**
      * Get the last game time that this unit switched to/from idle state.
@@ -2272,6 +2572,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Get the percent of mana remaining.
      */
     GetManaPercent(): number;
+    /**
+     * Get the mana regen of this unit.
+     */
     GetManaRegen(): number;
     /**
      * Returns mana regen rate per intelligence.
@@ -2315,6 +2618,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Returns the vision range after modifiers.
      */
     GetNightTimeVisionRange(): number;
+    /**
+     * Get the number of the other team.
+     */
     GetOpposingTeamNumber(): DOTATeam_t;
     /**
      * Get the collision hull radius (including padding) of this NPC.
@@ -2336,14 +2642,29 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Get the owner player ID for this unit.
      */
     GetPlayerOwnerID(): PlayerID;
+    /**
+     * Get the projectile speed of this unit's attack projectiles.
+     */
     GetProjectileSpeed(): number;
+    /**
+     * Get the distance from this unit to the passed unit.
+     */
     GetRangeToUnit(hNPC: CDOTA_BaseNPC): number;
+    /**
+     * Get the name of the attack projectiles
+     */
     GetRangedProjectileName(): string;
+    /**
+     * Get how many seconds this unit spends for each attack.
+     */
     GetSecondsPerAttack(): number;
     /**
      * Get how much gold has been spent on ability upgrades.
      */
     GetTotalPurchasedUpgradeGoldCost(): number;
+    /**
+     * Get the label of this unit.
+     */
     GetUnitLabel(): string;
     /**
      * Get the name of this unit.
@@ -2358,9 +2679,21 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      */
     HasAbility(pszAbilityName: string): boolean;
     HasAnyActiveAbilities(): boolean;
+    /**
+     * Get whether this unit can attack.
+     */
     HasAttackCapability(): boolean;
+    /**
+     * Get whether this unit has a flying movement.
+     */
     HasFlyMovementCapability(): boolean;
+    /**
+     * Get whether this unit has flying vision.
+     */
     HasFlyingVision(): boolean;
+    /**
+     * Get whether this unit can move in land.
+     */
     HasGroundMovementCapability(): boolean;
     /**
      * Does this unit have an inventory.
@@ -2374,7 +2707,13 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Sees if this unit has a given modifier.
      */
     HasModifier(pszScriptName: string): boolean;
+    /**
+     * Get whether this unit can move at all.
+     */
     HasMovementCapability(): boolean;
+    /**
+     * Get whether this unit has an Aghnaim's Scepter (or anything else with the IS_SCEPTER property set to 1).
+     */
     HasScepter(): boolean;
     /**
      * Heal this unit.
@@ -2384,8 +2723,17 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Hold position.
      */
     Hold(): void;
+    /**
+     * Interrupt the unit.
+     */
     Interrupt(): void;
+    /**
+     * Interrupt the channel of this unit.
+     */
     InterruptChannel(): void;
+    /**
+     * Interrupt the motion controllers of this unit.
+     */
     InterruptMotionControllers(bFindClearSpace: boolean): void;
     /**
      * Is this unit alive?
@@ -2395,14 +2743,29 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Is this unit an Ancient?
      */
     IsAncient(): boolean;
+    /**
+     * Is this unit attack immune? (set via STATE_ATTACK_IMMUNE)
+     */
     IsAttackImmune(): boolean;
+    /**
+     * Is this unit attacking anything?
+     */
     IsAttacking(): boolean;
+    /**
+     * Is this unit attacking a passed unit?
+     */
     IsAttackingEntity(hEntity: CDOTA_BaseNPC): boolean;
     /**
      * Is this unit a Barracks?
      */
     IsBarracks(): boolean;
+    /**
+     * Is the unit blinded?
+     */
     IsBlind(): boolean;
+    /**
+     * Are the unit's blocks disabled?
+     */
     IsBlockDisabled(): boolean;
     /**
      * Is this unit a boss?
@@ -2420,6 +2783,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Is this unit a clone? (Meepo)
      */
     IsClone(): boolean;
+    /**
+     * Is this unit cannot issue commands? (Cannot Act)
+     */
     IsCommandRestricted(): boolean;
     /**
      * Is this unit a considered a hero for targeting purposes?
@@ -2441,45 +2807,93 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Is this unit a creep?
      */
     IsCreep(): boolean;
+    /**
+     * Is this unit can be denied?
+     */
     IsDeniable(): boolean;
+    /**
+     * Is this unit disarmed?
+     */
     IsDisarmed(): boolean;
+    /**
+     * Is this unit dominated?
+     */
     IsDominated(): boolean;
+    /**
+     * Is this unit's evasion disabled?
+     */
     IsEvadeDisabled(): boolean;
     /**
      * Is this unit an Ancient?
      */
     IsFort(): boolean;
+    /**
+     * Is this unit frozen? (animation freeze)
+     */
     IsFrozen(): boolean;
     /**
      * Is this a hero or hero illusion?
      */
     IsHero(): this is CDOTA_BaseNPC_Hero;
+    /**
+     * Is this unit hexed?
+     */
     IsHexed(): boolean;
     /**
      * Is this creature currently idle?
      */
     IsIdle(): boolean;
+    /**
+     * Is this unit an illusion?
+     */
     IsIllusion(): boolean;
+    /**
+     * Is this unit invisible?
+     */
     IsInvisible(): boolean;
+    /**
+     * Is this unit invulnerable?
+     */
     IsInvulnerable(): boolean;
+    /**
+     * Is this unit a low attack priority target?
+     */
     IsLowAttackPriority(): boolean;
+    /**
+     * Is thit unit spell immune?
+     */
     IsMagicImmune(): boolean;
+    /**
+     * Is this unit suffering from movement loss?
+     */
     IsMovementImpaired(): boolean;
     /**
      * Is this unit moving?
      */
     IsMoving(): boolean;
+    /**
+     * Is this unit muted?
+     */
     IsMuted(): boolean;
     /**
      * Is this a neutral?
      */
     IsNeutralUnitType(): boolean;
+    /**
+     * Is this unit nightmared?
+     */
     IsNightmared(): boolean;
+    /**
+     * Is this unit belonging to the opposing team?
+     */
     IsOpposingTeam(nTeam: DOTATeam_t): boolean;
     /**
      * Is this unit a ward-type unit?
      */
     IsOther(): boolean;
+    /**
+     * Is this unit out of the game/hidden?
+     */
     IsOutOfGame(): boolean;
     /**
      * Is this unit owned by any non-bot player?
@@ -2489,8 +2903,17 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Is this a phantom unit?
      */
     IsPhantom(): boolean;
+    /**
+     * Is this unit a phantom that also blocks movement aroudn it?
+     */
     IsPhantomBlocker(): boolean;
+    /**
+     * Is this unit has phased movement?
+     */
     IsPhased(): boolean;
+    /**
+     * Is this unit in range of this position?
+     */
     IsPositionInRange(vPosition: Vec, flRange: number): boolean;
     /**
      * Is this unit a ranged attacker?
@@ -2500,33 +2923,69 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Is this a real hero?
      */
     IsRealHero(): this is CDOTA_BaseNPC_Hero;
+    /**
+     * Is this unit rooted?
+     */
     IsRooted(): boolean;
     /**
      * Is this a shrine?
      */
     IsShrine(): this is CDOTA_BaseNPC_Building;
+    /**
+     * Is this unit silenced?
+     */
     IsSilenced(): boolean;
+    /**
+     * Is this unit specifically allowed to be denied? (with MODIFIER_STATE_SPECIALLY_DENIABLE set to enabled)
+     */
     IsSpeciallyDeniable(): boolean;
+    /**
+     * Is this unit stunned?
+     */
     IsStunned(): boolean;
     /**
      * Is this unit summoned?
      */
     IsSummoned(): boolean;
+    /**
+     * Is this unit a Tempest Double? (Arc Warden's ult)
+     */
     IsTempestDouble(): this is CDOTA_BaseNPC_Hero;
     /**
      * Is this a tower?
      */
     IsTower(): this is CDOTA_BaseNPC_Building;
+    /**
+     * Is this unit unable to miss?
+     */
     IsUnableToMiss(): boolean;
+    /**
+     * Is this unit unselectable?
+     */
     IsUnselectable(): boolean;
+    /**
+     * Is this unit untargetable?
+     */
     IsUntargetable(): boolean;
     /**
      * Kills this NPC, with the params Ability and Attacker.
      */
     Kill(hAbility?: CDOTABaseAbility, hAttacker?: CDOTA_BaseNPC): void;
+    /**
+     * Turn this unit into an illusion.
+     */
     MakeIllusion(): void;
+    /**
+     * Turn this unit into a phantom blocker.
+     */
     MakePhantomBlocker(): void;
+    /**
+     * Cause this unit to become visible when attacking a specific team.
+     */
     MakeVisibleDueToAttack(iTeam: DOTATeam_t): void;
+    /**
+     * Cause this unit to become visible to a specific team for a certain amount of time.
+     */
     MakeVisibleToTeam(iTeam: DOTATeam_t, flDuration: number): void;
     ManageModelChanges(): void;
     /**
@@ -2553,13 +3012,34 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Move to a target to attack.
      */
     MoveToTargetToAttack(hTarget: CDOTA_BaseNPC): void;
+    /**
+     * Is this unit has no health bar?
+     */
     NoHealthBar(): boolean;
+    /**
+     * Is this unit prevented from being moved by teammates?
+     */
     NoTeamMoveTo(): boolean;
+    /**
+     * Is this unit prevented from being selected by teammates?
+     */
     NoTeamSelect(): boolean;
+    /**
+     * Is this unit has no unit collision (has phased movement)
+     */
     NoUnitCollision(): boolean;
+    /**
+     * Is this unit hidden on the minimap?
+     */
     NotOnMinimap(): boolean;
+    /**
+     * Is this unit hidden on the minimap to enemies?
+     */
     NotOnMinimapForEnemies(): boolean;
     NotifyWearablesOfModelChange(bOriginalModel: boolean): void;
+    /**
+     * Is this unit has its passives disabled? (Break)
+     */
     PassivesDisabled(): boolean;
     /**
      * Issue a Patrol-To command.
@@ -2599,6 +3079,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Remove the given gesture activity.
      */
     RemoveGesture(nActivity: GameActivity_t): void;
+    /**
+     * Removes the horizontal motion controller from the modifier passed on this unit.
+     */
     RemoveHorizontalMotionController(hBuff: CDOTA_Buff): void;
     /**
      * Removes the passed item from this unit's inventory and deletes it.
@@ -2616,6 +3099,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Remove the no draw flag.
      */
     RemoveNoDraw(): void;
+    /**
+     * Removes the horizontal motion controller from the modifier passed on this unit.
+     */
     RemoveVerticalMotionController(hBuff: CDOTA_Buff): void;
     /**
      * Respawns the target unit if it can be respawned.
@@ -2629,6 +3115,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Set the ability by index.
      */
     SetAbilityByIndex(hAbility: CDOTABaseAbility, iIndex: number): void;
+    /**
+     * Sets the range of this unit
+     */
     SetAcquisitionRange(nRange: number): void;
     /**
      * Combat involving this creature will have this weight added to the music calcuations.
@@ -2638,8 +3127,14 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Set this unit's aggro target to a specified unit.
      */
     SetAggroTarget(hAggroTarget: CDOTA_BaseNPC): void;
+    /**
+     * Set the attack capability of this unit (melee, ranged, none)
+     */
     SetAttackCapability(iAttackCapabilities: DOTAUnitAttackCapability_t): void;
     SetAttacking(hAttackTarget: CDOTA_BaseNPC): void;
+    /**
+     * Set the base attack time of this unit.
+     */
     SetBaseAttackTime(flBaseAttackTime: number): void;
     /**
      * Sets the maximum base damage.
@@ -2649,16 +3144,25 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Sets the minimum base damage.
      */
     SetBaseDamageMin(nMin: number): void;
+    /**
+     * Set the base health regen of this unit.
+     */
     SetBaseHealthRegen(flHealthRegen: number): void;
     /**
      * Sets base magical armor value.
      */
     SetBaseMagicalResistanceValue(flMagicalResistanceValue: number): void;
+    /**
+     * Sets the base mana regen of this unit.
+     */
     SetBaseManaRegen(flManaRegen: number): void;
     /**
      * Set a new base max health value.
      */
     SetBaseMaxHealth(flBaseMaxHealth: number): void;
+    /**
+     * Sets the base move speed of this unit.
+     */
     SetBaseMoveSpeed(iMoveSpeed: number): void;
     /**
      * Set whether or not this unit is allowed to sell items (bCanSellItems)
@@ -2668,9 +3172,21 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Set this unit controllable by the player with the passed ID.
      */
     SetControllableByPlayer(iIndex: number, bSkipAdjustingPosition: boolean): void;
+    /**
+     * Sets this unit's cursor on a specific target.
+     */
     SetCursorCastTarget(hEntity: CDOTA_BaseNPC): void;
+    /**
+     * Sets this unit's cursor on a specific position.
+     */
     SetCursorPosition(vLocation: Vec): void;
+    /**
+     * Set whether this unit's cursor is targeting anything.
+     */
     SetCursorTargetingNothing(bTargetingNothing: boolean): void;
+    /**
+     * Adds a custom label that shows a small text, colored by the RGB arguments passed.
+     */
     SetCustomHealthLabel(pLabel: string, r: number, g: number, b: number): void;
     /**
      * Set the base vision range.
@@ -2680,7 +3196,13 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Set the XP bounty on this unit.
      */
     SetDeathXP(iXPBounty: number): void;
+    /**
+     * Forces the unit to attack this target.
+     */
     SetForceAttackTarget(hNPC: CDOTA_BaseNPC): void;
+    /**
+     * Forces this unit to attack an allied target.
+     */
     SetForceAttackTargetAlly(hNPC: CDOTA_BaseNPC): void;
     /**
      * Set if this unit has an inventory.
@@ -2690,6 +3212,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Set the collision hull radius of this NPC.
      */
     SetHullRadius(flHullRadius: number): void;
+    /**
+     * Set whether this unit will 
+     */
     SetIdleAcquire(bIdleAcquire: boolean): void;
     /**
      * Sets the initial waypoint goal for this NPC.
@@ -2711,6 +3236,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Sets the stack count of a given modifier.
      */
     SetModifierStackCount(pszScriptName: string, hCaster: CDOTA_BaseNPC, nStackCount: number): void;
+    /**
+     * Sets the movement capabilities of this unit. (ground, flying, none)
+     */
     SetMoveCapability(iMoveCapabilities: DOTAUnitMoveCapability_t): void;
     /**
      * Set whether this NPC is required to reach each goal entity, rather than being allowed to unkink their path.
@@ -2736,6 +3264,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Sets base physical armor value.
      */
     SetPhysicalArmorBaseValue(flPhysicalArmorValue: number): void;
+    /**
+     * Sets the projectiles this unit fires when attacking from a ranged distance.
+     */
     SetRangedProjectileName(pProjectileName: string): void;
     /**
      * sets the client side map reveal radius for this unit
@@ -2761,6 +3292,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Stop the current order.
      */
     Stop(): void;
+    /**
+     * Stop turning towards a point.
+     */
     StopFacing(): void;
     /**
      * Swaps the slots of the two passed abilities and sets them enabled/disabled.
@@ -2774,8 +3308,14 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Removed the passed item from this unit's inventory.
      */
     TakeItem(hItem: CDOTA_Item): CDOTA_Item;
+    /**
+     * Get how much time until this unit can attack again.
+     */
     TimeUntilNextAttack(): number;
     TriggerModifierDodge(): boolean;
+    /**
+     * Trigger Linken's Sphere's effect.
+     */
     TriggerSpellAbsorb(hAbility: CDOTABaseAbility): boolean;
     /**
      * Trigger the Lotus Orb-like effect.(hAbility)
@@ -2785,6 +3325,9 @@ declare abstract class CDOTA_BaseNPC extends CBaseFlex {
      * Makes the first ability unhidden, and puts it where second ability currently is. Will do nothing if the first ability is already unhidden and in a valid slot.
      */
     UnHideAbilityToSlot(pszAbilityName: string, pszReplacedAbilityName: string): void;
+    /**
+     * Set whether or not this unit can respawn.
+     */
     UnitCanRespawn(): boolean;
 }
 /**
@@ -2910,13 +3453,22 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      */
     GetAbilityPoints(): number;
     GetAdditionalOwnedUnits(): CDOTA_BaseNPC[];
+    /**
+     * Get the agility of this hero.
+     */
     GetAgility(): number;
+    /**
+     * Get the current agility this hero gains per level.
+     */
     GetAgilityGain(): number;
     /**
      * Value is stored in PlayerResource.
      */
-    GetAssists(): number;
+    GetAssists(): number;    
     GetAttacker(nIndex: number): number;
+    /**
+     * Get the base agility of this hero.
+     */
     GetBaseAgility(): number;
     /**
      * Hero damage is also affected by attributes.
@@ -2926,12 +3478,21 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Hero damage is also affected by attributes.
      */
     GetBaseDamageMin(): number;
+    /**
+     * Get the base intelligence of this hero.
+     */
     GetBaseIntellect(): number;
     /**
      * Returns the base mana regen.
      */
     GetBaseManaRegen(): number;
+    /**
+     * Get the base strength of this hero.
+     */
     GetBaseStrength(): number;
+    /**
+     * Get the bonus damage this hero gains from its primary stat.
+     */
     GetBonusDamageFromPrimaryStat(): number;
     /**
      * Return float value for the amount of time left on cooldown for this hero's buyback.
@@ -2962,12 +3523,21 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Returns gold amount for the player owning this hero
      */
     GetGold(): number;
+    /**
+     * Get the amount of gold gained by killing this hero.
+     */
     GetGoldBounty(): number;
     /**
      * Hero attack speed is also affected by agility.
      */
     GetIncreasedAttackSpeed(): number;
+    /**
+     * Get the current intelligence.
+     */
     GetIntellect(): number;
+    /**
+     * Get the intelligence this hero gains per level.
+     */
     GetIntellectGain(): number;
     /**
      * Value is stored in PlayerResource.
@@ -2981,10 +3551,22 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Returns the intelligenced based mana regen multiplier.
      */
     GetManaRegenMultiplier(): number;
+    /**
+     * Gets the dota game time of the last time this hero got damaged.
+     */
     GetMostRecentDamageTime(): number;
+    /**
+     * Get how many times this hero scored a multi kill.
+     */
     GetMultipleKillCount(): number;
     GetNumAttackers(): number;
+    /**
+     * Get how many items this hero has in inventory.
+     */
     GetNumItemsInInventory(): number;
+    /**
+     * Get how many items this hero has in stash.
+     */
     GetNumItemsInStash(): number;
     /**
      * Hero armor is affected by attributes.
@@ -2995,10 +3577,16 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      */
     GetPlayerID(): PlayerID;
     /**
-     * 0 = strength, 1 = agility, 2 = intelligence.
+     * Get the primary attribute of this hero. 0 = strength, 1 = agility, 2 = intelligence.
      */
     GetPrimaryAttribute(): Attributes;
+    /**
+     * Get how many stat points this hero has in his Primary Stat.
+     */
     GetPrimaryStatValue(): number;
+    /**
+     * Get the respawn time of this hero.
+     */
     GetRespawnTime(): number;
     /**
      * Is this hero prevented from respawning?
@@ -3008,15 +3596,33 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Value is stored in PlayerResource.
      */
     GetStreak(): number;
+    /**
+     * Get the current strength of this hero.
+     */
     GetStrength(): number;
+    /**
+     * Get the strength this hero gains per level up.
+     */
     GetStrengthGain(): number;
+    /**
+     * Get how many seconds until this hero respawns.
+     */
     GetTimeUntilRespawn(): number;
     /**
      * Get wearable entity in slot (slot)
      */
     GetTogglableWearable(nSlotType: number): CBaseEntity;
+    /**
+     * Returns whether this hero has available inventory space.
+     */
     HasAnyAvailableInventorySpace(): boolean;
+    /**
+     * Returns whether this hero has flying vision.
+     */
     HasFlyingVision(): boolean;
+    /**
+     * Returns whether this hero's player abandoned the game.
+     */
     HasOwnerAbandoned(): boolean;
     /**
      * Args: const char* pItemName, bool bIncludeStashCombines, bool bAllowSelling
@@ -3062,8 +3668,17 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Value is stored in PlayerResource.
      */
     IncrementStreak(): void;
+    /**
+     * Returns whether this hero's buyback is disabled by Reaper's Scythe.
+     */
     IsBuybackDisabledByReapersScythe(): boolean;
+    /**
+     * Returns whether this hero is in the process of reincarnation.
+     */
     IsReincarnating(): boolean;
+    /**
+     * Returns whether this hero's stash can be used.
+     */
     IsStashEnabled(): boolean;
     /**
      * Args: Hero, Inflictor
@@ -3085,6 +3700,9 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Adds passed value to base attribute value, then calls CalculateStatBonus.
      */
     ModifyStrength(flNewStrength: number): void;
+    /**
+     * Causes the hero to perform the equipped taunt.
+     */
     PerformTaunt(): void;
     RecordLastHit(): void;
     /**
@@ -3095,10 +3713,25 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Sets the current unspent ability points.
      */
     SetAbilityPoints(iPoints: number): void;
+    /**
+     * Sets the base agility of this hero.
+     */
     SetBaseAgility(flAgility: number): void;
+    /**
+     * Sets the base intelligence of this hero.
+     */
     SetBaseIntellect(flIntellect: number): void;
+    /**
+     * Sets the base strength of this hero.
+     */
     SetBaseStrength(flStrength: number): void;
+    /**
+     * Sets the difficulty level of this hero when played by a bot.
+     */
     SetBotDifficulty(nDifficulty: number): void;
+    /**
+     * Set if the buyback is disabled for this hero due to Reaper's Scythe.
+     */
     SetBuyBackDisabledByReapersScythe(bBuybackDisabled: boolean): void;
     /**
      * Sets the buyback cooldown time.
@@ -3116,28 +3749,46 @@ interface CDOTA_BaseNPC_Hero extends CDOTA_BaseNPC {
      * Sets the gold amount for the player owning this hero
      */
     SetGold(iGold: number, bReliable: boolean): void;
+    /**
+     * Set the player's ID.
+     */
     SetPlayerID(iPlayerID: number): void;
     /**
      * Set this hero's primary attribute value.
      */
     SetPrimaryAttribute(nPrimaryAttribute: Attributes): void;
+    /**
+     * Set the respawn position of this hero.
+     */
     SetRespawnPosition(vOrigin: Vec): void;
     /**
      * Prevent this hero from respawning.
      */
     SetRespawnsDisabled(bDisableRespawns: boolean): void;
+    /**
+     * Set whether this hero can used the stash.
+     */
     SetStashEnabled(bEnabled: boolean): void;
+    /**
+     * Set how many seconds this hero needs to wait before respawning.
+     */
     SetTimeUntilRespawn(time: number): void;
     ShouldDoFlyHeightVisual(): boolean;
     /**
      * Args: int nGold, int nReason
      */
     SpendGold(iCost: number, iReason: EDOTA_ModifyGold_Reason): void;
+    /**
+     * Set whether this hero can respawn.
+     */
     UnitCanRespawn(): boolean;
     /**
      * This upgrades the passed ability if it exists and the hero has enough ability points.
      */
     UpgradeAbility(hAbility: CDOTABaseAbility): void;
+    /**
+     * Returns whether this hero will reincarnate when killed.
+     */
     WillReincarnate(): boolean;
 }
 /**
