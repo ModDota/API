@@ -15,6 +15,7 @@ declare enum Effects {
     EF_NOINTERP = 8,
     EF_NOSHADOW = 16,
     EF_NODRAW = 32,
+    EF_NORECEIVESHADOW = 64,
     EF_BONEMERGE_FASTCULL = 128,
     EF_ITEM_BLINK = 256,
     EF_PARENT_ANIMATES = 512,
