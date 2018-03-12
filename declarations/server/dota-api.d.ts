@@ -1107,7 +1107,7 @@ interface ExecuteOrderEvent {
     entindex_ability: EntityID;
     sequence_number_const: number;
     queue: boolean;
-    units: {[index: string]: CDOTA_BaseNPC};
+    units: {[index: string]: EntityID};
     entindex_target: EntityID;
     position_x: number;
     position_y: number;
