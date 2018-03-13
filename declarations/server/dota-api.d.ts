@@ -5136,12 +5136,12 @@ declare function CreateTriggerRadiusApproximate(arg1: Vec, arg2: number): CBaseT
 /**
  * Creates a DOTA unit by its dota_npc_units.txt name
  */
-declare function CreateUnitByName(unit_name: string, location: Vec, find_clear_space: boolean, npc_owner: CBaseEntity | null | undefined, unit_owner: CDOTAPlayer | null | undefined,
+declare function CreateUnitByName(unit_name: string, location: Vec, find_clear_space: boolean, npc_owner: CBaseEntity | null | undefined, unit_owner: CBaseEntity | null | undefined,
                                   team_number: DOTATeam_t): CDOTA_BaseNPC;
 /**
  * Creates a DOTA unit by its dota_npc_units.txt name
  */
-declare function CreateUnitByNameAsync(unitName: string, location: Vec, findClearSpace: boolean, npcOwner: CDOTA_BaseNPC | null | undefined, playerOwner: CDOTAPlayer | null | undefined,
+declare function CreateUnitByNameAsync(unitName: string, location: Vec, findClearSpace: boolean, npcOwner: CBaseEntity | null | undefined, unit_owner: CBaseEntity | null | undefined,
                                        team: DOTATeam_t, callback: (unit: CDOTA_BaseNPC) => void): number;
 /**
  * Creates a DOTA unit by its dota_npc_units.txt name from a table of entity key values and a position to spawn at.
