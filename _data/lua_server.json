@@ -6464,6 +6464,12 @@
             },
             "GetBuybackCost": {
                 "args": [],
+                "arg_names": [
+                    "bReturnOldValues"
+                ],
+                "args": [
+                    "bool"
+                ],
                 "description": "Return integer value for the gold cost of a buyback.",
                 "return": "int"
             },
