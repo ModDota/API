@@ -1004,6 +1004,17 @@ interface VCSSStyleDeclaration {
      * position: 3% 20px 0px;
      */
     z: string | null;
+    
+    /**
+     * Sets the z-index for a panel, panels will be sorted and painted in order within a parent panel.
+     * The sorting first sorts by the z-pos computed from position and transforms, then if panels have matching zpos zindex is used. z-index is different than z-pos in that it doesn't affect rendering perspective, just paint/hit-test ordering.
+     * The default z-index value is 0, and any floating point value is accepted.
+     *
+     * Example:
+     * z-index: 1;
+     */
+    
+    zIndex: number | null;
 }
 
 interface LabelPanel extends Panel {
@@ -1016,7 +1027,8 @@ declare const enum PanelEvent {
     ON_RIGHT_CLICK = "oncontextmenu",
     ON_MOUSE_OVER = "onmouseover",
     ON_MOUSE_OUT = "onmouseout",
-    ON_ESCAPE_PRESS = "oncancel"
+    ON_ESCAPE_PRESS = "oncancel",
+    ON_INPUT_SUBMIT = "oninputsubmit"
 }
 
 declare const enum ScalingFunction {
