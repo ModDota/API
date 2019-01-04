@@ -61,8 +61,18 @@ declare const enum MouseButton {
     MIDDLE = 2
 }
 
-type MouseButtonEvent =
-    "pressed" | "doublepressed";
+declare const enum WheelScroll {
+    UP = 1,
+    DOWN = -1
+}
+
+interface MouseEntity {
+    entityIndex: entityID;
+    accurateCollision: boolean;
+}
+
+type MouseEvent =
+    "pressed" | "doublepressed" | "released" | "wheeled";
 
 interface CDOTA_PanoramaScript_GameUI {
     /**
@@ -83,7 +93,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Install a mouse input filter
      */
-    SetMouseCallback(callbackFn: (event: MouseButtonEvent, button: MouseButton) => void): void;
+    SetMouseCallback(callbackFn: (event: MouseEvent, value: MouseButton | WheelScroll) => boolean): void;
 
     /**
      *
@@ -98,7 +108,7 @@ interface CDOTA_PanoramaScript_GameUI {
     /**
      * Return the entity index of the entity under the given screen position.
      */
-    FindScreenEntities(screenPos: [number, number]): entityID[];
+    FindScreenEntities(screenPos: [number, number]): MouseEntity[];
 
     /**
      * Get the world position of the screen position, or null if the cursor is out of the world.
@@ -359,12 +369,12 @@ interface CScriptBindingPR_Players {
     /**
      * Get the entity index of the hero controlled by this player.
      */
-    GetPlayerHeroEntityIndex(iPlayerID: number): number;
+    GetPlayerHeroEntityIndex(iPlayerID: number): entityID;
 
     /**
      * Get the entities this player has selected.
      */
-    GetSelectedEntities(iPlayerID: number): number[];
+    GetSelectedEntities(iPlayerID: number): entityID[];
 
     /**
      * Get the entities this player is querying.
