@@ -2255,6 +2255,10 @@ declare abstract class CDOTA_Ability_Lua extends CDOTABaseAbility {
  */
 declare abstract class CDOTA_BaseNPC extends CBaseFlex {
     /**
+     * Check if object exists in c++
+     */
+    IsNull(): boolean;
+    /**
      * Add an ability to this unit by name.
      */
     AddAbility(ability_name: string): CDOTABaseAbility;
