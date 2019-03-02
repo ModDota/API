@@ -1,3 +1,7 @@
 panorama/.vscode/
 Thumbs.db
 .idea/
+
+_site/
+.sass-cache/
+Gemfile.lock

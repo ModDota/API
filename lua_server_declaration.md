@@ -6,9 +6,6 @@ permalink: /lua_server/declaration
 {%- assign override = site.data.override_lua_server %}
 {%- for server_class in site.data.lua_server %}
     {%- if server_class[0] != "Global" %}
-/**
- * {{server_class[1].description}}
- */
 interface {{ server_class[0] }}{% if server_class[1] contains "extends" %} extends {{server_class[1].extends}}{% endif %} {
     {%- endif %}
     {% for function in server_class[1].functions %}
@@ -134,6 +131,9 @@ interface {{ server_class[0] }}{% if server_class[1] contains "extends" %} exten
         {%- endif %}) : {{return_type}};
     {% endfor %}
 }
+    {%- if server_class[1] contains "instance" %}
+declare var {{ server_class[1].instance }} : {{ server_class[0] }};
+    {%- endif %}
 {% endfor %}
 
 /**
@@ -156,22 +156,4 @@ interface CDOTA_Modifier_Lua extends CDOTA_Buff {
     {%- endif %}
 {%- endfor %}
 }
-
-declare var ParticleManager : CScriptParticleManager;
-
-declare var HeroList : HeroList;
-
-declare var GameRules : CDOTAGamerules;
-
-declare var PlayerResource : CDOTA_PlayerResource;
-
-declare var Entities : CEntities;
-
-declare var ConVars : Convars;
-
-declare var CustomGameEventManager : CCustomGameEventManager;
-
-declare var CustomNetTables : CCustomNetTableManager;
-
-declare var Tutorial : CDOTATutorial;
 ```

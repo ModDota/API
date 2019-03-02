@@ -1325,7 +1325,8 @@
                 "description": "( int ListnerID ) - Unregister a specific listener",
                 "return": "void"
             }
-        }
+        },
+        "instance": "CustomGameEventManager"
     },
     "CCustomNetTableManager": {
         "functions": {
@@ -1346,7 +1347,8 @@
                 "description": "( string TableName, string KeyName, script_table Value )",
                 "return": "bool"
             }
-        }
+        },
+        "instance": "CustomNetTables"
     },
     "CDOTABaseAbility": {
         "extends": "CBaseEntity",
@@ -2933,7 +2935,8 @@
                 "description": "Get the hero unit name given the hero ID.",
                 "return": "cstring"
             }
-        }
+        },
+        "instance": "DOTAGameManager"
     },
     "CDOTAGamerules": {
         "functions": {
@@ -3502,7 +3505,8 @@
                 "description": "Get the current Gamerules state",
                 "return": "int"
             }
-        }
+        },
+        "instance": "GameRules"
     },
     "CDOTAPlayer": {
         "extends": "CBaseAnimating",
@@ -3733,7 +3737,8 @@
                 "description": "Upgrade a specific ability for the local hero",
                 "return": "void"
             }
-        }
+        },
+        "instance": "Tutorial"
     },
     "CDOTAVoteSystem": {
         "functions": {
@@ -3744,7 +3749,8 @@
                 "description": "Starts a vote, based upon a table of parameters",
                 "return": "void"
             }
-        }
+        },
+        "instance": "VoteSystem"
     },
     "CDOTA_Ability_Animation_Attack": {
         "extends": "CDOTABaseAbility",
@@ -6486,7 +6492,8 @@
                 "description": "Set the XP gained per level on this creature.",
                 "return": "void"
             }
-        }
+        },
+        "instance": "spawnedUnit"
     },
     "CDOTA_BaseNPC_Hero": {
         "extends": "CDOTA_BaseNPC",
@@ -7344,7 +7351,8 @@
                 "description": "Toggle the visibility of an existing custom hud element ( int PlayerID /*-1 means everyone*/, string ElementID, bool Visible )",
                 "return": "void"
             }
-        }
+        },
+        "instance": "CustomUI"
     },
     "CDOTA_Item": {
         "extends": "CDOTABaseAbility",
@@ -9658,7 +9666,8 @@
                 ],
                 "return": "int"
             }
-        }
+        },
+        "instance": "PlayerResource"
     },
     "CDOTA_ShopTrigger": {
         "extends": "CBaseTrigger",
@@ -10178,7 +10187,8 @@
                 "description": "Draws a arrow associated with a specific yaw. Specify endpoints in world space.",
                 "return": "void"
             }
-        }
+        },
+        "instance": "debugoverlay"
     },
     "CDotaQuest": {
         "extends": "CBaseEntity",
@@ -10453,7 +10463,8 @@
                 "description": "Continue an iteration over the list of entities, providing reference to a previously found entity",
                 "return": "handle"
             }
-        }
+        },
+        "instance": "Entities"
     },
     "CEntityInstance": {
         "functions": {
@@ -10575,7 +10586,8 @@
         }
     },
     "CEntityScriptFramework": {
-        "functions": {}
+        "functions": {},
+        "instance": "NativeFunctions"
     },
     "CEnvEntityMaker": {
         "extends": "CBaseEntity",
@@ -11192,7 +11204,8 @@
                 "description": "Returns the number of heroes in the world",
                 "return": "int"
             }
-        }
+        },
+        "instance": "HeroList"
     },
     "CScriptKeyValues": {
         "functions": {
@@ -11343,7 +11356,8 @@
                 "description": "int nfxindex, bool bCheckFoW",
                 "return": "bool"
             }
-        }
+        },
+        "instance": "ParticleManager"
     },
     "CScriptPrecacheContext": {
         "functions": {
@@ -11693,7 +11707,8 @@
                 "description": "SetStr(name, val) : sets the value of the convar to the string.",
                 "return": "void"
             }
-        }
+        },
+        "instance": "Convars"
     },
     "Global": {
         "functions": {
@@ -13380,7 +13395,8 @@
                 "description": "CommandLineStr(name) : returns the command line param as a string.",
                 "return": "variant"
             }
-        }
+        },
+        "instance": "GlobalSys"
     },
     "GridNav": {
         "functions": {
@@ -13474,7 +13490,8 @@
                 "description": "Get the Y index of a given world Y position",
                 "return": "int"
             }
-        }
+        },
+        "instance": "GridNav"
     },
     "ProjectileManager": {
         "functions": {
@@ -13544,7 +13561,8 @@
                 "description": "Update velocity",
                 "return": "void"
             }
-        }
+        },
+        "instance": "ProjectileManager"
     },
     "SteamInfo": {
         "functions": {
@@ -13553,6 +13571,7 @@
                 "description": "Is the script connected to the public Steam universe",
                 "return": "bool"
             }
-        }
+        },
+        "instance": "SteamInfo"
     }
 }

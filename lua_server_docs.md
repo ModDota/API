@@ -7,9 +7,12 @@ permalink: /lua_server/docs
 {% for server_class in site.data.lua_server %}
     {% if server_class[0] != "Global" %}
 --- @class {{ server_class[0] }} {% if server_class[1] contains "extends" %} : {{server_class[1].extends}}{% endif %}
---- {{server_class[1].description}}
 {{ server_class[0] }} = {}
     {% endif %}
+    {%- if server_class[1] contains "instance" %}
+--- @type {{ server_class[0] }}
+{{ server_class[1].instance }} = {}
+    {%- endif %}
     {% for function in server_class[1].functions %}
         {%- assign function_override = nil %}
         {%- if override contains server_class[0] %}
@@ -153,31 +156,4 @@ end
         {%- endfor %}
     {%- endif %}
 {%- endfor %}
-
---- @type CScriptParticleManager
-ParticleManager = {}
-
---- @type CScriptHeroList
-HeroList = {}
-
---- @type CDOTAGamerules
-GameRules = {}
-
---- @type CDOTA_PlayerResource
-PlayerResource = {}
-
---- @type CEntities
-Entities = {}
-
---- @type Convars
-ConVars = {}
-
---- @type CCustomGameEventManager
-CustomGameEventManager = {}
-
---- @type CCustomNetTableManager
-CustomNetTables = {}
-
---- @type CDOTATutorial
-Tutorial = {}
 ```
