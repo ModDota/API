@@ -1,0 +1,261 @@
+{
+    "AddStyle": {
+        "description": "Add a CSS class to a panel.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "class",
+                "type": "string"
+            }
+        ]
+    },
+    "AddStyleAfterDelay": {
+        "description": "Add a CSS class to a panel after a specified delay. ",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "class",
+                "type": "string"
+            },
+            {
+                "name": "pre-delay",
+                "type": "float"
+            }
+        ]
+    },
+    "AddStyleToEachChild": {
+        "description": "Add a CSS class to all children of this panel.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "class",
+                "type": "string"
+            }
+        ]
+    },
+    "AddTimedStyle": {
+        "description": "Add a class for a specified duration, with optional pre-delay; clears existing timers when called with same class. ",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "class",
+                "type": "string"
+            },
+            {
+                "name": "duration",
+                "type": "float"
+            },
+            {
+                "name": "pre-delay",
+                "type": "float"
+            }
+        ]
+    },
+    "AsyncEvent": {
+        "description": "Fire another event after a delay (in seconds).",
+        "panelEvent": false,
+        "args": [
+            {
+                "name": "delay",
+                "type": "float"
+            },
+            {
+                "name": "eventToFire",
+                "type": "event"
+            }
+        ]
+    },
+    "DOTAHideAbilityTooltip": {
+        "description": "Hide the ability tooltip",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideBuffTooltip": {
+        "description": "Hide the buff tooltip",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideDroppedItemTooltip": {
+        "description": "Hide the dropped item tooltip",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideEconItemTooltip": {
+        "description": "Hide the econ item tooltip.",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideProfileCardBattleCupTooltip": {
+        "description": "Hide the profile card / battle cup tooltip.",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideProfileCardTooltip": {
+        "description": "Hide the profile card tooltip.",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideRankTierTooltip": {
+        "description": "Hide the rank tier tooltip.",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideRuneTooltip": {
+        "description": "Hide the rune tooltip",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideTextTooltip": {
+        "description": "Hide the text tooltip",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideTitleImageTextTooltip": {
+        "description": "Hide the title image text tooltip.",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAHideTitleTextTooltip": {
+        "description": "Hide the title text tooltip.",
+        "panelEvent": true,
+        "args": []
+    },
+    "DOTAShowAbilityInventoryItemTooltip": {
+        "description": "Show tooltip for an item in the entityIndex NPC's inventory.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "entityIndex",
+                "type": "int32"
+            },
+            {
+                "name": "inventorySlot",
+                "type": "int32"
+            }
+        ]
+    },
+    "DOTAShowAbilityShopItemTooltip": {
+        "description": "Show tooltip for an item in the entityIndex NPC's shop.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "abilityName",
+                "type": "string"
+            },
+            {
+                "name": "guideName",
+                "type": "string"
+            },
+            {
+                "name": "entityIndex",
+                "type": "int32"
+            }
+        ]
+    },
+    "DOTAShowAbilityTooltip": {
+        "description": "Show an ability tooltip.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "abilityName",
+                "type": "string"
+            }
+        ]
+    },
+    "DOTAShowAbilityTooltipForEntityIndex": {
+        "description": "Show an ability tooltip. Level information comes from the entity specified by the entityIndex.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "abilityName",
+                "type": "string"
+            },
+            {
+                "name": "entityIndex",
+                "type": "int32"
+            }
+        ]
+    },
+    "DOTAShowAbilityTooltipForGuide": {
+        "description": "Show an ability tooltip annotated with a particular guide's info.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "abilityName",
+                "type": "string"
+            },
+            {
+                "name": "guideName",
+                "type": "string"
+            }
+        ]
+    },
+    "DOTAShowAbilityTooltipForHero": {
+        "description": "Show an ability tooltip for the specified hero.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "abilityName",
+                "type": "string"
+            },
+            {
+                "name": "heroid",
+                "type": "int32"
+            },
+            {
+                "name": "bool",
+                "type": "boo"
+            }
+        ]
+    },
+    "DOTAShowAbilityTooltipForLevel": {
+        "description": "Show an ability tooltip for a specific level.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "abilityName",
+                "type": "string"
+            },
+            {
+                "name": "int32",
+                "type": "int3"
+            }
+        ]
+    },
+    "DOTAShowBuffTooltip": {
+        "description": "Show a buff tooltip for the specified entityIndex + buff serial.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "entityIndex",
+                "type": "int32"
+            },
+            {
+                "name": "buffSerial",
+                "type": "int32"
+            },
+            {
+                "name": "bOnEnemy",
+                "type": "bool"
+            }
+        ]
+    },
+    "DOTAShowEconItemTooltip": {
+        "description": "Show the econ item tooltip for a given item, style, and hero. Use 0 for the default style, and -1 for the default hero.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "itemDef",
+                "type": "class item_definition_index_t"
+            },
+            {
+                "name": "styleIndex",
+                "type": "class style_index_t"
+            },
+            {
+                "name": "heroID",
+                "type": "int32"
+            }
+        ]
+    }
+}
