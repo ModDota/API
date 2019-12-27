@@ -1,0 +1,3429 @@
+{
+    "CBodyComponent": {
+        "functions": {
+            "AddImpulseAtPosition": {
+                "args": [
+                    "vector",
+                    "vector"
+                ],
+                "description": "Apply an impulse at a worldspace position to the physics",
+                "return": "void"
+            },
+            "AddVelocity": {
+                "args": [
+                    "vector",
+                    "vector"
+                ],
+                "description": "Add linear and angular velocity to the physics object",
+                "return": "void"
+            },
+            "DetachFromParent": {
+                "args": [],
+                "description": "Detach from its parent",
+                "return": "void"
+            },
+            "GetSequence": {
+                "args": [],
+                "description": "Returns the active sequence\n",
+                "return": "<unknown>"
+            },
+            "IsAttachedToParent": {
+                "args": [],
+                "description": "Is attached to parent",
+                "return": "bool"
+            },
+            "LookupSequence": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Returns a sequence id given a name\n",
+                "return": "<unknown>"
+            },
+            "SequenceDuration": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Returns the duration in seconds of the specified sequence",
+                "return": "float"
+            },
+            "SetAngularVelocity": {
+                "args": [
+                    "vector"
+                ],
+                "return": "void"
+            },
+            "SetAnimation": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Pass string for the animation to play on this model",
+                "return": "void"
+            },
+            "SetMaterialGroup": {
+                "args": [
+                    "utlstringtoken"
+                ],
+                "return": "void"
+            },
+            "SetVelocity": {
+                "args": [
+                    "vector"
+                ],
+                "return": "void"
+            }
+        }
+    },
+    "CCustomNetTableManager": {
+        "functions": {
+            "GetTableValue": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "( string TableName, string KeyName )",
+                "return": "table"
+            }
+        },
+        "instance": "CustomNetTables"
+    },
+    "CDOTAGameManager": {
+        "functions": {
+            "GetHeroDataByName_Script": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the hero unit ",
+                "return": "table"
+            },
+            "GetHeroIDByName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the hero ID given the hero name.",
+                "return": "int"
+            },
+            "GetHeroNameByID": {
+                "args": [
+                    "int"
+                ],
+                "description": "Get the hero name given a hero ID.",
+                "return": "cstring"
+            },
+            "GetHeroNameForUnitName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the hero name given a unit name.",
+                "return": "cstring"
+            },
+            "GetHeroUnitNameByID": {
+                "args": [
+                    "int"
+                ],
+                "description": "Get the hero unit name given the hero ID.",
+                "return": "cstring"
+            }
+        },
+        "instance": "DOTAGameManager"
+    },
+    "CDOTAGamerules": {
+        "functions": {
+            "GetCustomGameDifficulty": {
+                "args": [],
+                "description": "Returns the difficulty level of the custom game mode",
+                "return": "int"
+            },
+            "GetDOTATime": {
+                "args": [
+                    "bool",
+                    "bool"
+                ],
+                "description": "(b IncludePregameTime b IncludeNegativeTime) Returns the actual DOTA in-game clock time.",
+                "return": "float"
+            },
+            "GetDifficulty": {
+                "args": [],
+                "description": "Returns difficulty level of the custom game mode",
+                "return": "int"
+            },
+            "GetGameFrameTime": {
+                "args": [],
+                "description": "Returns the number of seconds elapsed since the last frame was renderered. This time doesn't count up when the game is paused",
+                "return": "float"
+            },
+            "GetGameTime": {
+                "args": [],
+                "description": "Returns the number of seconds elapsed since map start. This time doesn't count up when the game is paused",
+                "return": "float"
+            },
+            "GetWeatherWindDirection": {
+                "args": [],
+                "description": "Get Weather Wind Direction Vector",
+                "return": "vector"
+            },
+            "IsCheatMode": {
+                "args": [],
+                "description": "Are cheats enabled on the server",
+                "return": "bool"
+            },
+            "State_Get": {
+                "args": [],
+                "description": "Get the current Gamerules state",
+                "return": "int"
+            }
+        },
+        "instance": "GameRules"
+    },
+    "CDOTA_Buff": {
+        "functions": {
+            "AddParticle": {
+                "arg_names": [
+                    "i",
+                    "bDestroyImmediately",
+                    "bStatusEffect",
+                    "iPriority",
+                    "bHeroEffect",
+                    "bOverheadEffect"
+                ],
+                "args": [
+                    "int",
+                    "bool",
+                    "bool",
+                    "int",
+                    "bool",
+                    "bool"
+                ],
+                "description": "(index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect",
+                "return": "void"
+            },
+            "DecrementStackCount": {
+                "args": [],
+                "description": "Decrease this modifier's stack count by 1.",
+                "return": "void"
+            },
+            "Destroy": {
+                "args": [],
+                "description": "Run all associated destroy functions, then remove the modifier.",
+                "return": "void"
+            },
+            "ForceRefresh": {
+                "args": [],
+                "description": "Run all associated refresh functions on this modifier as if it was re-applied.",
+                "return": "void"
+            },
+            "GetAbility": {
+                "args": [],
+                "description": "Get the ability that generated the modifier.",
+                "return": "handle"
+            },
+            "GetAuraDuration": {
+                "args": [],
+                "description": "Returns aura stickiness (default 0.5)",
+                "return": "float"
+            },
+            "GetAuraOwner": {
+                "args": [],
+                "return": "handle"
+            },
+            "GetCaster": {
+                "args": [],
+                "description": "Get the owner of the ability responsible for the modifier.",
+                "return": "handle"
+            },
+            "GetClass": {
+                "args": [],
+                "return": "cstring"
+            },
+            "GetCreationTime": {
+                "args": [],
+                "return": "float"
+            },
+            "GetDieTime": {
+                "args": [],
+                "return": "float"
+            },
+            "GetDuration": {
+                "args": [],
+                "return": "float"
+            },
+            "GetElapsedTime": {
+                "args": [],
+                "return": "float"
+            },
+            "GetLastAppliedTime": {
+                "args": [],
+                "return": "float"
+            },
+            "GetName": {
+                "args": [],
+                "return": "cstring"
+            },
+            "GetParent": {
+                "args": [],
+                "description": "Get the unit the modifier is parented to.",
+                "return": "handle"
+            },
+            "GetRemainingTime": {
+                "args": [],
+                "return": "float"
+            },
+            "GetSerialNumber": {
+                "args": [],
+                "return": "int"
+            },
+            "GetStackCount": {
+                "args": [],
+                "return": "int"
+            },
+            "HasFunction": {
+                "arg_names": [
+                    "iFunction"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "bool"
+            },
+            "IncrementStackCount": {
+                "args": [],
+                "description": "Increase this modifier's stack count by 1.",
+                "return": "void"
+            },
+            "IsDebuff": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsHexDebuff": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsStunDebuff": {
+                "args": [],
+                "return": "bool"
+            },
+            "SetDuration": {
+                "arg_names": [
+                    "flDuration",
+                    "bInformClient"
+                ],
+                "args": [
+                    "float",
+                    "bool"
+                ],
+                "description": "(flTime, bInformClients)",
+                "return": "void"
+            },
+            "SetStackCount": {
+                "arg_names": [
+                    "iCount"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "void"
+            },
+            "StartIntervalThink": {
+                "arg_names": [
+                    "flInterval"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Start this modifier's think function (OnIntervalThink) with the given interval (float).  To stop, call with -1.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Modifier_Lua_Horizontal_Motion": {
+        "extends": "C_DOTA_Modifier_Lua",
+        "functions": {
+            "OnHorizontalMotionInterrupted": {
+                "args": [],
+                "description": "Called when the motion gets interrupted.",
+                "return": "void"
+            },
+            "UpdateHorizontalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "handle",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Modifier_Lua_Motion_Both": {
+        "extends": "C_DOTA_Modifier_Lua",
+        "functions": {
+            "OnHorizontalMotionInterrupted": {
+                "args": [],
+                "description": "Called when the motion gets interrupted.",
+                "return": "void"
+            },
+            "OnVerticalMotionInterrupted": {
+                "args": [],
+                "description": "Called when the motion gets interrupted.",
+                "return": "void"
+            },
+            "UpdateHorizontalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "handle",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            },
+            "UpdateVerticalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "handle",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Modifier_Lua_Vertical_Motion": {
+        "extends": "C_DOTA_Modifier_Lua",
+        "functions": {
+            "OnVerticalMotionInterrupted": {
+                "args": [],
+                "description": "Called when the motion gets interrupted.",
+                "return": "void"
+            },
+            "UpdateVerticalMotion": {
+                "arg_names": [
+                    "me",
+                    "dt"
+                ],
+                "args": [
+                    "handle",
+                    "float"
+                ],
+                "description": "Perform any motion from the given interval on the NPC.",
+                "return": "void"
+            }
+        }
+    },
+    "CDebugOverlayScriptHelper": {
+        "functions": {
+            "Axis": {
+                "args": [
+                    "vector",
+                    "quaternion",
+                    "float",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws an axis. Specify origin + orientation in world space.",
+                "return": "void"
+            },
+            "Box": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a world-space axis-aligned box. Specify bounds in world space.",
+                "return": "void"
+            },
+            "BoxAngles": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector",
+                    "quaternion",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws an oriented box at the origin. Specify bounds in local space.",
+                "return": "void"
+            },
+            "Capsule": {
+                "args": [
+                    "vector",
+                    "quaternion",
+                    "float",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a capsule. Specify base in world space.",
+                "return": "void"
+            },
+            "Circle": {
+                "args": [
+                    "vector",
+                    "quaternion",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a circle. Specify center in world space.",
+                "return": "void"
+            },
+            "CircleScreenOriented": {
+                "args": [
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a circle oriented to the screen. Specify center in world space.",
+                "return": "void"
+            },
+            "Cone": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a wireframe cone. Specify endpoint and direction in world space.",
+                "return": "void"
+            },
+            "Cross": {
+                "args": [
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a screen-aligned cross. Specify origin in world space.",
+                "return": "void"
+            },
+            "Cross3D": {
+                "args": [
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a world-aligned cross. Specify origin in world space.",
+                "return": "void"
+            },
+            "Cross3DOriented": {
+                "args": [
+                    "vector",
+                    "quaternion",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws an oriented cross. Specify origin in world space.",
+                "return": "void"
+            },
+            "DrawTickMarkedLine": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a dashed line. Specify endpoints in world space.",
+                "return": "void"
+            },
+            "EntityAttachments": {
+                "args": [
+                    "ehandle",
+                    "float",
+                    "float"
+                ],
+                "description": "Draws the attachments of the entity",
+                "return": "void"
+            },
+            "EntityAxis": {
+                "args": [
+                    "ehandle",
+                    "float",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws the axis of the entity origin",
+                "return": "void"
+            },
+            "EntityBounds": {
+                "args": [
+                    "ehandle",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws bounds of an entity",
+                "return": "void"
+            },
+            "EntitySkeleton": {
+                "args": [
+                    "ehandle",
+                    "float"
+                ],
+                "description": "Draws the skeleton of the entity",
+                "return": "void"
+            },
+            "EntityText": {
+                "args": [
+                    "ehandle",
+                    "int",
+                    "cstring",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Draws text on an entity",
+                "return": "void"
+            },
+            "FilledRect2D": {
+                "args": [
+                    "vector2d",
+                    "vector2d",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Draws a screen-space filled 2D rectangle. Coordinates are in pixels.",
+                "return": "void"
+            },
+            "HorzArrow": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a horizontal arrow. Specify endpoints in world space.",
+                "return": "void"
+            },
+            "Line": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a line between two points",
+                "return": "void"
+            },
+            "Line2D": {
+                "args": [
+                    "vector2d",
+                    "vector2d",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Draws a line between two points in screenspace",
+                "return": "void"
+            },
+            "PopDebugOverlayScope": {
+                "args": [],
+                "description": "Pops the identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch.",
+                "return": "void"
+            },
+            "PushAndClearDebugOverlayScope": {
+                "args": [
+                    "utlstringtoken"
+                ],
+                "description": "Pushes an identifier used to group overlays. Deletes all existing overlays using this overlay id.",
+                "return": "void"
+            },
+            "PushDebugOverlayScope": {
+                "args": [
+                    "utlstringtoken"
+                ],
+                "description": "Pushes an identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch.",
+                "return": "void"
+            },
+            "RemoveAllInScope": {
+                "args": [
+                    "utlstringtoken"
+                ],
+                "description": "Removes all overlays marked with a specific identifier, regardless of their lifetime.",
+                "return": "void"
+            },
+            "SolidCone": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a solid cone. Specify endpoint and direction in world space.",
+                "return": "void"
+            },
+            "Sphere": {
+                "args": [
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a wireframe sphere. Specify center in world space.",
+                "return": "void"
+            },
+            "SweptBox": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector",
+                    "vector",
+                    "quaternion",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Draws a swept box. Specify endpoints in world space and the bounds in local space.",
+                "return": "void"
+            },
+            "Text": {
+                "args": [
+                    "vector",
+                    "int",
+                    "cstring",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Draws 2D text. Specify origin in world space.",
+                "return": "void"
+            },
+            "Texture": {
+                "args": [
+                    "cstring",
+                    "vector2d",
+                    "vector2d",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "vector2d",
+                    "vector2d",
+                    "float"
+                ],
+                "description": "Draws a screen-space texture. Coordinates are in pixels.",
+                "return": "void"
+            },
+            "Triangle": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a filled triangle. Specify vertices in world space.",
+                "return": "void"
+            },
+            "UnitTestCycleOverlayRenderType": {
+                "args": [],
+                "description": "Toggles the overlay render type, for unit tests",
+                "return": "void"
+            },
+            "VectorText3D": {
+                "args": [
+                    "vector",
+                    "quaternion",
+                    "cstring",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws 3D text. Specify origin + orientation in world space.",
+                "return": "void"
+            },
+            "VertArrow": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a vertical arrow. Specify endpoints in world space.",
+                "return": "void"
+            },
+            "YawArrow": {
+                "args": [
+                    "vector",
+                    "float",
+                    "float",
+                    "float",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draws a arrow associated with a specific yaw. Specify endpoints in world space.",
+                "return": "void"
+            }
+        },
+        "instance": "debugoverlay"
+    },
+    "CEntities": {
+        "functions": {
+            "First": {
+                "args": [],
+                "description": "Begin an iteration over the list of entities",
+                "return": "handle"
+            },
+            "Next": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Continue an iteration over the list of entities, providing reference to a previously found entity",
+                "return": "handle"
+            }
+        },
+        "instance": "Entities"
+    },
+    "CEntityInstance": {
+        "functions": {
+            "ConnectOutput": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Adds an I/O connection that will call the named function on this entity when the specified output fires.",
+                "return": "void"
+            },
+            "Destroy": {
+                "args": [],
+                "return": "void"
+            },
+            "DisconnectOutput": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Removes a connected script function from an I/O event on this entity.",
+                "return": "void"
+            },
+            "DisconnectRedirectedOutput": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Removes a connected script function from an I/O event on the passed entity.",
+                "return": "void"
+            },
+            "FireOutput": {
+                "args": [
+                    "cstring",
+                    "handle",
+                    "handle",
+                    "table",
+                    "float"
+                ],
+                "description": "Fire an entity output",
+                "return": "void"
+            },
+            "GetClassname": {
+                "args": [],
+                "return": "cstring"
+            },
+            "GetDebugName": {
+                "args": [],
+                "description": "Get the entity name w/help if not defined (i.e. classname/etc)",
+                "return": "cstring"
+            },
+            "GetEntityHandle": {
+                "args": [],
+                "description": "Get the entity as an EHANDLE",
+                "return": "ehandle"
+            },
+            "GetEntityIndex": {
+                "args": [],
+                "return": "int"
+            },
+            "GetIntAttr": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get Integer Attribute",
+                "return": "int"
+            },
+            "GetName": {
+                "args": [],
+                "return": "cstring"
+            },
+            "GetOrCreatePrivateScriptScope": {
+                "args": [],
+                "description": "Retrieve, creating if necessary, the private per-instance script-side data associated with an entity",
+                "return": "handle"
+            },
+            "GetOrCreatePublicScriptScope": {
+                "args": [],
+                "description": "Retrieve, creating if necessary, the public script-side data associated with an entity",
+                "return": "handle"
+            },
+            "GetPrivateScriptScope": {
+                "args": [],
+                "description": "Retrieve the private per-instance script-side data associated with an entity",
+                "return": "handle"
+            },
+            "GetPublicScriptScope": {
+                "args": [],
+                "description": "Retrieve the public script-side data associated with an entity",
+                "return": "handle"
+            },
+            "RedirectOutput": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Adds an I/O connection that will call the named function on the passed entity when the specified output fires.",
+                "return": "void"
+            },
+            "RemoveSelf": {
+                "args": [],
+                "description": "Delete this entity",
+                "return": "void"
+            },
+            "SetIntAttr": {
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "Set Integer Attribute",
+                "return": "void"
+            },
+            "entindex": {
+                "args": [],
+                "return": "int"
+            }
+        }
+    },
+    "CEntityScriptFramework": {
+        "functions": {},
+        "instance": "NativeFunctions"
+    },
+    "CInfoWorldLayer": {
+        "extends": "C_BaseEntity",
+        "functions": {
+            "HideWorldLayer": {
+                "args": [],
+                "description": "Hides this layer",
+                "return": "void"
+            },
+            "ShowWorldLayer": {
+                "args": [],
+                "description": "Shows this layer",
+                "return": "void"
+            }
+        }
+    },
+    "CNativeOutputs": {
+        "functions": {
+            "AddOutput": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Add an output",
+                "return": "void"
+            },
+            "Init": {
+                "args": [
+                    "int"
+                ],
+                "description": "Initialize with number of outputs",
+                "return": "void"
+            }
+        }
+    },
+    "CScriptHTTPRequest": {
+        "functions": {
+            "Send": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Send a HTTP request.",
+                "return": "bool"
+            },
+            "SetHTTPRequestAbsoluteTimeoutMS": {
+                "args": [
+                    "uint"
+                ],
+                "description": "Set the total timeout on the request.",
+                "return": "bool"
+            },
+            "SetHTTPRequestGetOrPostParameter": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Set a POST or GET parameter on the request.",
+                "return": "bool"
+            },
+            "SetHTTPRequestHeaderValue": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Set a header value on the request.",
+                "return": "bool"
+            },
+            "SetHTTPRequestNetworkActivityTimeout": {
+                "args": [
+                    "uint"
+                ],
+                "description": "Set the network timeout on the request - this timer is reset when any data is received.",
+                "return": "bool"
+            },
+            "SetHTTPRequestRawPostBody": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Set the literal body of a post - invalid after setting a post parameter.",
+                "return": "bool"
+            }
+        }
+    },
+    "CScriptKeyValues": {
+        "functions": {
+            "GetValue": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Reads a spawn key",
+                "return": "table"
+            }
+        }
+    },
+    "CScriptParticleManager": {
+        "functions": {
+            "CreateParticle": {
+                "args": [
+                    "cstring",
+                    "int",
+                    "handle"
+                ],
+                "description": "Creates a new particle effect",
+                "return": "int"
+            },
+            "CreateParticleForPlayer": {
+                "args": [
+                    "cstring",
+                    "int",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Creates a new particle effect that only plays for the specified player",
+                "return": "int"
+            },
+            "CreateParticleForTeam": {
+                "args": [
+                    "cstring",
+                    "int",
+                    "handle",
+                    "int"
+                ],
+                "description": "Creates a new particle effect that only plays for the specified team",
+                "return": "int"
+            },
+            "DestroyParticle": {
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "(int index, bool bDestroyImmediately) - Destroy a particle, if bDestroyImmediately destroy it without playing end caps.",
+                "return": "void"
+            },
+            "GetParticleReplacement": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "return": "cstring"
+            },
+            "ReleaseParticleIndex": {
+                "args": [
+                    "int"
+                ],
+                "description": "Frees the specified particle index",
+                "return": "void"
+            },
+            "SetParticleAlwaysSimulate": {
+                "args": [
+                    "int"
+                ],
+                "return": "void"
+            },
+            "SetParticleControl": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector"
+                ],
+                "description": "Set the control point data for a control on a particle effect",
+                "return": "void"
+            },
+            "SetParticleControlEnt": {
+                "args": [
+                    "int",
+                    "int",
+                    "handle",
+                    "int",
+                    "cstring",
+                    "vector",
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetParticleControlFallback": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector"
+                ],
+                "description": "(int iIndex, int iPoint, Vector vecPosition)",
+                "return": "void"
+            },
+            "SetParticleControlForward": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector"
+                ],
+                "description": "(int nFXIndex, int nPoint, vForward)",
+                "return": "void"
+            },
+            "SetParticleControlOrientation": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector",
+                    "vector",
+                    "vector"
+                ],
+                "description": "(int nFXIndex, int nPoint, vForward, vRight, vUp) - Set the orientation for a control on a particle effect (NOTE: This is left handed -- bad!!)",
+                "return": "void"
+            },
+            "SetParticleControlOrientationFLU": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector",
+                    "vector",
+                    "vector"
+                ],
+                "description": "(int nFXIndex, int nPoint, Vector vecForward, Vector vecLeft, Vector vecUp) - Set the orientation for a control on a particle effect",
+                "return": "void"
+            },
+            "SetParticleFoWProperties": {
+                "args": [
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "int nfxindex, int nPoint, int nPoint2, float flRadius",
+                "return": "void"
+            },
+            "SetParticleShouldCheckFoW": {
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "int nfxindex, bool bCheckFoW",
+                "return": "bool"
+            }
+        },
+        "instance": "ParticleManager"
+    },
+    "CScriptPrecacheContext": {
+        "functions": {
+            "AddResource": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Precaches a specific resource",
+                "return": "void"
+            },
+            "GetValue": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Reads a spawn key",
+                "return": "table"
+            }
+        }
+    },
+    "C_BaseAnimating": {
+        "extends": "C_BaseModelEntity",
+        "functions": {}
+    },
+    "C_BaseCombatCharacter": {
+        "extends": "C_BaseFlex",
+        "functions": {}
+    },
+    "C_BaseEntity": {
+        "extends": "CEntityInstance",
+        "functions": {
+            "GetAbsOrigin": {
+                "args": [],
+                "return": "vector"
+            },
+            "GetTeamNumber": {
+                "args": [],
+                "return": "int"
+            },
+            "SetContextThink": {
+                "arg_names": [
+                    "pszContextName",
+                    "hThinkFunc",
+                    "flInterval"
+                ],
+                "args": [
+                    "cstring",
+                    "handle",
+                    "float"
+                ],
+                "description": "Set a think function on this entity.",
+                "return": "void"
+            }
+        }
+    },
+    "C_BaseFlex": {
+        "extends": "C_BaseAnimating",
+        "functions": {}
+    },
+    "C_BaseModelEntity": {
+        "extends": "C_BaseEntity",
+        "functions": {
+            "GetRenderAlpha": {
+                "args": [],
+                "description": "GetRenderAlpha(): Get the alpha modulation of this entity.",
+                "return": "int"
+            }
+        }
+    },
+    "C_DOTABaseAbility": {
+        "extends": "C_BaseEntity",
+        "functions": {
+            "GetBehavior": {
+                "args": [],
+                "return": "int"
+            },
+            "GetCaster": {
+                "args": [],
+                "return": "handle"
+            },
+            "GetLevel": {
+                "args": [],
+                "description": "Return the level of the ability",
+                "return": "int"
+            },
+            "GetSpecialValueFor": {
+                "arg_names": [
+                    "szName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Gets a value from this ability's special value block for its current level.",
+                "return": "table"
+            },
+            "GetToggleState": {
+                "args": [],
+                "description": "Whether or not this ability is toggled.",
+                "return": "bool"
+            },
+            "IsItem": {
+                "args": [],
+                "description": "Whether or not this ability is an item.",
+                "return": "bool"
+            }
+        }
+    },
+    "C_DOTA_Ability_Lua": {
+        "extends": "C_DOTABaseAbility",
+        "functions": {
+            "CastFilterResult": {
+                "args": [],
+                "description": "Determine whether an issued command with no target is valid.",
+                "return": "int"
+            },
+            "CastFilterResultLocation": {
+                "arg_names": [
+                    "vLocation"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "(Vector vLocation) Determine whether an issued command on a location is valid.",
+                "return": "int"
+            },
+            "CastFilterResultTarget": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "(HSCRIPT hTarget) Determine whether an issued command on a target is valid.",
+                "return": "int"
+            },
+            "GetAOERadius": {
+                "args": [],
+                "description": "Controls the size of the AOE casting cursor.",
+                "return": "float"
+            },
+            "GetAbilityTextureName": {
+                "args": [],
+                "description": "Allows code overriding of the ability texture shown in the HUD.",
+                "return": "cstring"
+            },
+            "GetBehavior": {
+                "args": [],
+                "description": "Return cast behavior type of this ability.",
+                "return": "int"
+            },
+            "GetCastPoint": {
+                "args": [],
+                "description": "Return cast point of this ability.",
+                "return": "float"
+            },
+            "GetCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Return cast range of this ability.",
+                "return": "int"
+            },
+            "GetChannelTime": {
+                "args": [],
+                "description": "Return the channel time of this ability.",
+                "return": "float"
+            },
+            "GetChannelledManaCostPerSecond": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return mana cost at the given level per second while channeling (-1 is current).",
+                "return": "int"
+            },
+            "GetCooldown": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return cooldown of this ability.",
+                "return": "float"
+            },
+            "GetCustomCastError": {
+                "args": [],
+                "description": "Return the error string of a failed command with no target.",
+                "return": "cstring"
+            },
+            "GetCustomCastErrorLocation": {
+                "arg_names": [
+                    "vLocation"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "(Vector vLocation) Return the error string of a failed command on a location.",
+                "return": "cstring"
+            },
+            "GetCustomCastErrorTarget": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
+                "return": "cstring"
+            },
+            "GetGoldCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return gold cost at the given level (-1 is current).",
+                "return": "int"
+            },
+            "GetManaCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return mana cost at the given level (-1 is current).",
+                "return": "int"
+            }
+        }
+    },
+    "C_DOTA_BaseNPC": {
+        "extends": "C_BaseEntity",
+        "functions": {
+            "GetAbilityCount": {
+                "args": [],
+                "return": "int"
+            },
+            "GetAttackSpeed": {
+                "args": [],
+                "return": "float"
+            },
+            "GetAttacksPerSecond": {
+                "args": [],
+                "return": "float"
+            },
+            "GetBaseAttackTime": {
+                "args": [],
+                "return": "float"
+            },
+            "GetBaseMagicalResistanceValue": {
+                "args": [],
+                "description": "Returns base magical armor value.",
+                "return": "float"
+            },
+            "GetBaseMoveSpeed": {
+                "args": [],
+                "return": "float"
+            },
+            "GetCastRangeBonus": {
+                "args": [],
+                "return": "float"
+            },
+            "GetCollisionPadding": {
+                "args": [],
+                "description": "Returns the size of the collision padding around the hull.",
+                "return": "float"
+            },
+            "GetCooldownReduction": {
+                "args": [],
+                "return": "float"
+            },
+            "GetCurrentVisionRange": {
+                "args": [],
+                "description": "Gets the current vision range.",
+                "return": "int"
+            },
+            "GetDayTimeVisionRange": {
+                "args": [],
+                "description": "Returns the vision range after modifiers.",
+                "return": "int"
+            },
+            "GetHasteFactor": {
+                "args": [],
+                "return": "float"
+            },
+            "GetHealthPercent": {
+                "args": [],
+                "description": "Get the current health percent of the unit.",
+                "return": "int"
+            },
+            "GetHullRadius": {
+                "args": [],
+                "description": "Get the collision hull radius of this NPC.",
+                "return": "float"
+            },
+            "GetIdealSpeed": {
+                "args": [],
+                "description": "Returns speed after all modifiers.",
+                "return": "float"
+            },
+            "GetIdealSpeedNoSlows": {
+                "args": [],
+                "description": "Returns speed after all modifiers, but excluding those that reduce speed.",
+                "return": "float"
+            },
+            "GetIncreasedAttackSpeed": {
+                "args": [],
+                "return": "float"
+            },
+            "GetLevel": {
+                "args": [],
+                "description": "Returns the level of this unit.",
+                "return": "int"
+            },
+            "GetMagicalArmorValue": {
+                "args": [],
+                "description": "Returns current magical armor value.",
+                "return": "float"
+            },
+            "GetMana": {
+                "args": [],
+                "description": "Get the mana on this unit.",
+                "return": "float"
+            },
+            "GetManaRegen": {
+                "args": [],
+                "return": "float"
+            },
+            "GetMaxMana": {
+                "args": [],
+                "description": "Get the maximum mana of this unit.",
+                "return": "float"
+            },
+            "GetModelRadius": {
+                "args": [],
+                "return": "float"
+            },
+            "GetModifierStackCount": {
+                "arg_names": [
+                    "pszScriptName",
+                    "hCaster"
+                ],
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Gets the stack count of a given modifier.",
+                "return": "int"
+            },
+            "GetMoveSpeedModifier": {
+                "arg_names": [
+                    "flBaseSpeed",
+                    "bReturnUnslowed"
+                ],
+                "args": [
+                    "float",
+                    "bool"
+                ],
+                "return": "float"
+            },
+            "GetNightTimeVisionRange": {
+                "args": [],
+                "description": "Returns the vision range after modifiers.",
+                "return": "int"
+            },
+            "GetOpposingTeamNumber": {
+                "args": [],
+                "return": "int"
+            },
+            "GetPaddedCollisionRadius": {
+                "args": [],
+                "description": "Get the collision hull radius (including padding) of this NPC.",
+                "return": "float"
+            },
+            "GetPhysicalArmorBaseValue": {
+                "args": [],
+                "description": "Returns base physical armor value.",
+                "return": "float"
+            },
+            "GetPhysicalArmorValue": {
+                "arg_names": [
+                    "bIgnoreBase"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Returns current physical armor value.",
+                "return": "float"
+            },
+            "GetPlayerOwnerID": {
+                "args": [],
+                "description": "Get the owner player ID for this unit.",
+                "return": "int"
+            },
+            "GetSecondsPerAttack": {
+                "args": [],
+                "return": "float"
+            },
+            "GetTotalPurchasedUpgradeGoldCost": {
+                "args": [],
+                "description": "Get how much gold has been spent on ability upgrades.",
+                "return": "int"
+            },
+            "GetUnitLabel": {
+                "args": [],
+                "return": "cstring"
+            },
+            "GetUnitName": {
+                "args": [],
+                "description": "Get the name of this unit.",
+                "return": "cstring"
+            },
+            "HasAttackCapability": {
+                "args": [],
+                "return": "bool"
+            },
+            "HasFlyMovementCapability": {
+                "args": [],
+                "return": "bool"
+            },
+            "HasFlyingVision": {
+                "args": [],
+                "return": "bool"
+            },
+            "HasGroundMovementCapability": {
+                "args": [],
+                "return": "bool"
+            },
+            "HasItemInInventory": {
+                "arg_names": [
+                    "pItemName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "See whether this unit has an item by name.",
+                "return": "bool"
+            },
+            "HasModifier": {
+                "arg_names": [
+                    "pszScriptName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Sees if this unit has a given modifier.",
+                "return": "bool"
+            },
+            "HasMovementCapability": {
+                "args": [],
+                "return": "bool"
+            },
+            "HasScepter": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsAncient": {
+                "args": [],
+                "description": "Is this unit an Ancient?",
+                "return": "bool"
+            },
+            "IsAttackImmune": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsBarracks": {
+                "args": [],
+                "description": "Is this unit a Barracks?",
+                "return": "bool"
+            },
+            "IsBlind": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsBoss": {
+                "args": [],
+                "description": "Is this unit a boss?",
+                "return": "bool"
+            },
+            "IsBuilding": {
+                "args": [],
+                "description": "Is this unit a building?",
+                "return": "bool"
+            },
+            "IsCommandRestricted": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsConsideredHero": {
+                "args": [],
+                "description": "Is this unit a considered a hero for targeting purposes?",
+                "return": "bool"
+            },
+            "IsControllableByAnyPlayer": {
+                "args": [],
+                "description": "Is this unit controlled by any non-bot player?",
+                "return": "bool"
+            },
+            "IsCourier": {
+                "args": [],
+                "description": "Is this unit a courier?",
+                "return": "bool"
+            },
+            "IsCreature": {
+                "args": [],
+                "description": "Is this a Creature type NPC?",
+                "return": "bool"
+            },
+            "IsCreep": {
+                "args": [],
+                "description": "Is this unit a creep?",
+                "return": "bool"
+            },
+            "IsDeniable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsDisarmed": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsDominated": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsEvadeDisabled": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsFort": {
+                "args": [],
+                "description": "Is this unit an Ancient?",
+                "return": "bool"
+            },
+            "IsFrozen": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsHero": {
+                "args": [],
+                "description": "Is this a hero or hero illusion?",
+                "return": "bool"
+            },
+            "IsHexed": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsIllusion": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsInventoryEnabled": {
+                "args": [],
+                "description": "Does this unit have an inventory.",
+                "return": "bool"
+            },
+            "IsInvisible": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsInvulnerable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsLowAttackPriority": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsMagicImmune": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsMoving": {
+                "args": [],
+                "description": "Is this unit moving?",
+                "return": "bool"
+            },
+            "IsMuted": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsNeutralUnitType": {
+                "args": [],
+                "description": "Is this a neutral?",
+                "return": "bool"
+            },
+            "IsNightmared": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsOther": {
+                "args": [],
+                "description": "Is this unit a ward-type unit?",
+                "return": "bool"
+            },
+            "IsOutOfGame": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsOwnedByAnyPlayer": {
+                "args": [],
+                "description": "Is this unit owned by any non-bot player?",
+                "return": "bool"
+            },
+            "IsPhantom": {
+                "args": [],
+                "description": "Is this a phantom unit?",
+                "return": "bool"
+            },
+            "IsRangedAttacker": {
+                "args": [],
+                "description": "Is this unit a ranged attacker?",
+                "return": "bool"
+            },
+            "IsRealHero": {
+                "args": [],
+                "description": "Is this a real hero?",
+                "return": "bool"
+            },
+            "IsRooted": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsSilenced": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsSpeciallyDeniable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsStunned": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsSummoned": {
+                "args": [],
+                "description": "Is this unit summoned?",
+                "return": "bool"
+            },
+            "IsTower": {
+                "args": [],
+                "description": "Is this a tower?",
+                "return": "bool"
+            },
+            "IsUnselectable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsUntargetable": {
+                "args": [],
+                "return": "bool"
+            },
+            "NoHealthBar": {
+                "args": [],
+                "return": "bool"
+            },
+            "NoTeamMoveTo": {
+                "args": [],
+                "return": "bool"
+            },
+            "NoTeamSelect": {
+                "args": [],
+                "return": "bool"
+            },
+            "NoUnitCollision": {
+                "args": [],
+                "return": "bool"
+            },
+            "NotOnMinimap": {
+                "args": [],
+                "return": "bool"
+            },
+            "NotOnMinimapForEnemies": {
+                "args": [],
+                "return": "bool"
+            },
+            "PassivesDisabled": {
+                "args": [],
+                "return": "bool"
+            },
+            "ProvidesVision": {
+                "args": [],
+                "return": "bool"
+            },
+            "Script_GetAttackRange": {
+                "args": [],
+                "description": "Gets this unit's attack range after all modifiers.",
+                "return": "float"
+            },
+            "UnitCanRespawn": {
+                "args": [],
+                "description": "Can the unit respawn?",
+                "return": "bool"
+            }
+        }
+    },
+    "C_DOTA_BaseNPC_Hero": {
+        "extends": "C_DOTA_BaseNPC",
+        "functions": {
+            "GetAgility": {
+                "args": [],
+                "return": "float"
+            },
+            "GetIntellect": {
+                "args": [],
+                "return": "float"
+            },
+            "GetStrength": {
+                "args": [],
+                "return": "float"
+            }
+        }
+    },
+    "C_DOTA_Item": {
+        "extends": "C_DOTABaseAbility",
+        "functions": {
+            "GetCurrentCharges": {
+                "args": [],
+                "return": "int"
+            },
+            "GetInitialCharges": {
+                "args": [],
+                "return": "int"
+            },
+            "GetItemSlot": {
+                "args": [],
+                "return": "int"
+            },
+            "GetSecondaryCharges": {
+                "args": [],
+                "return": "int"
+            },
+            "GetShareability": {
+                "args": [],
+                "return": "int"
+            },
+            "IsAlertableItem": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsCastOnPickup": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsDisassemblable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsDroppable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsInBackpack": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsItem": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsKillable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsMuted": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsPermanent": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsPurchasable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsRecipe": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsRecipeGenerated": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsSellable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsStackable": {
+                "args": [],
+                "return": "bool"
+            },
+            "RequiresCharges": {
+                "args": [],
+                "return": "bool"
+            }
+        }
+    },
+    "C_DOTA_Item_Lua": {
+        "extends": "C_DOTA_Item",
+        "functions": {
+            "CastFilterResult": {
+                "args": [],
+                "description": "Determine whether an issued command with no target is valid.",
+                "return": "int"
+            },
+            "CastFilterResultLocation": {
+                "arg_names": [
+                    "vLocation"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "(Vector vLocation) Determine whether an issued command on a location is valid.",
+                "return": "int"
+            },
+            "CastFilterResultTarget": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "(HSCRIPT hTarget) Determine whether an issued command on a target is valid.",
+                "return": "int"
+            },
+            "GetAOERadius": {
+                "args": [],
+                "description": "Controls the size of the AOE casting cursor.",
+                "return": "float"
+            },
+            "GetAbilityTextureName": {
+                "args": [],
+                "description": "Allows code overriding of the item texture shown in the HUD.",
+                "return": "cstring"
+            },
+            "GetBehavior": {
+                "args": [],
+                "description": "Return cast behavior type of this ability.",
+                "return": "int"
+            },
+            "GetCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Return cast range of this ability.",
+                "return": "int"
+            },
+            "GetChannelTime": {
+                "args": [],
+                "description": "Return the channel time of this ability.",
+                "return": "float"
+            },
+            "GetChannelledManaCostPerSecond": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return mana cost at the given level per second while channeling (-1 is current).",
+                "return": "int"
+            },
+            "GetCooldown": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return cooldown of this ability.",
+                "return": "float"
+            },
+            "GetCustomCastError": {
+                "args": [],
+                "description": "Return the error string of a failed command with no target.",
+                "return": "cstring"
+            },
+            "GetCustomCastErrorLocation": {
+                "arg_names": [
+                    "vLocation"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "(Vector vLocation) Return the error string of a failed command on a location.",
+                "return": "cstring"
+            },
+            "GetCustomCastErrorTarget": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
+                "return": "cstring"
+            },
+            "GetGoldCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return gold cost at the given level (-1 is current).",
+                "return": "int"
+            },
+            "GetManaCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return mana cost at the given level (-1 is current).",
+                "return": "int"
+            },
+            "IsMuted": {
+                "args": [],
+                "description": "Returns whether this item is muted or not.",
+                "return": "bool"
+            }
+        }
+    },
+    "C_DOTA_Modifier_Lua": {
+        "extends": "CDOTA_Buff",
+        "functions": {
+            "AllowIllusionDuplicate": {
+                "args": [],
+                "description": "True/false if this modifier is active on illusions.",
+                "return": "bool"
+            },
+            "CanParentBeAutoAttacked": {
+                "args": [],
+                "return": "bool"
+            },
+            "DestroyOnExpire": {
+                "args": [],
+                "description": "True/false if this buff is removed when the duration expires.",
+                "return": "bool"
+            },
+            "GetAttributes": {
+                "args": [],
+                "description": "Return the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t",
+                "return": "int"
+            },
+            "GetAuraDuration": {
+                "args": [],
+                "description": "Returns aura stickiness",
+                "return": "float"
+            },
+            "GetAuraEntityReject": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Return true/false if this entity should receive the aura under specific conditions",
+                "return": "bool"
+            },
+            "GetAuraRadius": {
+                "args": [],
+                "description": "Return the range around the parent this aura tries to apply its buff.",
+                "return": "int"
+            },
+            "GetAuraSearchFlags": {
+                "args": [],
+                "description": "Return the unit flags this aura respects when placing buffs.",
+                "return": "int"
+            },
+            "GetAuraSearchTeam": {
+                "args": [],
+                "description": "Return the teams this aura applies its buff to.",
+                "return": "int"
+            },
+            "GetAuraSearchType": {
+                "args": [],
+                "description": "Return the unit classifications this aura applies its buff to.",
+                "return": "int"
+            },
+            "GetEffectAttachType": {
+                "args": [],
+                "description": "Return the attach type of the particle system from GetEffectName.",
+                "return": "int"
+            },
+            "GetEffectName": {
+                "args": [],
+                "description": "Return the name of the particle system that is created while this modifier is active.",
+                "return": "cstring"
+            },
+            "GetHeroEffectName": {
+                "args": [],
+                "description": "Return the name of the hero effect particle system that is created while this modifier is active.",
+                "return": "cstring"
+            },
+            "GetModifierAura": {
+                "args": [],
+                "description": "The name of the secondary modifier that will be applied by this modifier (if it is an aura).",
+                "return": "cstring"
+            },
+            "GetPriority": {
+                "args": [],
+                "description": "Return the priority order this modifier will be applied over others.",
+                "return": "int"
+            },
+            "GetStatusEffectName": {
+                "args": [],
+                "description": "Return the name of the status effect particle system that is created while this modifier is active.",
+                "return": "cstring"
+            },
+            "GetTexture": {
+                "args": [],
+                "description": "Return the name of the buff icon to be shown for this modifier.",
+                "return": "cstring"
+            },
+            "HeroEffectPriority": {
+                "args": [],
+                "description": "Relationship of this hero effect with those from other buffs (higher is more likely to be shown).",
+                "return": "int"
+            },
+            "IsAura": {
+                "args": [],
+                "description": "True/false if this modifier is an aura.",
+                "return": "bool"
+            },
+            "IsAuraActiveOnDeath": {
+                "args": [],
+                "description": "True/false if this aura provides buffs when the parent is dead.",
+                "return": "bool"
+            },
+            "IsDebuff": {
+                "args": [],
+                "description": "True/false if this modifier should be displayed as a debuff.",
+                "return": "bool"
+            },
+            "IsHidden": {
+                "args": [],
+                "description": "True/false if this modifier should be displayed on the buff bar.",
+                "return": "bool"
+            },
+            "IsPermanent": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsPurgable": {
+                "args": [],
+                "description": "True/false if this modifier can be purged.",
+                "return": "bool"
+            },
+            "IsPurgeException": {
+                "args": [],
+                "description": "True/false if this modifier can be purged by strong dispels.",
+                "return": "bool"
+            },
+            "IsStunDebuff": {
+                "args": [],
+                "description": "True/false if this modifier is considered a stun for purge reasons.",
+                "return": "bool"
+            },
+            "OnCreated": {
+                "arg_names": [
+                    "table"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Runs when the modifier is created.",
+                "return": "void"
+            },
+            "OnDestroy": {
+                "args": [],
+                "description": "Runs when the modifier is destroyed (after unit loses modifier).",
+                "return": "void"
+            },
+            "OnIntervalThink": {
+                "args": [],
+                "description": "Runs when the think interval occurs.",
+                "return": "void"
+            },
+            "OnRefresh": {
+                "arg_names": [
+                    "table"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Runs when the modifier is refreshed.",
+                "return": "void"
+            },
+            "OnRemoved": {
+                "args": [],
+                "description": "Runs when the modifier is destroyed (before unit loses modifier).",
+                "return": "void"
+            },
+            "OnStackCountChanged": {
+                "arg_names": [
+                    "iStackCount"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Runs when stack count changes (param is old count).",
+                "return": "void"
+            },
+            "RemoveOnDeath": {
+                "args": [],
+                "description": "True/false if this modifier is removed when the parent dies.",
+                "return": "bool"
+            },
+            "ShouldUseOverheadOffset": {
+                "args": [],
+                "description": "Apply the overhead offset to the attached effect.",
+                "return": "bool"
+            },
+            "StatusEffectPriority": {
+                "args": [],
+                "description": "Relationship of this status effect with those from other buffs (higher is more likely to be shown).",
+                "return": "int"
+            }
+        }
+    },
+    "C_PointWorldText": {
+        "extends": "C_BaseModelEntity",
+        "functions": {
+            "SetMessage": {
+                "arg_names": [
+                    "pMessage"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Set the message on this entity.",
+                "return": "void"
+            }
+        }
+    },
+    "Convars": {
+        "functions": {
+            "GetBool": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetBool(name) : returns the convar as a boolean flag.",
+                "return": "table"
+            },
+            "GetCommandClient": {
+                "args": [],
+                "description": "GetCommandClient() : returns the player who issued this console command.",
+                "return": "handle"
+            },
+            "GetDOTACommandClient": {
+                "args": [],
+                "description": "GetDOTACommandClient() : returns the DOTA player who issued this console command.",
+                "return": "handle"
+            },
+            "GetFloat": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetFloat(name) : returns the convar as a float. May return null if no such convar.",
+                "return": "table"
+            },
+            "GetInt": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetInt(name) : returns the convar as an int. May return null if no such convar.",
+                "return": "table"
+            },
+            "GetStr": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "GetStr(name) : returns the convar as a string. May return null if no such convar.",
+                "return": "table"
+            },
+            "RegisterCommand": {
+                "args": [
+                    "cstring",
+                    "handle",
+                    "cstring",
+                    "int"
+                ],
+                "description": "RegisterCommand(name, fn, helpString, flags) : register a console command.",
+                "return": "void"
+            },
+            "RegisterConvar": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "cstring",
+                    "int"
+                ],
+                "description": "RegisterConvar(name, defaultValue, helpString, flags): register a new console variable.",
+                "return": "void"
+            },
+            "SetBool": {
+                "args": [
+                    "cstring",
+                    "bool"
+                ],
+                "description": "SetBool(name, val) : sets the value of the convar to the bool.",
+                "return": "void"
+            },
+            "SetFloat": {
+                "args": [
+                    "cstring",
+                    "float"
+                ],
+                "description": "SetFloat(name, val) : sets the value of the convar to the float.",
+                "return": "void"
+            },
+            "SetInt": {
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "SetInt(name, val) : sets the value of the convar to the int.",
+                "return": "void"
+            },
+            "SetStr": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "SetStr(name, val) : sets the value of the convar to the string.",
+                "return": "void"
+            }
+        },
+        "instance": "Convars"
+    },
+    "Global": {
+        "functions": {
+            "AngleDiff": {
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "description": "Returns the number of degrees difference between two yaw angles",
+                "return": "float"
+            },
+            "AppendToLogFile": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "AppendToLogFile is deprecated. Print to the console for logging instead.",
+                "return": "void"
+            },
+            "AxisAngleToQuaternion": {
+                "args": [
+                    "vector",
+                    "float"
+                ],
+                "description": "(vector,float) constructs a quaternion representing a rotation by angle around the specified vector axis",
+                "return": "quaternion"
+            },
+            "CalcClosestPointOnEntityOBB": {
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Compute the closest point on the OBB of an entity.",
+                "return": "vector"
+            },
+            "CalcDistanceBetweenEntityOBB": {
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Compute the distance between two entity OBB. A negative return value indicates an input error. A return value of zero indicates that the OBBs are overlapping.",
+                "return": "float"
+            },
+            "CalcDistanceToLineSegment2D": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector"
+                ],
+                "return": "float"
+            },
+            "CancelEntityIOEvents": {
+                "args": [
+                    "ehandle"
+                ],
+                "description": "Create all I/O events for a particular entity",
+                "return": "void"
+            },
+            "CreateEffect": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Pass table - Inputs: entity, effect",
+                "return": "bool"
+            },
+            "CreateHTTPRequest": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Create an HTTP request.",
+                "return": "handle"
+            },
+            "CreateHTTPRequestScriptVM": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Create an HTTP request.",
+                "return": "handle"
+            },
+            "CrossVectors": {
+                "args": [
+                    "vector",
+                    "vector"
+                ],
+                "description": "(vector,vector) cross product between two vectors",
+                "return": "vector"
+            },
+            "DebugBreak": {
+                "args": [],
+                "description": "Breaks in the debugger",
+                "return": "void"
+            },
+            "DebugDrawBox": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Draw a debug overlay box (origin, mins, maxs, forward, r, g, b, a, duration )",
+                "return": "void"
+            },
+            "DebugDrawBoxDirection": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector",
+                    "vector",
+                    "vector",
+                    "float",
+                    "float"
+                ],
+                "description": "Draw a debug forward box (cent, min, max, forward, vRgb, a, duration)",
+                "return": "void"
+            },
+            "DebugDrawCircle": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float",
+                    "float",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draw a debug circle (center, vRgb, a, rad, ztest, duration)",
+                "return": "void"
+            },
+            "DebugDrawClear": {
+                "args": [],
+                "description": "Try to clear all the debug overlay info",
+                "return": "void"
+            },
+            "DebugDrawLine": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "int",
+                    "int",
+                    "int",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draw a debug overlay line (origin, target, r, g, b, ztest, duration)",
+                "return": "void"
+            },
+            "DebugDrawLine_vCol": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "vector",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draw a debug line using color vec (start, end, vRgb, a, ztest, duration)",
+                "return": "void"
+            },
+            "DebugDrawScreenTextLine": {
+                "args": [
+                    "float",
+                    "float",
+                    "int",
+                    "cstring",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float"
+                ],
+                "description": "Draw text with a line offset (x, y, lineOffset, text, r, g, b, a, duration)",
+                "return": "void"
+            },
+            "DebugDrawSphere": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float",
+                    "float",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draw a debug sphere (center, vRgb, a, rad, ztest, duration)",
+                "return": "void"
+            },
+            "DebugDrawText": {
+                "args": [
+                    "vector",
+                    "cstring",
+                    "bool",
+                    "float"
+                ],
+                "description": "Draw text in 3d (origin, text, bViewCheck, duration)",
+                "return": "void"
+            },
+            "DebugScreenTextPretty": {
+                "args": [
+                    "float",
+                    "float",
+                    "int",
+                    "cstring",
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "float",
+                    "cstring",
+                    "int",
+                    "bool"
+                ],
+                "description": "Draw pretty debug text (x, y, lineOffset, text, r, g, b, a, duration, font, size, bBold)",
+                "return": "void"
+            },
+            "DoIncludeScript": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Execute a script (internal)",
+                "return": "bool"
+            },
+            "DoScriptAssert": {
+                "args": [
+                    "bool",
+                    "cstring"
+                ],
+                "description": "#ScriptAssert:Asserts the passed in value. Prints out a message and brings up the assert dialog.",
+                "return": "void"
+            },
+            "DoUniqueString": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "#UniqueString:Generate a string guaranteed to be unique across the life of the script VM, with an optional root string. Useful for adding data to tables when not sure what keys are already in use in that table.",
+                "return": "cstring"
+            },
+            "EmitSoundOn": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Play named sound on Entity",
+                "return": "void"
+            },
+            "EmitSoundOnClient": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Play named sound only on the client for the passed in player",
+                "return": "void"
+            },
+            "EntIndexToHScript": {
+                "args": [
+                    "int"
+                ],
+                "description": "Turn an entity index integer to an HScript representing that entity's script instance.",
+                "return": "handle"
+            },
+            "ExponentialDecay": {
+                "args": [
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "description": "Smooth curve decreasing slower as it approaches zero",
+                "return": "float"
+            },
+            "FireEntityIOInputNameOnly": {
+                "args": [
+                    "ehandle",
+                    "cstring"
+                ],
+                "description": "Fire Entity's Action Input w/no data",
+                "return": "void"
+            },
+            "FireEntityIOInputString": {
+                "args": [
+                    "ehandle",
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Fire Entity's Action Input with passed String - you own the memory",
+                "return": "void"
+            },
+            "FireEntityIOInputVec": {
+                "args": [
+                    "ehandle",
+                    "cstring",
+                    "vector"
+                ],
+                "description": "Fire Entity's Action Input with passed Vector - you own the memory",
+                "return": "void"
+            },
+            "FireGameEvent": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Fire a game event.",
+                "return": "void"
+            },
+            "FireGameEventLocal": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Fire a game event without broadcasting to the client.",
+                "return": "void"
+            },
+            "FrameTime": {
+                "args": [],
+                "description": "Get the time spent on the server in the last frame",
+                "return": "float"
+            },
+            "GetFrameCount": {
+                "args": [],
+                "description": "Returns the engines current frame count",
+                "return": "int"
+            },
+            "GetListenServerHost": {
+                "args": [],
+                "description": "Get the local player on a listen server.",
+                "return": "handle"
+            },
+            "GetLocalPlayerID": {
+                "args": [],
+                "description": "Get the local player ID.",
+                "return": "int"
+            },
+            "GetLocalPlayerTeam": {
+                "args": [],
+                "description": "Get the local player team.",
+                "return": "int"
+            },
+            "GetMapName": {
+                "args": [],
+                "description": "Get the name of the map.",
+                "return": "cstring"
+            },
+            "GetMaxOutputDelay": {
+                "args": [
+                    "ehandle",
+                    "cstring"
+                ],
+                "description": "Get the longest delay for all events attached to an output",
+                "return": "float"
+            },
+            "GetPhysAngularVelocity": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Get Angular Velocity for VPHYS or normal object. Returns a vector of the axis of rotation, multiplied by the degrees of rotation per second.",
+                "return": "vector"
+            },
+            "GetPhysVelocity": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Get Velocity for VPHYS or normal object",
+                "return": "vector"
+            },
+            "InitLogFile": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "InitLogFile is deprecated. Print to the console for logging instead.",
+                "return": "void"
+            },
+            "IsClient": {
+                "args": [],
+                "description": "Returns true if this is lua running from the client.dll.",
+                "return": "bool"
+            },
+            "IsDedicatedServer": {
+                "args": [],
+                "description": "Returns true if this server is a dedicated server.",
+                "return": "bool"
+            },
+            "IsInToolsMode": {
+                "args": [],
+                "description": "Returns true if this is lua running within tools mode.",
+                "return": "bool"
+            },
+            "IsMarkedForDeletion": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Returns true if the entity is valid and marked for deletion.",
+                "return": "bool"
+            },
+            "IsServer": {
+                "args": [],
+                "description": "Returns true if this is lua running from the server.dll.",
+                "return": "bool"
+            },
+            "IsValidEntity": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Checks to see if the given hScript is a valid entity",
+                "return": "bool"
+            },
+            "LerpVectors": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float"
+                ],
+                "description": "(vector,vector,float) lerp between two vectors by a float factor returning new vector",
+                "return": "vector"
+            },
+            "LinkLuaModifier": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "int"
+                ],
+                "description": "Link a lua-defined modifier with the associated class ( className, fileName, LuaModifierType).",
+                "return": "void"
+            },
+            "ListenToGameEvent": {
+                "args": [
+                    "cstring",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Register as a listener for a game event from script.",
+                "return": "int"
+            },
+            "LoadKeyValues": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Creates a table from the specified keyvalues text file",
+                "return": "table"
+            },
+            "LoadKeyValuesFromString": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Creates a table from the specified keyvalues string",
+                "return": "table"
+            },
+            "LocalTime": {
+                "args": [],
+                "description": "Get the current local time",
+                "return": "table"
+            },
+            "MakeStringToken": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Checks to see if the given hScript is a valid entity",
+                "return": "int"
+            },
+            "Msg": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Print a message",
+                "return": "void"
+            },
+            "PlayerInstanceFromIndex": {
+                "args": [
+                    "int"
+                ],
+                "description": "Get a script instance of a player by index.",
+                "return": "handle"
+            },
+            "PrecacheEntityFromTable": {
+                "args": [
+                    "cstring",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Precache an entity from KeyValues in table",
+                "return": "void"
+            },
+            "PrecacheEntityListFromTable": {
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Precache a list of entity KeyValues tables",
+                "return": "void"
+            },
+            "PrintLinkedConsoleMessage": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "Print a console message with a linked console command",
+                "return": "void"
+            },
+            "RandomFloat": {
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "description": "Get a random float within a range",
+                "return": "float"
+            },
+            "RandomInt": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Get a random int within a range",
+                "return": "int"
+            },
+            "RegisterSpawnGroupFilterProxy": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Create a C proxy for a script-based spawn group filter",
+                "return": "void"
+            },
+            "ReloadMOTD": {
+                "args": [],
+                "description": "Reloads the MotD file",
+                "return": "void"
+            },
+            "RemoveSpawnGroupFilterProxy": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Remove the C proxy for a script-based spawn group filter",
+                "return": "void"
+            },
+            "RotateOrientation": {
+                "args": [
+                    "qangle",
+                    "qangle"
+                ],
+                "description": "Rotate a QAngle by another QAngle.",
+                "return": "qangle"
+            },
+            "RotatePosition": {
+                "args": [
+                    "vector",
+                    "qangle",
+                    "vector"
+                ],
+                "description": "Rotate a Vector around a point.",
+                "return": "vector"
+            },
+            "RotateQuaternionByAxisAngle": {
+                "args": [
+                    "quaternion",
+                    "vector",
+                    "float"
+                ],
+                "description": "(quaternion,vector,float) rotates a quaternion by the specified angle around the specified vector axis",
+                "return": "quaternion"
+            },
+            "RotationDelta": {
+                "args": [
+                    "qangle",
+                    "qangle"
+                ],
+                "description": "Find the delta between two QAngles.",
+                "return": "qangle"
+            },
+            "RotationDeltaAsAngularVelocity": {
+                "args": [
+                    "qangle",
+                    "qangle"
+                ],
+                "description": "converts delta QAngle to an angular velocity Vector",
+                "return": "vector"
+            },
+            "ScreenShake": {
+                "args": [
+                    "vector",
+                    "float",
+                    "float",
+                    "float",
+                    "float",
+                    "int",
+                    "bool"
+                ],
+                "description": "Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake",
+                "return": "void"
+            },
+            "SendToConsole": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Send a string to the console as a client command",
+                "return": "void"
+            },
+            "SetOpvarFloatAll": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "cstring",
+                    "float"
+                ],
+                "description": "Sets an opvar value for all players",
+                "return": "void"
+            },
+            "SetOpvarFloatPlayer": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "cstring",
+                    "float",
+                    "handle"
+                ],
+                "description": "Sets an opvar value for a single player",
+                "return": "void"
+            },
+            "SetPhysAngularVelocity": {
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Set Angular Velocity for VPHYS or normal object, from a vector of the axis of rotation, multiplied by the degrees of rotation per second.",
+                "return": "void"
+            },
+            "SetQuestName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Set the current quest name.",
+                "return": "void"
+            },
+            "SetQuestPhase": {
+                "args": [
+                    "int"
+                ],
+                "description": "Set the current quest phase.",
+                "return": "void"
+            },
+            "SetRenderingEnabled": {
+                "args": [
+                    "ehandle",
+                    "bool"
+                ],
+                "description": "Set rendering on/off for an ehandle",
+                "return": "void"
+            },
+            "SpawnEntityFromTableSynchronous": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Synchronously spawns a single entity from a table",
+                "return": "handle"
+            },
+            "SpawnEntityGroupFromTable": {
+                "args": [
+                    "handle",
+                    "bool",
+                    "handle"
+                ],
+                "description": "Hierarchically spawn an entity group from a set of spawn tables.",
+                "return": "bool"
+            },
+            "SpawnEntityListFromTableAsynchronous": {
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Asynchronously spawn an entity group from a list of spawn tables. A callback will be triggered when the spawning is complete",
+                "return": "int"
+            },
+            "SpawnEntityListFromTableSynchronous": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Synchronously spawn an entity group from a list of spawn tables.",
+                "return": "handle"
+            },
+            "SplineQuaternions": {
+                "args": [
+                    "quaternion",
+                    "quaternion",
+                    "float"
+                ],
+                "description": "(quaternion,quaternion,float) very basic interpolation of v0 to v1 over t on [0,1]",
+                "return": "quaternion"
+            },
+            "SplineVectors": {
+                "args": [
+                    "vector",
+                    "vector",
+                    "float"
+                ],
+                "description": "(vector,vector,float) very basic interpolation of v0 to v1 over t on [0,1]",
+                "return": "vector"
+            },
+            "StartSoundEvent": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Start a sound event",
+                "return": "void"
+            },
+            "StartSoundEventFromPosition": {
+                "args": [
+                    "cstring",
+                    "vector"
+                ],
+                "description": "Start a sound event from position",
+                "return": "void"
+            },
+            "StartSoundEventFromPositionReliable": {
+                "args": [
+                    "cstring",
+                    "vector"
+                ],
+                "description": "Start a sound event from position with reliable delivery",
+                "return": "void"
+            },
+            "StartSoundEventFromPositionUnreliable": {
+                "args": [
+                    "cstring",
+                    "vector"
+                ],
+                "description": "Start a sound event from position with optional delivery",
+                "return": "void"
+            },
+            "StartSoundEventReliable": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Start a sound event with reliable delivery",
+                "return": "void"
+            },
+            "StartSoundEventUnreliable": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Start a sound event with optional delivery",
+                "return": "void"
+            },
+            "StopEffect": {
+                "args": [
+                    "handle",
+                    "cstring"
+                ],
+                "description": "Pass entity and effect name",
+                "return": "void"
+            },
+            "StopListeningToAllGameEvents": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Stop listening to all game events within a specific context.",
+                "return": "void"
+            },
+            "StopListeningToGameEvent": {
+                "args": [
+                    "int"
+                ],
+                "description": "Stop listening to a particular game event.",
+                "return": "bool"
+            },
+            "StopSoundEvent": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Stops a sound event with optional delivery",
+                "return": "void"
+            },
+            "StopSoundOn": {
+                "args": [
+                    "cstring",
+                    "handle"
+                ],
+                "description": "Stop named sound on Entity",
+                "return": "void"
+            },
+            "Time": {
+                "args": [],
+                "description": "Get the current server time",
+                "return": "float"
+            },
+            "TraceCollideable": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Pass table - Inputs: start, end, ent, (optional mins, maxs) -- outputs: pos, fraction, hit, startsolid, normal",
+                "return": "bool"
+            },
+            "TraceHull": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Pass table - Inputs: start, end, min, max, mask, ignore  -- outputs: pos, fraction, hit, enthit, startsolid",
+                "return": "bool"
+            },
+            "TraceLine": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Pass table - Inputs: startpos, endpos, mask, ignore  -- outputs: pos, fraction, hit, enthit, startsolid",
+                "return": "bool"
+            },
+            "UTIL_Remove": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Removes the specified entity",
+                "return": "void"
+            },
+            "UTIL_RemoveImmediate": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Immediately removes the specified entity",
+                "return": "void"
+            },
+            "UnitFilter": {
+                "args": [
+                    "handle",
+                    "int",
+                    "int",
+                    "int",
+                    "int"
+                ],
+                "description": "Check if a unit passes a set of filters. (hNPC, nTargetTeam, nTargetType, nTargetFlags, nTeam",
+                "return": "int"
+            },
+            "UnloadSpawnGroup": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Unload a spawn group by name",
+                "return": "void"
+            },
+            "UnloadSpawnGroupByHandle": {
+                "args": [
+                    "int"
+                ],
+                "description": "Unload a spawn group by handle",
+                "return": "void"
+            },
+            "VectorToAngles": {
+                "args": [
+                    "vector"
+                ],
+                "description": "Get Qangles (with no roll) for a Vector.",
+                "return": "qangle"
+            },
+            "Warning": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Print a warning",
+                "return": "void"
+            },
+            "cvar_getf": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Gets the value of the given cvar, as a float.",
+                "return": "float"
+            },
+            "cvar_setf": {
+                "args": [
+                    "cstring",
+                    "float"
+                ],
+                "description": "Sets the value of the given cvar, as a float.",
+                "return": "bool"
+            },
+            "rr_AddDecisionRule": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Add a rule to the decision database.",
+                "return": "bool"
+            },
+            "rr_CommitAIResponse": {
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Commit the result of QueryBestResponse back to the given entity to play. Call with params (entity, airesponse)",
+                "return": "bool"
+            },
+            "rr_GetResponseTargets": {
+                "args": [],
+                "description": "Retrieve a table of all available expresser targets, in the form { name : handle, name: handle }.",
+                "return": "handle"
+            },
+            "rr_QueryBestResponse": {
+                "args": [
+                    "handle",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Params: (entity, query) : tests 'query' against entity's response system and returns the best response found (or null if none found).",
+                "return": "bool"
+            }
+        }
+    },
+    "GlobalSys": {
+        "functions": {
+            "CommandLineCheck": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "CommandLineCheck(name) : returns true if the command line param was used, otherwise false.",
+                "return": "table"
+            },
+            "CommandLineFloat": {
+                "args": [
+                    "cstring",
+                    "float"
+                ],
+                "description": "CommandLineFloat(name) : returns the command line param as a float.",
+                "return": "table"
+            },
+            "CommandLineInt": {
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "CommandLineInt(name) : returns the command line param as an int.",
+                "return": "table"
+            },
+            "CommandLineStr": {
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "CommandLineStr(name) : returns the command line param as a string.",
+                "return": "table"
+            }
+        },
+        "instance": "GlobalSys"
+    }
+}
