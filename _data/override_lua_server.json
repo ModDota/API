@@ -239,10 +239,12 @@
         "functions": {
             "GetCustomAttributeDerivedStatValue": {
                 "arg_names": [
-                    "nDerivedStatType"
+                    "nDerivedStatType",
+                    "hHero"
                 ],
                 "args": [
-                    "AttributeDerivedStats"
+                    "AttributeDerivedStats",
+                    "CDOTA_BaseNPC_Hero"
                 ],
                 "description": "Get current derived stat value constant.",
                 "return": "float"
@@ -527,11 +529,6 @@
                 "args": [],
                 "description": "Get the game mode entity",
                 "return": "CDOTABaseGameMode"
-            },
-            "GetMatchID": {
-                "args": [],
-                "description": "Get the MatchID for this game.",
-                "return": "number"
             },
             "LockCustomGameSetupTeamAssignment": {
                 "args": [
@@ -1646,10 +1643,12 @@
             },
             "MakeVisibleDueToAttack": {
                 "arg_names": [
-                    "iTeam"
+                    "iTeam",
+                    "flRadius"
                 ],
                 "args": [
-                    "DOTATeam_t"
+                    "DOTATeam_t",
+                    "float"
                 ],
                 "return": "void"
             },
@@ -4857,7 +4856,7 @@
                     "table"
                 ],
                 "description": "Creates a tracking projectile",
-                "return": "ProjectileID",
+                "return": "ProjectileID!",
                 "arg_names": [
                     "projectileData"
                 ]

@@ -17,6 +17,16 @@
                 "description": "Get the attachment id's angles as a p,y,r vector.",
                 "return": "vector"
             },
+            "GetAttachmentForward": {
+                "arg_names": [
+                    "iAttachment"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get the attachment id's forward vector.",
+                "return": "vector"
+            },
             "GetAttachmentOrigin": {
                 "arg_names": [
                     "iAttachment"
@@ -40,7 +50,7 @@
                     "cstring"
                 ],
                 "description": "Get the value of the given animGraph parameter",
-                "return": "variant"
+                "return": "table"
             },
             "GetModelScale": {
                 "args": [],
@@ -104,7 +114,7 @@
                 ],
                 "args": [
                     "cstring",
-                    "variant"
+                    "table"
                 ],
                 "description": "Set the specific param value, type is inferred from the type in script",
                 "return": "void"
@@ -214,7 +224,7 @@
             "GetEquippedWeapons": {
                 "args": [],
                 "description": "GetEquippedWeapons() : Returns an array of all the equipped weapons",
-                "return": "variant"
+                "return": "table"
             },
             "GetFaction": {
                 "args": [],
@@ -228,9 +238,11 @@
             },
             "ShootPosition": {
                 "arg_names": [
-                    "nHand"
+                    "nHand",
+                    "nMuzzle"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "description": "Returns the shoot position eyes (or hand in VR).",
@@ -431,7 +443,7 @@
             "GetBounds": {
                 "args": [],
                 "description": "Get a table containing the 'Mins' & 'Maxs' vector bounds, centered on object.",
-                "return": "variant"
+                "return": "table"
             },
             "GetCenter": {
                 "args": [],
@@ -451,7 +463,7 @@
                     "cstring"
                 ],
                 "description": "GetContext( name ): looks up a context and returns it if available. May return string, float, or null (if the context isn't found).",
-                "return": "variant"
+                "return": "table"
             },
             "GetForwardVector": {
                 "args": [],
@@ -911,6 +923,26 @@
                 "description": "Apply damage to this entity. Use CreateDamageInfo() to create a damageinfo object.",
                 "return": "int"
             },
+            "TransformPointEntityToWorld": {
+                "arg_names": [
+                    "vPoint"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Returns the input Vector transformed from entity to world space",
+                "return": "vector"
+            },
+            "TransformPointWorldToEntity": {
+                "arg_names": [
+                    "vPoint"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Returns the input Vector transformed from world to entity space",
+                "return": "vector"
+            },
             "Trigger": {
                 "args": [],
                 "description": "Fires off this entity's OnTrigger responses.",
@@ -1336,7 +1368,7 @@
                     "cstring"
                 ],
                 "description": "( string TableName, string KeyName )",
-                "return": "variant"
+                "return": "table"
             },
             "SetTableValue": {
                 "args": [
@@ -1415,7 +1447,7 @@
             "GetAbilityKeyValues": {
                 "args": [],
                 "description": "Gets the key values definition for this ability.",
-                "return": "variant"
+                "return": "table"
             },
             "GetAbilityName": {
                 "args": [],
@@ -1590,7 +1622,7 @@
                     "cstring",
                     "int"
                 ],
-                "return": "variant"
+                "return": "table"
             },
             "GetManaCost": {
                 "arg_names": [
@@ -1629,13 +1661,17 @@
                     "cstring"
                 ],
                 "description": "Gets a value from this ability's special value block for its current level.",
-                "return": "variant"
+                "return": "table"
             },
             "GetStolenActivityModifier": {
                 "args": [],
                 "return": "cstring"
             },
             "GetToggleState": {
+                "args": [],
+                "return": "bool"
+            },
+            "GetUpgradeRecommended": {
                 "args": [],
                 "return": "bool"
             },
@@ -1684,6 +1720,10 @@
                 "return": "bool"
             },
             "IsHidden": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsHiddenAsSecondaryAbility": {
                 "args": [],
                 "return": "bool"
             },
@@ -1937,9 +1977,27 @@
                 ],
                 "return": "void"
             },
+            "SetStealable": {
+                "arg_names": [
+                    "bStealable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
             "SetStolen": {
                 "arg_names": [
                     "bStolen"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetUpgradeRecommended": {
+                "arg_names": [
+                    "bUpgradeRecommended"
                 ],
                 "args": [
                     "bool"
@@ -2007,6 +2065,20 @@
     "CDOTABaseGameMode": {
         "extends": "CBaseEntity",
         "functions": {
+            "AddRealTimeCombatAnalyzerQuery": {
+                "arg_names": [
+                    "hQueryTable",
+                    "hPlayer",
+                    "pszQueryName"
+                ],
+                "args": [
+                    "handle",
+                    "handle",
+                    "cstring"
+                ],
+                "description": "Begin tracking a sequence of events using the real time combat analyzer.",
+                "return": "int"
+            },
             "AreWeatherEffectsDisabled": {
                 "args": [],
                 "description": "Get if weather effects are disabled on the client.",
@@ -2104,6 +2176,16 @@
                 "description": "Get current derived stat value constant.",
                 "return": "float"
             },
+            "GetCustomBackpackCooldownPercent": {
+                "args": [],
+                "description": "Get the current rate cooldown ticks down for items in the backpack.",
+                "return": "float"
+            },
+            "GetCustomBackpackSwapCooldown": {
+                "args": [],
+                "description": "Get the current custom backpack swap cooldown.",
+                "return": "float"
+            },
             "GetCustomBuybackCooldownEnabled": {
                 "args": [],
                 "description": "Turns on capability to define custom buyback cooldowns.",
@@ -2113,6 +2195,11 @@
                 "args": [],
                 "description": "Turns on capability to define custom buyback costs.",
                 "return": "bool"
+            },
+            "GetCustomGlyphCooldown": {
+                "args": [],
+                "description": "Get the current custom glyph cooldown.",
+                "return": "float"
             },
             "GetCustomHeroMaxLevel": {
                 "args": [],
@@ -2208,6 +2295,52 @@
                 "args": [],
                 "description": "Is the day/night cycle disabled?",
                 "return": "bool"
+            },
+            "ListenForQueryFailed": {
+                "arg_names": [
+                    "hFunction",
+                    "hContext"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Set function and context for real time combat analyzer query failed.",
+                "return": "void"
+            },
+            "ListenForQueryProgressChanged": {
+                "arg_names": [
+                    "hFunction",
+                    "hContext"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Set function and context for real time combat analyzer query progress changed.",
+                "return": "void"
+            },
+            "ListenForQuerySucceeded": {
+                "arg_names": [
+                    "hFunction",
+                    "hContext"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Set function and context for real time combat analyzer query succeeded.",
+                "return": "void"
+            },
+            "RemoveRealTimeCombatAnalyzerQuery": {
+                "arg_names": [
+                    "nQueryID"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Stop tracking a combat analyzer query.",
+                "return": "void"
             },
             "SetAbilityTuningValueFilter": {
                 "arg_names": [
@@ -2355,6 +2488,26 @@
                 "description": "Modify derived stat value constants. ( AttributeDerivedStat eStatType, float flNewValue.",
                 "return": "void"
             },
+            "SetCustomBackpackCooldownPercent": {
+                "arg_names": [
+                    "flPercent"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set the rate cooldown ticks down for items in the backpack.",
+                "return": "void"
+            },
+            "SetCustomBackpackSwapCooldown": {
+                "arg_names": [
+                    "flCooldown"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set a custom cooldown for swapping items into the backpack.",
+                "return": "void"
+            },
             "SetCustomBuybackCooldownEnabled": {
                 "arg_names": [
                     "bEnabled"
@@ -2383,6 +2536,16 @@
                     "cstring"
                 ],
                 "description": "Force all players to use the specified hero and disable the normal hero selection process. Must be used before hero selection.",
+                "return": "void"
+            },
+            "SetCustomGlyphCooldown": {
+                "arg_names": [
+                    "flCooldown"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set a custom cooldown for team Glyph ability.",
                 "return": "void"
             },
             "SetCustomHeroMaxLevel": {
@@ -2534,6 +2697,16 @@
                     "float"
                 ],
                 "description": "Set the percentage rate that the fountain will regen mana. (-1 for default)",
+                "return": "void"
+            },
+            "SetFreeCourierModeEnabled": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "If set to true, enable 7.23 free courier mode.",
                 "return": "void"
             },
             "SetFriendlyBuildingMoveToEnabled": {
@@ -2905,7 +3078,7 @@
                     "cstring"
                 ],
                 "description": "Get the hero unit ",
-                "return": "variant"
+                "return": "table"
             },
             "GetHeroIDByName": {
                 "args": [
@@ -2940,6 +3113,16 @@
     },
     "CDOTAGamerules": {
         "functions": {
+            "AddBotPlayerWithEntityScript": {
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "int",
+                    "cstring"
+                ],
+                "description": "Spawn a bot player of the passed hero name, player name, and team.",
+                "return": "handle"
+            },
             "AddEventMetadataLeaderboardEntry": {
                 "args": [
                     "cstring",
@@ -2954,6 +3137,13 @@
                 ],
                 "description": "Event-only ( string szNameSuffix, int nStars, int nMaxStars, int nExtraData1, int nExtraData2 )",
                 "return": "bool"
+            },
+            "AddItemToWhiteList": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Add an item to the whitelist",
+                "return": "void"
             },
             "AddMinimapDebugPoint": {
                 "args": [
@@ -3021,6 +3211,16 @@
             "FinishCustomGameSetup": {
                 "args": [],
                 "description": "Indicate that the custom game setup phase is complete, and advance to the game.",
+                "return": "void"
+            },
+            "ForceCreepSpawn": {
+                "args": [],
+                "description": "Spawn the next wave of creeps.",
+                "return": "void"
+            },
+            "ForceGameStart": {
+                "args": [],
+                "description": "Transition game state to DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
                 "return": "void"
             },
             "GetCustomGameDifficulty": {
@@ -3098,7 +3298,7 @@
                     "int"
                 ],
                 "description": "(Preview/Unreleased) Gets the player's custom game account record, as it looked at the start of this session",
-                "return": "variant"
+                "return": "table"
             },
             "GetStateTransitionTime": {
                 "args": [],
@@ -3138,6 +3338,13 @@
             "IsInBanPhase": {
                 "args": [],
                 "description": "Are we in the ban phase of hero pick?",
+                "return": "bool"
+            },
+            "IsItemInWhiteList": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Query an item in the whitelist",
                 "return": "bool"
             },
             "IsNightstalkerNight": {
@@ -3181,9 +3388,33 @@
                 "description": "Updates custom hero, unit and ability KeyValues in memory with the latest values from disk",
                 "return": "void"
             },
+            "PrepareSpawners": {
+                "args": [
+                    "float"
+                ],
+                "description": "Prepare Dota lane style spawners with a given interval",
+                "return": "void"
+            },
+            "RemoveItemFromWhiteList": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Remove an item from the whitelist",
+                "return": "void"
+            },
             "ResetDefeated": {
                 "args": [],
                 "description": "Restart after killing the ancient, etc.",
+                "return": "void"
+            },
+            "ResetGameTime": {
+                "args": [],
+                "description": "Restart gametime from 0",
+                "return": "void"
+            },
+            "ResetToCustomGameSetup": {
+                "args": [],
+                "description": "Restart at custom game setup.",
                 "return": "void"
             },
             "ResetToHeroSelection": {
@@ -3500,6 +3731,18 @@
                 "description": "Set Weather Wind Direction Vector",
                 "return": "void"
             },
+            "SetWhiteListEnabled": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Item whitelist functionality enable/disable",
+                "return": "void"
+            },
+            "SpawnAndReleaseCreeps": {
+                "args": [],
+                "description": "Spawn and release the next creep wave from Dota lane style spawners.",
+                "return": "void"
+            },
             "State_Get": {
                 "args": [],
                 "description": "Get the current Gamerules state",
@@ -3511,6 +3754,16 @@
     "CDOTAPlayer": {
         "extends": "CBaseAnimating",
         "functions": {
+            "CheckForCourierSpawning": {
+                "arg_names": [
+                    "hHero"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Attempt to spawn the appropriate couriers for this mode.",
+                "return": "void"
+            },
             "GetAssignedHero": {
                 "args": [],
                 "description": "Get the player's hero.",
@@ -3524,6 +3777,16 @@
             "MakeRandomHeroSelection": {
                 "args": [],
                 "description": "Randoms this player's hero.",
+                "return": "void"
+            },
+            "SetAssignedHeroEntity": {
+                "arg_names": [
+                    "hHero"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Sets this player's hero .",
                 "return": "void"
             },
             "SetKillCamUnit": {
@@ -4009,6 +4272,18 @@
                 "description": "Cast time begins (return true for successful cast).",
                 "return": "bool"
             },
+            "OnAbilityPinged": {
+                "arg_names": [
+                    "nPlayerID",
+                    "bCtrlHeld"
+                ],
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "The ability was pinged (nPlayerID, bCtrlHeld).",
+                "return": "void"
+            },
             "OnChannelFinish": {
                 "arg_names": [
                     "bInterrupted"
@@ -4185,6 +4460,11 @@
                 "description": "Returns true if this ability will generate magic stick charges for nearby enemies.",
                 "return": "bool"
             },
+            "ResetToggleOnRespawn": {
+                "args": [],
+                "description": "Returns true if this ability should return to the default toggle state when its parent respawns.",
+                "return": "bool"
+            },
             "SpeakTrigger": {
                 "args": [],
                 "description": "Return the type of speech used.",
@@ -4244,6 +4524,16 @@
                 ],
                 "description": "Add an ability to this unit by name.",
                 "return": "handle"
+            },
+            "AddActivityModifier": {
+                "arg_names": [
+                    "szName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Add an activity modifier that affects future StartGesture calls",
+                "return": "void"
             },
             "AddItem": {
                 "arg_names": [
@@ -4415,6 +4705,11 @@
                 "description": "Toggle an ability.",
                 "return": "void"
             },
+            "ClearActivityModifiers": {
+                "args": [],
+                "description": "Clear Activity modifiers",
+                "return": "void"
+            },
             "DestroyAllSpeechBubbles": {
                 "args": [],
                 "return": "void"
@@ -4496,7 +4791,7 @@
             "FindAllModifiers": {
                 "args": [],
                 "description": "Returns a table of all of the modifiers on the NPC.",
-                "return": "variant"
+                "return": "table"
             },
             "FindAllModifiersByName": {
                 "arg_names": [
@@ -4506,7 +4801,7 @@
                     "cstring"
                 ],
                 "description": "Returns a table of all of the modifiers on the NPC with the passed name (modifierName)",
-                "return": "variant"
+                "return": "table"
             },
             "FindItemInInventory": {
                 "arg_names": [
@@ -4689,6 +4984,10 @@
                 ],
                 "return": "float"
             },
+            "GetCastRangeBonus": {
+                "args": [],
+                "return": "float"
+            },
             "GetCloneSource": {
                 "args": [],
                 "description": "Get clone source (Meepo Prime, if this is a Meepo)",
@@ -4697,6 +4996,10 @@
             "GetCollisionPadding": {
                 "args": [],
                 "description": "Returns the size of the collision padding around the hull.",
+                "return": "float"
+            },
+            "GetCooldownReduction": {
+                "args": [],
                 "return": "float"
             },
             "GetCreationTime": {
@@ -4734,6 +5037,11 @@
                 "args": [],
                 "description": "Get the XP bounty on this unit.",
                 "return": "int"
+            },
+            "GetDisplayAttackSpeed": {
+                "args": [],
+                "description": "Attack speed expressed as constant value",
+                "return": "float"
             },
             "GetEvasion": {
                 "args": [],
@@ -4807,6 +5115,11 @@
             },
             "GetLastAttackTime": {
                 "args": [],
+                "return": "float"
+            },
+            "GetLastDamageTime": {
+                "args": [],
+                "description": "Get the last time this NPC took damage",
                 "return": "float"
             },
             "GetLastIdleChangeTime": {
@@ -4930,7 +5243,12 @@
                 "return": "float"
             },
             "GetPhysicalArmorValue": {
-                "args": [],
+                "arg_names": [
+                    "bIgnoreBase"
+                ],
+                "args": [
+                    "bool"
+                ],
                 "description": "Returns current physical armor value.",
                 "return": "float"
             },
@@ -5229,6 +5547,18 @@
             },
             "IsIllusion": {
                 "args": [],
+                "return": "bool"
+            },
+            "IsInRangeOfShop": {
+                "arg_names": [
+                    "nShopType",
+                    "bPhysical"
+                ],
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "Ask whether this unit is in range of the specified shop ( DOTA_SHOP_TYPE shop, bool bMustBePhysicallyNear",
                 "return": "bool"
             },
             "IsInvisible": {
@@ -5630,6 +5960,16 @@
                 "description": "Remove an ability from this unit by name.",
                 "return": "void"
             },
+            "RemoveAbilityByHandle": {
+                "arg_names": [
+                    "hAbility"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Remove the passed ability from this unit.",
+                "return": "void"
+            },
             "RemoveGesture": {
                 "arg_names": [
                     "nActivity"
@@ -6009,6 +6349,16 @@
                     "float"
                 ],
                 "description": "Set the mana on this unit.",
+                "return": "void"
+            },
+            "SetMaxMana": {
+                "arg_names": [
+                    "flMaxMana"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set the maximum mana of this unit.",
                 "return": "void"
             },
             "SetMaximumGoldBounty": {
@@ -6551,7 +6901,7 @@
             },
             "GetAdditionalOwnedUnits": {
                 "args": [],
-                "return": "variant"
+                "return": "table"
             },
             "GetAgility": {
                 "args": [],
@@ -7216,6 +7566,10 @@
                 "description": "Returns aura stickiness (default 0.5)",
                 "return": "float"
             },
+            "GetAuraOwner": {
+                "args": [],
+                "return": "handle"
+            },
             "GetCaster": {
                 "args": [],
                 "description": "Get the owner of the ability responsible for the modifier.",
@@ -7258,6 +7612,10 @@
                 "args": [],
                 "return": "float"
             },
+            "GetSerialNumber": {
+                "args": [],
+                "return": "int"
+            },
             "GetStackCount": {
                 "args": [],
                 "return": "int"
@@ -7275,6 +7633,14 @@
                 "args": [],
                 "description": "Increase this modifier's stack count by 1.",
                 "return": "void"
+            },
+            "IsDebuff": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsHexDebuff": {
+                "args": [],
+                "return": "bool"
             },
             "IsStunDebuff": {
                 "args": [],
@@ -7380,6 +7746,10 @@
                 "description": "Get the initial number of charges this item has.",
                 "return": "int"
             },
+            "GetItemSlot": {
+                "args": [],
+                "return": "int"
+            },
             "GetItemState": {
                 "args": [],
                 "description": "Gets whether item is unequipped or ready.",
@@ -7399,6 +7769,11 @@
                 "args": [],
                 "description": "Get the purchaser for this item.",
                 "return": "handle"
+            },
+            "GetSecondaryCharges": {
+                "args": [],
+                "description": "Get the number of secondary charges this item currently has.",
+                "return": "int"
             },
             "GetShareability": {
                 "args": [],
@@ -7575,6 +7950,16 @@
                 "description": "Set the purchaser of record for this item.",
                 "return": "void"
             },
+            "SetSecondaryCharges": {
+                "arg_names": [
+                    "iCharges"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Set the number of secondary charges on this item",
+                "return": "void"
+            },
             "SetSellable": {
                 "arg_names": [
                     "bSellable"
@@ -7667,6 +8052,16 @@
     "CDOTA_Item_Lua": {
         "extends": "CDOTA_Item",
         "functions": {
+            "CanUnitPickUp": {
+                "arg_names": [
+                    "hUnit"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Returns true if this item can be picked up by the target unit.",
+                "return": "bool"
+            },
             "CastFilterResult": {
                 "args": [],
                 "description": "Determine whether an issued command with no target is valid.",
@@ -9713,13 +10108,7 @@
     },
     "CDOTA_Unit_Courier": {
         "extends": "CDOTA_BaseNPC",
-        "functions": {
-            "UpgradeToFlyingCourier": {
-                "args": [],
-                "description": "Upgrade to a flying courier",
-                "return": "bool"
-            }
-        }
+        "functions": {}
     },
     "CDOTA_Unit_Nian": {
         "extends": "CDOTA_BaseNPC_Creature",
@@ -10308,7 +10697,7 @@
                     "cstring"
                 ],
                 "description": "Finds all entities by class name. Returns an array containing all the found entities.",
-                "return": "variant"
+                "return": "table"
             },
             "FindAllByClassnameWithin": {
                 "args": [
@@ -10317,21 +10706,21 @@
                     "float"
                 ],
                 "description": "Find entities by class name within a radius.",
-                "return": "variant"
+                "return": "table"
             },
             "FindAllByModel": {
                 "args": [
                     "cstring"
                 ],
                 "description": "Find entities by model name.",
-                "return": "variant"
+                "return": "table"
             },
             "FindAllByName": {
                 "args": [
                     "cstring"
                 ],
                 "description": "Find all entities by name. Returns an array containing all the found entities in it.",
-                "return": "variant"
+                "return": "table"
             },
             "FindAllByNameWithin": {
                 "args": [
@@ -10340,14 +10729,14 @@
                     "float"
                 ],
                 "description": "Find entities by name within a radius.",
-                "return": "variant"
+                "return": "table"
             },
             "FindAllByTarget": {
                 "args": [
                     "cstring"
                 ],
                 "description": "Find entities by targetname.",
-                "return": "variant"
+                "return": "table"
             },
             "FindAllInSphere": {
                 "args": [
@@ -10355,7 +10744,7 @@
                     "float"
                 ],
                 "description": "Find entities within a radius.",
-                "return": "variant"
+                "return": "table"
             },
             "FindByClassname": {
                 "args": [
@@ -10502,7 +10891,7 @@
                     "cstring",
                     "handle",
                     "handle",
-                    "variant",
+                    "table",
                     "float"
                 ],
                 "description": "Fire an entity output",
@@ -11190,7 +11579,7 @@
             "GetAllHeroes": {
                 "args": [],
                 "description": "Returns all the heroes in the world",
-                "return": "variant"
+                "return": "table"
             },
             "GetHero": {
                 "args": [
@@ -11214,7 +11603,7 @@
                     "cstring"
                 ],
                 "description": "Reads a spawn key",
-                "return": "variant"
+                "return": "table"
             }
         }
     },
@@ -11373,7 +11762,7 @@
                     "cstring"
                 ],
                 "description": "Reads a spawn key",
-                "return": "variant"
+                "return": "table"
             }
         }
     },
@@ -11468,6 +11857,15 @@
             "GetStabilityDamage": {
                 "args": [],
                 "return": "float"
+            },
+            "HasDamageType": {
+                "arg_names": [
+                    "bitsToTest"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "bool"
             },
             "ScaleDamage": {
                 "arg_names": [
@@ -11622,7 +12020,7 @@
                     "cstring"
                 ],
                 "description": "GetBool(name) : returns the convar as a boolean flag.",
-                "return": "variant"
+                "return": "table"
             },
             "GetCommandClient": {
                 "args": [],
@@ -11639,21 +12037,21 @@
                     "cstring"
                 ],
                 "description": "GetFloat(name) : returns the convar as a float. May return null if no such convar.",
-                "return": "variant"
+                "return": "table"
             },
             "GetInt": {
                 "args": [
                     "cstring"
                 ],
                 "description": "GetInt(name) : returns the convar as an int. May return null if no such convar.",
-                "return": "variant"
+                "return": "table"
             },
             "GetStr": {
                 "args": [
                     "cstring"
                 ],
                 "description": "GetStr(name) : returns the convar as a string. May return null if no such convar.",
-                "return": "variant"
+                "return": "table"
             },
             "RegisterCommand": {
                 "args": [
@@ -11736,7 +12134,7 @@
                     "cstring",
                     "cstring"
                 ],
-                "description": "Appends a string to a log file on the server",
+                "description": "AppendToLogFile is deprecated. Print to the console for logging instead.",
                 "return": "void"
             },
             "ApplyDamage": {
@@ -11834,6 +12232,19 @@
                 ],
                 "description": "Creates a DOTA hero by its dota_npc_units.txt name and sets it as the given player's controlled hero",
                 "return": "handle"
+            },
+            "CreateIllusions": {
+                "args": [
+                    "handle",
+                    "handle",
+                    "handle",
+                    "int",
+                    "int",
+                    "bool",
+                    "bool"
+                ],
+                "description": "Create illusions of the passed hero that belong to passed unit using passed modifier data. ( hOwner, hHeroToCopy, hModiiferKeys, nNumIllusions, nPadding, bScramblePosition, bFindClearSpace ) \nSupported keys: \noutgoing_damage\nincoming_damage\nbounty_base\nbounty_growth\noutgoing_damage_structure\noutgoing_damage_roshan",
+                "return": "table"
             },
             "CreateItem": {
                 "args": [
@@ -12284,7 +12695,7 @@
                     "int"
                 ],
                 "description": "Find units that intersect the given line with the given flags.",
-                "return": "variant"
+                "return": "table"
             },
             "FindUnitsInRadius": {
                 "args": [
@@ -12299,7 +12710,7 @@
                     "bool"
                 ],
                 "description": "Finds the units in a given radius with the given flags.",
-                "return": "variant"
+                "return": "table"
             },
             "FireEntityIOInputNameOnly": {
                 "args": [
@@ -12349,6 +12760,13 @@
                 "return": "float"
             },
             "GetDedicatedServerKey": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "( version )",
+                "return": "cstring"
+            },
+            "GetDedicatedServerKeyV2": {
                 "args": [
                     "cstring"
                 ],
@@ -12411,7 +12829,7 @@
             "GetLobbyEventGameDetails": {
                 "args": [],
                 "description": "( )",
-                "return": "variant"
+                "return": "table"
             },
             "GetMapName": {
                 "args": [],
@@ -12520,7 +12938,7 @@
                     "cstring",
                     "cstring"
                 ],
-                "description": "If the given file doesn't exist, creates it with the given contents; does nothing if it exists",
+                "description": "InitLogFile is deprecated. Print to the console for logging instead.",
                 "return": "void"
             },
             "IsClient": {
@@ -12604,19 +13022,19 @@
                     "cstring"
                 ],
                 "description": "Creates a table from the specified keyvalues text file",
-                "return": "variant"
+                "return": "table"
             },
             "LoadKeyValuesFromString": {
                 "args": [
                     "cstring"
                 ],
                 "description": "Creates a table from the specified keyvalues string",
-                "return": "variant"
+                "return": "table"
             },
             "LocalTime": {
                 "args": [],
                 "description": "Get the current local time",
-                "return": "variant"
+                "return": "table"
             },
             "MakeStringToken": {
                 "args": [
@@ -13369,7 +13787,7 @@
                     "cstring"
                 ],
                 "description": "CommandLineCheck(name) : returns true if the command line param was used, otherwise false.",
-                "return": "variant"
+                "return": "table"
             },
             "CommandLineFloat": {
                 "args": [
@@ -13377,7 +13795,7 @@
                     "float"
                 ],
                 "description": "CommandLineFloat(name) : returns the command line param as a float.",
-                "return": "variant"
+                "return": "table"
             },
             "CommandLineInt": {
                 "args": [
@@ -13385,7 +13803,7 @@
                     "int"
                 ],
                 "description": "CommandLineInt(name) : returns the command line param as an int.",
-                "return": "variant"
+                "return": "table"
             },
             "CommandLineStr": {
                 "args": [
@@ -13393,7 +13811,7 @@
                     "cstring"
                 ],
                 "description": "CommandLineStr(name) : returns the command line param as a string.",
-                "return": "variant"
+                "return": "table"
             }
         },
         "instance": "GlobalSys"
@@ -13432,7 +13850,7 @@
                     "bool"
                 ],
                 "description": "Returns a table full of tree HSCRIPTS (vPosition, flRadius, bFullCollision).",
-                "return": "variant"
+                "return": "table"
             },
             "GridPosToWorldCenterX": {
                 "args": [
