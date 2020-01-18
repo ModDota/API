@@ -6842,8 +6842,7 @@
                 "description": "Set the XP gained per level on this creature.",
                 "return": "void"
             }
-        },
-        "instance": "spawnedUnit"
+        }
     },
     "CDOTA_BaseNPC_Hero": {
         "extends": "CDOTA_BaseNPC",

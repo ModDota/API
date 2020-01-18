@@ -3465,10 +3465,6 @@
             "value": 4
         },
         {
-            "key": "NEUTRAL_TEAM",
-            "value": 4
-        },
-        {
             "key": "OVERHEAD_ALERT_BONUS_SPELL_DAMAGE",
             "value": 4
         },
@@ -3745,10 +3741,6 @@
             "value": 16
         },
         {
-            "key": "DOTA_MAX_ABILITIES",
-            "value": 16
-        },
-        {
             "key": "DOTA_UNIT_ORDER_PURCHASE_ITEM",
             "value": 16
         },
@@ -3906,10 +3898,6 @@
         },
         {
             "key": "DOTA_UNIT_ORDER_EJECT_ITEM_FROM_STASH",
-            "value": 25
-        },
-        {
-            "key": "HERO_MAX_LEVEL",
             "value": 25
         },
         {
