@@ -7357,35 +7357,35 @@
             "value": 1761
         },
         {
-            "key": "ACT_DOTA_ARCANA_VOTE",
+            "key": "ACD_DOTA_IDLE",
             "value": 1762
         },
         {
-            "key": "ACT_DOTA_SPIRIT_BREAKER_ULT_RUN",
+            "key": "ACT_DOTA_ARCANA_VOTE",
             "value": 1763
         },
         {
-            "key": "ACT_DOTA_PUNCH",
+            "key": "ACT_DOTA_SPIRIT_BREAKER_ULT_RUN",
             "value": 1764
         },
         {
-            "key": "ACT_DOTA_CAST_STATUE",
+            "key": "ACT_DOTA_PUNCH",
             "value": 1765
         },
         {
-            "key": "ACT_DOTA_CAST3_STATUE",
+            "key": "ACT_DOTA_CAST_STATUE",
             "value": 1766
         },
         {
-            "key": "ACT_DOTA_VICTORY_STATUE",
+            "key": "ACT_DOTA_CAST3_STATUE",
             "value": 1767
         },
         {
-            "key": "ACT_DOTA_STATUE_SEQUENCE",
+            "key": "ACT_DOTA_VICTORY_STATUE",
             "value": 1768
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_STATUE_SEQUENCE",
             "value": 1769
         },
         {
