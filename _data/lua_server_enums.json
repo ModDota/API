@@ -1635,8 +1635,12 @@
             "value": 6
         },
         {
-            "key": "DOTA_SHOP_NONE",
+            "key": "DOTA_SHOP_NEUTRALS",
             "value": 7
+        },
+        {
+            "key": "DOTA_SHOP_NONE",
+            "value": 8
         }
     ],
     "DOTA_UNIT_TARGET_FLAGS": [
@@ -3581,6 +3585,14 @@
             "value": 9
         },
         {
+            "key": "DOTA_ITEM_INVENTORY_SIZE",
+            "value": 9
+        },
+        {
+            "key": "DOTA_ITEM_STASH_MIN",
+            "value": 9
+        },
+        {
             "key": "DOTA_UNIT_ORDER_CAST_TOGGLE",
             "value": 9
         },
@@ -3598,14 +3610,6 @@
         },
         {
             "key": "AE_NPC_WEAPON_SET_SEQUENCE_NUMBER",
-            "value": 10
-        },
-        {
-            "key": "DOTA_ITEM_INVENTORY_SIZE",
-            "value": 10
-        },
-        {
-            "key": "DOTA_ITEM_STASH_MIN",
             "value": 10
         },
         {
@@ -3713,6 +3717,10 @@
             "value": 15
         },
         {
+            "key": "DOTA_ITEM_STASH_MAX",
+            "value": 15
+        },
+        {
             "key": "DOTA_UNIT_ORDER_PICKUP_RUNE",
             "value": 15
         },
@@ -3734,10 +3742,6 @@
         },
         {
             "key": "DMG_VEHICLE",
-            "value": 16
-        },
-        {
-            "key": "DOTA_ITEM_STASH_MAX",
             "value": 16
         },
         {
@@ -4066,6 +4070,10 @@
         },
         {
             "key": "AE_CL_ENABLE_BODYGROUP",
+            "value": 38
+        },
+        {
+            "key": "DOTA_UNIT_ORDER_TAKE_ITEM_FROM_NEUTRAL_ITEM_STASH",
             "value": 38
         },
         {

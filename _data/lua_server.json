@@ -7474,6 +7474,10 @@
             }
         }
     },
+    "CDOTA_BaseNPC_NeutralItemStash": {
+        "extends": "CDOTA_BaseNPC_Building",
+        "functions": {}
+    },
     "CDOTA_BaseNPC_RotatableBuilding": {
         "extends": "CDOTA_BaseNPC",
         "functions": {}
@@ -12567,6 +12571,16 @@
                     "vector"
                 ],
                 "return": "float"
+            },
+            "DropNeutralItemAtPositionForHero": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "handle",
+                    "int"
+                ],
+                "description": "Drop a neutral item for the team of the hero at the given tier.",
+                "return": "void"
             },
             "EmitAnnouncerSound": {
                 "args": [
