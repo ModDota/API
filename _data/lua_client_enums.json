@@ -7361,35 +7361,35 @@
             "value": 1761
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_STORM_ABILITY_4",
             "value": 1762
         },
         {
-            "key": "ACT_DOTA_STORM_ABILITY_4",
+            "key": "ACT_DOTA_RUN_STATUE",
             "value": 1763
         },
         {
-            "key": "ACT_DOTA_RUN_STATUE",
+            "key": "ACT_DOTA_IDLE_STATUE",
             "value": 1764
         },
         {
-            "key": "ACT_DOTA_IDLE_STATUE",
+            "key": "ACT_DOTA_CAST4_STATUE",
             "value": 1765
         },
         {
-            "key": "ACT_DOTA_CAST4_STATUE",
+            "key": "ACT_DOTA_STUN_STATUE",
             "value": 1766
         },
         {
-            "key": "ACT_DOTA_STUN_STATUE",
+            "key": "ACT_DOTA_FLAIL_STATUE",
             "value": 1767
         },
         {
-            "key": "ACT_DOTA_FLAIL_STATUE",
+            "key": "ACT_DOTA_CAST2_STATUE",
             "value": 1768
         },
         {
-            "key": "ACT_DOTA_CAST2_STATUE",
+            "key": "ACD_DOTA_IDLE",
             "value": 1769
         },
         {
