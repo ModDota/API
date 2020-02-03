@@ -279,68 +279,72 @@
             "value": 12
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_TEAMS",
+            "key": "DOTA_HUD_VISIBILITY_SHOP_COMMONITEMS",
             "value": 13
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_GAME_NAME",
+            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_TEAMS",
             "value": 14
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_CLOCK",
+            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_GAME_NAME",
             "value": 15
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_TOP_MENU_BUTTONS",
+            "key": "DOTA_HUD_VISIBILITY_HERO_SELECTION_CLOCK",
             "value": 16
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_BACKGROUND",
+            "key": "DOTA_HUD_VISIBILITY_TOP_MENU_BUTTONS",
             "value": 17
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_RADIANT_TEAM",
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_BACKGROUND",
             "value": 18
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_DIRE_TEAM",
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_RADIANT_TEAM",
             "value": 19
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_SCORE",
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_DIRE_TEAM",
             "value": 20
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_ENDGAME",
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR_SCORE",
             "value": 21
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_ENDGAME_CHAT",
+            "key": "DOTA_HUD_VISIBILITY_ENDGAME",
             "value": 22
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_QUICK_STATS",
+            "key": "DOTA_HUD_VISIBILITY_ENDGAME_CHAT",
             "value": 23
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_PREGAME_STRATEGYUI",
+            "key": "DOTA_HUD_VISIBILITY_QUICK_STATS",
             "value": 24
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_KILLCAM",
+            "key": "DOTA_HUD_VISIBILITY_PREGAME_STRATEGYUI",
             "value": 25
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_TOP_BAR",
+            "key": "DOTA_HUD_VISIBILITY_KILLCAM",
             "value": 26
         },
         {
-            "key": "DOTA_HUD_CUSTOMUI_BEHIND_HUD_ELEMENTS",
+            "key": "DOTA_HUD_VISIBILITY_TOP_BAR",
             "value": 27
         },
         {
-            "key": "DOTA_HUD_VISIBILITY_COUNT",
+            "key": "DOTA_HUD_CUSTOMUI_BEHIND_HUD_ELEMENTS",
             "value": 28
+        },
+        {
+            "key": "DOTA_HUD_VISIBILITY_COUNT",
+            "value": 29
         }
     ],
     "DOTAInventoryFlags_t": [
@@ -1865,68 +1869,72 @@
             "value": 12
         },
         {
-            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_TEAMS",
+            "key": "DOTA_DEFAULT_UI_SHOP_COMMONITEMS",
             "value": 13
         },
         {
-            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_GAME_NAME",
+            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_TEAMS",
             "value": 14
         },
         {
-            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_CLOCK",
+            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_GAME_NAME",
             "value": 15
         },
         {
-            "key": "DOTA_DEFAULT_UI_TOP_MENU_BUTTONS",
+            "key": "DOTA_DEFAULT_UI_HERO_SELECTION_CLOCK",
             "value": 16
         },
         {
-            "key": "DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND",
+            "key": "DOTA_DEFAULT_UI_TOP_MENU_BUTTONS",
             "value": 17
         },
         {
-            "key": "DOTA_DEFAULT_UI_TOP_BAR_RADIANT_TEAM",
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND",
             "value": 18
         },
         {
-            "key": "DOTA_DEFAULT_UI_TOP_BAR_DIRE_TEAM",
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_RADIANT_TEAM",
             "value": 19
         },
         {
-            "key": "DOTA_DEFAULT_UI_TOP_BAR_SCORE",
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_DIRE_TEAM",
             "value": 20
         },
         {
-            "key": "DOTA_DEFAULT_UI_ENDGAME",
+            "key": "DOTA_DEFAULT_UI_TOP_BAR_SCORE",
             "value": 21
         },
         {
-            "key": "DOTA_DEFAULT_UI_ENDGAME_CHAT",
+            "key": "DOTA_DEFAULT_UI_ENDGAME",
             "value": 22
         },
         {
-            "key": "DOTA_DEFAULT_UI_QUICK_STATS",
+            "key": "DOTA_DEFAULT_UI_ENDGAME_CHAT",
             "value": 23
         },
         {
-            "key": "DOTA_DEFAULT_UI_PREGAME_STRATEGYUI",
+            "key": "DOTA_DEFAULT_UI_QUICK_STATS",
             "value": 24
         },
         {
-            "key": "DOTA_DEFAULT_UI_KILLCAM",
+            "key": "DOTA_DEFAULT_UI_PREGAME_STRATEGYUI",
             "value": 25
         },
         {
-            "key": "DOTA_DEFAULT_UI_TOP_BAR",
+            "key": "DOTA_DEFAULT_UI_KILLCAM",
             "value": 26
         },
         {
-            "key": "DOTA_DEFAULT_UI_CUSTOMUI_BEHIND_HUD_ELEMENTS",
+            "key": "DOTA_DEFAULT_UI_TOP_BAR",
             "value": 27
         },
         {
-            "key": "DOTA_DEFAULT_UI_ELEMENT_COUNT",
+            "key": "DOTA_DEFAULT_UI_CUSTOMUI_BEHIND_HUD_ELEMENTS",
             "value": 28
+        },
+        {
+            "key": "DOTA_DEFAULT_UI_ELEMENT_COUNT",
+            "value": 29
         }
     ],
     "EDOTA_ModifyGold_Reason": [
@@ -10165,8 +10173,16 @@
             "value": 40
         },
         {
-            "key": "MODIFIER_STATE_LAST",
+            "key": "MODIFIER_STATE_FEARED",
             "value": 41
+        },
+        {
+            "key": "MODIFIER_STATE_TAUNTED",
+            "value": 42
+        },
+        {
+            "key": "MODIFIER_STATE_LAST",
+            "value": 43
         }
     ],
     "quest_text_replace_values_t": [

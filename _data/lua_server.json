@@ -3118,7 +3118,8 @@
                     "cstring",
                     "cstring",
                     "int",
-                    "cstring"
+                    "cstring",
+                    "bool"
                 ],
                 "description": "Spawn a bot player of the passed hero name, player name, and team.",
                 "return": "handle"
@@ -3395,6 +3396,13 @@
                 "description": "Prepare Dota lane style spawners with a given interval",
                 "return": "void"
             },
+            "RemoveFakeClient": {
+                "args": [
+                    "int"
+                ],
+                "description": "Removes a fake client",
+                "return": "void"
+            },
             "RemoveItemFromWhiteList": {
                 "args": [
                     "cstring"
@@ -3560,6 +3568,13 @@
                     "bool"
                 ],
                 "description": "Sets whether First Blood has been triggered.",
+                "return": "void"
+            },
+            "SetGameTimeFrozen": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Freeze the game time.",
                 "return": "void"
             },
             "SetGameWinner": {
@@ -3743,6 +3758,11 @@
                 "description": "Spawn and release the next creep wave from Dota lane style spawners.",
                 "return": "void"
             },
+            "SpawnNeutralCreeps": {
+                "args": [],
+                "description": "Spawn and release the next set of neutral camps.",
+                "return": "void"
+            },
             "State_Get": {
                 "args": [],
                 "description": "Get the current Gamerules state",
@@ -3820,6 +3840,16 @@
                 ],
                 "description": "Sets this player's hero selection.",
                 "return": "void"
+            },
+            "SpawnCourierAtPosition": {
+                "arg_names": [
+                    "vLocation"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Spawn a courier for this player at the given position.",
+                "return": "handle"
             }
         }
     },
@@ -7453,10 +7483,6 @@
                 ],
                 "description": "Args: int nGold, int nReason",
                 "return": "void"
-            },
-            "UnitCanRespawn": {
-                "args": [],
-                "return": "bool"
             },
             "UpgradeAbility": {
                 "arg_names": [
@@ -12287,6 +12313,14 @@
                 "description": "Create a modifier not associated with an NPC. ( hCaster, hAbility, modifierName, paramTable, vOrigin, nTeamNumber, bPhantomBlocker )",
                 "return": "handle"
             },
+            "CreateRune": {
+                "args": [
+                    "vector",
+                    "int"
+                ],
+                "description": "Create a rune of the specified type (vLocation, iRuneType).",
+                "return": "handle"
+            },
             "CreateSceneEntity": {
                 "args": [
                     "cstring"
@@ -12696,6 +12730,13 @@
                 "description": "Place a unit somewhere not already occupied.",
                 "return": "bool"
             },
+            "FindSpawnEntityForTeam": {
+                "args": [
+                    "int"
+                ],
+                "description": "Find a spawn point for the given team.",
+                "return": "handle"
+            },
             "FindUnitsInLine": {
                 "args": [
                     "int",
@@ -12945,6 +12986,13 @@
                 "args": [],
                 "description": "Gets the world's minimum Y position.",
                 "return": "float"
+            },
+            "GetXPNeededToReachNextLevel": {
+                "args": [
+                    "int"
+                ],
+                "description": "Get amount of XP required to reach the next level.",
+                "return": "int"
             },
             "InitLogFile": {
                 "args": [

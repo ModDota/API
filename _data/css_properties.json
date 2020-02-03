@@ -56,6 +56,12 @@
             "background-color: #0d1c22ff, gradient( radial, 100% -0%, 100px -40px, 320% 270%, from( #3a464bff ), color-stop( 0.23, #0d1c22ff ), to( #0d1c22ff ) );"
         ]
     },
+    "background-color-opacity": {
+        "description": "Sets the background color opacity for a panel (does nothing on its own, but when merged with a full background-color it overrides the opacity).",
+        "examples": [
+            "background-color-opacity: 0.5;"
+        ]
+    },
     "background-image": {
         "description": "Comma separated list of images or movies to draw in the background. Can specify \"none\" to not draw a background layer. Combined with background-position, background-size and background-repeat values.",
         "examples": [
