@@ -7317,31 +7317,31 @@
             "value": 1750
         },
         {
-            "key": "ACT_DOTA_STORM_ABILITY_4",
+            "key": "ACD_DOTA_IDLE",
             "value": 1751
         },
         {
-            "key": "ACT_DOTA_RUN_STATUE",
+            "key": "ACT_DOTA_ARCANA_VOTE",
             "value": 1752
         },
         {
-            "key": "ACT_DOTA_ATTACK_STATUE",
+            "key": "ACT_DOTA_SPIRIT_BREAKER_ULT_RUN",
             "value": 1753
         },
         {
-            "key": "ACT_DOTA_IDLE_STATUE",
+            "key": "ACT_DOTA_PUNCH",
             "value": 1754
         },
         {
-            "key": "ACT_DOTA_CAST4_STATUE",
+            "key": "ACT_DOTA_CAST_STATUE",
             "value": 1755
         },
         {
-            "key": "ACT_DOTA_STUN_STATUE",
+            "key": "ACT_DOTA_ATTACK_STATUE",
             "value": 1756
         },
         {
-            "key": "ACT_DOTA_FLAIL_STATUE",
+            "key": "ACT_DOTA_CAST3_STATUE",
             "value": 1757
         },
         {
@@ -7349,11 +7349,11 @@
             "value": 1758
         },
         {
-            "key": "ACT_DOTA_CAST2_STATUE",
+            "key": "ACT_DOTA_TELEPORT_STATUE",
             "value": 1759
         },
         {
-            "key": "ACT_DOTA_TELEPORT_STATUE",
+            "key": "ACT_DOTA_VICTORY_STATUE",
             "value": 1760
         },
         {
@@ -7361,35 +7361,35 @@
             "value": 1761
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_STATUE_SEQUENCE",
             "value": 1762
         },
         {
-            "key": "ACT_DOTA_ARCANA_VOTE",
+            "key": "ACT_DOTA_STORM_ABILITY_4",
             "value": 1763
         },
         {
-            "key": "ACT_DOTA_SPIRIT_BREAKER_ULT_RUN",
+            "key": "ACT_DOTA_RUN_STATUE",
             "value": 1764
         },
         {
-            "key": "ACT_DOTA_PUNCH",
+            "key": "ACT_DOTA_IDLE_STATUE",
             "value": 1765
         },
         {
-            "key": "ACT_DOTA_CAST_STATUE",
+            "key": "ACT_DOTA_CAST4_STATUE",
             "value": 1766
         },
         {
-            "key": "ACT_DOTA_CAST3_STATUE",
+            "key": "ACT_DOTA_STUN_STATUE",
             "value": 1767
         },
         {
-            "key": "ACT_DOTA_VICTORY_STATUE",
+            "key": "ACT_DOTA_FLAIL_STATUE",
             "value": 1768
         },
         {
-            "key": "ACT_DOTA_STATUE_SEQUENCE",
+            "key": "ACT_DOTA_CAST2_STATUE",
             "value": 1769
         },
         {
