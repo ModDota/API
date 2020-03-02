@@ -3224,6 +3224,13 @@
                 "description": "Transition game state to DOTA_GAMERULES_STATE_GAME_IN_PROGRESS",
                 "return": "void"
             },
+            "GetAnnouncer": {
+                "args": [
+                    "int"
+                ],
+                "description": "Get the announcer for a team",
+                "return": "handle"
+            },
             "GetCustomGameDifficulty": {
                 "args": [],
                 "description": "Returns the difficulty level of the custom game mode",
@@ -5248,6 +5255,11 @@
                 "description": "Set whether this NPC is required to reach each goal entity, rather than being allowed to unkink their path.",
                 "return": "bool"
             },
+            "GetNeutralSpawnerName": {
+                "args": [],
+                "description": "Get the name of this camp's neutral spawner.",
+                "return": "cstring"
+            },
             "GetNeverMoveToClearSpace": {
                 "args": [],
                 "description": "If set to true, we will never attempt to move this unit to clear space, even when it unphases.",
@@ -6552,6 +6564,16 @@
             "ShouldIdleAcquire": {
                 "args": [],
                 "return": "bool"
+            },
+            "SpeakConcept": {
+                "arg_names": [
+                    "hCriteriaTable"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Speak a response system concept with the TLK_DOTA_CUSTOM concept.",
+                "return": "void"
             },
             "SpendMana": {
                 "arg_names": [
