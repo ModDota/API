@@ -9795,10 +9795,12 @@
             },
             "IsHeroSelected": {
                 "arg_names": [
-                    "pHeroname"
+                    "pHeroname",
+                    "bIgnoreUnrevealedPick"
                 ],
                 "args": [
-                    "cstring"
+                    "cstring",
+                    "bool"
                 ],
                 "return": "bool"
             },
@@ -10105,10 +10107,12 @@
             },
             "WhoSelectedHero": {
                 "arg_names": [
-                    "pHeroFilename"
+                    "pHeroFilename",
+                    "bIgnoreUnrevealedPick"
                 ],
                 "args": [
-                    "cstring"
+                    "cstring",
+                    "bool"
                 ],
                 "return": "int"
             }
