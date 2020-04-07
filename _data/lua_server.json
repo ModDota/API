@@ -5548,10 +5548,6 @@
                 "description": "Is this unit a creep?",
                 "return": "bool"
             },
-            "IsDeniable": {
-                "args": [],
-                "return": "bool"
-            },
             "IsDisarmed": {
                 "args": [],
                 "return": "bool"
@@ -6086,6 +6082,10 @@
                 "args": [],
                 "description": "Gets this unit's attack range after all modifiers.",
                 "return": "float"
+            },
+            "Script_IsDeniable": {
+                "args": [],
+                "return": "bool"
             },
             "SellItem": {
                 "arg_names": [
