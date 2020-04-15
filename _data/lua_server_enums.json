@@ -1995,16 +1995,24 @@
             "value": 13
         },
         {
-            "key": "DOTA_ModifyGold_RoshanKill",
+            "key": "DOTA_ModifyGold_NeutralKill",
             "value": 14
         },
         {
-            "key": "DOTA_ModifyGold_CourierKill",
+            "key": "DOTA_ModifyGold_RoshanKill",
             "value": 15
         },
         {
-            "key": "DOTA_ModifyGold_SharedGold",
+            "key": "DOTA_ModifyGold_CourierKill",
             "value": 16
+        },
+        {
+            "key": "DOTA_ModifyGold_BountyRune",
+            "value": 17
+        },
+        {
+            "key": "DOTA_ModifyGold_SharedGold",
+            "value": 18
         }
     ],
     "EDOTA_ModifyXP_Reason": [
