@@ -2013,6 +2013,14 @@
         {
             "key": "DOTA_ModifyGold_SharedGold",
             "value": 18
+        },
+        {
+            "key": "DOTA_ModifyGold_AbilityGold",
+            "value": 19
+        },
+        {
+            "key": "DOTA_ModifyGold_WardKill",
+            "value": 20
         }
     ],
     "EDOTA_ModifyXP_Reason": [
