@@ -53,48 +53,28 @@
             "value": 2
         },
         {
-            "key": "DOTA_ATTRIBUTE_STRENGTH_STATUS_RESISTANCE_PERCENT",
+            "key": "DOTA_ATTRIBUTE_AGILITY_DAMAGE",
             "value": 3
         },
         {
-            "key": "DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT",
+            "key": "DOTA_ATTRIBUTE_AGILITY_ARMOR",
             "value": 4
         },
         {
-            "key": "DOTA_ATTRIBUTE_AGILITY_DAMAGE",
+            "key": "DOTA_ATTRIBUTE_AGILITY_ATTACK_SPEED",
             "value": 5
         },
         {
-            "key": "DOTA_ATTRIBUTE_AGILITY_ARMOR",
+            "key": "DOTA_ATTRIBUTE_INTELLIGENCE_DAMAGE",
             "value": 6
         },
         {
-            "key": "DOTA_ATTRIBUTE_AGILITY_ATTACK_SPEED",
+            "key": "DOTA_ATTRIBUTE_INTELLIGENCE_MANA",
             "value": 7
         },
         {
-            "key": "DOTA_ATTRIBUTE_AGILITY_MOVE_SPEED_PERCENT",
-            "value": 8
-        },
-        {
-            "key": "DOTA_ATTRIBUTE_INTELLIGENCE_DAMAGE",
-            "value": 9
-        },
-        {
-            "key": "DOTA_ATTRIBUTE_INTELLIGENCE_MANA",
-            "value": 10
-        },
-        {
             "key": "DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN",
-            "value": 11
-        },
-        {
-            "key": "DOTA_ATTRIBUTE_INTELLIGENCE_SPELL_AMP_PERCENT",
-            "value": 12
-        },
-        {
-            "key": "DOTA_ATTRIBUTE_INTELLIGENCE_MAGIC_RESISTANCE_PERCENT",
-            "value": 13
+            "value": 8
         }
     ],
     "Attributes": [
