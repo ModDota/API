@@ -7297,51 +7297,51 @@
             "value": 1750
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_STORM_ABILITY_4",
             "value": 1751
         },
         {
-            "key": "ACT_DOTA_STORM_ABILITY_4",
+            "key": "ACT_DOTA_RUN_STATUE",
             "value": 1752
         },
         {
-            "key": "ACT_DOTA_RUN_STATUE",
+            "key": "ACT_DOTA_ATTACK_STATUE",
             "value": 1753
         },
         {
-            "key": "ACT_DOTA_ATTACK_STATUE",
+            "key": "ACT_DOTA_IDLE_STATUE",
             "value": 1754
         },
         {
-            "key": "ACT_DOTA_IDLE_STATUE",
+            "key": "ACT_DOTA_CAST4_STATUE",
             "value": 1755
         },
         {
-            "key": "ACT_DOTA_CAST4_STATUE",
+            "key": "ACT_DOTA_STUN_STATUE",
             "value": 1756
         },
         {
-            "key": "ACT_DOTA_STUN_STATUE",
+            "key": "ACT_DOTA_FLAIL_STATUE",
             "value": 1757
         },
         {
-            "key": "ACT_DOTA_FLAIL_STATUE",
+            "key": "ACT_DOTA_CAST1_STATUE",
             "value": 1758
         },
         {
-            "key": "ACT_DOTA_CAST1_STATUE",
+            "key": "ACT_DOTA_CAST2_STATUE",
             "value": 1759
         },
         {
-            "key": "ACT_DOTA_CAST2_STATUE",
+            "key": "ACT_DOTA_TELEPORT_STATUE",
             "value": 1760
         },
         {
-            "key": "ACT_DOTA_TELEPORT_STATUE",
+            "key": "ACT_DOTA_TAUNT_STATUE",
             "value": 1761
         },
         {
-            "key": "ACT_DOTA_TAUNT_STATUE",
+            "key": "ACD_DOTA_IDLE",
             "value": 1762
         },
         {
