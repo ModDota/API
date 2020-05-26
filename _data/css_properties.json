@@ -27,6 +27,10 @@
         "description": "<Needs a description>",
         "examples": []
     },
+    "animation-fill-mode": {
+        "description": "<Needs a description>",
+        "examples": []
+    },
     "animation-iteration-count": {
         "description": "<Needs a description>",
         "examples": []
@@ -531,7 +535,9 @@
         "examples": [
             "text-align: left;",
             "text-align: right;",
-            "text-align: center;"
+            "text-align: center;",
+            "text-align: justify;",
+            "text-align: justify-letter-spacing;"
         ]
     },
     "text-decoration": {
@@ -623,6 +629,13 @@
         "examples": [
             "transition-duration: 2.0s;",
             "transition-duration: 2.0s, 1.2s, 1.2s, 4.0s, 2.0s;"
+        ]
+    },
+    "transition-high-framerate": {
+        "description": "Specifies the desire for higher framerate during this transition, if we have control.",
+        "examples": [
+            "transition-high-framerate: true;",
+            "transition-high-framerate: false, true, false;"
         ]
     },
     "transition-property": {

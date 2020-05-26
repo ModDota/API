@@ -1016,6 +1016,23 @@
             }
         }
     },
+    "CLogicRelay": {
+        "extends": "C_BaseEntity",
+        "functions": {
+            "Trigger": {
+                "arg_names": [
+                    "hActivator",
+                    "hCaller"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Trigger( hActivator, hCaller ) : Triggers the logic_relay",
+                "return": "void"
+            }
+        }
+    },
     "CNativeOutputs": {
         "functions": {
             "AddOutput": {
@@ -1306,6 +1323,11 @@
     "C_DOTABaseAbility": {
         "extends": "C_BaseEntity",
         "functions": {
+            "GetAbilityName": {
+                "args": [],
+                "description": "Name of this ability.",
+                "return": "cstring"
+            },
             "GetBehavior": {
                 "args": [],
                 "return": "int"
@@ -1318,6 +1340,18 @@
                 "args": [],
                 "description": "Return the level of the ability",
                 "return": "int"
+            },
+            "GetLevelSpecialValueFor": {
+                "arg_names": [
+                    "szName",
+                    "nLevel"
+                ],
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "description": "Gets a value from this ability's special value block for passed level.",
+                "return": "table"
             },
             "GetSpecialValueFor": {
                 "arg_names": [
@@ -2360,6 +2394,15 @@
                 "description": "True/false if this modifier is removed when the parent dies.",
                 "return": "bool"
             },
+            "SetHasCustomTransmitterData": {
+                "arg_names": [
+                    "bHasCustomData"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
             "ShouldUseOverheadOffset": {
                 "args": [],
                 "description": "Apply the overhead offset to the attached effect.",
@@ -2491,6 +2534,13 @@
                 ],
                 "description": "Returns the number of degrees difference between two yaw angles",
                 "return": "float"
+            },
+            "AnglesToVector": {
+                "args": [
+                    "qangle"
+                ],
+                "description": "Generate a vector given a QAngles",
+                "return": "vector"
             },
             "AppendToLogFile": {
                 "args": [
@@ -2800,6 +2850,11 @@
                 "description": "Get the time spent on the server in the last frame",
                 "return": "float"
             },
+            "GetActiveSpawnGroupHandle": {
+                "args": [],
+                "description": "Returns the currently active spawn group handle",
+                "return": "int"
+            },
             "GetFrameCount": {
                 "args": [],
                 "description": "Returns the engines current frame count",
@@ -2941,6 +2996,13 @@
                 ],
                 "description": "Checks to see if the given hScript is a valid entity",
                 "return": "int"
+            },
+            "ManuallyTriggerSpawnGroupCompletion": {
+                "args": [
+                    "int"
+                ],
+                "description": "Triggers the creation of entities in a manually-completed spawn group",
+                "return": "void"
             },
             "Msg": {
                 "args": [
@@ -3127,6 +3189,16 @@
                     "bool"
                 ],
                 "description": "Set rendering on/off for an ehandle",
+                "return": "void"
+            },
+            "SpawnEntityFromTableAsynchronous": {
+                "args": [
+                    "cstring",
+                    "handle",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Asynchronously spawns a single entity from a table",
                 "return": "void"
             },
             "SpawnEntityFromTableSynchronous": {

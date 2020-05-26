@@ -555,6 +555,11 @@
                 "description": "Returns float duration of the sound. Takes soundname and optional actormodelname.",
                 "return": "float"
             },
+            "GetSpawnGroupHandle": {
+                "args": [],
+                "description": "Returns the spawn group handle of this entity",
+                "return": "int"
+            },
             "GetTeam": {
                 "args": [],
                 "description": "Get the team number of this entity.",
@@ -2079,6 +2084,24 @@
                 "description": "Begin tracking a sequence of events using the real time combat analyzer.",
                 "return": "int"
             },
+            "AllocateFowBlockerRegion": {
+                "arg_names": [
+                    "flMinX",
+                    "flMinY",
+                    "flMaxX",
+                    "flMaxY",
+                    "flGridSize"
+                ],
+                "args": [
+                    "float",
+                    "float",
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "description": "Allocates an entity which can be used by custom games to control FoW occlusion volumes",
+                "return": "handle"
+            },
             "AreWeatherEffectsDisabled": {
                 "args": [],
                 "description": "Get if weather effects are disabled on the client.",
@@ -2861,6 +2884,16 @@
                 "description": "Set a filter function to control the behavior when a hero's gold is modified. (Modify the table and Return true to use new values, return false to cancel the event)",
                 "return": "void"
             },
+            "SetNeutralStashEnabled": {
+                "arg_names": [
+                    "bEnable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Allow items to be sent to the neutral stash.",
+                "return": "void"
+            },
             "SetOverrideSelectionEntity": {
                 "arg_names": [
                     "hOverrideEntity"
@@ -2953,6 +2986,16 @@
                     "bool"
                 ],
                 "description": "Enable/disable gold penalty for late picking.",
+                "return": "void"
+            },
+            "SetSendToStashEnabled": {
+                "arg_names": [
+                    "bEnable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Allow items to be sent to the stash.",
                 "return": "void"
             },
             "SetStashPurchasingDisabled": {
@@ -5694,6 +5737,10 @@
                 "description": "Is this a real hero?",
                 "return": "bool"
             },
+            "IsReincarnating": {
+                "args": [],
+                "return": "bool"
+            },
             "IsRooted": {
                 "args": [],
                 "return": "bool"
@@ -7697,6 +7744,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "SendBuffRefreshToClients": {
+                "args": [],
+                "return": "void"
+            },
             "SetDuration": {
                 "arg_names": [
                     "flDuration",
@@ -7922,6 +7973,23 @@
                 ],
                 "return": "void"
             },
+            "LaunchLootRequiredHeight": {
+                "arg_names": [
+                    "bAutoUse",
+                    "flRequiredHeight",
+                    "flHeight",
+                    "flDuration",
+                    "vEndPoint"
+                ],
+                "args": [
+                    "bool",
+                    "float",
+                    "float",
+                    "float",
+                    "vector"
+                ],
+                "return": "void"
+            },
             "OnEquip": {
                 "args": [],
                 "return": "void"
@@ -8060,6 +8128,21 @@
                 "args": [],
                 "description": "Returns the item name",
                 "return": "cstring"
+            }
+        }
+    },
+    "CDOTA_Item_BagOfGold": {
+        "extends": "CDOTA_Item",
+        "functions": {
+            "SetLifeTime": {
+                "arg_names": [
+                    "flTime"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set the life time of this item",
+                "return": "void"
             }
         }
     },
@@ -8665,6 +8748,15 @@
                 "args": [],
                 "description": "True/false if this modifier is removed when the parent dies.",
                 "return": "bool"
+            },
+            "SetHasCustomTransmitterData": {
+                "arg_names": [
+                    "bHasCustomData"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
             },
             "ShouldUseOverheadOffset": {
                 "args": [],
@@ -11138,6 +11230,39 @@
             }
         }
     },
+    "CFoWBlockerRegion": {
+        "extends": "CBaseEntity",
+        "functions": {
+            "AddRectangularBlocker": {
+                "arg_names": [
+                    "vMins",
+                    "vMaxs",
+                    "bClearRegion"
+                ],
+                "args": [
+                    "vector",
+                    "vector",
+                    "bool"
+                ],
+                "description": "AddRectangularBlocker( vMins, vMaxs, bClear ) : Sets or clears a blocker rectangle",
+                "return": "void"
+            },
+            "AddRectangularOutlineBlocker": {
+                "arg_names": [
+                    "vMins",
+                    "vMaxs",
+                    "bClearRegion"
+                ],
+                "args": [
+                    "vector",
+                    "vector",
+                    "bool"
+                ],
+                "description": "AddRectangularOutlineBlocker( vMins, vMaxs, bClear ) : Sets or clears a blocker rectangle outline",
+                "return": "void"
+            }
+        }
+    },
     "CInfoData": {
         "extends": "CBaseEntity",
         "functions": {
@@ -11226,6 +11351,23 @@
             "ShowWorldLayer": {
                 "args": [],
                 "description": "Shows this layer",
+                "return": "void"
+            }
+        }
+    },
+    "CLogicRelay": {
+        "extends": "CBaseEntity",
+        "functions": {
+            "Trigger": {
+                "arg_names": [
+                    "hActivator",
+                    "hCaller"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "Trigger( hActivator, hCaller ) : Triggers the logic_relay",
                 "return": "void"
             }
         }
@@ -12184,6 +12326,13 @@
                 "description": "Returns the number of degrees difference between two yaw angles",
                 "return": "float"
             },
+            "AnglesToVector": {
+                "args": [
+                    "qangle"
+                ],
+                "description": "Generate a vector given a QAngles",
+                "return": "vector"
+            },
             "AppendToLogFile": {
                 "args": [
                     "cstring",
@@ -12236,6 +12385,14 @@
                     "ehandle"
                 ],
                 "description": "Create all I/O events for a particular entity",
+                "return": "void"
+            },
+            "CenterCameraOnUnit": {
+                "args": [
+                    "int",
+                    "handle"
+                ],
+                "description": "CenterCameraOnUnit( nPlayerId, hUnit ): Centers each players' camera on a unit.",
                 "return": "void"
             },
             "ClearTeamCustomHealthbarColor": {
@@ -12433,6 +12590,17 @@
                 "args": [],
                 "description": "Breaks in the debugger",
                 "return": "void"
+            },
+            "DebugCreateUnit": {
+                "args": [
+                    "handle",
+                    "cstring",
+                    "int",
+                    "bool",
+                    "handle"
+                ],
+                "description": "Creates a test unit controllable by the specified player.",
+                "return": "int"
             },
             "DebugDrawBox": {
                 "args": [
@@ -12839,6 +13007,11 @@
                 "description": "Get the time spent on the server in the last frame",
                 "return": "float"
             },
+            "GetActiveSpawnGroupHandle": {
+                "args": [],
+                "description": "Returns the currently active spawn group handle",
+                "return": "int"
+            },
             "GetDedicatedServerKey": {
                 "args": [
                     "cstring"
@@ -12947,6 +13120,11 @@
                 "args": [],
                 "description": "Get the current real world time",
                 "return": "cstring"
+            },
+            "GetSystemTimeMS": {
+                "args": [],
+                "description": "Get system time in milliseconds",
+                "return": "double"
             },
             "GetTargetAOELocation": {
                 "args": [
@@ -13129,6 +13307,13 @@
                 ],
                 "description": "Checks to see if the given hScript is a valid entity",
                 "return": "int"
+            },
+            "ManuallyTriggerSpawnGroupCompletion": {
+                "args": [
+                    "int"
+                ],
+                "description": "Triggers the creation of entities in a manually-completed spawn group",
+                "return": "void"
             },
             "MinimapEvent": {
                 "args": [
@@ -13318,6 +13503,15 @@
                     "int"
                 ],
                 "description": "(int nPct)",
+                "return": "bool"
+            },
+            "RollPseudoRandomPercentage": {
+                "args": [
+                    "uint",
+                    "int",
+                    "handle"
+                ],
+                "description": "( chance, pseudo random id, unit.",
                 "return": "bool"
             },
             "RotateOrientation": {
@@ -13517,6 +13711,16 @@
                 ],
                 "description": "(Vector vOrigin, float flRadius )",
                 "return": "handle"
+            },
+            "SpawnEntityFromTableAsynchronous": {
+                "args": [
+                    "cstring",
+                    "handle",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Asynchronously spawns a single entity from a table",
+                "return": "void"
             },
             "SpawnEntityFromTableSynchronous": {
                 "args": [
@@ -14020,7 +14224,7 @@
                     "handle"
                 ],
                 "description": "Creates a tracking projectile",
-                "return": "void"
+                "return": "int"
             },
             "DestroyLinearProjectile": {
                 "args": [
@@ -14048,6 +14252,13 @@
                     "int"
                 ],
                 "description": "Returns a vector representing the current velocity of the projectile.",
+                "return": "vector"
+            },
+            "GetTrackingProjectileLocation": {
+                "args": [
+                    "int"
+                ],
+                "description": "Returns current location of projectile",
                 "return": "vector"
             },
             "ProjectileDodge": {
