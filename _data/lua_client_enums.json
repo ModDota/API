@@ -7377,76 +7377,48 @@
             "value": 1763
         },
         {
-            "key": "ACT_DOTA_ARCANA_VOTE",
+            "key": "ACD_DOTA_IDLE",
             "value": 1764
         },
         {
-            "key": "ACT_DOTA_SPIRIT_BREAKER_ULT_RUN",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1765
         },
         {
-            "key": "ACT_DOTA_PUNCH",
+            "key": "ACT_DOTA_RELAX_IN",
             "value": 1766
         },
         {
-            "key": "ACT_DOTA_CAST_STATUE",
+            "key": "ACT_DOTA_RELAX_OUT",
             "value": 1767
         },
         {
-            "key": "ACT_DOTA_CAST3_STATUE",
+            "key": "ACT_DOTA_CAST_FENCE",
             "value": 1768
         },
         {
-            "key": "ACT_DOTA_VICTORY_STATUE",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1769
         },
         {
-            "key": "ACT_DOTA_STATUE_SEQUENCE",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1770
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_SPWN",
             "value": 1771
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACT_DOTA_RUN_ALT",
             "value": 1772
         },
         {
-            "key": "ACT_DOTA_RELAX_IN",
+            "key": "ACT_DOTA_CYCLONE",
             "value": 1773
         },
         {
-            "key": "ACT_DOTA_RELAX_OUT",
-            "value": 1774
-        },
-        {
-            "key": "ACT_DOTA_CAST_FENCE",
-            "value": 1775
-        },
-        {
-            "key": "radiant_melee_mars_shieldbash",
-            "value": 1776
-        },
-        {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
-            "value": 1777
-        },
-        {
-            "key": "ACT_DOTA_SPWN",
-            "value": 1778
-        },
-        {
-            "key": "ACT_DOTA_RUN_ALT",
-            "value": 1779
-        },
-        {
-            "key": "ACT_DOTA_CYCLONE",
-            "value": 1780
-        },
-        {
             "key": "ACT_DOTA_IMPALE",
-            "value": 1781
+            "value": 1774
         },
         {
             "key": "DMG_PREVENT_PHYSICS_FORCE",
