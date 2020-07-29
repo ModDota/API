@@ -97,6 +97,16 @@
                 "description": "Returns the duration in seconds of the given sequence name.",
                 "return": "float"
             },
+            "SetCycle": {
+                "arg_names": [
+                    "flCycle"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set the cycle of the animation.",
+                "return": "void"
+            },
             "SetGraphLookTarget": {
                 "arg_names": [
                     "vValue"
@@ -1629,6 +1639,17 @@
                 ],
                 "return": "table"
             },
+            "GetLevelSpecialValueNoOverride": {
+                "arg_names": [
+                    "szName",
+                    "nLevel"
+                ],
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "return": "table"
+            },
             "GetManaCost": {
                 "arg_names": [
                     "iLevel"
@@ -2070,6 +2091,20 @@
     "CDOTABaseGameMode": {
         "extends": "CBaseEntity",
         "functions": {
+            "AddItemToCustomShop": {
+                "arg_names": [
+                    "pszItemName",
+                    "pszShopName",
+                    "pszCategory"
+                ],
+                "args": [
+                    "cstring",
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "( pszItem, pszShop, pszCategory ) Add an item to purchase at a custom shop.",
+                "return": "void"
+            },
             "AddRealTimeCombatAnalyzerQuery": {
                 "arg_names": [
                     "hQueryTable",
@@ -2157,6 +2192,16 @@
                 "description": "Clear the script filter that controls when tracking projectiles are launched.",
                 "return": "void"
             },
+            "DisableClumpingBehaviorByDefault": {
+                "arg_names": [
+                    "bDisabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Disable npc_dota_creature clumping behavior by default.",
+                "return": "void"
+            },
             "DisableHudFlip": {
                 "arg_names": [
                     "bDisable"
@@ -2233,6 +2278,16 @@
                 "args": [],
                 "description": "Get the current custom scan cooldown.",
                 "return": "float"
+            },
+            "GetEventGameSeed": {
+                "args": [],
+                "description": "Get the Game Seed passed from the GC.",
+                "return": "int"
+            },
+            "GetEventWindowStartTime": {
+                "args": [],
+                "description": "Get the Event Window Start Time passed from the GC.",
+                "return": "uint"
             },
             "GetFixedRespawnTime": {
                 "args": [],
@@ -2353,6 +2408,18 @@
                     "handle"
                 ],
                 "description": "Set function and context for real time combat analyzer query succeeded.",
+                "return": "void"
+            },
+            "RemoveItemFromCustomShop": {
+                "arg_names": [
+                    "pszItemName",
+                    "pszShopName"
+                ],
+                "args": [
+                    "cstring",
+                    "cstring"
+                ],
+                "description": "( pszItem, pszShop ) Remove an item to purchase at a custom shop.",
                 "return": "void"
             },
             "RemoveRealTimeCombatAnalyzerQuery": {
@@ -2499,6 +2566,18 @@
                 "description": "Set a different camera smooth count; dota default is 8.",
                 "return": "void"
             },
+            "SetCameraZRange": {
+                "arg_names": [
+                    "flMinZ",
+                    "flMaxZ"
+                ],
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "description": "Sets the camera Z range",
+                "return": "void"
+            },
             "SetCustomAttributeDerivedStatValue": {
                 "arg_names": [
                     "nStatType",
@@ -2640,6 +2719,16 @@
                 "description": "Specify whether the full screen death overlay effect plays when the selected hero dies.",
                 "return": "void"
             },
+            "SetDefaultStickyItem": {
+                "arg_names": [
+                    "pItem"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Sets the default sticky item in the quickbuy",
+                "return": "void"
+            },
             "SetDraftingBanningTimeOverride": {
                 "arg_names": [
                     "flValue"
@@ -2690,6 +2779,16 @@
                     "bool"
                 ],
                 "description": "Turn the fog of war on or off.",
+                "return": "void"
+            },
+            "SetForceRightClickAttackDisabled": {
+                "arg_names": [
+                    "bDisabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Prevent users from using the right click deny setting.",
                 "return": "void"
             },
             "SetFountainConstantManaRegen": {
@@ -2884,6 +2983,16 @@
                 "description": "Set a filter function to control the behavior when a hero's gold is modified. (Modify the table and Return true to use new values, return false to cancel the event)",
                 "return": "void"
             },
+            "SetNeutralItemHideUndiscoveredEnabled": {
+                "arg_names": [
+                    "bEnable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "When enabled, undiscovered items in the neutral item stash are hidden.",
+                "return": "void"
+            },
             "SetNeutralStashEnabled": {
                 "arg_names": [
                     "bEnable"
@@ -2892,6 +3001,16 @@
                     "bool"
                 ],
                 "description": "Allow items to be sent to the neutral stash.",
+                "return": "void"
+            },
+            "SetNeutralStashTeamViewOnlyEnabled": {
+                "arg_names": [
+                    "bEnable"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "When enabled, the all neutral items tab cannot be viewed.",
                 "return": "void"
             },
             "SetOverrideSelectionEntity": {
@@ -2922,6 +3041,16 @@
                     "float"
                 ],
                 "description": "Set power rune spawn rate",
+                "return": "void"
+            },
+            "SetRandomHeroBonusItemGrantDisabled": {
+                "arg_names": [
+                    "bDisabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Disables bonus items for randoming a hero.",
                 "return": "void"
             },
             "SetRecommendedItemsDisabled": {
@@ -3016,6 +3145,16 @@
                     "bool"
                 ],
                 "description": "Hide the sticky item in the quickbuy.",
+                "return": "void"
+            },
+            "SetTPScrollSlotItemOverride": {
+                "arg_names": [
+                    "pItemName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Sets the item which goes in the TP scroll slot",
                 "return": "void"
             },
             "SetTopBarTeamValue": {
@@ -3180,6 +3319,20 @@
                     "uint"
                 ],
                 "description": "Event-only ( string szNameSuffix, int nStars, int nMaxStars, int nExtraData1, int nExtraData2 )",
+                "return": "bool"
+            },
+            "AddEventMetadataLeaderboardEntryRawScore": {
+                "args": [
+                    "cstring",
+                    "uint",
+                    "uint",
+                    "uint",
+                    "uint",
+                    "uint",
+                    "uint",
+                    "uint"
+                ],
+                "description": "Event-only ( string szNameSuffix, int nScore, int nExtraData1, int nExtraData2 )",
                 "return": "bool"
             },
             "AddItemToWhiteList": {
@@ -3365,6 +3518,16 @@
                 "args": [],
                 "description": "Get Weather Wind Direction Vector",
                 "return": "vector"
+            },
+            "IncreaseItemStock": {
+                "args": [
+                    "int",
+                    "cstring",
+                    "int",
+                    "int"
+                ],
+                "description": "Increase an item's stock count, clamped to item max (nTeamNumber, szItemName, nCount, nPlayerID .",
+                "return": "void"
             },
             "IsCheatMode": {
                 "args": [],
@@ -4094,6 +4257,23 @@
             }
         },
         "instance": "VoteSystem"
+    },
+    "CDOTA_Ability_Aghanim_Spear": {
+        "extends": "CDOTABaseAbility",
+        "functions": {
+            "LaunchSpear": {
+                "arg_names": [
+                    "vTarget",
+                    "vStart"
+                ],
+                "args": [
+                    "vector",
+                    "vector"
+                ],
+                "description": "Launch Spear to a target position from a source position",
+                "return": "void"
+            }
+        }
     },
     "CDOTA_Ability_Animation_Attack": {
         "extends": "CDOTABaseAbility",
@@ -5591,6 +5771,14 @@
                 "description": "Is this unit a creep?",
                 "return": "bool"
             },
+            "IsCurrentlyHorizontalMotionControlled": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsCurrentlyVerticalMotionControlled": {
+                "args": [],
+                "return": "bool"
+            },
             "IsDisarmed": {
                 "args": [],
                 "return": "bool"
@@ -6025,6 +6213,24 @@
                 "description": "(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions",
                 "return": "void"
             },
+            "QueueConcept": {
+                "arg_names": [
+                    "flDelay",
+                    "hCriteriaTable",
+                    "hCompletionCallbackFn",
+                    "hContext",
+                    "hCallbackInfo"
+                ],
+                "args": [
+                    "float",
+                    "handle",
+                    "handle",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Queue a response system concept with the TLK_DOTA_CUSTOM concept, after a delay.",
+                "return": "void"
+            },
             "ReduceMana": {
                 "arg_names": [
                     "flAmount"
@@ -6053,6 +6259,15 @@
                     "handle"
                 ],
                 "description": "Remove the passed ability from this unit.",
+                "return": "void"
+            },
+            "RemoveAbilityFromIndexByName": {
+                "arg_names": [
+                    "pszAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
                 "return": "void"
             },
             "RemoveGesture": {
@@ -6644,6 +6859,30 @@
                 "description": "Add the given gesture activity.",
                 "return": "void"
             },
+            "StartGestureFadeWithSequenceSettings": {
+                "arg_names": [
+                    "nActivity"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Add the given gesture activity faded according to its sequence settings.",
+                "return": "void"
+            },
+            "StartGestureWithFade": {
+                "arg_names": [
+                    "nActivity",
+                    "fFadeIn",
+                    "fFadeOut"
+                ],
+                "args": [
+                    "int",
+                    "float",
+                    "float"
+                ],
+                "description": "Add the given gesture activity faded according to to the parameters.",
+                "return": "void"
+            },
             "StartGestureWithPlaybackRate": {
                 "arg_names": [
                     "nActivity",
@@ -6791,9 +7030,24 @@
                 "description": "Level the creature up by the specified number of levels",
                 "return": "void"
             },
+            "GetDisableResistance": {
+                "args": [],
+                "description": "Set creature's current disable resistance",
+                "return": "float"
+            },
+            "GetUltimateDisableResistance": {
+                "args": [],
+                "description": "Set creature's current disable resistance from ultimates",
+                "return": "float"
+            },
             "IsChampion": {
                 "args": [],
                 "description": "Is this unit a champion?",
+                "return": "bool"
+            },
+            "IsReincarnating": {
+                "args": [],
+                "description": "Is this creature respawning?",
                 "return": "bool"
             },
             "RemoveAllItemDrops": {
@@ -6849,6 +7103,16 @@
                     "int"
                 ],
                 "description": "Set the damage gained per level on this creature.",
+                "return": "void"
+            },
+            "SetDisableResistance": {
+                "arg_names": [
+                    "flDisableResistance"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set creature's current disable resistance",
                 "return": "void"
             },
             "SetDisableResistanceGain": {
@@ -6929,6 +7193,16 @@
                     "bool"
                 ],
                 "description": "Set whether creatures require reaching their end path before becoming idle",
+                "return": "void"
+            },
+            "SetUltimateDisableResistance": {
+                "arg_names": [
+                    "flUltDisableResistance"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set creature's current disable resistance from ultimates",
                 "return": "void"
             },
             "SetXPGain": {
@@ -7573,10 +7847,6 @@
         "extends": "CDOTA_BaseNPC_Building",
         "functions": {}
     },
-    "CDOTA_BaseNPC_RotatableBuilding": {
-        "extends": "CDOTA_BaseNPC",
-        "functions": {}
-    },
     "CDOTA_BaseNPC_Shop": {
         "extends": "CDOTA_BaseNPC_Building",
         "functions": {
@@ -7914,6 +8184,10 @@
                 "return": "bool"
             },
             "IsMuted": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsNeutralDrop": {
                 "args": [],
                 "return": "bool"
             },
@@ -8954,6 +9228,19 @@
                 ],
                 "return": "void"
             },
+            "AddNeutralItemToStash": {
+                "arg_names": [
+                    "iPlayerID",
+                    "nTeamNumber",
+                    "hItem"
+                ],
+                "args": [
+                    "int",
+                    "int",
+                    "handle"
+                ],
+                "return": "void"
+            },
             "AddRunePickup": {
                 "arg_names": [
                     "iPlayerID"
@@ -9170,6 +9457,30 @@
                 ],
                 "return": "int"
             },
+            "GetEventGameCustomActionClaimCount": {
+                "arg_names": [
+                    "nPlayerID",
+                    "unActionID"
+                ],
+                "args": [
+                    "int",
+                    "uint"
+                ],
+                "description": "(nPlayerID, nActionID)",
+                "return": "int"
+            },
+            "GetEventGameCustomActionClaimCountByName": {
+                "arg_names": [
+                    "nPlayerID",
+                    "pActionName"
+                ],
+                "args": [
+                    "int",
+                    "cstring"
+                ],
+                "description": "(nPlayerID, pActionName)",
+                "return": "int"
+            },
             "GetEventPointsForPlayerID": {
                 "arg_names": [
                     "nPlayerID"
@@ -9335,6 +9646,15 @@
                     "int"
                 ],
                 "return": "int"
+            },
+            "GetLiveSpectatorTeam": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "<unknown>"
             },
             "GetMisses": {
                 "arg_names": [
@@ -9725,6 +10045,10 @@
                 ],
                 "return": "bool"
             },
+            "HasSetEventGameCustomActionClaimCount": {
+                "args": [],
+                "return": "bool"
+            },
             "HaveAllPlayersJoined": {
                 "args": [],
                 "return": "bool"
@@ -10083,6 +10407,17 @@
                 "description": "Set the buyback cost for this player.",
                 "return": "void"
             },
+            "SetCustomIntParam": {
+                "arg_names": [
+                    "iPlayerID",
+                    "iParam"
+                ],
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "return": "void"
+            },
             "SetCustomPlayerColor": {
                 "arg_names": [
                     "iPlayerID",
@@ -10256,6 +10591,21 @@
     "CDOTA_Unit_Courier": {
         "extends": "CDOTA_BaseNPC",
         "functions": {}
+    },
+    "CDOTA_Unit_CustomGameAnnouncer": {
+        "extends": "CDOTA_BaseNPC",
+        "functions": {
+            "SetServerAuthoritative": {
+                "arg_names": [
+                    "bIsServerAuthoritative"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Determines whether response criteria is matched on server or client",
+                "return": "void"
+            }
+        }
     },
     "CDOTA_Unit_Nian": {
         "extends": "CDOTA_BaseNPC_Creature",
@@ -12545,6 +12895,13 @@
                 "description": "CreateTriggerRadiusApproximate( vecOrigin, flRadius ) : Creates and returns an AABB trigger thats bigger than the radius provided",
                 "return": "handle"
             },
+            "CreateUniformRandomStream": {
+                "args": [
+                    "int"
+                ],
+                "description": "( iSeed ) - Creates a separate random number stream.",
+                "return": "handle"
+            },
             "CreateUnitByName": {
                 "args": [
                     "cstring",
@@ -12585,6 +12942,18 @@
                 ],
                 "description": "(vector,vector) cross product between two vectors",
                 "return": "vector"
+            },
+            "DOTA_SpawnMapAtPosition": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "bool",
+                    "handle",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Spawn a .vmap at the target location.",
+                "return": "int"
             },
             "DebugBreak": {
                 "args": [],
@@ -12805,10 +13174,11 @@
                     "cstring",
                     "vector",
                     "handle",
-                    "int"
+                    "int",
+                    "bool"
                 ],
                 "description": "Drop a neutral item for the team of the hero at the given tier.",
-                "return": "void"
+                "return": "handle"
             },
             "EmitAnnouncerSound": {
                 "args": [
@@ -12865,6 +13235,15 @@
                 "description": "Play named sound only on the client for the passed in player",
                 "return": "void"
             },
+            "EmitSoundOnEntityForPlayer": {
+                "args": [
+                    "cstring",
+                    "handle",
+                    "int"
+                ],
+                "description": "Emit a sound on an entity for only a specific player",
+                "return": "void"
+            },
             "EmitSoundOnLocationForAllies": {
                 "args": [
                     "vector",
@@ -12872,6 +13251,15 @@
                     "handle"
                 ],
                 "description": "Emit a sound on a location from a unit, only for players allied with that unit (vLocation, soundName, hCaster",
+                "return": "void"
+            },
+            "EmitSoundOnLocationForPlayer": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "int"
+                ],
+                "description": "Emit a sound on a location for only a specific player",
                 "return": "void"
             },
             "EmitSoundOnLocationWithCaster": {
@@ -13006,6 +13394,13 @@
                 "args": [],
                 "description": "Get the time spent on the server in the last frame",
                 "return": "float"
+            },
+            "GetAbilityTextureNameForAbility": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Gets the ability texture name for an ability",
+                "return": "cstring"
             },
             "GetActiveSpawnGroupHandle": {
                 "args": [],
@@ -13239,6 +13634,13 @@
             "IsServer": {
                 "args": [],
                 "description": "Returns true if this is lua running from the server.dll.",
+                "return": "bool"
+            },
+            "IsUnitInValidPosition": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Returns true if the unit is in a valid position in the gridnav.",
                 "return": "bool"
             },
             "IsValidEntity": {
@@ -14231,6 +14633,13 @@
                     "int"
                 ],
                 "description": "Destroys the linear projectile matching the argument ID",
+                "return": "void"
+            },
+            "DestroyTrackingProjectile": {
+                "args": [
+                    "int"
+                ],
+                "description": "Destroy a tracking projectile early",
                 "return": "void"
             },
             "GetLinearProjectileLocation": {

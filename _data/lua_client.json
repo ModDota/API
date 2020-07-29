@@ -1353,6 +1353,17 @@
                 "description": "Gets a value from this ability's special value block for passed level.",
                 "return": "table"
             },
+            "GetLevelSpecialValueNoOverride": {
+                "arg_names": [
+                    "szName",
+                    "nLevel"
+                ],
+                "args": [
+                    "cstring",
+                    "int"
+                ],
+                "return": "table"
+            },
             "GetSpecialValueFor": {
                 "arg_names": [
                     "szName"
@@ -2612,6 +2623,13 @@
                 "description": "Create an HTTP request.",
                 "return": "handle"
             },
+            "CreateUniformRandomStream": {
+                "args": [
+                    "int"
+                ],
+                "description": "( iSeed ) - Creates a separate random number stream.",
+                "return": "handle"
+            },
             "CrossVectors": {
                 "args": [
                     "vector",
@@ -2849,6 +2867,13 @@
                 "args": [],
                 "description": "Get the time spent on the server in the last frame",
                 "return": "float"
+            },
+            "GetAbilityTextureNameForAbility": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Gets the ability texture name for an ability",
+                "return": "cstring"
             },
             "GetActiveSpawnGroupHandle": {
                 "args": [],
