@@ -1271,6 +1271,54 @@
             }
         }
     },
+    "CScriptUniformRandomStream": {
+        "functions": {
+            "RandomFloat": {
+                "arg_names": [
+                    "flMinVal",
+                    "flMaxVal"
+                ],
+                "args": [
+                    "float",
+                    "float"
+                ],
+                "return": "float"
+            },
+            "RandomFloatExp": {
+                "arg_names": [
+                    "flMinVal",
+                    "flMaxVal",
+                    "flExponent"
+                ],
+                "args": [
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "return": "float"
+            },
+            "RandomInt": {
+                "arg_names": [
+                    "iMinVal",
+                    "iMaxVal"
+                ],
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "return": "int"
+            },
+            "RollPercentage": {
+                "arg_names": [
+                    "iPercentage"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "bool"
+            }
+        }
+    },
     "C_BaseAnimating": {
         "extends": "C_BaseModelEntity",
         "functions": {}
