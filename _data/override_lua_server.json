@@ -4233,8 +4233,6 @@
                     "float",
                     "bool"
                 ],
-                "description": "Add temporary vision for a given team ( nTeamID, vLocation, flRadius, flDuration, bObstructedVision)",
-                "return": "void",
                 "arg_names": [
                     "team",
                     "location",
