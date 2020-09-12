@@ -103,8 +103,10 @@ for (const className of Object.keys(override_server)) {
             check(funcName in baseClass.functions, "Overriding a function that doesn't exist", className, funcName);
             const baseFunc = baseClass.functions[funcName];
             const overrideFunc = overrideClass.functions[funcName];
-            check(typeCompare(overrideFunc.return, baseFunc.return, className, funcName, "return"), `Overriden return is not compatible, expected ${baseFunc.return} but got ${overrideFunc.return}`, className, funcName, "return");
-
+            if (overrideFunc.return) {
+                check(typeCompare(overrideFunc.return, baseFunc.return, className, funcName, "return"), `Overriden return is not compatible, expected ${baseFunc.return} but got ${overrideFunc.return}`, className, funcName, "return");
+            }
+                
             if (check(baseFunc.args.length === overrideFunc.args.length, `Overriden args should have same length, expected ${baseFunc.args.length} but got ${overrideFunc.args.length}`, className, funcName)) {
                 if (overrideFunc.arg_names && baseFunc.arg_names) {
                     check(baseFunc.arg_names.length === overrideFunc.arg_names.length, `Overriden arg names should have same length, expected ${baseFunc.arg_names.length} but got ${overrideFunc.arg_names.length}`, className, funcName);
