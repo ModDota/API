@@ -1168,64 +1168,14 @@
     "CBasePlayer": {
         "extends": "CBaseCombatCharacter",
         "functions": {
-            "AreChaperoneBoundsVisible": {
-                "args": [],
-                "description": "Returns whether this player's chaperone bounds are visible.",
-                "return": "bool"
-            },
-            "GetHMDAnchor": {
-                "args": [],
-                "description": "Returns the HMD anchor entity for this player if it exists.",
-                "return": "handle"
-            },
-            "GetHMDAvatar": {
-                "args": [],
-                "description": "Returns the HMD Avatar entity for this player if it exists.",
-                "return": "handle"
-            },
-            "GetPlayArea": {
-                "arg_names": [
-                    "nPoint"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Returns the Vector position of the point you ask for. Pass 0-3 to get the four points.",
-                "return": "vector"
-            },
             "GetUserID": {
                 "args": [],
                 "description": "Returns the player's user id.",
                 "return": "int"
             },
-            "GetVRControllerType": {
-                "args": [],
-                "description": "Returns the type of controller being used while in VR.",
-                "return": "<unknown>"
-            },
             "IsNoclipping": {
                 "args": [],
                 "description": "Returns true if the player is in noclip mode.",
-                "return": "bool"
-            },
-            "IsUsePressed": {
-                "args": [],
-                "description": "Returns true if the use key is pressed.",
-                "return": "bool"
-            },
-            "IsVRControllerButtonPressed": {
-                "arg_names": [
-                    "nButton"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Returns true if the controller button is pressed.",
-                "return": "bool"
-            },
-            "IsVRDashboardShowing": {
-                "args": [],
-                "description": "Returns true if the SteamVR dashboard is showing for this player.",
                 "return": "bool"
             }
         }
@@ -2442,6 +2392,16 @@
                     "handle"
                 ],
                 "description": "Set a filter function to control the tuning values that abilities use. (Modify the table and Return true to use new values, return false to use the old values)",
+                "return": "void"
+            },
+            "SetAllowNeutralItemDrops": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "If set to true, neutral items will be dropped on killing neutral monsters.  Otherwise nothing will be dropped.",
                 "return": "void"
             },
             "SetAlwaysShowPlayerInventory": {
@@ -4885,6 +4845,10 @@
             "BoundingRadius2D": {
                 "args": [],
                 "return": "float"
+            },
+            "CalculateGenericBonuses": {
+                "args": [],
+                "return": "void"
             },
             "CanEntityBeSeenByMyTeam": {
                 "arg_names": [
@@ -11690,6 +11654,26 @@
             }
         }
     },
+    "CInfoPlayerStartDota": {
+        "extends": "CPointEntity",
+        "functions": {
+            "IsEnabled": {
+                "args": [],
+                "description": "Returns whether the object is currently active",
+                "return": "bool"
+            },
+            "SetEnabled": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Enable or disable the obstruction",
+                "return": "void"
+            }
+        }
+    },
     "CInfoWorldLayer": {
         "extends": "CBaseEntity",
         "functions": {
@@ -11829,6 +11813,10 @@
             }
         }
     },
+    "CPointEntity": {
+        "extends": "CBaseEntity",
+        "functions": {}
+    },
     "CPointTemplate": {
         "extends": "CBaseEntity",
         "functions": {
@@ -11872,136 +11860,6 @@
                     "cstring"
                 ],
                 "description": "Set the message on this entity.",
-                "return": "void"
-            }
-        }
-    },
-    "CPropHMDAvatar": {
-        "extends": "CBaseAnimating",
-        "functions": {
-            "GetVRHand": {
-                "arg_names": [
-                    "nHandID"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Get VR hand by ID",
-                "return": "handle"
-            }
-        }
-    },
-    "CPropVRHand": {
-        "extends": "CBaseAnimating",
-        "functions": {
-            "AddHandAttachment": {
-                "arg_names": [
-                    "hAttachment"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Add the attachment to this hand",
-                "return": "void"
-            },
-            "AddHandModelOverride": {
-                "arg_names": [
-                    "pModelName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Add a model override for this hand",
-                "return": "handle"
-            },
-            "FindHandModelOverride": {
-                "arg_names": [
-                    "pModelName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Find a specific model override for this hand",
-                "return": "handle"
-            },
-            "FireHapticPulse": {
-                "arg_names": [
-                    "nStrength"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Fire a haptic pulse on this hand. [0,2] for strength.",
-                "return": "void"
-            },
-            "FireHapticPulsePrecise": {
-                "arg_names": [
-                    "nPulseDuration"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Fire a haptic pulse on this hand. Specify the duration in micro seconds.",
-                "return": "void"
-            },
-            "GetHandAttachment": {
-                "args": [],
-                "description": "Get the attachment on this hand",
-                "return": "handle"
-            },
-            "GetHandID": {
-                "args": [],
-                "description": "Get hand ID",
-                "return": "int"
-            },
-            "GetLiteralHandType": {
-                "args": [],
-                "description": "Get literal type for this hand",
-                "return": "int"
-            },
-            "GetPlayer": {
-                "args": [],
-                "description": "Get the player for this hand",
-                "return": "handle"
-            },
-            "GetVelocity": {
-                "args": [],
-                "description": "Get the filtered controller velocity.",
-                "return": "vector"
-            },
-            "RemoveAllHandModelOverrides": {
-                "args": [],
-                "description": "Remove all model overrides for this hand",
-                "return": "void"
-            },
-            "RemoveHandAttachmentByHandle": {
-                "arg_names": [
-                    "hAttachment"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Remove hand attachment by handle",
-                "return": "void"
-            },
-            "RemoveHandModelOverride": {
-                "arg_names": [
-                    "pModelName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Remove a model override for this hand",
-                "return": "void"
-            },
-            "SetHandAttachment": {
-                "arg_names": [
-                    "hAttachment"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Set the attachment for this hand",
                 "return": "void"
             }
         }
@@ -12713,8 +12571,8 @@
                     "float",
                     "bool"
                 ],
-                "description": "Add temporary vision for a given team ( nTeamID, vLocation, flRadius, flDuration, bObstructedVision)",
-                "return": "void"
+                "description": "Add temporary vision for a given team, returns a ViewerID ( nTeamID, vLocation, flRadius, flDuration, bObstructedVision)",
+                "return": "int"
             },
             "AngleDiff": {
                 "args": [
@@ -13931,6 +13789,14 @@
             "ReloadMOTD": {
                 "args": [],
                 "description": "Reloads the MotD file",
+                "return": "void"
+            },
+            "RemoveFOWViewer": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Remove temporary vision for a given team ( nTeamID, nViewerID )",
                 "return": "void"
             },
             "RemoveSpawnGroupFilterProxy": {

@@ -2474,6 +2474,10 @@
             }
         }
     },
+    "C_PointEntity": {
+        "extends": "C_BaseEntity",
+        "functions": {}
+    },
     "C_PointWorldText": {
         "extends": "C_BaseModelEntity",
         "functions": {
