@@ -7,36 +7,6 @@
                 "description": "Returns the duration in seconds of the active sequence.",
                 "return": "float"
             },
-            "GetAttachmentAngles": {
-                "arg_names": [
-                    "iAttachment"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Get the attachment id's angles as a p,y,r vector.",
-                "return": "vector"
-            },
-            "GetAttachmentForward": {
-                "arg_names": [
-                    "iAttachment"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Get the attachment id's forward vector.",
-                "return": "vector"
-            },
-            "GetAttachmentOrigin": {
-                "arg_names": [
-                    "iAttachment"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Get the attachment id's origin vector.",
-                "return": "vector"
-            },
             "GetCycle": {
                 "args": [],
                 "description": "Get the cycle of the animation.",
@@ -51,11 +21,6 @@
                 ],
                 "description": "Get the value of the given animGraph parameter",
                 "return": "table"
-            },
-            "GetModelScale": {
-                "args": [],
-                "description": "Get scale of entity's model.",
-                "return": "float"
             },
             "GetSequence": {
                 "args": [],
@@ -76,16 +41,6 @@
                 ],
                 "description": "Sets the active sequence by name, resetting the current cycle.",
                 "return": "void"
-            },
-            "ScriptLookupAttachment": {
-                "arg_names": [
-                    "pAttachmentName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Get the named attachment id.",
-                "return": "int"
             },
             "SequenceDuration": {
                 "arg_names": [
@@ -189,16 +144,6 @@
                 "description": "Pass the vector value to the specified param in the graph",
                 "return": "void"
             },
-            "SetModelScale": {
-                "arg_names": [
-                    "flScale"
-                ],
-                "args": [
-                    "float"
-                ],
-                "description": "Set scale of entity's model.",
-                "return": "void"
-            },
             "SetPoseParameter": {
                 "arg_names": [
                     "szName",
@@ -236,27 +181,10 @@
                 "description": "GetEquippedWeapons() : Returns an array of all the equipped weapons",
                 "return": "table"
             },
-            "GetFaction": {
-                "args": [],
-                "description": "Get the combat character faction.",
-                "return": "int"
-            },
             "GetWeaponCount": {
                 "args": [],
                 "description": "GetWeaponCount() : Gets the number of weapons currently equipped",
                 "return": "int"
-            },
-            "ShootPosition": {
-                "arg_names": [
-                    "nHand",
-                    "nMuzzle"
-                ],
-                "args": [
-                    "int",
-                    "int"
-                ],
-                "description": "Returns the shoot position eyes (or hand in VR).",
-                "return": "vector"
             }
         }
     },
@@ -1005,6 +933,36 @@
     "CBaseModelEntity": {
         "extends": "CBaseEntity",
         "functions": {
+            "GetAttachmentAngles": {
+                "arg_names": [
+                    "iAttachment"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get the attachment id's angles as a p,y,r vector.",
+                "return": "vector"
+            },
+            "GetAttachmentForward": {
+                "arg_names": [
+                    "iAttachment"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get the attachment id's forward vector.",
+                "return": "vector"
+            },
+            "GetAttachmentOrigin": {
+                "arg_names": [
+                    "iAttachment"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Get the attachment id's origin vector.",
+                "return": "vector"
+            },
             "GetMaterialGroupHash": {
                 "args": [],
                 "description": "GetMaterialGroupHash(): Get the material group hash of this entity.",
@@ -1015,6 +973,11 @@
                 "description": "GetMaterialGroupMask(): Get the mesh group mask of this entity.",
                 "return": "uint64"
             },
+            "GetModelScale": {
+                "args": [],
+                "description": "Get scale of entity's model.",
+                "return": "float"
+            },
             "GetRenderAlpha": {
                 "args": [],
                 "description": "GetRenderAlpha(): Get the alpha modulation of this entity.",
@@ -1024,6 +987,16 @@
                 "args": [],
                 "description": "GetRenderColor(): Get the render color of the entity.",
                 "return": "vector"
+            },
+            "ScriptLookupAttachment": {
+                "arg_names": [
+                    "pAttachmentName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get the named attachment id.",
+                "return": "int"
             },
             "SetBodygroup": {
                 "arg_names": [
@@ -1096,6 +1069,16 @@
                 "args": [
                     "cstring"
                 ],
+                "return": "void"
+            },
+            "SetModelScale": {
+                "arg_names": [
+                    "flScale"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set scale of entity's model.",
                 "return": "void"
             },
             "SetRenderAlpha": {
@@ -1459,6 +1442,11 @@
                 "args": [],
                 "return": "int"
             },
+            "GetBehaviorInt": {
+                "args": [],
+                "description": "Get ability behavior flags as an int for compatability.",
+                "return": "int"
+            },
             "GetCastPoint": {
                 "args": [],
                 "return": "float"
@@ -1521,6 +1509,10 @@
             "GetCooldownTimeRemaining": {
                 "args": [],
                 "return": "float"
+            },
+            "GetCurrentAbilityCharges": {
+                "args": [],
+                "return": "int"
             },
             "GetCursorPosition": {
                 "args": [],
@@ -1863,6 +1855,10 @@
                 "args": [],
                 "return": "void"
             },
+            "RefreshIntrinsicModifier": {
+                "args": [],
+                "return": "<unknown>"
+            },
             "RefundManaCost": {
                 "args": [],
                 "return": "void"
@@ -1895,6 +1891,15 @@
                 ],
                 "args": [
                     "bool"
+                ],
+                "return": "void"
+            },
+            "SetCurrentAbilityCharges": {
+                "arg_names": [
+                    "nCharges"
+                ],
+                "args": [
+                    "int"
                 ],
                 "return": "void"
             },
@@ -2214,6 +2219,11 @@
                 "description": "Turns on capability to define custom buyback costs.",
                 "return": "bool"
             },
+            "GetCustomDireScore": {
+                "args": [],
+                "description": "Get the topbar score display value for dire.",
+                "return": "int"
+            },
             "GetCustomGlyphCooldown": {
                 "args": [],
                 "description": "Get the current custom glyph cooldown.",
@@ -2222,6 +2232,11 @@
             "GetCustomHeroMaxLevel": {
                 "args": [],
                 "description": "Allows definition of the max level heroes can achieve (default is 25).",
+                "return": "int"
+            },
+            "GetCustomRadiantScore": {
+                "args": [],
+                "description": "Get the topbar score display value for radiant.",
                 "return": "int"
             },
             "GetCustomScanCooldown": {
@@ -2590,6 +2605,16 @@
                 "description": "Turns on capability to define custom buyback costs.",
                 "return": "void"
             },
+            "SetCustomDireScore": {
+                "arg_names": [
+                    "nScore"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Sets the topbar score display value for dire.",
+                "return": "void"
+            },
             "SetCustomGameForceHero": {
                 "arg_names": [
                     "pHeroName"
@@ -2615,6 +2640,16 @@
                     "int"
                 ],
                 "description": "Allows definition of the max level heroes can achieve (default is 25).",
+                "return": "void"
+            },
+            "SetCustomRadiantScore": {
+                "arg_names": [
+                    "nScore"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Sets the topbar score display value for radiant.",
                 "return": "void"
             },
             "SetCustomScanCooldown": {
@@ -3365,6 +3400,17 @@
                 "description": "Enabled (true) or disable (false) auto launch for custom game setup.",
                 "return": "void"
             },
+            "ExecuteTeamPing": {
+                "args": [
+                    "int",
+                    "float",
+                    "float",
+                    "handle",
+                    "int"
+                ],
+                "description": "Sends a minimap ping to all players on the team",
+                "return": "void"
+            },
             "FinishCustomGameSetup": {
                 "args": [],
                 "description": "Indicate that the custom game setup phase is complete, and advance to the game.",
@@ -3386,6 +3432,11 @@
                 ],
                 "description": "Get the announcer for a team",
                 "return": "handle"
+            },
+            "GetBannedHeroes": {
+                "args": [],
+                "description": "Returns the hero unit names banned in this game, if any",
+                "return": "table"
             },
             "GetCustomGameDifficulty": {
                 "args": [],
@@ -3442,6 +3493,33 @@
                 "description": "Returns the number of seconds elapsed since map start. This time doesn't count up when the game is paused",
                 "return": "float"
             },
+            "GetItemStockCount": {
+                "args": [
+                    "int",
+                    "cstring",
+                    "int"
+                ],
+                "description": "Get the stock count of the item",
+                "return": "int"
+            },
+            "GetItemStockDuration": {
+                "args": [
+                    "int",
+                    "cstring",
+                    "int"
+                ],
+                "description": "Get the time it takes to add a new item to stock",
+                "return": "float"
+            },
+            "GetItemStockTime": {
+                "args": [
+                    "int",
+                    "cstring",
+                    "int"
+                ],
+                "description": "Get the time an item will be added to stock",
+                "return": "float"
+            },
             "GetMatchID": {
                 "args": [],
                 "description": "Get the MatchID for this game.",
@@ -3451,6 +3529,16 @@
                 "args": [],
                 "description": "Have we received the post match signout message that includes reward information",
                 "return": "bool"
+            },
+            "GetNextBountyRuneSpawnTime": {
+                "args": [],
+                "description": "Gets next bounty rune spawn time",
+                "return": "float"
+            },
+            "GetNextRuneSpawnTime": {
+                "args": [],
+                "description": "Gets next rune spawn time",
+                "return": "float"
             },
             "GetNianTotalDamageTaken": {
                 "args": [],
@@ -3544,6 +3632,16 @@
                 ],
                 "description": "Makes the specified team lose",
                 "return": "void"
+            },
+            "ModifyGoldFiltered": {
+                "args": [
+                    "int",
+                    "int",
+                    "bool",
+                    "int"
+                ],
+                "description": "Like ModifyGold, but will use the gold filter if SetFilterMoreGold has been set true",
+                "return": "int"
             },
             "NumDroppedItems": {
                 "args": [],
@@ -3665,6 +3763,20 @@
                 "description": "Sets a flag to enable/disable the default music handling code for custom games",
                 "return": "void"
             },
+            "SetCustomGameAllowSecondaryAbilitiesOnOtherUnits": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets a flag to enable/disable the casting secondary abilities from units other than the player's own hero.",
+                "return": "void"
+            },
+            "SetCustomGameBansPerTeam": {
+                "args": [
+                    "int"
+                ],
+                "description": "Set number of hero bans each team gets",
+                "return": "void"
+            },
             "SetCustomGameDifficulty": {
                 "args": [
                     "int"
@@ -3736,6 +3848,13 @@
                 "description": "Event-only ( table hMetadataTable )",
                 "return": "bool"
             },
+            "SetFilterMoreGold": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets whether to filter more gold events than normal",
+                "return": "void"
+            },
             "SetFirstBloodActive": {
                 "args": [
                     "bool"
@@ -3755,6 +3874,14 @@
                     "int"
                 ],
                 "description": "Makes the specified team win",
+                "return": "void"
+            },
+            "SetGlyphCooldown": {
+                "args": [
+                    "int",
+                    "float"
+                ],
+                "description": "Set Glyph cooldown for team",
                 "return": "void"
             },
             "SetGoldPerTick": {
@@ -3804,6 +3931,37 @@
                     "bool"
                 ],
                 "description": "Sets whether the multikill, streak, and first-blood banners appear at the top of the screen.",
+                "return": "void"
+            },
+            "SetIgnoreLobbyTeamsInCustomGame": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Set whether custom and event games should ignore Lobby teams when assigning players to teams. Defaults to true.",
+                "return": "void"
+            },
+            "SetItemStockCount": {
+                "args": [
+                    "int",
+                    "int",
+                    "cstring",
+                    "int"
+                ],
+                "description": "Set the stock count of the item",
+                "return": "void"
+            },
+            "SetNextBountyRuneSpawnTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets next bounty rune spawn time",
+                "return": "void"
+            },
+            "SetNextRuneSpawnTime": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets next rune spawn time",
                 "return": "void"
             },
             "SetOverlayHealthBarUnit": {
@@ -3861,6 +4019,13 @@
                     "float"
                 ],
                 "description": "Sets the amount of time players have between the strategy phase and entering the pre-game phase.",
+                "return": "void"
+            },
+            "SetSpeechUseSpawnInsteadOfRespawnConcept": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Set whether to speak a Spawn concept instead of a Respawn concept on respawn.",
                 "return": "void"
             },
             "SetStartingGold": {
@@ -4348,7 +4513,7 @@
             "GetBehavior": {
                 "args": [],
                 "description": "Return cast behavior type of this ability.",
-                "return": "int"
+                "return": "uint64"
             },
             "GetCastAnimation": {
                 "args": [],
@@ -5251,6 +5416,16 @@
             "GetCursorTargetingNothing": {
                 "args": [],
                 "return": "bool"
+            },
+            "GetDamageMax": {
+                "args": [],
+                "description": "Get the maximum attack damage of this unit.",
+                "return": "int"
+            },
+            "GetDamageMin": {
+                "args": [],
+                "description": "Get the minimum attack damage of this unit.",
+                "return": "int"
             },
             "GetDayTimeVisionRange": {
                 "args": [],
@@ -6174,7 +6349,7 @@
                     "bool",
                     "bool"
                 ],
-                "description": "(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions",
+                "description": "(bool RemovePositiveBuffs, bool RemoveDebuffs, bool BuffsCreatedThisFrameOnly, bool RemoveStuns, bool RemoveExceptions)",
                 "return": "void"
             },
             "QueueConcept": {
@@ -6193,6 +6368,42 @@
                     "handle"
                 ],
                 "description": "Queue a response system concept with the TLK_DOTA_CUSTOM concept, after a delay.",
+                "return": "void"
+            },
+            "QueueTeamConcept": {
+                "arg_names": [
+                    "flDelay",
+                    "hCriteriaTable",
+                    "hCompletionCallbackFn",
+                    "hContext",
+                    "hCallbackInfo"
+                ],
+                "args": [
+                    "float",
+                    "handle",
+                    "handle",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Queue a response system concept with the TLK_DOTA_CUSTOM concept, after a delay, for the same team this speaker is on.",
+                "return": "void"
+            },
+            "QueueTeamConceptNoSpectators": {
+                "arg_names": [
+                    "flDelay",
+                    "hCriteriaTable",
+                    "hCompletionCallbackFn",
+                    "hContext",
+                    "hCallbackInfo"
+                ],
+                "args": [
+                    "float",
+                    "handle",
+                    "handle",
+                    "handle",
+                    "handle"
+                ],
+                "description": "Queue a response system concept with the TLK_DOTA_CUSTOM concept, after a delay, for the same team this speaker is on. Is not played for spectators.",
                 "return": "void"
             },
             "ReduceMana": {
@@ -6232,6 +6443,22 @@
                 "args": [
                     "cstring"
                 ],
+                "return": "void"
+            },
+            "RemoveAllModifiers": {
+                "arg_names": [
+                    "targets",
+                    "bNow",
+                    "bPermanent",
+                    "bDeath"
+                ],
+                "args": [
+                    "int",
+                    "bool",
+                    "bool",
+                    "bool"
+                ],
+                "description": "(int targets [0=all, 1=enemy, 2=ally], bool bNow, bool bPermanent, bool bDeath)",
                 "return": "void"
             },
             "RemoveGesture": {
@@ -6948,6 +7175,10 @@
             "UnitCanRespawn": {
                 "args": [],
                 "return": "bool"
+            },
+            "WasKilledPassively": {
+                "args": [],
+                "return": "bool"
             }
         }
     },
@@ -7340,6 +7571,10 @@
                 "args": [],
                 "return": "int"
             },
+            "GetHeroID": {
+                "args": [],
+                "return": "int"
+            },
             "GetIncreasedAttackSpeed": {
                 "args": [],
                 "description": "Hero attack speed is also affected by agility.",
@@ -7401,6 +7636,10 @@
             "GetPrimaryStatValue": {
                 "args": [],
                 "return": "float"
+            },
+            "GetReplicatingOtherHero": {
+                "args": [],
+                "return": "handle"
             },
             "GetRespawnTime": {
                 "args": [],
@@ -7580,6 +7819,20 @@
                     "int"
                 ],
                 "description": "Gives this hero some gold.  Args: int nGoldChange, bool bReliable, int reason",
+                "return": "int"
+            },
+            "ModifyGoldFiltered": {
+                "arg_names": [
+                    "iGoldChange",
+                    "bReliabe",
+                    "iReason"
+                ],
+                "args": [
+                    "int",
+                    "bool",
+                    "int"
+                ],
+                "description": "Gives this hero some gold, using the gold filter if extra filtering is on.  Args: int nGoldChange, bool bReliable, int reason",
                 "return": "int"
             },
             "ModifyIntellect": {
@@ -7882,6 +8135,10 @@
                 "args": [],
                 "description": "Run all associated destroy functions, then remove the modifier.",
                 "return": "void"
+            },
+            "DestroyOnExpire": {
+                "args": [],
+                "return": "bool"
             },
             "ForceRefresh": {
                 "args": [],
@@ -8287,6 +8544,15 @@
                 "description": "Sets whether item is unequipped or ready.",
                 "return": "void"
             },
+            "SetOnlyPlayerHeroPickup": {
+                "arg_names": [
+                    "bOnlyPlayerHero"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
             "SetPurchaseTime": {
                 "arg_names": [
                     "flTime"
@@ -8624,6 +8890,11 @@
                     "float"
                 ],
                 "description": "(float flInterval) Channeling is taking place.",
+                "return": "void"
+            },
+            "OnChargeCountChanged": {
+                "args": [],
+                "description": "Runs when item's charge count changes.",
                 "return": "void"
             },
             "OnHeroCalculateStatBonus": {
@@ -9164,6 +9435,17 @@
                     "iPlayerID"
                 ],
                 "args": [
+                    "int"
+                ],
+                "return": "void"
+            },
+            "AddCandyEvent": {
+                "arg_names": [
+                    "iPlayerID",
+                    "nReason"
+                ],
+                "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
@@ -10567,6 +10849,46 @@
                     "bool"
                 ],
                 "description": "Determines whether response criteria is matched on server or client",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Unit_Diretide_Portal": {
+        "extends": "CDOTA_BaseNPC_Building",
+        "functions": {
+            "GetPartnerPortal": {
+                "args": [],
+                "return": "handle"
+            },
+            "ResetPortal": {
+                "args": [],
+                "return": "void"
+            },
+            "SetInvasionRuneType": {
+                "arg_names": [
+                    "nRuneType"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "void"
+            },
+            "SetPartnerPortal": {
+                "arg_names": [
+                    "hPortal"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "return": "void"
+            },
+            "SetPortalActive": {
+                "arg_names": [
+                    "bActive"
+                ],
+                "args": [
+                    "bool"
+                ],
                 "return": "void"
             }
         }
@@ -13412,6 +13734,14 @@
                 "description": "Get Velocity for VPHYS or normal object",
                 "return": "vector"
             },
+            "GetPotentialNeutralItemDrop": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Given the item tier and the team, roll for the name of a valid neutral item drop, considering previous drops and consumables.",
+                "return": "cstring"
+            },
             "GetSystemDate": {
                 "args": [],
                 "description": "Get the current real world date",
@@ -13528,6 +13858,13 @@
                     "vector"
                 ],
                 "description": "Ask fog of war if a location is visible to a certain team (nTeamNumber, vLocation).",
+                "return": "bool"
+            },
+            "IsMangoTree": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Is this entity a mango tree? (hEntity).",
                 "return": "bool"
             },
             "IsMarkedForDeletion": {
@@ -14583,6 +14920,13 @@
                 ],
                 "description": "Returns current location of projectile",
                 "return": "vector"
+            },
+            "IsValidProjectile": {
+                "args": [
+                    "int"
+                ],
+                "description": "Is this a valid projectile?",
+                "return": "bool"
             },
             "ProjectileDodge": {
                 "args": [
