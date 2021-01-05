@@ -110,11 +110,6 @@
         "panelEvent": true,
         "args": []
     },
-    "DOTAHideTI10EventGameTooltip": {
-        "description": "Hide the ti10 event game tooltip",
-        "panelEvent": true,
-        "args": []
-    },
     "DOTAHideTitleImageTextTooltip": {
         "description": "Hide the title image text tooltip.",
         "panelEvent": true,
@@ -242,6 +237,24 @@
             {
                 "name": "bOnEnemy",
                 "type": "bool"
+            }
+        ]
+    },
+    "DOTAShowEconItemTooltip": {
+        "description": "Show the econ item tooltip for a given item, style, and hero. Use 0 for the default style, and -1 for the default hero.",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "itemDef",
+                "type": "class item_definition_index_t"
+            },
+            {
+                "name": "styleIndex",
+                "type": "class style_index_t"
+            },
+            {
+                "name": "heroID",
+                "type": "int32"
             }
         ]
     }
