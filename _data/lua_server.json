@@ -175,18 +175,7 @@
     },
     "CBaseCombatCharacter": {
         "extends": "CBaseFlex",
-        "functions": {
-            "GetEquippedWeapons": {
-                "args": [],
-                "description": "GetEquippedWeapons() : Returns an array of all the equipped weapons",
-                "return": "table"
-            },
-            "GetWeaponCount": {
-                "args": [],
-                "description": "GetWeaponCount() : Gets the number of weapons currently equipped",
-                "return": "int"
-            }
-        }
+        "functions": {}
     },
     "CBaseEntity": {
         "extends": "CEntityInstance",
@@ -1151,9 +1140,19 @@
     "CBasePlayer": {
         "extends": "CBaseCombatCharacter",
         "functions": {
+            "GetEquippedWeapons": {
+                "args": [],
+                "description": "GetEquippedWeapons() : Returns an array of all the equipped weapons",
+                "return": "table"
+            },
             "GetUserID": {
                 "args": [],
                 "description": "Returns the player's user id.",
+                "return": "int"
+            },
+            "GetWeaponCount": {
+                "args": [],
+                "description": "GetWeaponCount() : Gets the number of weapons currently equipped",
                 "return": "int"
             },
             "IsNoclipping": {
@@ -3720,6 +3719,13 @@
                 "description": "Sends a message on behalf of a player to the specified team.",
                 "return": "void"
             },
+            "SetAllowOutpostBonuses": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Allow Outposts granting XP",
+                "return": "void"
+            },
             "SetCreepMinimapIconScale": {
                 "args": [
                     "float"
@@ -5094,6 +5100,15 @@
                 "description": "Toggle an ability.",
                 "return": "void"
             },
+            "ChangeTeam": {
+                "arg_names": [
+                    "iTeamNum"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "void"
+            },
             "ClearActivityModifiers": {
                 "args": [],
                 "description": "Clear Activity modifiers",
@@ -5908,6 +5923,11 @@
             "IsCreep": {
                 "args": [],
                 "description": "Is this unit a creep?",
+                "return": "bool"
+            },
+            "IsCreepHero": {
+                "args": [],
+                "description": "Is this unit a creep hero?",
                 "return": "bool"
             },
             "IsCurrentlyHorizontalMotionControlled": {
@@ -7437,7 +7457,12 @@
                 "return": "void"
             },
             "CalculateStatBonus": {
-                "args": [],
+                "arg_names": [
+                    "bForce"
+                ],
+                "args": [
+                    "bool"
+                ],
                 "description": "Recalculate all stats after the hero gains stats.",
                 "return": "void"
             },
@@ -12565,10 +12590,6 @@
                 "args": [],
                 "return": "bool"
             },
-            "BaseDamageIsValid": {
-                "args": [],
-                "return": "bool"
-            },
             "CanBeBlocked": {
                 "args": [],
                 "return": "bool"
@@ -12580,10 +12601,6 @@
             "GetAttacker": {
                 "args": [],
                 "return": "handle"
-            },
-            "GetBaseDamage": {
-                "args": [],
-                "return": "float"
             },
             "GetDamage": {
                 "args": [],

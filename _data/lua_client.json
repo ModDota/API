@@ -1902,6 +1902,11 @@
                 "description": "Is this unit a creep?",
                 "return": "bool"
             },
+            "IsCreepHero": {
+                "args": [],
+                "description": "Is this a creep hero?",
+                "return": "bool"
+            },
             "IsDisarmed": {
                 "args": [],
                 "return": "bool"
