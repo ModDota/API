@@ -149,6 +149,14 @@
             "border-bottom-width: 2px;"
         ]
     },
+    "border-brush": {
+        "description": "EXPERIMENTAL: Sets a more-complex brush for the entire border paint area (ignores normal border color).",
+        "examples": [
+            "border-brush: gradient( linear, 0% 0%, 0% 100%, from( #fbfbfbff ), to( #c0c0c0c0 ) );",
+            "border-brush: gradient( linear, 0% 0%, 0% 100%, from( #fbfbfbff ), color-stop( 0.3, #ebebebff ), to( #c0c0c0c0 ) );",
+            "border-brush: gradient( radial, 50% 50%, 0% 0%, 80% 80%, from( #00ff00ff ), to( #0000ffff ) );"
+        ]
+    },
     "border-color": {
         "description": "Specifies border color for panel. If a single color value is set it applies to all sides, if 2 are set the first is top/bottom and the second is left/right, if all four are set then they are top, right, bottom, left in order.",
         "examples": [
@@ -380,14 +388,20 @@
             "img-shadow: 2px 2px 8px 3.0 #333333b0;"
         ]
     },
+    "layout-position": {
+        "description": "Sets how the panel is positioned relative to its parent. \"static\" means position in the default way. \"fixed\" means position in the default way, but ignoring the parent's scroll offset.",
+        "examples": [
+            "layout-position: fixed;"
+        ]
+    },
     "letter-spacing": {
         "description": "Sets letter-spacing for text in a string. Possible values:\nnormal - no manual spacing\n<pixels> - Any fixed pixel value (ex: \"1px\")",
         "examples": []
     },
     "line-height": {
-        "description": "Specifies the line height (distance between top edge of line above and line below) to use for text. By default this is unset and a value that matches the font-size reasonably will be used automatically.",
+        "description": "Specifies the line height (distance between top edge of line above and line below) to use for text. By default this is 'normal' and a value that matches the font-size reasonably will be used automatically. Unlike the web, we don't have a weird CSS inheritence problem with the 120% vs 1.2 styles.",
         "examples": [
-            "line-height: 20px;"
+            "line-height: normal;line-height: 20px;line-height: 1.2;line-height: 120%;"
         ]
     },
     "margin": {
@@ -455,7 +469,7 @@
         "examples": []
     },
     "overflow": {
-        "description": "Specifies what to do with contents that overflow the available space for the panel. Possible values:\n\"squish\" - Children are squished to fit within the panel's bounds if needed (default)\n\"clip\" - Children maintain their desired size but their contents are clipped\n\"scroll\" - Children maintain their desired size and a scrollbar is added to this panel",
+        "description": "Specifies what to do with contents that overflow the available space for the panel. Possible values:\n\"squish\" - Children are squished to fit within the panel's bounds if needed (default)\n\"clip\" - Children maintain their desired size but their contents are clipped\n\"scroll\" - Children maintain their desired size and a scrollbar is added to this panel\n\n\"noclip\" - Children maintain their desired size and content is allowed to overflow this panel",
         "examples": [
             "overflow: squish squish; // squishes contents in horizontal and vertical directions",
             "overflow: squish scroll; // scrolls contents in the Y direction"
@@ -553,11 +567,12 @@
         ]
     },
     "text-overflow": {
-        "description": "Controls truncation of text that doesn't fit in a panel. \"clip\" means to simply truncate (on char boundaries), \"ellipsis\" means to end with '...', and \"shrink\" means to a\nWe default to ellipsis, which is contrary to the normal CSS spec.",
+        "description": "Controls truncation of text that doesn't fit in a panel. \"clip\" means to simply truncate (on char boundaries), \"ellipsis\" means to end with '...', and \"shrink\" means lower the font size to fit.  \"noclip\" allows the text to overflow based on the \"overflow\" style.\nWe default to ellipsis, which is contrary to the normal CSS spec.",
         "examples": [
             "text-overflow: ellipsis;",
             "text-overflow: clip;",
-            "text-overflow: shrink;"
+            "text-overflow: shrink;",
+            "text-overflow: noclip;"
         ]
     },
     "text-shadow": {
