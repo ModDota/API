@@ -1109,11 +1109,6 @@
                 "description": "(HSCRIPT hTarget) Determine whether an issued command on a target is valid.",
                 "return": "UnitFilterResult"
             },
-            "GetBehavior": {
-                "args": [],
-                "description": "Return cast behavior type of this ability.",
-                "return": "DOTA_ABILITY_BEHAVIOR"
-            },
             "GetCastAnimation": {
                 "args": [],
                 "description": "Return casting animation of this ability.",
@@ -2155,11 +2150,6 @@
                 ],
                 "description": "(HSCRIPT hTarget) Determine whether an issued command on a target is valid.",
                 "return": "UnitFilterResult"
-            },
-            "GetBehavior": {
-                "args": [],
-                "description": "Return cast behavior type of this ability.",
-                "return": "DOTA_ABILITY_BEHAVIOR"
             },
             "GetCastRange": {
                 "arg_names": [
