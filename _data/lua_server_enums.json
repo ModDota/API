@@ -3477,6 +3477,10 @@
             "value": 2
         },
         {
+            "key": "DOUBLE_SHOT",
+            "value": 2
+        },
+        {
             "key": "FCVAR_DEVELOPMENTONLY",
             "value": 2
         },
@@ -3490,10 +3494,6 @@
         },
         {
             "key": "POSTSENSING",
-            "value": 2
-        },
-        {
-            "key": "SINGLE_SHOT_NPC",
             "value": 2
         },
         {
@@ -3517,11 +3517,11 @@
             "value": 3
         },
         {
-            "key": "DOUBLE_SHOT",
+            "key": "OVERHEAD_ALERT_XP",
             "value": 3
         },
         {
-            "key": "OVERHEAD_ALERT_XP",
+            "key": "RELOAD",
             "value": 3
         },
         {
@@ -3549,7 +3549,7 @@
             "value": 4
         },
         {
-            "key": "DOUBLE_SHOT_NPC",
+            "key": "MELEE_MISS",
             "value": 4
         },
         {
@@ -3565,10 +3565,6 @@
             "value": 5
         },
         {
-            "key": "BURST",
-            "value": 5
-        },
-        {
             "key": "DOTA_CONNECTION_STATE_LOADING",
             "value": 5
         },
@@ -3578,6 +3574,10 @@
         },
         {
             "key": "DOTA_UNIT_ORDER_CAST_POSITION",
+            "value": 5
+        },
+        {
+            "key": "MELEE_HIT",
             "value": 5
         },
         {
@@ -3605,11 +3605,11 @@
             "value": 6
         },
         {
-            "key": "OVERHEAD_ALERT_DAMAGE",
+            "key": "MELEE_HIT_WORLD",
             "value": 6
         },
         {
-            "key": "RELOAD",
+            "key": "OVERHEAD_ALERT_DAMAGE",
             "value": 6
         },
         {
@@ -3629,11 +3629,11 @@
             "value": 7
         },
         {
-            "key": "OVERHEAD_ALERT_EVADE",
+            "key": "MELEE_HIT_PLAYER",
             "value": 7
         },
         {
-            "key": "RELOAD_NPC",
+            "key": "OVERHEAD_ALERT_EVADE",
             "value": 7
         },
         {
@@ -3653,11 +3653,11 @@
             "value": 8
         },
         {
-            "key": "MELEE_MISS",
+            "key": "OVERHEAD_ALERT_BLOCK",
             "value": 8
         },
         {
-            "key": "OVERHEAD_ALERT_BLOCK",
+            "key": "SPECIAL1",
             "value": 8
         },
         {
@@ -3681,11 +3681,11 @@
             "value": 9
         },
         {
-            "key": "MELEE_HIT",
+            "key": "OVERHEAD_ALERT_BONUS_POISON_DAMAGE",
             "value": 9
         },
         {
-            "key": "OVERHEAD_ALERT_BONUS_POISON_DAMAGE",
+            "key": "SPECIAL2",
             "value": 9
         },
         {
@@ -3701,11 +3701,11 @@
             "value": 10
         },
         {
-            "key": "MELEE_HIT_WORLD",
+            "key": "OVERHEAD_ALERT_HEAL",
             "value": 10
         },
         {
-            "key": "OVERHEAD_ALERT_HEAL",
+            "key": "SPECIAL3",
             "value": 10
         },
         {
@@ -3722,10 +3722,6 @@
         },
         {
             "key": "DOTA_UNIT_ORDER_TRAIN_ABILITY",
-            "value": 11
-        },
-        {
-            "key": "MELEE_HIT_PLAYER",
             "value": 11
         },
         {
@@ -3749,10 +3745,6 @@
             "value": 12
         },
         {
-            "key": "SPECIAL1",
-            "value": 12
-        },
-        {
             "key": "ACT_RUN_CROUCH_AIM",
             "value": 13
         },
@@ -3769,10 +3761,6 @@
             "value": 13
         },
         {
-            "key": "SPECIAL2",
-            "value": 13
-        },
-        {
             "key": "ACT_RUN_PROTECTED",
             "value": 14
         },
@@ -3786,10 +3774,6 @@
         },
         {
             "key": "OVERHEAD_ALERT_LAST_HIT_CLOSE",
-            "value": 14
-        },
-        {
-            "key": "SPECIAL3",
             "value": 14
         },
         {
@@ -3817,10 +3801,6 @@
             "value": 15
         },
         {
-            "key": "TAUNT",
-            "value": 15
-        },
-        {
             "key": "ACT_RANGE_ATTACK1",
             "value": 16
         },
@@ -3838,10 +3818,6 @@
         },
         {
             "key": "DOTA_UNIT_ORDER_PURCHASE_ITEM",
-            "value": 16
-        },
-        {
-            "key": "FASTRELOAD",
             "value": 16
         },
         {
@@ -3994,6 +3970,10 @@
         },
         {
             "key": "DOTA_UNIT_ORDER_GLYPH",
+            "value": 24
+        },
+        {
+            "key": "OVERHEAD_ALERT_DEADLY_BLOW",
             "value": 24
         },
         {

@@ -1281,6 +1281,10 @@
             "value": 2
         },
         {
+            "key": "DOUBLE_SHOT",
+            "value": 2
+        },
+        {
             "key": "FCVAR_DEVELOPMENTONLY",
             "value": 2
         },
@@ -1290,10 +1294,6 @@
         },
         {
             "key": "POSTSENSING",
-            "value": 2
-        },
-        {
-            "key": "SINGLE_SHOT_NPC",
             "value": 2
         },
         {
@@ -1309,7 +1309,7 @@
             "value": 3
         },
         {
-            "key": "DOUBLE_SHOT",
+            "key": "RELOAD",
             "value": 3
         },
         {
@@ -1329,7 +1329,7 @@
             "value": 4
         },
         {
-            "key": "DOUBLE_SHOT_NPC",
+            "key": "MELEE_MISS",
             "value": 4
         },
         {
@@ -1341,11 +1341,11 @@
             "value": 5
         },
         {
-            "key": "BURST",
+            "key": "DOTA_PROJECTILE_ATTACHMENT_ATTACK_4",
             "value": 5
         },
         {
-            "key": "DOTA_PROJECTILE_ATTACHMENT_ATTACK_4",
+            "key": "MELEE_HIT",
             "value": 5
         },
         {
@@ -1361,7 +1361,7 @@
             "value": 6
         },
         {
-            "key": "RELOAD",
+            "key": "MELEE_HIT_WORLD",
             "value": 6
         },
         {
@@ -1377,7 +1377,7 @@
             "value": 7
         },
         {
-            "key": "RELOAD_NPC",
+            "key": "MELEE_HIT_PLAYER",
             "value": 7
         },
         {
@@ -1393,7 +1393,7 @@
             "value": 8
         },
         {
-            "key": "MELEE_MISS",
+            "key": "SPECIAL1",
             "value": 8
         },
         {
@@ -1405,7 +1405,7 @@
             "value": 9
         },
         {
-            "key": "MELEE_HIT",
+            "key": "SPECIAL2",
             "value": 9
         },
         {
@@ -1417,7 +1417,7 @@
             "value": 10
         },
         {
-            "key": "MELEE_HIT_WORLD",
+            "key": "SPECIAL3",
             "value": 10
         },
         {
@@ -1433,19 +1433,11 @@
             "value": 11
         },
         {
-            "key": "MELEE_HIT_PLAYER",
-            "value": 11
-        },
-        {
             "key": "ACT_RUN_CROUCH",
             "value": 12
         },
         {
             "key": "AE_CL_SUPPRESS_EVENTS_WITH_TAG",
-            "value": 12
-        },
-        {
-            "key": "SPECIAL1",
             "value": 12
         },
         {
@@ -1457,10 +1449,6 @@
             "value": 13
         },
         {
-            "key": "SPECIAL2",
-            "value": 13
-        },
-        {
             "key": "ACT_RUN_PROTECTED",
             "value": 14
         },
@@ -1469,19 +1457,11 @@
             "value": 14
         },
         {
-            "key": "SPECIAL3",
-            "value": 14
-        },
-        {
             "key": "ACT_SCRIPT_CUSTOM_MOVE",
             "value": 15
         },
         {
             "key": "AE_MUZZLEFLASH",
-            "value": 15
-        },
-        {
-            "key": "TAUNT",
             "value": 15
         },
         {
@@ -1494,10 +1474,6 @@
         },
         {
             "key": "DMG_VEHICLE",
-            "value": 16
-        },
-        {
-            "key": "FASTRELOAD",
             "value": 16
         },
         {
@@ -6777,47 +6753,47 @@
             "value": 1752
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1753
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACD_DOTA_IDLE",
             "value": 1754
         },
         {
-            "key": "ACT_DOTA_RUN_ALT",
+            "key": "ACT_DOTA_RELAX_IN",
             "value": 1755
         },
         {
-            "key": "ACT_DOTA_CYCLONE",
+            "key": "ACT_DOTA_RELAX_OUT",
             "value": 1756
         },
         {
-            "key": "ACT_DOTA_IMPALE",
+            "key": "ACT_DOTA_CAST_FENCE",
             "value": 1757
         },
         {
-            "key": "ACT_DOTA_TORRENT",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1758
         },
         {
-            "key": "ACT_DOTA_RELAX_IN",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1759
         },
         {
-            "key": "ACT_DOTA_RELAX_OUT",
+            "key": "ACT_DOTA_SPWN",
             "value": 1760
         },
         {
-            "key": "ACT_DOTA_CAST_FENCE",
+            "key": "ACT_DOTA_RUN_ALT",
             "value": 1761
         },
         {
-            "key": "radiant_melee_mars_shieldbash",
+            "key": "ACT_DOTA_CYCLONE",
             "value": 1762
         },
         {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+            "key": "ACT_DOTA_IMPALE",
             "value": 1763
         },
         {

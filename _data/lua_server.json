@@ -3519,11 +3519,6 @@
                 "description": "Get the time an item will be added to stock",
                 "return": "float"
             },
-            "GetMatchID": {
-                "args": [],
-                "description": "Get the MatchID for this game.",
-                "return": "uint64"
-            },
             "GetMatchSignoutComplete": {
                 "args": [],
                 "description": "Have we received the post match signout message that includes reward information",
@@ -3699,6 +3694,11 @@
                 "args": [],
                 "description": "Restart the game at hero selection",
                 "return": "void"
+            },
+            "Script_GetMatchID": {
+                "args": [],
+                "description": "Get the MatchID for this game.",
+                "return": "uint64"
             },
             "SendCustomMessage": {
                 "args": [
@@ -8125,6 +8125,26 @@
                     "cstring"
                 ],
                 "description": "Set the animation sequence for this entity.",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_BaseNPC_Watch_Tower": {
+        "extends": "CDOTA_BaseNPC_Building",
+        "functions": {
+            "GetInteractAbilityName": {
+                "args": [],
+                "description": "The name of the ability used when triggering interaction on the outpost.",
+                "return": "cstring"
+            },
+            "SetInteractAbilityName": {
+                "arg_names": [
+                    "pszInteractAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "The name of the ability used when triggering interaction on the outpost.",
                 "return": "void"
             }
         }
@@ -13639,6 +13659,13 @@
                 "args": [],
                 "description": "Get the time spent on the server in the last frame",
                 "return": "float"
+            },
+            "GetAbilityKeyValuesByName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get ability data by ability name.",
+                "return": "table"
             },
             "GetAbilityTextureNameForAbility": {
                 "args": [

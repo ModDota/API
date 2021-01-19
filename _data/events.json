@@ -125,6 +125,26 @@
         "panelEvent": true,
         "args": []
     },
+    "DOTALiveStreamUpcoming": {
+        "description": "Notify change in RTime32 we expect the stream to start",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "time",
+                "type": "uint32"
+            }
+        ]
+    },
+    "DOTALiveStreamVideoReady": {
+        "description": "Notify change in video state (is it pointing at a live stream page or not)",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "isReady",
+                "type": "bool"
+            }
+        ]
+    },
     "DOTAShowAbilityInventoryItemTooltip": {
         "description": "Show tooltip for an item in the entityIndex NPC's inventory.",
         "panelEvent": true,
@@ -224,24 +244,6 @@
             {
                 "name": "int32",
                 "type": "int3"
-            }
-        ]
-    },
-    "DOTAShowBuffTooltip": {
-        "description": "Show a buff tooltip for the specified entityIndex + buff serial.",
-        "panelEvent": true,
-        "args": [
-            {
-                "name": "entityIndex",
-                "type": "int32"
-            },
-            {
-                "name": "buffSerial",
-                "type": "int32"
-            },
-            {
-                "name": "bOnEnemy",
-                "type": "bool"
             }
         ]
     }

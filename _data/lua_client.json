@@ -2982,6 +2982,13 @@
                 "description": "Get the time spent on the server in the last frame",
                 "return": "float"
             },
+            "GetAbilityKeyValuesByName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get ability data by ability name.",
+                "return": "table"
+            },
             "GetAbilityTextureNameForAbility": {
                 "args": [
                     "cstring"
