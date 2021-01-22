@@ -135,12 +135,12 @@
             }
         ]
     },
-    "DOTALiveStreamVideoReady": {
+    "DOTALiveStreamVideoLive": {
         "description": "Notify change in video state (is it pointing at a live stream page or not)",
         "panelEvent": true,
         "args": [
             {
-                "name": "isReady",
+                "name": "isLive",
                 "type": "bool"
             }
         ]
