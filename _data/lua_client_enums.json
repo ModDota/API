@@ -6773,15 +6773,15 @@
             "value": 1757
         },
         {
-            "key": "ACT_DOTA_SPWN",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1758
         },
         {
-            "key": "radiant_melee_mars_shieldbash",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1759
         },
         {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+            "key": "ACT_DOTA_SPWN",
             "value": 1760
         },
         {
