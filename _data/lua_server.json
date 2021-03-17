@@ -10551,7 +10551,7 @@
             },
             "IsValidTeamPlayerID": {
                 "arg_names": [
-                    "iPlayerID"
+                    "nPlayerID"
                 ],
                 "args": [
                     "int"
