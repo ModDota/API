@@ -1600,6 +1600,15 @@
                 ],
                 "return": "int"
             },
+            "GetMaxAbilityCharges": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "int"
+            },
             "GetMaxLevel": {
                 "args": [],
                 "return": "int"
@@ -1862,6 +1871,10 @@
                 "args": [],
                 "return": "void"
             },
+            "RequiresFacing": {
+                "args": [],
+                "return": "bool"
+            },
             "ResetToggleOnRespawn": {
                 "args": [],
                 "return": "bool"
@@ -2045,6 +2058,15 @@
     "CDOTABaseGameMode": {
         "extends": "CBaseEntity",
         "functions": {
+            "AddAbilityUpgradeToWhitelist": {
+                "arg_names": [
+                    "pszAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "return": "void"
+            },
             "AddItemToCustomShop": {
                 "arg_names": [
                     "pszItemName",
@@ -2164,6 +2186,15 @@
                     "bool"
                 ],
                 "description": "Use to disable hud flip for this mod",
+                "return": "void"
+            },
+            "EnableAbilityUpgradeWhitelist": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
                 "return": "void"
             },
             "GetAlwaysShowPlayerInventory": {
@@ -2328,6 +2359,15 @@
                 "description": "Are custom-defined XP values for hero level ups in use?",
                 "return": "bool"
             },
+            "IsAbilityUpgradeWhitelisted": {
+                "arg_names": [
+                    "pszAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "return": "bool"
+            },
             "IsBuybackEnabled": {
                 "args": [],
                 "description": "Enables or disables buyback completely.",
@@ -2372,6 +2412,15 @@
                     "handle"
                 ],
                 "description": "Set function and context for real time combat analyzer query succeeded.",
+                "return": "void"
+            },
+            "RemoveAbilityUpgradeFromWhitelist": {
+                "arg_names": [
+                    "pszAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
                 "return": "void"
             },
             "RemoveItemFromCustomShop": {
@@ -4851,6 +4900,11 @@
                 "description": "Returns true if this ability will generate magic stick charges for nearby enemies.",
                 "return": "bool"
             },
+            "RequiresFacing": {
+                "args": [],
+                "description": "Does this ability need the caster to face the target before executing?",
+                "return": "bool"
+            },
             "ResetToggleOnRespawn": {
                 "args": [],
                 "description": "Returns true if this ability should return to the default toggle state when its parent respawns.",
@@ -6102,6 +6156,10 @@
                 "return": "bool"
             },
             "IsSpeciallyDeniable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsSpeciallyUndeniable": {
                 "args": [],
                 "return": "bool"
             },
@@ -8429,6 +8487,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsCombineLocked": {
+                "args": [],
+                "return": "bool"
+            },
             "IsDisassemblable": {
                 "args": [],
                 "return": "bool"
@@ -8554,6 +8616,15 @@
             "SetCastOnPickup": {
                 "arg_names": [
                     "bCastOnPickUp"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetCombineLocked": {
+                "arg_names": [
+                    "bCombineLocked"
                 ],
                 "args": [
                     "bool"
@@ -9472,6 +9543,28 @@
             }
         }
     },
+    "CDOTA_NeutralSpawner": {
+        "extends": "CPointEntity",
+        "functions": {
+            "CreatePendingUnits": {
+                "args": [],
+                "return": "void"
+            },
+            "SelectSpawnType": {
+                "args": [],
+                "return": "void"
+            },
+            "SpawnNextBatch": {
+                "arg_names": [
+                    "bIgnoreBlockers"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            }
+        }
+    },
     "CDOTA_PlayerResource": {
         "extends": "CBaseEntity",
         "functions": {
@@ -10072,6 +10165,15 @@
                     "int"
                 ],
                 "return": "cstring"
+            },
+            "GetPreferredCourierForPlayer": {
+                "arg_names": [
+                    "nPlayerId"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "handle"
             },
             "GetRawPlayerDamage": {
                 "arg_names": [
@@ -10881,7 +10983,18 @@
     },
     "CDOTA_Unit_Courier": {
         "extends": "CDOTA_BaseNPC",
-        "functions": {}
+        "functions": {
+            "UpgradeCourier": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Upgrade the courier ( int param ) times.",
+                "return": "void"
+            }
+        }
     },
     "CDOTA_Unit_CustomGameAnnouncer": {
         "extends": "CDOTA_BaseNPC",
@@ -11353,11 +11466,6 @@
                 "description": "Draws a filled triangle. Specify vertices in world space.",
                 "return": "void"
             },
-            "UnitTestCycleOverlayRenderType": {
-                "args": [],
-                "description": "Toggles the overlay render type, for unit tests",
-                "return": "void"
-            },
             "VectorText3D": {
                 "args": [
                     "vector",
@@ -11507,6 +11615,29 @@
                     "int"
                 ],
                 "description": "Set a subquest value",
+                "return": "void"
+            }
+        }
+    },
+    "CDotaTutorialNPCBlocker": {
+        "extends": "CBaseFlex",
+        "functions": {
+            "SetEnabled": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "SetOtherBlocker": {
+                "arg_names": [
+                    "hBlocker"
+                ],
+                "args": [
+                    "handle"
+                ],
                 "return": "void"
             }
         }
@@ -14172,6 +14303,16 @@
                 "description": "Reloads the MotD file",
                 "return": "void"
             },
+            "RemapValClamped": {
+                "args": [
+                    "float",
+                    "float",
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "return": "float"
+            },
             "RemoveFOWViewer": {
                 "args": [
                     "int",
@@ -14587,14 +14728,6 @@
                 ],
                 "description": "Pass table - Inputs: startpos, endpos, mask, ignore  -- outputs: pos, fraction, hit, enthit, startsolid",
                 "return": "bool"
-            },
-            "UTIL_AngleDiff": {
-                "args": [
-                    "float",
-                    "float"
-                ],
-                "description": "Returns the number of degrees difference between two yaw angles",
-                "return": "float"
             },
             "UTIL_MessageText": {
                 "args": [

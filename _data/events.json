@@ -65,6 +65,20 @@
             }
         ]
     },
+    "DOTADisplayDashboardTip": {
+        "description": "Tip to display, panel to attach to (default 'DefaultTipAttachment')",
+        "panelEvent": false,
+        "args": [
+            {
+                "name": "string",
+                "type": "string"
+            },
+            {
+                "name": "string",
+                "type": "string optional"
+            }
+        ]
+    },
     "DOTAHideAbilityTooltip": {
         "description": "Hide the ability tooltip",
         "panelEvent": true,
@@ -230,20 +244,6 @@
             {
                 "name": "bool",
                 "type": "boo"
-            }
-        ]
-    },
-    "DOTAShowAbilityTooltipForLevel": {
-        "description": "Show an ability tooltip for a specific level.",
-        "panelEvent": true,
-        "args": [
-            {
-                "name": "abilityName",
-                "type": "string"
-            },
-            {
-                "name": "int32",
-                "type": "int3"
             }
         ]
     }

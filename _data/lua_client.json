@@ -843,11 +843,6 @@
                 "description": "Draws a filled triangle. Specify vertices in world space.",
                 "return": "void"
             },
-            "UnitTestCycleOverlayRenderType": {
-                "args": [],
-                "description": "Toggles the overlay render type, for unit tests",
-                "return": "void"
-            },
             "VectorText3D": {
                 "args": [
                     "vector",
@@ -1614,6 +1609,16 @@
     "C_DOTA_BaseNPC": {
         "extends": "C_BaseEntity",
         "functions": {
+            "FindAbilityByName": {
+                "arg_names": [
+                    "pAbilityName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Retrieve an ability by name from the unit.",
+                "return": "handle"
+            },
             "GetAbilityCount": {
                 "args": [],
                 "return": "int"
@@ -2018,6 +2023,10 @@
                 "return": "bool"
             },
             "IsSpeciallyDeniable": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsSpeciallyUndeniable": {
                 "args": [],
                 "return": "bool"
             },
