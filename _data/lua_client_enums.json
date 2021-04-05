@@ -6757,47 +6757,47 @@
             "value": 1752
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1753
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACD_DOTA_IDLE",
             "value": 1754
         },
         {
-            "key": "ACT_DOTA_RUN_ALT",
+            "key": "ACT_DOTA_RELAX_IN",
             "value": 1755
         },
         {
-            "key": "ACT_DOTA_CYCLONE",
+            "key": "ACT_DOTA_RELAX_OUT",
             "value": 1756
         },
         {
-            "key": "ACT_DOTA_IMPALE",
+            "key": "ACT_DOTA_CAST_FENCE",
             "value": 1757
         },
         {
-            "key": "ACT_DOTA_TORRENT",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1758
         },
         {
-            "key": "ACT_DOTA_RELAX_IN",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1759
         },
         {
-            "key": "ACT_DOTA_RELAX_OUT",
+            "key": "ACT_DOTA_SPWN",
             "value": 1760
         },
         {
-            "key": "ACT_DOTA_CAST_FENCE",
+            "key": "ACT_DOTA_RUN_ALT",
             "value": 1761
         },
         {
-            "key": "radiant_melee_mars_shieldbash",
+            "key": "ACT_DOTA_CYCLONE",
             "value": 1762
         },
         {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+            "key": "ACT_DOTA_IMPALE",
             "value": 1763
         },
         {
