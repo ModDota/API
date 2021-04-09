@@ -4682,6 +4682,16 @@
                 "description": "Return the animation rate of the cast animation.",
                 "return": "float"
             },
+            "IsCosmetic": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Is this a cosmetic only ability?",
+                "return": "bool"
+            },
             "IsHiddenAbilityCastable": {
                 "args": [],
                 "description": "Returns true if this ability can be used when not on the action panel.",
@@ -4894,6 +4904,10 @@
                 "args": [],
                 "description": "Ability gained a level.",
                 "return": "void"
+            },
+            "OtherAbilitiesAlwaysInterruptChanneling": {
+                "args": [],
+                "return": "bool"
             },
             "ProcsMagicStick": {
                 "args": [],
@@ -8475,6 +8489,11 @@
                 "args": [],
                 "return": "int"
             },
+            "GetValuelessCharges": {
+                "args": [],
+                "description": "Get the number of valueless charges this item currently has.",
+                "return": "int"
+            },
             "IsAlertableItem": {
                 "args": [],
                 "return": "bool"
@@ -8521,6 +8540,7 @@
             },
             "IsPermanent": {
                 "args": [],
+                "description": "Is this a permanent item?",
                 "return": "bool"
             },
             "IsPurchasable": {
@@ -8590,6 +8610,16 @@
                     "float",
                     "vector"
                 ],
+                "return": "void"
+            },
+            "ModifyNumValuelessCharges": {
+                "arg_names": [
+                    "iCharges"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Modifies the number of valueless charges on this item",
                 "return": "void"
             },
             "OnEquip": {
@@ -10089,6 +10119,11 @@
                 ],
                 "return": "int"
             },
+            "GetNumConnectedHumanPlayers": {
+                "args": [],
+                "description": "Players on a valid team (radiant, dire, or custom*) who haven't abandoned the game",
+                "return": "int"
+            },
             "GetNumConsumablesPurchased": {
                 "arg_names": [
                     "iPlayerID"
@@ -10304,7 +10339,7 @@
             },
             "GetTeamPlayerCount": {
                 "args": [],
-                "description": "Players on a valid team (radiant, dire, or custom*) who haven't abandoned the game",
+                "description": "(Deprecated: use GetNumConnectedHumanPlayers) Players on a valid team (radiant, dire, or custom*) who haven't abandoned the game",
                 "return": "int"
             },
             "GetTimeOfLastConsumablePurchase": {

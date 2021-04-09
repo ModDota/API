@@ -753,7 +753,7 @@
             "value": 6
         },
         {
-            "key": "DOTA_RUNE_XP",
+            "key": "DOTA_RUNE_WATER",
             "value": 7
         },
         {
@@ -6757,11 +6757,11 @@
             "value": 1752
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1753
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACD_DOTA_IDLE",
             "value": 1754
         },
         {
@@ -8103,8 +8103,13 @@
             "value": 241
         },
         {
-            "key": "MODIFIER_FUNCTION_LAST",
+            "description": "OnAttemptProjectileDodge",
+            "key": "MODIFIER_EVENT_ON_ATTEMPT_PROJECTILE_DODGE",
             "value": 242
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 243
         },
         {
             "key": "MODIFIER_FUNCTION_INVALID",

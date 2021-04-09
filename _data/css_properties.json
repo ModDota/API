@@ -72,6 +72,12 @@
             "background-image: url(\"file://{images}/default.tga\"), url( \"file://{movies}/Background1080p.webm\" );"
         ]
     },
+    "background-img-opacity": {
+        "description": "Sets the Opacity of background-image",
+        "examples": [
+            "background-img-opacity: 0.5;"
+        ]
+    },
     "background-position": {
         "description": "Controls the horizontal and vertical placement of the background image, with the format: <left|center|right> <horizontal length> <top|center|bottom> <vertical length>\n\nIf length is a percent, the specified location within the image is positioned over that same specified position in the background. If the length is pixels, the top left corner is placed relative to the provided alignment keywords (left, bottom, etc.). See examples for more details.\n\nIf 1 value is specified, the other value is assumed to be center. If 2 values are specified, the first value must be for horizontal placement and the second for vertical.",
         "examples": [

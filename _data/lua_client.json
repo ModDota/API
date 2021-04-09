@@ -1411,6 +1411,10 @@
                 "description": "Name of this ability.",
                 "return": "cstring"
             },
+            "GetBehavior": {
+                "args": [],
+                "return": "int"
+            },
             "GetBehaviorInt": {
                 "args": [],
                 "description": "Get ability behavior flags as an int for compatability.",
