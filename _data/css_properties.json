@@ -1,12 +1,4 @@
 {
-    "-s2-mix-blend-mode": {
-        "description": "Controls blending mode for the panel. See CSS mix-blend-mode docs on web, except normal for us is with alpha blending.",
-        "examples": [
-            "-s2-mix-blend-mode: normal;",
-            "-s2-mix-blend-mode: multiply;",
-            "-s2-mix-blend-mode: screen;"
-        ]
-    },
     "align": {
         "description": "<Needs a description>",
         "examples": []
@@ -452,6 +444,12 @@
             "opacity: 0.8;"
         ]
     },
+    "opacity-brush": {
+        "description": "Sets an opacity brush to apply to the panel and all it's children during composition.",
+        "examples": [
+            "opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffffff ), to( #ffffff00 ) );"
+        ]
+    },
     "opacity-mask": {
         "description": "Applies an image as an opacity mask that stretches to the panel bounds and fades out it's content based on the alpha channel. The second float value is an optional opacity value for the mask itself, the image won't interpolate/cross-fade, but you can animate the opacity to fade the mask in/out. The -scroll-up, -scroll-down, and -scroll-up-down varients override the mask and apply only when the various vertical scroll scenarios affect the panel based on the overflow property.",
         "examples": [
@@ -594,10 +592,11 @@
         ]
     },
     "texture-sampling": {
-        "description": "Controls texture sampling mode for the panel. Set to alpha-only to use the textures alpha data across all 3 color channels.",
+        "description": "Controls texture sampling mode for the panel. Set to alpha-only to use the textures alpha data across all 3 color channels, or point for point sampling.",
         "examples": [
             "texture-sampling: normal;",
-            "texture-sampling: alpha-only;"
+            "texture-sampling: alpha-only;",
+            "texture-sampling: point;"
         ]
     },
     "tooltip-arrow-position": {
@@ -725,6 +724,13 @@
     "width": {
         "description": "Sets the width for this panel. Possible values:\n\"fit-children\" - Panel size is set to the required size of all children (default)\n<pixels> - Any fixed pixel value (ex: \"100px\")\n<percentage> - Percentage of parent width (ex: \"100%\")\n\"fill-parent-flow( <weight> )\" - Fills to remaining parent width. If multiple children are set to this value, weight is used to determine final width. For example, if three children are set to fill-parent-flow of 1.0 and the parent is 300px wide, each child will be 100px wide. (ex: \"fill-parent-flow( 1.0 )\" )\n\"height-percentage( <percentage> )\" - Percentage of the panel's height, which allows you to enforce a particular aspect ratio. The height cannot also be width-percentage.",
         "examples": []
+    },
+    "world-blur": {
+        "description": "Sets the amount of blur to apply to the world / backbuffer before drawing.",
+        "examples": [
+            "world-blur: gaussian( 2.5 );",
+            "world-blur: gaussian( 6, 6, 1 );world-blur: mipmapgaussian( 6, 6, 4 ); In this version each gaussian pass is preceded by a quarter area downsample."
+        ]
     },
     "x": {
         "description": "Sets the x, y, z position for a panel. Must not be in a flowing layout.",

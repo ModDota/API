@@ -128,6 +128,11 @@
     },
     "CDOTAGamerules": {
         "functions": {
+            "GetBannedHeroIDs": {
+                "args": [],
+                "description": "Returns the hero unit IDs banned in this game, if any",
+                "return": "table"
+            },
             "GetBannedHeroes": {
                 "args": [],
                 "description": "Returns the hero unit names banned in this game, if any",
@@ -226,6 +231,15 @@
                     "bool"
                 ],
                 "description": "(index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect",
+                "return": "void"
+            },
+            "CheckStateToTable": {
+                "arg_names": [
+                    "table"
+                ],
+                "args": [
+                    "handle"
+                ],
                 "return": "void"
             },
             "DecrementStackCount": {
@@ -1538,6 +1552,15 @@
                 "description": "Return cast range of this ability.",
                 "return": "int"
             },
+            "GetCastRangeBonus": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "return": "int"
+            },
             "GetChannelTime": {
                 "args": [],
                 "description": "Return the channel time of this ability.",
@@ -1588,6 +1611,18 @@
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
                 "return": "cstring"
             },
+            "GetEffectiveCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Return cast range of this ability, accounting for modifiers.",
+                "return": "int"
+            },
             "GetGoldCost": {
                 "arg_names": [
                     "iLevel"
@@ -1607,6 +1642,11 @@
                 ],
                 "description": "Return mana cost at the given level (-1 is current).",
                 "return": "int"
+            },
+            "IsHiddenAbilityCastable": {
+                "args": [],
+                "description": "Returns true if this ability can be used when not on the action panel.",
+                "return": "bool"
             }
         }
     },
@@ -2314,6 +2354,18 @@
                 ],
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
                 "return": "cstring"
+            },
+            "GetEffectiveCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Return cast range of this ability, taking modifiers into account.",
+                "return": "int"
             },
             "GetGoldCost": {
                 "arg_names": [

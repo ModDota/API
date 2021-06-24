@@ -1529,6 +1529,18 @@
                 "args": [],
                 "return": "float"
             },
+            "GetEffectiveCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Gets the cast range of the ability, taking modifiers into account.",
+                "return": "int"
+            },
             "GetEffectiveCooldown": {
                 "arg_names": [
                     "iLevel"
@@ -2274,6 +2286,11 @@
                 "description": "Get the current custom scan cooldown.",
                 "return": "float"
             },
+            "GetDaynightCycleAdvanceRate": {
+                "args": [],
+                "description": "Get the rate at which the day/night cycle advances (1.0 = default).",
+                "return": "float"
+            },
             "GetEventGameSeed": {
                 "args": [],
                 "description": "Get the Game Seed passed from the GC.",
@@ -2601,6 +2618,15 @@
                 "description": "Sets the camera Z range",
                 "return": "void"
             },
+            "SetCanSellAnywhere": {
+                "arg_names": [
+                    "bAllow"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
             "SetCustomAttributeDerivedStatValue": {
                 "arg_names": [
                     "nStatType",
@@ -2740,6 +2766,16 @@
                     "handle"
                 ],
                 "description": "Set a filter function to control the behavior when a unit takes damage. (Modify the table and Return true to use new values, return false to cancel the event)",
+                "return": "void"
+            },
+            "SetDaynightCycleAdvanceRate": {
+                "arg_names": [
+                    "flRate"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the rate at which the day/night cycle advances (1.0 = default).",
                 "return": "void"
             },
             "SetDaynightCycleDisabled": {
@@ -3284,6 +3320,16 @@
                 "description": "If set to true, use current rune spawn rules.  Either setting respects custom spawn intervals.",
                 "return": "void"
             },
+            "SetUseTurboCouriers": {
+                "arg_names": [
+                    "bEnabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Enables or disables turbo couriers.",
+                "return": "void"
+            },
             "SetWeatherEffectsDisabled": {
                 "arg_names": [
                     "bDisable"
@@ -3480,6 +3526,11 @@
                 ],
                 "description": "Get the announcer for a team",
                 "return": "handle"
+            },
+            "GetBannedHeroIDs": {
+                "args": [],
+                "description": "Returns the hero unit IDs banned in this game, if any",
+                "return": "table"
             },
             "GetBannedHeroes": {
                 "args": [],
@@ -4175,7 +4226,7 @@
                     "handle"
                 ],
                 "description": "Attempt to spawn the appropriate couriers for this mode.",
-                "return": "void"
+                "return": "handle"
             },
             "GetAssignedHero": {
                 "args": [],
@@ -4592,6 +4643,15 @@
                 "description": "Return cast range of this ability.",
                 "return": "int"
             },
+            "GetCastRangeBonus": {
+                "arg_names": [
+                    "hTarget"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "return": "int"
+            },
             "GetChannelAnimation": {
                 "args": [],
                 "description": "Return channel animation of this ability.",
@@ -4651,6 +4711,18 @@
                 ],
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
                 "return": "cstring"
+            },
+            "GetEffectiveCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Return cast range of this ability, accounting for modifiers.",
+                "return": "int"
             },
             "GetGoldCost": {
                 "arg_names": [
@@ -5417,6 +5489,10 @@
             "GetBaseDayTimeVisionRange": {
                 "args": [],
                 "description": "Returns the vision range before modifiers.",
+                "return": "int"
+            },
+            "GetBaseHealthBarOffset": {
+                "args": [],
                 "return": "int"
             },
             "GetBaseHealthRegen": {
@@ -6889,6 +6965,15 @@
                 "description": "Set if this unit has an inventory.",
                 "return": "void"
             },
+            "SetHealthBarOffsetOverride": {
+                "arg_names": [
+                    "nOffset"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "void"
+            },
             "SetHullRadius": {
                 "arg_names": [
                     "flHullRadius"
@@ -8243,6 +8328,15 @@
                 "description": "(index, bDestroyImmediately, bStatusEffect, priority, bHeroEffect, bOverheadEffect",
                 "return": "void"
             },
+            "CheckStateToTable": {
+                "arg_names": [
+                    "table"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "return": "void"
+            },
             "DecrementStackCount": {
                 "args": [],
                 "description": "Decrease this modifier's stack count by 1.",
@@ -8952,6 +9046,18 @@
                 ],
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
                 "return": "cstring"
+            },
+            "GetEffectiveCastRange": {
+                "arg_names": [
+                    "vLocation",
+                    "hTarget"
+                ],
+                "args": [
+                    "vector",
+                    "handle"
+                ],
+                "description": "Return cast range of this ability, taking modifiers into account.",
+                "return": "int"
             },
             "GetGoldCost": {
                 "arg_names": [
@@ -14583,6 +14689,19 @@
                     "float"
                 ],
                 "description": "(Vector vOrigin, float flRadius )",
+                "return": "handle"
+            },
+            "SpawnEffigyOfUnitOrModel": {
+                "args": [
+                    "cstring",
+                    "int",
+                    "vector",
+                    "vector",
+                    "float",
+                    "float",
+                    "int"
+                ],
+                "description": "Spawn an effigy of the target unit.",
                 "return": "handle"
             },
             "SpawnEntityFromTableAsynchronous": {
