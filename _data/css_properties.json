@@ -380,6 +380,10 @@
             "hue-rotation: 180deg;"
         ]
     },
+    "ignore-parent-flow": {
+        "description": "<Needs a description>",
+        "examples": []
+    },
     "img-shadow": {
         "description": "Specifies image shadows. The shadow shape will match the image the panel can generate,and this is only meaningful for images.  Syntax takes horizontal offset pixels, vertical offset pixels, blur radius pixels, strength, and then shadow color.",
         "examples": [

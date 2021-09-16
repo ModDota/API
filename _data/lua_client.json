@@ -166,6 +166,15 @@
                 "description": "Returns the number of seconds elapsed since map start. This time doesn't count up when the game is paused",
                 "return": "float"
             },
+            "GetIetmStockDuration": {
+                "args": [
+                    "int",
+                    "cstring",
+                    "int"
+                ],
+                "description": "Get the time it takes to add a new item to stock",
+                "return": "float"
+            },
             "GetItemStockCount": {
                 "args": [
                     "int",
@@ -174,15 +183,6 @@
                 ],
                 "description": "Get the stock count of the item",
                 "return": "int"
-            },
-            "GetItemStockDuration": {
-                "args": [
-                    "int",
-                    "cstring",
-                    "int"
-                ],
-                "description": "Get the time it takes to add a new item to stock",
-                "return": "float"
             },
             "GetItemStockTime": {
                 "args": [
@@ -201,6 +201,18 @@
             "IsCheatMode": {
                 "args": [],
                 "description": "Are cheats enabled on the server",
+                "return": "bool"
+            },
+            "IsHeroEnabledViaLists": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Is the hero not blacklisted, and is it either whitelisted or the whitelist is empty?",
+                "return": "bool"
+            },
+            "ShouldHideBlacklistedHeroes": {
+                "args": [],
+                "description": "Are blacklisted heroes hidden, or just dimmed, in hero picking?",
                 "return": "bool"
             },
             "State_Get": {
@@ -1431,15 +1443,17 @@
             },
             "GetBehaviorInt": {
                 "args": [],
-                "description": "Get ability behavior flags as an int for compatability.",
+                "description": "Get ability behavior flags as an int for compatibility.",
                 "return": "int"
             },
             "GetCaster": {
                 "args": [],
+                "description": "Get the owner of this ability.",
                 "return": "handle"
             },
             "GetCurrentAbilityCharges": {
                 "args": [],
+                "description": "The number of charges remaining on this ability.",
                 "return": "int"
             },
             "GetLevel": {
@@ -1647,6 +1661,21 @@
                 "args": [],
                 "description": "Returns true if this ability can be used when not on the action panel.",
                 "return": "bool"
+            }
+        }
+    },
+    "C_DOTA_AghsFort_Ability_ArcWardenBoss_TempestDouble": {
+        "extends": "C_DOTABaseAbility",
+        "functions": {
+            "SetNumDoubles": {
+                "arg_names": [
+                    "nDoubles"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Sets the number of doubles to spawn.",
+                "return": "void"
             }
         }
     },
@@ -2450,6 +2479,11 @@
                 "args": [],
                 "description": "Return the unit classifications this aura applies its buff to.",
                 "return": "int"
+            },
+            "GetCritDamage": {
+                "args": [],
+                "description": "A Modifier that listens to MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE has to have a GetCritDamage implementation so we can know when to evaluate it. Value should be in 'times the original value format' e.g: 1.5 not 150",
+                "return": "float"
             },
             "GetEffectAttachType": {
                 "args": [],

@@ -2077,6 +2077,7 @@
                 "args": [
                     "cstring"
                 ],
+                "description": "const char* pszAbilityName",
                 "return": "void"
             },
             "AddItemToCustomShop": {
@@ -2207,6 +2208,7 @@
                 "args": [
                     "bool"
                 ],
+                "description": "bool bEnabled",
                 "return": "void"
             },
             "GetAlwaysShowPlayerInventory": {
@@ -2383,6 +2385,7 @@
                 "args": [
                     "cstring"
                 ],
+                "description": "const char* pszAbilityName",
                 "return": "bool"
             },
             "IsBuybackEnabled": {
@@ -2438,6 +2441,7 @@
                 "args": [
                     "cstring"
                 ],
+                "description": "const char* pszAbilityName",
                 "return": "void"
             },
             "RemoveItemFromCustomShop": {
@@ -2625,6 +2629,7 @@
                 "args": [
                     "bool"
                 ],
+                "description": "bool bAllow",
                 "return": "void"
             },
             "SetCustomAttributeDerivedStatValue": {
@@ -2918,6 +2923,16 @@
                     "bool"
                 ],
                 "description": "Allows clicks on friendly buildings to be handled normally.",
+                "return": "void"
+            },
+            "SetGiveFreeTPOnDeath": {
+                "arg_names": [
+                    "bGive"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "bool bGive",
                 "return": "void"
             },
             "SetGoldSoundDisabled": {
@@ -3339,6 +3354,10 @@
                 ],
                 "description": "Set if weather effects are disabled.",
                 "return": "void"
+            },
+            "ShouldGiveFreeTPOnDeath": {
+                "args": [],
+                "return": "bool"
             }
         }
     },
@@ -3424,6 +3443,34 @@
                 "description": "Event-only ( string szNameSuffix, int nScore, int nExtraData1, int nExtraData2 )",
                 "return": "bool"
             },
+            "AddHeroIDToBlacklist": {
+                "args": [
+                    "int"
+                ],
+                "description": "Add the hero ID to the hero blacklist if it is not already present",
+                "return": "void"
+            },
+            "AddHeroIDToWhitelist": {
+                "args": [
+                    "int"
+                ],
+                "description": "Add the hero ID to the hero whitelist if it is not already present",
+                "return": "void"
+            },
+            "AddHeroToBlacklist": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Add the hero to the hero blacklist if it is not already present",
+                "return": "void"
+            },
+            "AddHeroToWhitelist": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Add the hero to the hero whitelist if it is not already present",
+                "return": "void"
+            },
             "AddItemToWhiteList": {
                 "args": [
                     "cstring"
@@ -3475,6 +3522,21 @@
             "BotPopulate": {
                 "args": [],
                 "description": "Fills all the teams with bots if cheat mode is enabled.",
+                "return": "void"
+            },
+            "ClearHeroBlacklist": {
+                "args": [],
+                "description": "Clears the hero blacklist",
+                "return": "void"
+            },
+            "ClearHeroWhitelist": {
+                "args": [],
+                "description": "Clears the hero whitelist",
+                "return": "void"
+            },
+            "ClearRiverPaint": {
+                "args": [],
+                "description": "Clears the current river paint",
                 "return": "void"
             },
             "Defeated": {
@@ -3592,6 +3654,15 @@
                 "description": "Returns the number of seconds elapsed since map start. This time doesn't count up when the game is paused",
                 "return": "float"
             },
+            "GetIetmStockDuration": {
+                "args": [
+                    "int",
+                    "cstring",
+                    "int"
+                ],
+                "description": "Get the time it takes to add a new item to stock",
+                "return": "float"
+            },
             "GetItemStockCount": {
                 "args": [
                     "int",
@@ -3600,15 +3671,6 @@
                 ],
                 "description": "Get the stock count of the item",
                 "return": "int"
-            },
-            "GetItemStockDuration": {
-                "args": [
-                    "int",
-                    "cstring",
-                    "int"
-                ],
-                "description": "Get the time it takes to add a new item to stock",
-                "return": "float"
             },
             "GetItemStockTime": {
                 "args": [
@@ -3684,6 +3746,13 @@
             "IsGamePaused": {
                 "args": [],
                 "description": "Returns whether the game is paused.",
+                "return": "bool"
+            },
+            "IsHeroEnabledViaLists": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Is the hero not blacklisted, and is it either whitelisted or the whitelist is empty?",
                 "return": "bool"
             },
             "IsHeroRespawnEnabled": {
@@ -3766,6 +3835,34 @@
                     "int"
                 ],
                 "description": "Removes a fake client",
+                "return": "void"
+            },
+            "RemoveHeroFromBlacklist": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Remove the hero from the hero blacklist if present",
+                "return": "void"
+            },
+            "RemoveHeroFromWhitelist": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Remove the hero from the hero whitelist if present",
+                "return": "void"
+            },
+            "RemoveHeroIDFromBlacklist": {
+                "args": [
+                    "int"
+                ],
+                "description": "Remove the hero ID from the hero blacklist if present",
+                "return": "void"
+            },
+            "RemoveHeroIDFromWhitelist": {
+                "args": [
+                    "int"
+                ],
+                "description": "Remove the hero ID from the hero whitelist if present",
                 "return": "void"
             },
             "RemoveItemFromWhiteList": {
@@ -4032,6 +4129,13 @@
                 "description": "Sets the amount of time players have to pick their hero.",
                 "return": "void"
             },
+            "SetHideBlacklistedHeroes": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Should blacklisted heroes be hidden, or just dimmed, in hero picking?",
+                "return": "void"
+            },
             "SetHideKillMessageHeaders": {
                 "args": [
                     "bool"
@@ -4090,6 +4194,14 @@
                     "float"
                 ],
                 "description": "Sets the amount of time players have between picking their hero and game start.",
+                "return": "void"
+            },
+            "SetRiverPaint": {
+                "args": [
+                    "int",
+                    "float"
+                ],
+                "description": "Paints the river for a duration",
                 "return": "void"
             },
             "SetRuneMinimapIconScale": {
@@ -4196,6 +4308,11 @@
                 ],
                 "description": "Item whitelist functionality enable/disable",
                 "return": "void"
+            },
+            "ShouldHideBlacklistedHeroes": {
+                "args": [],
+                "description": "Are blacklisted heroes hidden, or just dimmed, in hero picking?",
+                "return": "bool"
             },
             "SpawnAndReleaseCreeps": {
                 "args": [],
@@ -5040,6 +5157,21 @@
                 "args": [],
                 "description": "Number of times Nian has used the roar",
                 "return": "int"
+            }
+        }
+    },
+    "CDOTA_AghsFort_Ability_ArcWardenBoss_TempestDouble": {
+        "extends": "CDOTABaseAbility",
+        "functions": {
+            "SetNumDoubles": {
+                "arg_names": [
+                    "nDoubles"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Sets the number of doubles to spawn.",
+                "return": "void"
             }
         }
     },
@@ -6025,6 +6157,11 @@
                 "description": "Is this unit a boss?",
                 "return": "bool"
             },
+            "IsBossCreature": {
+                "args": [],
+                "description": "Is this unit a Boss Creature? (used by custom games)",
+                "return": "bool"
+            },
             "IsBuilding": {
                 "args": [],
                 "description": "Is this unit a building?",
@@ -6627,6 +6764,16 @@
                     "bool"
                 ],
                 "description": "(int targets [0=all, 1=enemy, 2=ally], bool bNow, bool bPermanent, bool bDeath)",
+                "return": "void"
+            },
+            "RemoveAllModifiersOfName": {
+                "arg_names": [
+                    "pszScriptName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Removes all copies of a modifier.",
                 "return": "void"
             },
             "RemoveGesture": {
@@ -9380,6 +9527,11 @@
                 "args": [],
                 "description": "Return the unit classifications this aura applies its buff to.",
                 "return": "int"
+            },
+            "GetCritDamage": {
+                "args": [],
+                "description": "A Modifier that listens to MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE has to have a GetCritDamage implementation so we can know when to evaluate it. Value should be in 'times the original value format' e.g: 1.5 not 150",
+                "return": "float"
             },
             "GetEffectAttachType": {
                 "args": [],
@@ -14744,6 +14896,17 @@
                     "handle"
                 ],
                 "description": "Synchronously spawn an entity group from a list of spawn tables.",
+                "return": "handle"
+            },
+            "SpawnMangoTree": {
+                "args": [
+                    "vector",
+                    "int",
+                    "float",
+                    "float",
+                    "int"
+                ],
+                "description": "Spawn a mango tree ( vPos, nTeam, flDuration, flMangoInterval, nInitialMangoes )",
                 "return": "handle"
             },
             "SplineQuaternions": {

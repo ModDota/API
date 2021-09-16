@@ -693,8 +693,12 @@
             "value": 60
         },
         {
-            "key": "DOTA_HEROPICK_STATE_COUNT",
+            "key": "DOTA_HEROPICK_STATE_SCENARIO",
             "value": 61
+        },
+        {
+            "key": "DOTA_HEROPICK_STATE_COUNT",
+            "value": 62
         }
     ],
     "DOTA_MOTION_CONTROLLER_PRIORITY": [
@@ -1469,7 +1473,7 @@
             "value": 16
         },
         {
-            "key": "AE_SV_DUSTTRAIL",
+            "key": "AE_SV_CREATE_PARTICLE_EFFECT_CFG",
             "value": 16
         },
         {
@@ -1485,7 +1489,7 @@
             "value": 17
         },
         {
-            "key": "AE_FOOTSTEP",
+            "key": "AE_SV_STOP_PARTICLE_EFFECT",
             "value": 17
         },
         {
@@ -1493,7 +1497,7 @@
             "value": 18
         },
         {
-            "key": "AE_CL_FOOTSTEP_LEFT",
+            "key": "AE_FOOTSTEP",
             "value": 18
         },
         {
@@ -1501,7 +1505,7 @@
             "value": 19
         },
         {
-            "key": "AE_CL_FOOTSTEP_RIGHT",
+            "key": "AE_CL_FOOTSTEP_LEFT",
             "value": 19
         },
         {
@@ -1509,7 +1513,7 @@
             "value": 20
         },
         {
-            "key": "AE_CL_MFOOTSTEP_LEFT",
+            "key": "AE_CL_FOOTSTEP_RIGHT",
             "value": 20
         },
         {
@@ -1521,7 +1525,7 @@
             "value": 21
         },
         {
-            "key": "AE_CL_MFOOTSTEP_RIGHT",
+            "key": "AE_CL_MFOOTSTEP_LEFT",
             "value": 21
         },
         {
@@ -1529,7 +1533,7 @@
             "value": 22
         },
         {
-            "key": "AE_CL_MFOOTSTEP_LEFT_LOUD",
+            "key": "AE_CL_MFOOTSTEP_RIGHT",
             "value": 22
         },
         {
@@ -1537,7 +1541,7 @@
             "value": 23
         },
         {
-            "key": "AE_CL_MFOOTSTEP_RIGHT_LOUD",
+            "key": "AE_CL_MFOOTSTEP_LEFT_LOUD",
             "value": 23
         },
         {
@@ -1545,7 +1549,7 @@
             "value": 24
         },
         {
-            "key": "AE_RAGDOLL",
+            "key": "AE_CL_MFOOTSTEP_RIGHT_LOUD",
             "value": 24
         },
         {
@@ -1553,7 +1557,7 @@
             "value": 25
         },
         {
-            "key": "AE_CL_ENABLE_BODYGROUP",
+            "key": "AE_RAGDOLL",
             "value": 25
         },
         {
@@ -1561,7 +1565,7 @@
             "value": 26
         },
         {
-            "key": "AE_CL_DISABLE_BODYGROUP",
+            "key": "AE_CL_ENABLE_BODYGROUP",
             "value": 26
         },
         {
@@ -1573,7 +1577,7 @@
             "value": 27
         },
         {
-            "key": "AE_CL_BODYGROUP_SET_VALUE",
+            "key": "AE_CL_DISABLE_BODYGROUP",
             "value": 27
         },
         {
@@ -1581,7 +1585,7 @@
             "value": 28
         },
         {
-            "key": "AE_SV_BODYGROUP_SET_VALUE",
+            "key": "AE_CL_BODYGROUP_SET_VALUE",
             "value": 28
         },
         {
@@ -1589,7 +1593,7 @@
             "value": 29
         },
         {
-            "key": "AE_CL_BODYGROUP_SET_VALUE_CMODEL_WPN",
+            "key": "AE_SV_BODYGROUP_SET_VALUE",
             "value": 29
         },
         {
@@ -1597,7 +1601,7 @@
             "value": 30
         },
         {
-            "key": "AE_WPN_PRIMARYATTACK",
+            "key": "AE_CL_BODYGROUP_SET_VALUE_CMODEL_WPN",
             "value": 30
         },
         {
@@ -1605,7 +1609,7 @@
             "value": 31
         },
         {
-            "key": "AE_WPN_PLAYWPNSOUND",
+            "key": "AE_WPN_PRIMARYATTACK",
             "value": 31
         },
         {
@@ -1613,7 +1617,7 @@
             "value": 32
         },
         {
-            "key": "AE_WPN_SECONDARYATTACK",
+            "key": "AE_WPN_PLAYWPNSOUND",
             "value": 32
         },
         {
@@ -1633,7 +1637,7 @@
             "value": 33
         },
         {
-            "key": "AE_CL_SPEECH",
+            "key": "AE_WPN_SECONDARYATTACK",
             "value": 33
         },
         {
@@ -1641,7 +1645,7 @@
             "value": 34
         },
         {
-            "key": "AE_FIRE_INPUT",
+            "key": "AE_CL_SPEECH",
             "value": 34
         },
         {
@@ -1649,7 +1653,7 @@
             "value": 35
         },
         {
-            "key": "AE_IK_SET_LOCK_ROTATION_ALPHA",
+            "key": "AE_FIRE_INPUT",
             "value": 35
         },
         {
@@ -1657,7 +1661,7 @@
             "value": 36
         },
         {
-            "key": "AE_IK_ALLOW_PLANE_TILT_NORMAL_UPDATES",
+            "key": "AE_IK_SET_LOCK_ROTATION_ALPHA",
             "value": 36
         },
         {
@@ -1665,7 +1669,7 @@
             "value": 37
         },
         {
-            "key": "AE_IK_SET_MASTER_BLEND_AMOUNT",
+            "key": "AE_IK_ALLOW_PLANE_TILT_NORMAL_UPDATES",
             "value": 37
         },
         {
@@ -1673,7 +1677,7 @@
             "value": 38
         },
         {
-            "key": "AE_IK_SET_CHAIN_BLEND_AMOUNT",
+            "key": "AE_IK_SET_MASTER_BLEND_AMOUNT",
             "value": 38
         },
         {
@@ -1681,7 +1685,7 @@
             "value": 39
         },
         {
-            "key": "AE_CL_CLOTH_ATTR",
+            "key": "AE_IK_SET_CHAIN_BLEND_AMOUNT",
             "value": 39
         },
         {
@@ -1689,7 +1693,7 @@
             "value": 40
         },
         {
-            "key": "AE_CL_CLOTH_GROUND_OFFSET",
+            "key": "AE_CL_CLOTH_ATTR",
             "value": 40
         },
         {
@@ -1697,7 +1701,7 @@
             "value": 41
         },
         {
-            "key": "AE_CL_CLOTH_STIFFEN",
+            "key": "AE_CL_CLOTH_GROUND_OFFSET",
             "value": 41
         },
         {
@@ -1705,7 +1709,7 @@
             "value": 42
         },
         {
-            "key": "AE_CL_CLOTH_EFFECT",
+            "key": "AE_CL_CLOTH_STIFFEN",
             "value": 42
         },
         {
@@ -1713,7 +1717,7 @@
             "value": 43
         },
         {
-            "key": "AE_CL_CREATE_ANIM_SCOPE_PROP",
+            "key": "AE_CL_CLOTH_EFFECT",
             "value": 43
         },
         {
@@ -1721,7 +1725,7 @@
             "value": 44
         },
         {
-            "key": "AE_HAPTIC_PULSE",
+            "key": "AE_CL_CREATE_ANIM_SCOPE_PROP",
             "value": 44
         },
         {
@@ -1729,7 +1733,7 @@
             "value": 45
         },
         {
-            "key": "AE_CL_DOTA_PLAY_STATUS_EFFECT",
+            "key": "AE_HAPTIC_PULSE",
             "value": 45
         },
         {
@@ -1737,7 +1741,7 @@
             "value": 46
         },
         {
-            "key": "AE_CL_DOTA_STOP_STATUS_EFFECT",
+            "key": "AE_CL_DOTA_PLAY_STATUS_EFFECT",
             "value": 46
         },
         {
@@ -1745,7 +1749,7 @@
             "value": 47
         },
         {
-            "key": "AE_CL_DOTA_NPC_CREATE_PARTICLE_EFFECT",
+            "key": "AE_CL_DOTA_STOP_STATUS_EFFECT",
             "value": 47
         },
         {
@@ -1753,7 +1757,7 @@
             "value": 48
         },
         {
-            "key": "AE_CL_DOTA_RUBICK_ARCANA_CREATE_PARTICLE_EFFECT",
+            "key": "AE_CL_DOTA_NPC_CREATE_PARTICLE_EFFECT",
             "value": 48
         },
         {
@@ -1761,7 +1765,7 @@
             "value": 49
         },
         {
-            "key": "AE_DOTA_PET_ITEM_PICKUP",
+            "key": "AE_CL_DOTA_RUBICK_ARCANA_CREATE_PARTICLE_EFFECT",
             "value": 49
         },
         {
@@ -1769,7 +1773,7 @@
             "value": 50
         },
         {
-            "key": "AE_DOTA_PET_ITEM_DROP",
+            "key": "AE_DOTA_PET_ITEM_PICKUP",
             "value": 50
         },
         {
@@ -1777,7 +1781,7 @@
             "value": 51
         },
         {
-            "key": "AE_DOTA_SUPPRESS_CONSTANT_LAYER",
+            "key": "AE_DOTA_PET_ITEM_DROP",
             "value": 51
         },
         {
@@ -1785,7 +1789,7 @@
             "value": 52
         },
         {
-            "key": "AE_DOTA_PLAY_SOUND_ATTACK_SPECIAL",
+            "key": "AE_DOTA_SUPPRESS_CONSTANT_LAYER",
             "value": 52
         },
         {
@@ -1793,7 +1797,7 @@
             "value": 53
         },
         {
-            "key": "AE_DOTA_CREATE_CLINKZ_ATTACK",
+            "key": "AE_DOTA_PLAY_SOUND_ATTACK_SPECIAL",
             "value": 53
         },
         {
@@ -1801,7 +1805,7 @@
             "value": 54
         },
         {
-            "key": "AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB",
+            "key": "AE_DOTA_CREATE_CLINKZ_ATTACK",
             "value": 54
         },
         {
@@ -1809,7 +1813,7 @@
             "value": 55
         },
         {
-            "key": "AE_DOTA_DIE_PHANTOM_DEATH_PARTICLES",
+            "key": "AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB",
             "value": 55
         },
         {
@@ -1817,11 +1821,15 @@
             "value": 56
         },
         {
-            "key": "AE_DOTA_SWITCH_ATTACK_COMBO",
+            "key": "AE_DOTA_DIE_PHANTOM_DEATH_PARTICLES",
             "value": 56
         },
         {
             "key": "ACT_SIGNAL_LEFT",
+            "value": 57
+        },
+        {
+            "key": "AE_DOTA_SWITCH_ATTACK_COMBO",
             "value": 57
         },
         {
@@ -8148,8 +8156,13 @@
             "value": 246
         },
         {
-            "key": "MODIFIER_FUNCTION_LAST",
+            "description": "GetModifierPercentageCooldownStacking",
+            "key": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING",
             "value": 247
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 248
         },
         {
             "key": "MODIFIER_FUNCTION_INVALID",
