@@ -9915,9 +9915,11 @@
             },
             "AddRunePickup": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nRunes"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
@@ -10752,18 +10754,22 @@
             },
             "IncrementClaimedDenies": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nValue"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
             },
             "IncrementClaimedMisses": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nValue"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
@@ -10781,9 +10787,11 @@
             },
             "IncrementDenies": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nValue"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
@@ -10801,54 +10809,66 @@
             },
             "IncrementLastHitMultikill": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nCount"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
             },
             "IncrementLastHitStreak": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nCount"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
             },
             "IncrementLastHits": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nCount"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
             },
             "IncrementMisses": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nValue"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
             },
             "IncrementNearbyCreepDeaths": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nCreeps"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"
             },
             "IncrementStreak": {
                 "arg_names": [
-                    "iPlayerID"
+                    "iPlayerID",
+                    "nCount"
                 ],
                 "args": [
+                    "int",
                     "int"
                 ],
                 "return": "void"

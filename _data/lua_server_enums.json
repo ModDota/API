@@ -1577,16 +1577,12 @@
             "value": 60
         },
         {
-            "key": "DOTA_HEROPICK_STATE_SCENARIO_LOAD",
+            "key": "DOTA_HEROPICK_STATE_SCENARIO_PICK",
             "value": 61
         },
         {
-            "key": "DOTA_HEROPICK_STATE_SCENARIO_PICK",
-            "value": 62
-        },
-        {
             "key": "DOTA_HEROPICK_STATE_COUNT",
-            "value": 63
+            "value": 62
         }
     ],
     "DOTA_MOTION_CONTROLLER_PRIORITY": [
