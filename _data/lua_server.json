@@ -5274,9 +5274,11 @@
             },
             "AttackNoEarlierThan": {
                 "arg_names": [
-                    "flTime"
+                    "flTime",
+                    "flTimeDisparityTolerance"
                 ],
                 "args": [
+                    "float",
                     "float"
                 ],
                 "return": "void"

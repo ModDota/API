@@ -398,86 +398,15 @@
     },
     "CDOTA_Modifier_Lua_Horizontal_Motion": {
         "extends": "C_DOTA_Modifier_Lua",
-        "functions": {
-            "OnHorizontalMotionInterrupted": {
-                "args": [],
-                "description": "Called when the motion gets interrupted.",
-                "return": "void"
-            },
-            "UpdateHorizontalMotion": {
-                "arg_names": [
-                    "me",
-                    "dt"
-                ],
-                "args": [
-                    "handle",
-                    "float"
-                ],
-                "description": "Perform any motion from the given interval on the NPC.",
-                "return": "void"
-            }
-        }
+        "functions": {}
     },
     "CDOTA_Modifier_Lua_Motion_Both": {
         "extends": "C_DOTA_Modifier_Lua",
-        "functions": {
-            "OnHorizontalMotionInterrupted": {
-                "args": [],
-                "description": "Called when the motion gets interrupted.",
-                "return": "void"
-            },
-            "OnVerticalMotionInterrupted": {
-                "args": [],
-                "description": "Called when the motion gets interrupted.",
-                "return": "void"
-            },
-            "UpdateHorizontalMotion": {
-                "arg_names": [
-                    "me",
-                    "dt"
-                ],
-                "args": [
-                    "handle",
-                    "float"
-                ],
-                "description": "Perform any motion from the given interval on the NPC.",
-                "return": "void"
-            },
-            "UpdateVerticalMotion": {
-                "arg_names": [
-                    "me",
-                    "dt"
-                ],
-                "args": [
-                    "handle",
-                    "float"
-                ],
-                "description": "Perform any motion from the given interval on the NPC.",
-                "return": "void"
-            }
-        }
+        "functions": {}
     },
     "CDOTA_Modifier_Lua_Vertical_Motion": {
         "extends": "C_DOTA_Modifier_Lua",
-        "functions": {
-            "OnVerticalMotionInterrupted": {
-                "args": [],
-                "description": "Called when the motion gets interrupted.",
-                "return": "void"
-            },
-            "UpdateVerticalMotion": {
-                "arg_names": [
-                    "me",
-                    "dt"
-                ],
-                "args": [
-                    "handle",
-                    "float"
-                ],
-                "description": "Perform any motion from the given interval on the NPC.",
-                "return": "void"
-            }
-        }
+        "functions": {}
     },
     "CDebugOverlayScriptHelper": {
         "functions": {
