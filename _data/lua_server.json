@@ -1450,6 +1450,10 @@
                 "args": [],
                 "return": "float"
             },
+            "GetCastPointModifier": {
+                "args": [],
+                "return": "float"
+            },
             "GetCastRange": {
                 "arg_names": [
                     "vLocation",
@@ -1877,7 +1881,7 @@
             },
             "RefreshIntrinsicModifier": {
                 "args": [],
-                "return": "<unknown>"
+                "return": "void"
             },
             "RefundManaCost": {
                 "args": [],
@@ -2478,6 +2482,16 @@
                 "description": "Set a filter function to control the tuning values that abilities use. (Modify the table and Return true to use new values, return false to use the old values)",
                 "return": "void"
             },
+            "SetAllowEconItemHUDSkins": {
+                "arg_names": [
+                    "bValue"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Enable/disable users to use custom econ HUD skins for this mode.",
+                "return": "void"
+            },
             "SetAllowNeutralItemDrops": {
                 "arg_names": [
                     "bEnabled"
@@ -2979,6 +2993,36 @@
                 "description": "Specify whether the default combat events will show in the HUD.",
                 "return": "void"
             },
+            "SetInnateMeleeDamageBlockAmount": {
+                "arg_names": [
+                    "nAmount"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Set the amount blocked innately by melee heroes.",
+                "return": "void"
+            },
+            "SetInnateMeleeDamageBlockPerLevelAmount": {
+                "arg_names": [
+                    "nPerLevelAmount"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Set the amount innately blocked by melee heroes gained per level.",
+                "return": "void"
+            },
+            "SetInnateMeleeDamageBlockPercent": {
+                "arg_names": [
+                    "nPercent"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Set the percent chance a melee hero will innately block damage.",
+                "return": "void"
+            },
             "SetItemAddedToInventoryFilter": {
                 "arg_names": [
                     "hFunction",
@@ -3125,6 +3169,16 @@
                     "bool"
                 ],
                 "description": "Set pausing enabled/disabled",
+                "return": "void"
+            },
+            "SetPlayerHeroAvailabilityFiltered": {
+                "arg_names": [
+                    "bFilter"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "bool bFilter",
                 "return": "void"
             },
             "SetPowerRuneSpawnInterval": {
@@ -3464,6 +3518,14 @@
                 "description": "Add the hero to the hero blacklist if it is not already present",
                 "return": "void"
             },
+            "AddHeroToPlayerAvailability": {
+                "args": [
+                    "int",
+                    "int"
+                ],
+                "description": "Adds hero of given ID to available heroes of player of given ID",
+                "return": "void"
+            },
             "AddHeroToWhitelist": {
                 "args": [
                     "cstring"
@@ -3532,6 +3594,13 @@
             "ClearHeroWhitelist": {
                 "args": [],
                 "description": "Clears the hero whitelist",
+                "return": "void"
+            },
+            "ClearPlayerHeroAvailability": {
+                "args": [
+                    "int"
+                ],
+                "description": "Clears available heroes of player of given ID",
                 "return": "void"
             },
             "ClearRiverPaint": {
@@ -3741,6 +3810,10 @@
             "IsDaytime": {
                 "args": [],
                 "description": "Is it day time?",
+                "return": "bool"
+            },
+            "IsDev": {
+                "args": [],
                 "return": "bool"
             },
             "IsGamePaused": {
@@ -4035,6 +4108,13 @@
                     "float"
                 ],
                 "description": "Sets the victory message duration.",
+                "return": "void"
+            },
+            "SetEnableAlternateHeroGrids": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Allow alternate hero grids to be used (DOTA+, etc).  True by default.",
                 "return": "void"
             },
             "SetEventMetadataCustomTable": {
@@ -5295,6 +5375,10 @@
                 "args": [],
                 "return": "void"
             },
+            "CanBeSeenByAnyOpposingTeam": {
+                "args": [],
+                "return": "bool"
+            },
             "CanEntityBeSeenByMyTeam": {
                 "arg_names": [
                     "hEntity"
@@ -6092,6 +6176,26 @@
                 "description": "Heal this unit.",
                 "return": "void"
             },
+            "HealWithParams": {
+                "arg_names": [
+                    "flAmount",
+                    "hInflictor",
+                    "bLifesteal",
+                    "bAmplify",
+                    "hSource",
+                    "bSpellLifesteal"
+                ],
+                "args": [
+                    "float",
+                    "handle",
+                    "bool",
+                    "bool",
+                    "handle",
+                    "bool"
+                ],
+                "description": "Heal this unit (with more parameters)",
+                "return": "void"
+            },
             "Hold": {
                 "args": [],
                 "description": "Hold position.",
@@ -6420,6 +6524,11 @@
             },
             "IsUntargetable": {
                 "args": [],
+                "return": "bool"
+            },
+            "IsZombie": {
+                "args": [],
+                "description": "Is this entity an Undying Zombie?",
                 "return": "bool"
             },
             "Kill": {
@@ -7084,6 +7193,15 @@
                     "int"
                 ],
                 "description": "Set the XP bounty on this unit.",
+                "return": "void"
+            },
+            "SetFollowRange": {
+                "arg_names": [
+                    "flFollowRange"
+                ],
+                "args": [
+                    "float"
+                ],
                 "return": "void"
             },
             "SetForceAttackTarget": {
@@ -8611,6 +8729,15 @@
                 "description": "(flTime, bInformClients)",
                 "return": "void"
             },
+            "SetOverheadEffectOffset": {
+                "arg_names": [
+                    "flOffset"
+                ],
+                "args": [
+                    "float"
+                ],
+                "return": "bool"
+            },
             "SetStackCount": {
                 "arg_names": [
                     "iCount"
@@ -9073,6 +9200,36 @@
                 ],
                 "description": "Applies a data driven thinker at the location",
                 "return": "handle"
+            }
+        }
+    },
+    "CDOTA_Item_EmptyBottle": {
+        "extends": "CDOTA_Item",
+        "functions": {
+            "ClearStoredRune": {
+                "args": [],
+                "description": "Clear the stored rune.",
+                "return": "void"
+            },
+            "OnRune": {
+                "arg_names": [
+                    "iRuneType"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Place a rune in the bottle.",
+                "return": "bool"
+            },
+            "SetStoredRune": {
+                "arg_names": [
+                    "iRuneType"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Set the stored rune.",
+                "return": "void"
             }
         }
     },
@@ -10157,6 +10314,16 @@
                 "description": "(nPlayerID, pActionName)",
                 "return": "int"
             },
+            "GetEventGameUpgrades": {
+                "arg_names": [
+                    "nPlayerID"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "(nPlayerID)",
+                "return": "handle"
+            },
             "GetEventPointsForPlayerID": {
                 "arg_names": [
                     "nPlayerID"
@@ -10286,6 +10453,16 @@
                     "int"
                 ],
                 "return": "int"
+            },
+            "GetLabyrinthEventGameHeroUnlocks": {
+                "arg_names": [
+                    "nPlayerID"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "(nPlayerID)",
+                "return": "handle"
             },
             "GetLastHitMultikill": {
                 "arg_names": [
@@ -11012,6 +11189,42 @@
                 "description": "Increment or decrement consumable charges (nPlayerID, item_definition_index, nChargeIncrementOrDecrement)",
                 "return": "void"
             },
+            "RecordEventActionGrant": {
+                "arg_names": [
+                    "iPlayerID",
+                    "eEvent",
+                    "unActionID",
+                    "unAudit",
+                    "unQuantity",
+                    "unAuditData"
+                ],
+                "args": [
+                    "int",
+                    "int",
+                    "int",
+                    "int",
+                    "uint",
+                    "uint"
+                ],
+                "return": "void"
+            },
+            "RecordEventActionGrantForPrimaryEvent": {
+                "arg_names": [
+                    "iPlayerID",
+                    "pszActionName",
+                    "unAudit",
+                    "unQuantity",
+                    "unAuditData"
+                ],
+                "args": [
+                    "int",
+                    "cstring",
+                    "int",
+                    "uint",
+                    "uint"
+                ],
+                "return": "void"
+            },
             "ReplaceHeroWith": {
                 "arg_names": [
                     "iPlayerID",
@@ -11314,6 +11527,31 @@
     "CDOTA_Unit_CustomGameAnnouncer": {
         "extends": "CDOTA_BaseNPC",
         "functions": {
+            "SetServerAuthoritative": {
+                "arg_names": [
+                    "bIsServerAuthoritative"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Determines whether response criteria is matched on server or client",
+                "return": "void"
+            }
+        }
+    },
+    "CDOTA_Unit_CustomGameAnnouncerAghanim": {
+        "extends": "CDOTA_BaseNPC",
+        "functions": {
+            "SetAnimation": {
+                "arg_names": [
+                    "pAnimation"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Set the animation sequence for this entity.",
+                "return": "void"
+            },
             "SetServerAuthoritative": {
                 "arg_names": [
                     "bIsServerAuthoritative"
@@ -13052,14 +13290,6 @@
                 ],
                 "return": "void"
             },
-            "AllowFriendlyFire": {
-                "args": [],
-                "return": "bool"
-            },
-            "CanBeBlocked": {
-                "args": [],
-                "return": "bool"
-            },
             "GetAmmoType": {
                 "args": [],
                 "return": "int"
@@ -13084,10 +13314,6 @@
                 "args": [],
                 "return": "vector"
             },
-            "GetDamageTaken": {
-                "args": [],
-                "return": "float"
-            },
             "GetDamageType": {
                 "args": [],
                 "return": "int"
@@ -13096,25 +13322,13 @@
                 "args": [],
                 "return": "handle"
             },
-            "GetMaxDamage": {
-                "args": [],
-                "return": "float"
-            },
             "GetOriginalDamage": {
-                "args": [],
-                "return": "float"
-            },
-            "GetRadius": {
                 "args": [],
                 "return": "float"
             },
             "GetReportedPosition": {
                 "args": [],
                 "return": "vector"
-            },
-            "GetStabilityDamage": {
-                "args": [],
-                "return": "float"
             },
             "HasDamageType": {
                 "arg_names": [
@@ -13134,15 +13348,6 @@
                 ],
                 "return": "void"
             },
-            "SetAllowFriendlyFire": {
-                "arg_names": [
-                    "bAllow"
-                ],
-                "args": [
-                    "bool"
-                ],
-                "return": "void"
-            },
             "SetAmmoType": {
                 "arg_names": [
                     "iAmmoType"
@@ -13158,15 +13363,6 @@
                 ],
                 "args": [
                     "handle"
-                ],
-                "return": "void"
-            },
-            "SetCanBeBlocked": {
-                "arg_names": [
-                    "bBlock"
-                ],
-                "args": [
-                    "bool"
                 ],
                 "return": "void"
             },
@@ -13206,30 +13402,12 @@
                 ],
                 "return": "void"
             },
-            "SetDamageTaken": {
-                "arg_names": [
-                    "nDamageTaken"
-                ],
-                "args": [
-                    "int"
-                ],
-                "return": "void"
-            },
             "SetDamageType": {
                 "arg_names": [
                     "bitsDamageType"
                 ],
                 "args": [
                     "int"
-                ],
-                "return": "void"
-            },
-            "SetMaxDamage": {
-                "arg_names": [
-                    "flMaxDamage"
-                ],
-                "args": [
-                    "float"
                 ],
                 "return": "void"
             },
@@ -13242,30 +13420,12 @@
                 ],
                 "return": "void"
             },
-            "SetRadius": {
-                "arg_names": [
-                    "fRadius"
-                ],
-                "args": [
-                    "float"
-                ],
-                "return": "void"
-            },
             "SetReportedPosition": {
                 "arg_names": [
                     "reportedPosition"
                 ],
                 "args": [
                     "vector"
-                ],
-                "return": "void"
-            },
-            "SetStabilityDamage": {
-                "arg_names": [
-                    "flStabilityDamage"
-                ],
-                "args": [
-                    "float"
                 ],
                 "return": "void"
             }
@@ -14292,6 +14452,13 @@
                 "description": "Given and entity index of a tree, get the tree id for use for use with with unit orders.",
                 "return": "int"
             },
+            "GetUnitKeyValuesByName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get unit data by ability name.",
+                "return": "table"
+            },
             "GetWorldMaxX": {
                 "args": [],
                 "description": "Gets the world's maximum X position.",
@@ -14476,6 +14643,11 @@
                 "description": "Pause or unpause the game.",
                 "return": "void"
             },
+            "Plat_FloatTime": {
+                "args": [],
+                "description": "Get the current float time from the engine",
+                "return": "float"
+            },
             "PlayerInstanceFromIndex": {
                 "args": [
                     "int"
@@ -14574,6 +14746,15 @@
                 ],
                 "description": "Print a console message with a linked console command",
                 "return": "void"
+            },
+            "QSlerp": {
+                "args": [
+                    "qangle",
+                    "qangle",
+                    "float"
+                ],
+                "description": "(from angle, to angle, time) - Spherical lerp of angle from->to based on time",
+                "return": "qangle"
             },
             "RandomFloat": {
                 "args": [

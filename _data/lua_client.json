@@ -203,6 +203,10 @@
                 "description": "Are cheats enabled on the server",
                 "return": "bool"
             },
+            "IsDev": {
+                "args": [],
+                "return": "bool"
+            },
             "IsHeroEnabledViaLists": {
                 "args": [
                     "cstring"
@@ -374,6 +378,15 @@
                 ],
                 "description": "(flTime, bInformClients)",
                 "return": "void"
+            },
+            "SetOverheadEffectOffset": {
+                "arg_names": [
+                    "flOffset"
+                ],
+                "args": [
+                    "float"
+                ],
+                "return": "bool"
             },
             "SetStackCount": {
                 "arg_names": [
@@ -1038,6 +1051,38 @@
             }
         }
     },
+    "CPointTemplate": {
+        "extends": "C_BaseEntity",
+        "functions": {
+            "DeleteCreatedSpawnGroups": {
+                "args": [],
+                "description": "DeleteCreatedSpawnGroups() : Deletes any spawn groups that this point_template has spawned. Note: The point_template will not be deleted by this.",
+                "return": "void"
+            },
+            "ForceSpawn": {
+                "args": [],
+                "description": "ForceSpawn() : Spawns all of the entities the point_template is pointing at.",
+                "return": "void"
+            },
+            "GetSpawnedEntities": {
+                "args": [],
+                "description": "GetSpawnedEntities() : Get the list of the most recent spawned entities",
+                "return": "handle"
+            },
+            "SetSpawnCallback": {
+                "arg_names": [
+                    "hCallbackFunc",
+                    "hCallbackScope"
+                ],
+                "args": [
+                    "handle",
+                    "handle"
+                ],
+                "description": "SetSpawnCallback( hCallbackFunc, hCallbackScope, hCallbackData ) : Set a callback for when the template spawns entities. The spawned entities will be passed in as an array.",
+                "return": "void"
+            }
+        }
+    },
     "CScriptHTTPRequest": {
         "functions": {
             "Send": {
@@ -1320,6 +1365,10 @@
                 "args": [],
                 "return": "vector"
             },
+            "GetHealth": {
+                "args": [],
+                "return": "int"
+            },
             "GetMaxHealth": {
                 "args": [],
                 "return": "int"
@@ -1374,6 +1423,10 @@
                 "args": [],
                 "description": "Get ability behavior flags as an int for compatibility.",
                 "return": "int"
+            },
+            "GetCastPointModifier": {
+                "args": [],
+                "return": "float"
             },
             "GetCaster": {
                 "args": [],
@@ -2207,6 +2260,10 @@
                 "return": "bool"
             }
         }
+    },
+    "C_DOTA_Item_EmptyBottle": {
+        "extends": "C_DOTA_Item",
+        "functions": {}
     },
     "C_DOTA_Item_Lua": {
         "extends": "C_DOTA_Item",
@@ -3076,6 +3133,13 @@
                 "description": "Get Velocity for VPHYS or normal object",
                 "return": "vector"
             },
+            "GetUnitKeyValuesByName": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "Get unit data by ability name.",
+                "return": "table"
+            },
             "InitLogFile": {
                 "args": [
                     "cstring",
@@ -3185,6 +3249,11 @@
                 "description": "Print a message",
                 "return": "void"
             },
+            "Plat_FloatTime": {
+                "args": [],
+                "description": "Get the current float time from the engine",
+                "return": "float"
+            },
             "PlayerInstanceFromIndex": {
                 "args": [
                     "int"
@@ -3216,6 +3285,15 @@
                 ],
                 "description": "Print a console message with a linked console command",
                 "return": "void"
+            },
+            "QSlerp": {
+                "args": [
+                    "qangle",
+                    "qangle",
+                    "float"
+                ],
+                "description": "(from angle, to angle, time) - Spherical lerp of angle from->to based on time",
+                "return": "qangle"
             },
             "RandomFloat": {
                 "args": [
