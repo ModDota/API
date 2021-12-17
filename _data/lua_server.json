@@ -2482,16 +2482,6 @@
                 "description": "Set a filter function to control the tuning values that abilities use. (Modify the table and Return true to use new values, return false to use the old values)",
                 "return": "void"
             },
-            "SetAllowEconItemHUDSkins": {
-                "arg_names": [
-                    "bValue"
-                ],
-                "args": [
-                    "bool"
-                ],
-                "description": "Enable/disable users to use custom econ HUD skins for this mode.",
-                "return": "void"
-            },
             "SetAllowNeutralItemDrops": {
                 "arg_names": [
                     "bEnabled"
@@ -2887,6 +2877,16 @@
                     "bool"
                 ],
                 "description": "Prevent users from using the right click deny setting.",
+                "return": "void"
+            },
+            "SetForcedHUDSkin": {
+                "arg_names": [
+                    "pValue"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Specify a HUD skin that is forced on for this game mode.",
                 "return": "void"
             },
             "SetFountainConstantManaRegen": {
