@@ -7694,6 +7694,16 @@
                 "description": "Remove all item drops from this creature.",
                 "return": "void"
             },
+            "SetAggroOnOwnerOnDamage": {
+                "arg_names": [
+                    "bAggro"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Does this creature aggro on the owner of the attacking unit when taking damage?",
+                "return": "void"
+            },
             "SetArmorGain": {
                 "arg_names": [
                     "flArmorGain"
