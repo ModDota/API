@@ -59,7 +59,7 @@
         ]
     },
     "background-image": {
-        "description": "Comma separated list of images or movies to draw in the background. Can specify \"none\" to not draw a background layer. Combined with background-position, background-size and background-repeat values.",
+        "description": "Comma separated list of images or movies to draw in the background. Can specify \"none\" to not draw a background layer. Combined with background-position, background-size, background-texture-size and background-repeat values.",
         "examples": [
             "background-image: url(\"file://{images}/default.tga\"), url( \"file://{movies}/Background1080p.webm\" );"
         ]
@@ -88,12 +88,18 @@
         ]
     },
     "background-size": {
-        "description": "Sets the horizontal and vertical dimensions used to draw the background image. Can be set in pixels, percent, \"contains\" to size down to panel dimensions or \"auto\" preserves the image aspect ratio. By default, set to \"auto\" which preveres the image's original size.\n\nMultiple background layers can be specified in a comma separated list, which are then combined with background-image, background-position, and background-repeat values.",
+        "description": "Sets the horizontal and vertical dimensions used to draw the background image. Can be set in pixels, percent, \"contains\" to size down to panel dimensions or \"auto\" preserves the image aspect ratio. By default, set to \"auto\" which preveres the image's original size.\n\nMultiple background layers can be specified in a comma separated list, which are then combined with background-image, background-position, background-texture-size and background-repeat values.",
         "examples": [
             "background-size: auto; // same as \"auto auto\" (default)",
             "background-size: 100% 100%; // image fills the panel",
             "background-size: 50% 75%; // image fills 50% of the panel's width, and 75% of the panel's height",
             "background-size: 300px 200px; // image is drawn 300px wide, 200px tall"
+        ]
+    },
+    "background-texture-size": {
+        "description": "Sets the size used for generating textures from vector graphics (.svg files), default is -1 which takes the size from the svg file.",
+        "examples": [
+            "background-texture-size: 100px 50px; // width 100px, height 50px"
         ]
     },
     "blur": {

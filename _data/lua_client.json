@@ -25,7 +25,7 @@
             "GetSequence": {
                 "args": [],
                 "description": "Returns the active sequence\n",
-                "return": "<unknown>"
+                "return": "int"
             },
             "IsAttachedToParent": {
                 "args": [],
@@ -37,7 +37,7 @@
                     "cstring"
                 ],
                 "description": "Returns a sequence id given a name\n",
-                "return": "<unknown>"
+                "return": "int"
             },
             "SequenceDuration": {
                 "args": [
@@ -3102,7 +3102,9 @@
                 "return": "int"
             },
             "GetLocalPlayerTeam": {
-                "args": [],
+                "args": [
+                    "int"
+                ],
                 "description": "Get the local player team.",
                 "return": "int"
             },

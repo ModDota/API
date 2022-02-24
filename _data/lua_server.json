@@ -521,6 +521,11 @@
                 "description": "Is this entity alive?",
                 "return": "bool"
             },
+            "IsDOTANPC": {
+                "args": [],
+                "description": "Is this entity a Dota NPC?",
+                "return": "bool"
+            },
             "IsNPC": {
                 "args": [],
                 "description": "Is this entity an CAI_BaseNPC?",
@@ -1145,11 +1150,6 @@
                 "description": "GetEquippedWeapons() : Returns an array of all the equipped weapons",
                 "return": "table"
             },
-            "GetUserID": {
-                "args": [],
-                "description": "Returns the player's user id.",
-                "return": "int"
-            },
             "GetWeaponCount": {
                 "args": [],
                 "description": "GetWeaponCount() : Gets the number of weapons currently equipped",
@@ -1213,7 +1213,7 @@
             "GetSequence": {
                 "args": [],
                 "description": "Returns the active sequence\n",
-                "return": "<unknown>"
+                "return": "int"
             },
             "IsAttachedToParent": {
                 "args": [],
@@ -1225,7 +1225,7 @@
                     "cstring"
                 ],
                 "description": "Returns a sequence id given a name\n",
-                "return": "<unknown>"
+                "return": "int"
             },
             "SequenceDuration": {
                 "args": [
@@ -7123,7 +7123,7 @@
             },
             "SetControllableByPlayer": {
                 "arg_names": [
-                    "iIndex",
+                    "nPlayerID",
                     "bSkipAdjustingPosition"
                 ],
                 "args": [
@@ -8778,7 +8778,7 @@
                     "cstring",
                     "handle"
                 ],
-                "description": "Create a new custom UI HUD element for the specified player(s). ( int PlayerID /*-1 means everyone*/, string ElementID /* should be unique */, string LayoutFileName, table DialogVariables /* can be nil */ )",
+                "description": "Create a new custom UI HUD element for the specified player(s). ( PlayerID_t PlayerID /*-1 means everyone*/, string ElementID /* should be unique */, string LayoutFileName, table DialogVariables /* can be nil */ )",
                 "return": "void"
             },
             "DynamicHud_Destroy": {
@@ -8786,7 +8786,7 @@
                     "int",
                     "cstring"
                 ],
-                "description": "Destroy a custom hud element ( int PlayerID /*-1 means everyone*/, string ElementID )",
+                "description": "Destroy a custom hud element ( PlayerID_t PlayerID /*-1 means everyone*/, string ElementID )",
                 "return": "void"
             },
             "DynamicHud_SetDialogVariables": {
@@ -8795,7 +8795,7 @@
                     "cstring",
                     "handle"
                 ],
-                "description": "Add or modify dialog variables for an existing custom hud element ( int PlayerID /*-1 means everyone*/, string ElementID, table DialogVariables )",
+                "description": "Add or modify dialog variables for an existing custom hud element ( PlayerID_t PlayerID /*-1 means everyone*/, string ElementID, table DialogVariables )",
                 "return": "void"
             },
             "DynamicHud_SetVisible": {
@@ -8804,7 +8804,7 @@
                     "cstring",
                     "bool"
                 ],
-                "description": "Toggle the visibility of an existing custom hud element ( int PlayerID /*-1 means everyone*/, string ElementID, bool Visible )",
+                "description": "Toggle the visibility of an existing custom hud element ( PlayerID_t PlayerID /*-1 means everyone*/, string ElementID, bool Visible )",
                 "return": "void"
             }
         },
@@ -14314,7 +14314,7 @@
                     "uint"
                 ],
                 "description": "Get the enity index for a tree id specified as the entindex_target of a DOTA_UNIT_ORDER_CAST_TARGET_TREE.",
-                "return": "<unknown>"
+                "return": "int"
             },
             "GetFrameCount": {
                 "args": [],
@@ -15015,7 +15015,7 @@
                     "int",
                     "float"
                 ],
-                "description": "( const char *pszMessage, int nPlayerID, int nValue, float flTime ) - Supports localized strings - %s1 = PlayerName, %s2 = Value, %s3 = TeamName",
+                "description": "( const char *pszMessage, PlayerID_t nPlayerID, int nValue, float flTime ) - Supports localized strings - %s1 = PlayerName, %s2 = Value, %s3 = TeamName",
                 "return": "void"
             },
             "ShowGenericPopup": {
