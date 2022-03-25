@@ -211,6 +211,10 @@
         {
             "key": "DOTA_DAMAGE_FLAG_FORCE_SPELL_AMPLIFICATION",
             "value": 65536
+        },
+        {
+            "key": "DOTA_DAMAGE_FLAG_MAGIC_AUTO_ATTACK",
+            "value": 131072
         }
     ],
     "DOTAHUDVisibility_t": [
@@ -493,6 +497,10 @@
         {
             "key": "MODIFIER_ATTRIBUTE_AURA_PRIORITY",
             "value": 8
+        },
+        {
+            "key": "MODIFIER_ATTRIBUTE_IGNORE_DODGE",
+            "value": 16
         }
     ],
     "DOTAMusicStatus_t": [
@@ -1158,6 +1166,10 @@
         },
         {
             "key": "DOTA_ABILITY_BEHAVIOR_NONE",
+            "value": 0
+        },
+        {
+            "key": "DOTA_ABILITY_BEHAVIOR_OVERSHOOT",
             "value": 0
         },
         {
@@ -3171,6 +3183,10 @@
         {
             "key": "ACT_DOTA_TRANSITION_IDLE",
             "value": 1759
+        },
+        {
+            "key": "ACT_DOTA_PIERCE_THE_VEIL",
+            "value": 1760
         }
     ],
     "LuaModifierType": [
@@ -4485,15 +4501,11 @@
             "value": 76
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1",
-            "value": 76
-        },
-        {
             "key": "ACT_IDLE_ANGRY",
             "value": 77
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_2",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1",
             "value": 77
         },
         {
@@ -4501,7 +4513,7 @@
             "value": 78
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_3",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_2",
             "value": 78
         },
         {
@@ -4509,7 +4521,7 @@
             "value": 79
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_4",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_3",
             "value": 79
         },
         {
@@ -4517,7 +4529,7 @@
             "value": 80
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_5",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_4",
             "value": 80
         },
         {
@@ -4525,7 +4537,7 @@
             "value": 81
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_6",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_5",
             "value": 81
         },
         {
@@ -4533,7 +4545,7 @@
             "value": 82
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_7",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_6",
             "value": 82
         },
         {
@@ -4541,7 +4553,7 @@
             "value": 83
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_8",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_7",
             "value": 83
         },
         {
@@ -4549,11 +4561,15 @@
             "value": 84
         },
         {
-            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_9",
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_8",
             "value": 84
         },
         {
             "key": "ACT_WALK_AGITATED",
+            "value": 85
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_9",
             "value": 85
         },
         {

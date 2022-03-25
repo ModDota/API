@@ -5,7 +5,7 @@
         "args": [
             {
                 "name": "class",
-                "type": "string"
+                "type": "panoramasymbol"
             }
         ]
     },
@@ -15,7 +15,7 @@
         "args": [
             {
                 "name": "class",
-                "type": "string"
+                "type": "panoramasymbol"
             },
             {
                 "name": "pre-delay",
@@ -29,7 +29,7 @@
         "args": [
             {
                 "name": "class",
-                "type": "string"
+                "type": "panoramasymbol"
             }
         ]
     },
@@ -39,7 +39,7 @@
         "args": [
             {
                 "name": "class",
-                "type": "string"
+                "type": "panoramasymbol"
             },
             {
                 "name": "duration",

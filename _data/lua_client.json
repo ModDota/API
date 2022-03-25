@@ -126,7 +126,7 @@
         },
         "instance": "DOTAGameManager"
     },
-    "CDOTAGamerules": {
+    "CDOTAGameRules": {
         "functions": {
             "GetBannedHeroIDs": {
                 "args": [],
@@ -1550,10 +1550,12 @@
             },
             "GetCastRangeBonus": {
                 "arg_names": [
-                    "hTarget"
+                    "hTarget",
+                    "iPseudoCastRange"
                 ],
                 "args": [
-                    "handle"
+                    "handle",
+                    "int"
                 ],
                 "return": "int"
             },
@@ -3655,6 +3657,13 @@
                 ],
                 "description": "Unload a spawn group by handle",
                 "return": "void"
+            },
+            "UserIDToControllerHScript": {
+                "args": [
+                    "int"
+                ],
+                "description": "Turn a userid integer (typically, fields named 'userid' in game events) to an HScript representing the associated player controller's script instance.",
+                "return": "handle"
             },
             "VectorToAngles": {
                 "args": [

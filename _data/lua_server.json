@@ -533,7 +533,17 @@
             },
             "IsPlayer": {
                 "args": [],
-                "description": "Is this entity a player?",
+                "description": "Back compat: Is this entity a player pawn *or* controller?",
+                "return": "bool"
+            },
+            "IsPlayerController": {
+                "args": [],
+                "description": "Is this entity a player controller?",
+                "return": "bool"
+            },
+            "IsPlayerPawn": {
+                "args": [],
+                "description": "Is this entity a player pawn?",
                 "return": "bool"
             },
             "Kill": {
@@ -1142,9 +1152,24 @@
             }
         }
     },
-    "CBasePlayer": {
+    "CBasePlayerController": {
+        "extends": "CBaseEntity",
+        "functions": {
+            "GetPawn": {
+                "args": [],
+                "description": "GetPawn() : Returns the pawn for this controller",
+                "return": "handle"
+            }
+        }
+    },
+    "CBasePlayerPawn": {
         "extends": "CBaseCombatCharacter",
         "functions": {
+            "GetController": {
+                "args": [],
+                "description": "GetController() : Returns the controller for this pawn",
+                "return": "handle"
+            },
             "GetEquippedWeapons": {
                 "args": [],
                 "description": "GetEquippedWeapons() : Returns an array of all the equipped weapons",
@@ -1574,6 +1599,15 @@
             },
             "GetHeroLevelRequiredToUpgrade": {
                 "args": [],
+                "return": "int"
+            },
+            "GetInitialAbilityCharges": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
                 "return": "int"
             },
             "GetIntrinsicModifierName": {
@@ -2237,12 +2271,10 @@
             },
             "GetCustomAttributeDerivedStatValue": {
                 "arg_names": [
-                    "nDerivedStatType",
-                    "hHero"
+                    "nDerivedStatType"
                 ],
                 "args": [
-                    "int",
-                    "handle"
+                    "int"
                 ],
                 "description": "Get current derived stat value constant.",
                 "return": "float"
@@ -2381,6 +2413,11 @@
                 "args": [],
                 "description": "Are custom-defined XP values for hero level ups in use?",
                 "return": "bool"
+            },
+            "GetWaterRuneLastSpawnTime": {
+                "args": [],
+                "description": "Gets the time from game start during which water runes spawn",
+                "return": "int"
             },
             "IsAbilityUpgradeWhitelisted": {
                 "arg_names": [
@@ -3399,6 +3436,16 @@
                 "description": "Enables or disables turbo couriers.",
                 "return": "void"
             },
+            "SetWaterRuneLastSpawnTime": {
+                "arg_names": [
+                    "nValue"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Sets the time from game start during which water runes spawn",
+                "return": "void"
+            },
             "SetWeatherEffectsDisabled": {
                 "arg_names": [
                     "bDisable"
@@ -3455,7 +3502,7 @@
         },
         "instance": "DOTAGameManager"
     },
-    "CDOTAGamerules": {
+    "CDOTAGameRules": {
         "functions": {
             "AddBotPlayerWithEntityScript": {
                 "args": [
@@ -4412,7 +4459,7 @@
         },
         "instance": "GameRules"
     },
-    "CDOTAPlayer": {
+    "CDOTAPlayerController": {
         "extends": "CBaseAnimating",
         "functions": {
             "CheckForCourierSpawning": {
@@ -4842,10 +4889,12 @@
             },
             "GetCastRangeBonus": {
                 "arg_names": [
-                    "hTarget"
+                    "hTarget",
+                    "iPseudoCastRange"
                 ],
                 "args": [
-                    "handle"
+                    "handle",
+                    "int"
                 ],
                 "return": "int"
             },
@@ -8280,20 +8329,6 @@
                 "description": "Gives this hero some gold.  Args: int nGoldChange, bool bReliable, int reason",
                 "return": "int"
             },
-            "ModifyGoldFiltered": {
-                "arg_names": [
-                    "iGoldChange",
-                    "bReliabe",
-                    "iReason"
-                ],
-                "args": [
-                    "int",
-                    "bool",
-                    "int"
-                ],
-                "description": "Gives this hero some gold, using the gold filter if extra filtering is on.  Args: int nGoldChange, bool bReliable, int reason",
-                "return": "int"
-            },
             "ModifyIntellect": {
                 "arg_names": [
                     "flNewIntellect"
@@ -8333,6 +8368,20 @@
                 ],
                 "description": "Respawn this hero.",
                 "return": "void"
+            },
+            "Script_ModifyGoldFiltered": {
+                "arg_names": [
+                    "iGoldChange",
+                    "bReliabe",
+                    "iReason"
+                ],
+                "args": [
+                    "int",
+                    "bool",
+                    "int"
+                ],
+                "description": "Gives this hero some gold, using the gold filter if extra filtering is on.  Args: int nGoldChange, bool bReliable, int reason",
+                "return": "int"
             },
             "SetAbilityPoints": {
                 "arg_names": [
@@ -11251,6 +11300,22 @@
                 "description": "(playerID, heroClassName, gold, XP) - replaces the player's hero with a new one of the specified class, gold and XP",
                 "return": "handle"
             },
+            "ReplaceHeroWithNoTransfer": {
+                "arg_names": [
+                    "iPlayerID",
+                    "pszHeroClass",
+                    "nGold",
+                    "nXP"
+                ],
+                "args": [
+                    "int",
+                    "cstring",
+                    "int",
+                    "int"
+                ],
+                "description": "(playerID, heroClassName, gold, XP) - replaces the player's hero with a new one of the specified class, gold and XP, without transferring items/abilities if same hero",
+                "return": "handle"
+            },
             "ResetBuybackCostTime": {
                 "arg_names": [
                     "nPlayerID"
@@ -12364,7 +12429,17 @@
             },
             "GetLocalPlayer": {
                 "args": [],
-                "description": "Get the local player.",
+                "description": "Get the local player controller (backcompat).",
+                "return": "handle"
+            },
+            "GetLocalPlayerController": {
+                "args": [],
+                "description": "Get the local player controller.",
+                "return": "handle"
+            },
+            "GetLocalPlayerPawn": {
+                "args": [],
+                "description": "Get the local player pawn.",
                 "return": "handle"
             },
             "Next": {
@@ -13982,6 +14057,14 @@
                 "description": "Free a damageinfo object that was created with CreateDamageInfo().",
                 "return": "void"
             },
+            "DisconnectClient": {
+                "args": [
+                    "int",
+                    "bool"
+                ],
+                "description": "Kick a specific player from the game",
+                "return": "void"
+            },
             "DoCleaveAttack": {
                 "args": [
                     "handle",
@@ -14495,6 +14578,13 @@
                 ],
                 "description": "Get amount of XP required to reach the next level.",
                 "return": "int"
+            },
+            "HeroMaxLevel": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Max out a hero's level and give them all appropriate abilities and talents.",
+                "return": "void"
             },
             "InitLogFile": {
                 "args": [
@@ -15364,6 +15454,13 @@
                 ],
                 "description": "( hEventPointData )",
                 "return": "void"
+            },
+            "UserIDToControllerHScript": {
+                "args": [
+                    "int"
+                ],
+                "description": "Turn a userid integer (typically, fields named 'userid' in game events) to an HScript representing the associated player controller's script instance.",
+                "return": "handle"
             },
             "VectorAngles": {
                 "args": [
