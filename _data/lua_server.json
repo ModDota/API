@@ -8329,6 +8329,20 @@
                 "description": "Gives this hero some gold.  Args: int nGoldChange, bool bReliable, int reason",
                 "return": "int"
             },
+            "ModifyGoldFiltered": {
+                "arg_names": [
+                    "iGoldChange",
+                    "bReliabe",
+                    "iReason"
+                ],
+                "args": [
+                    "int",
+                    "bool",
+                    "int"
+                ],
+                "description": "Gives this hero some gold, using the gold filter if extra filtering is on.  Args: int nGoldChange, bool bReliable, int reason",
+                "return": "int"
+            },
             "ModifyIntellect": {
                 "arg_names": [
                     "flNewIntellect"
@@ -8368,20 +8382,6 @@
                 ],
                 "description": "Respawn this hero.",
                 "return": "void"
-            },
-            "Script_ModifyGoldFiltered": {
-                "arg_names": [
-                    "iGoldChange",
-                    "bReliabe",
-                    "iReason"
-                ],
-                "args": [
-                    "int",
-                    "bool",
-                    "int"
-                ],
-                "description": "Gives this hero some gold, using the gold filter if extra filtering is on.  Args: int nGoldChange, bool bReliable, int reason",
-                "return": "int"
             },
             "SetAbilityPoints": {
                 "arg_names": [
