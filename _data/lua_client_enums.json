@@ -307,6 +307,10 @@
             "value": 0
         },
         {
+            "key": "DOTA_ABILITY_BEHAVIOR_IGNORE_MUTED",
+            "value": 0
+        },
+        {
             "key": "DOTA_ABILITY_BEHAVIOR_IGNORE_SILENCE",
             "value": 0
         },
@@ -709,6 +713,488 @@
             "value": 62
         }
     ],
+    "DOTA_INVALID_ORDERS": [
+        {
+            "key": "DOTA_ORDER_SUCCESS",
+            "value": -1
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_NOT_CONTROLLABLE_BY_PLAYER",
+            "value": 0
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_IS_NOT_NPC",
+            "value": 1
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_BAD_ABILITY_ENTITY",
+            "value": 2
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNRECOGNIZED_ORDER",
+            "value": 3
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_REQUIRED",
+            "value": 4
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_NPC_TARGET_REQUIRED",
+            "value": 5
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_TREE_INDEX_NOT_A_TREE",
+            "value": 6
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_ENTITY_INDEX_OUT_OF_RANGE",
+            "value": 7
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_NOT_AN_ITEM",
+            "value": 8
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_PHYSICAL_ITEM_TARGET_REQUIRED",
+            "value": 9
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_RUNE_TARGET_REQUIRED",
+            "value": 10
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_NOT_OWNED_BY_UNIT",
+            "value": 11
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_CANT_BE_UPGRADED",
+            "value": 12
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_NO_POINTS_FOR_ABILITY_UPGRADE",
+            "value": 13
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_NOT_ENOUGH_MANA",
+            "value": 14
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_IN_COOLDOWN",
+            "value": 15
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_NOT_LEARNED",
+            "value": 16
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_PASSIVE_ABILITY",
+            "value": 17
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_PHANTOM_TARGET",
+            "value": 18
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_DEAD_TARGET",
+            "value": 19
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_IS_DEAD",
+            "value": 20
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_MAGIC_IMMUNE_ENEMY",
+            "value": 21
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_INVULNERABLE",
+            "value": 22
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_ATTACK_IMMUNE",
+            "value": 23
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_SILENCED",
+            "value": 24
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_CANT_BE_TOGGLED",
+            "value": 25
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_CANT_BE_SEEN",
+            "value": 26
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_INVISIBLE",
+            "value": 27
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_HERO_CANT_BE_DENIED",
+            "value": 28
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_TEAMMATE",
+            "value": 29
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_ENEMY",
+            "value": 30
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_CANT_MOVE",
+            "value": 31
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_ATTACK_IMMUNE",
+            "value": 32
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_PURCHASE_INVALID_ITEM",
+            "value": 33
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_NOT_IN_INVENTORY",
+            "value": 34
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_NOT_IN_UNIT_INVENTORY",
+            "value": 35
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_UNSELECTABLE",
+            "value": 36
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_NOT_IN_ACTIVE_INVENTORY",
+            "value": 37
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_CANT_PICK_UP_RUNES",
+            "value": 38
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_CANT_MANIPULATE_ITEMS",
+            "value": 39
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_IS_ILLUSION",
+            "value": 40
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_CANT_ATTACK",
+            "value": 41
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_CANT_BE_DROPPED",
+            "value": 42
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_TREE_NOT_ACTIVE",
+            "value": 43
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_CANT_AUTO_CAST",
+            "value": 44
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_POSITION_OFF_MAP",
+            "value": 45
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_CANT_MOVE_TARGET_OUT_OF_RANGE",
+            "value": 46
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_HERO",
+            "value": 47
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_OTHER",
+            "value": 48
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_BUILDING",
+            "value": 49
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_ANCIENT",
+            "value": 50
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_CANT_BE_MOVED_TO_STASH",
+            "value": 51
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_CANT_BE_MOVED_TO_SLOT",
+            "value": 52
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_MECHANICAL",
+            "value": 53
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_ACCEPT_ATTACK_TARGET",
+            "value": 54
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_NO_CHARGES",
+            "value": 55
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_CREEP",
+            "value": 56
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_CANT_TAKE_ITEMS",
+            "value": 57
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_GIVE_ITEM_TO_ENEMY",
+            "value": 58
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_COURIER",
+            "value": 59
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_IS_HIDDEN",
+            "value": 60
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_IN_COOLDOWN",
+            "value": 61
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_SECRET_SHOP_NOT_IN_RANGE",
+            "value": 62
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_NOT_ENOUGH_GOLD",
+            "value": 63
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_PURCHASE_AUTOCOMBINE_RECIPE",
+            "value": 64
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_DENY_HEALTH_TOO_HIGH",
+            "value": 65
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_SIDE_SHOP_NOT_IN_RANGE",
+            "value": 66
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_HOME_SHOP_NOT_IN_RANGE",
+            "value": 67
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_PICK_UP_ITEM",
+            "value": 68
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_SELL_NO_SHOP_IN_RANGE",
+            "value": 69
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_SELL_ITEM",
+            "value": 70
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_SELL_ITEM_WHILE_DEAD",
+            "value": 71
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_CANT_BE_DENIED",
+            "value": 72
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_DISABLED_BY_ROOT",
+            "value": 73
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_COMMAND_RESTRICTED",
+            "value": 74
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_MUTED",
+            "value": 75
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_SUMMONED",
+            "value": 76
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_TARGET_MAGIC_IMMUNE_ALLY",
+            "value": 77
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_PURCHASE_DISALLOWED_ITEM",
+            "value": 78
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_DOMINATED",
+            "value": 79
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CAST_CUSTOM",
+            "value": 80
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_NOT_DISASSEMBLABLE",
+            "value": 81
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_OUT_OF_STOCK",
+            "value": 82
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_CANT_BE_UPGRADED_AT_MAX",
+            "value": 83
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_INACTIVE",
+            "value": 84
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_NOT_IN_MAIN_INVENTORY",
+            "value": 85
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_GLYPH",
+            "value": 86
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_DRAG_CHANNELING_ITEM",
+            "value": 87
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_BUYBACK_UNIT_NOT_A_HERO",
+            "value": 88
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_BUYBACK_UNIT_NOT_DEAD",
+            "value": 89
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_BUYBACK_NOT_ENOUGH_GOLD",
+            "value": 90
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_BUYBACK_IN_COOLDOWN",
+            "value": 91
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_DISASSEMBLE_STASH_OUT_OF_RANGE",
+            "value": 92
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_EJECT_ITEM_NOT_IN_STASH",
+            "value": 93
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_GAME_IS_PAUSED",
+            "value": 94
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_ON_CONSIDERED_HERO",
+            "value": 95
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_SHOP_AUTO_BUY_ENABLED",
+            "value": 96
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ONLY_DELIBERATE_CHANNELING_CANCEL",
+            "value": 97
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_BUYBACK_REAPERS_SCYTHE",
+            "value": 98
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_BUYBACK_DISABLED_BY_GAME_MODE",
+            "value": 99
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_ABILITY_PING_BAD_TEAM",
+            "value": 100
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_NOT_POSITIONED",
+            "value": 101
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_NOT_TARGETTED",
+            "value": 102
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_REQUIRES_TARGET",
+            "value": 103
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_RADAR",
+            "value": 104
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_NO_COURIER",
+            "value": 105
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CUSTOM_SHOP_NOT_IN_RANGE",
+            "value": 106
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_RIVER_PAINT",
+            "value": 107
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_UNIT_OBSTRUCTED",
+            "value": 108
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_CAST_DRAG_REQUIRED",
+            "value": 109
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_DISABLED_BY_TETHER",
+            "value": 110
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_NOT_UNLOCKED",
+            "value": 111
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_FOUNTAIN_DROP_UNIT_NOT_DEAD",
+            "value": 112
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_NOT_IN_NEUTRAL_ITEM_STASH",
+            "value": 113
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ITEM_ALREADY_PURCHASED",
+            "value": 114
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_BEYOND_PHYSICAL_ITEM_LIMIT",
+            "value": 115
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_ABILITY_PING_DEAD_ALLY",
+            "value": 116
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_CANT_LOCKCOMBINE_NEUTRAL_ITEMS",
+            "value": 117
+        },
+        {
+            "key": "DOTA_INVALID_ORDER_COUNT",
+            "value": 118
+        }
+    ],
     "DOTA_MOTION_CONTROLLER_PRIORITY": [
         {
             "key": "DOTA_MOTION_CONTROLLER_PRIORITY_LOWEST",
@@ -963,6 +1449,352 @@
         {
             "key": "DOTA_UNIT_TARGET_CUSTOM",
             "value": 128
+        }
+    ],
+    "DotaPseudoRandomType": [
+        {
+            "key": "DOTA_PSEUDO_RANDOM_NONE",
+            "value": 0
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_MAGNUS_SHARD",
+            "value": 1
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_CRIT",
+            "value": 2
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_PHANTOMASSASSIN_DAGGER",
+            "value": 3
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_PHANTOMLANCER_JUXTAPOSE",
+            "value": 4
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_TINY_CRAGGY",
+            "value": 5
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_COLD_REBUKE",
+            "value": 6
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_WOLF_CRIT",
+            "value": 7
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_AXE_HELIX",
+            "value": 8
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_AXE_HELIX_ATTACK",
+            "value": 9
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_LEGION_MOMENT",
+            "value": 10
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_SLARDAR_BASH",
+            "value": 11
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_OD_ESSENCE",
+            "value": 12
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_DROW_MARKSMANSHIP",
+            "value": 13
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_OGRE_MAGI_FIREBLAST",
+            "value": 14
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_OGRE_ITEM_MULTICAST",
+            "value": 15
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_SPIRITBREAKER_GREATERBASH",
+            "value": 16
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_LONE_DRUID_ENTANGLE",
+            "value": 17
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_FACELESS_BASH",
+            "value": 18
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_FACELESS_EVADE_SPELL",
+            "value": 19
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_FACELESS_EVADE_ATTACK",
+            "value": 20
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_FACELESS_VOID_BACKTRACK",
+            "value": 21
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_BREWMASTER_CRIT",
+            "value": 22
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_BREWMASTER_CINDER_BREW",
+            "value": 23
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_SNIPER_HEADSHOT",
+            "value": 24
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ATOS",
+            "value": 25
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_JUGG_CRIT",
+            "value": 26
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_DAZZLE_SCEPTER",
+            "value": 27
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CHAOS_CRIT",
+            "value": 28
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_LYCAN_CRIT",
+            "value": 29
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_TUSK_CRIT",
+            "value": 30
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CM_FREEZING_FIELD",
+            "value": 31
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_GENERIC_BASHER",
+            "value": 32
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_SKELETONKING_CRIT",
+            "value": 33
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_SKELETONKING_CRIT_MORTAL",
+            "value": 34
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_GREATERCRIT",
+            "value": 35
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_LESSERCRIT",
+            "value": 36
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_BASHER",
+            "value": 37
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_SOLAR_CREST",
+            "value": 38
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_JAVELIN_ACCURACY",
+            "value": 39
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_TRIDENT",
+            "value": 40
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_ABYSSAL",
+            "value": 41
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_ABYSSAL_BLOCK",
+            "value": 42
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_STOUT",
+            "value": 43
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_VANGUARD",
+            "value": 44
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_CRIMSON_GUARD",
+            "value": 45
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_PMS",
+            "value": 46
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_HALBRED_MAIM",
+            "value": 47
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_SANGEYASHA_MAIM",
+            "value": 48
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_SANGEKAYA_MAIM",
+            "value": 49
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_SANGE_MAIM",
+            "value": 50
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_BUTTERFLY",
+            "value": 51
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_MAELSTROM",
+            "value": 52
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_MJOLLNIR",
+            "value": 53
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_MJOLLNIR_STATIC",
+            "value": 54
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_MKB",
+            "value": 55
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_SILVER_EDGE",
+            "value": 56
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ITEM_NAGINATA",
+            "value": 57
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_TROLL_BASH",
+            "value": 58
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_RIKI_SMOKE_SCREEN",
+            "value": 59
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CHAOS_DOUBLE_CRIT",
+            "value": 60
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CHAOS_TRIPLE_CRIT",
+            "value": 61
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_GENERIC_EVASION",
+            "value": 62
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_GENERIC_HEIGHT_MISS",
+            "value": 63
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_GENERIC_MISS",
+            "value": 64
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ARMADILLO_HEARTPIERCER",
+            "value": 65
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_MARS_SHIELD",
+            "value": 66
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_ANTIMAGE_SILENT",
+            "value": 67
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_NEUTRAL_DROP_TIER1",
+            "value": 68
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_NEUTRAL_DROP_TIER2",
+            "value": 69
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_NEUTRAL_DROP_TIER3",
+            "value": 70
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_NEUTRAL_DROP_TIER4",
+            "value": 71
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_NEUTRAL_DROP_TIER5",
+            "value": 72
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_MARS_BULWARK",
+            "value": 73
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_GUNSLINGER_CRIT",
+            "value": 74
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_BATRIDER_NAPALM",
+            "value": 75
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GENERIC",
+            "value": 76
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_1",
+            "value": 77
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_2",
+            "value": 78
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_3",
+            "value": 79
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_4",
+            "value": 80
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_5",
+            "value": 81
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_6",
+            "value": 82
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_7",
+            "value": 83
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_8",
+            "value": 84
+        },
+        {
+            "key": "DOTA_PSEUDO_RANDOM_CUSTOM_GAME_9",
+            "value": 85
         }
     ],
     "LuaModifierType": [
@@ -1254,10 +2086,6 @@
         },
         {
             "key": "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1",
-            "value": 1
-        },
-        {
-            "key": "FCVAR_UNREGISTERED",
             "value": 1
         },
         {
@@ -1641,10 +2469,6 @@
             "value": 32
         },
         {
-            "key": "DOTA_MAX_ABILITIES",
-            "value": 32
-        },
-        {
             "key": "FCVAR_PROTECTED",
             "value": 32
         },
@@ -1661,7 +2485,7 @@
             "value": 34
         },
         {
-            "key": "AE_WPN_PLAYWPNSOUND",
+            "key": "AE_WPN_SECONDARYATTACK",
             "value": 34
         },
         {
@@ -1669,7 +2493,11 @@
             "value": 35
         },
         {
-            "key": "AE_WPN_SECONDARYATTACK",
+            "key": "AE_CL_SPEECH",
+            "value": 35
+        },
+        {
+            "key": "DOTA_MAX_ABILITIES",
             "value": 35
         },
         {
@@ -1677,7 +2505,7 @@
             "value": 36
         },
         {
-            "key": "AE_CL_SPEECH",
+            "key": "AE_FIRE_INPUT",
             "value": 36
         },
         {
@@ -1685,7 +2513,7 @@
             "value": 37
         },
         {
-            "key": "AE_FIRE_INPUT",
+            "key": "AE_CL_CLOTH_ATTR",
             "value": 37
         },
         {
@@ -1693,7 +2521,7 @@
             "value": 38
         },
         {
-            "key": "AE_IK_SET_LOCK_ROTATION_ALPHA",
+            "key": "AE_CL_CLOTH_GROUND_OFFSET",
             "value": 38
         },
         {
@@ -1701,7 +2529,7 @@
             "value": 39
         },
         {
-            "key": "AE_IK_ALLOW_PLANE_TILT_NORMAL_UPDATES",
+            "key": "AE_CL_CLOTH_STIFFEN",
             "value": 39
         },
         {
@@ -1709,7 +2537,7 @@
             "value": 40
         },
         {
-            "key": "AE_IK_SET_MASTER_BLEND_AMOUNT",
+            "key": "AE_CL_CLOTH_EFFECT",
             "value": 40
         },
         {
@@ -1717,7 +2545,7 @@
             "value": 41
         },
         {
-            "key": "AE_IK_SET_CHAIN_BLEND_AMOUNT",
+            "key": "AE_CL_CREATE_ANIM_SCOPE_PROP",
             "value": 41
         },
         {
@@ -1725,7 +2553,7 @@
             "value": 42
         },
         {
-            "key": "AE_CL_CLOTH_ATTR",
+            "key": "AE_HAPTIC_PULSE",
             "value": 42
         },
         {
@@ -1733,7 +2561,7 @@
             "value": 43
         },
         {
-            "key": "AE_CL_CLOTH_GROUND_OFFSET",
+            "key": "AE_CL_DOTA_PLAY_STATUS_EFFECT",
             "value": 43
         },
         {
@@ -1741,7 +2569,7 @@
             "value": 44
         },
         {
-            "key": "AE_CL_CLOTH_STIFFEN",
+            "key": "AE_CL_DOTA_STOP_STATUS_EFFECT",
             "value": 44
         },
         {
@@ -1749,7 +2577,7 @@
             "value": 45
         },
         {
-            "key": "AE_CL_CLOTH_EFFECT",
+            "key": "AE_CL_DOTA_NPC_CREATE_PARTICLE_EFFECT",
             "value": 45
         },
         {
@@ -1757,7 +2585,7 @@
             "value": 46
         },
         {
-            "key": "AE_CL_CREATE_ANIM_SCOPE_PROP",
+            "key": "AE_CL_DOTA_RUBICK_ARCANA_CREATE_PARTICLE_EFFECT",
             "value": 46
         },
         {
@@ -1765,7 +2593,7 @@
             "value": 47
         },
         {
-            "key": "AE_HAPTIC_PULSE",
+            "key": "AE_DOTA_PET_ITEM_PICKUP",
             "value": 47
         },
         {
@@ -1773,7 +2601,7 @@
             "value": 48
         },
         {
-            "key": "AE_CL_DOTA_PLAY_STATUS_EFFECT",
+            "key": "AE_DOTA_PET_ITEM_DROP",
             "value": 48
         },
         {
@@ -1781,7 +2609,7 @@
             "value": 49
         },
         {
-            "key": "AE_CL_DOTA_STOP_STATUS_EFFECT",
+            "key": "AE_DOTA_SUPPRESS_CONSTANT_LAYER",
             "value": 49
         },
         {
@@ -1789,7 +2617,7 @@
             "value": 50
         },
         {
-            "key": "AE_CL_DOTA_NPC_CREATE_PARTICLE_EFFECT",
+            "key": "AE_DOTA_PLAY_SOUND_ATTACK_SPECIAL",
             "value": 50
         },
         {
@@ -1797,7 +2625,7 @@
             "value": 51
         },
         {
-            "key": "AE_CL_DOTA_RUBICK_ARCANA_CREATE_PARTICLE_EFFECT",
+            "key": "AE_DOTA_CREATE_CLINKZ_ATTACK",
             "value": 51
         },
         {
@@ -1805,7 +2633,7 @@
             "value": 52
         },
         {
-            "key": "AE_DOTA_PET_ITEM_PICKUP",
+            "key": "AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB",
             "value": 52
         },
         {
@@ -1813,7 +2641,7 @@
             "value": 53
         },
         {
-            "key": "AE_DOTA_PET_ITEM_DROP",
+            "key": "AE_DOTA_DIE_PHANTOM_DEATH_PARTICLES",
             "value": 53
         },
         {
@@ -1821,7 +2649,7 @@
             "value": 54
         },
         {
-            "key": "AE_DOTA_SUPPRESS_CONSTANT_LAYER",
+            "key": "AE_DOTA_SWITCH_ATTACK_COMBO",
             "value": 54
         },
         {
@@ -1829,7 +2657,7 @@
             "value": 55
         },
         {
-            "key": "AE_DOTA_PLAY_SOUND_ATTACK_SPECIAL",
+            "key": "AE_DOTA_PLAY_SOUND_ATTACK",
             "value": 55
         },
         {
@@ -1837,15 +2665,7 @@
             "value": 56
         },
         {
-            "key": "AE_DOTA_CREATE_CLINKZ_ATTACK",
-            "value": 56
-        },
-        {
             "key": "ACT_SIGNAL_LEFT",
-            "value": 57
-        },
-        {
-            "key": "AE_DOTA_PLAY_SOUND_ATTACK_BACKSTAB",
             "value": 57
         },
         {
@@ -1853,15 +2673,7 @@
             "value": 58
         },
         {
-            "key": "AE_DOTA_DIE_PHANTOM_DEATH_PARTICLES",
-            "value": 58
-        },
-        {
             "key": "ACT_SIGNAL_TAKECOVER",
-            "value": 59
-        },
-        {
-            "key": "AE_DOTA_SWITCH_ATTACK_COMBO",
             "value": 59
         },
         {
@@ -5757,10 +6569,6 @@
             "value": 1024
         },
         {
-            "key": "FCVAR_PRINTABLEONLY",
-            "value": 1024
-        },
-        {
             "key": "ACT_CSGO_EXIT_LADDER_TOP",
             "value": 1025
         },
@@ -6821,56 +7629,72 @@
             "value": 1760
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_RUN_RARE",
             "value": 1761
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACT_DOTA_VIPER_DIVE",
             "value": 1762
         },
         {
-            "key": "ACT_DOTA_CYCLONE",
+            "key": "ACT_DOTA_VIPER_DIVE_END",
             "value": 1763
         },
         {
-            "key": "ACT_DOTA_IMPALE",
+            "key": "ACT_DOTA_MK_STRIKE_END",
             "value": 1764
         },
         {
-            "key": "ACT_DOTA_TORRENT",
+            "key": "ACD_DOTA_IDLE",
             "value": 1765
         },
         {
-            "key": "ACT_DOTA_RELAX_IN",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1766
         },
         {
-            "key": "ACT_DOTA_RELAX_OUT",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1767
         },
         {
-            "key": "ACT_DOTA_CAST_FENCE",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1768
         },
         {
-            "key": "radiant_melee_mars_shieldbash",
+            "key": "ACT_DOTA_RELAX_IN",
             "value": 1769
         },
         {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+            "key": "ACT_DOTA_RELAX_OUT",
             "value": 1770
         },
         {
-            "key": "ACT_DOTA_SPWN",
+            "key": "ACT_DOTA_CAST_FENCE",
             "value": 1771
         },
         {
-            "key": "ACT_DOTA_RUN_ALT",
+            "key": "ACT_DOTA_SPWN",
             "value": 1772
         },
         {
-            "key": "ACT_DOTA_VOODOO_REST",
+            "key": "ACT_DOTA_RUN_ALT",
             "value": 1773
+        },
+        {
+            "key": "ACT_DOTA_VOODOO_REST",
+            "value": 1774
+        },
+        {
+            "key": "ACT_DOTA_CYCLONE",
+            "value": 1775
+        },
+        {
+            "key": "ACT_DOTA_IMPALE",
+            "value": 1776
+        },
+        {
+            "key": "ACT_DOTA_TORRENT",
+            "value": 1777
         },
         {
             "key": "DMG_PREVENT_PHYSICS_FORCE",
@@ -6882,10 +7706,6 @@
         },
         {
             "key": "DMG_NEVERGIB",
-            "value": 4096
-        },
-        {
-            "key": "FCVAR_NEVER_AS_STRING",
             "value": 4096
         },
         {
@@ -6909,7 +7729,7 @@
             "value": 32768
         },
         {
-            "key": "FCVAR_SS",
+            "key": "FCVAR_PER_USER",
             "value": 32768
         },
         {
@@ -6962,7 +7782,7 @@
         },
         {
             "key": "FCVAR_VCONSOLE_SET_FOCUS",
-            "value": 1073741824
+            "value": 134217728
         }
     ],
     "modifierfunction": [
@@ -7437,810 +8257,830 @@
             "value": 93
         },
         {
+            "description": "GetModifierExtraManaBonusPercentage",
+            "key": "MODIFIER_PROPERTY_EXTRA_MANA_BONUS_PERCENTAGE",
+            "value": 94
+        },
+        {
             "description": "GetModifierExtraHealthPercentage",
             "key": "MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE",
-            "value": 94
+            "value": 95
         },
         {
             "description": "GetModifierExtraManaPercentage",
             "key": "MODIFIER_PROPERTY_EXTRA_MANA_PERCENTAGE",
-            "value": 95
+            "value": 96
         },
         {
             "description": "GetModifierBonusStats_Strength",
             "key": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS",
-            "value": 96
+            "value": 97
         },
         {
             "description": "GetModifierBonusStats_Agility",
             "key": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS",
-            "value": 97
+            "value": 98
         },
         {
             "description": "GetModifierBonusStats_Intellect",
             "key": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS",
-            "value": 98
+            "value": 99
         },
         {
             "description": "GetModifierBonusStats_Strength_Percentage",
             "key": "MODIFIER_PROPERTY_STATS_STRENGTH_BONUS_PERCENTAGE",
-            "value": 99
+            "value": 100
         },
         {
             "description": "GetModifierBonusStats_Agility_Percentage",
             "key": "MODIFIER_PROPERTY_STATS_AGILITY_BONUS_PERCENTAGE",
-            "value": 100
+            "value": 101
         },
         {
             "description": "GetModifierBonusStats_Intellect_Percentage",
             "key": "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS_PERCENTAGE",
-            "value": 101
+            "value": 102
         },
         {
             "description": "GetModifierCastRangeBonus",
             "key": "MODIFIER_PROPERTY_CAST_RANGE_BONUS",
-            "value": 102
+            "value": 103
         },
         {
             "description": "GetModifierCastRangeBonusPercentage",
             "key": "MODIFIER_PROPERTY_CAST_RANGE_BONUS_PERCENTAGE",
-            "value": 103
+            "value": 104
         },
         {
             "description": "GetModifierCastRangeBonusTarget",
             "key": "MODIFIER_PROPERTY_CAST_RANGE_BONUS_TARGET",
-            "value": 104
+            "value": 105
         },
         {
             "description": "GetModifierCastRangeBonusStacking",
             "key": "MODIFIER_PROPERTY_CAST_RANGE_BONUS_STACKING",
-            "value": 105
+            "value": 106
         },
         {
             "description": "GetModifierAttackRangeOverride",
             "key": "MODIFIER_PROPERTY_ATTACK_RANGE_BASE_OVERRIDE",
-            "value": 106
+            "value": 107
         },
         {
             "description": "GetModifierAttackRangeBonus",
             "key": "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS",
-            "value": 107
+            "value": 108
         },
         {
             "description": "GetModifierAttackRangeBonusUnique",
             "key": "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_UNIQUE",
-            "value": 108
+            "value": 109
         },
         {
             "description": "GetModifierAttackRangeBonusPercentage",
             "key": "MODIFIER_PROPERTY_ATTACK_RANGE_BONUS_PERCENTAGE",
-            "value": 109
+            "value": 110
         },
         {
             "description": "GetModifierMaxAttackRange",
             "key": "MODIFIER_PROPERTY_MAX_ATTACK_RANGE",
-            "value": 110
+            "value": 111
         },
         {
             "description": "GetModifierProjectileSpeedBonus",
             "key": "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS",
-            "value": 111
+            "value": 112
         },
         {
             "description": "GetModifierProjectileSpeedBonusPercentage",
             "key": "MODIFIER_PROPERTY_PROJECTILE_SPEED_BONUS_PERCENTAGE",
-            "value": 112
+            "value": 113
         },
         {
             "description": "GetModifierProjectileName",
             "key": "MODIFIER_PROPERTY_PROJECTILE_NAME",
-            "value": 113
+            "value": 114
         },
         {
             "description": "ReincarnateTime",
             "key": "MODIFIER_PROPERTY_REINCARNATION",
-            "value": 114
+            "value": 115
         },
         {
             "description": "GetModifierConstantRespawnTime",
             "key": "MODIFIER_PROPERTY_RESPAWNTIME",
-            "value": 115
+            "value": 116
         },
         {
             "description": "GetModifierPercentageRespawnTime",
             "key": "MODIFIER_PROPERTY_RESPAWNTIME_PERCENTAGE",
-            "value": 116
+            "value": 117
         },
         {
             "description": "GetModifierStackingRespawnTime",
             "key": "MODIFIER_PROPERTY_RESPAWNTIME_STACKING",
-            "value": 117
+            "value": 118
         },
         {
             "description": "GetModifierPercentageCooldown",
             "key": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE",
-            "value": 118
+            "value": 119
         },
         {
             "description": "GetModifierPercentageCooldownOngoing",
             "key": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_ONGOING",
-            "value": 119
+            "value": 120
         },
         {
             "description": "GetModifierPercentageCasttime",
             "key": "MODIFIER_PROPERTY_CASTTIME_PERCENTAGE",
-            "value": 120
+            "value": 121
         },
         {
             "description": "GetModifierPercentageAttackAnimTime",
             "key": "MODIFIER_PROPERTY_ATTACK_ANIM_TIME_PERCENTAGE",
-            "value": 121
+            "value": 122
         },
         {
             "description": "GetModifierPercentageManacost",
             "key": "MODIFIER_PROPERTY_MANACOST_PERCENTAGE",
-            "value": 122
+            "value": 123
         },
         {
             "description": "GetModifierPercentageManacostStacking",
             "key": "MODIFIER_PROPERTY_MANACOST_PERCENTAGE_STACKING",
-            "value": 123
+            "value": 124
         },
         {
             "description": "GetModifierConstantDeathGoldCost",
             "key": "MODIFIER_PROPERTY_DEATHGOLDCOST",
-            "value": 124
+            "value": 125
         },
         {
             "description": "GetModifierPercentageExpRateBoost",
             "key": "MODIFIER_PROPERTY_EXP_RATE_BOOST",
-            "value": 125
+            "value": 126
         },
         {
             "description": "GetModifierPercentageGoldRateBoost",
             "key": "MODIFIER_PROPERTY_GOLD_RATE_BOOST",
-            "value": 126
+            "value": 127
         },
         {
             "description": "GetModifierPreAttack_CriticalStrike",
             "key": "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE",
-            "value": 127
+            "value": 128
         },
         {
             "description": "GetModifierPreAttack_Target_CriticalStrike",
             "key": "MODIFIER_PROPERTY_PREATTACK_TARGET_CRITICALSTRIKE",
-            "value": 128
+            "value": 129
         },
         {
             "description": "GetModifierMagical_ConstantBlock",
             "key": "MODIFIER_PROPERTY_MAGICAL_CONSTANT_BLOCK",
-            "value": 129
+            "value": 130
         },
         {
             "description": "GetModifierPhysical_ConstantBlock",
             "key": "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK",
-            "value": 130
+            "value": 131
         },
         {
             "description": "GetModifierPhysical_ConstantBlockSpecial",
             "key": "MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK_SPECIAL",
-            "value": 131
+            "value": 132
         },
         {
             "description": "GetModifierPhysical_ConstantBlockUnavoidablePreArmor",
             "key": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK_UNAVOIDABLE_PRE_ARMOR",
-            "value": 132
+            "value": 133
         },
         {
             "description": "GetModifierTotal_ConstantBlock",
             "key": "MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK",
-            "value": 133
+            "value": 134
         },
         {
             "description": "GetOverrideAnimation",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ANIMATION",
-            "value": 134
+            "value": 135
         },
         {
             "description": "GetOverrideAnimationWeight",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ANIMATION_WEIGHT",
-            "value": 135
+            "value": 136
         },
         {
             "description": "GetOverrideAnimationRate",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ANIMATION_RATE",
-            "value": 136
+            "value": 137
         },
         {
             "description": "GetAbsorbSpell",
             "key": "MODIFIER_PROPERTY_ABSORB_SPELL",
-            "value": 137
+            "value": 138
         },
         {
             "description": "GetReflectSpell",
             "key": "MODIFIER_PROPERTY_REFLECT_SPELL",
-            "value": 138
+            "value": 139
         },
         {
             "description": "GetDisableAutoAttack",
             "key": "MODIFIER_PROPERTY_DISABLE_AUTOATTACK",
-            "value": 139
+            "value": 140
         },
         {
             "description": "GetBonusDayVision",
             "key": "MODIFIER_PROPERTY_BONUS_DAY_VISION",
-            "value": 140
+            "value": 141
         },
         {
             "description": "GetBonusNightVision",
             "key": "MODIFIER_PROPERTY_BONUS_NIGHT_VISION",
-            "value": 141
+            "value": 142
         },
         {
             "description": "GetBonusNightVisionUnique",
             "key": "MODIFIER_PROPERTY_BONUS_NIGHT_VISION_UNIQUE",
-            "value": 142
+            "value": 143
         },
         {
             "description": "GetBonusVisionPercentage",
             "key": "MODIFIER_PROPERTY_BONUS_VISION_PERCENTAGE",
-            "value": 143
+            "value": 144
         },
         {
             "description": "GetFixedDayVision",
             "key": "MODIFIER_PROPERTY_FIXED_DAY_VISION",
-            "value": 144
+            "value": 145
         },
         {
             "description": "GetFixedNightVision",
             "key": "MODIFIER_PROPERTY_FIXED_NIGHT_VISION",
-            "value": 145
+            "value": 146
         },
         {
             "description": "GetMinHealth",
             "key": "MODIFIER_PROPERTY_MIN_HEALTH",
-            "value": 146
+            "value": 147
         },
         {
             "description": "GetAbsoluteNoDamagePhysical",
             "key": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PHYSICAL",
-            "value": 147
+            "value": 148
         },
         {
             "description": "GetAbsoluteNoDamageMagical",
             "key": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_MAGICAL",
-            "value": 148
+            "value": 149
         },
         {
             "description": "GetAbsoluteNoDamagePure",
             "key": "MODIFIER_PROPERTY_ABSOLUTE_NO_DAMAGE_PURE",
-            "value": 149
+            "value": 150
         },
         {
             "description": "GetIsIllusion",
             "key": "MODIFIER_PROPERTY_IS_ILLUSION",
-            "value": 150
+            "value": 151
         },
         {
             "description": "GetModifierIllusionLabel",
             "key": "MODIFIER_PROPERTY_ILLUSION_LABEL",
-            "value": 151
+            "value": 152
         },
         {
             "description": "GetModifierStrongIllusion",
             "key": "MODIFIER_PROPERTY_STRONG_ILLUSION",
-            "value": 152
+            "value": 153
         },
         {
             "description": "GetModifierSuperIllusion",
             "key": "MODIFIER_PROPERTY_SUPER_ILLUSION",
-            "value": 153
+            "value": 154
         },
         {
             "description": "GetModifierSuperIllusionWithUltimate",
             "key": "MODIFIER_PROPERTY_SUPER_ILLUSION_WITH_ULTIMATE",
-            "value": 154
+            "value": 155
         },
         {
             "description": "GetModifierXPDuringDeath",
             "key": "MODIFIER_PROPERTY_XP_DURING_DEATH",
-            "value": 155
+            "value": 156
         },
         {
             "description": "GetModifierTurnRate_Percentage",
             "key": "MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE",
-            "value": 156
+            "value": 157
         },
         {
             "description": "GetModifierTurnRate_Override",
             "key": "MODIFIER_PROPERTY_TURN_RATE_OVERRIDE",
-            "value": 157
+            "value": 158
         },
         {
             "description": "GetDisableHealing",
             "key": "MODIFIER_PROPERTY_DISABLE_HEALING",
-            "value": 158
+            "value": 159
         },
         {
             "description": "GetAlwaysAllowAttack",
             "key": "MODIFIER_PROPERTY_ALWAYS_ALLOW_ATTACK",
-            "value": 159
+            "value": 160
         },
         {
             "description": "GetAllowEtherealAttack",
             "key": "MODIFIER_PROPERTY_ALWAYS_ETHEREAL_ATTACK",
-            "value": 160
+            "value": 161
         },
         {
             "description": "GetOverrideAttackMagical",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ATTACK_MAGICAL",
-            "value": 161
+            "value": 162
         },
         {
             "description": "GetModifierUnitStatsNeedsRefresh",
             "key": "MODIFIER_PROPERTY_UNIT_STATS_NEEDS_REFRESH",
-            "value": 162
-        },
-        {
-            "description": "Unused",
-            "key": "MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER",
             "value": 163
         },
         {
             "description": "Unused",
-            "key": "MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER",
+            "key": "MODIFIER_PROPERTY_BOUNTY_CREEP_MULTIPLIER",
             "value": 164
+        },
+        {
+            "description": "Unused",
+            "key": "MODIFIER_PROPERTY_BOUNTY_OTHER_MULTIPLIER",
+            "value": 165
         },
         {
             "description": "GetModifierUnitDisllowUpgrading",
             "key": "MODIFIER_PROPERTY_UNIT_DISALLOW_UPGRADING",
-            "value": 165
+            "value": 166
         },
         {
             "description": "GetModifierDodgeProjectile",
             "key": "MODIFIER_PROPERTY_DODGE_PROJECTILE",
-            "value": 166
+            "value": 167
         },
         {
             "description": "GetTriggerCosmeticAndEndAttack",
             "key": "MODIFIER_PROPERTY_TRIGGER_COSMETIC_AND_END_ATTACK",
-            "value": 167
+            "value": 168
         },
         {
             "description": "GetModifierMaxDebuffDuration",
             "key": "MODIFIER_PROPERTY_MAX_DEBUFF_DURATION",
-            "value": 168
+            "value": 169
         },
         {
             "description": "GetPrimaryStatDamageMultiplier",
             "key": "MODIFIER_PROPERTY_PRIMARY_STAT_DAMAGE_MULTIPLIER",
-            "value": 169
+            "value": 170
         },
         {
             "description": "GetModifierPreAttack_DeadlyBlow",
             "key": "MODIFIER_PROPERTY_PREATTACK_DEADLY_BLOW",
-            "value": 170
+            "value": 171
         },
         {
             "description": "GetAlwaysAutoAttackWhileHoldPosition",
             "key": "MODIFIER_PROPERTY_ALWAYS_AUTOATTACK_WHILE_HOLD_POSITION",
-            "value": 171
+            "value": 172
         },
         {
             "description": "OnSpellTargetReady",
             "key": "MODIFIER_EVENT_ON_SPELL_TARGET_READY",
-            "value": 172
+            "value": 173
         },
         {
             "description": "OnAttackRecord",
             "key": "MODIFIER_EVENT_ON_ATTACK_RECORD",
-            "value": 173
+            "value": 174
         },
         {
             "description": "OnAttackStart",
             "key": "MODIFIER_EVENT_ON_ATTACK_START",
-            "value": 174
+            "value": 175
         },
         {
             "description": "OnAttack",
             "key": "MODIFIER_EVENT_ON_ATTACK",
-            "value": 175
+            "value": 176
         },
         {
             "description": "OnAttackLanded",
             "key": "MODIFIER_EVENT_ON_ATTACK_LANDED",
-            "value": 176
+            "value": 177
         },
         {
             "description": "OnAttackFail",
             "key": "MODIFIER_EVENT_ON_ATTACK_FAIL",
-            "value": 177
+            "value": 178
         },
         {
             "description": "OnAttackAllied",
             "key": "MODIFIER_EVENT_ON_ATTACK_ALLIED",
-            "value": 178
+            "value": 179
         },
         {
             "description": "OnProjectileDodge",
             "key": "MODIFIER_EVENT_ON_PROJECTILE_DODGE",
-            "value": 179
+            "value": 180
         },
         {
             "description": "OnOrder",
             "key": "MODIFIER_EVENT_ON_ORDER",
-            "value": 180
+            "value": 181
         },
         {
             "description": "OnUnitMoved",
             "key": "MODIFIER_EVENT_ON_UNIT_MOVED",
-            "value": 181
+            "value": 182
         },
         {
             "description": "OnAbilityStart",
             "key": "MODIFIER_EVENT_ON_ABILITY_START",
-            "value": 182
+            "value": 183
         },
         {
             "description": "OnAbilityExecuted",
             "key": "MODIFIER_EVENT_ON_ABILITY_EXECUTED",
-            "value": 183
+            "value": 184
         },
         {
             "description": "OnAbilityFullyCast",
             "key": "MODIFIER_EVENT_ON_ABILITY_FULLY_CAST",
-            "value": 184
+            "value": 185
         },
         {
             "description": "OnBreakInvisibility",
             "key": "MODIFIER_EVENT_ON_BREAK_INVISIBILITY",
-            "value": 185
+            "value": 186
         },
         {
             "description": "OnAbilityEndChannel",
             "key": "MODIFIER_EVENT_ON_ABILITY_END_CHANNEL",
-            "value": 186
-        },
-        {
-            "description": "Unused",
-            "key": "MODIFIER_EVENT_ON_PROCESS_UPGRADE",
             "value": 187
         },
         {
             "description": "Unused",
-            "key": "MODIFIER_EVENT_ON_REFRESH",
+            "key": "MODIFIER_EVENT_ON_PROCESS_UPGRADE",
             "value": 188
+        },
+        {
+            "description": "Unused",
+            "key": "MODIFIER_EVENT_ON_REFRESH",
+            "value": 189
         },
         {
             "description": "OnTakeDamage",
             "key": "MODIFIER_EVENT_ON_TAKEDAMAGE",
-            "value": 189
+            "value": 190
         },
         {
             "description": "OnDamagePrevented",
             "key": "MODIFIER_EVENT_ON_DEATH_PREVENTED",
-            "value": 190
+            "value": 191
         },
         {
             "description": "OnStateChanged",
             "key": "MODIFIER_EVENT_ON_STATE_CHANGED",
-            "value": 191
+            "value": 192
         },
         {
             "description": "Unused",
             "key": "MODIFIER_EVENT_ON_ORB_EFFECT",
-            "value": 192
+            "value": 193
         },
         {
             "description": "OnProcessCleave",
             "key": "MODIFIER_EVENT_ON_PROCESS_CLEAVE",
-            "value": 193
+            "value": 194
         },
         {
             "description": "OnDamageCalculated",
             "key": "MODIFIER_EVENT_ON_DAMAGE_CALCULATED",
-            "value": 194
+            "value": 195
         },
         {
             "description": "OnMagicDamageCalculated",
             "key": "MODIFIER_EVENT_ON_MAGIC_DAMAGE_CALCULATED",
-            "value": 195
+            "value": 196
         },
         {
             "description": "OnAttacked",
             "key": "MODIFIER_EVENT_ON_ATTACKED",
-            "value": 196
+            "value": 197
         },
         {
             "description": "OnDeath",
             "key": "MODIFIER_EVENT_ON_DEATH",
-            "value": 197
+            "value": 198
         },
         {
             "description": "OnRespawn",
             "key": "MODIFIER_EVENT_ON_RESPAWN",
-            "value": 198
+            "value": 199
         },
         {
             "description": "OnSpentMana",
             "key": "MODIFIER_EVENT_ON_SPENT_MANA",
-            "value": 199
+            "value": 200
         },
         {
             "description": "OnTeleporting",
             "key": "MODIFIER_EVENT_ON_TELEPORTING",
-            "value": 200
+            "value": 201
         },
         {
             "description": "OnTeleported",
             "key": "MODIFIER_EVENT_ON_TELEPORTED",
-            "value": 201
+            "value": 202
         },
         {
             "description": "OnSetLocation",
             "key": "MODIFIER_EVENT_ON_SET_LOCATION",
-            "value": 202
+            "value": 203
         },
         {
             "description": "OnHealthGained",
             "key": "MODIFIER_EVENT_ON_HEALTH_GAINED",
-            "value": 203
+            "value": 204
         },
         {
             "description": "OnManaGained",
             "key": "MODIFIER_EVENT_ON_MANA_GAINED",
-            "value": 204
+            "value": 205
         },
         {
             "description": "OnTakeDamageKillCredit",
             "key": "MODIFIER_EVENT_ON_TAKEDAMAGE_KILLCREDIT",
-            "value": 205
+            "value": 206
         },
         {
             "description": "OnHeroKilled",
             "key": "MODIFIER_EVENT_ON_HERO_KILLED",
-            "value": 206
+            "value": 207
         },
         {
             "description": "OnHealReceived",
             "key": "MODIFIER_EVENT_ON_HEAL_RECEIVED",
-            "value": 207
+            "value": 208
         },
         {
             "description": "OnBuildingKilled",
             "key": "MODIFIER_EVENT_ON_BUILDING_KILLED",
-            "value": 208
+            "value": 209
         },
         {
             "description": "OnModelChanged",
             "key": "MODIFIER_EVENT_ON_MODEL_CHANGED",
-            "value": 209
+            "value": 210
         },
         {
             "description": "OnModifierAdded",
             "key": "MODIFIER_EVENT_ON_MODIFIER_ADDED",
-            "value": 210
+            "value": 211
         },
         {
             "description": "OnTooltip",
             "key": "MODIFIER_PROPERTY_TOOLTIP",
-            "value": 211
+            "value": 212
         },
         {
             "description": "GetModifierModelChange",
             "key": "MODIFIER_PROPERTY_MODEL_CHANGE",
-            "value": 212
+            "value": 213
         },
         {
             "description": "GetModifierModelScale",
             "key": "MODIFIER_PROPERTY_MODEL_SCALE",
-            "value": 213
+            "value": 214
         },
         {
             "description": "GetModifierScepter",
             "key": "MODIFIER_PROPERTY_IS_SCEPTER",
-            "value": 214
+            "value": 215
         },
         {
             "description": "GetModifierShard",
             "key": "MODIFIER_PROPERTY_IS_SHARD",
-            "value": 215
+            "value": 216
         },
         {
             "description": "GetModifierRadarCooldownReduction",
             "key": "MODIFIER_PROPERTY_RADAR_COOLDOWN_REDUCTION",
-            "value": 216
+            "value": 217
         },
         {
             "description": "GetActivityTranslationModifiers",
             "key": "MODIFIER_PROPERTY_TRANSLATE_ACTIVITY_MODIFIERS",
-            "value": 217
+            "value": 218
         },
         {
             "description": "GetAttackSound",
             "key": "MODIFIER_PROPERTY_TRANSLATE_ATTACK_SOUND",
-            "value": 218
+            "value": 219
         },
         {
             "description": "GetUnitLifetimeFraction",
             "key": "MODIFIER_PROPERTY_LIFETIME_FRACTION",
-            "value": 219
+            "value": 220
         },
         {
             "description": "GetModifierProvidesFOWVision",
             "key": "MODIFIER_PROPERTY_PROVIDES_FOW_POSITION",
-            "value": 220
+            "value": 221
         },
         {
             "description": "GetModifierSpellsRequireHP",
             "key": "MODIFIER_PROPERTY_SPELLS_REQUIRE_HP",
-            "value": 221
+            "value": 222
         },
         {
             "description": "GetForceDrawOnMinimap",
             "key": "MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP",
-            "value": 222
+            "value": 223
         },
         {
             "description": "GetModifierDisableTurning",
             "key": "MODIFIER_PROPERTY_DISABLE_TURNING",
-            "value": 223
+            "value": 224
         },
         {
             "description": "GetModifierIgnoreCastAngle",
             "key": "MODIFIER_PROPERTY_IGNORE_CAST_ANGLE",
-            "value": 224
+            "value": 225
         },
         {
             "description": "GetModifierChangeAbilityValue",
             "key": "MODIFIER_PROPERTY_CHANGE_ABILITY_VALUE",
-            "value": 225
+            "value": 226
         },
         {
             "description": "GetModifierOverrideAbilitySpecial",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL",
-            "value": 226
+            "value": 227
         },
         {
             "description": "GetModifierOverrideAbilitySpecialValue",
             "key": "MODIFIER_PROPERTY_OVERRIDE_ABILITY_SPECIAL_VALUE",
-            "value": 227
+            "value": 228
         },
         {
             "description": "GetModifierAbilityLayout",
             "key": "MODIFIER_PROPERTY_ABILITY_LAYOUT",
-            "value": 228
+            "value": 229
         },
         {
             "description": "OnDominated",
             "key": "MODIFIER_EVENT_ON_DOMINATED",
-            "value": 229
+            "value": 230
         },
         {
             "description": "OnKill",
             "key": "MODIFIER_EVENT_ON_KILL",
-            "value": 230
+            "value": 231
         },
         {
             "description": "OnAssist",
             "key": "MODIFIER_EVENT_ON_ASSIST",
-            "value": 231
+            "value": 232
         },
         {
             "description": "GetModifierTempestDouble",
             "key": "MODIFIER_PROPERTY_TEMPEST_DOUBLE",
-            "value": 232
+            "value": 233
         },
         {
             "description": "PreserveParticlesOnModelChanged",
             "key": "MODIFIER_PROPERTY_PRESERVE_PARTICLES_ON_MODEL_CHANGE",
-            "value": 233
+            "value": 234
         },
         {
             "description": "OnAttackFinished",
             "key": "MODIFIER_EVENT_ON_ATTACK_FINISHED",
-            "value": 234
+            "value": 235
         },
         {
             "description": "GetModifierIgnoreCooldown",
             "key": "MODIFIER_PROPERTY_IGNORE_COOLDOWN",
-            "value": 235
+            "value": 236
         },
         {
             "description": "GetModifierCanAttackTrees",
             "key": "MODIFIER_PROPERTY_CAN_ATTACK_TREES",
-            "value": 236
+            "value": 237
         },
         {
             "description": "GetVisualZDelta",
             "key": "MODIFIER_PROPERTY_VISUAL_Z_DELTA",
-            "value": 237
+            "value": 238
         },
         {
             "key": "MODIFIER_PROPERTY_INCOMING_DAMAGE_ILLUSION",
-            "value": 238
+            "value": 239
         },
         {
             "description": "GetModifierNoVisionOfAttacker",
             "key": "MODIFIER_PROPERTY_DONT_GIVE_VISION_OF_ATTACKER",
-            "value": 239
+            "value": 240
         },
         {
             "description": "OnTooltip2",
             "key": "MODIFIER_PROPERTY_TOOLTIP2",
-            "value": 240
+            "value": 241
         },
         {
             "description": "OnAttackRecordDestroy",
             "key": "MODIFIER_EVENT_ON_ATTACK_RECORD_DESTROY",
-            "value": 241
+            "value": 242
         },
         {
             "description": "OnProjectileObstructionHit",
             "key": "MODIFIER_EVENT_ON_PROJECTILE_OBSTRUCTION_HIT",
-            "value": 242
+            "value": 243
         },
         {
             "description": "GetSuppressTeleport",
             "key": "MODIFIER_PROPERTY_SUPPRESS_TELEPORT",
-            "value": 243
+            "value": 244
         },
         {
             "description": "OnAttackCancelled",
             "key": "MODIFIER_EVENT_ON_ATTACK_CANCELLED",
-            "value": 244
+            "value": 245
         },
         {
             "description": "GetSuppressCleave",
             "key": "MODIFIER_PROPERTY_SUPPRESS_CLEAVE",
-            "value": 245
+            "value": 246
         },
         {
             "description": "BotAttackScoreBonus",
             "key": "MODIFIER_PROPERTY_BOT_ATTACK_SCORE_BONUS",
-            "value": 246
+            "value": 247
         },
         {
             "description": "GetModifierAttackSpeedReductionPercentage",
             "key": "MODIFIER_PROPERTY_ATTACKSPEED_REDUCTION_PERCENTAGE",
-            "value": 247
+            "value": 248
         },
         {
             "description": "GetModifierMoveSpeedReductionPercentage",
             "key": "MODIFIER_PROPERTY_MOVESPEED_REDUCTION_PERCENTAGE",
-            "value": 248
+            "value": 249
         },
         {
             "key": "MODIFIER_PROPERTY_ATTACK_WHILE_MOVING_TARGET",
-            "value": 249
+            "value": 250
         },
         {
             "description": "GetModifierAttackSpeedPercentage",
             "key": "MODIFIER_PROPERTY_ATTACKSPEED_PERCENTAGE",
-            "value": 250
+            "value": 251
         },
         {
             "description": "OnAttemptProjectileDodge",
             "key": "MODIFIER_EVENT_ON_ATTEMPT_PROJECTILE_DODGE",
-            "value": 251
+            "value": 252
         },
         {
             "description": "OnPreDebuffApplied",
             "key": "MODIFIER_EVENT_ON_PREDEBUFF_APPLIED",
-            "value": 252
+            "value": 253
         },
         {
             "description": "GetModifierPercentageCooldownStacking",
             "key": "MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING",
-            "value": 253
-        },
-        {
-            "key": "MODIFIER_FUNCTION_LAST",
             "value": 254
         },
         {
-            "key": "MODIFIER_FUNCTION_INVALID",
+            "description": "GetModifierSpellRedirectTarget",
+            "key": "MODIFIER_PROPERTY_SPELL_REDIRECT_TARGET",
             "value": 255
+        },
+        {
+            "description": "GetModifierTurnRateConstant",
+            "key": "MODIFIER_PROPERTY_TURN_RATE_CONSTANT",
+            "value": 256
+        },
+        {
+            "description": "GetModifierIsRatPack",
+            "key": "MODIFIER_PROPERTY_RAT_PACK",
+            "value": 257
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 258
+        },
+        {
+            "key": "MODIFIER_FUNCTION_INVALID",
+            "value": 65535
         }
     ],
     "modifierpriority": [

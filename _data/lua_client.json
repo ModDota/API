@@ -426,7 +426,7 @@
             "Axis": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "bool",
                     "float"
@@ -453,7 +453,7 @@
                     "vector",
                     "vector",
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "int",
                     "int",
                     "int",
@@ -467,7 +467,7 @@
             "Capsule": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "float",
                     "int",
@@ -483,7 +483,7 @@
             "Circle": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "int",
                     "int",
@@ -556,7 +556,7 @@
             "Cross3DOriented": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "int",
                     "int",
@@ -755,7 +755,7 @@
                     "vector",
                     "vector",
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "int",
                     "int",
                     "int",
@@ -814,7 +814,7 @@
             "VectorText3D": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "cstring",
                     "int",
                     "int",
@@ -1417,7 +1417,7 @@
             },
             "GetBehavior": {
                 "args": [],
-                "return": "int"
+                "return": "double"
             },
             "GetBehaviorInt": {
                 "args": [],
@@ -1521,6 +1521,15 @@
                 "description": "Controls the size of the AOE casting cursor.",
                 "return": "float"
             },
+            "GetAbilityChargeRestoreTime": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "float"
+            },
             "GetAbilityTextureName": {
                 "args": [],
                 "description": "Allows code overriding of the ability texture shown in the HUD.",
@@ -1558,6 +1567,11 @@
                     "int"
                 ],
                 "return": "int"
+            },
+            "GetChannelStartTime": {
+                "args": [],
+                "description": "Return the channel start time of this ability.",
+                "return": "float"
             },
             "GetChannelTime": {
                 "args": [],
@@ -1609,6 +1623,16 @@
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
                 "return": "cstring"
             },
+            "GetCustomHudErrorMessage": {
+                "arg_names": [
+                    "nReason"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "(DOTA_INVALID_ORDERS nReason) Return the error string of a failed order.",
+                "return": "cstring"
+            },
             "GetEffectiveCastRange": {
                 "arg_names": [
                     "vLocation",
@@ -1640,6 +1664,11 @@
                 ],
                 "description": "Return mana cost at the given level (-1 is current).",
                 "return": "int"
+            },
+            "IsAttributeBonus": {
+                "args": [],
+                "description": "Is this ability an Attribute Bonus.",
+                "return": "bool"
             },
             "IsHiddenAbilityCastable": {
                 "args": [],
@@ -2308,7 +2337,7 @@
             "GetBehavior": {
                 "args": [],
                 "description": "Return cast behavior type of this ability.",
-                "return": "int"
+                "return": "double"
             },
             "GetCastRange": {
                 "arg_names": [
@@ -2321,6 +2350,11 @@
                 ],
                 "description": "Return cast range of this ability.",
                 "return": "int"
+            },
+            "GetChannelStartTime": {
+                "args": [],
+                "description": "Return the channel start time of this ability.",
+                "return": "float"
             },
             "GetChannelTime": {
                 "args": [],
@@ -2370,6 +2404,16 @@
                     "handle"
                 ],
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
+                "return": "cstring"
+            },
+            "GetCustomHudErrorMessage": {
+                "arg_names": [
+                    "nReason"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "(DOTA_INVALID_ORDERS nReason) Return the error string of a failed order.",
                 "return": "cstring"
             },
             "GetEffectiveCastRange": {

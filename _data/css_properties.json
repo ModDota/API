@@ -586,6 +586,7 @@
             "text-overflow: ellipsis;",
             "text-overflow: clip;",
             "text-overflow: shrink;",
+            "text-overflow: shrink min( 10px );",
             "text-overflow: noclip;"
         ]
     },

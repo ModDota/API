@@ -320,6 +320,18 @@
                 "description": "hEntity to follow, bool bBoneMerge",
                 "return": "void"
             },
+            "FollowEntityMerge": {
+                "arg_names": [
+                    "hEnt",
+                    "pszBoneOrAttachName"
+                ],
+                "args": [
+                    "handle",
+                    "cstring"
+                ],
+                "description": "hEntity to follow, string BoneOrAttachName",
+                "return": "void"
+            },
             "GatherCriteria": {
                 "arg_names": [
                     "hResult"
@@ -402,6 +414,11 @@
                 "description": "Get the health of this entity.",
                 "return": "int"
             },
+            "GetLeftVector": {
+                "args": [],
+                "description": "Get the left vector of the entity.",
+                "return": "vector"
+            },
             "GetLocalAngles": {
                 "args": [],
                 "description": "Get entity local pitch, yaw, roll as a QAngle",
@@ -462,7 +479,7 @@
             },
             "GetRightVector": {
                 "args": [],
-                "description": "Get the right vector of the entity.",
+                "description": "Get the right vector of the entity. WARNING: This produces a left-handed coordinate system. Use GetLeftVector instead (which is aligned with the y axis of the entity).",
                 "return": "vector"
             },
             "GetRootMoveParent": {
@@ -1386,6 +1403,17 @@
                 "args": [],
                 "return": "void"
             },
+            "EnableAbilityChargesOnTalentUpgrade": {
+                "arg_names": [
+                    "hAbility",
+                    "pszTalentName"
+                ],
+                "args": [
+                    "handle",
+                    "cstring"
+                ],
+                "return": "void"
+            },
             "EndChannel": {
                 "arg_names": [
                     "bInterrupted"
@@ -1403,6 +1431,15 @@
             "GetAOERadius": {
                 "args": [],
                 "return": "int"
+            },
+            "GetAbilityChargeRestoreTime": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "float"
             },
             "GetAbilityDamage": {
                 "args": [],
@@ -1464,7 +1501,7 @@
             },
             "GetBehavior": {
                 "args": [],
-                "return": "int"
+                "return": "double"
             },
             "GetBehaviorInt": {
                 "args": [],
@@ -1578,6 +1615,15 @@
                     "int"
                 ],
                 "return": "float"
+            },
+            "GetEffectiveManaCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "int"
             },
             "GetGoldCost": {
                 "arg_names": [
@@ -2264,6 +2310,11 @@
                 "description": "Are in-game announcers disabled?",
                 "return": "bool"
             },
+            "GetAnnouncerGameModeAnnounceDisabled": {
+                "args": [],
+                "description": "Is the announcer announcing the mode / saying Choose Your Hero on start of custom games disabled?",
+                "return": "bool"
+            },
             "GetCameraDistanceOverride": {
                 "args": [],
                 "description": "Set a different camera distance; dota default is 1134.",
@@ -2417,7 +2468,7 @@
             "GetWaterRuneLastSpawnTime": {
                 "args": [],
                 "description": "Gets the time from game start during which water runes spawn",
-                "return": "int"
+                "return": "float"
             },
             "IsAbilityUpgradeWhitelisted": {
                 "arg_names": [
@@ -2557,6 +2608,16 @@
                     "bool"
                 ],
                 "description": "Mutes the in-game announcer.",
+                "return": "void"
+            },
+            "SetAnnouncerGameModeAnnounceDisabled": {
+                "arg_names": [
+                    "bDisabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Disables the announcer announcing the mode / saying Choose Your Hero on start of custom games.",
                 "return": "void"
             },
             "SetBotThinkingEnabled": {
@@ -2842,6 +2903,16 @@
                     "bool"
                 ],
                 "description": "Specify whether the full screen death overlay effect plays when the selected hero dies.",
+                "return": "void"
+            },
+            "SetDeathTipsDisabled": {
+                "arg_names": [
+                    "bDisabled"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "description": "Disables chat tips on death.",
                 "return": "void"
             },
             "SetDefaultStickyItem": {
@@ -3438,10 +3509,10 @@
             },
             "SetWaterRuneLastSpawnTime": {
                 "arg_names": [
-                    "nValue"
+                    "flValue"
                 ],
                 "args": [
-                    "int"
+                    "float"
                 ],
                 "description": "Sets the time from game start during which water runes spawn",
                 "return": "void"
@@ -3897,6 +3968,16 @@
                 "description": "Is it night stalker night-time?",
                 "return": "bool"
             },
+            "IsSuggestAbilitiesEnabled": {
+                "args": [],
+                "description": "Returns whether Dota Plus ability suggestions are enabled or disabled",
+                "return": "bool"
+            },
+            "IsSuggestItemsEnabled": {
+                "args": [],
+                "description": "Returns whether Dota Plus item suggestions are enabled or disabled",
+                "return": "bool"
+            },
             "IsTemporaryNight": {
                 "args": [],
                 "description": "Is it temporarily night-time?",
@@ -4000,6 +4081,13 @@
             "ResetGameTime": {
                 "args": [],
                 "description": "Restart gametime from 0",
+                "return": "void"
+            },
+            "ResetPlayer": {
+                "args": [
+                    "int"
+                ],
+                "description": "Resets the player of a given ID.",
                 "return": "void"
             },
             "ResetToCustomGameSetup": {
@@ -4309,6 +4397,27 @@
                 "description": "Show this unit's health on the overlay health bar",
                 "return": "void"
             },
+            "SetPostGameColumns": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Set columns to show in post game",
+                "return": "bool"
+            },
+            "SetPostGameLayout": {
+                "args": [
+                    "int"
+                ],
+                "description": "Configure post game to be single or double column layout",
+                "return": "void"
+            },
+            "SetPostGameTeamScores": {
+                "args": [
+                    "handle"
+                ],
+                "description": "Set score value for each team. First element is for DOTA_TEAM_GOODGUYS.",
+                "return": "bool"
+            },
             "SetPostGameTime": {
                 "args": [
                     "float"
@@ -4385,6 +4494,20 @@
                     "float"
                 ],
                 "description": "Sets the amount of time players have between the hero selection and entering the showcase phase.",
+                "return": "void"
+            },
+            "SetSuggestAbilitiesEnabled": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets Dota Plus ability suggestions enabled or disabled",
+                "return": "void"
+            },
+            "SetSuggestItemsEnabled": {
+                "args": [
+                    "bool"
+                ],
+                "description": "Sets Dota Plus ability item enabled or disabled",
                 "return": "void"
             },
             "SetTimeOfDay": {
@@ -4850,6 +4973,15 @@
                 "description": "Controls the size of the AOE casting cursor.",
                 "return": "float"
             },
+            "GetAbilityChargeRestoreTime": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "float"
+            },
             "GetAssociatedPrimaryAbilities": {
                 "args": [],
                 "description": "Returns abilities that are stolen simultaneously, or otherwise related in functionality.",
@@ -4902,6 +5034,11 @@
                 "args": [],
                 "description": "Return channel animation of this ability.",
                 "return": "int"
+            },
+            "GetChannelStartTime": {
+                "args": [],
+                "description": "Return the channel start time of this ability.",
+                "return": "float"
             },
             "GetChannelTime": {
                 "args": [],
@@ -4958,6 +5095,16 @@
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
                 "return": "cstring"
             },
+            "GetCustomHudErrorMessage": {
+                "arg_names": [
+                    "nReason"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "(DOTA_INVALID_ORDERS nReason) Return the error string of a failed order.",
+                "return": "cstring"
+            },
             "GetEffectiveCastRange": {
                 "arg_names": [
                     "vLocation",
@@ -4999,6 +5146,11 @@
                 "args": [],
                 "description": "Return the animation rate of the cast animation.",
                 "return": "float"
+            },
+            "IsAttributeBonus": {
+                "args": [],
+                "description": "Is this ability an Attribute Bonus.",
+                "return": "bool"
             },
             "IsCosmetic": {
                 "arg_names": [
@@ -5050,6 +5202,15 @@
                     "bool"
                 ],
                 "description": "The ability was pinged (nPlayerID, bCtrlHeld).",
+                "return": "void"
+            },
+            "OnAbilityUpgrade": {
+                "arg_names": [
+                    "hUpgradeAbility"
+                ],
+                "args": [
+                    "handle"
+                ],
                 "return": "void"
             },
             "OnChannelFinish": {
@@ -6879,7 +7040,7 @@
                     "float"
                 ],
                 "description": "Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.",
-                "return": "void"
+                "return": "float"
             },
             "RemoveAbility": {
                 "arg_names": [
@@ -9343,7 +9504,7 @@
             "GetBehavior": {
                 "args": [],
                 "description": "Return cast behavior type of this ability.",
-                "return": "int"
+                "return": "double"
             },
             "GetCastRange": {
                 "arg_names": [
@@ -9356,6 +9517,11 @@
                 ],
                 "description": "Return cast range of this ability.",
                 "return": "int"
+            },
+            "GetChannelStartTime": {
+                "args": [],
+                "description": "Return the channel start time of this ability.",
+                "return": "float"
             },
             "GetChannelTime": {
                 "args": [],
@@ -9410,6 +9576,16 @@
                     "handle"
                 ],
                 "description": "(HSCRIPT hTarget) Return the error string of a failed command on a target.",
+                "return": "cstring"
+            },
+            "GetCustomHudErrorMessage": {
+                "arg_names": [
+                    "nReason"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "(DOTA_INVALID_ORDERS nReason) Return the error string of a failed order.",
                 "return": "cstring"
             },
             "GetEffectiveCastRange": {
@@ -10189,6 +10365,15 @@
                 ],
                 "return": "void"
             },
+            "ClearPlayer": {
+                "arg_names": [
+                    "iPlayerID"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "void"
+            },
             "ClearRawPlayerDamageMatrix": {
                 "arg_names": [
                     "iPlayerID"
@@ -10347,30 +10532,6 @@
                 "args": [
                     "int"
                 ],
-                "return": "int"
-            },
-            "GetEventGameCustomActionClaimCount": {
-                "arg_names": [
-                    "nPlayerID",
-                    "unActionID"
-                ],
-                "args": [
-                    "int",
-                    "uint"
-                ],
-                "description": "(nPlayerID, nActionID)",
-                "return": "int"
-            },
-            "GetEventGameCustomActionClaimCountByName": {
-                "arg_names": [
-                    "nPlayerID",
-                    "pActionName"
-                ],
-                "args": [
-                    "int",
-                    "cstring"
-                ],
-                "description": "(nPlayerID, pActionName)",
                 "return": "int"
             },
             "GetEventGameUpgrades": {
@@ -10593,6 +10754,30 @@
                 "args": [
                     "int"
                 ],
+                "return": "int"
+            },
+            "GetNetworkedEventActionClaimCount": {
+                "arg_names": [
+                    "nPlayerID",
+                    "unActionID"
+                ],
+                "args": [
+                    "int",
+                    "uint"
+                ],
+                "description": "(nPlayerID, nActionID)",
+                "return": "int"
+            },
+            "GetNetworkedEventActionClaimCountByName": {
+                "arg_names": [
+                    "nPlayerID",
+                    "pActionName"
+                ],
+                "args": [
+                    "int",
+                    "cstring"
+                ],
+                "description": "(nPlayerID, pActionName)",
                 "return": "int"
             },
             "GetNthCourierForTeam": {
@@ -10971,7 +11156,7 @@
                 ],
                 "return": "bool"
             },
-            "HasSetEventGameCustomActionClaimCount": {
+            "HasSetNetworkedEventActionClaimCount": {
                 "args": [],
                 "return": "bool"
             },
@@ -11709,7 +11894,7 @@
             "Axis": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "bool",
                     "float"
@@ -11736,7 +11921,7 @@
                     "vector",
                     "vector",
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "int",
                     "int",
                     "int",
@@ -11750,7 +11935,7 @@
             "Capsule": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "float",
                     "int",
@@ -11766,7 +11951,7 @@
             "Circle": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "int",
                     "int",
@@ -11839,7 +12024,7 @@
             "Cross3DOriented": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "float",
                     "int",
                     "int",
@@ -12038,7 +12223,7 @@
                     "vector",
                     "vector",
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "int",
                     "int",
                     "int",
@@ -12097,7 +12282,7 @@
             "VectorText3D": {
                 "args": [
                     "vector",
-                    "quaternion",
+                    "<unknown>",
                     "cstring",
                     "int",
                     "int",
@@ -14140,6 +14325,18 @@
                     "handle",
                     "int",
                     "bool"
+                ],
+                "description": "Drop a neutral item for the team of the hero at the given tier.",
+                "return": "handle"
+            },
+            "DropNeutralItemAtPositionForHeroWithOffset": {
+                "args": [
+                    "cstring",
+                    "vector",
+                    "handle",
+                    "int",
+                    "bool",
+                    "vector"
                 ],
                 "description": "Drop a neutral item for the team of the hero at the given tier.",
                 "return": "handle"
