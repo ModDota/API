@@ -7645,11 +7645,11 @@
             "value": 1764
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACD_DOTA_IDLE",
             "value": 1765
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1766
         },
         {
@@ -7665,15 +7665,15 @@
             "value": 1769
         },
         {
-            "key": "radiant_melee_mars_shieldbash",
+            "key": "ACT_DOTA_SPWN",
             "value": 1770
         },
         {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1771
         },
         {
-            "key": "ACT_DOTA_SPWN",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1772
         },
         {
