@@ -734,6 +734,7 @@
     "modifier_attribute_bonus",
     "modifier_axe_battle_hunger",
     "modifier_axe_battle_hunger_self",
+    "modifier_axe_battle_hunger_self_movespeed",
     "modifier_axe_berserkers_call",
     "modifier_axe_berserkers_call_armor",
     "modifier_axe_counter_helix",
