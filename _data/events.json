@@ -150,11 +150,21 @@
         ]
     },
     "DOTALiveStreamVideoLive": {
-        "description": "Notify change in video state (is it pointing at a live stream page or not)",
+        "description": "Notify change in stream state (we detected the stream going live)",
         "panelEvent": true,
         "args": [
             {
                 "name": "isLive",
+                "type": "bool"
+            }
+        ]
+    },
+    "DOTALiveStreamVideoPlaying": {
+        "description": "Notify change in video state (is it pointing at a live stream page or not)",
+        "panelEvent": true,
+        "args": [
+            {
+                "name": "isShowingVideo",
                 "type": "bool"
             }
         ]
