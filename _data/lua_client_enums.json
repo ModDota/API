@@ -7653,35 +7653,35 @@
             "value": 1766
         },
         {
-            "key": "ACT_DOTA_RELAX_IN",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1767
         },
         {
-            "key": "ACT_DOTA_RELAX_OUT",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1768
         },
         {
-            "key": "ACT_DOTA_CAST_FENCE",
+            "key": "ACT_DOTA_RUN_ALT",
             "value": 1769
         },
         {
-            "key": "radiant_melee_mars_shieldbash",
+            "key": "ACT_DOTA_VOODOO_REST",
             "value": 1770
         },
         {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+            "key": "ACT_DOTA_RELAX_IN",
             "value": 1771
         },
         {
-            "key": "ACT_DOTA_SPWN",
+            "key": "ACT_DOTA_RELAX_OUT",
             "value": 1772
         },
         {
-            "key": "ACT_DOTA_RUN_ALT",
+            "key": "ACT_DOTA_CAST_FENCE",
             "value": 1773
         },
         {
-            "key": "ACT_DOTA_VOODOO_REST",
+            "key": "ACT_DOTA_SPWN",
             "value": 1774
         },
         {
