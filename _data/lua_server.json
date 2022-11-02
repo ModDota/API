@@ -10759,25 +10759,29 @@
             "GetNetworkedEventActionClaimCount": {
                 "arg_names": [
                     "nPlayerID",
+                    "nEventID",
                     "unActionID"
                 ],
                 "args": [
                     "int",
+                    "int",
                     "uint"
                 ],
-                "description": "(nPlayerID, nActionID)",
+                "description": "(nPlayerID, eEvent, nActionID)",
                 "return": "int"
             },
             "GetNetworkedEventActionClaimCountByName": {
                 "arg_names": [
                     "nPlayerID",
+                    "nEventID",
                     "pActionName"
                 ],
                 "args": [
                     "int",
+                    "int",
                     "cstring"
                 ],
-                "description": "(nPlayerID, pActionName)",
+                "description": "(nPlayerID, eEvent, pActionName)",
                 "return": "int"
             },
             "GetNthCourierForTeam": {
