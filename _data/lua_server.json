@@ -3873,6 +3873,11 @@
                 "description": "Have we received the post match signout message that includes reward information",
                 "return": "bool"
             },
+            "GetNeutralInitialSpawnOffset": {
+                "args": [],
+                "description": "Gets the extra offset to initial neutral creep spawn delay",
+                "return": "float"
+            },
             "GetNextBountyRuneSpawnTime": {
                 "args": [],
                 "description": "Gets next bounty rune spawn time",
@@ -4373,6 +4378,13 @@
                     "int"
                 ],
                 "description": "Set the stock count of the item",
+                "return": "void"
+            },
+            "SetNeutralInitialSpawnOffset": {
+                "args": [
+                    "float"
+                ],
+                "description": "Sets the extra offset to initial neutral creep spawn delay",
                 "return": "void"
             },
             "SetNextBountyRuneSpawnTime": {
@@ -6270,6 +6282,10 @@
                 "args": [],
                 "return": "cstring"
             },
+            "GetRemainingPathLength": {
+                "args": [],
+                "return": "float"
+            },
             "GetSecondsPerAttack": {
                 "args": [],
                 "return": "float"
@@ -6547,6 +6563,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsFeared": {
+                "args": [],
+                "return": "bool"
+            },
             "IsFort": {
                 "args": [],
                 "description": "Is this unit an Ancient?",
@@ -6559,6 +6579,11 @@
             "IsHero": {
                 "args": [],
                 "description": "Is this a hero or hero illusion?",
+                "return": "bool"
+            },
+            "IsHeroWard": {
+                "args": [],
+                "description": "Is this a Hero Ward?",
                 "return": "bool"
             },
             "IsHexed": {
@@ -6706,6 +6731,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsStrongIllusion": {
+                "args": [],
+                "return": "bool"
+            },
             "IsStunned": {
                 "args": [],
                 "return": "bool"
@@ -6713,6 +6742,10 @@
             "IsSummoned": {
                 "args": [],
                 "description": "Is this unit summoned?",
+                "return": "bool"
+            },
+            "IsTaunted": {
+                "args": [],
                 "return": "bool"
             },
             "IsTempestDouble": {
@@ -6734,6 +6767,11 @@
             },
             "IsUntargetable": {
                 "args": [],
+                "return": "bool"
+            },
+            "IsWard": {
+                "args": [],
+                "description": "Is this a Ward?",
                 "return": "bool"
             },
             "IsZombie": {
@@ -6886,6 +6924,16 @@
                 "args": [
                     "bool"
                 ],
+                "return": "void"
+            },
+            "OnCommandMoveToDirection": {
+                "arg_names": [
+                    "pos"
+                ],
+                "args": [
+                    "vector"
+                ],
+                "description": "Tells the underlying AI to move in the given direction, skipping Dota orders",
                 "return": "void"
             },
             "PassivesDisabled": {
@@ -7632,6 +7680,15 @@
                 "description": "sets the client side map reveal radius for this unit",
                 "return": "void"
             },
+            "SetShouldComputeRemainingPathLength": {
+                "arg_names": [
+                    "bCompute"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
             "SetShouldDoFlyHeightVisual": {
                 "arg_names": [
                     "bShouldVisuallyFly"
@@ -7726,6 +7783,22 @@
                     "float"
                 ],
                 "description": "Add the given gesture activity faded according to to the parameters.",
+                "return": "void"
+            },
+            "StartGestureWithFadeAndPlaybackRate": {
+                "arg_names": [
+                    "nActivity",
+                    "fFadeIn",
+                    "fFadeOut",
+                    "flRate"
+                ],
+                "args": [
+                    "int",
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "description": "Add the given gesture activity faded according to to the parameters and with a playback rate override.",
                 "return": "void"
             },
             "StartGestureWithPlaybackRate": {
@@ -14579,6 +14652,14 @@
                 "description": "Returns the currently active spawn group handle",
                 "return": "int"
             },
+            "GetClearSpaceForUnit": {
+                "args": [
+                    "handle",
+                    "vector"
+                ],
+                "description": "Returns a location for the unit that is not already occupied.",
+                "return": "vector"
+            },
             "GetDedicatedServerKey": {
                 "args": [
                     "cstring"
@@ -14587,6 +14668,13 @@
                 "return": "cstring"
             },
             "GetDedicatedServerKeyV2": {
+                "args": [
+                    "cstring"
+                ],
+                "description": "( version )",
+                "return": "cstring"
+            },
+            "GetDedicatedServerKeyV3": {
                 "args": [
                     "cstring"
                 ],
@@ -15079,6 +15167,15 @@
                 ],
                 "description": "Get a random 2D vector of the given length.",
                 "return": "vector"
+            },
+            "RecordNeutralItemEarned": {
+                "args": [
+                    "handle",
+                    "handle",
+                    "int"
+                ],
+                "description": "Record in player resources that a new neutral item has been created, if it hasn't already been, and show a toast.",
+                "return": "void"
             },
             "RegisterCustomAnimationScriptForModel": {
                 "args": [

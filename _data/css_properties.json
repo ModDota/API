@@ -278,10 +278,10 @@
         ]
     },
     "box-shadow": {
-        "description": "Specifies outer shadows for boxes, or inset shadows/glows. The shadow shape will match the border box for the panel,so use border-radius to affect rounding.  Syntax takes optional 'inset', optional 'fill' then color, and then horizontal offset pixels, vertical offset pixels, blur radius pixels, and spread distance in pixels. Inset means the shadow is an inner shadow/glow, fill is valid only on outer shadows and means draw the shadow behind the entire box, not clipping it to outside the border area only. A negative blur radius will give a hard-edged look to the shadow, effectively a rounded outline of the same size as the blur.",
+        "description": "Specifies shadows for boxes, or inset shadows/glows. The shadow shape will match the border box for the panel,so use border-radius to affect rounding.  Syntax takes optional shape 'inset', 'fill', or 'hollow', then color, horizontal offset pixels, vertical offset pixels, blur radius pixels, and spread distance in pixels. Inset means the shadow is an inner shadow/glow, fill is a a shadow behind the entire box, hollow means clipping it to outside the border area only (before offset). A negative blur radius will give a hard-edged look to the shadow, effectively a rounded outline of the same size as the blur.",
         "examples": [
-            "box-shadow: #ffffff80 4px 4px 8px 0px; // outer",
-            "box-shadow: fill #ffffff80 4px 4px 8px 0px; // outer, filled",
+            "box-shadow: #ffffff80 4px 4px 8px 0px; // outer, filled",
+            "box-shadow: hollow #ffffff80 4px 4px 8px 0px; // outer, hollow",
             "box-shadow: inset #333333b0 0px 0px 8px 12px; // inner"
         ]
     },
@@ -294,7 +294,8 @@
     "clip": {
         "description": "Specifies a clip region within the panel, where contents will be clipped at render time. This clipping has no impact on layout, and is fast and supported for transitions/animations. Radial clip mode takes a center point, start angle and angular width of the revealed sector.",
         "examples": [
-            "clip: rect( 10%, 90%, 90%, 10% );clip: radial( 50% %50, 0deg, 90deg );"
+            "clip: rect( 10%, 90%, 90%, 10% );",
+            "clip: radial( 50% %50, 0deg, 90deg );"
         ]
     },
     "color": {
@@ -409,7 +410,10 @@
     "line-height": {
         "description": "Specifies the line height (distance between top edge of line above and line below) to use for text. By default this is 'normal' and a value that matches the font-size reasonably will be used automatically. Unlike the web, we don't have a weird CSS inheritence problem with the 120% vs 1.2 styles.",
         "examples": [
-            "line-height: normal;line-height: 20px;line-height: 1.2;line-height: 120%;"
+            "line-height: normal;",
+            "line-height: 20px;",
+            "line-height: 1.2;",
+            "line-height: 120%;"
         ]
     },
     "margin": {
@@ -740,7 +744,8 @@
         "description": "Sets the amount of blur to apply to the world / backbuffer before drawing.",
         "examples": [
             "world-blur: gaussian( 2.5 );",
-            "world-blur: gaussian( 6, 6, 1 );world-blur: mipmapgaussian( 6, 6, 4 ); In this version each gaussian pass is preceded by a quarter area downsample."
+            "world-blur: gaussian( 6, 6, 1 );",
+            "world-blur: mipmapgaussian( 6, 6, 4 ); In this version each gaussian pass is preceded by a quarter area downsample."
         ]
     },
     "x": {

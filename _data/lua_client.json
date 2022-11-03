@@ -193,6 +193,11 @@
                 "description": "Get the time an item will be added to stock",
                 "return": "float"
             },
+            "GetNeutralInitialSpawnOffset": {
+                "args": [],
+                "description": "Gets the extra offset to initial neutral creep spawn delay",
+                "return": "float"
+            },
             "GetWeatherWindDirection": {
                 "args": [],
                 "description": "Get Weather Wind Direction Vector",
@@ -867,6 +872,21 @@
                 "description": "Begin an iteration over the list of entities",
                 "return": "handle"
             },
+            "GetLocalPlayer": {
+                "args": [],
+                "description": "Get the local player controller (backcompat).",
+                "return": "handle"
+            },
+            "GetLocalPlayerController": {
+                "args": [],
+                "description": "Get the local player controller.",
+                "return": "handle"
+            },
+            "GetLocalPlayerPawn": {
+                "args": [],
+                "description": "Get the local player pawn.",
+                "return": "handle"
+            },
             "Next": {
                 "args": [
                     "handle"
@@ -1488,6 +1508,27 @@
             }
         }
     },
+    "C_DOTAPlayerController": {
+        "extends": "C_BaseEntity",
+        "functions": {
+            "GetActiveAbility": {
+                "args": [],
+                "return": "handle"
+            },
+            "GetClickBehaviors": {
+                "args": [],
+                "return": "<unknown>"
+            },
+            "GetQueryUnit": {
+                "args": [],
+                "return": "handle"
+            },
+            "ShouldDisplayInWorldUIElements": {
+                "args": [],
+                "return": "bool"
+            }
+        }
+    },
     "C_DOTA_Ability_Lua": {
         "extends": "C_DOTABaseAbility",
         "functions": {
@@ -2010,6 +2051,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsFeared": {
+                "args": [],
+                "return": "bool"
+            },
             "IsFort": {
                 "args": [],
                 "description": "Is this unit an Ancient?",
@@ -2116,6 +2161,10 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsStrongIllusion": {
+                "args": [],
+                "return": "bool"
+            },
             "IsStunned": {
                 "args": [],
                 "return": "bool"
@@ -2123,6 +2172,10 @@
             "IsSummoned": {
                 "args": [],
                 "description": "Is this unit summoned?",
+                "return": "bool"
+            },
+            "IsTaunted": {
+                "args": [],
                 "return": "bool"
             },
             "IsTower": {
@@ -3205,6 +3258,16 @@
                 "args": [],
                 "description": "Returns true if this server is a dedicated server.",
                 "return": "bool"
+            },
+            "IsDotaAltPressed": {
+                "args": [],
+                "description": "Returns true if whatever alt is remapped to is pressed",
+                "return": "<unknown>"
+            },
+            "IsDotaCtrlPressed": {
+                "args": [],
+                "description": "Returns true if whatever ctrl is remapped to is pressed",
+                "return": "<unknown>"
             },
             "IsInToolsMode": {
                 "args": [],

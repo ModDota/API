@@ -99,6 +99,60 @@
             "value": 3
         }
     ],
+    "CLICK_BEHAVIORS": [
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_NONE",
+            "value": 0
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_MOVE",
+            "value": 1
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_ATTACK",
+            "value": 2
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_CAST",
+            "value": 3
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_DROP_ITEM",
+            "value": 4
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_DROP_SHOP_ITEM",
+            "value": 5
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_DRAG",
+            "value": 6
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_LEARN_ABILITY",
+            "value": 7
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_PATROL",
+            "value": 8
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_VECTOR_CAST",
+            "value": 9
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_UNUSED",
+            "value": 10
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_RADAR",
+            "value": 11
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_LAST",
+            "value": 12
+        }
+    ],
     "DAMAGE_TYPES": [
         {
             "key": "DAMAGE_TYPE_NONE",
@@ -1087,16 +1141,20 @@
             "value": 94
         },
         {
-            "key": "DOTA_PLAYER_LOADOUT_END",
-            "value": 94
-        },
-        {
-            "key": "DOTA_LOADOUT_TYPE_NONE",
+            "key": "DOTA_LOADOUT_TYPE_ROSHAN",
             "value": 95
         },
         {
-            "key": "DOTA_LOADOUT_TYPE_COUNT",
+            "key": "DOTA_PLAYER_LOADOUT_END",
+            "value": 95
+        },
+        {
+            "key": "DOTA_LOADOUT_TYPE_NONE",
             "value": 96
+        },
+        {
+            "key": "DOTA_LOADOUT_TYPE_COUNT",
+            "value": 97
         }
     ],
     "DOTASpeechType_t": [
@@ -2457,6 +2515,10 @@
         {
             "key": "DOTA_UNIT_TARGET_CUSTOM",
             "value": 128
+        },
+        {
+            "key": "DOTA_UNIT_TARGET_SELF",
+            "value": 256
         }
     ],
     "DamageCategory_t": [
@@ -10963,8 +11025,12 @@
             "value": 49
         },
         {
-            "key": "MODIFIER_STATE_LAST",
+            "key": "MODIFIER_STATE_ALLOW_PATHING_THROUGH_OBSTRUCTIONS",
             "value": 50
+        },
+        {
+            "key": "MODIFIER_STATE_LAST",
+            "value": 51
         }
     ],
     "quest_text_replace_values_t": [

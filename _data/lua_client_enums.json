@@ -99,6 +99,60 @@
             "value": 3
         }
     ],
+    "CLICK_BEHAVIORS": [
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_NONE",
+            "value": 0
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_MOVE",
+            "value": 1
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_ATTACK",
+            "value": 2
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_CAST",
+            "value": 3
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_DROP_ITEM",
+            "value": 4
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_DROP_SHOP_ITEM",
+            "value": 5
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_DRAG",
+            "value": 6
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_LEARN_ABILITY",
+            "value": 7
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_PATROL",
+            "value": 8
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_VECTOR_CAST",
+            "value": 9
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_UNUSED",
+            "value": 10
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_RADAR",
+            "value": 11
+        },
+        {
+            "key": "DOTA_CLICK_BEHAVIOR_LAST",
+            "value": 12
+        }
+    ],
     "DOTAAbilitySpeakTrigger_t": [
         {
             "key": "DOTA_ABILITY_SPEAK_START_ACTION_PHASE",
@@ -1449,6 +1503,10 @@
         {
             "key": "DOTA_UNIT_TARGET_CUSTOM",
             "value": 128
+        },
+        {
+            "key": "DOTA_UNIT_TARGET_SELF",
+            "value": 256
         }
     ],
     "DotaPseudoRandomType": [
@@ -7645,51 +7703,51 @@
             "value": 1764
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1765
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACD_DOTA_IDLE",
             "value": 1766
         },
         {
-            "key": "ACT_DOTA_RUN_ALT",
+            "key": "radiant_melee_mars_shieldbash",
             "value": 1767
         },
         {
-            "key": "ACT_DOTA_VOODOO_REST",
+            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
             "value": 1768
         },
         {
-            "key": "ACT_DOTA_CYCLONE",
+            "key": "ACT_DOTA_RUN_ALT",
             "value": 1769
         },
         {
-            "key": "ACT_DOTA_IMPALE",
+            "key": "ACT_DOTA_VOODOO_REST",
             "value": 1770
         },
         {
-            "key": "ACT_DOTA_TORRENT",
+            "key": "ACT_DOTA_CYCLONE",
             "value": 1771
         },
         {
-            "key": "ACT_DOTA_RELAX_IN",
+            "key": "ACT_DOTA_IMPALE",
             "value": 1772
         },
         {
-            "key": "ACT_DOTA_RELAX_OUT",
+            "key": "ACT_DOTA_TORRENT",
             "value": 1773
         },
         {
-            "key": "ACT_DOTA_CAST_FENCE",
+            "key": "ACT_DOTA_RELAX_IN",
             "value": 1774
         },
         {
-            "key": "radiant_melee_mars_shieldbash",
+            "key": "ACT_DOTA_RELAX_OUT",
             "value": 1775
         },
         {
-            "key": "ACT_DOTA_RADIANT_CREEP_HAMMER",
+            "key": "ACT_DOTA_CAST_FENCE",
             "value": 1776
         },
         {
@@ -9321,8 +9379,12 @@
             "value": 49
         },
         {
-            "key": "MODIFIER_STATE_LAST",
+            "key": "MODIFIER_STATE_ALLOW_PATHING_THROUGH_OBSTRUCTIONS",
             "value": 50
+        },
+        {
+            "key": "MODIFIER_STATE_LAST",
+            "value": 51
         }
     ]
 }
