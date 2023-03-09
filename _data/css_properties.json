@@ -585,12 +585,13 @@
         ]
     },
     "text-overflow": {
-        "description": "Controls truncation of text that doesn't fit in a panel. \"clip\" means to simply truncate (on char boundaries), \"ellipsis\" means to end with '...', and \"shrink\" means lower the font size to fit.  \"noclip\" allows the text to overflow based on the \"overflow\" style.\nWe default to ellipsis, which is contrary to the normal CSS spec.",
+        "description": "Controls truncation of text that doesn't fit in a panel. \"clip\" means to simply truncate (on char boundaries), \"ellipsis\" means to end with '...', and \"shrink\" means lower the font size to fit.  \"noclip\" allows the text to overflow based on the \"overflow\" style.\n\"shrink min( 10px )\" won't shrink beyond a minimum font size, clipping the overflow. \"shrink min( 10px ) ellipsis\" is similar but will ellipsis the overflow.\n\nWe default to ellipsis, which is contrary to the normal CSS spec.",
         "examples": [
             "text-overflow: ellipsis;",
             "text-overflow: clip;",
             "text-overflow: shrink;",
             "text-overflow: shrink min( 10px );",
+            "text-overflow: shrink min( 10px ) ellipsis;",
             "text-overflow: noclip;"
         ]
     },

@@ -1,4 +1,12 @@
 {
+    "CBaseAnimGraph": {
+        "extends": "C_BaseModelEntity",
+        "functions": {}
+    },
+    "CBaseAnimatingActivity": {
+        "extends": "C_BaseModelEntity",
+        "functions": {}
+    },
     "CBodyComponent": {
         "functions": {
             "AddImpulseAtPosition": {
@@ -414,16 +422,228 @@
             }
         }
     },
+    "CDOTA_Modifier_Lua": {
+        "extends": "CDOTA_Buff",
+        "functions": {
+            "AllowIllusionDuplicate": {
+                "args": [],
+                "description": "True/false if this modifier is active on illusions.",
+                "return": "bool"
+            },
+            "CanParentBeAutoAttacked": {
+                "args": [],
+                "return": "bool"
+            },
+            "DestroyOnExpire": {
+                "args": [],
+                "description": "True/false if this buff is removed when the duration expires.",
+                "return": "bool"
+            },
+            "GetAttributes": {
+                "args": [],
+                "description": "Return the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t",
+                "return": "int"
+            },
+            "GetAuraDuration": {
+                "args": [],
+                "description": "Returns aura stickiness",
+                "return": "float"
+            },
+            "GetAuraEntityReject": {
+                "arg_names": [
+                    "hEntity"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Return true/false if this entity should receive the aura under specific conditions",
+                "return": "bool"
+            },
+            "GetAuraRadius": {
+                "args": [],
+                "description": "Return the range around the parent this aura tries to apply its buff.",
+                "return": "int"
+            },
+            "GetAuraSearchFlags": {
+                "args": [],
+                "description": "Return the unit flags this aura respects when placing buffs.",
+                "return": "int"
+            },
+            "GetAuraSearchTeam": {
+                "args": [],
+                "description": "Return the teams this aura applies its buff to.",
+                "return": "int"
+            },
+            "GetAuraSearchType": {
+                "args": [],
+                "description": "Return the unit classifications this aura applies its buff to.",
+                "return": "int"
+            },
+            "GetCritDamage": {
+                "args": [],
+                "description": "A Modifier that listens to MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE has to have a GetCritDamage implementation so we can know when to evaluate it. Value should be in 'times the original value format' e.g: 1.5 not 150",
+                "return": "float"
+            },
+            "GetEffectAttachType": {
+                "args": [],
+                "description": "Return the attach type of the particle system from GetEffectName.",
+                "return": "int"
+            },
+            "GetEffectName": {
+                "args": [],
+                "description": "Return the name of the particle system that is created while this modifier is active.",
+                "return": "cstring"
+            },
+            "GetHeroEffectName": {
+                "args": [],
+                "description": "Return the name of the hero effect particle system that is created while this modifier is active.",
+                "return": "cstring"
+            },
+            "GetModifierAura": {
+                "args": [],
+                "description": "The name of the secondary modifier that will be applied by this modifier (if it is an aura).",
+                "return": "cstring"
+            },
+            "GetPriority": {
+                "args": [],
+                "description": "Return the priority order this modifier will be applied over others.",
+                "return": "int"
+            },
+            "GetStatusEffectName": {
+                "args": [],
+                "description": "Return the name of the status effect particle system that is created while this modifier is active.",
+                "return": "cstring"
+            },
+            "GetTexture": {
+                "args": [],
+                "description": "Return the name of the buff icon to be shown for this modifier.",
+                "return": "cstring"
+            },
+            "HeroEffectPriority": {
+                "args": [],
+                "description": "Relationship of this hero effect with those from other buffs (higher is more likely to be shown).",
+                "return": "int"
+            },
+            "IsAura": {
+                "args": [],
+                "description": "True/false if this modifier is an aura.",
+                "return": "bool"
+            },
+            "IsAuraActiveOnDeath": {
+                "args": [],
+                "description": "True/false if this aura provides buffs when the parent is dead.",
+                "return": "bool"
+            },
+            "IsDebuff": {
+                "args": [],
+                "description": "True/false if this modifier should be displayed as a debuff.",
+                "return": "bool"
+            },
+            "IsHidden": {
+                "args": [],
+                "description": "True/false if this modifier should be displayed on the buff bar.",
+                "return": "bool"
+            },
+            "IsPermanent": {
+                "args": [],
+                "return": "bool"
+            },
+            "IsPurgable": {
+                "args": [],
+                "description": "True/false if this modifier can be purged.",
+                "return": "bool"
+            },
+            "IsPurgeException": {
+                "args": [],
+                "description": "True/false if this modifier can be purged by strong dispels.",
+                "return": "bool"
+            },
+            "IsStunDebuff": {
+                "args": [],
+                "description": "True/false if this modifier is considered a stun for purge reasons.",
+                "return": "bool"
+            },
+            "OnCreated": {
+                "arg_names": [
+                    "table"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Runs when the modifier is created.",
+                "return": "void"
+            },
+            "OnDestroy": {
+                "args": [],
+                "description": "Runs when the modifier is destroyed (after unit loses modifier).",
+                "return": "void"
+            },
+            "OnIntervalThink": {
+                "args": [],
+                "description": "Runs when the think interval occurs.",
+                "return": "void"
+            },
+            "OnRefresh": {
+                "arg_names": [
+                    "table"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "description": "Runs when the modifier is refreshed.",
+                "return": "void"
+            },
+            "OnRemoved": {
+                "args": [],
+                "description": "Runs when the modifier is destroyed (before unit loses modifier).",
+                "return": "void"
+            },
+            "OnStackCountChanged": {
+                "arg_names": [
+                    "iStackCount"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Runs when stack count changes (param is old count).",
+                "return": "void"
+            },
+            "RemoveOnDeath": {
+                "args": [],
+                "description": "True/false if this modifier is removed when the parent dies.",
+                "return": "bool"
+            },
+            "SetHasCustomTransmitterData": {
+                "arg_names": [
+                    "bHasCustomData"
+                ],
+                "args": [
+                    "bool"
+                ],
+                "return": "void"
+            },
+            "ShouldUseOverheadOffset": {
+                "args": [],
+                "description": "Apply the overhead offset to the attached effect.",
+                "return": "bool"
+            },
+            "StatusEffectPriority": {
+                "args": [],
+                "description": "Relationship of this status effect with those from other buffs (higher is more likely to be shown).",
+                "return": "int"
+            }
+        }
+    },
     "CDOTA_Modifier_Lua_Horizontal_Motion": {
-        "extends": "C_DOTA_Modifier_Lua",
+        "extends": "CDOTA_Modifier_Lua",
         "functions": {}
     },
     "CDOTA_Modifier_Lua_Motion_Both": {
-        "extends": "C_DOTA_Modifier_Lua",
+        "extends": "CDOTA_Modifier_Lua",
         "functions": {}
     },
     "CDOTA_Modifier_Lua_Vertical_Motion": {
-        "extends": "C_DOTA_Modifier_Lua",
+        "extends": "CDOTA_Modifier_Lua",
         "functions": {}
     },
     "CDebugOverlayScriptHelper": {
@@ -1258,7 +1478,7 @@
                     "int",
                     "vector"
                 ],
-                "description": "(int nFXIndex, int nPoint, vForward)",
+                "description": "[OBSOLETE - Use SetParticleControlTransformForward] (int nFXIndex, int nPoint, vForward)",
                 "return": "void"
             },
             "SetParticleControlOrientation": {
@@ -1269,7 +1489,7 @@
                     "vector",
                     "vector"
                 ],
-                "description": "(int nFXIndex, int nPoint, vForward, vRight, vUp) - Set the orientation for a control on a particle effect (NOTE: This is left handed -- bad!!)",
+                "description": "[OBSOLETE - Use SetParticleControlTransform] (int nFXIndex, int nPoint, vForward, vRight, vUp) - Set the orientation for a control on a particle effect (NOTE: This is left handed -- bad!!)",
                 "return": "void"
             },
             "SetParticleControlOrientationFLU": {
@@ -1280,7 +1500,27 @@
                     "vector",
                     "vector"
                 ],
-                "description": "(int nFXIndex, int nPoint, Vector vecForward, Vector vecLeft, Vector vecUp) - Set the orientation for a control on a particle effect",
+                "description": "[OBSOLETE - Use SetParticleControlTransform] (int nFXIndex, int nPoint, Vector vecForward, Vector vecLeft, Vector vecUp) - Set the orientation for a control on a particle effect",
+                "return": "void"
+            },
+            "SetParticleControlTransform": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector",
+                    "qangle"
+                ],
+                "description": "(int nFXIndex, int nPoint, vOrigin, qAngles)",
+                "return": "void"
+            },
+            "SetParticleControlTransformForward": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector",
+                    "vector"
+                ],
+                "description": "(int nFXIndex, int nPoint, vOrigin, vForward)",
                 "return": "void"
             },
             "SetParticleFoWProperties": {
@@ -1370,10 +1610,6 @@
             }
         }
     },
-    "C_BaseAnimating": {
-        "extends": "C_BaseModelEntity",
-        "functions": {}
-    },
     "C_BaseCombatCharacter": {
         "extends": "C_BaseFlex",
         "functions": {}
@@ -1414,7 +1650,7 @@
         }
     },
     "C_BaseFlex": {
-        "extends": "C_BaseAnimating",
+        "extends": "CBaseAnimatingActivity",
         "functions": {}
     },
     "C_BaseModelEntity": {
@@ -2508,218 +2744,6 @@
             }
         }
     },
-    "C_DOTA_Modifier_Lua": {
-        "extends": "CDOTA_Buff",
-        "functions": {
-            "AllowIllusionDuplicate": {
-                "args": [],
-                "description": "True/false if this modifier is active on illusions.",
-                "return": "bool"
-            },
-            "CanParentBeAutoAttacked": {
-                "args": [],
-                "return": "bool"
-            },
-            "DestroyOnExpire": {
-                "args": [],
-                "description": "True/false if this buff is removed when the duration expires.",
-                "return": "bool"
-            },
-            "GetAttributes": {
-                "args": [],
-                "description": "Return the types of attributes applied to this modifier (enum value from DOTAModifierAttribute_t",
-                "return": "int"
-            },
-            "GetAuraDuration": {
-                "args": [],
-                "description": "Returns aura stickiness",
-                "return": "float"
-            },
-            "GetAuraEntityReject": {
-                "arg_names": [
-                    "hEntity"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Return true/false if this entity should receive the aura under specific conditions",
-                "return": "bool"
-            },
-            "GetAuraRadius": {
-                "args": [],
-                "description": "Return the range around the parent this aura tries to apply its buff.",
-                "return": "int"
-            },
-            "GetAuraSearchFlags": {
-                "args": [],
-                "description": "Return the unit flags this aura respects when placing buffs.",
-                "return": "int"
-            },
-            "GetAuraSearchTeam": {
-                "args": [],
-                "description": "Return the teams this aura applies its buff to.",
-                "return": "int"
-            },
-            "GetAuraSearchType": {
-                "args": [],
-                "description": "Return the unit classifications this aura applies its buff to.",
-                "return": "int"
-            },
-            "GetCritDamage": {
-                "args": [],
-                "description": "A Modifier that listens to MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE has to have a GetCritDamage implementation so we can know when to evaluate it. Value should be in 'times the original value format' e.g: 1.5 not 150",
-                "return": "float"
-            },
-            "GetEffectAttachType": {
-                "args": [],
-                "description": "Return the attach type of the particle system from GetEffectName.",
-                "return": "int"
-            },
-            "GetEffectName": {
-                "args": [],
-                "description": "Return the name of the particle system that is created while this modifier is active.",
-                "return": "cstring"
-            },
-            "GetHeroEffectName": {
-                "args": [],
-                "description": "Return the name of the hero effect particle system that is created while this modifier is active.",
-                "return": "cstring"
-            },
-            "GetModifierAura": {
-                "args": [],
-                "description": "The name of the secondary modifier that will be applied by this modifier (if it is an aura).",
-                "return": "cstring"
-            },
-            "GetPriority": {
-                "args": [],
-                "description": "Return the priority order this modifier will be applied over others.",
-                "return": "int"
-            },
-            "GetStatusEffectName": {
-                "args": [],
-                "description": "Return the name of the status effect particle system that is created while this modifier is active.",
-                "return": "cstring"
-            },
-            "GetTexture": {
-                "args": [],
-                "description": "Return the name of the buff icon to be shown for this modifier.",
-                "return": "cstring"
-            },
-            "HeroEffectPriority": {
-                "args": [],
-                "description": "Relationship of this hero effect with those from other buffs (higher is more likely to be shown).",
-                "return": "int"
-            },
-            "IsAura": {
-                "args": [],
-                "description": "True/false if this modifier is an aura.",
-                "return": "bool"
-            },
-            "IsAuraActiveOnDeath": {
-                "args": [],
-                "description": "True/false if this aura provides buffs when the parent is dead.",
-                "return": "bool"
-            },
-            "IsDebuff": {
-                "args": [],
-                "description": "True/false if this modifier should be displayed as a debuff.",
-                "return": "bool"
-            },
-            "IsHidden": {
-                "args": [],
-                "description": "True/false if this modifier should be displayed on the buff bar.",
-                "return": "bool"
-            },
-            "IsPermanent": {
-                "args": [],
-                "return": "bool"
-            },
-            "IsPurgable": {
-                "args": [],
-                "description": "True/false if this modifier can be purged.",
-                "return": "bool"
-            },
-            "IsPurgeException": {
-                "args": [],
-                "description": "True/false if this modifier can be purged by strong dispels.",
-                "return": "bool"
-            },
-            "IsStunDebuff": {
-                "args": [],
-                "description": "True/false if this modifier is considered a stun for purge reasons.",
-                "return": "bool"
-            },
-            "OnCreated": {
-                "arg_names": [
-                    "table"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Runs when the modifier is created.",
-                "return": "void"
-            },
-            "OnDestroy": {
-                "args": [],
-                "description": "Runs when the modifier is destroyed (after unit loses modifier).",
-                "return": "void"
-            },
-            "OnIntervalThink": {
-                "args": [],
-                "description": "Runs when the think interval occurs.",
-                "return": "void"
-            },
-            "OnRefresh": {
-                "arg_names": [
-                    "table"
-                ],
-                "args": [
-                    "handle"
-                ],
-                "description": "Runs when the modifier is refreshed.",
-                "return": "void"
-            },
-            "OnRemoved": {
-                "args": [],
-                "description": "Runs when the modifier is destroyed (before unit loses modifier).",
-                "return": "void"
-            },
-            "OnStackCountChanged": {
-                "arg_names": [
-                    "iStackCount"
-                ],
-                "args": [
-                    "int"
-                ],
-                "description": "Runs when stack count changes (param is old count).",
-                "return": "void"
-            },
-            "RemoveOnDeath": {
-                "args": [],
-                "description": "True/false if this modifier is removed when the parent dies.",
-                "return": "bool"
-            },
-            "SetHasCustomTransmitterData": {
-                "arg_names": [
-                    "bHasCustomData"
-                ],
-                "args": [
-                    "bool"
-                ],
-                "return": "void"
-            },
-            "ShouldUseOverheadOffset": {
-                "args": [],
-                "description": "Apply the overhead offset to the attached effect.",
-                "return": "bool"
-            },
-            "StatusEffectPriority": {
-                "args": [],
-                "description": "Relationship of this status effect with those from other buffs (higher is more likely to be shown).",
-                "return": "int"
-            }
-        }
-    },
     "C_PointEntity": {
         "extends": "C_BaseEntity",
         "functions": {}
@@ -3799,35 +3823,6 @@
                     "float"
                 ],
                 "description": "Sets the value of the given cvar, as a float.",
-                "return": "bool"
-            },
-            "rr_AddDecisionRule": {
-                "args": [
-                    "handle"
-                ],
-                "description": "Add a rule to the decision database.",
-                "return": "bool"
-            },
-            "rr_CommitAIResponse": {
-                "args": [
-                    "handle",
-                    "handle"
-                ],
-                "description": "Commit the result of QueryBestResponse back to the given entity to play. Call with params (entity, airesponse)",
-                "return": "bool"
-            },
-            "rr_GetResponseTargets": {
-                "args": [],
-                "description": "Retrieve a table of all available expresser targets, in the form { name : handle, name: handle }.",
-                "return": "handle"
-            },
-            "rr_QueryBestResponse": {
-                "args": [
-                    "handle",
-                    "handle",
-                    "handle"
-                ],
-                "description": "Params: (entity, query) : tests 'query' against entity's response system and returns the best response found (or null if none found).",
                 "return": "bool"
             }
         }

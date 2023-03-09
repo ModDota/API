@@ -1,17 +1,7 @@
 {
-    "CBaseAnimating": {
+    "CBaseAnimGraph": {
         "extends": "CBaseModelEntity",
         "functions": {
-            "ActiveSequenceDuration": {
-                "args": [],
-                "description": "Returns the duration in seconds of the active sequence.",
-                "return": "float"
-            },
-            "GetCycle": {
-                "args": [],
-                "description": "Get the cycle of the animation.",
-                "return": "float"
-            },
             "GetGraphParameter": {
                 "arg_names": [
                     "pszParam"
@@ -21,46 +11,6 @@
                 ],
                 "description": "Get the value of the given animGraph parameter",
                 "return": "table"
-            },
-            "GetSequence": {
-                "args": [],
-                "description": "Returns the name of the active sequence.",
-                "return": "cstring"
-            },
-            "IsSequenceFinished": {
-                "args": [],
-                "description": "Ask whether the main sequence is done playing.",
-                "return": "bool"
-            },
-            "ResetSequence": {
-                "arg_names": [
-                    "pSequenceName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Sets the active sequence by name, resetting the current cycle.",
-                "return": "void"
-            },
-            "SequenceDuration": {
-                "arg_names": [
-                    "pSequenceName"
-                ],
-                "args": [
-                    "cstring"
-                ],
-                "description": "Returns the duration in seconds of the given sequence name.",
-                "return": "float"
-            },
-            "SetCycle": {
-                "arg_names": [
-                    "flCycle"
-                ],
-                "args": [
-                    "float"
-                ],
-                "description": "Set the cycle of the animation.",
-                "return": "void"
             },
             "SetGraphLookTarget": {
                 "arg_names": [
@@ -142,6 +92,61 @@
                     "vector"
                 ],
                 "description": "Pass the vector value to the specified param in the graph",
+                "return": "void"
+            }
+        }
+    },
+    "CBaseAnimatingActivity": {
+        "extends": "CBaseModelEntity",
+        "functions": {
+            "ActiveSequenceDuration": {
+                "args": [],
+                "description": "Returns the duration in seconds of the active sequence.",
+                "return": "float"
+            },
+            "GetCycle": {
+                "args": [],
+                "description": "Get the cycle of the animation.",
+                "return": "float"
+            },
+            "GetSequence": {
+                "args": [],
+                "description": "Returns the name of the active sequence.",
+                "return": "cstring"
+            },
+            "IsSequenceFinished": {
+                "args": [],
+                "description": "Ask whether the main sequence is done playing.",
+                "return": "bool"
+            },
+            "ResetSequence": {
+                "arg_names": [
+                    "pSequenceName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Sets the active sequence by name, resetting the current cycle.",
+                "return": "void"
+            },
+            "SequenceDuration": {
+                "arg_names": [
+                    "pSequenceName"
+                ],
+                "args": [
+                    "cstring"
+                ],
+                "description": "Returns the duration in seconds of the given sequence name.",
+                "return": "float"
+            },
+            "SetCycle": {
+                "arg_names": [
+                    "flCycle"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set the cycle of the animation.",
                 "return": "void"
             },
             "SetPoseParameter": {
@@ -920,7 +925,7 @@
         }
     },
     "CBaseFlex": {
-        "extends": "CBaseAnimating",
+        "extends": "CBaseAnimatingActivity",
         "functions": {
             "GetCurrentScene": {
                 "args": [],
@@ -3749,7 +3754,7 @@
                     "float",
                     "float",
                     "handle",
-                    "int"
+                    "uint"
                 ],
                 "description": "Sends a minimap ping to all players on the team",
                 "return": "void"
@@ -4595,7 +4600,7 @@
         "instance": "GameRules"
     },
     "CDOTAPlayerController": {
-        "extends": "CBaseAnimating",
+        "extends": "CBaseAnimatingActivity",
         "functions": {
             "CheckForCourierSpawning": {
                 "arg_names": [
@@ -9877,7 +9882,7 @@
         }
     },
     "CDOTA_Item_Physical": {
-        "extends": "CBaseAnimating",
+        "extends": "CBaseAnimatingActivity",
         "functions": {
             "GetContainedItem": {
                 "args": [],
@@ -11729,11 +11734,11 @@
             "SetLastBuybackTime": {
                 "arg_names": [
                     "iPlayerID",
-                    "iLastBuybackTime"
+                    "flLastBuybackTime"
                 ],
                 "args": [
                     "int",
-                    "int"
+                    "float"
                 ],
                 "return": "void"
             },
@@ -13147,7 +13152,7 @@
         "functions": {}
     },
     "CPhysicsProp": {
-        "extends": "CBaseAnimating",
+        "extends": "CBaseAnimatingActivity",
         "functions": {
             "DisableMotion": {
                 "args": [],
@@ -13505,7 +13510,7 @@
                     "int",
                     "vector"
                 ],
-                "description": "(int nFXIndex, int nPoint, vForward)",
+                "description": "[OBSOLETE - Use SetParticleControlTransformForward] (int nFXIndex, int nPoint, vForward)",
                 "return": "void"
             },
             "SetParticleControlOrientation": {
@@ -13516,7 +13521,7 @@
                     "vector",
                     "vector"
                 ],
-                "description": "(int nFXIndex, int nPoint, vForward, vRight, vUp) - Set the orientation for a control on a particle effect (NOTE: This is left handed -- bad!!)",
+                "description": "[OBSOLETE - Use SetParticleControlTransform] (int nFXIndex, int nPoint, vForward, vRight, vUp) - Set the orientation for a control on a particle effect (NOTE: This is left handed -- bad!!)",
                 "return": "void"
             },
             "SetParticleControlOrientationFLU": {
@@ -13527,7 +13532,27 @@
                     "vector",
                     "vector"
                 ],
-                "description": "(int nFXIndex, int nPoint, Vector vecForward, Vector vecLeft, Vector vecUp) - Set the orientation for a control on a particle effect",
+                "description": "[OBSOLETE - Use SetParticleControlTransform] (int nFXIndex, int nPoint, Vector vecForward, Vector vecLeft, Vector vecUp) - Set the orientation for a control on a particle effect",
+                "return": "void"
+            },
+            "SetParticleControlTransform": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector",
+                    "qangle"
+                ],
+                "description": "(int nFXIndex, int nPoint, vOrigin, qAngles)",
+                "return": "void"
+            },
+            "SetParticleControlTransformForward": {
+                "args": [
+                    "int",
+                    "int",
+                    "vector",
+                    "vector"
+                ],
+                "description": "(int nFXIndex, int nPoint, vOrigin, vForward)",
                 "return": "void"
             },
             "SetParticleFoWProperties": {
@@ -15197,16 +15222,6 @@
                 "description": "Reloads the MotD file",
                 "return": "void"
             },
-            "RemapValClamped": {
-                "args": [
-                    "float",
-                    "float",
-                    "float",
-                    "float",
-                    "float"
-                ],
-                "return": "float"
-            },
             "RemoveFOWViewer": {
                 "args": [
                     "int",
@@ -15309,6 +15324,17 @@
                 ],
                 "description": "Start a screenshake with the following parameters. vecCenter, flAmplitude, flFrequency, flDuration, flRadius, eCommand( SHAKE_START = 0, SHAKE_STOP = 1 ), bAirShake",
                 "return": "void"
+            },
+            "Script_RemapValClamped": {
+                "args": [
+                    "float",
+                    "float",
+                    "float",
+                    "float",
+                    "float"
+                ],
+                "description": "RemapValClamped",
+                "return": "float"
             },
             "SendOverheadEventMessage": {
                 "args": [
@@ -15793,35 +15819,6 @@
                     "float"
                 ],
                 "description": "Sets the value of the given cvar, as a float.",
-                "return": "bool"
-            },
-            "rr_AddDecisionRule": {
-                "args": [
-                    "handle"
-                ],
-                "description": "Add a rule to the decision database.",
-                "return": "bool"
-            },
-            "rr_CommitAIResponse": {
-                "args": [
-                    "handle",
-                    "handle"
-                ],
-                "description": "Commit the result of QueryBestResponse back to the given entity to play. Call with params (entity, airesponse)",
-                "return": "bool"
-            },
-            "rr_GetResponseTargets": {
-                "args": [],
-                "description": "Retrieve a table of all available expresser targets, in the form { name : handle, name: handle }.",
-                "return": "handle"
-            },
-            "rr_QueryBestResponse": {
-                "args": [
-                    "handle",
-                    "handle",
-                    "handle"
-                ],
-                "description": "Params: (entity, query) : tests 'query' against entity's response system and returns the best response found (or null if none found).",
                 "return": "bool"
             }
         }
