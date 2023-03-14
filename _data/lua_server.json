@@ -4290,13 +4290,6 @@
                 "description": "Sets whether First Blood has been triggered.",
                 "return": "void"
             },
-            "SetGameTimeFrozen": {
-                "args": [
-                    "bool"
-                ],
-                "description": "Freeze the game time.",
-                "return": "void"
-            },
             "SetGameWinner": {
                 "args": [
                     "int"
@@ -4755,11 +4748,6 @@
                 "description": "Force the start of the game.",
                 "return": "void"
             },
-            "GetTimeFrozen": {
-                "args": [],
-                "description": "Is our time frozen?",
-                "return": "bool"
-            },
             "IsItemInWhiteList": {
                 "args": [
                     "cstring"
@@ -4815,13 +4803,6 @@
                     "bool"
                 ],
                 "description": "Set the shop open or closed.",
-                "return": "void"
-            },
-            "SetTimeFrozen": {
-                "args": [
-                    "bool"
-                ],
-                "description": "Set if we should freeze time or not.",
                 "return": "void"
             },
             "SetTutorialConvar": {
