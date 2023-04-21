@@ -1257,41 +1257,15 @@
                 "description": "Detach from its parent",
                 "return": "void"
             },
-            "GetSequence": {
-                "args": [],
-                "description": "Returns the active sequence\n",
-                "return": "int"
-            },
             "IsAttachedToParent": {
                 "args": [],
                 "description": "Is attached to parent",
                 "return": "bool"
             },
-            "LookupSequence": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Returns a sequence id given a name\n",
-                "return": "int"
-            },
-            "SequenceDuration": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Returns the duration in seconds of the specified sequence",
-                "return": "float"
-            },
             "SetAngularVelocity": {
                 "args": [
                     "vector"
                 ],
-                "return": "void"
-            },
-            "SetAnimation": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Pass string for the animation to play on this model",
                 "return": "void"
             },
             "SetMaterialGroup": {
@@ -1545,6 +1519,15 @@
                 "args": [],
                 "return": "float"
             },
+            "GetChannelledHealthCostPerSecond": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "int"
+            },
             "GetChannelledManaCostPerSecond": {
                 "arg_names": [
                     "iLevel"
@@ -1621,6 +1604,15 @@
                 ],
                 "return": "float"
             },
+            "GetEffectiveHealthCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "int"
+            },
             "GetEffectiveManaCost": {
                 "arg_names": [
                     "iLevel"
@@ -1640,6 +1632,15 @@
                 "return": "int"
             },
             "GetGoldCostForUpgrade": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "return": "int"
+            },
+            "GetHealthCost": {
                 "arg_names": [
                     "iLevel"
                 ],
@@ -1944,6 +1945,10 @@
                 "args": [],
                 "return": "void"
             },
+            "PayHealthCost": {
+                "args": [],
+                "return": "void"
+            },
             "PayManaCost": {
                 "args": [],
                 "return": "void"
@@ -1965,6 +1970,10 @@
                 "return": "void"
             },
             "RefreshIntrinsicModifier": {
+                "args": [],
+                "return": "void"
+            },
+            "RefundHealthCost": {
                 "args": [],
                 "return": "void"
             },
@@ -2144,10 +2153,12 @@
             "UseResources": {
                 "arg_names": [
                     "bMana",
+                    "bUseHealth",
                     "bGold",
                     "bCooldown"
                 ],
                 "args": [
+                    "bool",
                     "bool",
                     "bool",
                     "bool"
@@ -3530,6 +3541,16 @@
                     "bool"
                 ],
                 "description": "Set if weather effects are disabled.",
+                "return": "void"
+            },
+            "SetXPRuneSpawnInterval": {
+                "arg_names": [
+                    "flInterval"
+                ],
+                "args": [
+                    "float"
+                ],
+                "description": "Set xp rune spawn rate",
                 "return": "void"
             },
             "ShouldGiveFreeTPOnDeath": {
@@ -6116,11 +6137,6 @@
                 "description": "Returns the level of this unit.",
                 "return": "int"
             },
-            "GetMagicalArmorValue": {
-                "args": [],
-                "description": "Returns current magical armor value.",
-                "return": "float"
-            },
             "GetMainControllingPlayer": {
                 "args": [],
                 "description": "Returns the player ID of the controlling player.",
@@ -6751,8 +6767,13 @@
                 "args": [],
                 "return": "bool"
             },
-            "IsUntargetable": {
-                "args": [],
+            "IsUntargetableFrom": {
+                "arg_names": [
+                    "pTargettingSource"
+                ],
+                "args": [
+                    "handle"
+                ],
                 "return": "bool"
             },
             "IsWard": {
@@ -7066,16 +7087,6 @@
                 "description": "Queue a response system concept with the TLK_DOTA_CUSTOM concept, after a delay, for the same team this speaker is on. Is not played for spectators.",
                 "return": "void"
             },
-            "ReduceMana": {
-                "arg_names": [
-                    "flAmount"
-                ],
-                "args": [
-                    "float"
-                ],
-                "description": "Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.",
-                "return": "float"
-            },
             "RemoveAbility": {
                 "arg_names": [
                     "pszAbilityName"
@@ -7206,9 +7217,33 @@
                 "description": "Gets this unit's attack range after all modifiers.",
                 "return": "float"
             },
+            "Script_GetMagicalArmorValue": {
+                "arg_names": [
+                    "bUseExperimentalFormula",
+                    "inflictor"
+                ],
+                "args": [
+                    "bool",
+                    "handle"
+                ],
+                "description": "Returns current magical armor value.",
+                "return": "float"
+            },
             "Script_IsDeniable": {
                 "args": [],
                 "return": "bool"
+            },
+            "Script_ReduceMana": {
+                "arg_names": [
+                    "flMana",
+                    "hAbility"
+                ],
+                "args": [
+                    "float",
+                    "handle"
+                ],
+                "description": "Remove mana from this unit, this can be used for involuntary mana loss, not for mana that is spent.",
+                "return": "float"
             },
             "SellItem": {
                 "arg_names": [
@@ -8787,6 +8822,10 @@
                 "return": "bool"
             }
         }
+    },
+    "CDOTA_BaseNPC_MangoTree": {
+        "extends": "CDOTA_BaseNPC_Building",
+        "functions": {}
     },
     "CDOTA_BaseNPC_NeutralItemStash": {
         "extends": "CDOTA_BaseNPC_Building",
@@ -11951,6 +11990,10 @@
                 "return": "bool"
             }
         }
+    },
+    "CDOTA_Unit_Scout": {
+        "extends": "CDOTA_BaseNPC",
+        "functions": {}
     },
     "CDebugOverlayScriptHelper": {
         "functions": {

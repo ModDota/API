@@ -30,41 +30,15 @@
                 "description": "Detach from its parent",
                 "return": "void"
             },
-            "GetSequence": {
-                "args": [],
-                "description": "Returns the active sequence\n",
-                "return": "int"
-            },
             "IsAttachedToParent": {
                 "args": [],
                 "description": "Is attached to parent",
                 "return": "bool"
             },
-            "LookupSequence": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Returns a sequence id given a name\n",
-                "return": "int"
-            },
-            "SequenceDuration": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Returns the duration in seconds of the specified sequence",
-                "return": "float"
-            },
             "SetAngularVelocity": {
                 "args": [
                     "vector"
                 ],
-                "return": "void"
-            },
-            "SetAnimation": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Pass string for the animation to play on this model",
                 "return": "void"
             },
             "SetMaterialGroup": {
@@ -2071,11 +2045,6 @@
                 "description": "Returns the level of this unit.",
                 "return": "int"
             },
-            "GetMagicalArmorValue": {
-                "args": [],
-                "description": "Returns current magical armor value.",
-                "return": "float"
-            },
             "GetMana": {
                 "args": [],
                 "description": "Get the mana on this unit.",
@@ -2427,6 +2396,15 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsUntargetableFrom": {
+                "arg_names": [
+                    "pTargettingSource"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "return": "bool"
+            },
             "NoHealthBar": {
                 "args": [],
                 "return": "bool"
@@ -2462,6 +2440,18 @@
             "Script_GetAttackRange": {
                 "args": [],
                 "description": "Gets this unit's attack range after all modifiers.",
+                "return": "float"
+            },
+            "Script_GetMagicalArmorValue": {
+                "arg_names": [
+                    "bUseExperimentalFormula",
+                    "inflictor"
+                ],
+                "args": [
+                    "bool",
+                    "handle"
+                ],
+                "description": "Returns current magical armor value.",
                 "return": "float"
             },
             "Script_IsDeniable": {
