@@ -7723,11 +7723,11 @@
             "value": 1775
         },
         {
-            "key": "ACT_DOTA_DISABLED_END",
+            "key": "ACD_DOTA_IDLE",
             "value": 1776
         },
         {
-            "key": "ACD_DOTA_IDLE",
+            "key": "ACT_DOTA_DISABLED_END",
             "value": 1777
         },
         {
@@ -9225,8 +9225,13 @@
             "value": 269
         },
         {
-            "key": "MODIFIER_FUNCTION_LAST",
+            "description": "OnSpellAppliedSuccessfully",
+            "key": "MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY",
             "value": 270
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 271
         },
         {
             "key": "MODIFIER_FUNCTION_INVALID",

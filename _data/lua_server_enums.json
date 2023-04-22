@@ -10811,8 +10811,13 @@
             "value": 269
         },
         {
-            "key": "MODIFIER_FUNCTION_LAST",
+            "description": "OnSpellAppliedSuccessfully",
+            "key": "MODIFIER_EVENT_SPELL_APPLIED_SUCCESSFULLY",
             "value": 270
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 271
         },
         {
             "key": "MODIFIER_FUNCTION_INVALID",
