@@ -9220,7 +9220,7 @@
             "value": 268
         },
         {
-            "description": "GetModifierPropertyIncomingDamage_Constant",
+            "description": "GetModifierIncomingDamageConstant",
             "key": "MODIFIER_PROPERTY_INCOMING_DAMAGE_CONSTANT",
             "value": 269
         },
@@ -9230,8 +9230,13 @@
             "value": 270
         },
         {
-            "key": "MODIFIER_FUNCTION_LAST",
+            "description": "GetModifierAvoidDamageAfterReductions",
+            "key": "MODIFIER_PROPERTY_AVOID_DAMAGE_AFTER_REDUCTIONS",
             "value": 271
+        },
+        {
+            "key": "MODIFIER_FUNCTION_LAST",
+            "value": 272
         },
         {
             "key": "MODIFIER_FUNCTION_INVALID",

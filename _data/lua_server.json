@@ -5064,6 +5064,16 @@
                 "description": "Return the channel time of this ability.",
                 "return": "float"
             },
+            "GetChannelledHealthCostPerSecond": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost per second of channeling at the given level (-1 is current).",
+                "return": "int"
+            },
             "GetChannelledManaCostPerSecond": {
                 "arg_names": [
                     "iLevel"
@@ -5144,6 +5154,16 @@
                     "int"
                 ],
                 "description": "Return gold cost at the given level (-1 is current).",
+                "return": "int"
+            },
+            "GetHealthCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost at the given level (-1 is current).",
                 "return": "int"
             },
             "GetIntrinsicModifierName": {
@@ -9256,13 +9276,15 @@
                     "bAutoUse",
                     "flHeight",
                     "flDuration",
-                    "vEndPoint"
+                    "vEndPoint",
+                    "hTeleportOwner"
                 ],
                 "args": [
                     "bool",
                     "float",
                     "float",
-                    "vector"
+                    "vector",
+                    "handle"
                 ],
                 "return": "void"
             },
@@ -9626,6 +9648,16 @@
                 "description": "Return the channel time of this ability.",
                 "return": "float"
             },
+            "GetChannelledHealthCostPerSecond": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost per second of channeling at the given level (-1 is current).",
+                "return": "int"
+            },
             "GetChannelledManaCostPerSecond": {
                 "arg_names": [
                     "iLevel"
@@ -9706,6 +9738,16 @@
                     "int"
                 ],
                 "description": "Return gold cost at the given level (-1 is current).",
+                "return": "int"
+            },
+            "GetHealthCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost at the given level (-1 is current).",
                 "return": "int"
             },
             "GetIntrinsicModifierName": {
